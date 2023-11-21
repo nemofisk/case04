@@ -12,8 +12,7 @@ function leaderboard($users, $received_data){
     if($subAction == "global"){   
         usort($users, 'sortLeaderboard');
         sendJSON($users);
-    } elseif ($subAction == "friendy") {
-        // Get the user ID for whom you want the friends leaderboard
+    } elseif ($subAction == "friendly") {
         $userId = $received_data["userId"];
 
         // Find the user by ID
@@ -24,9 +23,16 @@ function leaderboard($users, $received_data){
             $friends = $user['friends'];
 
             // Filter users based on friends
-            $friendsLeaderboard = array_filter($users, function ($u) use ($friends) {
-                return in_array($u['id'], $friends);
-            });
+            $friendsLeaderboard = [];
+
+            foreach($users as $user2){
+                foreach($friends as $friend){
+                    if($user2["username"] === $friend){
+                        
+                        $friendsLeaderboard[] = ["username" => $user2["username"], "popcorn" => $user2["popcorn"], "level" => $user2["level"]];
+                    }
+                }
+            }
 
             // Sort the friends leaderboard
             usort($friendsLeaderboard, 'sortLeaderboard');

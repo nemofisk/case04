@@ -1,7 +1,7 @@
 
 async function fetchFriendsLeaderboard(userId) {
     try {
-        const response = await fetch(`../PHP/api.php?action=leaderboard&subAction=friendy&userId=${userId}`);
+        const response = await fetch(`../PHP/api.php?action=leaderboard&subAction=friendly&userId=${userId}`);
         const data = await response.json();
         return data;
     } catch (error) {
