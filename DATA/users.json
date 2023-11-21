@@ -1,22 +1,22 @@
 [
     {
-        "username": "111",
-        "password": "111",
+        "username": "www",
+        "password": "www",
         "level": 1,
         "popcorn": 0,
         "friends": [
-            "222"
+            "rrr"
         ],
         "friendRequests": [],
         "id": 1
     },
     {
-        "username": "222",
-        "password": "222",
+        "username": "rrr",
+        "password": "rrr",
         "level": 1,
         "popcorn": 0,
         "friends": [
-            "111"
+            "www"
         ],
         "friendRequests": [],
         "id": 2

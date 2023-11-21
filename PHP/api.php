@@ -5,6 +5,7 @@ require_once "register.php";
 require_once "login.php";
 require_once "friendRequest.php";
 require_once "displayFriends.php";
+require_once "leaderboard.php";
 
 ini_set("display_errors", 1);
 
@@ -37,6 +38,8 @@ switch($action){
     case "friendRequest":
         friendRequest($received_data, $users);
         break;
+    case "leaderboard":
+        leaderboard($users, $received_data);
 }
 
 ?>

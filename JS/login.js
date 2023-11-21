@@ -28,10 +28,12 @@ function loginFunction(event) {
         body: JSON.stringify({ username: username, password: password, action: "login" })
     }).then(request => request.json()).then(resource => {
         if (resource.message === "Login successful!") {
+            window.localStorage.setItem(`userID`, resource.userid);
             console.log("sucess");
             window.localStorage.setItem("username", username)
             RenderStartingpage();
             initializeLeaderboard()
+            initializeFriendsLeaderboard(resource.userid);
         } else {
             console.log("login failed");
         }

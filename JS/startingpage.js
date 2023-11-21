@@ -40,8 +40,8 @@ function RenderStartingpage() {
                 </div>
             </div>
             <div id="leaderBoard">
-                <div id"LeaderBoard1">Leaderboard 1</div>
-                <div class="LeaderBoard">Leaderboard 2</div>
+                <div id="LeaderBoard1">Leaderboard 1</div>
+                <div id="friendsLeaderboard">Leaderboard 2</div>
             </div>
         </div>
 
@@ -57,33 +57,6 @@ function RenderStartingpage() {
     document.querySelector("#searchButton").addEventListener("click", searchUsers);
     displayFriendRequests()
 }
-
-async function fetchLeaderboard() {
-    try {
-        const response = await fetch(`../PHP/leaderboard.php`);
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error('Error fetching leaderboard:', error);
-    }
-}
-
-function displayLeaderboard(leaderboardData) {
-    const leaderboard1 = document.getElementById("LeaderBoard1");
-
-    leaderboardData.forEach(user => {
-        const userElement = document.createElement("div");
-        userElement.textContent = `${user.username}: ${user.popcorn}`;
-        leaderboard1.appendChild(userElement);
-    });
-}
-async function initializeLeaderboard() {
-    const leaderboardData = await fetchLeaderboard();
-    displayLeaderboard(leaderboardData);
-}
-
-
-
 
 
 function displayFriendRequests() {
