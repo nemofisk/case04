@@ -30,7 +30,9 @@
         "friends": [
             "ff"
         ],
-        "friendRequests": [],
+        "friendRequests": [
+            "ff"
+        ],
         "id": 3
     },
     {
@@ -38,12 +40,19 @@
         "password": "ff",
         "level": 1,
         "popcorn": 0,
-        "friends": [
-            "2"
-        ],
+        "friends": [],
         "friendRequests": {
             "1": "2"
         },
         "id": 4
+    },
+    {
+        "username": "ffffffgfgff",
+        "password": "c",
+        "level": 1,
+        "popcorn": 0,
+        "friends": [],
+        "friendRequests": [],
+        "id": 5
     }
 ]

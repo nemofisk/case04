@@ -5,6 +5,23 @@ function register($users, $received_data){
     $username = $received_data["username"];
     $password = $received_data["password"];
 
+    if ($users != null) {
+        foreach ($users as $user) {
+            if ($user["username"] == $received_data["username"]) {
+                $message = ["message" => "Username is already taken"];
+                sendJSON($message, 409);
+            }
+        }
+    }if ($username == "" or $password == "") {
+        $message = ["message" => "Username or password are empty!"];
+        sendJSON($message, 400);
+
+        // Kollar så att username och password inte är kortare än 3 karaktärer.
+    } elseif (strlen($username) <= 3 or strlen($password) <= 3 && strlen($username) >= 10) {
+        $message = ["message" => "Username and password cannot be shorter than 3 characters!"];
+        sendJSON($message, 400);
+    }
+
     $id = 0;
 
     if (0 <= count($users)) {
