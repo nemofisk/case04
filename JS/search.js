@@ -14,16 +14,3 @@ function searchUsers(event){
         console.log(resource);
     });
 }
-
-function displayFriendRequests(){
-    let requestBox = document.querySelector(".friendRequests");
-
-    fetch("../PHP/api.php", {
-        method: "POST",
-        headers: { "Content-type": "application/json" },
-        body: JSON.stringify({ username: username, action: "displayFriends"})
-    }).then(r => r.json()).then(resource => {
-        console.log(resource);
-    })
-    
-}

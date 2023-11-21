@@ -1,49 +1,33 @@
 [
     {
-        "username": "calle",
-        "password": "calle",
+        "username": "111",
+        "password": "111",
         "level": 1,
         "popcorn": 0,
         "friends": [
-            "1",
-            "2"
+            "222"
         ],
         "friendRequests": [],
         "id": 1
     },
     {
-        "username": "1",
-        "password": "1",
+        "username": "222",
+        "password": "222",
         "level": 1,
         "popcorn": 0,
         "friends": [
-            "calle"
+            "111"
         ],
         "friendRequests": [],
         "id": 2
     },
     {
-        "username": "2",
-        "password": "2",
+        "username": "333",
+        "password": "333",
         "level": 1,
         "popcorn": 0,
-        "friends": [
-            "ff"
-        ],
+        "friends": [],
         "friendRequests": [],
         "id": 3
-    },
-    {
-        "username": "ff",
-        "password": "ff",
-        "level": 1,
-        "popcorn": 0,
-        "friends": [
-            "2"
-        ],
-        "friendRequests": {
-            "1": "2"
-        },
-        "id": 4
     }
 ]
