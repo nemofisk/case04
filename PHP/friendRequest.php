@@ -42,6 +42,22 @@ function friendRequest($received_data, $users){
         $message = ["message" => "Success!"];
         sendJSON($message, 200);
     }
+    if($subAction === "decline"){
+        $userToRespondTo = $received_data["requestedUser"];
+        foreach ($users as &$user) {
+            if ($user["username"] === $username) {
+                for ($i = 0; $i < count($user["friendRequests"]); $i++) {
+                    if ($user["friendRequests"][$i] === $userToRespondTo) {
+                        unset($user["friendRequests"][$i]);
+                    }
+                }
+            }
+        }
+        file_put_contents($filename, json_encode($users, JSON_PRETTY_PRINT));
+        $message = ["message" => "Success!"];
+        sendJSON($message, 200);
+ 
+    }
 }
 
 

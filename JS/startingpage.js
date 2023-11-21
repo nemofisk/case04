@@ -40,7 +40,7 @@ function RenderStartingpage() {
                 </div>
             </div>
             <div id="leaderBoard">
-                <div id"LeaderBoard1">Leaderboard 1</div>
+                <div id="LeaderBoard1">Leaderboard 1</div>
                 <div class="LeaderBoard">Leaderboard 2</div>
             </div>
         </div>
@@ -98,6 +98,7 @@ function displayFriendRequests() {
         for (let i = 0; i < resource.friendRequests.length; i++) {
             let div = document.createElement("div");
             div.textContent = resource.friendRequests[i];
+            div.setAttribute("id", resource.friendRequests[i]);
             requestBox.appendChild(div);
             let button = document.createElement("button");
             button.textContent = "Accept!"
@@ -106,8 +107,8 @@ function displayFriendRequests() {
             let button2 = document.createElement("button");
             button2.textContent = "Decilne!"
             button2.setAttribute("id", "decline")
-            requestBox.appendChild(button);
-            requestBox.appendChild(button2);
+            div.appendChild(button);
+            div.appendChild(button2);
 
             button.addEventListener("click", respondFriendRequest)
             button2.addEventListener("click", respondFriendRequest)
@@ -117,12 +118,16 @@ function displayFriendRequests() {
 }
 
 function respondFriendRequest(event) {
-    let user = event.target.previousElementSibling.textContent;
+    console.log(event);
     let action;
+    let user = event.target.parentElement.id;
+    console.log(user);
     if (event.target.id === "accept") {
         action = "accept"
+        
     } else {
         action = "decline"
+        
     }
 
     fetch("../PHP/api.php", {
