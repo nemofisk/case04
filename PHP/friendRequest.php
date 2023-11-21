@@ -13,8 +13,14 @@ function friendRequest($received_data, $users){
         $userRequest = $received_data["userToSearchFor"];
         foreach($users as &$user){
             if($user["username"] === $userRequest){
-                $user["friendRequests"][] = $username;
+                if(in_array($username, $user["friendRequests"])){
+                    $message = ["message" => "You can't add the same person twice!"];
+                    sendJSON($message, 400);
+                }else{
+                    $user["friendRequests"][] = $username;
+                }
             }
+            
         }
         file_put_contents($filename, json_encode($users, JSON_PRETTY_PRINT));
         $message = ["message" => "Success!"];

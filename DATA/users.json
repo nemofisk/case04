@@ -26,8 +26,32 @@
         "password": "333",
         "level": 1,
         "popcorn": 0,
+        "friends": [
+            "ff"
+        ],
+        "friendRequests": [
+            "ff"
+        ],
+        "id": 3
+    },
+    {
+        "username": "ff",
+        "password": "ff",
+        "level": 1,
+        "popcorn": 0,
+        "friends": [],
+        "friendRequests": {
+            "1": "2"
+        },
+        "id": 4
+    },
+    {
+        "username": "ffffffgfgff",
+        "password": "c",
+        "level": 1,
+        "popcorn": 0,
         "friends": [],
         "friendRequests": [],
-        "id": 3
+        "id": 5
     }
 ]
