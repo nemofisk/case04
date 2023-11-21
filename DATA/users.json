@@ -1,0 +1,24 @@
+[
+    {
+        "username": "111",
+        "password": "111",
+        "level": 1,
+        "popcorn": 0,
+        "friends": [
+            "222"
+        ],
+        "friendRequests": [],
+        "id": 1
+    },
+    {
+        "username": "222",
+        "password": "222",
+        "level": 1,
+        "popcorn": 0,
+        "friends": [
+            "111"
+        ],
+        "friendRequests": [],
+        "id": 2
+    }
+]
