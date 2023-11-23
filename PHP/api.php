@@ -16,6 +16,10 @@ if($requestMethod === "GET"){
     $received_data = json_decode(file_get_contents("php://input"), true);
 }
 
+if($action != "login" or $action != "register"){
+    checkCredentials($users, $received_data);
+}
+
 $filename = __DIR__."/../DATA/users.json";
 
 if (file_exists($filename)) {

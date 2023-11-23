@@ -31,4 +31,25 @@ function getRandomMovies($number){
     return $randomMovies;
 }
 
+function checkCredentials($users, $recieved_data){
+    $username = $recieved_data["username"];
+    $password = $recieved_data["password"];
+
+    $userFound = false;
+
+    foreach($users as $user){
+        if($user["username"] === $username){
+            $userFound = true;
+            if($user["password"] !== $password){
+                $message = ["message" => "Wrong credentials"];
+                sendJSON($message, 400);
+            }
+        }
+    }
+    if(!$userFound){
+        $error = ["message" => "User not found"];
+        sendJSON($error, 404);
+    }
+}
+
 ?>
