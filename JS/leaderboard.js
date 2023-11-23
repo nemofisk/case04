@@ -50,3 +50,32 @@ async function initializeFriendsLeaderboard(userId) {
     const friendsLeaderboardData = await fetchFriendsLeaderboard(userId);
     displayFriendsLeaderboard(friendsLeaderboardData);
 }
+
+
+
+async function filterString(string) {
+    const response = await fetch(`../DATA/movies.json`);
+    const data = await response.json();
+    let movies = [];
+
+    for (let i = 0; i < data.length; i++) {
+        movies.push(data[i].Title)
+
+    }
+    let filteredArray = [];
+
+    movies.forEach(movie => {
+        if (movie !== undefined) {
+            //The startsWith method is like the includes() method but it checks the beginning of the string instead. 
+            if (movie.toLowerCase().startsWith(string.toLowerCase())) {
+                filteredArray.push(movie);
+            }
+
+        }
+    })
+    console.log(filteredArray);
+
+
+
+}
+filterString()
