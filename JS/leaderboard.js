@@ -12,11 +12,11 @@ async function fetchFriendsLeaderboard(userId) {
 function displayFriendsLeaderboard(leaderboardData) {
     const leaderboardFriends = document.getElementById("friendsLeaderboard");
 
-    leaderboardData.forEach(user => {
+    for (let i = 0; i < 10; i++) {
         const userElement = document.createElement("div");
-        userElement.textContent = `${user.username}: ${user.popcorn}`;
+        userElement.textContent = `${leaderboardData[i].username}: ${leaderboardData[i].popcorn}`;
         leaderboardFriends.appendChild(userElement);
-    });
+    }
 }
 
 async function fetchLeaderboard() {
@@ -31,11 +31,13 @@ async function fetchLeaderboard() {
 function displayLeaderboard(leaderboardData) {
     const leaderboard1 = document.getElementById("LeaderBoard1");
 
-    leaderboardData.forEach(user => {
+
+    for (let i = 0; i < 10; i++) {
         const userElement = document.createElement("div");
-        userElement.textContent = `${user.username}: ${user.popcorn}`;
+        userElement.textContent = `${leaderboardData[i].username}: ${leaderboardData[i].popcorn}`;
         leaderboard1.appendChild(userElement);
-    });
+
+    }
 }
 
 
