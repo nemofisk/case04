@@ -53,7 +53,12 @@ async function initializeFriendsLeaderboard(userId) {
 
 
 
-async function filterString(string) {
+async function filterString(event) {
+    let dropdown = document.getElementById("displaySearchedMovies");
+    dropdown.innerHTML = ``;
+    //input event listner för att hämta strängen. 
+    const string = event.target.value;
+
     const response = await fetch(`../DATA/movies.json`);
     const data = await response.json();
     let movies = [];
@@ -70,12 +75,17 @@ async function filterString(string) {
             if (movie.toLowerCase().startsWith(string.toLowerCase())) {
                 filteredArray.push(movie);
             }
-
         }
     })
     console.log(filteredArray);
 
 
 
+    filteredArray.forEach(movie => {
+        let movieDiv = document.createElement("div");
+        movieDiv.classList.add("displayMovie");
+        movieDiv.textContent = movie;
+        dropdown.appendChild(movieDiv);
+    })
+
 }
-filterString()
