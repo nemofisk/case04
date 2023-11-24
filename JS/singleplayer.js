@@ -1,0 +1,174 @@
+function singlePlayer(event){
+    genreArray = [
+        "Crime",
+        "Drama",
+        "Biography",
+        "History",
+        "Action",
+        "Romance",
+        "War",
+        "Adventure",
+        "Fantasy",
+        "Sci-Fi",
+        "Thriller",
+        "Family",
+        "Mystery",
+        "Animation",
+        "Comedy",
+        "Horror",
+        "Musical",
+        "Music",
+        "Western",
+        
+      ];
+
+    
+
+    document.querySelector("main").innerHTML = `
+    <header id="menu">
+
+        <div class="profile">
+            <div id="profilePic"></div>
+            <p>TheMovieStar</p>
+        </div>
+    </header>
+    
+
+    <div>Choose a category!</div>
+    <div id="catergoryMenu"></div>
+    <div> i dont want to choose a category</div>
+        
+
+    </div>`
+let genresCategorty = document.querySelector("#catergoryMenu");
+
+for(let i = 0;i < genreArray.length;i++){
+    let div = document.createElement("div");
+    div.textContent = genreArray[i];
+    genresCategorty.appendChild(div)
+    div.addEventListener("click", chooseGenre)
+}
+}
+
+function chooseGenre(event){
+    let chosenGenre = event.target.textContent;
+
+    document.querySelector("main").innerHTML = `
+    <header id="menu">
+
+    <div class="profile">
+        <div id="profilePic"></div>
+        <p>TheMovieStar</p>
+    </div>
+    </header>
+
+
+    
+    `
+    let movieGenerArray = []
+    fetch("../DATA/movies.json").then(r => r.json()).then(resource => {
+        for (let i = 0; i < resource.length; i++) {
+            
+            if(resource[i].Genre !== undefined){
+                if(resource[i].Genre.includes(chosenGenre)){
+                    
+                    movieGenerArray.push(resource[i])
+                }
+            }
+            
+        }
+        let correctMovie = movieGenerArray[Math.floor(Math.random()*movieGenerArray.length)];   
+        let otherMovies = []
+
+        let i = 0;
+        while(i < 4){
+            let movie = movieGenerArray[Math.floor(Math.random()*movieGenerArray.length)];  
+            if(movie !== correctMovie){
+                otherMovies.push(movie)
+                i++
+            }
+        }
+
+        startGame(correctMovie, otherMovies)
+    })
+
+    
+}
+  
+function startGame(correctMovie, otherMovies){
+    console.log(correctMovie,otherMovies);
+
+    let quizQuiestions = ["quotes", "trailers", "frames", "actors", "plot"]
+    plotQuestion(correctMovie, otherMovies)
+
+    /*let questionCategory = quizQuiestions[Math.floor(Math.random()*quizQuiestions.length)];
+
+    console.log(questionCategory);
+    switch (questionCategory) {
+        case "quotes":
+            quotesQuiestion(correctMovie, otherMovies)
+            break;
+
+        case "trailers":
+            trailerQuestion(correctMovie, otherMovies)
+            break;
+        
+        case "frames":
+            framesQuestion(correctMovie, otherMovies)
+            break;
+
+        case "actors":
+            actorsQuestion(correctMovie, otherMovies)
+            break;
+        case "plot":
+            plotQuestion(correctMovie, otherMovies)
+            break;
+    }    
+    */
+}
+
+function plotQuestion(correctMovie, otherMovies){
+    document.querySelector("main").innerHTML = `
+    <header id="menu">
+
+    <div class="profile">
+        <div id="profilePic"></div>
+        <p>TheMovieStar</p>
+    </div>
+    </header>
+
+    <div id="question"></div>
+    <div id="plotText"></div>
+    <div id="questions"></div>
+    <br>
+    `
+    let quiestionDiv = document.getElementById("question");
+    quiestionDiv.textContent = "What movie does this plot descirbe?"
+    document.getElementById("plotText").textContent = correctMovie.Plot;
+    
+    let div = document.createElement("div")
+    let divApped = document.getElementById("questions");
+
+    let moveisArray = []
+
+    for(let i = 0; i < otherMovies.length; i++){
+        moveisArray.push(otherMovies[i].Title)
+    }
+    moveisArray.push(correctMovie.Title)
+
+    function shuffleArray(array) {
+        array.sort(() => Math.random() - 0.5);
+    }
+        
+    shuffleArray(moveisArray);
+    console.log(moveisArray);
+
+    moveisArray.forEach(movie => {
+        let div = document.createElement("div")
+        let divApped = document.getElementById("questions");
+        div.textContent = movie;
+        divApped.appendChild(div)
+    });
+
+
+}

@@ -58,9 +58,8 @@ function RenderStartingpage() {
 </main>
     `
     document.querySelector("#searchButton").addEventListener("click", searchUsers);
+    document.getElementById("Singelplayer").addEventListener("click", singlePlayer)
     displayFriendRequests()
 
     document.getElementById("searchMovie").addEventListener("input", filterString);
 }
-
-
