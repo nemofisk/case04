@@ -33,9 +33,16 @@ body {
     height: 200px;
     border: 1px solid black;
     overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
 }
 
 .displayMovie {
     width: 100%;
-    height: 10px;
+    height: 30px;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
 }

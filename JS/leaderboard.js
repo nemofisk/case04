@@ -56,6 +56,7 @@ async function initializeFriendsLeaderboard(userId) {
 async function filterString(event) {
     let dropdown = document.getElementById("displaySearchedMovies");
     dropdown.innerHTML = ``;
+
     //input event listner för att hämta strängen. 
     const string = event.target.value;
 
