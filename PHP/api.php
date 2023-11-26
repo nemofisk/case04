@@ -6,6 +6,7 @@ require_once "login.php";
 require_once "friendRequest.php";
 require_once "displayFriends.php";
 require_once "leaderboard.php";
+require_once "profile.php";
 
 ini_set("display_errors", 1);
 
@@ -14,10 +15,6 @@ if($requestMethod === "GET"){
     $received_data = $_GET;
 }else{
     $received_data = json_decode(file_get_contents("php://input"), true);
-}
-
-if($action != "login" or $action != "register"){
-    checkCredentials($users, $received_data);
 }
 
 $filename = __DIR__."/../DATA/users.json";
@@ -44,6 +41,8 @@ switch($action){
         break;
     case "leaderboard":
         leaderboard($users, $received_data);
+    case "profile":
+        profile($users, $received_data);
 }
 
 ?>
