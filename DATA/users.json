@@ -2,11 +2,11 @@
     {
         "username": "ffff",
         "password": "ffff",
-        "level": 1,
-        "popcorn": 0,
+        "level": 4,
+        "popcorn": 200,
         "friends": [],
         "friendRequests": [],
-        "xpGoal": 100,
+        "xpGoal": 450,
         "id": 1
     }
 ]
