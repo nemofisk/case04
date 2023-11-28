@@ -11,8 +11,9 @@ async function fetchFriendsLeaderboard(userId) {
 
 function displayFriendsLeaderboard(leaderboardData) {
     const leaderboardFriends = document.getElementById("friendsLeaderboard");
+    console.log(leaderboardData);
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < leaderboardData.length && i < 10; i++) {
         const userElement = document.createElement("div");
         userElement.textContent = `${leaderboardData[i].username}: ${leaderboardData[i].popcorn}`;
         leaderboardFriends.appendChild(userElement);
@@ -31,16 +32,12 @@ async function fetchLeaderboard() {
 function displayLeaderboard(leaderboardData) {
     const leaderboard1 = document.getElementById("LeaderBoard1");
 
-
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < leaderboardData.length && i < 10; i++) {
         const userElement = document.createElement("div");
         userElement.textContent = `${leaderboardData[i].username}: ${leaderboardData[i].popcorn}`;
         leaderboard1.appendChild(userElement);
-
     }
 }
-
-
 
 async function initializeLeaderboard() {
     const leaderboardData = await fetchLeaderboard();
@@ -56,6 +53,7 @@ async function initializeFriendsLeaderboard(userId) {
 async function filterString(event) {
     let dropdown = document.getElementById("displaySearchedMovies");
     dropdown.innerHTML = ``;
+    let input = document.getElementById("searchMovie");
 
     //input event listner för att hämta strängen. 
     const string = event.target.value;
@@ -78,17 +76,21 @@ async function filterString(event) {
             }
         }
     })
+
+
     console.log(filteredArray);
 
-
-
-
-//filterString()
     filteredArray.forEach(movie => {
         let movieDiv = document.createElement("div");
+        movieDiv.addEventListener("click", guessMovie);
         movieDiv.classList.add("displayMovie");
         movieDiv.textContent = movie;
         dropdown.appendChild(movieDiv);
-    })
 
+    })
+    function guessMovie(event) {
+        let inputBar = document.getElementById("searchMovie");
+        console.log(event.target.innerHTML);
+    }
 }
+
