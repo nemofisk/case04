@@ -38,14 +38,15 @@ function profile($users, $received_data){
         $guess = $received_data["guess"];
         $points = $received_data["points"];
         if($guess === "correct"){
-            foreach($users as &$user){
+            foreach($users as $index => $user){
                 if($user["username"] === $username){
                     
-                    $user["popcorn"] += $points;
+                    $users[$index]["popcorn"] += $points;
 
-                    if($user["popcorn"] === $user["xpGoal"]){
-                        $user["level"] += 1;
-                        $user["xpGoal"] += 250;
+                    if($users[$index]["popcorn"] === $users[$index]["xpGoal"]){
+                        $users[$index]["level"] += 1;
+                        $level = $users[$index]["level"] * 25;
+                        $users[$index]["xpGoal"] += 150 + $level;
                     }
                     putInUsersJSON($users);
                     sendJSON(["message" => $user], 200);
