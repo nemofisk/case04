@@ -168,12 +168,18 @@ function plotQuestion(correctMovie, otherMovies){
 
 function checkAnswer(event){
     let guess;
-
     if(event.target.textContent === window.localStorage.getItem("movie")){
-        console.log("sucess!");
-        guess = true;
+        let request = new Request("../PHP/api.php", {
+            method: "POST",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({ username: window.localStorage.getItem("username"), guess: "correct", action: "profile", subAction: "quizGuess", points: 25})
+        })
+        callAPI(request);
     }else{
         console.log("wrong");
         guess = false;
     }
+
+
+
 }

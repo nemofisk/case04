@@ -53,5 +53,15 @@
         "friends": [],
         "friendRequests": [],
         "id": 5
+    },
+    {
+        "username": "ffff",
+        "password": "ffff",
+        "level": 1,
+        "popcorn": 0,
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 100,
+        "id": 6
     }
 ]

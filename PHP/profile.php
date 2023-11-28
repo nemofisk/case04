@@ -1,6 +1,9 @@
 <?php 
 
 function profile($users, $received_data){
+
+    
+       
     $subAction = $received_data["subAction"];
     $username = $received_data["username"];
 
@@ -28,6 +31,27 @@ function profile($users, $received_data){
                 sendJSON(["message" => "Password changed successfully!"], 200);
             }
         }
+    }
+
+    if($subAction === "quizGuess"){
+        $guess = $received_data["guess"];
+        $points = $received_data["points"];
+        if($guess === "correct"){
+            foreach($users as $index => $user){
+                if($user["username"] === $username){
+                    
+                    $user["popcorn"] += $points;
+
+                    if($user["popcorn"] === $user["xpGoal"]){
+                        $user["level"] += 1;
+                        $user["xpGoal"] += 50;
+                    }
+                    putInUsersJSON($users);
+                    sendJSON(["message" => $user], 200);
+                }
+            }
+        }
+       
     }
 }
 

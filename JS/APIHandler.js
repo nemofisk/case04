@@ -19,7 +19,7 @@ async function callAPI(request, enableErrorHandler = true, enableLoadingModal = 
 
     if(!response.ok){
         if(enableLoadingModal){ 
-            loadingModal.remove(); 
+            document.querySelector(".loadingModal").remove();
         }
         
         if(!enableErrorHandler){ 
@@ -29,7 +29,7 @@ async function callAPI(request, enableErrorHandler = true, enableLoadingModal = 
         errorHandler(response);
     }else{
         if(enableLoadingModal){ 
-            loadingModal.remove(); 
+            document.querySelector(".loadingModal").remove(); 
         }
         
         return response;
