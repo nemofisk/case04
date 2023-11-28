@@ -61,12 +61,9 @@ function chooseGenre(event){
         <p>TheMovieStar</p>
     </div>
     </header>
-
-
-    
     `
-    let movieGenerArray = []
     fetch("../DATA/movies.json").then(r => r.json()).then(resource => {
+        let movieGenerArray = []
         for (let i = 0; i < resource.length; i++) {
             
             if(resource[i].Genre !== undefined){
@@ -74,31 +71,28 @@ function chooseGenre(event){
                     
                     movieGenerArray.push(resource[i])
                 }
-            }
-            
+            }  
         }
-        let correctMovie = movieGenerArray[Math.floor(Math.random()*movieGenerArray.length)];   
+           
         let otherMovies = []
-
+        let correctMovie = movieGenerArray[Math.floor(Math.random()*movieGenerArray.length)];
+        window.localStorage.setItem("movie", correctMovie.Title)
         let i = 0;
         while(i < 4){
             let movie = movieGenerArray[Math.floor(Math.random()*movieGenerArray.length)];  
-            if(movie !== correctMovie){
+            if(movie !== correctMovie && movie !== undefined){
                 otherMovies.push(movie)
                 i++
             }
         }
-
         startGame(correctMovie, otherMovies)
-    })
-
-    
+    })    
 }
   
 function startGame(correctMovie, otherMovies){
     console.log(correctMovie,otherMovies);
 
-    let quizQuiestions = ["quotes", "trailers", "frames", "actors", "plot"]
+    let quizQuiestions = ["quotes", "trailers", "poster", "actors", "plot"]
     plotQuestion(correctMovie, otherMovies)
 
     /*let questionCategory = quizQuiestions[Math.floor(Math.random()*quizQuiestions.length)];
@@ -113,8 +107,8 @@ function startGame(correctMovie, otherMovies){
             trailerQuestion(correctMovie, otherMovies)
             break;
         
-        case "frames":
-            framesQuestion(correctMovie, otherMovies)
+        case "poster":
+            posterQuestion(correctMovie, otherMovies)
             break;
 
         case "actors":
@@ -150,11 +144,11 @@ function plotQuestion(correctMovie, otherMovies){
     let divApped = document.getElementById("questions");
 
     let moveisArray = []
-
+    moveisArray.push(correctMovie.Title)
+    
     for(let i = 0; i < otherMovies.length; i++){
         moveisArray.push(otherMovies[i].Title)
     }
-    moveisArray.push(correctMovie.Title)
 
     function shuffleArray(array) {
         array.sort(() => Math.random() - 0.5);
@@ -168,7 +162,18 @@ function plotQuestion(correctMovie, otherMovies){
         let divApped = document.getElementById("questions");
         div.textContent = movie;
         divApped.appendChild(div)
+        div.addEventListener("click", checkAnswer)
     });
+}
 
+function checkAnswer(event){
+    let guess;
 
+    if(event.target.textContent === window.localStorage.getItem("movie")){
+        console.log("sucess!");
+        guess = true;
+    }else{
+        console.log("wrong");
+        guess = false;
+    }
 }
