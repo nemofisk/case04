@@ -6,6 +6,7 @@ require_once "login.php";
 require_once "friendRequest.php";
 require_once "displayFriends.php";
 require_once "leaderboard.php";
+require_once "profile.php";
 
 ini_set("display_errors", 1);
 
@@ -40,6 +41,8 @@ switch($action){
         break;
     case "leaderboard":
         leaderboard($users, $received_data);
+    case "profile":
+        profile($users, $received_data);
 }
 
 ?>

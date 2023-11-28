@@ -30,5 +30,4 @@ function getRandomMovies($number){
 
     return $randomMovies;
 }
-
 ?>
