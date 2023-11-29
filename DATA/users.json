@@ -12,11 +12,11 @@
     {
         "username": "wwww",
         "password": "wwww",
-        "level": 4,
-        "popcorn": 725,
+        "level": 5,
+        "popcorn": 975,
         "friends": [],
         "friendRequests": [],
-        "xpGoal": 950,
+        "xpGoal": 1225,
         "id": 2
     }
 ]
