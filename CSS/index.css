@@ -25,3 +25,6 @@ main {
     width: 20px;
     height: 20px;
 }
+iframe{
+    pointer-events: none;
+}

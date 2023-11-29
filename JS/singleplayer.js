@@ -2,11 +2,9 @@ function singlePlayer(event){
     genreArray = [
         "Crime",
         "Drama",
-        "Biography",
         "History",
         "Action",
         "Romance",
-        "War",
         "Adventure",
         "Fantasy",
         "Sci-Fi",
@@ -16,10 +14,7 @@ function singlePlayer(event){
         "Animation",
         "Comedy",
         "Horror",
-        "Musical",
-        "Music",
-        "Western",
-        
+        "Musical",         
       ];
 
     
@@ -93,7 +88,7 @@ function startGame(correctMovie, otherMovies){
     console.log(correctMovie,otherMovies);
 
     let quizQuiestions = ["quotes", "trailers", "poster", "actors", "plot"]
-    plotQuestion(correctMovie, otherMovies)
+    trailerQuestion(correctMovie)
 
     /*let questionCategory = quizQuiestions[Math.floor(Math.random()*quizQuiestions.length)];
 
@@ -104,7 +99,7 @@ function startGame(correctMovie, otherMovies){
             break;
 
         case "trailers":
-            trailerQuestion(correctMovie, otherMovies)
+            trailerQuestion(correctMovie)
             break;
         
         case "poster":
@@ -167,6 +162,7 @@ function plotQuestion(correctMovie, otherMovies){
 }
 
 function checkAnswer(event){
+    console.log("hei");
     let guess;
     if(event.target.textContent === window.localStorage.getItem("movie")){
         let request = new Request("../PHP/api.php", {
@@ -181,5 +177,28 @@ function checkAnswer(event){
     }
 
 
+
+}
+
+function trailerQuestion(correctMovie){
+    document.querySelector("main").innerHTML = `
+    <header id="menu">
+    
+    <div class="profile">
+    <div id="profilePic"></div>
+    <p>TheMovieStar</p>
+    </div>
+    </header>
+    
+    
+    <iframe width="900" height="562" src=${correctMovie.youtubeLink}?autoplay=1 title="Yung Lean - Hurt" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <input id="searchMovie"></input>
+    
+    <div id="displaySearchedMovies"></div>
+    <br>
+    `
+    document.getElementById("searchMovie").addEventListener("input", filterString);
+    document.getElementById("displaySearchedMovies").addEventListener("click"), checkAnswer;
+    console.log(correctMovie);
 
 }
