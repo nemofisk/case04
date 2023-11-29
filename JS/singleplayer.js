@@ -95,7 +95,7 @@ function chooseGenre(event) {
 function startGame(correctMovie, otherMovies) {
     console.log(correctMovie, otherMovies);
 
-    let quizQuiestions = ["quote", "trailer", "poster", "actors", "plot"]
+    let quizQuiestions = ["quotes", "trailers", "poster", "actors", "plot"]
 
     let questionCategory = quizQuiestions[Math.floor(Math.random() * quizQuiestions.length)];
 
@@ -279,6 +279,7 @@ function trailerQuestion(correctMovie) {
     <div id="profilePic"></div>
     <p>TheMovieStar</p>
     </div>
+    <div id="back">Go to home page!</div>
     </header>
     
     
@@ -301,5 +302,10 @@ function trailerQuestion(correctMovie) {
     document.getElementById("newQuestion").addEventListener("click", element => {
         chooseGenre(window.localStorage.getItem("genre"))
     })
+    document.getElementById("back").addEventListener("click", goToHomePage)
 
+}
+
+function goToHomePage(event) {
+    RenderStartingpage()
 }
