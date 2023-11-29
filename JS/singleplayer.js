@@ -96,8 +96,7 @@ function startGame(correctMovie, otherMovies) {
     console.log(correctMovie, otherMovies);
 
     let quizQuiestions = ["quote", "trailer", "poster", "actors", "plot"]
-    textQuestion(correctMovie, otherMovies)
-
+    
     let questionCategory = quizQuiestions[Math.floor(Math.random()*quizQuiestions.length)];
 
     console.log(questionCategory);
