@@ -46,7 +46,13 @@ for(let i = 0;i < genreArray.length;i++){
 }
 
 function chooseGenre(event){
-    let chosenGenre = event.target.textContent;
+    let chosenGenre;
+    if(window.localStorage.getItem("genre")){
+        chosenGenre = window.localStorage.getItem("genre")
+    }else{
+        chosenGenre = event.target.textContent;
+    }
+    window.localStorage.setItem("genre", chosenGenre);
 
     document.querySelector("main").innerHTML = `
     <header id="menu">
@@ -162,9 +168,16 @@ function plotQuestion(correctMovie, otherMovies){
 }
 
 function checkAnswer(event){
-    console.log("hei");
     let guess;
-    if(event.target.textContent === window.localStorage.getItem("movie")){
+
+    let movie;
+    if(event.target === undefined){
+        movie = event;
+    }
+    else{
+        movie = event.target.textContent
+    }
+    if(movie === window.localStorage.getItem("movie")){
         let request = new Request("../PHP/api.php", {
             method: "POST",
             headers: { "Content-type": "application/json" },
@@ -175,9 +188,6 @@ function checkAnswer(event){
         console.log("wrong");
         guess = false;
     }
-
-
-
 }
 
 function trailerQuestion(correctMovie){
@@ -195,10 +205,20 @@ function trailerQuestion(correctMovie){
     <input id="searchMovie"></input>
     
     <div id="displaySearchedMovies"></div>
+    <div id="answer">Answer</div>
+
+    <div id="newQuestion">New question</div>
+    
     <br>
     `
     document.getElementById("searchMovie").addEventListener("input", filterString);
-    document.getElementById("displaySearchedMovies").addEventListener("click"), checkAnswer;
-    console.log(correctMovie);
+    
+    document.getElementById("answer").addEventListener("click", movie => {
+        checkAnswer(document.querySelector("#searchMovie").value)
+    })
+
+    document.getElementById("newQuestion").addEventListener("click", element => {
+        chooseGenre(window.localStorage.getItem("genre"))
+    })
 
 }

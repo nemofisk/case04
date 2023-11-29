@@ -90,6 +90,7 @@ async function filterString(event) {
     })
     function guessMovie(event) {
         let inputBar = document.getElementById("searchMovie");
+        input.value = event.target.innerHTML
         console.log(event.target.innerHTML);
     }
 }
