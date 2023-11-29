@@ -1,4 +1,4 @@
-function singlePlayer(event){
+function singlePlayer(event) {
     genreArray = [
         "Crime",
         "Drama",
@@ -19,10 +19,10 @@ function singlePlayer(event){
         "Musical",
         "Music",
         "Western",
-        
-      ];
 
-    
+    ];
+
+
 
     document.querySelector("main").innerHTML = `
     <header id="menu">
@@ -40,17 +40,17 @@ function singlePlayer(event){
         
 
     </div>`
-let genresCategorty = document.querySelector("#catergoryMenu");
+    let genresCategorty = document.querySelector("#catergoryMenu");
 
-for(let i = 0;i < genreArray.length;i++){
-    let div = document.createElement("div");
-    div.textContent = genreArray[i];
-    genresCategorty.appendChild(div)
-    div.addEventListener("click", chooseGenre)
-}
+    for (let i = 0; i < genreArray.length; i++) {
+        let div = document.createElement("div");
+        div.textContent = genreArray[i];
+        genresCategorty.appendChild(div)
+        div.addEventListener("click", chooseGenre)
+    }
 }
 
-function chooseGenre(event){
+function chooseGenre(event) {
     let chosenGenre = event.target.textContent;
 
     document.querySelector("main").innerHTML = `
@@ -65,35 +65,36 @@ function chooseGenre(event){
     fetch("../DATA/movies.json").then(r => r.json()).then(resource => {
         let movieGenerArray = []
         for (let i = 0; i < resource.length; i++) {
-            
-            if(resource[i].Genre !== undefined){
-                if(resource[i].Genre.includes(chosenGenre)){
-                    
+
+            if (resource[i].Genre !== undefined) {
+                if (resource[i].Genre.includes(chosenGenre)) {
+
                     movieGenerArray.push(resource[i])
                 }
-            }  
+            }
         }
-           
+
         let otherMovies = []
-        let correctMovie = movieGenerArray[Math.floor(Math.random()*movieGenerArray.length)];
+        let correctMovie = movieGenerArray[Math.floor(Math.random() * movieGenerArray.length)];
         window.localStorage.setItem("movie", correctMovie.Title)
         let i = 0;
-        while(i < 4){
-            let movie = movieGenerArray[Math.floor(Math.random()*movieGenerArray.length)];  
-            if(movie !== correctMovie && movie !== undefined){
+        while (i < 4) {
+            let movie = movieGenerArray[Math.floor(Math.random() * movieGenerArray.length)];
+            if (movie !== correctMovie && movie !== undefined) {
                 otherMovies.push(movie)
                 i++
             }
         }
         startGame(correctMovie, otherMovies)
-    })    
+    })
 }
-  
-function startGame(correctMovie, otherMovies){
-    console.log(correctMovie,otherMovies);
+
+function startGame(correctMovie, otherMovies) {
+    console.log(correctMovie, otherMovies);
 
     let quizQuiestions = ["quotes", "trailers", "poster", "actors", "plot"]
-    plotQuestion(correctMovie, otherMovies)
+    //plotQuestion(correctMovie, otherMovies)
+    posterQuestion(correctMovie, otherMovies);
 
     /*let questionCategory = quizQuiestions[Math.floor(Math.random()*quizQuiestions.length)];
 
@@ -121,7 +122,63 @@ function startGame(correctMovie, otherMovies){
     */
 }
 
-function plotQuestion(correctMovie, otherMovies){
+
+
+function posterQuestion(correctMovie, otherMovies) {
+    console.log(correctMovie.Poster);
+    document.querySelector("main").innerHTML = `
+    <header id="menu">
+    
+    <div id="PosterContainer">
+        <div id="question">Guess the movie</div>
+        <div id="moviePoster">
+            <img src="${correctMovie.Poster}" alt="">
+        </div>
+
+        <input id="searchMovie"></input>
+        <div id="displaySearchedMovies"></div>
+        <button id="guessingButton"></button>
+    </div>
+    `
+    function changeBlur(blur) {
+        let moviePoster = document.getElementById("moviePoster");
+        moviePoster.style.filter = `blur(${blur}px)`;
+    }
+    let blurValue = 20;
+
+    const intervalID = setInterval(function () {
+        changeBlur(blurValue);
+        blurValue = blurValue - 1;
+
+        if (blurValue < 0) {
+            clearInterval(intervalID);
+        }
+    }, 1000);
+
+    let inputGuess = document.getElementById("searchMovie");
+    let guessingButton = document.getElementById("guessingButton");
+    guessingButton.addEventListener("click", e => {
+        if (inputGuess.value === correctMovie.Title) {
+            let request = new Request("../PHP/api.php", {
+                method: "POST",
+                headers: { "Content-type": "application/json" },
+                body: JSON.stringify({ username: window.localStorage.getItem("username"), guess: "correct", action: "profile", subAction: "quizGuess", points: 25 })
+            })
+            callAPI(request);
+        } else {
+            console.log("wrong");
+            guess = false;
+        }
+    })
+
+
+
+    document.getElementById("searchMovie").addEventListener("input", filterString);
+}
+
+
+
+function plotQuestion(correctMovie, otherMovies) {
     document.querySelector("main").innerHTML = `
     <header id="menu">
 
@@ -139,21 +196,21 @@ function plotQuestion(correctMovie, otherMovies){
     let quiestionDiv = document.getElementById("question");
     quiestionDiv.textContent = "What movie does this plot descirbe?"
     document.getElementById("plotText").textContent = correctMovie.Plot;
-    
+
     let div = document.createElement("div")
     let divApped = document.getElementById("questions");
 
     let moveisArray = []
     moveisArray.push(correctMovie.Title)
-    
-    for(let i = 0; i < otherMovies.length; i++){
+
+    for (let i = 0; i < otherMovies.length; i++) {
         moveisArray.push(otherMovies[i].Title)
     }
 
     function shuffleArray(array) {
         array.sort(() => Math.random() - 0.5);
     }
-        
+
     shuffleArray(moveisArray);
     console.log(moveisArray);
 
@@ -166,16 +223,16 @@ function plotQuestion(correctMovie, otherMovies){
     });
 }
 
-function checkAnswer(event){
+function checkAnswer(event) {
     let guess;
-    if(event.target.textContent === window.localStorage.getItem("movie")){
+    if (event.target.textContent === window.localStorage.getItem("movie")) {
         let request = new Request("../PHP/api.php", {
             method: "POST",
             headers: { "Content-type": "application/json" },
-            body: JSON.stringify({ username: window.localStorage.getItem("username"), guess: "correct", action: "profile", subAction: "quizGuess", points: 25})
+            body: JSON.stringify({ username: window.localStorage.getItem("username"), guess: "correct", action: "profile", subAction: "quizGuess", points: 25 })
         })
         callAPI(request);
-    }else{
+    } else {
         console.log("wrong");
         guess = false;
     }

@@ -10,7 +10,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
+
     flex-direction: column;
 }
 
@@ -24,4 +24,8 @@ main {
 #loginShortCut {
     width: 20px;
     height: 20px;
+}
+
+#moviePoster {
+    filter: blur(20px);
 }

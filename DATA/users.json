@@ -8,5 +8,15 @@
         "friendRequests": [],
         "xpGoal": 450,
         "id": 1
+    },
+    {
+        "username": "wwww",
+        "password": "wwww",
+        "level": 0,
+        "popcorn": 0,
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 100,
+        "id": 2
     }
 ]
