@@ -21,11 +21,10 @@ function RenderStartingpage() {
             </div>
         </div>
 
-        <input id="searchBar"></input>
-        <button id="searchButton">Search</button>
+        <input placeholder="Search friends"id="searchBar"></input>
+        <button id="searchButton">Add friend</button>
 
-        <input id="searchMovie"></input>
-        <div id="displaySearchedMovies"></div>
+       
 
     </header>
 
@@ -61,5 +60,5 @@ function RenderStartingpage() {
     document.getElementById("Singelplayer").addEventListener("click", singlePlayer)
     displayFriendRequests()
 
-    document.getElementById("searchMovie").addEventListener("input", filterString);
+   
 }

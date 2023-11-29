@@ -94,9 +94,10 @@ function chooseGenre(event) {
 
 function startGame(correctMovie, otherMovies) {
     console.log(correctMovie, otherMovies);
-    let quizQuiestions = ["quote", "trailer", "poster", "actors", "plot"]
 
-    let questionCategory = quizQuiestions[Math.floor(Math.random()*quizQuiestions.length)];
+    let quizQuiestions = ["quotes", "trailers", "poster", "actors", "plot"]
+
+    let questionCategory = quizQuiestions[Math.floor(Math.random() * quizQuiestions.length)];
 
     console.log(questionCategory);
     switch (questionCategory) {
@@ -107,7 +108,7 @@ function startGame(correctMovie, otherMovies) {
         case "trailer":
             trailerQuestion(correctMovie, otherMovies)
             break;
-        
+
         case "poster":
             posterQuestion(correctMovie, otherMovies)
             break;
@@ -118,7 +119,7 @@ function startGame(correctMovie, otherMovies) {
         case "plot":
             textQuestion(correctMovie, otherMovies, "plot")
             break;
-    }    
+    }
 }
 
 
@@ -159,8 +160,11 @@ function posterQuestion(correctMovie, otherMovies) {
     let inputGuess = document.getElementById("searchMovie");
     let guessingButton = document.getElementById("guessingButton");
     guessingButton.addEventListener("click", e => {
-        if (inputGuess.value === correctMovie.Title) {
 
+        let moviePoster = document.getElementById("moviePoster");
+        moviePoster.style.filter = `blur(0px)`;
+        clearInterval(intervalID);
+        if (inputGuess.value === correctMovie.Title) {
 
             let request = new Request("../PHP/api.php", {
                 method: "POST",
@@ -179,7 +183,7 @@ function posterQuestion(correctMovie, otherMovies) {
     })
 }
 
-function textQuestion(correctMovie, otherMovies, type){
+function textQuestion(correctMovie, otherMovies, type) {
     document.querySelector("main").innerHTML = `
     <header id="menu">
 
@@ -197,7 +201,7 @@ function textQuestion(correctMovie, otherMovies, type){
     let questionText;
     let plotText;
 
-    switch(type){
+    switch (type) {
         case "quotes":
             questionText = "What movie is this quote from?";
             plotText = correctMovie.Title;
@@ -215,7 +219,7 @@ function textQuestion(correctMovie, otherMovies, type){
     let quiestionDiv = document.getElementById("question");
     quiestionDiv.textContent = questionText;
     document.getElementById("plotText").textContent = plotText;
-    
+
     let div = document.createElement("div")
     let divApped = document.getElementById("questions");
 
@@ -277,6 +281,7 @@ function trailerQuestion(correctMovie) {
     <div id="profilePic"></div>
     <p>TheMovieStar</p>
     </div>
+    <div id="back">Go to home page!</div>
     </header>
     
     
@@ -299,5 +304,10 @@ function trailerQuestion(correctMovie) {
     document.getElementById("newQuestion").addEventListener("click", element => {
         chooseGenre(window.localStorage.getItem("genre"))
     })
+    document.getElementById("back").addEventListener("click", goToHomePage)
 
+}
+
+function goToHomePage(event) {
+    RenderStartingpage()
 }
