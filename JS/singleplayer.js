@@ -93,7 +93,7 @@ function startGame(correctMovie, otherMovies) {
     console.log(correctMovie, otherMovies);
 
     let quizQuiestions = ["quotes", "trailers", "poster", "actors", "plot"]
-    //plotQuestion(correctMovie, otherMovies)
+    plotQuestion(correctMovie, otherMovies)
     posterQuestion(correctMovie, otherMovies);
 
     /*let questionCategory = quizQuiestions[Math.floor(Math.random()*quizQuiestions.length)];
@@ -137,7 +137,8 @@ function posterQuestion(correctMovie, otherMovies) {
 
         <input id="searchMovie"></input>
         <div id="displaySearchedMovies"></div>
-        <button id="guessingButton"></button>
+        <button id="guessingButton">Guess</button>
+        <button id="nextQuestion">Guess</button>
     </div>
     `
     function changeBlur(blur) {
@@ -171,6 +172,7 @@ function posterQuestion(correctMovie, otherMovies) {
             guess = false;
         }
     })
+    document.getElementById("nextQuestion").addEventListener("click",)
 }
 
 
