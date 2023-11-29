@@ -155,6 +155,7 @@ function posterQuestion(correctMovie, otherMovies) {
         }
     }, 1000);
 
+    document.getElementById("searchMovie").addEventListener("input", filterString);
     let inputGuess = document.getElementById("searchMovie");
     let guessingButton = document.getElementById("guessingButton");
     guessingButton.addEventListener("click", e => {
@@ -170,10 +171,6 @@ function posterQuestion(correctMovie, otherMovies) {
             guess = false;
         }
     })
-
-
-
-    document.getElementById("searchMovie").addEventListener("input", filterString);
 }
 
 
