@@ -2,11 +2,9 @@ function singlePlayer(event) {
     genreArray = [
         "Crime",
         "Drama",
-        "Biography",
         "History",
         "Action",
         "Romance",
-        "War",
         "Adventure",
         "Fantasy",
         "Sci-Fi",
@@ -16,9 +14,8 @@ function singlePlayer(event) {
         "Animation",
         "Comedy",
         "Horror",
-        "Musical",
-        "Music",
-        "Western",
+        "Musical",         
+      
 
     ];
 
@@ -50,8 +47,14 @@ function singlePlayer(event) {
     }
 }
 
-function chooseGenre(event) {
-    let chosenGenre = event.target.textContent;
+function chooseGenre(event){
+    let chosenGenre;
+    if(window.localStorage.getItem("genre")){
+        chosenGenre = window.localStorage.getItem("genre")
+    }else{
+        chosenGenre = event.target.textContent;
+    }
+    window.localStorage.setItem("genre", chosenGenre);
 
     document.querySelector("main").innerHTML = `
     <header id="menu">
@@ -95,6 +98,7 @@ function startGame(correctMovie, otherMovies) {
     let quizQuiestions = ["quotes", "trailers", "poster", "actors", "plot"]
     plotQuestion(correctMovie, otherMovies)
     posterQuestion(correctMovie, otherMovies);
+    trailerQuestion(correctMovie)
 
     /*let questionCategory = quizQuiestions[Math.floor(Math.random()*quizQuiestions.length)];
 
@@ -105,7 +109,7 @@ function startGame(correctMovie, otherMovies) {
             break;
 
         case "trailers":
-            trailerQuestion(correctMovie, otherMovies)
+            trailerQuestion(correctMovie)
             break;
         
         case "poster":
@@ -224,7 +228,15 @@ function plotQuestion(correctMovie, otherMovies) {
 
 function checkAnswer(event) {
     let guess;
-    if (event.target.textContent === window.localStorage.getItem("movie")) {
+    
+    let movie;
+    if(event.target === undefined){
+        movie = event;
+    }
+    else{
+        movie = event.target.textContent
+    }
+    if(movie === window.localStorage.getItem("movie")){
         let request = new Request("../PHP/api.php", {
             method: "POST",
             headers: { "Content-type": "application/json" },
@@ -235,7 +247,37 @@ function checkAnswer(event) {
         console.log("wrong");
         guess = false;
     }
+}
 
+function trailerQuestion(correctMovie){
+    document.querySelector("main").innerHTML = `
+    <header id="menu">
+    
+    <div class="profile">
+    <div id="profilePic"></div>
+    <p>TheMovieStar</p>
+    </div>
+    </header>
+    
+    
+    <iframe width="900" height="562" src=${correctMovie.youtubeLink}?autoplay=1 title="Yung Lean - Hurt" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <input id="searchMovie"></input>
+    
+    <div id="displaySearchedMovies"></div>
+    <div id="answer">Answer</div>
 
+    <div id="newQuestion">New question</div>
+    
+    <br>
+    `
+    document.getElementById("searchMovie").addEventListener("input", filterString);
+    
+    document.getElementById("answer").addEventListener("click", movie => {
+        checkAnswer(document.querySelector("#searchMovie").value)
+    })
+
+    document.getElementById("newQuestion").addEventListener("click", element => {
+        chooseGenre(window.localStorage.getItem("genre"))
+    })
 
 }
