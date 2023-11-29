@@ -185,13 +185,6 @@
     "youtubeLink": "https://www.youtube.com/embed/aNQqoExfQsg"
   },
   {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Western"
-    ]
-  },
-  {
     "Title": "Casablanca",
     "Year": "1942",
     "Rated": "PG",
@@ -510,16 +503,6 @@
     "youtubeLink": "https://www.youtube.com/embed/r37MmBuFoc0"
   },
   {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Action",
-      "Drama",
-      "Mystery",
-      "Thriller"
-    ]
-  },
-  {
     "Title": "Vertigo",
     "Year": "1958",
     "Rated": "PG",
@@ -564,14 +547,6 @@
     "Response": "True",
     "tmdbID": 426,
     "youtubeLink": "https://www.youtube.com/embed/UHhsEYDg8GI"
-  },
-  {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Comedy",
-      "Romance"
-    ]
   },
   {
     "Title": "Taare Zameen Par",
@@ -861,13 +836,6 @@
     "youtubeLink": "https://www.youtube.com/embed/PLl99DlL6b4"
   },
   {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Western"
-    ]
-  },
-  {
     "Title": "Forrest Gump",
     "Year": "1994",
     "Rated": "PG-13",
@@ -957,13 +925,6 @@
     "Response": "True",
     "tmdbID": 389,
     "youtubeLink": "https://www.youtube.com/embed/TEN-2uTi2c0"
-  },
-  {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Drama"
-    ]
   },
   {
     "Title": "The Godfather",
@@ -1178,15 +1139,6 @@
     "Response": "True"
   },
   {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Drama",
-      "Family",
-      "Fantasy"
-    ]
-  },
-  {
     "Title": "The Godfather Part II",
     "Year": "1974",
     "Rated": "R",
@@ -1323,17 +1275,6 @@
     "youtubeLink": "https://www.youtube.com/embed/qWhS8Pjf-9c"
   },
   {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Animation",
-      "Adventure",
-      "Family",
-      "Fantasy",
-      "Mystery"
-    ]
-  },
-  {
     "Title": "The Dark Knight",
     "Year": "2008",
     "Rated": "PG-13",
@@ -1426,14 +1367,6 @@
     "Response": "True",
     "tmdbID": 1891,
     "youtubeLink": "https://www.youtube.com/embed/RtqDPxErX8Q"
-  },
-  {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Adventure",
-      "Drama"
-    ]
   },
   {
     "Title": "The Usual Suspects",
@@ -2222,15 +2155,6 @@
     "youtubeLink": "https://www.youtube.com/embed/7vl7F8S4cpQ"
   },
   {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Animation",
-      "Drama",
-      "War"
-    ]
-  },
-  {
     "Title": "Back to the Future",
     "Year": "1985",
     "Rated": "PG",
@@ -2460,13 +2384,6 @@
     "youtubeLink": "https://www.youtube.com/embed/ijXruSzfGEc"
   },
   {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Drama"
-    ]
-  },
-  {
     "Title": "American Beauty",
     "Year": "1999",
     "Rated": "R",
@@ -2694,23 +2611,6 @@
     "Response": "True",
     "tmdbID": 567,
     "youtubeLink": "https://www.youtube.com/embed/f9fz8q962Dc"
-  },
-  {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Drama",
-      "Thriller"
-    ]
-  },
-  {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Animation",
-      "Adventure",
-      "Fantasy"
-    ]
   },
   {
     "Title": "Blade Runner 2049",
@@ -3031,14 +2931,6 @@
     "youtubeLink": "https://www.youtube.com/embed/Ahi3JNdCD2U"
   },
   {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Drama",
-      "Family"
-    ]
-  },
-  {
     "Title": "Witness for the Prosecution",
     "Year": "1957",
     "Rated": "Approved",
@@ -3175,33 +3067,6 @@
     "Response": "True",
     "tmdbID": 46738,
     "youtubeLink": "https://www.youtube.com/embed/XJ69WnwvZhE"
-  },
-  {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Animation",
-      "Family",
-      "Fantasy"
-    ]
-  },
-  {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Drama",
-      "Fantasy"
-    ]
-  },
-  {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Animation",
-      "Adventure",
-      "Family",
-      "Fantasy"
-    ]
   },
   {
     "Title": "Inside Out",
@@ -4201,14 +4066,6 @@
     "youtubeLink": "https://www.youtube.com/embed/EJXDMwGWhoA"
   },
   {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Drama",
-      "Romance"
-    ]
-  },
-  {
     "Title": "Singin' in the Rain",
     "Year": "1952",
     "Rated": "G",
@@ -4346,15 +4203,6 @@
     "Response": "True",
     "tmdbID": 9277,
     "youtubeLink": "https://www.youtube.com/embed/_nAIb_J9T5M"
-  },
-  {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Biography",
-      "Drama",
-      "History"
-    ]
   },
   {
     "Title": "Amadeus",
@@ -4764,14 +4612,6 @@
     "youtubeLink": "https://www.youtube.com/embed/SPHfeNgogVs"
   },
   {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Drama",
-      "War"
-    ]
-  },
-  {
     "Title": "Inglourious Basterds",
     "Year": "2009",
     "Rated": "R",
@@ -4864,15 +4704,6 @@
     "Response": "True",
     "tmdbID": 374720,
     "youtubeLink": "https://www.youtube.com/embed/F-eMt3SrfFU"
-  },
-  {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Biography",
-      "Drama",
-      "History"
-    ]
   },
   {
     "Title": "Rang De Basanti",
@@ -5006,13 +4837,6 @@
     "Response": "True",
     "tmdbID": 10193,
     "youtubeLink": "https://www.youtube.com/embed/JcpWXaA2qeg"
-  },
-  {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Drama"
-    ]
   },
   {
     "Title": "2001: A Space Odyssey",
@@ -5333,15 +5157,6 @@
     "youtubeLink": "https://www.youtube.com/embed/JU9PdgB3rsk"
   },
   {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Biography",
-      "Drama",
-      "History"
-    ]
-  },
-  {
     "Title": "The Kid",
     "Year": "1921",
     "Rated": "Passed",
@@ -5382,14 +5197,6 @@
     "Response": "True",
     "tmdbID": 10098,
     "youtubeLink": "https://www.youtube.com/embed/O5WXokyub-4"
-  },
-  {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Drama",
-      "Mystery"
-    ]
   },
   {
     "Title": "Rashômon",
@@ -5515,22 +5322,6 @@
     "youtubeLink": "https://www.youtube.com/embed/LSntQerk8cQ"
   },
   {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Drama"
-    ]
-  },
-  {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Comedy",
-      "Drama",
-      "Thriller"
-    ]
-  },
-  {
     "Title": "A Wednesday",
     "Year": "2008",
     "Rated": "Not Rated",
@@ -5599,22 +5390,6 @@
     "Production": "N/A",
     "Website": "N/A",
     "Response": "True"
-  },
-  {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Western"
-    ]
-  },
-  {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Adventure",
-      "Drama",
-      "Thriller"
-    ]
   },
   {
     "Title": "Batman Begins",
@@ -5800,16 +5575,6 @@
     "Response": "True",
     "tmdbID": 14160,
     "youtubeLink": "https://www.youtube.com/embed/ORFWdXl_zJ4"
-  },
-  {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Crime",
-      "Drama",
-      "Mystery",
-      "Thriller"
-    ]
   },
   {
     "Title": "Ben-Hur",
@@ -7390,33 +7155,6 @@
     "youtubeLink": "https://www.youtube.com/embed/wCc2v7izk8w"
   },
   {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Drama",
-      "Mystery",
-      "Romance",
-      "Thriller"
-    ]
-  },
-  {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Action",
-      "Adventure",
-      "Fantasy"
-    ]
-  },
-  {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Drama",
-      "War"
-    ]
-  },
-  {
     "Title": "The Third Man",
     "Year": "1949",
     "Rated": "Approved",
@@ -7821,14 +7559,6 @@
     "Response": "True",
     "tmdbID": 826,
     "youtubeLink": "https://www.youtube.com/embed/RlC7XBayj0s"
-  },
-  {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Drama",
-      "Romance"
-    ]
   },
   {
     "Title": "The Wizard of Oz",
@@ -9127,14 +8857,6 @@
     "youtubeLink": "https://www.youtube.com/embed/Ao9AI1pLeG0"
   },
   {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Crime",
-      "Drama"
-    ]
-  },
-  {
     "Title": "Rush",
     "Year": "2013",
     "Rated": "R",
@@ -9363,31 +9085,6 @@
     "Response": "True",
     "tmdbID": 1398,
     "youtubeLink": "https://www.youtube.com/embed/JCuwthnCRpg"
-  },
-  {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Animation",
-      "Adventure",
-      "Fantasy",
-      "Sci-Fi"
-    ]
-  },
-  {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Drama",
-      "Family"
-    ]
-  },
-  {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Drama"
-    ]
   },
   {
     "Title": "Paper Moon",
@@ -9651,27 +9348,6 @@
     "Response": "True",
     "tmdbID": 422,
     "youtubeLink": "https://www.youtube.com/embed/4CjMvGBY_lI"
-  },
-  {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Crime",
-      "Drama",
-      "Mystery",
-      "Romance",
-      "Thriller"
-    ]
-  },
-  {
-    "Response": "False",
-    "Error": "Movie not found!",
-    "Genre": [
-      "Crime",
-      "Drama",
-      "Mystery",
-      "Thriller"
-    ]
   },
   {
     "Title": "No Country for Old Men",
