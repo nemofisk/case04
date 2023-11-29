@@ -94,9 +94,8 @@ function chooseGenre(event) {
 
 function startGame(correctMovie, otherMovies) {
     console.log(correctMovie, otherMovies);
-
     let quizQuiestions = ["quote", "trailer", "poster", "actors", "plot"]
-    
+
     let questionCategory = quizQuiestions[Math.floor(Math.random()*quizQuiestions.length)];
 
     console.log(questionCategory);
@@ -161,6 +160,8 @@ function posterQuestion(correctMovie, otherMovies) {
     let guessingButton = document.getElementById("guessingButton");
     guessingButton.addEventListener("click", e => {
         if (inputGuess.value === correctMovie.Title) {
+
+
             let request = new Request("../PHP/api.php", {
                 method: "POST",
                 headers: { "Content-type": "application/json" },
@@ -238,7 +239,7 @@ function textQuestion(correctMovie, otherMovies, type){
         div.textContent = movie;
         divApped.appendChild(div)
         div.addEventListener("click", e => {
-            checkAnswer(correctMovie, e)
+            checkAnswer(e)
         })
     });
 }
@@ -254,6 +255,8 @@ function checkAnswer(event) {
         movie = event.target.textContent
     }
     if (movie === window.localStorage.getItem("movie")) {
+        console.log("Correct");
+
         let request = new Request("../PHP/api.php", {
             method: "POST",
             headers: { "Content-type": "application/json" },
