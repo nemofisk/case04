@@ -29,3 +29,6 @@ main {
 #moviePoster {
     filter: blur(20px);
 }
+iframe{
+    pointer-events: none;
+}
