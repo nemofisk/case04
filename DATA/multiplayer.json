@@ -1,0 +1,43 @@
+[
+    {
+        "gameID": 83293,
+        "hostID": 4,
+        "genres": ["Action", "Thriller"],
+        "members": [
+            {
+                "userID": 1,
+                "name": "Calle",
+                "profilePicture": "URL",
+                "points": 0
+            }, 
+            {
+                "userID": 2,
+                "name": "Wille",
+                "profilePicture": "URL",
+                "points": 0
+            }, 
+            {
+                "userID": 65,
+                "name": "Ossian",
+                "profilePicture": "URL",
+                "points": 0
+            }
+        ],
+        "questions": [
+            {
+                "question": 1,
+                "type": "trailer",
+                "youtubeLink": "abc",
+                "correctAnswer": "Titanic",
+                "alternatives": ["Titanic", "Mario", "Avatar"]
+            },
+            {
+                "question": 2,
+                "type": "poster",
+                "posterLink": "xyz",
+                "correctAnswer": "Titanic",
+                "alternatives": ["Titanic", "Mario", "Avatar"]
+            }
+        ]
+    }
+]
