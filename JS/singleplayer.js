@@ -9,14 +9,9 @@ function singlePlayer(event) {
         "Fantasy",
         "Sci-Fi",
         "Thriller",
-        "Family",
-        "Mystery",
         "Animation",
         "Comedy",
         "Horror",
-        "Musical",
-
-
     ];
 
 
@@ -63,6 +58,7 @@ function chooseGenre(event) {
         <div id="profilePic"></div>
         <p>TheMovieStar</p>
     </div>
+    
     </header>
     `
     fetch("../DATA/movies.json").then(r => r.json()).then(resource => {
@@ -101,11 +97,11 @@ function startGame(correctMovie, otherMovies) {
 
     console.log(questionCategory);
     switch (questionCategory) {
-        case "quote":
+        case "quotes":
             textQuestion(correctMovie, otherMovies, "quotes")
             break;
 
-        case "trailer":
+        case "trailers":
             trailerQuestion(correctMovie, otherMovies)
             break;
 
@@ -116,6 +112,7 @@ function startGame(correctMovie, otherMovies) {
         case "actors":
             textQuestion(correctMovie, otherMovies, "actors")
             break;
+
         case "plot":
             textQuestion(correctMovie, otherMovies, "plot")
             break;
@@ -196,8 +193,14 @@ function textQuestion(correctMovie, otherMovies, type) {
     <div id="question"></div>
     <div id="plotText"></div>
     <div id="questions"></div>
+    <button id="nextQuestion">Next</button>
     <br>
     `
+
+    document.getElementById("nextQuestion").addEventListener("click", e => {
+        chooseGenre(window.localStorage.getItem("genre"));
+    })
+
     let questionText;
     let plotText;
 
