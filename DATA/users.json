@@ -3,14 +3,28 @@
         "username": "calle",
         "password": "callw",
         "level": 666,
-        "popcorn": 225,
+        "popcorn": 425,
         "friends": [],
         "friendRequests": [],
+<<<<<<< HEAD
         "invites": [{
             "gameID": 83293,
             "hostID": 4
         }],
         "xpGoal": 450,
+=======
+        "xpGoal": 17275,
+>>>>>>> 9554fbcb1ff3118a2d78e4a1c7fd8eccfa39dfed
         "id": 1
+    },
+    {
+        "username": "wwww",
+        "password": "wwww",
+        "level": 6,
+        "popcorn": 1300,
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 1525,
+        "id": 2
     }
 ]

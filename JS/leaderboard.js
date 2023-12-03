@@ -77,9 +77,6 @@ async function filterString(event) {
         }
     })
 
-
-    console.log(filteredArray);
-
     filteredArray.forEach(movie => {
         let movieDiv = document.createElement("div");
         movieDiv.addEventListener("click", guessMovie);
@@ -90,6 +87,7 @@ async function filterString(event) {
     })
     function guessMovie(event) {
         let inputBar = document.getElementById("searchMovie");
+        inputBar.value = event.target.textContent;
         console.log(event.target.innerHTML);
     }
 }
