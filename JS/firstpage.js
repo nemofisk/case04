@@ -1,6 +1,6 @@
 "use strict";
 
-function renderFirstPage(){
+function renderFirstPage() {
 
     document.querySelector("main").innerHTML = `
         <div id="container">

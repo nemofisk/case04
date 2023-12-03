@@ -60,5 +60,5 @@ function RenderStartingpage() {
     document.getElementById("Singelplayer").addEventListener("click", singlePlayer)
     displayFriendRequests()
 
-   
+
 }

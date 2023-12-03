@@ -1,8 +1,8 @@
 "use strict";
 
-async function callAPI(request, enableErrorHandler = true, enableLoadingModal = true){
-    
-    if(enableLoadingModal){
+async function callAPI(request, enableErrorHandler = true, enableLoadingModal = true) {
+
+    if (enableLoadingModal) {
         const loadingModal = document.createElement("div");
         loadingModal.classList.add("loadingModal");
         loadingModal.innerHTML = `
@@ -10,35 +10,35 @@ async function callAPI(request, enableErrorHandler = true, enableLoadingModal = 
                 <span>Loading...</span>
             </div>
         `
-    
+
         document.querySelector("body").appendChild(loadingModal);
-    
+
     }
 
     const response = await fetch(request);
 
-    if(!response.ok){
-        if(enableLoadingModal){ 
+    if (!response.ok) {
+        if (enableLoadingModal) {
             document.querySelector(".loadingModal").remove();
         }
-        
-        if(!enableErrorHandler){ 
-            return response; 
+
+        if (!enableErrorHandler) {
+            return response;
         }
 
         errorHandler(response);
-    }else{
-        if(enableLoadingModal){ 
-            document.querySelector(".loadingModal").remove(); 
+    } else {
+        if (enableLoadingModal) {
+            document.querySelector(".loadingModal").remove();
         }
-        
+
         return response;
     }
 
 }
 
-async function errorHandler(response){
-    
+async function errorHandler(response) {
+
     const resource = await response.json();
 
     const errorModal = document.createElement("div");
