@@ -8,8 +8,8 @@
         "friendRequests": [],
         "invites": [
             {
-                "gameID": 83293,
-                "hostID": 4
+                "gameID": 1,
+                "hostID": 1
             }
         ],
         "xpGoal": 450,
@@ -22,6 +22,9 @@
         "popcorn": 1300,
         "friends": [],
         "friendRequests": [],
+        "gameInvites": [
+            "calle"
+        ],
         "xpGoal": 1525,
         "id": 2
     },
