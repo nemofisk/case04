@@ -7,6 +7,7 @@ require_once "friendRequest.php";
 require_once "displayFriends.php";
 require_once "leaderboard.php";
 require_once "profile.php";
+require_once "multiplayer.php";
 
 ini_set("display_errors", 1);
 
@@ -43,6 +44,11 @@ switch($action){
         leaderboard($users, $received_data);
     case "profile":
         profile($users, $received_data);
+        break;
+    case "inviteToGame":
+        multiplayer($users, $received_data);
+        break;
+    
 }
 
 ?>
