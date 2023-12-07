@@ -6,10 +6,12 @@
         "popcorn": 425,
         "friends": [],
         "friendRequests": [],
-        "invites": [{
-            "gameID": 83293,
-            "hostID": 4
-        }],
+        "invites": [
+            {
+                "gameID": 83293,
+                "hostID": 4
+            }
+        ],
         "xpGoal": 450,
         "id": 1
     },
@@ -22,5 +24,15 @@
         "friendRequests": [],
         "xpGoal": 1525,
         "id": 2
+    },
+    {
+        "username": "wwwww",
+        "password": "wwwww",
+        "level": 1,
+        "popcorn": 0,
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 100,
+        "id": 3
     }
 ]
