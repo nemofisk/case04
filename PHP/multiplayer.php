@@ -6,12 +6,17 @@ ini_set("display_errors", 1);
 
 function multiplayer($users, $received_data){
     
+    $gameID = rand(1,9);
+    echo($gameID);
+    
     $hostUsername = $received_data["username"];
     $action = $received_data["action"];
     $userToInvite = $received_data["invitedUser"];
         
     $filename = __DIR__."/../DATA/users.json";
+    $multiplayerFilename = __DIR__."/../DATA/multiplayer.json";
     $users = json_decode(file_get_contents($filename), true);
+    $multiplayerInformation = json_decode(file_get_contents($multiplayerFilename), true);
 
     if($action === "inviteToGame"){
         foreach($users as &$user){
