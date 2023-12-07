@@ -86,8 +86,6 @@ function chooseCatagoryMultiplayer(event) {
 
     function chooseGenre(event) {
         SelectedGarnres.push(event.target.innerHTML);
-
-        ContinueButton.addEventListener("click",);
     }
 
     function ContinueFunction(array) {
