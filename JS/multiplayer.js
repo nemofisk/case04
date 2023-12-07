@@ -85,6 +85,7 @@ function chooseCatagoryMultiplayer(event) {
     }
 
     function chooseGenre(event) {
+        let ContinueButton = document.getElementById("Continue");
         SelectedGarnres.push(event.target.innerHTML);
         ContinueButton.addEventListener("click", event => {
             ContinueFunction(SelectedGarnres);
@@ -92,7 +93,7 @@ function chooseCatagoryMultiplayer(event) {
     }
 
     function ContinueFunction(array) {
-        
+        console.log(array);
         inviteFriends(array);
     }
 }
@@ -101,7 +102,7 @@ function chooseCatagoryMultiplayer(event) {
 
 
 
-function inviteFriends(genreArray){
+function inviteFriends(genreArray) {
     document.getElementById("inviteUser").addEventListener("click", inviteFriends)
     document.querySelector("main").innerHTML = `
     <input id="userSearch"></input>
@@ -114,10 +115,10 @@ function inviteFriends(genreArray){
     fetch("../PHP/api.php", {
         method: "POST",
         headers: { "Content-type": "application/json" },
-        body: JSON.stringify({ username: hostUsername, invitedUser: inviteUser, action: "inviteToGame", genres: genreArray})
+        body: JSON.stringify({ username: hostUsername, invitedUser: inviteUser, action: "inviteToGame", genres: genreArray })
     }).then(r => r.json()).then(resource => {
         console.log(resource);
     });
-    
-    
+
+
 }
