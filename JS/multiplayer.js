@@ -89,6 +89,7 @@ function chooseCatagoryMultiplayer(event) {
     }
 
     function ContinueFunction(array) {
+        
         inviteFriends(array);
     }
 }
