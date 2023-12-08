@@ -80,6 +80,7 @@ function renderStartingpage() {
         `
     <div id="hamburgerMenu">Hamburger</div>
 
+
     
     <div class="curtains"></div>
     <div class="curtainsLight"></div>
@@ -172,20 +173,22 @@ function DisplaySidebar(event) {
     })
     document.getElementById("RenderLeaderboard").addEventListener("click", renderLeaderBoard)
     document.getElementById("renderLyckyWheel").addEventListener("click", e => {
-        //renderLuckyWheel()
+        renderLuckyWheel()
     })
     document.getElementById("renderSettings").addEventListener("click", e => {
         //renderSettings()
     })
+
 }
 
 function renderInvites() {
     fetch(`../PHP/api.php?action=multiplayer&subAction=invitations&username=${localStorage.getItem("username")}`)
         .then(r => r.json())
         .then(resource => {
-            if (resource !== null) {
+            if (resource.message.hasOwnProperty("hostName")) {
                 popUpFunction("gameInvites", resource)
             }
+
         })
 
 }
