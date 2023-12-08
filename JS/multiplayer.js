@@ -35,6 +35,9 @@ function chooseCatagoryMultiplayer(event) {
 
     </div>`
     let genresCategorty = document.querySelector("#catergoryMenu");
+    let ContinueButton = document.getElementById("Continue");
+    ContinueButton.disabled = true;
+
 
     for (let i = 0; i < genreArray.length; i++) {
         let div = document.createElement("div");
@@ -45,8 +48,7 @@ function chooseCatagoryMultiplayer(event) {
         document.getElementById("Mixed").addEventListener("click", mixedCatagories);
     }
 
-    let SelectedGarnres = [];
-
+    let SelectedGarnres;
     function mixedCatagories(event) {
         let ContinueButton = document.getElementById("Continue");
         let MixedCatagoryButton = document.getElementById("Mixed");
@@ -54,7 +56,7 @@ function chooseCatagoryMultiplayer(event) {
         let disabledCatagorys = document.querySelectorAll(".SelectedCatagorys");
 
         if (MixedCatagoryButton.classList.contains("MixedChosen")) {
-
+            ContinueButton.disabled = false;
             disabledCatagorys.forEach(catagory => {
                 catagory.removeEventListener("click", chooseGenre);
             })
@@ -74,8 +76,10 @@ function chooseCatagoryMultiplayer(event) {
                 "Horror",
             ]
         } else {
+            ContinueButton.disabled = true;
             SelectedGarnres = [];
             disabledCatagorys.forEach(catagory => {
+                catagory.classList.toggle("SelectedGanras")
                 catagory.addEventListener("click", chooseGenre);
             })
         }
@@ -86,14 +90,24 @@ function chooseCatagoryMultiplayer(event) {
 
     function chooseGenre(event) {
         let ContinueButton = document.getElementById("Continue");
-        SelectedGarnres.push(event.target.innerHTML);
+        event.target.classList.toggle("SelectedGanras")
+        let enabledCatagorys = document.querySelectorAll(".SelectedGanras");
+        if (enabledCatagorys.length > 0) {
+            ContinueButton.disabled = false;
+        } else {
+            ContinueButton.disabled = true;
+        }
+        let genres = []
+        enabledCatagorys.forEach(category => {
+            genres.push(category.textContent);
+        })
+        SelectedGarnres = genres;
         ContinueButton.addEventListener("click", event => {
             ContinueFunction(SelectedGarnres);
         });
     }
 
     function ContinueFunction(array) {
-        console.log(array);
         inviteFriends(array);
     }
 }
@@ -103,6 +117,8 @@ function chooseCatagoryMultiplayer(event) {
 
 
 function inviteFriends(genreArray) {
+    console.log(genreArray);
+    document.getElementById("inviteUser").addEventListener("click", inviteFriends)
     document.querySelector("main").innerHTML = `
     <input id="userSearch"></input>
     <button id="inviteUser">Invite User!</button>
