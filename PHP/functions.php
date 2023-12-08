@@ -7,6 +7,15 @@ function sendJSON($message, $http_code = 200)
     exit();
 }
 
+function checkAndReturnFile($filename){
+    if (file_exists($filename)) {
+        $fileArray = json_decode(file_get_contents($filename), true);
+    } else {
+        $fileArray = [];
+    }
+
+    return $fileArray;
+}
 
 function putInUsersJSON($newData){
     $filename = __DIR__."/../DATA/users.json";

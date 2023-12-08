@@ -18,13 +18,11 @@ if($requestMethod === "GET"){
     $received_data = json_decode(file_get_contents("php://input"), true);
 }
 
-$filename = __DIR__."/../DATA/users.json";
+$filenameUsers = __DIR__."/../DATA/users.json";
+$filenameMultiplayer = __DIR__."/../DATA/multiplayer.json";
 
-if (file_exists($filename)) {
-    $users = json_decode(file_get_contents($filename), true);
-} else {
-    $users = [];
-}
+$users = checkAndReturnFile($filenameUsers);
+$games = checkAndReturnFile($filenameMultiplayer);
 
 $action = $received_data["action"];
 switch($action){
@@ -48,8 +46,9 @@ switch($action){
     case "multiplayer":
         multiplayer($users, $received_data);
         break;
-   
-    
+    case "liveGame":
+        liveGame($users, $games, $received_data);
+        break;
     
 }
 
