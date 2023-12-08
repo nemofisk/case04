@@ -171,7 +171,7 @@ function DisplaySidebar(event) {
     })
     document.getElementById("RenderLeaderboard").addEventListener("click", renderLeaderBoard)
     document.getElementById("renderLyckyWheel").addEventListener("click", e => {
-        //renderLuckyWheel()
+        renderLuckyWheel()
     })
     document.getElementById("renderSettings").addEventListener("click", e => {
         //renderSettings()
