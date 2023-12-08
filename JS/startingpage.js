@@ -80,6 +80,8 @@ function renderInvites(){
     .then(resource => {
         if(resource !== null){
             popUpFunction("gameInvites", resource)    
+        }else{
+            return false;
         }
     })
 
