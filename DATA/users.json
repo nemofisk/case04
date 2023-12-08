@@ -33,7 +33,10 @@
         "password": "wwwww",
         "level": 2,
         "popcorn": 125,
-        "friends": [],
+        "friends": [
+            "wwww",
+            "calle"
+        ],
         "friendRequests": [],
         "xpGoal": 300,
         "id": 3

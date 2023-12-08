@@ -5,7 +5,7 @@ function renderLeaderBoard() {
         <h1>Leaderboards</h1>
 
         
-        <div id="WorldLeaderboard">World</div>
+        <div id="WorldLeaderboard"></div>
         <div id="friendsLeaderboard">Friends</div>
        
     `
@@ -19,6 +19,7 @@ async function fetchFriendsLeaderboard(userId) {
     try {
         const response = await fetch(`../PHP/api.php?action=leaderboard&subAction=friendly&userId=${userId}`);
         const data = await response.json();
+        console.log(data);
         return data;
     } catch (error) {
         console.error('Error fetching friends leaderboard:', error);
@@ -29,9 +30,7 @@ function displayFriendsLeaderboard(leaderboardData) {
     const leaderboardFriends = document.getElementById("friendsLeaderboard");
     console.log(leaderboardData);
 
-    let popcorn = localStorage.getItem(`Popcorn`);
-
-    for (let i = 0; i < leaderboardData.length && i < 10; i++) {
+    for (let i = 0; i < leaderboardData.length && i < 11; i++) {
         const userElement = document.createElement("div");
         userElement.textContent = `${leaderboardData[i].username}: ${leaderboardData[i].popcorn}`;
         leaderboardFriends.appendChild(userElement);
@@ -48,13 +47,25 @@ async function fetchLeaderboard() {
     }
 }
 function displayLeaderboard(leaderboardData) {
+    let username = localStorage.getItem("username");
+
     const leaderboard1 = document.getElementById("WorldLeaderboard");
 
-    for (let i = 0; i < leaderboardData.length && i < 10; i++) {
+    leaderboardData.forEach(user => {
+        if (user.username === username) {
+            let div = document.createElement("div")
+            div.textContent = `${user.username} ${user.popcorn}`;
+            leaderboard1.prepend("World", div);
+        }
+    })
+
+    for (let i = 0; i < leaderboardData.length && i < 11; i++) {
         const userElement = document.createElement("div");
         userElement.textContent = `${leaderboardData[i].username}: ${leaderboardData[i].popcorn}`;
         leaderboard1.appendChild(userElement);
     }
+
+
 }
 
 async function initializeLeaderboard() {

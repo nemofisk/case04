@@ -113,6 +113,17 @@ function renderStartingpage() {
     document.getElementById("Singelplayer").addEventListener("click", singlePlayer)
     document.getElementById("Multiplayer").addEventListener("click", chooseCatagoryMultiplayer);
     document.getElementById("hamburgerMenu").addEventListener("click", DisplaySidebar);
+
+    setInterval(checkInvitations, 5000);
+    let intervalID = setInterval(renderInvites, 5000);
+    function checkInvitations() {
+        if (document.querySelector("#invitationPopUp")) {
+            clearInterval(intervalID)
+        }
+    }
+
+
+    displayFriendRequests()
 }
 
 function DisplaySidebar(event) {
