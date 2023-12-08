@@ -59,7 +59,16 @@ function RenderStartingpage() {
     document.querySelector("#searchButton").addEventListener("click", searchUsers);
     document.getElementById("Singelplayer").addEventListener("click", singlePlayer)
     document.getElementById("Multiplayer").addEventListener("click", chooseCatagoryMultiplayer);
+
+    setInterval(checkInvitations, 5000);
     let intervalID = setInterval(renderInvites, 5000);
+    function checkInvitations(){
+        if(document.querySelector("#invitationPopUp")){
+            clearInterval(intervalID)
+        }
+    }
+    
+    
     displayFriendRequests()
 
 
