@@ -114,6 +114,15 @@ function renderStartingpage() {
     document.getElementById("Singelplayer").addEventListener("click", singlePlayer)
     document.getElementById("Multiplayer").addEventListener("click", chooseCatagoryMultiplayer);
     document.getElementById("hamburgerMenu").addEventListener("click", DisplaySidebar);
+
+    setInterval(checkInvitations, 5000);
+    let intervalID = setInterval(renderInvites, 5000);
+    function checkInvitations(){
+        if(document.querySelector("#invitationPopUp")){
+            clearInterval(intervalID)
+        }
+    }
+    
 }
 
 function DisplaySidebar(event) {
@@ -167,15 +176,17 @@ function DisplaySidebar(event) {
     document.getElementById("renderSettings").addEventListener("click", e => {
         //renderSettings()
     })
+    
 }
 
 function renderInvites() {
     fetch(`../PHP/api.php?action=multiplayer&subAction=invitations&username=${localStorage.getItem("username")}`)
         .then(r => r.json())
         .then(resource => {
-            if (resource !== null) {
+            if (resource.message.hasOwnProperty("hostName")) {
                 popUpFunction("gameInvites", resource)
             }
+            
         })
 
 }
