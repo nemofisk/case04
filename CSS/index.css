@@ -29,6 +29,19 @@ main {
 #moviePoster {
     filter: blur(20px);
 }
-iframe{
+
+iframe {
     pointer-events: none;
+}
+
+#Sidebar {
+    position: absolute;
+    left: 0;
+    width: 30%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
