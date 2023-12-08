@@ -1,53 +1,122 @@
 [
     {
-        "gameID": 83293,
-        "hostID": 4,
+        "gameID": [
+            14451
+        ],
+        "hostID": 1,
         "genres": [
-            "Action",
-            "Thriller"
+            "Horror"
         ],
-        "members": [
-            {
-                "userID": 1,
-                "name": "Calle",
-                "profilePicture": "URL",
-                "points": 0
-            },
-            {
-                "userID": 2,
-                "name": "Wille",
-                "profilePicture": "URL",
-                "points": 0
-            },
-            {
-                "userID": 65,
-                "name": "Ossian",
-                "profilePicture": "URL",
-                "points": 0
-            }
-        ],
+        "members": [],
         "questions": [
             {
-                "question": 1,
-                "type": "trailer",
-                "youtubeLink": "abc",
-                "correctAnswer": "Titanic",
+                "questionID": 0,
+                "type": "plot",
+                "correctAnswer": "Forrest Gump",
                 "alternatives": [
-                    "Titanic",
-                    "Mario",
-                    "Avatar"
-                ]
+                    "Forrest Gump",
+                    "Jagten",
+                    "Ikiru",
+                    "North by Northwest"
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "The history of the United States from the 1950s to the '70s unfolds from the perspective of an Alabama man with an IQ of 75, who yearns to be reunited with his childhood sweetheart."
             },
             {
-                "question": 2,
-                "type": "poster",
-                "posterLink": "xyz",
-                "correctAnswer": "Titanic",
+                "questionID": 1,
+                "type": "actors",
+                "correctAnswer": "Citizen Kane",
                 "alternatives": [
-                    "Titanic",
-                    "Mario",
-                    "Avatar"
-                ]
+                    "Gladiator",
+                    "Citizen Kane",
+                    "Batman Begins",
+                    "The Princess Bride"
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Orson Welles, Joseph Cotten, Dorothy Comingore"
+            },
+            {
+                "questionID": 2,
+                "type": "plot",
+                "correctAnswer": "El laberinto del fauno: Detras de las camaras",
+                "alternatives": [
+                    "Scarface",
+                    "WALL\u00b7E",
+                    "El laberinto del fauno: Detras de las camaras",
+                    "Bakomfilm Smultronst\u00e4llet"
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "Extra contained in the DVD of the movie, Pan's Labyrinth."
+            },
+            {
+                "questionID": 3,
+                "type": "poster",
+                "correctAnswer": "Eternal Sunshine of the Spotless Mind",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BMTY4NzcwODg3Nl5BMl5BanBnXkFtZTcwNTEwOTMyMw@@._V1_SX300.jpg"
+            },
+            {
+                "questionID": 4,
+                "type": "poster",
+                "correctAnswer": "Monty Python and the Holy Grail",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BN2IyNTE4YzUtZWU0Mi00MGIwLTgyMmQtMzQ4YzQxYWNlYWE2XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg"
+            },
+            {
+                "questionID": 5,
+                "type": "actors",
+                "correctAnswer": "Munna Bhai M.B.B.S.",
+                "alternatives": [
+                    "The Lion King",
+                    "North by Northwest",
+                    "Munna Bhai M.B.B.S.",
+                    "Ikiru"
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Sanjay Dutt, Arshad Warsi, Gracy Singh"
+            },
+            {
+                "questionID": 6,
+                "type": "actors",
+                "correctAnswer": "Raging Bull",
+                "alternatives": [
+                    "Raging Bull",
+                    "Scarface",
+                    "Lawrence of Arabia",
+                    "Indiana Jones and the Last Crusade"
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Robert De Niro, Cathy Moriarty, Joe Pesci"
+            },
+            {
+                "questionID": 7,
+                "type": "trailer",
+                "correctAnswer": "How to Train Your Dragon",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/IT_ufPxiXl8"
+            },
+            {
+                "questionID": 8,
+                "type": "actors",
+                "correctAnswer": "Jurassic Park",
+                "alternatives": [
+                    "Toy Story 3",
+                    "Trainspotting",
+                    "Jurassic Park",
+                    "Dead Poets Society"
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Sam Neill, Laura Dern, Jeff Goldblum"
+            },
+            {
+                "questionID": 9,
+                "type": "actors",
+                "correctAnswer": "La haine",
+                "alternatives": [
+                    "La haine",
+                    "Paris, Texas",
+                    "The Hamster Factor and Other Tales of Twelve Monkeys",
+                    "Amores Perros"
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Vincent Cassel, Hubert Kound\u00e9, Sa\u00efd Taghmaoui"
             }
         ]
     }

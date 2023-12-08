@@ -45,9 +45,11 @@ switch($action){
     case "profile":
         profile($users, $received_data);
         break;
-    case "inviteToGame":
+    case "multiplayer":
         multiplayer($users, $received_data);
         break;
+   
+    
     
 }
 

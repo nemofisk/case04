@@ -2,44 +2,61 @@
 
 ini_set("display_errors", 1);
 
-
-
 function multiplayer($users, $received_data){
-    
-    $gameID = rand(1,9);
-    echo($gameID);
-    
-    $hostUsername = $received_data["username"];
-    $action = $received_data["action"];
-    $userToInvite = $received_data["invitedUser"];
-        
     $filename = __DIR__."/../DATA/users.json";
     $multiplayerFilename = __DIR__."/../DATA/multiplayer.json";
     $users = json_decode(file_get_contents($filename), true);
     $multiplayerInformation = json_decode(file_get_contents($multiplayerFilename), true);
 
-    if($action === "inviteToGame"){
+    $hostUsername = $received_data["username"];
+    
+    $subAction = $received_data["subAction"];
+    $randomNumbers = [];
+    
+    $randomNumbers[] = rand(10000,99999);
+    
+    
+    if($subAction === "inviteToGame"){
+        $selectedGenres = $received_data["genres"];
+        $action = $received_data["action"];
+        $userToInvite = $received_data["invitedUser"];
         foreach($users as &$user){
-            if($user["username"] === $hostUsername){        
+            if($user["username"] === $hostUsername){    
+ 
                 $inviteObject = [
-                    "gameID" => 1,
+                    "gameID" => $randomNumbers,
                     "hostID" => $user["id"],
-                    "players" => 0,
+                    "genres" => $selectedGenres,
+                    "members" => [],
+                    "questions" => getRandomMovies(10, $selectedGenres)
                 ];
-                if($user["invites"]["players"] === 8){
-                    $message = ["message" => "Lobby is full!"];
-                    sendJSON($message, 400);
-                }
-                $user["invites"][] = $inviteObject;
+                
+                $multiplayerInformation[] = $inviteObject;
+                file_put_contents($multiplayerFilename, json_encode($multiplayerInformation, JSON_PRETTY_PRINT));
+                $message = ["message" => "Success!"];
+                
             }
         }
         foreach($users as &$user){
-            if($user["username"] === $userToInvite){        
-                $user["gameInvites"][] = $hostUsername;
+            if($user["username"] === $userToInvite){ 
+                $invitationsObject =[
+                    "hostName" => $hostUsername,
+                    "gameID" => $randomNumbers
+                ];
+                $user["gameInvites"][] = $invitationsObject;
             }
         }
     }
             
+    if($subAction === "invitations"){
+
+        foreach($users as &$user){
+            if($user["username"] === $hostUsername){
+                $message = ["message" => $user["gameInvites"]];
+                sendJSON($message, 200);
+            }
+        }
+    }
         
     file_put_contents($filename, json_encode($users, JSON_PRETTY_PRINT));
     $message = ["message" => "Success!"];
@@ -47,7 +64,28 @@ function multiplayer($users, $received_data){
     
 }
 
-
+function acceptGameInvite($gameID){
+    foreach ($users as &$user) {
+        if($user["username"] === $userToInvite){
+            foreach($multiplayerInformation as &$game){
+                if($gameID === $game["gameID"]){
+                    $gameobject = [
+                        "userID" => $user["id"],
+                        "name" => $user["username"],
+                        "profilePicture" => "url",
+                        "points" => 0
+                    ];
+                    $game["members"][] = $gameobject;
+                
+                }
+            }
+        }
+        
+    }
+    file_put_contents($multiplayerFilename, json_encode($multiplayerInformation, JSON_PRETTY_PRINT));
+    $message = ["message" => "Success!"];
+    sendJSON($message, 200);
+}
 
 
 ?>

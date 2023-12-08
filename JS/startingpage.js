@@ -59,7 +59,19 @@ function RenderStartingpage() {
     document.querySelector("#searchButton").addEventListener("click", searchUsers);
     document.getElementById("Singelplayer").addEventListener("click", singlePlayer)
     document.getElementById("Multiplayer").addEventListener("click", chooseCatagoryMultiplayer);
+    let intervalID = setInterval(renderInvites, 5000);
     displayFriendRequests()
 
+
+}
+
+function renderInvites(){
+    fetch(`../PHP/api.php?action=multiplayer&subAction=invitations&username=${localStorage.getItem("username")}`)
+    .then(r => r.json())
+    .then(resource => {
+        if(resource !== null){
+            popUpFunction("gameInvites", resource)    
+        }
+    })
 
 }

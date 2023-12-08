@@ -7,3 +7,10 @@
     display: flex;
     align-items: center;
 }
+#gameInvite{
+    height:300px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
