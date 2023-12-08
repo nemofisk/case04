@@ -57,7 +57,6 @@ function RenderStartingpage() {
 </main>
     `
     document.querySelector("#searchButton").addEventListener("click", searchUsers);
-
     displayFriendRequests()
 
 
@@ -155,4 +154,15 @@ function DisplaySidebar(event) {
     document.getElementById("renderSettings").addEventListener("click", e => {
         //renderSettings()
     })
+}
+
+function renderInvites() {
+    fetch(`../PHP/api.php?action=multiplayer&subAction=invitations&username=${localStorage.getItem("username")}`)
+        .then(r => r.json())
+        .then(resource => {
+            if (resource !== null) {
+                popUpFunction("gameInvites", resource)
+            }
+        })
+
 }
