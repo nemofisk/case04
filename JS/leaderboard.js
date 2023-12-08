@@ -1,4 +1,20 @@
 
+function renderLeaderBoard() {
+    document.querySelector("main").innerHTML =
+        `
+        <h1>Leaderboards</h1>
+
+        
+        <div id="WorldLeaderboard">World</div>
+        <div id="friendsLeaderboard">Friends</div>
+       
+    `
+    let userID = localStorage.getItem(`userID`);
+    initializeLeaderboard()
+    initializeFriendsLeaderboard(userID);
+}
+
+
 async function fetchFriendsLeaderboard(userId) {
     try {
         const response = await fetch(`../PHP/api.php?action=leaderboard&subAction=friendly&userId=${userId}`);
@@ -12,6 +28,8 @@ async function fetchFriendsLeaderboard(userId) {
 function displayFriendsLeaderboard(leaderboardData) {
     const leaderboardFriends = document.getElementById("friendsLeaderboard");
     console.log(leaderboardData);
+
+    let popcorn = localStorage.getItem(`Popcorn`);
 
     for (let i = 0; i < leaderboardData.length && i < 10; i++) {
         const userElement = document.createElement("div");
@@ -30,7 +48,7 @@ async function fetchLeaderboard() {
     }
 }
 function displayLeaderboard(leaderboardData) {
-    const leaderboard1 = document.getElementById("LeaderBoard1");
+    const leaderboard1 = document.getElementById("WorldLeaderboard");
 
     for (let i = 0; i < leaderboardData.length && i < 10; i++) {
         const userElement = document.createElement("div");

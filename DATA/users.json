@@ -31,11 +31,11 @@
     {
         "username": "wwwww",
         "password": "wwwww",
-        "level": 1,
-        "popcorn": 0,
+        "level": 2,
+        "popcorn": 125,
         "friends": [],
         "friendRequests": [],
-        "xpGoal": 100,
+        "xpGoal": 300,
         "id": 3
     }
 ]

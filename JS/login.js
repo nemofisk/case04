@@ -29,11 +29,11 @@ function loginFunction(event) {
     }).then(request => request.json()).then(resource => {
         if (resource.message === "Login successful!") {
             window.localStorage.setItem(`userID`, resource.userid);
+            window.localStorage.setItem(`Popcorn`, resource.Popcorn);
             console.log("sucess");
             window.localStorage.setItem("username", username)
-            RenderStartingpage();
-            initializeLeaderboard()
-            initializeFriendsLeaderboard(resource.userid);
+            renderStartingpage();
+            //RenderStartingpage();
         } else {
             console.log("login failed");
         }
