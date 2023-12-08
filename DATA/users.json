@@ -6,12 +6,7 @@
         "popcorn": 425,
         "friends": [],
         "friendRequests": [],
-        "invites": [
-            {
-                "gameID": 1,
-                "hostID": 1
-            }
-        ],
+        "invites": [],
         "xpGoal": 450,
         "id": 1
     },
@@ -23,7 +18,12 @@
         "friends": [],
         "friendRequests": [],
         "gameInvites": [
-            "calle"
+            {
+                "hostName": "calle",
+                "gameID": [
+                    14451
+                ]
+            }
         ],
         "xpGoal": 1525,
         "id": 2
