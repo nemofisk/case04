@@ -1,6 +1,10 @@
 <?php 
 
 function liveGame($users, $games, $recieved_data){
+    function calculateTime(){
+        
+    }
+
     $subAction = $recieved_data["subAction"];
     $username = $users["username"];
 
@@ -18,17 +22,12 @@ function liveGame($users, $games, $recieved_data){
             unset($question["correctAnswer"]);
         }
 
-        $gameInfo = [
-            "gameID" => $gameID,
-            "host" => $currentGame["host"],
-            "members" => $currentGame["members"],
-            "questions" => $currentGame["questions"],
-            "started" => true;
-        ]
+        
+
     }
 
     if($subAction === "answerQuestion"){
-
+        
     }
 
     if($subAction === "startGame"){

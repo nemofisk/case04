@@ -28,7 +28,11 @@ function multiplayer($users, $received_data){
                     "hostID" => $user["id"],
                     "genres" => $selectedGenres,
                     "members" => [],
-                    "questions" => getRandomMovies(10, $selectedGenres)
+                    "questions" => getRandomMovies(10, $selectedGenres),
+                    "started" => false,
+                    "currentQuestion" => "",
+                    "fetchTime" => "",
+                    ""
                 ];
                 
                 $multiplayerInformation[] = $inviteObject;
