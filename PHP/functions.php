@@ -21,6 +21,10 @@ function putInUsersJSON($newData){
     $filename = __DIR__."/../DATA/users.json";
     file_put_contents($filename, json_encode($newData, JSON_PRETTY_PRINT));
 }
+function putInMultiplayerJSON($newData){
+    $filename = __DIR__."/../DATA/multiplayer.json";
+    file_put_contents($filename, json_encode($newData, JSON_PRETTY_PRINT));
+}
 
 function getRandomMovies($number, $genres){
     $filename = __DIR__."/../DATA/movies.json";

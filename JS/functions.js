@@ -1,7 +1,7 @@
-function popUpFunction(action, information){
+function popUpFunction(action, information) {
     let main = document.querySelector("main");
     let message;
-    if(action === "gameInvites"){
+    if (action === "gameInvites") {
         message = information.hostName + "invited you to a game!"
     }
     let div = document.createElement("div");
@@ -21,9 +21,9 @@ function popUpFunction(action, information){
 
 }
 
-function acceptInvite(event){
+function acceptInvite(event) {
     console.log("accept");
 }
-function declineInvite(event){
+function declineInvite(event) {
     console.log("declined");
 }

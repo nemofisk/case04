@@ -1,13 +1,27 @@
 [
     {
-        "gameID": [
-            14451
-        ],
+        "gameID": 14451,
         "hostID": 1,
         "genres": [
             "Horror"
         ],
-        "members": [],
+        "members": [
+            {
+                "userID": 53,
+                "username": "H\u00e5kan",
+                "profilePicture": false
+            },
+            {
+                "userID": 52,
+                "username": "David",
+                "profilePicture": false
+            },
+            {
+                "userID": 43,
+                "username": "Magnus",
+                "profilePicture": false
+            }
+        ],
         "questions": [
             {
                 "questionID": 0,
@@ -118,6 +132,7 @@
                 "questionTitle": "What movie has these actors in it?",
                 "questionText": "Vincent Cassel, Hubert Kound\u00e9, Sa\u00efd Taghmaoui"
             }
-        ]
+        ],
+        "isStarted": false
     }
 ]

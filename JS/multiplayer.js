@@ -118,29 +118,29 @@ function chooseCatagoryMultiplayer(event) {
 
 function inviteFriends(genreArray) {
     console.log(genreArray);
-    document.getElementById("inviteUser").addEventListener("click", inviteFriends)
     document.querySelector("main").innerHTML = `
     <input id="userSearch"></input>
     <button id="inviteUser">Invite User!</button>
     
     `
-  
+    document.getElementById("inviteUser").addEventListener("click", inviteFriends)
+
     document.getElementById("inviteUser").addEventListener("click", e => {
         let inviteUser = document.querySelector("input").value;
         let hostUsername = window.localStorage.getItem("username");
-        
+
 
         fetch("../PHP/api.php", {
             method: "POST",
             headers: { "Content-type": "application/json" },
-            body: JSON.stringify({ username: hostUsername, invitedUser: inviteUser, action: "multiplayer", genres: genreArray, subAction: "inviteToGame"})
+            body: JSON.stringify({ username: hostUsername, invitedUser: inviteUser, action: "multiplayer", genres: genreArray, subAction: "inviteToGame" })
         }).then(r => r.json()).then(resource => {
             console.log(resource);
         });
 
-    })    
-    
+    })
 
-}    
+
+}
 
 

@@ -8,6 +8,7 @@ require_once "displayFriends.php";
 require_once "leaderboard.php";
 require_once "profile.php";
 require_once "multiplayer.php";
+require_once "liveGame.php";
 
 ini_set("display_errors", 1);
 

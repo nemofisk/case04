@@ -1,28 +1,27 @@
 <?php 
 
 function liveGame($users, $games, $recieved_data){
-    function calculateTime(){
-        
+    $subAction = $recieved_data["subAction"];
+    // $username = $users["username"];
+
+    $gameID = $recieved_data["gameID"];
+    $currentGame;
+    $currentGameIndex;
+
+    foreach($games as $index => $game){
+        if($game["gameID"] == $gameID){
+            $currentGame = $game;
+            $currentGameIndex = $index;
+        }
     }
 
-    $subAction = $recieved_data["subAction"];
-    $username = $users["username"];
-
     if($subAction === "fetchGameInfo"){
-        $gameID = $recieved_data["gameID"];
-        $currentGame;
 
-        foreach($games as $game){
-            if($game["gameID"] == $gameID){
-                $currentGame = $game;
-            }
+        foreach($currentGame["questions"] as $index => $question){
+            unset($currentGame["questions"][$index]["correctAnswer"]);
         }
 
-        foreach($currentGame["questions"] as $question){
-            unset($question["correctAnswer"]);
-        }
-
-        
+        sendJSON($currentGame, 200);        
 
     }
 
@@ -31,7 +30,8 @@ function liveGame($users, $games, $recieved_data){
     }
 
     if($subAction === "startGame"){
-
+        $games[$currentGameIndex]["isStarted"] = true;
+        putInMultiplayerJSON($games);
     }
 
 }

@@ -11,9 +11,8 @@ function multiplayer($users, $received_data){
     $hostUsername = $received_data["username"];
     
     $subAction = $received_data["subAction"];
-    $randomNumbers = [];
     
-    $randomNumbers[] = rand(10000,99999);
+    $randomNumber = rand(10000,99999);
     
     
     if($subAction === "inviteToGame"){
@@ -24,15 +23,13 @@ function multiplayer($users, $received_data){
             if($user["username"] === $hostUsername){    
  
                 $inviteObject = [
-                    "gameID" => $randomNumbers,
+                    "gameID" => $randomNumber,
                     "hostID" => $user["id"],
                     "genres" => $selectedGenres,
                     "members" => [],
                     "questions" => getRandomMovies(10, $selectedGenres),
-                    "started" => false,
+                    "isStarted" => false,
                     "currentQuestion" => "",
-                    "fetchTime" => "",
-                    ""
                 ];
                 
                 $multiplayerInformation[] = $inviteObject;
