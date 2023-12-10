@@ -136,8 +136,16 @@ function posterQuestion(correctMovie, otherMovies) {
         <div id="displaySearchedMovies"></div>
         <button id="guessingButton">Guess</button>
         <button id="nextQuestion">Next</button>
+        <button id="clue">Get Clue</button>
+        <button id="resetTimer">Reset Timer</button>
     </div>
     `
+    
+    
+    document.getElementById("clue").addEventListener("click", func => {
+        getClue(correctMovie)
+    })
+    
     function changeBlur(blur) {
         let moviePoster = document.getElementById("moviePoster");
         moviePoster.style.filter = `blur(${blur}px)`;
@@ -150,8 +158,12 @@ function posterQuestion(correctMovie, otherMovies) {
 
         if (blurValue < 0) {
             clearInterval(intervalID);
+            console.log("L");
         }
     }, 1000);
+    document.getElementById("resetTimer").addEventListener("click", func => {
+        blurValue = 20;
+    })
 
     document.getElementById("searchMovie").addEventListener("input", filterString);
     let inputGuess = document.getElementById("searchMovie");
@@ -190,13 +202,34 @@ function textQuestion(correctMovie, otherMovies, type) {
     </div>
     </header>
 
+    <div id="timer">Time left: </div>
     <div id="question"></div>
     <div id="plotText"></div>
     <div id="questions"></div>
     <button id="nextQuestion">Next</button>
+    <button id="clue">Get Clue</button>
+    <button id="resetTimer">Reset Timer</button>
     <br>
     `
+    let startTimer = 20;
 
+    const intervalID = setInterval(function () {
+        startTimer = startTimer - 1;
+        document.getElementById("timer").textContent = "Time left: " + startTimer;
+
+        if (startTimer < 0) {
+            clearInterval(intervalID);
+            console.log("L");
+        }
+    }, 1000);
+    document.getElementById("resetTimer").addEventListener("click", func => {
+        startTimer = 20;
+        
+    })
+    
+    document.getElementById("clue").addEventListener("click", func => {
+        getClue(correctMovie)
+    })
     document.getElementById("nextQuestion").addEventListener("click", e => {
         chooseGenre(window.localStorage.getItem("genre"));
     })
@@ -287,7 +320,7 @@ function trailerQuestion(correctMovie) {
     <div id="back">Go to home page!</div>
     </header>
     
-    
+    <div id="timer">Time left: </div>
     <iframe width="900" height="562" src=${correctMovie.youtubeLink}?autoplay=1 title="Yung Lean - Hurt" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     <input id="searchMovie"></input>
     
@@ -295,9 +328,31 @@ function trailerQuestion(correctMovie) {
     <div id="answer">Answer</div>
 
     <div id="newQuestion">New question</div>
+    <button id="clue">Get Clue</button>
+    <button id="resetTimer">Reset Timer</button>
     
     <br>
     `
+    let startTimer = 20;
+
+    const intervalID = setInterval(function () {
+        startTimer = startTimer - 1;
+        document.getElementById("timer").textContent = "Time left: " + startTimer;
+
+        if (startTimer < 0) {
+            clearInterval(intervalID);
+            console.log("L");
+        }
+    }, 1000);
+    
+    document.getElementById("clue").addEventListener("click", func => {
+        getClue(correctMovie)
+    })
+    document.getElementById("resetTimer").addEventListener("click", func => {
+        startTimer = 20;
+        
+    })
+    
     document.getElementById("searchMovie").addEventListener("input", filterString);
 
     document.getElementById("answer").addEventListener("click", movie => {
@@ -314,3 +369,19 @@ function trailerQuestion(correctMovie) {
 function goToHomePage(event) {
     RenderStartingpage()
 }
+
+function getClue(movie){
+
+    let request = new Request("../PHP/api.php", {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({ username: window.localStorage.getItem("username"), action: "profile", subAction: "useClue" })
+    })
+    callAPI(request);
+    
+    let div = document.createElement("div")
+    div.textContent = `This movie was directed by ${movie.Director} and is starring ${movie.Actors} `
+    document.querySelector("main").appendChild(div);
+
+}
+

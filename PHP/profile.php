@@ -55,6 +55,60 @@ function profile($users, $received_data){
         }
        
     }
+    if($subAction === "addClue"){
+        foreach($users as $index => $user){
+            if($user["username"] === $username){
+                $users[$index]["clues"] += 1;
+                putInUsersJSON($users);
+                sendJSON(["message" => $user], 200);
+            
+            }
+        }
+    }
+
+    if($subAction === "useClue"){
+        foreach($users as $index => $user){
+            if($user["username"] === $username){
+                if($users[$index]["clues"] === 0){
+                    sendJSON(["message" => "no more clues:("], 404);
+                }
+                $users[$index]["clues"] -= 1;
+                putInUsersJSON($users);
+                sendJSON(["message" => $user], 200);
+                    
+            }
+        }
+    }
+    if($subAction === "addClue"){
+        foreach($users as $index => $user){
+            if($user["username"] === $username){
+                $users[$index]["clues"] += 1;
+                putInUsersJSON($users);
+                sendJSON(["message" => $user], 200);
+            
+            }
+        }
+    }
+    if($subAction === "addResetTimer"){
+        foreach($users as $index => $user){
+            if($user["username"] === $username){
+                $users[$index]["resetTimer"] += 1;
+                putInUsersJSON($users);
+                sendJSON(["message" => $user], 200);
+                    
+            }
+        }
+    }
+    if($subAction === "useResetTimer"){
+        foreach($users as $index => $user){
+            if($user["username"] === $username){
+                $users[$index]["resetTimer"] -= 1;
+                putInUsersJSON($users);
+                sendJSON(["message" => $user], 200);
+                    
+            }
+        }
+    }
 }
 
 ?>

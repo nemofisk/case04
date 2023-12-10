@@ -34,3 +34,34 @@ function acceptInvite(gameID){
 function declineInvite(event){
     console.log("declined");
 }
+
+function resetTimer(){
+    let request = new Request("../PHP/api.php", {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({ username: window.localStorage.getItem("username"), action: "profile", subAction: "addResetTimer" })
+    })
+    callAPI(request);
+}
+function giveClue(){
+    console.log("You have reciedev one clue, you can use in the singleplayer mode!");
+    let request = new Request("../PHP/api.php", {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({ username: window.localStorage.getItem("username"), action: "profile", subAction: "addClue" })
+    })
+    callAPI(request);
+
+
+}
+function addPoints(num){
+    let request = new Request("../PHP/api.php", {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({ username: window.localStorage.getItem("username"), guess: "correct", action: "profile", subAction: "quizGuess", points: num })
+    })
+    callAPI(request);
+}
+function nothing(){
+  
+}
