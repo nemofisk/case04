@@ -3,12 +3,14 @@
         "username": "calle",
         "password": "callw",
         "level": 666,
-        "popcorn": 425,
+        "popcorn": 965,
         "friends": [],
         "friendRequests": [],
         "gameInvites": [],
         "xpGoal": 450,
-        "id": 1
+        "id": 1,
+        "clues": 20,
+        "resetTimer": 20
     },
     {
         "username": "wwww",
