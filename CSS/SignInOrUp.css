@@ -1,20 +1,36 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+.signInOrUp {
+    width: 100%;
+    height: 50px;
+
+    border-radius: 58px;
+    font-size: 20px;
 }
 
 #SignIn {
-    width: 200px;
-    height: 30px;
-    border: 1px solid black;
+    background-color: #FFF8BA;
+    color: #171717;
+    cursor: pointer;
+}
+
+#container>img {
+    width: 256px;
 }
 
 #SignUp {
-    width: 200px;
-    height: 30px;
-    border: 1px solid black;
+    background-color: #171717;
+    color: #FFF8BA;
+    border: 1px solid #FFF8BA;
+    cursor: pointer;
+}
+
+#SignInOrUpContainer {
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    height: 112px;
+    width: 256px;
 }
 
 #container {
@@ -24,7 +40,8 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 30px;
+    gap: 111px;
+    margin-top: 153px;
 
 }
 
