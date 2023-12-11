@@ -26,9 +26,10 @@ function singlePlayer(event) {
     </header>
     
 
-    <div>Choose a category!</div>
+    <h1>Choose a category!</h1>
     <div id="catergoryMenu"></div>
-    <div> i dont want to choose a category</div>
+    <div id="mixed">Mixed Categories</div>
+    <div id="Continue">Continue</div>
         
 
     </div>`
@@ -36,13 +37,21 @@ function singlePlayer(event) {
 
     for (let i = 0; i < genreArray.length; i++) {
         let div = document.createElement("div");
+        div.classList.add("genreClass")
         div.textContent = genreArray[i];
         genresCategorty.appendChild(div)
-        div.addEventListener("click", chooseGenre)
+        div.addEventListener("click", selected => {
+            div.classList.add(".selected")
+        })
     }
+    document.querySelector("#Continue").addEventListener("click", send => {
+        chooseGenre(document.querySelectorAll("selected"))
+    })
 }
 
-function chooseGenre(event) {
+
+function chooseGenre(array) {
+    console.log(array);
     let chosenGenre;
     if (window.localStorage.getItem("genre")) {
         chosenGenre = window.localStorage.getItem("genre")
