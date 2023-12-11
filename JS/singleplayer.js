@@ -41,25 +41,33 @@ function singlePlayer(event) {
         div.classList.add("genreClass")
         div.textContent = genreArray[i];
         genresCategorty.appendChild(div)
-        div.addEventListener("click", selected => {
-            div.classList.add(".selected")
-        })
+        div.addEventListener("click", () => {
+            div.classList.toggle("selected");
+            document.querySelector("#Continue").style.backgroundColor = "#FFF8BA"
+            document.querySelector("#Continue").style.color = "#323059"
+        });
     }
-    document.querySelector("#Continue").addEventListener("click", send => {
-        chooseGenre(document.querySelectorAll("selected"))
+    document.getElementById("Continue").addEventListener("click", () => {
+        const selectedGenres = Array.from(document.querySelectorAll(".genreClass.selected")).map((div) => div.textContent);
+        chooseGenre(selectedGenres);
+    
     })
 }
 
 
 function chooseGenre(array) {
+    
     console.log(array);
-    let chosenGenre;
+    let chosenGenre = array
+    window.localStorage.setItem("genre", chosenGenre);
+    
     if (window.localStorage.getItem("genre")) {
         chosenGenre = window.localStorage.getItem("genre")
     } else {
         chosenGenre = event.target.textContent;
     }
-    window.localStorage.setItem("genre", chosenGenre);
+    
+    console.log(chosenGenre);
 
     document.querySelector("main").innerHTML = `
     <header id="menu">
@@ -76,13 +84,15 @@ function chooseGenre(array) {
         for (let i = 0; i < resource.length; i++) {
 
             if (resource[i].Genre !== undefined) {
-                if (resource[i].Genre.includes(chosenGenre)) {
-
-                    movieGenerArray.push(resource[i])
-                }
+                array.forEach(genre => {
+                    if(resource[i].Genre.includes(genre)){
+                        movieGenerArray.push(resource[i])
+                    }
+                })
             }
         }
 
+        console.log(movieGenerArray);
         let otherMovies = []
         let correctMovie = movieGenerArray[Math.floor(Math.random() * movieGenerArray.length)];
         window.localStorage.setItem("movie", correctMovie.Title)
@@ -211,10 +221,11 @@ function textQuestion(correctMovie, otherMovies, type) {
         <p>TheMovieStar</p>
     </div>
     </header>
-
-    <div id="timer">Time left: </div>
-    <div id="question"></div>
-    <div id="plotText"></div>
+    <div id="box">
+        <div id="timer">Time left: </div>
+        <div id="question"></div>
+        <div id="plotText"></div>
+    </div>
     <div id="questions"></div>
     <button id="nextQuestion">Next</button>
     <button id="clue">Get Clue</button>
@@ -285,6 +296,7 @@ function textQuestion(correctMovie, otherMovies, type) {
 
     moveisArray.forEach(movie => {
         let div = document.createElement("div")
+        div.classList.add("questions")
         let divApped = document.getElementById("questions");
         div.textContent = movie;
         divApped.appendChild(div)
