@@ -1,9 +1,9 @@
-  
-function popUpFunction(action, information){
+
+function popUpFunction(action, information) {
 
     let main = document.querySelector("main");
     let message;
-    if(action === "gameInvites"){
+    if (action === "gameInvites") {
         message = information.message[0].hostName + " invited you to a game!"
     }
     let div = document.createElement("div");
@@ -28,14 +28,14 @@ function popUpFunction(action, information){
 
 }
 
-function acceptInvite(gameID){
+function acceptInvite(gameID) {
     console.log(gameID);
 }
-function declineInvite(event){
+function declineInvite(event) {
     console.log("declined");
 }
 
-function resetTimer(){
+function resetTimer() {
     let request = new Request("../PHP/api.php", {
         method: "POST",
         headers: { "Content-type": "application/json" },
@@ -43,7 +43,7 @@ function resetTimer(){
     })
     callAPI(request);
 }
-function giveClue(){
+function giveClue() {
     console.log("You have reciedev one clue, you can use in the singleplayer mode!");
     let request = new Request("../PHP/api.php", {
         method: "POST",
@@ -54,7 +54,7 @@ function giveClue(){
 
 
 }
-function addPoints(num){
+function addPoints(num) {
     let request = new Request("../PHP/api.php", {
         method: "POST",
         headers: { "Content-type": "application/json" },
@@ -62,6 +62,38 @@ function addPoints(num){
     })
     callAPI(request);
 }
-function nothing(){
-  
+function nothing() {
+
+}
+
+function displayCurtains(ClassName1, ClassName2) {
+    let curtains =
+        `
+    <div class="${ClassName1}"></div>
+    <div class="${ClassName2}"></div>
+    <div class="${ClassName1}"></div>
+    <div class="${ClassName2}"></div>
+    <div class="${ClassName1}"></div>
+    <div class="${ClassName2}"></div>
+    <div class="${ClassName1}"></div>
+    <div class="${ClassName2}"></div>
+    <div class="${ClassName1}"></div>
+    <div class="${ClassName2}"></div>
+    <div class="${ClassName1}"></div>
+    <div class="${ClassName2}"></div>
+    <div class="${ClassName1}"></div>
+    <div class="${ClassName2}"></div>
+    <div class="${ClassName1}"></div>
+    <div class="${ClassName2}"></div>
+    <div class="${ClassName1}"></div>
+    <div class="${ClassName2}"></div>
+    <div class="${ClassName1}"></div>
+    <div class="${ClassName2}"></div>
+    <div class="${ClassName1}"></div>
+    <div class="${ClassName2}"></div>
+    <div class="${ClassName1}"></div>
+    <div class="${ClassName2}"></div>
+    <div class="${ClassName1}"></div>
+    `
+    return curtains;
 }
