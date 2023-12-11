@@ -1,7 +1,7 @@
 "use strict";
 
-async function joinGame() {
-
+async function joinGame(gameID) {
+    console.log(`joinGame GameID: ${gameID}`);
     const request = new Request("../PHP/api.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -9,7 +9,7 @@ async function joinGame() {
             username: window.localStorage.getItem("username"),
             action: "liveGame",
             subAction: "fetchGameInfo",
-            gameID: 14451
+            gameID: gameID
         })
     })
 
@@ -20,38 +20,43 @@ async function joinGame() {
 
     const initialEpoch = Math.round(Date.now() / 1000)
 
-    calculateNextFetch(initialEpoch);
+    calculateNextFetch(initialEpoch, gameID);
 }
 
-function calculateNextFetch(initialEpoch) {
-
+function calculateNextFetch(initialEpoch, gameID) {
+    console.log(`calculateFetch GameID: ${gameID}`);
     const secondsSinceEpoch = Math.round(Date.now() / 1000);
 
     if (secondsSinceEpoch > initialEpoch) {
 
-        startFetchGameInfo();
+        startFetchGameInfo(gameID);
         renderLobby();
 
     } else {
         setTimeout(function () {
-            calculateNextFetch(initialEpoch)
+            calculateNextFetch(initialEpoch, gameID)
         }, 50);
     }
 
 }
 
-async function startFetchGameInfo() {
+async function startFetchGameInfo(gameID) {
+    console.log(`startFetch GameID: ${gameID}`);
     const intervalID = setInterval(async function () {
+        console.log(`interval GameID: ${gameID}`);
+        const body = {
+            username: window.localStorage.getItem("username"),
+            action: "liveGame",
+            subAction: "fetchGameInfo",
+            gameID: gameID
+        }
         const request = new Request("../PHP/api.php", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                username: window.localStorage.getItem("username"),
-                action: "liveGame",
-                subAction: "fetchGameInfo",
-                gameID: 14451
-            })
+            body: JSON.stringify(body)
         })
+
+        console.log(body);
 
         const response = await callAPI(request, true, false);
         const resource = await response.json();
@@ -94,7 +99,7 @@ async function renderLobby() {
                     username: window.localStorage.getItem("username"),
                     action: "liveGame",
                     subAction: "startGame",
-                    gameID: 14451
+                    gameID: gameInfo.gameID
                 })
             })
 
@@ -103,7 +108,26 @@ async function renderLobby() {
     } else {
         const button = main.querySelector("#lobbyButton")
         button.textContent = "Leave game";
+
+        button.addEventListener("click", async function (ev) {
+            const request = new Request("../PHP/api.php", {
+                method: "DELETE",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    username: username,
+                    userID: userID,
+                    action: "liveGame",
+                    subAction: "leaveGame",
+                    gameID: gameInfo.gameID
+                })
+            })
+
+            const response = await callAPI(request, true, false);
+
+        })
     }
+
+
 
     const intervalID = setInterval(function () {
         if (window.localStorage.getItem("gameInfo")) {
@@ -126,7 +150,7 @@ async function renderLobby() {
                     memberDiv.innerHTML = `
                         <div class="crown"></div>
                         <div class="lobbyProfilePic" style="background-image: url('${member.profilePicture}')"></div>
-                        <div class="lobbyProfileName">${member.username}</div>
+                        <div class="lobbyProfileName">${member.name}</div>
                     `
 
                     memberListDom.appendChild(memberDiv);

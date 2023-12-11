@@ -1,138 +1,133 @@
 [
     {
-        "gameID": 14451,
+        "gameID": 54064,
         "hostID": 1,
         "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
             "Horror"
         ],
         "members": [
             {
-                "userID": 53,
-                "username": "H\u00e5kan",
-                "profilePicture": false
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "url",
+                "points": 0
             },
             {
-                "userID": 52,
-                "username": "David",
-                "profilePicture": false
-            },
-            {
-                "userID": 43,
-                "username": "Magnus",
-                "profilePicture": false
+                "userID": 2,
+                "name": "wwww",
+                "profilePicture": "url",
+                "points": 0
             }
         ],
         "questions": [
             {
                 "questionID": 0,
                 "type": "plot",
-                "correctAnswer": "Forrest Gump",
+                "correctAnswer": "Back to the Future",
                 "alternatives": [
-                    "Forrest Gump",
-                    "Jagten",
-                    "Ikiru",
-                    "North by Northwest"
+                    "The Bourne Ultimatum",
+                    "Back to the Future",
+                    "Metropolis",
+                    "Blade Runner 2049"
                 ],
                 "questionTitle": "What movie does this plot describe?",
-                "questionText": "The history of the United States from the 1950s to the '70s unfolds from the perspective of an Alabama man with an IQ of 75, who yearns to be reunited with his childhood sweetheart."
+                "questionText": "Marty McFly, a 17-year-old high school student, is accidentally sent 30 years into the past in a time-traveling DeLorean invented by his close friend, the maverick scientist Doc Brown."
             },
             {
                 "questionID": 1,
                 "type": "actors",
-                "correctAnswer": "Citizen Kane",
+                "correctAnswer": "The Shining",
                 "alternatives": [
-                    "Gladiator",
-                    "Citizen Kane",
-                    "Batman Begins",
-                    "The Princess Bride"
+                    "Donnie Darko",
+                    "The General",
+                    "The Sting",
+                    "The Shining"
                 ],
                 "questionTitle": "What movie has these actors in it?",
-                "questionText": "Orson Welles, Joseph Cotten, Dorothy Comingore"
+                "questionText": "Jack Nicholson, Shelley Duvall, Danny Lloyd"
             },
             {
                 "questionID": 2,
-                "type": "plot",
-                "correctAnswer": "El laberinto del fauno: Detras de las camaras",
-                "alternatives": [
-                    "Scarface",
-                    "WALL\u00b7E",
-                    "El laberinto del fauno: Detras de las camaras",
-                    "Bakomfilm Smultronst\u00e4llet"
-                ],
-                "questionTitle": "What movie does this plot describe?",
-                "questionText": "Extra contained in the DVD of the movie, Pan's Labyrinth."
+                "type": "poster",
+                "correctAnswer": "The Sting",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BNGU3NjQ4YTMtZGJjOS00YTQ3LThmNmItMTI5MDE2ODI3NzY3XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg"
             },
             {
                 "questionID": 3,
-                "type": "poster",
-                "correctAnswer": "Eternal Sunshine of the Spotless Mind",
-                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BMTY4NzcwODg3Nl5BMl5BanBnXkFtZTcwNTEwOTMyMw@@._V1_SX300.jpg"
+                "type": "actors",
+                "correctAnswer": "Metropolis",
+                "alternatives": [
+                    "The Prestige",
+                    "Double Indemnity",
+                    "Metropolis",
+                    "All About Eve"
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Brigitte Helm, Alfred Abel, Gustav Fr\u00f6hlich"
             },
             {
                 "questionID": 4,
-                "type": "poster",
-                "correctAnswer": "Monty Python and the Holy Grail",
-                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BN2IyNTE4YzUtZWU0Mi00MGIwLTgyMmQtMzQ4YzQxYWNlYWE2XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg"
+                "type": "trailer",
+                "correctAnswer": "The Kid",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/O5WXokyub-4"
             },
             {
                 "questionID": 5,
-                "type": "actors",
-                "correctAnswer": "Munna Bhai M.B.B.S.",
+                "type": "plot",
+                "correctAnswer": "Platoon",
                 "alternatives": [
-                    "The Lion King",
-                    "North by Northwest",
-                    "Munna Bhai M.B.B.S.",
-                    "Ikiru"
+                    "Modern Times",
+                    "Platoon",
+                    "Dangal",
+                    "The Help"
                 ],
-                "questionTitle": "What movie has these actors in it?",
-                "questionText": "Sanjay Dutt, Arshad Warsi, Gracy Singh"
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "Chris Taylor, a neophyte recruit in Vietnam, finds himself caught in a battle of wills between two sergeants, one good and the other evil. A shrewd examination of the brutality of war and the duality of man in conflict."
             },
             {
                 "questionID": 6,
-                "type": "actors",
-                "correctAnswer": "Raging Bull",
-                "alternatives": [
-                    "Raging Bull",
-                    "Scarface",
-                    "Lawrence of Arabia",
-                    "Indiana Jones and the Last Crusade"
-                ],
-                "questionTitle": "What movie has these actors in it?",
-                "questionText": "Robert De Niro, Cathy Moriarty, Joe Pesci"
+                "type": "trailer",
+                "correctAnswer": "The Princess Bride",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/Nq30P5tEY0I"
             },
             {
                 "questionID": 7,
-                "type": "trailer",
-                "correctAnswer": "How to Train Your Dragon",
-                "youtubeLink": "https:\/\/www.youtube.com\/embed\/IT_ufPxiXl8"
+                "type": "plot",
+                "correctAnswer": "The Grapes of Wrath",
+                "alternatives": [
+                    "The Sixth Sense",
+                    "The Grapes of Wrath",
+                    "Back to the Future",
+                    "Vertigo"
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "An Oklahoma family, driven off their farm by the poverty and hopelessness of the Dust Bowl, joins the westward migration to California, suffering the misfortunes of the homeless in the Great Depression."
             },
             {
                 "questionID": 8,
-                "type": "actors",
-                "correctAnswer": "Jurassic Park",
-                "alternatives": [
-                    "Toy Story 3",
-                    "Trainspotting",
-                    "Jurassic Park",
-                    "Dead Poets Society"
-                ],
-                "questionTitle": "What movie has these actors in it?",
-                "questionText": "Sam Neill, Laura Dern, Jeff Goldblum"
+                "type": "poster",
+                "correctAnswer": "Catch Me If You Can",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BMTY5MzYzNjc5NV5BMl5BanBnXkFtZTYwNTUyNTc2._V1_SX300.jpg"
             },
             {
                 "questionID": 9,
-                "type": "actors",
-                "correctAnswer": "La haine",
-                "alternatives": [
-                    "La haine",
-                    "Paris, Texas",
-                    "The Hamster Factor and Other Tales of Twelve Monkeys",
-                    "Amores Perros"
-                ],
-                "questionTitle": "What movie has these actors in it?",
-                "questionText": "Vincent Cassel, Hubert Kound\u00e9, Sa\u00efd Taghmaoui"
+                "type": "poster",
+                "correctAnswer": "The Wizard of Oz",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BNjUyMTc4MDExMV5BMl5BanBnXkFtZTgwNDg0NDIwMjE@._V1_SX300.jpg"
             }
         ],
-        "isStarted": false
+        "isStarted": true,
+        "currentQuestion": ""
     }
 ]

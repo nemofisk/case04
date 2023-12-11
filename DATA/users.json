@@ -1,9 +1,9 @@
 [
     {
-        "username": "calle",
-        "password": "callw",
+        "username": "w",
+        "password": "",
         "level": 666,
-        "popcorn": 965,
+        "popcorn": 1040,
         "friends": [],
         "friendRequests": [],
         "gameInvites": [],
@@ -14,19 +14,14 @@
     },
     {
         "username": "wwww",
-        "password": "wwww",
+        "password": "",
         "level": 6,
         "popcorn": 1300,
-        "friends": [],
-        "friendRequests": [],
-        "gameInvites": [
-            {
-                "hostName": "calle",
-                "gameID": [
-                    14451
-                ]
-            }
+        "friends": [
+            1
         ],
+        "friendRequests": [],
+        "gameInvites": [],
         "xpGoal": 1525,
         "id": 2
     },

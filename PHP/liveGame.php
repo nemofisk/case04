@@ -34,6 +34,10 @@ function liveGame($users, $games, $recieved_data){
         putInMultiplayerJSON($games);
     }
 
+    if($subAction === "leaveGame"){
+        
+    }
+
 }
 
 ?>

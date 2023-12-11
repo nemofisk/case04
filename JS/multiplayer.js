@@ -123,7 +123,7 @@ function inviteFriends(genreArray) {
     <button id="inviteUser">Invite User!</button>
     
     `
-    document.getElementById("inviteUser").addEventListener("click", inviteFriends)
+    // document.getElementById("inviteUser").addEventListener("click", inviteFriends)
 
     document.getElementById("inviteUser").addEventListener("click", e => {
         let inviteUser = document.querySelector("input").value;
