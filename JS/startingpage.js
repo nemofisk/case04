@@ -118,42 +118,59 @@ function renderStartingpage() {
 }
 
 function DisplaySidebar(event) {
+    let main = document.querySelector("main");
+    let div = document.createElement("div");
+    div.setAttribute("id", "Overlay");
+    main.appendChild(div);
+
     let username = localStorage.getItem("username");
     let nav = document.createElement("nav");
     nav.setAttribute(`id`, "Sidebar")
     nav.innerHTML =
         `
-    <div id="CloseSidebar"></div>
-    <div id="ProfilePicContainer"></div>
-    <h2>${username}</h2>
+    <div id="CloseSidebar">X</div>
 
-    <div id="home">
-    <img></img>
-    <p>Home</p>
+    <div id="Profile">
+        <div id="ProfilePicContainer"></div>
+        <h2>${username}</h2>
     </div>
 
-    <div id="profilePage">
-    <img></img>
-    <p>Profile</p>
-    </div>
+    <div id="SidebarMenuContainer">
+        <div id="home">
+            <img></img>
+            <p>Home</p>
+        </div>
 
-    <div id="RenderLeaderboard">
-    <img></img>
-    <p>Leaderboard</p>
-    </div>
+        <div id="profilePage">
+            <img></img>
+            <p>Profile</p>
+        </div>
 
-    <div id="renderLyckyWheel">
-    <img></img>
-    <p>Lucky Wheel</p>
-    </div>
+        <div id="RenderLeaderboard">
+            <img></img>
+            <p>Leaderboard</p>
+        </div>
 
-    <p>Play Christmas Game</p>
+        <div id="renderLyckyWheel">
+            <img></img>
+            <p>Lucky Wheel</p>
+        </div>
+
+        <p>Play Christmas Game</p>
+    </div>
 
     <div id="renderSettings">
     <img></img>
     <p>Settings</p>
     </div>
     `
+
+
+    nav.querySelector("#CloseSidebar").addEventListener("click", e => {
+        Sidebar = document.getElementById("Sidebar");
+        Sidebar.remove();
+        document.querySelector("#Overlay").remove();
+    })
     document.querySelector("main").appendChild(nav);
     document.getElementById("home").addEventListener("click", e => {
         renderStartingpage()
