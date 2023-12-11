@@ -83,8 +83,27 @@ function chooseCatagoryMultiplayer(event) {
                 catagory.addEventListener("click", chooseGenre);
             })
         }
-        ContinueButton.addEventListener("click", event => {
-            ContinueFunction(SelectedGarnres);
+        ContinueButton.addEventListener("click", async function () {
+
+
+            const request = new Request("../PHP/api.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    userID: window.localStorage.getItem("userID"),
+                    username: window.localStorage.getItem("username"),
+                    action: "multiplayer",
+                    subAction: "createGameObject",
+                    genres: SelectedGarnres
+                })
+            })
+
+            const response = await callAPI(request, true, false);
+            const resource = await response.json();
+
+            const gameID = await resource.gameID;
+
+            ContinueFunction(gameID);
         });
     }
 
@@ -107,23 +126,22 @@ function chooseCatagoryMultiplayer(event) {
         });
     }
 
-    function ContinueFunction(array) {
-        inviteFriends(array);
+    function ContinueFunction(gameID) {
+        inviteFriends(gameID);
     }
 }
 
-
-
-
-
-function inviteFriends(genreArray) {
-    console.log(genreArray);
+function inviteFriends(gameID) {
     document.querySelector("main").innerHTML = `
     <input id="userSearch"></input>
     <button id="inviteUser">Invite User!</button>
-    
+    <button id="inviteJoinButton"></button>
     `
-    // document.getElementById("inviteUser").addEventListener("click", inviteFriends)
+
+    const button = document.querySelector("#inviteJoinButton");
+    button.addEventListener("click", ev => {
+        joinGame(gameID)
+    })
 
     document.getElementById("inviteUser").addEventListener("click", e => {
         let inviteUser = document.querySelector("input").value;
@@ -133,7 +151,7 @@ function inviteFriends(genreArray) {
         fetch("../PHP/api.php", {
             method: "POST",
             headers: { "Content-type": "application/json" },
-            body: JSON.stringify({ username: hostUsername, invitedUser: inviteUser, action: "multiplayer", genres: genreArray, subAction: "inviteToGame" })
+            body: JSON.stringify({ username: hostUsername, invitedUser: inviteUser, action: "multiplayer", gameID: gameID, subAction: "inviteToGame" })
         }).then(r => r.json()).then(resource => {
             console.log(resource);
         });

@@ -1,6 +1,6 @@
 [
     {
-        "gameID": 54064,
+        "gameID": 83073,
         "hostID": 1,
         "genres": [
             "Crime",
@@ -24,6 +24,12 @@
                 "points": 0
             },
             {
+                "userID": 3,
+                "name": "wwwww",
+                "profilePicture": "url",
+                "points": 0
+            },
+            {
                 "userID": 2,
                 "name": "wwww",
                 "profilePicture": "url",
@@ -33,98 +39,112 @@
         "questions": [
             {
                 "questionID": 0,
-                "type": "plot",
-                "correctAnswer": "Back to the Future",
+                "type": "actors",
+                "correctAnswer": "The Godfather Part II",
                 "alternatives": [
-                    "The Bourne Ultimatum",
-                    "Back to the Future",
-                    "Metropolis",
-                    "Blade Runner 2049"
+                    "The Pianist",
+                    "The Godfather Part II",
+                    "Sholay",
+                    "Catch Me If You Can"
                 ],
-                "questionTitle": "What movie does this plot describe?",
-                "questionText": "Marty McFly, a 17-year-old high school student, is accidentally sent 30 years into the past in a time-traveling DeLorean invented by his close friend, the maverick scientist Doc Brown."
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Al Pacino, Robert De Niro, Robert Duvall"
             },
             {
                 "questionID": 1,
-                "type": "actors",
-                "correctAnswer": "The Shining",
+                "type": "plot",
+                "correctAnswer": "El laberinto del fauno: Detras de las camaras",
                 "alternatives": [
-                    "Donnie Darko",
-                    "The General",
-                    "The Sting",
-                    "The Shining"
+                    "El laberinto del fauno: Detras de las camaras",
+                    "The Princess Bride",
+                    "Dangal",
+                    "The Grapes of Wrath"
                 ],
-                "questionTitle": "What movie has these actors in it?",
-                "questionText": "Jack Nicholson, Shelley Duvall, Danny Lloyd"
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "Extra contained in the DVD of the movie, Pan's Labyrinth."
             },
             {
                 "questionID": 2,
-                "type": "poster",
-                "correctAnswer": "The Sting",
-                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BNGU3NjQ4YTMtZGJjOS00YTQ3LThmNmItMTI5MDE2ODI3NzY3XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg"
+                "type": "trailer",
+                "correctAnswer": "Cool Hand Luke",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/EdMpFEl7DhY"
             },
             {
                 "questionID": 3,
                 "type": "actors",
-                "correctAnswer": "Metropolis",
+                "correctAnswer": "Inglourious Basterds",
                 "alternatives": [
-                    "The Prestige",
-                    "Double Indemnity",
-                    "Metropolis",
-                    "All About Eve"
+                    "Rang De Basanti",
+                    "Inglourious Basterds",
+                    "Se7en",
+                    "Heat"
                 ],
                 "questionTitle": "What movie has these actors in it?",
-                "questionText": "Brigitte Helm, Alfred Abel, Gustav Fr\u00f6hlich"
+                "questionText": "Brad Pitt, Diane Kruger, Eli Roth"
             },
             {
                 "questionID": 4,
-                "type": "trailer",
+                "type": "plot",
                 "correctAnswer": "The Kid",
-                "youtubeLink": "https:\/\/www.youtube.com\/embed\/O5WXokyub-4"
+                "alternatives": [
+                    "Modern Times",
+                    "The Kid",
+                    "Forrest Gump",
+                    "Paris, Texas"
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "The Tramp cares for an abandoned child, but events put their relationship in jeopardy."
             },
             {
                 "questionID": 5,
-                "type": "plot",
-                "correctAnswer": "Platoon",
+                "type": "actors",
+                "correctAnswer": "Der Untergang der Pamir",
                 "alternatives": [
-                    "Modern Times",
-                    "Platoon",
-                    "Dangal",
-                    "The Help"
+                    "Metropolis",
+                    "Gran Torino",
+                    "Spotlight",
+                    "Der Untergang der Pamir"
                 ],
-                "questionTitle": "What movie does this plot describe?",
-                "questionText": "Chris Taylor, a neophyte recruit in Vietnam, finds himself caught in a battle of wills between two sergeants, one good and the other evil. A shrewd examination of the brutality of war and the duality of man in conflict."
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Klaus J. Behrendt, Miroslav Milanovic Miki, Jan Josef Liefers"
             },
             {
                 "questionID": 6,
                 "type": "trailer",
-                "correctAnswer": "The Princess Bride",
-                "youtubeLink": "https:\/\/www.youtube.com\/embed\/Nq30P5tEY0I"
+                "correctAnswer": "Amores Perros",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/A5HTBYR7m0o"
             },
             {
                 "questionID": 7,
-                "type": "plot",
-                "correctAnswer": "The Grapes of Wrath",
+                "type": "actors",
+                "correctAnswer": "Groundhog Day",
                 "alternatives": [
-                    "The Sixth Sense",
-                    "The Grapes of Wrath",
-                    "Back to the Future",
-                    "Vertigo"
+                    "Ran",
+                    "Amores Perros",
+                    "Groundhog Day",
+                    "Rebecca"
                 ],
-                "questionTitle": "What movie does this plot describe?",
-                "questionText": "An Oklahoma family, driven off their farm by the poverty and hopelessness of the Dust Bowl, joins the westward migration to California, suffering the misfortunes of the homeless in the Great Depression."
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Bill Murray, Andie MacDowell, Chris Elliott"
             },
             {
                 "questionID": 8,
-                "type": "poster",
-                "correctAnswer": "Catch Me If You Can",
-                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BMTY5MzYzNjc5NV5BMl5BanBnXkFtZTYwNTUyNTc2._V1_SX300.jpg"
+                "type": "plot",
+                "correctAnswer": "The Wizard of Oz",
+                "alternatives": [
+                    "The Elephant Man",
+                    "Indiana Jones and the Last Crusade",
+                    "The Wizard of Oz",
+                    "Vertigo"
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "Young Dorothy Gale and her dog Toto are swept away by a tornado from their Kansas farm to the magical Land of Oz, and embark on a quest with three new friends to see the Wizard, who can return her to her home and fulfill the other..."
             },
             {
                 "questionID": 9,
-                "type": "poster",
-                "correctAnswer": "The Wizard of Oz",
-                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BNjUyMTc4MDExMV5BMl5BanBnXkFtZTgwNDg0NDIwMjE@._V1_SX300.jpg"
+                "type": "trailer",
+                "correctAnswer": "Gran Torino",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/F8zue_BzNsw"
             }
         ],
         "isStarted": true,
