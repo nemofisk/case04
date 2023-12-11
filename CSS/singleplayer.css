@@ -45,4 +45,30 @@ h1{
     border-radius: 30px;
     width: 50%;
     text-align: center;
+    cursor: pointer;
+}
+.selected{
+    background-color: #8184F8;
+}
+#box{
+    border: 3px solid #FFF8BA;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 87px 9px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+.questions{
+    border-radius: var(--radius-radius-md, 20px);
+    border: 1px solid var(--color-purple, #8184F8);
+    color: white;
+    padding: 5px;
+    margin: 5px;
+}
+#questions{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
 }
