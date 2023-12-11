@@ -1,0 +1,24 @@
+.curtains {
+    height: 182px;
+    width: 100%;
+    background-color: #2B2A4C;
+    border-radius: 0 0 30px 30px;
+
+}
+
+.curtainsLight {
+    height: 195px;
+    width: 100%;
+    background-color: #323059;
+    border-radius: 0 0 30px 30px;
+
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    position: absolute;
+    top: 0;
+}

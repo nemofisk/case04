@@ -24,6 +24,7 @@ function leaderboard($users, $received_data){
 
             // Filter users based on friends
             $friendsLeaderboard = [];
+            
 
             foreach($users as $user2){
                 foreach($friends as $friend){
@@ -37,6 +38,9 @@ function leaderboard($users, $received_data){
             // Sort the friends leaderboard
             usort($friendsLeaderboard, 'sortLeaderboard');
 
+            $UserLoggedIn = ["username" => $user["username"], "popcorn" => $user["popcorn"], "level" => $user["level"]];
+            array_unshift($friendsLeaderboard, $UserLoggedIn);
+            
             sendJSON($friendsLeaderboard);
         } else {
             // User not found

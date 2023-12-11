@@ -25,7 +25,7 @@ function register($users, $received_data){
     $id = 0;
 
     if (0 <= count($users)) {
-        $new_user = ["username" => $username, "password" => $password, "level" => 1, "popcorn" => 0, "friends" => [], "friendRequests" => [], "xpGoal" => 100];
+        $new_user = ["username" => $username, "password" => $password, "level" => 1, "popcorn" => 0, "friends" => [], "friendRequests" => [], "xpGoal" => 100, "clues" => 0, "resetTimer" => 0];
         foreach ($users as $single_user) {
             if ($id < $single_user["id"]) {
                 $id = $single_user["id"];
