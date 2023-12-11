@@ -19,34 +19,10 @@ function signUppage(event) {
     </div>
 </main>
     `
-
+    let curtains = displayCurtains("footercurtains", "footercurtainsLight");
     document.querySelector("footer").innerHTML =
         `
-    <div class="footercurtains"></div>
-    <div class="footercurtainsLight"></div>
-    <div class="footercurtains"></div>
-    <div class="footercurtainsLight"></div>
-    <div class="footercurtains"></div>
-    <div class="footercurtainsLight"></div>
-    <div class="footercurtains"></div>
-    <div class="footercurtainsLight"></div>
-    <div class="footercurtains"></div>
-    <div class="footercurtainsLight"></div>
-    <div class="footercurtains"></div>
-    <div class="footercurtainsLight"></div>
-    <div class="footercurtains"></div>
-    <div class="footercurtainsLight"></div>
-    <div class="footercurtains"></div>
-    <div class="footercurtainsLight"></div>
-    <div class="footercurtains"></div>
-    <div class="footercurtainsLight"></div>
-    <div class="footercurtains"></div>
-    <div class="footercurtainsLight"></div>
-    <div class="footercurtains"></div>
-    <div class="footercurtainsLight"></div>
-    <div class="footercurtains"></div>
-    <div class="footercurtainsLight"></div>
-    <div class="footercurtains"></div>
+   ${curtains}
     `
     document.getElementById("register").addEventListener("click", registerFunction);
     document.getElementById("loginShortCut").addEventListener("click", signInpage);

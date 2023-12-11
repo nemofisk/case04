@@ -75,41 +75,31 @@ function RenderStartingpage() {
 }
 */
 function renderStartingpage() {
+    let curtains = displayCurtains("curtainsStartingpage", "curtainsLightStartingpage");
     let username = localStorage.getItem("username");
     document.querySelector("header").innerHTML =
         `
-    <div id="hamburgerMenu">Hamburger</div>
+        <div id="hamburgerMenu">
+        <div></div>
+        <div></div>
+        <div></div>
+        </div>
 
-
-    
-    <div class="curtains"></div>
-    <div class="curtainsLight"></div>
-    <div class="curtains"></div>
-    <div class="curtainsLight"></div>
-    <div class="curtains"></div>
-    <div class="curtainsLight"></div>
-    <div class="curtains"></div>
+        ${curtains}
     `
     document.querySelector("main").innerHTML =
         `
-    <h2>The</h2>
-    <h1>QUIZEMA</h1>
+        <img src="/Title.png" alt="Logo">
     
-    <p>Welcome ${username}, how would you like to play?</p>
+    <p id="message">Welcome ${username}, how would you like to play?</p>
     
-    <button id="Multiplayer">Multiplayer</button>
-    <button id="Singelplayer">Singelplayer</button>
+    <button id="Multiplayer" class="Buttons">Multiplayer</button>
+    <button id="Singelplayer" class="Buttons">Singelplayer</button>
     `
-
+    let curtainsFooter = displayCurtains("footercurtainsStartingpage", "footercurtainsLightStartingpage");
     document.querySelector("footer").innerHTML =
         `
-    <div class="curtains"></div>
-    <div class="curtainsLight"></div>
-    <div class="curtains"></div>
-    <div class="curtainsLight"></div>
-    <div class="curtains"></div>
-    <div class="curtainsLight"></div>
-    <div class="curtains"></div>
+        ${curtainsFooter}
     `
     document.getElementById("Singelplayer").addEventListener("click", singlePlayer)
     document.getElementById("Multiplayer").addEventListener("click", chooseCatagoryMultiplayer);

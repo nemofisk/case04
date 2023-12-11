@@ -1,8 +1,6 @@
 
 function popUpFunction(action, information) {
 
-    console.log("popup");
-
     let main = document.querySelector("main");
     let message;
     if (action === "gameInvites") {
@@ -80,4 +78,36 @@ function addPoints(num) {
 }
 function nothing() {
 
+}
+
+function displayCurtains(ClassName1, ClassName2) {
+    let curtains =
+        `
+    <div class="${ClassName1}"></div>
+    <div class="${ClassName2}"></div>
+    <div class="${ClassName1}"></div>
+    <div class="${ClassName2}"></div>
+    <div class="${ClassName1}"></div>
+    <div class="${ClassName2}"></div>
+    <div class="${ClassName1}"></div>
+    <div class="${ClassName2}"></div>
+    <div class="${ClassName1}"></div>
+    <div class="${ClassName2}"></div>
+    <div class="${ClassName1}"></div>
+    <div class="${ClassName2}"></div>
+    <div class="${ClassName1}"></div>
+    <div class="${ClassName2}"></div>
+    <div class="${ClassName1}"></div>
+    <div class="${ClassName2}"></div>
+    <div class="${ClassName1}"></div>
+    <div class="${ClassName2}"></div>
+    <div class="${ClassName1}"></div>
+    <div class="${ClassName2}"></div>
+    <div class="${ClassName1}"></div>
+    <div class="${ClassName2}"></div>
+    <div class="${ClassName1}"></div>
+    <div class="${ClassName2}"></div>
+    <div class="${ClassName1}"></div>
+    `
+    return curtains;
 }
