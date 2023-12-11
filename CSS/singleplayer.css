@@ -1,0 +1,48 @@
+@font-face {
+    font-family: jost;
+    src: url(../fonts/Jost-VariableFont_wght.ttf);
+  }
+body{
+    
+    font-family: jost;
+    
+}
+.genreClass{
+    border: 1px solid #8184F8;
+    margin: 10px;
+    border-radius: 30px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+#catergoryMenu{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    color: white;
+
+}
+#catergoryMenu div{
+    cursor: pointer;
+}
+#mixed{
+    border: 1px solid #8184F8;
+    margin: 10px;
+    border-radius: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    color: white;
+    width: 100%;
+}
+h1{
+    color: white;
+}
+#Continue{
+    border: 1px solid #747474;
+    color: #747474;
+    padding: 10px;
+    border-radius: 30px;
+    width: 50%;
+    text-align: center;
+}
