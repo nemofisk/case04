@@ -1,17 +1,49 @@
 "use strict";
 
 function signInpage(event) {
+    document.querySelector("header").innerHTML =
+        `
+    <img src="/Title.png" alt="Logo">
+    `
     document.querySelector("main").innerHTML = `
     <main>
-        <h1>Filmfeud</h1>
+        <h1 class="LoginHeader">Login</h1>
         <div>
             <div class="box">
-                <button id="login">Login</button>
-                <input placeholder="Username" id="loginUsername"></input>
-                <input placeholder="Password" id="loginPassword"></input>
+            <input placeholder="Username" id="loginUsername" class="loginRegisterInput"></input>
+            <input placeholder="Password" id="loginPassword" class="loginRegisterInput"></input>
+            <button class="loginRegister "id="login">Login</button>
             </div>
         </div>
     </main>
+    `
+    document.querySelector("footer").innerHTML =
+        `
+    <div class="footercurtains"></div>
+    <div class="footercurtainsLight"></div>
+    <div class="footercurtains"></div>
+    <div class="footercurtainsLight"></div>
+    <div class="footercurtains"></div>
+    <div class="footercurtainsLight"></div>
+    <div class="footercurtains"></div>
+    <div class="footercurtainsLight"></div>
+    <div class="footercurtains"></div>
+    <div class="footercurtainsLight"></div>
+    <div class="footercurtains"></div>
+    <div class="footercurtainsLight"></div>
+    <div class="footercurtains"></div>
+    <div class="footercurtainsLight"></div>
+    <div class="footercurtains"></div>
+    <div class="footercurtainsLight"></div>
+    <div class="footercurtains"></div>
+    <div class="footercurtainsLight"></div>
+    <div class="footercurtains"></div>
+    <div class="footercurtainsLight"></div>
+    <div class="footercurtains"></div>
+    <div class="footercurtainsLight"></div>
+    <div class="footercurtains"></div>
+    <div class="footercurtainsLight"></div>
+    <div class="footercurtains"></div>
     `
     document.getElementById("login").addEventListener("click", loginFunction);
 

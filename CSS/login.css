@@ -1,0 +1,43 @@
+header>img {
+    width: 256px;
+    margin-top: 36px;
+}
+
+.loginRegisterInput {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid white;
+    color: white;
+    width: 256px;
+}
+
+.loginRegister {
+    width: 256px;
+    height: 50px;
+    background-color: #FFF8BA;
+    border-radius: 30px;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.LoginHeader {
+    color: white;
+    margin-top: 173px;
+    font-size: 35px;
+}
+
+
+span {
+    color: red;
+}
+
+#loginShortCut {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    margin-top: 45px;
+}
+
+#registerHeader {
+    margin-top: 241px;
+}

@@ -1,18 +1,52 @@
 "use strict";
 
 function signUppage(event) {
+    document.querySelector("header").innerHTML =
+        `
+<img src="/Title.png" alt="Logo">
+`
     document.querySelector("main").innerHTML = `
     <main>
-    <h1>Filmfeud</h1>
+    <h1 id="registerHeader" class="LoginHeader">Create an account</h1>
     <div>
         <div class="box">
-            <button id="register">Register</button>
-            <input placeholder="Username" id="registerUsername"></input>
-            <input placeholder="Password" id="registerPassword"></input>
+        <input placeholder="Username" id="registerUsername" class="loginRegisterInput"></input>
+        <input placeholder="Password" id="registerPassword" class="loginRegisterInput"></input>
+        <input placeholder="Confirm Password" id="ConfirmPassword" class="loginRegisterInput"></input>
+        <button class="loginRegister" id="register">Register</button>
         </div>
-        <button id="loginShortCut">Go to login</button>
+        <button id="loginShortCut">Already have an account? <span>Login</span></button>
     </div>
 </main>
+    `
+
+    document.querySelector("footer").innerHTML =
+        `
+    <div class="footercurtains"></div>
+    <div class="footercurtainsLight"></div>
+    <div class="footercurtains"></div>
+    <div class="footercurtainsLight"></div>
+    <div class="footercurtains"></div>
+    <div class="footercurtainsLight"></div>
+    <div class="footercurtains"></div>
+    <div class="footercurtainsLight"></div>
+    <div class="footercurtains"></div>
+    <div class="footercurtainsLight"></div>
+    <div class="footercurtains"></div>
+    <div class="footercurtainsLight"></div>
+    <div class="footercurtains"></div>
+    <div class="footercurtainsLight"></div>
+    <div class="footercurtains"></div>
+    <div class="footercurtainsLight"></div>
+    <div class="footercurtains"></div>
+    <div class="footercurtainsLight"></div>
+    <div class="footercurtains"></div>
+    <div class="footercurtainsLight"></div>
+    <div class="footercurtains"></div>
+    <div class="footercurtainsLight"></div>
+    <div class="footercurtains"></div>
+    <div class="footercurtainsLight"></div>
+    <div class="footercurtains"></div>
     `
     document.getElementById("register").addEventListener("click", registerFunction);
     document.getElementById("loginShortCut").addEventListener("click", signInpage);
