@@ -109,7 +109,14 @@ function profile($users, $received_data){
             }
         }
     }
-   
+    if($subAction === "getImage"){
+        foreach($users as $index => $user){
+            if($user["username"] === $username){
+                sendJSON(["message" => $user["profile_picture"]], 200);
+                    
+            }
+        }
+    }
         
 }
 
@@ -141,6 +148,7 @@ function uploadImage($users, $received_data){
         file_put_contents($filename,json_encode($users,JSON_PRETTY_PRINT));
         exit();
     }
+    
 
 }
 

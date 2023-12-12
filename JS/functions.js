@@ -97,3 +97,14 @@ function displayCurtains(ClassName1, ClassName2) {
     `
     return curtains;
 }
+
+async function getUserImage(user){
+    try {
+        const response = await fetch(`../PHP/api.php?action=profile&subAction=getImage&username=${user}`);
+        const data = await response.json();
+        return data.message;
+    } catch (error) {
+        console.error('Error fetching leaderboard:', error);
+    }
+    
+}
