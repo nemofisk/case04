@@ -15,13 +15,14 @@ function singlePlayer(event) {
     ];
 
 
+    document.querySelector("footer").innerHTML = ``
 
     document.querySelector("main").innerHTML = `
     <header id="menu">
 
         <div class="profile">
             <div id="profilePic"></div>
-            <p>TheMovieStar</p>
+            <img src="/Frame 263.png" alt="Logo">
         </div>
     </header>
     
@@ -159,12 +160,12 @@ function posterQuestion(correctMovie, otherMovies) {
         <button id="resetTimer">Reset Timer</button>
     </div>
     `
-    
-    
+
+
     document.getElementById("clue").addEventListener("click", func => {
         getClue(correctMovie)
     })
-    
+
     function changeBlur(blur) {
         let moviePoster = document.getElementById("moviePoster");
         moviePoster.style.filter = `blur(${blur}px)`;
@@ -244,9 +245,9 @@ function textQuestion(correctMovie, otherMovies, type) {
     }, 1000);
     document.getElementById("resetTimer").addEventListener("click", func => {
         startTimer = 20;
-        
+
     })
-    
+
     document.getElementById("clue").addEventListener("click", func => {
         getClue(correctMovie)
     })
@@ -365,15 +366,15 @@ function trailerQuestion(correctMovie) {
             console.log("L");
         }
     }, 1000);
-    
+
     document.getElementById("clue").addEventListener("click", func => {
         getClue(correctMovie)
     })
     document.getElementById("resetTimer").addEventListener("click", func => {
         startTimer = 20;
-        
+
     })
-    
+
     document.getElementById("searchMovie").addEventListener("input", filterString);
 
     document.getElementById("answer").addEventListener("click", movie => {
@@ -391,7 +392,7 @@ function goToHomePage(event) {
     RenderStartingpage()
 }
 
-function getClue(movie){
+function getClue(movie) {
 
     let request = new Request("../PHP/api.php", {
         method: "POST",
@@ -399,7 +400,7 @@ function getClue(movie){
         body: JSON.stringify({ username: window.localStorage.getItem("username"), action: "profile", subAction: "useClue" })
     })
     callAPI(request);
-    
+
     let div = document.createElement("div")
     div.textContent = `This movie was directed by ${movie.Director} and is starring ${movie.Actors} `
     document.querySelector("main").appendChild(div);

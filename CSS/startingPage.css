@@ -56,3 +56,95 @@ main>img {
     height: 3px;
     background-color: white;
 }
+
+#CloseSidebar {
+    color: white;
+    position: relative;
+    left: 93px;
+    cursor: pointer;
+}
+
+#Profile>h2 {
+    color: #FFF8BA;
+    margin: 0;
+}
+
+#home>p {
+    margin: 0;
+    color: white;
+}
+
+#home {
+    display: flex;
+}
+
+#profilePage>p {
+    margin: 0;
+    color: white;
+}
+
+#profilePage {
+    display: flex;
+}
+
+#RenderLeaderboard>p {
+    margin: 0;
+    color: white;
+}
+
+#RenderLeaderboard {
+    display: flex;
+}
+
+#renderLyckyWheel>p {
+    margin: 0;
+    color: white;
+}
+
+#renderLyckyWheel {
+    display: flex;
+}
+
+#ProfilePicContainer {
+    height: 100px;
+    width: 100px;
+    border: 3px solid #FFF8BA;
+    border-radius: 50%;
+}
+
+#SidebarMenuContainer>p {
+    color: red;
+    margin: 0;
+}
+
+#SidebarMenuContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 21px;
+}
+
+#renderSettings {
+    display: flex;
+}
+
+#renderSettings>p {
+    color: white;
+}
+
+#Profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#Overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #0d0d0d8f;
+}

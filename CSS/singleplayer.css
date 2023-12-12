@@ -1,13 +1,15 @@
 @font-face {
     font-family: jost;
     src: url(../fonts/Jost-VariableFont_wght.ttf);
-  }
-body{
-    
-    font-family: jost;
-    
 }
-.genreClass{
+
+body {
+
+    font-family: jost;
+
+}
+
+.genreClass {
     border: 1px solid #8184F8;
     margin: 10px;
     border-radius: 30px;
@@ -15,17 +17,20 @@ body{
     text-align: center;
     color: white;
 }
-#catergoryMenu{
+
+#catergoryMenu {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
     color: white;
 
 }
-#catergoryMenu div{
+
+#catergoryMenu div {
     cursor: pointer;
 }
-#mixed{
+
+#mixed {
     border: 1px solid #8184F8;
     margin: 10px;
     border-radius: 30px;
@@ -35,22 +40,33 @@ body{
     color: white;
     width: 100%;
 }
-h1{
+
+h1 {
     color: white;
 }
-#Continue{
+
+#Continue {
     border: 1px solid #747474;
     color: #747474;
     padding: 10px;
     border-radius: 30px;
     width: 50%;
     text-align: center;
+}
+
+.profile>img {
+    width: 126px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
     cursor: pointer;
 }
-.selected{
+
+.selected {
     background-color: #8184F8;
 }
-#box{
+
+#box {
     border: 3px solid #FFF8BA;
     color: white;
     display: flex;
@@ -60,14 +76,16 @@ h1{
     align-items: center;
     border-radius: 20px;
 }
-.questions{
+
+.questions {
     border-radius: var(--radius-radius-md, 20px);
     border: 1px solid var(--color-purple, #8184F8);
     color: white;
     padding: 5px;
     margin: 5px;
 }
-#questions{
+
+#questions {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
