@@ -195,3 +195,36 @@ main>img {
     width: 50px;
     background-color: aqua;
 }
+
+#pointsInfo {
+    color: white;
+    text-align: center;
+}
+
+#profileImage {
+    border-radius: 50%;
+}
+
+#levelBar {
+    border: 2px solid #FF6868;
+    border-radius: 20px;
+    height: 8px;
+    width: 300px;
+
+}
+
+#progressBar {
+    background-color: #FF6868;
+    border-radius: 20px;
+    height: 8px;
+}
+
+#displayLevels {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+#showlevel {
+    color: white;
+}

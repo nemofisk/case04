@@ -109,10 +109,10 @@ function profile($users, $received_data){
             }
         }
     }
-    if($subAction === "getImage"){
+    if($subAction === "getInfo"){
         foreach($users as $index => $user){
             if($user["username"] === $username){
-                sendJSON(["message" => $user["profile_picture"]], 200);
+                sendJSON(["message" => $user], 200);
                     
             }
         }
