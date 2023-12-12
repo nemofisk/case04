@@ -137,22 +137,22 @@ function DisplaySidebar(event) {
 
     <div id="SidebarMenuContainer">
         <div id="home">
-            <img></img>
+            <img src="/house.png" alt="Logo">
             <p>Home</p>
         </div>
 
         <div id="profilePage">
-            <img></img>
+            <img src="/account_circle.png" alt="Logo">
             <p>Profile</p>
         </div>
 
         <div id="RenderLeaderboard">
-            <img></img>
+            <img src="/leaderboard.png" alt="Logo">
             <p>Leaderboard</p>
         </div>
 
         <div id="renderLyckyWheel">
-            <img></img>
+            <img src="/emoji_events.png" alt="Logo">
             <p>Lucky Wheel</p>
         </div>
 
@@ -160,8 +160,8 @@ function DisplaySidebar(event) {
     </div>
 
     <div id="renderSettings">
-    <img></img>
-    <p>Settings</p>
+        <img src="/settings.png" alt="Logo">
+        <p>Settings</p>
     </div>
     `
 
