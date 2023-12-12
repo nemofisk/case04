@@ -61,6 +61,7 @@ main>img {
     color: white;
     position: relative;
     left: 93px;
+    top: -15px;
     cursor: pointer;
 }
 
@@ -76,6 +77,11 @@ main>img {
 
 #home {
     display: flex;
+    gap: 10px;
+}
+
+#home>img {
+    width: 25px;
 }
 
 #profilePage>p {
@@ -85,7 +91,13 @@ main>img {
 
 #profilePage {
     display: flex;
+    gap: 10px;
 }
+
+#profilePage>img {
+    width: 25px;
+}
+
 
 #RenderLeaderboard>p {
     margin: 0;
@@ -94,6 +106,11 @@ main>img {
 
 #RenderLeaderboard {
     display: flex;
+    gap: 10px;
+}
+
+#RenderLeaderboard>img {
+    width: 25px;
 }
 
 #renderLyckyWheel>p {
@@ -103,6 +120,11 @@ main>img {
 
 #renderLyckyWheel {
     display: flex;
+    gap: 10px;
+}
+
+#renderLyckyWheel>img {
+    width: 25px;
 }
 
 #ProfilePicContainer {
@@ -117,20 +139,30 @@ main>img {
     margin: 0;
 }
 
+#SidebarMenuContainer>img {
+    width: 25px;
+}
+
 #SidebarMenuContainer {
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
     gap: 21px;
 }
 
 #renderSettings {
     display: flex;
+    gap: 10px;
+    margin-right: 45px;
 }
 
 #renderSettings>p {
     color: white;
+    margin: 0;
+}
+
+#renderSettings>img {
+    width: 25px;
 }
 
 #Profile {
@@ -138,6 +170,8 @@ main>img {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: absolute;
+    top: 80px;
 }
 
 #Overlay {
