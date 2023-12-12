@@ -1,80 +1,7 @@
 "use strict"
 
-/*
-function RenderStartingpage() {
-    console.log(localStorage.getItem("username"));
 
-    document.querySelector("main").innerHTML = `
-    <main id"startingpageContainer">
-    <header id="menu">
-
-        <div class="profile">
-            <div id="profilePic"></div>
-            <p>TheMovieStar</p>
-        </div>
-
-        <div id="containerLogo">
-            <div class="friendRequests"></div>
-            <div class="unknown"></div>
-            <div class="Logo">
-                <img src="">
-            </div>
-        </div>
-
-        <input placeholder="Search friends"id="searchBar"></input>
-        <button id="searchButton">Add friend</button>
-
-       
-
-    </header>
-
-    <div id="displayMenu">
-
-        <div id="sectionOneWrapper">
-            <div id="profileContainer">
-                <div class="profile">
-                    <div id="profilePic">
-                        <img
-                            src="">
-                    </div>
-                    <p>TheMovieStar</p>
-                    <div id="levelProgressBar">Level</div>
-                </div>
-            </div>
-            <div id="leaderBoard">
-                <div id="LeaderBoard1">Leaderboard 1</div>
-                <div id="friendsLeaderboard">Leaderboard 2</div>
-            </div>
-        </div>
-
-        <div id="sectionTwoWrapper">
-            <div id="Multiplayer">Play with friends</div>
-            <div id="Singelplayer">Play alone</div>
-            <div id="Challenges">Challenges</div>
-        </div>
-
-    </div>
-</main>
-    `
-    document.querySelector("#searchButton").addEventListener("click", searchUsers);
-    document.getElementById("Singelplayer").addEventListener("click", singlePlayer)
-    document.getElementById("Multiplayer").addEventListener("click", chooseCatagoryMultiplayer);
-
-    setInterval(checkInvitations, 5000);
-    let intervalID = setInterval(renderInvites, 5000);
-    function checkInvitations(){
-        if(document.querySelector("#invitationPopUp")){
-            clearInterval(intervalID)
-        }
-    }
-    
-    
-    displayFriendRequests()
-
-
-}
-*/
-function renderStartingpage() {
+async function renderStartingpage() {
     let curtains = displayCurtains("curtainsStartingpage", "curtainsLightStartingpage");
     let username = localStorage.getItem("username");
     document.querySelector("header").innerHTML =
@@ -117,7 +44,7 @@ function renderStartingpage() {
     displayFriendRequests()
 }
 
-function DisplaySidebar(event) {
+async function DisplaySidebar(event) {
     let main = document.querySelector("main");
     let div = document.createElement("div");
     div.setAttribute("id", "Overlay");
@@ -131,7 +58,9 @@ function DisplaySidebar(event) {
     <div id="CloseSidebar">X</div>
 
     <div id="Profile">
-        <div id="ProfilePicContainer"></div>
+        <div id="ProfilePicContainer">
+            <img id="displayProfilePic"></img>
+        </div>
         <h2>${username}</h2>
     </div>
 
@@ -185,7 +114,7 @@ function DisplaySidebar(event) {
     document.getElementById("renderSettings").addEventListener("click", e => {
         //renderSettings()
     })
-
+    document.querySelector("#displayProfilePic").src = `../images/${await getUserImage(window.localStorage.getItem("username"))}`
 }
 
 function renderInvites() {

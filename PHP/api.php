@@ -25,8 +25,12 @@ if (file_exists($filename)) {
 } else {
     $users = [];
 }
-
+if(!isset($action)){
+    uploadImage($users, $received_data);
+}
 $action = $received_data["action"];
+
+
 switch($action){
     case "register":
         register($users, $received_data);
@@ -42,6 +46,7 @@ switch($action){
         break;
     case "leaderboard":
         leaderboard($users, $received_data);
+        break;
     case "profile":
         profile($users, $received_data);
         break;
