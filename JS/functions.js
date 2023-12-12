@@ -98,9 +98,9 @@ function displayCurtains(ClassName1, ClassName2) {
     return curtains;
 }
 
-async function getUserImage(user){
+async function getUserinformation(user){
     try {
-        const response = await fetch(`../PHP/api.php?action=profile&subAction=getImage&username=${user}`);
+        const response = await fetch(`../PHP/api.php?action=profile&subAction=getInfo&username=${user}`);
         const data = await response.json();
         return data.message;
     } catch (error) {

@@ -1,22 +1,43 @@
 async function renderProfilePage() {
     document.querySelector("main").innerHTML =
-        `
+    `
+    <div id="pointsInfo">
+        <div>Total Score</div>
+        <div id="totalPoints"></div>
+        <div id="seperator"></div>
+        <div id="totalPoints"></div>
+    </div>
+    <img id="profileImage" src="" alt="Profile Picture">
     <form id="profile_image" action="./profile/php/upload.php" method="POST" enctype="multipart/form-data">
         <input type="file" id="upload_profile_picture" name="upload">
     </form>
-    <img id="profileImage" src="" alt="Profile Picture">
     
 
     <h1></h1>
     <div id="popcorn"></div>
-    <div id="showlevel"></div>
+    <div id="showlevel">Level
+        <div id="levelBar">
+            <div id="progressBar"></div>
+            <div id="displayLevels">
+                <div id="currentLevel"></div>
+                <div id="nextLevel"></div>
+            </div>
+        </div>
+
+    </div>
     <div id="showfriends"></div>
     `
     document.querySelector("h1").textContent = window.localStorage.getItem("username");
     document.getElementById("upload_profile_picture").addEventListener("change", upload_picture);
-    let imageURL = await getUserImage(window.localStorage.getItem("username"));
-    document.querySelector("#profileImage").src = `../images/${imageURL}`
-    console.log(imageURL);
+    let userInfo = await getUserinformation(window.localStorage.getItem("username"));
+    console.log(userInfo);
+    document.querySelector("#profileImage").src = `../images/${userInfo.profile_picture}`
+    document.getElementById("totalPoints").textContent = userInfo.popcorn + "p"
+    let lvlProgress = levelprogress(userInfo.popcorn, userInfo.xpGoal)
+    console.log(lvlProgress);
+    document.getElementById("progressBar").style.width = `${lvlProgress}%`
+    document.getElementById("currentLevel").textContent = userInfo.level;
+    document.getElementById("nextLevel").textContent = userInfo.level + 1;
 
 
 }
@@ -51,4 +72,9 @@ function upload_picture(event) {
         .then(data => {    
             document.getElementById("profileImage").src = `../images/${data.filename}`;
         })
+}
+function levelprogress(points, goal){
+    let procentage = points / goal;
+    return procentage * 100;
+
 }

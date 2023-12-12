@@ -47,6 +47,34 @@ function singlePlayer(event) {
             document.querySelector("#Continue").style.color = "#323059"
         });
     }
+    document.getElementById("mixed").addEventListener("click", () => {
+        if(document.getElementById("mixed").classList.contains("mixedMark")){
+            document.querySelectorAll("#catergoryMenu > div").forEach(div => {
+                div.classList.remove("selected");
+                div.style.backgroundColor = "";
+                document.getElementById("mixed").style.backgroundColor = "#171717";
+                document.querySelector("#Continue").style.backgroundColor = "#171717"
+                document.querySelector("#Continue").style.color = "#747474";
+                div.style.pointerEvents = "auto";
+            
+            })
+        }else{
+
+            document.querySelectorAll("#catergoryMenu > div").forEach(div => {
+                div.classList.add("selected");
+                div.style.backgroundColor = "#171717";
+                div.style.pointerEvents = "none";
+            
+            })
+            document.getElementById("mixed").classList.add("mixedMark")
+            document.getElementById("mixed").style.backgroundColor = "#8184F8"
+            document.querySelector("#Continue").style.backgroundColor = "#FFF8BA"
+            document.querySelector("#Continue").style.color = "#323059";
+        }
+
+        
+        })
+    
     document.getElementById("Continue").addEventListener("click", () => {
         const selectedGenres = Array.from(document.querySelectorAll(".genreClass.selected")).map((div) => div.textContent);
         chooseGenre(selectedGenres);
