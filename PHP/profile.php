@@ -109,6 +109,41 @@ function profile($users, $received_data){
             }
         }
     }
+   
+        
 }
 
+function uploadImage($users, $received_data){
+    $filename = __DIR__."/../DATA/users.json";
+    if (isset($_FILES["upload"])) {
+        $username = $_POST["username"];
+        $source = $_FILES["upload"]["tmp_name"];
+        $name = $_FILES["upload"]["name"];
+        $size = $_FILES["upload"]["size"];
+        $destination = "../images/".$name;
+
+        if (move_uploaded_file($source, $destination)) {
+            header("Content-Type: application/json");
+            http_response_code(201);
+            echo json_encode([
+                "message" => "Success!",
+                "filename" => $name,
+                "size" => $size,
+                "action" => $_POST["action"],
+                "destination" => $destination,
+            ]);
+            foreach ($users as $index => $user) {
+                if ($user["username"] === $username) {
+                    $users[$index]["profile_picture"] = $name;
+                }
+            }
+        }
+        file_put_contents($filename,json_encode($users,JSON_PRETTY_PRINT));
+        exit();
+    }
+
+}
+
+
 ?>
+

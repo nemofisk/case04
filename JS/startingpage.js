@@ -168,7 +168,7 @@ function DisplaySidebar(event) {
     document.getElementById("renderSettings").addEventListener("click", e => {
         //renderSettings()
     })
-
+    
 }
 
 function renderInvites() {

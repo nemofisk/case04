@@ -10,7 +10,8 @@
         "xpGoal": 450,
         "id": 1,
         "clues": 19,
-        "resetTimer": 20
+        "resetTimer": 20,
+        "profile_picture": "pp.webp"
     },
     {
         "username": "wwww",
