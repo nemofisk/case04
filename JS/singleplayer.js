@@ -48,7 +48,7 @@ function singlePlayer(event) {
         });
     }
     document.getElementById("mixed").addEventListener("click", () => {
-        if(document.getElementById("mixed").classList.contains("mixedMark")){
+        if (document.getElementById("mixed").classList.contains("mixedMark")) {
             document.querySelectorAll("#catergoryMenu > div").forEach(div => {
                 div.classList.remove("selected");
                 div.style.backgroundColor = "";
@@ -57,15 +57,15 @@ function singlePlayer(event) {
                 document.querySelector("#Continue").style.backgroundColor = "#171717"
                 document.querySelector("#Continue").style.color = "#747474";
                 div.style.pointerEvents = "auto";
-            
+
             })
-        }else{
+        } else {
 
             document.querySelectorAll("#catergoryMenu > div").forEach(div => {
                 div.classList.add("selected");
                 div.style.backgroundColor = "#171717";
                 div.style.pointerEvents = "none";
-            
+
             })
             document.getElementById("mixed").classList.add("mixedMark")
             document.getElementById("mixed").style.backgroundColor = "#8184F8"
@@ -73,11 +73,11 @@ function singlePlayer(event) {
             document.querySelector("#Continue").style.color = "#323059";
         }
 
-        
-        })
-    
+
+    })
+
     document.getElementById("Continue").addEventListener("click", () => {
-        if(document.getElementById("Continue").style.backgroundColor === "rgb(255, 248, 186)"){
+        if (document.getElementById("Continue").style.backgroundColor === "rgb(255, 248, 186)") {
             const selectedGenres = Array.from(document.querySelectorAll(".genreClass.selected")).map((div) => div.textContent);
             chooseGenre(selectedGenres);
         }
@@ -104,7 +104,7 @@ function chooseGenre(array) {
 
     <div class="profile">
         <div id="profilePic"></div>
-        <p>TheMovieStar</p>
+        <img src="/Frame 263.png" alt="Logo">
     </div>
     
     </header>
