@@ -24,6 +24,12 @@
                 "gameID": [
                     86561
                 ]
+            },
+            {
+                "hostName": "",
+                "gameID": [
+                    50265
+                ]
             }
         ],
         "xpGoal": 1300,
@@ -39,9 +45,7 @@
         "popcorn": 1300,
         "friends": [],
         "friendRequests": [],
-        "gameInvites": [
-           
-        ],
+        "gameInvites": [],
         "xpGoal": 1525,
         "id": 2
     },
@@ -55,9 +59,7 @@
             "calle"
         ],
         "friendRequests": [],
-        "gameInvites": [
-           
-        ],
+        "gameInvites": [],
         "xpGoal": 300,
         "id": 3,
         "profile_picture": "Peaky Blinders (kopia).webp"
