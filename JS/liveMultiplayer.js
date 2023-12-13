@@ -23,14 +23,14 @@ async function joinGame(gameID) {
     calculateNextFetch(initialEpoch, gameID);
 }
 
-function calculateNextFetch(initialEpoch, gameID) {
+async function calculateNextFetch(initialEpoch, gameID) {
     console.log(`calculateFetch GameID: ${gameID}`);
     const secondsSinceEpoch = Math.round(Date.now() / 1000);
 
     if (secondsSinceEpoch > initialEpoch) {
 
-        startFetchGameInfo(gameID);
-        renderLobby();
+        const intervalID = await startFetchGameInfo(gameID);
+        renderLobby(intervalID);
 
     } else {
         setTimeout(function () {
@@ -65,9 +65,13 @@ async function startFetchGameInfo(gameID) {
         const randomNum = Math.floor(Math.random() * 100) + 1;
         console.log("**************************************" + randomNum);
     }, 1000)
+
+    return intervalID;
 }
 
-async function renderLobby() {
+async function renderLobby(fetchIntervalID) {
+
+    console.log(fetchIntervalID);
 
     const main = document.querySelector("main");
 
@@ -87,6 +91,41 @@ async function renderLobby() {
     console.log(userID);
     console.log(gameInfo, gameInfo.hostID);
     console.log(gameInfo.hostID);
+
+    const intervalID = setInterval(function () {
+        if (window.localStorage.getItem("gameInfo")) {
+
+            const gameObject = JSON.parse(window.localStorage.getItem("gameInfo"));
+            const gameMembers = gameObject.members;
+            console.log(gameMembers);
+
+            const memberListDom = main.querySelector("#lobbyMemberList")
+            const lobbyMembers = memberListDom.querySelectorAll(".member");
+
+
+            if (lobbyMembers.length != gameMembers.length) {
+                memberListDom.innerHTML = "";
+
+                gameMembers.forEach(member => {
+                    const memberDiv = document.createElement("div");
+                    memberDiv.classList.add("member");
+
+                    memberDiv.innerHTML = `
+                        <div class="crown"></div>
+                        <div class="lobbyProfilePic" style="background-image: url('${member.profilePicture}')"></div>
+                        <div class="lobbyProfileName">${member.name}</div>
+                    `
+
+                    memberListDom.appendChild(memberDiv);
+                })
+            }
+
+            if (gameObject.isStarted === true) {
+                clearInterval(intervalID);
+                prepareQuestion(0);
+            }
+        }
+    }, 1000)
 
     if (userID == gameInfo.hostID) {
         const button = main.querySelector("#lobbyButton")
@@ -124,50 +163,27 @@ async function renderLobby() {
 
             const response = await callAPI(request, true, false);
 
+            clearInterval(fetchIntervalID)
+            clearInterval(intervalID);
+            window.localStorage.removeItem("gameInfo");
+            renderStartingpage();
+
+
         })
     }
 
-
-
-    const intervalID = setInterval(function () {
-        if (window.localStorage.getItem("gameInfo")) {
-
-            const gameObject = JSON.parse(window.localStorage.getItem("gameInfo"));
-            const gameMembers = gameObject.members;
-            console.log(gameMembers);
-
-            const memberListDom = main.querySelector("#lobbyMemberList")
-            const lobbyMembers = memberListDom.querySelectorAll(".member");
-
-
-            if (lobbyMembers.length != gameMembers.length) {
-                memberListDom.innerHTML = "";
-
-                gameMembers.forEach(member => {
-                    const memberDiv = document.createElement("div");
-                    memberDiv.classList.add("member");
-
-                    memberDiv.innerHTML = `
-                        <div class="crown"></div>
-                        <div class="lobbyProfilePic" style="background-image: url('${member.profilePicture}')"></div>
-                        <div class="lobbyProfileName">${member.name}</div>
-                    `
-
-                    memberListDom.appendChild(memberDiv);
-                })
-            }
-
-            if (gameObject.isStarted === true) {
-                clearInterval(intervalID);
-                prepareQuestion(0);
-            }
-        }
-    }, 1000)
 }
 
 
 function prepareQuestion(questionToLoad) {
     const main = document.querySelector("main");
+
+    const gameInfo = JSON.parse(window.localStorage.getItem("gameInfo"));
+    window.localStorage.removeItem("gameInfo");
+
+    gameInfo.currentQuestion = gameInfo.questions[questionToLoad];
+
+    window.localStorage.setItem("gameInfo", gameInfo);
 
     main.innerHTML = `
         <h1>GET READY</h1>
@@ -223,6 +239,7 @@ function mpTextQuestion(question) {
         <div id="contentWrapper">
             <div id="questionContainer">
             
+                <div id="timer">10</div>
                 <div id="questionTitle">${question.questionTitle}</div>
                 <div id="questionText">${question.questionText}</div>
         
@@ -232,6 +249,8 @@ function mpTextQuestion(question) {
 
     `
 
+    startQuestionTimer(question)
+
     const qAlternatives = question.alternatives;
 
     qAlternatives.forEach(alternative => {
@@ -240,15 +259,14 @@ function mpTextQuestion(question) {
         const alt = document.createElement("div");
         alt.classList.add("alternative");
 
-        alt.textContent = alternative;
+        alt.textContent = alternative.title;
+
+        alt.addEventListener("click", (event) => {
+            mpCheckAnswer(event, question)
+        })
 
         altDiv.append(alt);
     })
-
-    setTimeout(function () {
-        checkNextQuestion(question);
-    }, 10000)
-
 
 }
 
@@ -259,6 +277,7 @@ function mpTrailerQuestion(question) {
     
         <div id="contentWrapper">
         
+            <div id="timer">10</div>
             <div id="videoContainer">
             
                 <iframe></iframe>
@@ -276,10 +295,7 @@ function mpTrailerQuestion(question) {
 
     `
 
-    setTimeout(function () {
-        checkNextQuestion(question);
-    }, 10000)
-
+    startQuestionTimer(question)
 
 }
 
@@ -291,7 +307,7 @@ function mpPosterQuestion(question) {
         <div id="contentWrapper">
         
             <div id="contentWrapper">
-            
+                <div id="timer">10</div>
                 <div id="poster"></div>
 
             </div>
@@ -307,10 +323,68 @@ function mpPosterQuestion(question) {
 
     `
 
-    setTimeout(function () {
-        checkNextQuestion(question);
-    }, 10000)
+    startQuestionTimer(question)
 
+}
+
+async function mpCheckAnswer(ev, question) {
+
+    const gameInfo = JSON.parse(window.localStorage.getItem("gameInfo"));
+    const answerTime = document.querySelector("#timer").textContent
+    const questType = question.type;
+
+    console.log(gameInfo);
+
+    let answer;
+    switch (questType) {
+        case "actor":
+            answer = ev.target.textContent;
+        case "plot":
+            answer = ev.target.textContent;
+    }
+
+    const request = new Request("../PHP/api.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            action: "liveGame",
+            subAction: "answerQuestion",
+            userID: window.localStorage.getItem("userID"),
+            username: window.localStorage.getItem("username"),
+            gameID: gameInfo.gameID,
+            questionID: question.questionID,
+            answerTime: parseFloat(answerTime).toFixed(1),
+            answer: ev.target.textContent
+        })
+    })
+
+    const response = await callAPI(request, true, false);
+    const resource = await response.json();
+
+    if (resource.correct == false) {
+
+    }
+
+    if (resource.correct == true) {
+
+    }
+}
+
+function startQuestionTimer(question) {
+    const timer = document.querySelector("#timer");
+
+    if (timer) {
+        const intervalID = setInterval(() => {
+            let currentTimerValue = parseFloat(timer.textContent);
+
+            timer.textContent = (currentTimerValue - 0.1).toFixed(1);
+
+            if (currentTimerValue == 0) {
+                clearInterval(intervalID);
+                checkNextQuestion(question);
+            }
+        }, 100);
+    }
 }
 
 function checkNextQuestion(question) {

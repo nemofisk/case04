@@ -56,14 +56,14 @@ function getRandomMovies($number, $genres){
             }
         }
 
-        $alternatives = [$movie["Title"]];
+        $alternatives = [["title" => $movie["Title"], "whoGuessed" => []]];
 
         for($i = 0; $i < 3; $i++){
             $altMovie = $filteredMovieArray[array_rand($filteredMovieArray, 1)];
             if(in_array($altMovie["Title"], $alternatives)){
                 $i--;
             }else{
-                $alternatives[] = $altMovie["Title"];
+                $alternatives[] = ["title" => $altMovie["Title"], "whoGuessed" => []];
             }
         }
 

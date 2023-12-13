@@ -1,6 +1,6 @@
 [
     {
-        "gameID": 83073,
+        "gameID": 10102,
         "hostID": 1,
         "genres": [
             "Crime",
@@ -22,132 +22,204 @@
                 "userID": 1,
                 "profilePicture": "url",
                 "points": 0
-            },
-            {
-                "userID": 3,
-                "name": "wwwww",
-                "profilePicture": "url",
-                "points": 0
-            },
-            {
-                "userID": 2,
-                "name": "wwww",
-                "profilePicture": "url",
-                "points": 0
             }
         ],
         "questions": [
             {
                 "questionID": 0,
-                "type": "actors",
-                "correctAnswer": "The Godfather Part II",
-                "alternatives": [
-                    "The Pianist",
-                    "The Godfather Part II",
-                    "Sholay",
-                    "Catch Me If You Can"
-                ],
-                "questionTitle": "What movie has these actors in it?",
-                "questionText": "Al Pacino, Robert De Niro, Robert Duvall"
+                "type": "poster",
+                "correctAnswer": "Alien",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BOGQzZTBjMjQtOTVmMS00NGE5LWEyYmMtOGQ1ZGZjNmRkYjFhXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg"
             },
             {
                 "questionID": 1,
                 "type": "plot",
-                "correctAnswer": "El laberinto del fauno: Detras de las camaras",
+                "correctAnswer": "The Godfather",
                 "alternatives": [
-                    "El laberinto del fauno: Detras de las camaras",
-                    "The Princess Bride",
-                    "Dangal",
-                    "The Grapes of Wrath"
+                    {
+                        "title": "The Godfather",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Se7en",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Raging Bull",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Amadeus",
+                        "whoGuessed": []
+                    }
                 ],
                 "questionTitle": "What movie does this plot describe?",
-                "questionText": "Extra contained in the DVD of the movie, Pan's Labyrinth."
+                "questionText": "Don Vito Corleone, head of a mafia family, decides to hand over his empire to his youngest son Michael. However, his decision unintentionally puts the lives of his loved ones in grave danger."
             },
             {
                 "questionID": 2,
-                "type": "trailer",
-                "correctAnswer": "Cool Hand Luke",
-                "youtubeLink": "https:\/\/www.youtube.com\/embed\/EdMpFEl7DhY"
+                "type": "poster",
+                "correctAnswer": "Interstellar",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg"
             },
             {
                 "questionID": 3,
-                "type": "actors",
-                "correctAnswer": "Inglourious Basterds",
+                "type": "plot",
+                "correctAnswer": "Terminator 2: Judgment Day",
                 "alternatives": [
-                    "Rang De Basanti",
-                    "Inglourious Basterds",
-                    "Se7en",
-                    "Heat"
+                    {
+                        "title": "Terminator 2: Judgment Day",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Lion King",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Million Dollar Baby",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Pulp Fiction",
+                        "whoGuessed": []
+                    }
                 ],
-                "questionTitle": "What movie has these actors in it?",
-                "questionText": "Brad Pitt, Diane Kruger, Eli Roth"
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "A cyborg, identical to the one who failed to kill Sarah Connor, must now protect her ten year old son John from an even more advanced and powerful cyborg."
             },
             {
                 "questionID": 4,
-                "type": "plot",
-                "correctAnswer": "The Kid",
-                "alternatives": [
-                    "Modern Times",
-                    "The Kid",
-                    "Forrest Gump",
-                    "Paris, Texas"
-                ],
-                "questionTitle": "What movie does this plot describe?",
-                "questionText": "The Tramp cares for an abandoned child, but events put their relationship in jeopardy."
+                "type": "trailer",
+                "correctAnswer": "City Lights",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/7vl7F8S4cpQ"
             },
             {
                 "questionID": 5,
-                "type": "actors",
-                "correctAnswer": "Der Untergang der Pamir",
+                "type": "plot",
+                "correctAnswer": "Finding Nemo",
                 "alternatives": [
-                    "Metropolis",
-                    "Gran Torino",
-                    "Spotlight",
-                    "Der Untergang der Pamir"
+                    {
+                        "title": "8\u00bd",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Hamster Factor and Other Tales of Twelve Monkeys",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Finding Nemo",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Hacksaw Ridge",
+                        "whoGuessed": []
+                    }
                 ],
-                "questionTitle": "What movie has these actors in it?",
-                "questionText": "Klaus J. Behrendt, Miroslav Milanovic Miki, Jan Josef Liefers"
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "After his son is captured in the Great Barrier Reef and taken to Sydney, a timid clownfish sets out on a journey to bring him home."
             },
             {
                 "questionID": 6,
-                "type": "trailer",
-                "correctAnswer": "Amores Perros",
-                "youtubeLink": "https:\/\/www.youtube.com\/embed\/A5HTBYR7m0o"
+                "type": "actors",
+                "correctAnswer": "L.A. Confidential",
+                "alternatives": [
+                    {
+                        "title": "L.A. Confidential",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Vertigo",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Gandhi",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Best Years of Our Lives",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Kevin Spacey, Russell Crowe, Guy Pearce"
             },
             {
                 "questionID": 7,
-                "type": "actors",
-                "correctAnswer": "Groundhog Day",
+                "type": "plot",
+                "correctAnswer": "Before Sunrise",
                 "alternatives": [
-                    "Ran",
-                    "Amores Perros",
-                    "Groundhog Day",
-                    "Rebecca"
+                    {
+                        "title": "A Clockwork Orange",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Great Dictator",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Before Sunrise",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "8\u00bd",
+                        "whoGuessed": []
+                    }
                 ],
-                "questionTitle": "What movie has these actors in it?",
-                "questionText": "Bill Murray, Andie MacDowell, Chris Elliott"
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "A young man and woman meet on a train in Europe, and wind up spending one evening together in Vienna. Unfortunately, both know that this will probably be their only night together."
             },
             {
                 "questionID": 8,
-                "type": "plot",
-                "correctAnswer": "The Wizard of Oz",
+                "type": "actors",
+                "correctAnswer": "Raging Bull",
                 "alternatives": [
-                    "The Elephant Man",
-                    "Indiana Jones and the Last Crusade",
-                    "The Wizard of Oz",
-                    "Vertigo"
+                    {
+                        "title": "Bakomfilm Smultronst\u00e4llet",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Lion King",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Raging Bull",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Bridge on the River Kwai",
+                        "whoGuessed": []
+                    }
                 ],
-                "questionTitle": "What movie does this plot describe?",
-                "questionText": "Young Dorothy Gale and her dog Toto are swept away by a tornado from their Kansas farm to the magical Land of Oz, and embark on a quest with three new friends to see the Wizard, who can return her to her home and fulfill the other..."
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Robert De Niro, Cathy Moriarty, Joe Pesci"
             },
             {
                 "questionID": 9,
-                "type": "trailer",
-                "correctAnswer": "Gran Torino",
-                "youtubeLink": "https:\/\/www.youtube.com\/embed\/F8zue_BzNsw"
+                "type": "plot",
+                "correctAnswer": "There Will Be Blood",
+                "alternatives": [
+                    {
+                        "title": "There Will Be Blood",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Bakomfilm Smultronst\u00e4llet",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "A Clockwork Orange",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Blade Runner",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "A story of family, religion, hatred, oil and madness, focusing on a turn-of-the-century prospector in the early days of the business."
             }
         ],
-        "isStarted": true,
+        "isStarted": false,
         "currentQuestion": ""
     }
 ]
