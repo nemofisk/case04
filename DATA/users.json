@@ -21,12 +21,7 @@
         "friends": [],
         "friendRequests": [],
         "gameInvites": [
-            {
-                "hostName": "calle",
-                "gameID": [
-                    14451
-                ]
-            }
+           
         ],
         "xpGoal": 1525,
         "id": 2
@@ -41,6 +36,9 @@
             "calle"
         ],
         "friendRequests": [],
+        "gameInvites": [
+           
+        ],
         "xpGoal": 300,
         "id": 3,
         "profile_picture": "Peaky Blinders (kopia).webp"

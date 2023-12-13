@@ -52,6 +52,7 @@ function singlePlayer(event) {
             document.querySelectorAll("#catergoryMenu > div").forEach(div => {
                 div.classList.remove("selected");
                 div.style.backgroundColor = "";
+                document.getElementById("mixed").classList.remove("mixedMark")
                 document.getElementById("mixed").style.backgroundColor = "#171717";
                 document.querySelector("#Continue").style.backgroundColor = "#171717"
                 document.querySelector("#Continue").style.color = "#747474";
@@ -76,8 +77,10 @@ function singlePlayer(event) {
         })
     
     document.getElementById("Continue").addEventListener("click", () => {
-        const selectedGenres = Array.from(document.querySelectorAll(".genreClass.selected")).map((div) => div.textContent);
-        chooseGenre(selectedGenres);
+        if(document.getElementById("Continue").style.backgroundColor === "rgb(255, 248, 186)"){
+            const selectedGenres = Array.from(document.querySelectorAll(".genreClass.selected")).map((div) => div.textContent);
+            chooseGenre(selectedGenres);
+        }
 
     })
 }

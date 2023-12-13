@@ -1,5 +1,6 @@
 
 function popUpFunction(action, information) {
+    console.log("HUF");
 
     let main = document.querySelector("main");
     let message;
