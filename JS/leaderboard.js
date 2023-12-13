@@ -1,5 +1,6 @@
 
 function renderLeaderBoard() {
+    document.querySelector("footer").innerHTML = ``;
     document.querySelector("main").innerHTML =
         `
         <h1>Leaderboards</h1>
@@ -32,7 +33,7 @@ function displayFriendsLeaderboard(leaderboardData) {
 
     for (let i = 0; i < leaderboardData.length && i < 11; i++) {
         const userElement = document.createElement("div");
-        userElement.textContent = `${leaderboardData[i].username}: ${leaderboardData[i].popcorn}`;
+        userElement.textContent = `${i}${leaderboardData[i].username}: ${leaderboardData[i].popcorn}`;
         leaderboardFriends.appendChild(userElement);
     }
 }
@@ -59,9 +60,9 @@ function displayLeaderboard(leaderboardData) {
         }
     })
 
-    for (let i = 0; i < leaderboardData.length && i < 11; i++) {
+    for (let i = 1; i < leaderboardData.length && i < 11; i++) {
         const userElement = document.createElement("div");
-        userElement.textContent = `${leaderboardData[i].username}: ${leaderboardData[i].popcorn}`;
+        userElement.textContent = `${i}${leaderboardData[i].username}: ${leaderboardData[i].popcorn}`;
         leaderboard1.appendChild(userElement);
     }
 
