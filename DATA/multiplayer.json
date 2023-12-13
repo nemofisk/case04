@@ -1,7 +1,7 @@
 [
     {
-        "gameID": 10102,
-        "hostID": 1,
+        "gameID": 61288,
+        "hostID": 3,
         "genres": [
             "Crime",
             "Drama",
@@ -18,61 +18,100 @@
         ],
         "members": [
             {
-                "name": "w",
-                "userID": 1,
-                "profilePicture": "url",
+                "name": "www",
+                "userID": 3,
+                "profilePicture": "3e1cd74f73d698031d41f7c7074e169b.png",
                 "points": 0
+            },
+            {
+                "userID": 2,
+                "name": "wwww",
+                "profilePicture": "serach.png",
+                "points": 0
+            },
+            {
+                "userID": 1,
+                "name": "w",
+                "profilePicture": "kent-omslag_ny.jpg",
+                "points": 4.6
             }
         ],
         "questions": [
             {
                 "questionID": 0,
-                "type": "poster",
-                "correctAnswer": "Alien",
-                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BOGQzZTBjMjQtOTVmMS00NGE5LWEyYmMtOGQ1ZGZjNmRkYjFhXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg"
+                "type": "plot",
+                "correctAnswer": "Room",
+                "alternatives": [
+                    {
+                        "title": "L\u00e9on: The Professional",
+                        "whoGuessed": [
+                            {
+                                "name": "www",
+                                "userID": 3,
+                                "profilePicture": "3e1cd74f73d698031d41f7c7074e169b.png"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "The Best Years of Our Lives",
+                        "whoGuessed": [
+                            {
+                                "userID": 2,
+                                "name": "wwww",
+                                "profilePicture": "serach.png"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "In the Name of the Father",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Room",
+                        "whoGuessed": [
+                            {
+                                "userID": 1,
+                                "name": "w",
+                                "profilePicture": "kent-omslag_ny.jpg"
+                            }
+                        ]
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "A little boy is held captive in a room with his mother since his birth, so he has never known the world outside."
             },
             {
                 "questionID": 1,
-                "type": "plot",
-                "correctAnswer": "The Godfather",
+                "type": "actors",
+                "correctAnswer": "Casino",
                 "alternatives": [
+                    {
+                        "title": "Casino",
+                        "whoGuessed": []
+                    },
                     {
                         "title": "The Godfather",
                         "whoGuessed": []
                     },
                     {
-                        "title": "Se7en",
+                        "title": "Inception",
                         "whoGuessed": []
                     },
                     {
-                        "title": "Raging Bull",
-                        "whoGuessed": []
-                    },
-                    {
-                        "title": "Amadeus",
+                        "title": "Barry Lyndon",
                         "whoGuessed": []
                     }
                 ],
-                "questionTitle": "What movie does this plot describe?",
-                "questionText": "Don Vito Corleone, head of a mafia family, decides to hand over his empire to his youngest son Michael. However, his decision unintentionally puts the lives of his loved ones in grave danger."
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Robert De Niro, Sharon Stone, Joe Pesci"
             },
             {
                 "questionID": 2,
-                "type": "poster",
-                "correctAnswer": "Interstellar",
-                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg"
-            },
-            {
-                "questionID": 3,
                 "type": "plot",
-                "correctAnswer": "Terminator 2: Judgment Day",
+                "correctAnswer": "Eternal Sunshine of the Spotless Mind",
                 "alternatives": [
                     {
-                        "title": "Terminator 2: Judgment Day",
-                        "whoGuessed": []
-                    },
-                    {
-                        "title": "The Lion King",
+                        "title": "Requiem for a Dream",
                         "whoGuessed": []
                     },
                     {
@@ -80,105 +119,77 @@
                         "whoGuessed": []
                     },
                     {
-                        "title": "Pulp Fiction",
+                        "title": "Casino",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Eternal Sunshine of the Spotless Mind",
                         "whoGuessed": []
                     }
                 ],
                 "questionTitle": "What movie does this plot describe?",
-                "questionText": "A cyborg, identical to the one who failed to kill Sarah Connor, must now protect her ten year old son John from an even more advanced and powerful cyborg."
+                "questionText": "When their relationship turns sour, a couple undergoes a medical procedure to have each other erased from their memories for ever."
+            },
+            {
+                "questionID": 3,
+                "type": "trailer",
+                "correctAnswer": "Hacksaw Ridge",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/s2-1hz1juBI"
             },
             {
                 "questionID": 4,
-                "type": "trailer",
-                "correctAnswer": "City Lights",
-                "youtubeLink": "https:\/\/www.youtube.com\/embed\/7vl7F8S4cpQ"
+                "type": "plot",
+                "correctAnswer": "12 Years a Slave",
+                "alternatives": [
+                    {
+                        "title": "WALL\u00b7E",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "In the Name of the Father",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Maltese Falcon",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "12 Years a Slave",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "In the antebellum United States, Solomon Northup, a free black man from upstate New York, is abducted and sold into slavery."
             },
             {
                 "questionID": 5,
-                "type": "plot",
-                "correctAnswer": "Finding Nemo",
-                "alternatives": [
-                    {
-                        "title": "8\u00bd",
-                        "whoGuessed": []
-                    },
-                    {
-                        "title": "The Hamster Factor and Other Tales of Twelve Monkeys",
-                        "whoGuessed": []
-                    },
-                    {
-                        "title": "Finding Nemo",
-                        "whoGuessed": []
-                    },
-                    {
-                        "title": "Hacksaw Ridge",
-                        "whoGuessed": []
-                    }
-                ],
-                "questionTitle": "What movie does this plot describe?",
-                "questionText": "After his son is captured in the Great Barrier Reef and taken to Sydney, a timid clownfish sets out on a journey to bring him home."
+                "type": "trailer",
+                "correctAnswer": "Sunset Blvd.",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/_dY0SVxnHjQ"
             },
             {
                 "questionID": 6,
-                "type": "actors",
-                "correctAnswer": "L.A. Confidential",
-                "alternatives": [
-                    {
-                        "title": "L.A. Confidential",
-                        "whoGuessed": []
-                    },
-                    {
-                        "title": "Vertigo",
-                        "whoGuessed": []
-                    },
-                    {
-                        "title": "Gandhi",
-                        "whoGuessed": []
-                    },
-                    {
-                        "title": "The Best Years of Our Lives",
-                        "whoGuessed": []
-                    }
-                ],
-                "questionTitle": "What movie has these actors in it?",
-                "questionText": "Kevin Spacey, Russell Crowe, Guy Pearce"
+                "type": "trailer",
+                "correctAnswer": "Before Sunrise",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/25v7N34d5HE"
             },
             {
                 "questionID": 7,
-                "type": "plot",
-                "correctAnswer": "Before Sunrise",
-                "alternatives": [
-                    {
-                        "title": "A Clockwork Orange",
-                        "whoGuessed": []
-                    },
-                    {
-                        "title": "The Great Dictator",
-                        "whoGuessed": []
-                    },
-                    {
-                        "title": "Before Sunrise",
-                        "whoGuessed": []
-                    },
-                    {
-                        "title": "8\u00bd",
-                        "whoGuessed": []
-                    }
-                ],
-                "questionTitle": "What movie does this plot describe?",
-                "questionText": "A young man and woman meet on a train in Europe, and wind up spending one evening together in Vienna. Unfortunately, both know that this will probably be their only night together."
+                "type": "trailer",
+                "correctAnswer": "The Gold Rush",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/kDlEvaKBkhU"
             },
             {
                 "questionID": 8,
-                "type": "actors",
-                "correctAnswer": "Raging Bull",
+                "type": "plot",
+                "correctAnswer": "Beauty and the Beast",
                 "alternatives": [
                     {
-                        "title": "Bakomfilm Smultronst\u00e4llet",
+                        "title": "Gone with the Wind",
                         "whoGuessed": []
                     },
                     {
-                        "title": "The Lion King",
+                        "title": "Beauty and the Beast",
                         "whoGuessed": []
                     },
                     {
@@ -186,40 +197,40 @@
                         "whoGuessed": []
                     },
                     {
-                        "title": "The Bridge on the River Kwai",
-                        "whoGuessed": []
-                    }
-                ],
-                "questionTitle": "What movie has these actors in it?",
-                "questionText": "Robert De Niro, Cathy Moriarty, Joe Pesci"
-            },
-            {
-                "questionID": 9,
-                "type": "plot",
-                "correctAnswer": "There Will Be Blood",
-                "alternatives": [
-                    {
-                        "title": "There Will Be Blood",
-                        "whoGuessed": []
-                    },
-                    {
-                        "title": "Bakomfilm Smultronst\u00e4llet",
-                        "whoGuessed": []
-                    },
-                    {
-                        "title": "A Clockwork Orange",
-                        "whoGuessed": []
-                    },
-                    {
-                        "title": "Blade Runner",
+                        "title": "City Lights",
                         "whoGuessed": []
                     }
                 ],
                 "questionTitle": "What movie does this plot describe?",
-                "questionText": "A story of family, religion, hatred, oil and madness, focusing on a turn-of-the-century prospector in the early days of the business."
+                "questionText": "A prince cursed to spend his days as a hideous monster sets out to regain his humanity by earning a young woman's love."
+            },
+            {
+                "questionID": 9,
+                "type": "actors",
+                "correctAnswer": "La haine",
+                "alternatives": [
+                    {
+                        "title": "The Great Escape",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Unforgiven",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "La haine",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "L\u00e9on: The Professional",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Vincent Cassel, Hubert Kound\u00e9, Sa\u00efd Taghmaoui"
             }
         ],
-        "isStarted": false,
+        "isStarted": true,
         "currentQuestion": ""
     }
 ]
