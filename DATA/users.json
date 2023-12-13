@@ -6,7 +6,26 @@
         "popcorn": 1000,
         "friends": [],
         "friendRequests": [],
-        "gameInvites": [],
+        "gameInvites": [
+            {
+                "hostName": "",
+                "gameID": [
+                    54889
+                ]
+            },
+            {
+                "hostName": "",
+                "gameID": [
+                    47557
+                ]
+            },
+            {
+                "hostName": "",
+                "gameID": [
+                    86561
+                ]
+            }
+        ],
         "xpGoal": 1300,
         "id": 1,
         "clues": 19,
@@ -20,14 +39,7 @@
         "popcorn": 1300,
         "friends": [],
         "friendRequests": [],
-        "gameInvites": [
-            {
-                "hostName": "calle",
-                "gameID": [
-                    14451
-                ]
-            }
-        ],
+        "gameInvites": [],
         "xpGoal": 1525,
         "id": 2
     },
