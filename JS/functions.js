@@ -29,8 +29,22 @@ function popUpFunction(action, information) {
 
 }
 
-function acceptInvite(gameID) {
-    console.log(gameID);
+async function acceptInvite(gameID) {
+    const request = new Request("../PHP/api.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            username: window.localStorage.getItem("username"),
+            userID: window.localStorage.getItem("userID"),
+            gameID: gameID,
+            action: "multiplayer",
+            subAction: "acceptInvite"
+
+        })
+    })
+
+    const response = await callAPI(request, true, false);
+    joinGame(gameID);
 }
 function declineInvite(event) {
     console.log("declined");

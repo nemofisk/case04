@@ -124,11 +124,11 @@ function renderInvites() {
     fetch(`../PHP/api.php?action=multiplayer&subAction=invitations&username=${localStorage.getItem("username")}`)
         .then(r => r.json())
         .then(resource => {
-            
-            console.log(resource);
-            if (resource.message.hasOwnProperty("hostName")) {
-                popUpFunction("gameInvites", resource)
-            }
+            resource.message.forEach(invite => {
+                if (invite.hasOwnProperty("hostName")) {
+                    popUpFunction("gameInvites", resource)
+                }
+            })
 
         })
 

@@ -7,9 +7,22 @@ function sendJSON($message, $http_code = 200)
     exit();
 }
 
+function checkAndReturnFile($filename){
+    if (file_exists($filename)) {
+        $fileArray = json_decode(file_get_contents($filename), true);
+    } else {
+        $fileArray = [];
+    }
+
+    return $fileArray;
+}
 
 function putInUsersJSON($newData){
     $filename = __DIR__."/../DATA/users.json";
+    file_put_contents($filename, json_encode($newData, JSON_PRETTY_PRINT));
+}
+function putInMultiplayerJSON($newData){
+    $filename = __DIR__."/../DATA/multiplayer.json";
     file_put_contents($filename, json_encode($newData, JSON_PRETTY_PRINT));
 }
 
@@ -43,14 +56,14 @@ function getRandomMovies($number, $genres){
             }
         }
 
-        $alternatives = [$movie["Title"]];
+        $alternatives = [["title" => $movie["Title"], "whoGuessed" => []]];
 
         for($i = 0; $i < 3; $i++){
             $altMovie = $filteredMovieArray[array_rand($filteredMovieArray, 1)];
             if(in_array($altMovie["Title"], $alternatives)){
                 $i--;
             }else{
-                $alternatives[] = $altMovie["Title"];
+                $alternatives[] = ["title" => $altMovie["Title"], "whoGuessed" => []];
             }
         }
 

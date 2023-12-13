@@ -1,6 +1,6 @@
 [
     {
-        "username": "",
+        "username": "w",
         "password": "",
         "level": 666,
         "popcorn": 1000,
@@ -34,20 +34,20 @@
     },
     {
         "username": "wwww",
-        "password": "wwww",
+        "password": "",
         "level": 6,
         "popcorn": 1300,
-        "friends": [],
-        "friendRequests": [],
-        "gameInvites": [
-           
+        "friends": [
+            1
         ],
+        "friendRequests": [],
+        "gameInvites": [],
         "xpGoal": 1525,
         "id": 2
     },
     {
-        "username": "wwwww",
-        "password": "wwwww",
+        "username": "www",
+        "password": "",
         "level": 2,
         "popcorn": 150,
         "friends": [
@@ -55,11 +55,9 @@
             "calle"
         ],
         "friendRequests": [],
-        "gameInvites": [
-           
-        ],
+        "gameInvites": [],
         "xpGoal": 300,
         "id": 3,
-        "profile_picture": "Peaky Blinders (kopia).webp"
+        "gameInvites": []
     }
 ]
