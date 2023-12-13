@@ -61,6 +61,9 @@ function chooseCatagoryMultiplayer(event) {
             MixedCatagoryButton.style.backgroundColor = "#8184F8";
             ContinueButton.disabled = false;
             disabledCatagorys.forEach(catagory => {
+                if (catagory.classList.contains("SelectedGanras")) {
+                    catagory.classList.remove("SelectedGanras");
+                }
                 catagory.removeEventListener("click", chooseGenre);
             })
 
@@ -85,7 +88,6 @@ function chooseCatagoryMultiplayer(event) {
             ContinueButton.disabled = true;
             SelectedGarnres = [];
             disabledCatagorys.forEach(catagory => {
-                //catagory.classList.toggle("SelectedGanras")
                 catagory.addEventListener("click", chooseGenre);
             })
         }
@@ -129,12 +131,12 @@ function chooseCatagoryMultiplayer(event) {
 
 function inviteFriends(genreArray) {
     console.log(genreArray);
-    document.getElementById("inviteUser").addEventListener("click", inviteFriends)
     document.querySelector("main").innerHTML = `
     <input id="userSearch"></input>
     <button id="inviteUser">Invite User!</button>
     
     `
+    document.getElementById("inviteUser").addEventListener("click", inviteFriends)
 
     document.getElementById("inviteUser").addEventListener("click", e => {
         let inviteUser = document.querySelector("input").value;
@@ -150,7 +152,6 @@ function inviteFriends(genreArray) {
         });
 
     })
-
 
 }
 
