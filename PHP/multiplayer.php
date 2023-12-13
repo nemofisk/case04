@@ -45,7 +45,7 @@ function multiplayer($users, $received_data){
                     "members" => [[
                         "name" => $hostUsername,
                         "userID" => $user["id"],
-                        "profilePicture" => $user["profile_picture"],
+                        "profilePicture" => "url",
                         "points" => 0
                     ]],
                     "questions" => getRandomMovies(10, $selectedGenres),
@@ -88,7 +88,7 @@ function multiplayer($users, $received_data){
                         $gameobject = [
                             "userID" => $user["id"],
                             "name" => $user["username"],
-                            "profilePicture" => $user["profile_picture"],
+                            "profilePicture" => "url",
                             "points" => 0
                         ];
                         $game["members"][] = $gameobject;

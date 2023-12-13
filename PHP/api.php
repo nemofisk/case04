@@ -25,10 +25,6 @@ $filenameMultiplayer = __DIR__."/../DATA/multiplayer.json";
 $users = checkAndReturnFile($filenameUsers);
 $games = checkAndReturnFile($filenameMultiplayer);
 
-
-if(!isset($action)){
-    uploadImage($users, $received_data);
-}
 $action = $received_data["action"];
 switch($action){
     case "register":

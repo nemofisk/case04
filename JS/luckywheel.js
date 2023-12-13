@@ -1,5 +1,5 @@
-function renderLuckyWheel() {
-  document.querySelector("main").innerHTML =
+function renderLuckyWheel(){
+    document.querySelector("main").innerHTML = 
     `
     
     <body>
@@ -27,179 +27,179 @@ function renderLuckyWheel() {
     </html>
     
     `
-  document.querySelector("#spinWheel").addEventListener("click", e => {
+    document.querySelector("#spinWheel").addEventListener("click", e => {
 
-    const randomWheelItem = getRandomItem(wheelArray);
-    console.log(randomWheelItem);
-    spinWheel(randomWheelItem)
-  })
-}
+      const randomWheelItem = getRandomItem(wheelArray);
+      console.log(randomWheelItem);
+      spinWheel(randomWheelItem)
+    })
+  }
 
 const wheelArray = [
-  "10 points",
-  "reset time",
-  "no win",
-  "clue",
-  "5 points",
-  "no win",
-  "no win",
-  "clue",
-  "no win",
-  "no win",
-  "reset time",
-  "10 points",
-  "reset time",
-  "no win",
-  "10 points",
-  "clue",
-  "20 points",
-  "5 points",
-  "clue",
-  "clue",
-  "10 points",
-  "no win",
-  "5 points",
-  "no win",
-  "no win",
-  "no win",
-  "no win",
-  "5 points",
-  "no win",
-  "no win",
-  "5 points",
-  "reset time",
-  "5 points",
-  "5 points",
-  "no win",
-  "clue",
-  "no win",
-  "no win",
-  "no win",
-  "no win",
-  "10 points",
-  "no win",
-  "5 points",
-  "5 points",
-  "no win",
-  "no win",
-  "reset time",
-  "10 points",
-  "no win",
-  "no win",
-  "no win",
-  "no win",
-  "reset time",
-  "no win",
-  "clue",
-  "no win",
-  "reset time",
-  "no win",
-  "5 points",
-  "5 points",
-  "5 points",
-  "no win",
-  "no win",
-  "5 points",
-  "no win",
-  "20 points",
-  "no win",
-  "no win",
-  "5 points",
-  "10 points",
-  "20 points",
-  "20 points",
-  "reset time",
-  "clue",
-  "20 points",
-  "no win",
-  "5 points",
-  "reset time",
-  "5 points",
-  "10 points",
-  "no win",
-  "5 points",
-  "no win",
-  "5 points",
-  "10 points",
-  "clue",
-  "clue",
-  "no win",
-  "no win",
-  "no win",
-  "no win",
-  "no win",
-  "no win",
-  "5 points",
-  "10 points",
-  "no win",
-  "5 points",
-  "no win",
-  "no win",
-  "reset time"
-];
+    "10 points",
+    "reset time",
+    "no win",
+    "clue",
+    "5 points",
+    "no win",
+    "no win",
+    "clue",
+    "no win",
+    "no win",
+    "reset time",
+    "10 points",
+    "reset time",
+    "no win",
+    "10 points",
+    "clue",
+    "20 points",
+    "5 points",
+    "clue",
+    "clue",
+    "10 points",
+    "no win",
+    "5 points",
+    "no win",
+    "no win",
+    "no win",
+    "no win",
+    "5 points",
+    "no win",
+    "no win",
+    "5 points",
+    "reset time",
+    "5 points",
+    "5 points",
+    "no win",
+    "clue",
+    "no win",
+    "no win",
+    "no win",
+    "no win",
+    "10 points",
+    "no win",
+    "5 points",
+    "5 points",
+    "no win",
+    "no win",
+    "reset time",
+    "10 points",
+    "no win",
+    "no win",
+    "no win",
+    "no win",
+    "reset time",
+    "no win",
+    "clue",
+    "no win",
+    "reset time",
+    "no win",
+    "5 points",
+    "5 points",
+    "5 points",
+    "no win",
+    "no win",
+    "5 points",
+    "no win",
+    "20 points",
+    "no win",
+    "no win",
+    "5 points",
+    "10 points",
+    "20 points",
+    "20 points",
+    "reset time",
+    "clue",
+    "20 points",
+    "no win",
+    "5 points",
+    "reset time",
+    "5 points",
+    "10 points",
+    "no win",
+    "5 points",
+    "no win",
+    "5 points",
+    "10 points",
+    "clue",
+    "clue",
+    "no win",
+    "no win",
+    "no win",
+    "no win",
+    "no win",
+    "no win",
+    "5 points",
+    "10 points",
+    "no win",
+    "5 points",
+    "no win",
+    "no win",
+    "reset time"
+  ];
 
-function getRandomItem(wheelArray) {
-  const randomIndex = Math.floor(Math.random() * wheelArray.length);
-  return wheelArray[randomIndex];
-}
+  function getRandomItem(wheelArray) {
+    const randomIndex = Math.floor(Math.random() * wheelArray.length);
+    return wheelArray[randomIndex];
+  }
+  
+ 
 
+  let spinning = false;
 
-
-let spinning = false;
-
-function spinWheel(indicateSlice) {
-
-  if (!spinning) {
-    let desiredSlice;
+  function spinWheel(indicateSlice) {
+    
+    if (!spinning) {
+      let desiredSlice;
 
     switch (indicateSlice) {
       case "reset time":
-        desiredSlice = 0;
-        break;
+          desiredSlice = 0;
+          break;
       case "clue":
-        desiredSlice = 1;
-        break;
+          desiredSlice = 1;
+          break;
       case "5 points":
-        desiredSlice = 2;
-        break;
+          desiredSlice = 2;
+          break;
       case "no win":
-        desiredSlice = 3;
-        break;
+          desiredSlice = 3;
+          break;
       case "20 points":
-        desiredSlice = 4;
-        break;
+          desiredSlice = 4;
+          break;
       case "clue":
-        desiredSlice = 5;
-        break;
+          desiredSlice = 5;
+          break;
       case 6:
-        resetTimer()
-        break;
+          resetTimer()
+          break;
       case "10 points":
-        desiredSlice = 7;
-        break;
+          desiredSlice = 7;
+          break;
     }
-    spinning = true;
-
-    // Choose the slice you want to land on (0 to 7)
-
-
-    // Apply the spin animation
-    const wheel = document.getElementById('wheel');
-    wheel.style.transition = 'transform 3s ease-out';
-    wheel.style.transform = `rotate(${(360 / 8) * desiredSlice + 720}deg)`;
-
-    const img = document.querySelector('#luckywheel');
-    img.style.transition = 'transform 3s ease-out';
-    img.style.transform = `rotate(${(360 / 8) * desiredSlice + 720}deg)`;
-
-    // Listen for the end of the animation
-    wheel.addEventListener('transitionend', chosenSlice => {
-      handleTransitionEnd(desiredSlice)
-
-    });
+      spinning = true;
+  
+      // Choose the slice you want to land on (0 to 7)
+      
+  
+      // Apply the spin animation
+      const wheel = document.getElementById('wheel');
+      wheel.style.transition = 'transform 3s ease-out';
+      wheel.style.transform = `rotate(${(360 / 8) * desiredSlice + 720}deg)`;
+  
+      const img = document.querySelector('#luckywheel');
+      img.style.transition = 'transform 3s ease-out';
+      img.style.transform = `rotate(${(360 / 8) * desiredSlice + 720}deg)`;
+  
+      // Listen for the end of the animation
+      wheel.addEventListener('transitionend', chosenSlice => {
+        handleTransitionEnd(desiredSlice)
+        
+      });
+    }
   }
-}
-
+  
 
 function handleTransitionEnd(desiredSlice) {
   // Get the current rotation degree after the spin
@@ -219,29 +219,29 @@ function handleTransitionEnd(desiredSlice) {
   alert(`Landed on slice ${desiredSlice}`);
   switch (desiredSlice) {
     case 0:
-      resetTimer()
-      break;
+        resetTimer()
+        break;
     case 1:
-      giveClue()
-      break;
+        giveClue()
+        break;
     case 2:
-      addPoints(5)
-      break;
+        addPoints(5)
+        break;
     case 3:
-      nothing()
-      break;
+        nothing()
+        break;
     case 4:
-      addPoints(20)
-      break;
+        addPoints(20)
+        break;
     case 5:
-      giveClue()
-      break;
+        giveClue()
+        break;
     case 6:
-      resetTimer()
-      break;
+        resetTimer()
+        break;
     case 7:
-      addPoints(10)
-      break;
+        addPoints(10)
+        break;
   }
 
   // Reset the wheel for the next spin

@@ -3,15 +3,14 @@
         "username": "w",
         "password": "",
         "level": 666,
-        "popcorn": 1005,
+        "popcorn": 1045,
         "friends": [],
         "friendRequests": [],
         "gameInvites": [],
-        "xpGoal": 1300,
+        "xpGoal": 450,
         "id": 1,
-        "clues": 20,
-        "resetTimer": 24,
-        "profile_picture": "kent-omslag_ny.jpg"
+        "clues": 19,
+        "resetTimer": 20
     },
     {
         "username": "wwww",
@@ -24,8 +23,7 @@
         "friendRequests": [],
         "gameInvites": [],
         "xpGoal": 1525,
-        "id": 2,
-        "profile_picture": "serach.png"
+        "id": 2
     },
     {
         "username": "www",
@@ -39,6 +37,6 @@
         "friendRequests": [],
         "xpGoal": 300,
         "id": 3,
-        "profile_picture": "3e1cd74f73d698031d41f7c7074e169b.png"
+        "gameInvites": []
     }
 ]

@@ -259,22 +259,11 @@ function mpTextQuestion(question) {
         const alt = document.createElement("div");
         alt.classList.add("alternative");
 
-        alt.innerHTML = `
-            <div class="altTitle">${alternative.title}</div>
-            <div class="whoGuessed"></div>
-        `
+        alt.textContent = alternative.title;
 
-        const altEvent = function (event) {
-            const allAlternatives = document.querySelectorAll(".alternative")
-
-            allAlternatives.forEach(altern => {
-                altern.removeEventListener("click", altEvent)
-            })
-
+        alt.addEventListener("click", (event) => {
             mpCheckAnswer(event, question)
-        }
-
-        alt.addEventListener("click", altEvent)
+        })
 
         altDiv.append(alt);
     })
@@ -373,11 +362,11 @@ async function mpCheckAnswer(ev, question) {
     const resource = await response.json();
 
     if (resource.correct == false) {
-        ev.target.classList.add("wrong")
+
     }
 
     if (resource.correct == true) {
-        ev.target.classList.add("correct")
+
     }
 }
 
@@ -391,72 +380,11 @@ function startQuestionTimer(question) {
             timer.textContent = (currentTimerValue - 0.1).toFixed(1);
 
             if (currentTimerValue == 0) {
-
                 clearInterval(intervalID);
-
-                endOfQuestion(question);
+                checkNextQuestion(question);
             }
         }, 100);
     }
-}
-
-async function endOfQuestion(question) {
-    const qType = question.type;
-    const gameInfo = JSON.parse(window.localStorage.getItem("gameInfo"));
-    const request = new Request("../PHP/api.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            action: "liveGame",
-            subAction: "fetchQuestion",
-            questionID: question.questionID,
-            gameID: gameInfo.gameID
-        })
-    })
-
-    const response = await callAPI(request, true, false);
-    const resource = await response.json();
-
-    const correctAnswer = resource.correctAnswer;
-
-    if (qType == "plot" || qType == "actors") {
-        const alternativeDivs = document.querySelectorAll(".alternative");
-        const alternativesDiv = document.querySelector("#alternatives")
-
-        alternativeDivs.forEach(alternative => {
-
-            const title = alternative.querySelector(".altTitle")
-
-            if (title.textContent == correctAnswer) {
-                alternative.classList.add("correct");
-            } else {
-                alternative.classList.add("wrong");
-            }
-
-            const whoGuessed = alternative.querySelector(".whoGuessed");
-
-            resource.alternatives.forEach(alt => {
-                if (alt.title == title.textContent) {
-                    alt.whoGuessed.forEach(player => {
-                        const playerDiv = document.createElement("div");
-
-                        playerDiv.classList.add("playerImg");
-
-                        playerDiv.setAttribute("background-image", `url('../images/${player.profilePicture}')`);
-
-                        whoGuessed.append(playerDiv);
-                    })
-                }
-            })
-
-        })
-
-    }
-
-    setTimeout(() => {
-        checkNextQuestion(question);
-    }, 5000)
-
 }
 
 function checkNextQuestion(question) {
