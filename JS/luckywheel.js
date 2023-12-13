@@ -4,7 +4,7 @@ function renderLuckyWheel(){
     
     <body>
     <img id="pin" src="../images/pin.png">
-    <img id="luckywheel" width = "500px" id="wheelimage" src="../images/wheelplswosk.png">
+    
     <div class="wheel" id="wheel">
     <!-- Create 8 slices -->
     <div class="slice" data-index="0">0</div>
@@ -188,9 +188,7 @@ const wheelArray = [
       wheel.style.transition = 'transform 3s ease-out';
       wheel.style.transform = `rotate(${(360 / 8) * desiredSlice + 720}deg)`;
   
-      const img = document.querySelector('#luckywheel');
-      img.style.transition = 'transform 3s ease-out';
-      img.style.transform = `rotate(${(360 / 8) * desiredSlice + 720}deg)`;
+      
   
       // Listen for the end of the animation
       wheel.addEventListener('transitionend', chosenSlice => {
@@ -204,7 +202,7 @@ const wheelArray = [
 function handleTransitionEnd(desiredSlice) {
   // Get the current rotation degree after the spin
   const wheel = document.getElementById('wheel');
-  const img = document.querySelector('#luckywheel');
+  
   const computedStyle = window.getComputedStyle(wheel);
   const transform = computedStyle.getPropertyValue('transform');
   const matrix = new DOMMatrix(transform);
@@ -216,7 +214,7 @@ function handleTransitionEnd(desiredSlice) {
   const landedSlice = Math.floor((rotation % 360 + 360) % 360 / sliceWidth);
 
   // Display information about the landed slice
-  alert(`Landed on slice ${desiredSlice}`);
+  
   switch (desiredSlice) {
     case 0:
         resetTimer()
@@ -249,9 +247,6 @@ function handleTransitionEnd(desiredSlice) {
   wheel.style.transform = 'rotate(0deg)';
   spinning = false;
   wheel.removeEventListener('transitionend', handleTransitionEnd);
-  img.style.transition = 'none';
-  img.style.transform = 'rotate(0deg)';
-  spinning = false;
-  img.removeEventListener('transitionend', handleTransitionEnd);
+ 
 }
 

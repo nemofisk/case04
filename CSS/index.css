@@ -61,8 +61,8 @@ body {
 }
 
 .wheel {
-    width: 200px;
-    height: 200px;
+    width: 500px;
+    height: 500px;
     border-radius: 50%;
     position: relative;
     background: conic-gradient(red 0deg 45deg,
@@ -73,6 +73,10 @@ body {
             orange 225deg 270deg,
             pink 270deg 315deg,
             brown 315deg 360deg);
+    background-image: url("../images/wheelplswosk.png");
+    background-size: cover;
+
+
 }
 
 .slice {
@@ -92,9 +96,9 @@ button {
 }
 
 #pin {
-    width: 30px;
+    width: 35px;
     position: absolute;
-    top: 150px;
-    left: 495.5px;
+    top: 165px;
+    left: 708.5px;
     z-index: 1;
 }
