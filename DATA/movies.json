@@ -1462,32 +1462,6 @@
     "youtubeLink": "https://www.youtube.com/embed/XsS1yE2f-hE"
   },
   {
-    "Title": "Jagten",
-    "Year": "2023–",
-    "Rated": "N/A",
-    "Released": "13 Nov 2023",
-    "Runtime": "N/A",
-    "Genre": [
-      "Drama"
-    ],
-    "Director": "N/A",
-    "Writer": "N/A",
-    "Actors": "Carsten Norton, Isabel Lilia Morales Bondy, Oliver Alexander",
-    "Plot": "Five persons with different backgrounds must locate a missing criminal. They have 15 days for the task, and then the pursuit begins for Mike Gerner Larsen, who has been on the run from the police for three years",
-    "Language": "Danish",
-    "Country": "Denmark",
-    "Awards": "N/A",
-    "Poster": "https://m.media-amazon.com/images/M/MV5BMzU5ZDBhOWQtNWI1My00OTg4LWIzOWUtMTJkZjBjNzVlMmRkXkEyXkFqcGdeQXVyMjMxMTU0MjI@._V1_SX300.jpg",
-    "Ratings": [],
-    "Metascore": "N/A",
-    "imdbRating": "N/A",
-    "imdbVotes": "N/A",
-    "imdbID": "tt29923727",
-    "Type": "series",
-    "totalSeasons": "N/A",
-    "Response": "True"
-  },
-  {
     "Title": "La vita è bella",
     "Year": "1943",
     "Rated": "N/A",
@@ -1522,7 +1496,8 @@
     "Production": "N/A",
     "Website": "N/A",
     "Response": "True",
-    "tmdbID": 377939
+    "tmdbID": 377939,
+    "youtubeLink": false
   },
   {
     "Title": "American History X",
@@ -3345,7 +3320,8 @@
     "BoxOffice": "N/A",
     "Production": "N/A",
     "Website": "N/A",
-    "Response": "True"
+    "Response": "True",
+    "youtubeLink": false
   },
   {
     "Title": "Requiem for a Dream",
@@ -4205,7 +4181,8 @@
     "Production": "N/A",
     "Website": "N/A",
     "Response": "True",
-    "tmdbID": 1201962
+    "tmdbID": 1201962,
+    "youtubeLink": false
   },
   {
     "Title": "Cool Hand Luke",
@@ -5604,7 +5581,8 @@
     "Production": "N/A",
     "Website": "N/A",
     "Response": "True",
-    "tmdbID": 11952
+    "tmdbID": 11952,
+    "youtubeLink": false
   },
   {
     "Title": "Psycho",
@@ -6549,7 +6527,8 @@
     "Production": "N/A",
     "Website": "N/A",
     "Response": "True",
-    "tmdbID": 30565
+    "tmdbID": 30565,
+    "youtubeLink": false
   },
   {
     "Title": "The Truman Show",
@@ -6915,7 +6894,8 @@
     "Production": "N/A",
     "Website": "N/A",
     "Response": "True",
-    "tmdbID": 297222
+    "tmdbID": 297222,
+    "youtubeLink": false
   },
   {
     "Title": "Star Wars: Episode VII - The Force Awakens",
@@ -7813,7 +7793,8 @@
     "Production": "N/A",
     "Website": "N/A",
     "Response": "True",
-    "tmdbID": 416037
+    "tmdbID": 416037,
+    "youtubeLink": false
   },
   {
     "Title": "Gran Torino",

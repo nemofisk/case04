@@ -1,129 +1,6 @@
 [
     {
-        "gameID": [
-            14451
-        ],
-        "hostID": 1,
-        "genres": [
-            "Horror"
-        ],
-        "members": [],
-        "questions": [
-            {
-                "questionID": 0,
-                "type": "plot",
-                "correctAnswer": "Forrest Gump",
-                "alternatives": [
-                    "Forrest Gump",
-                    "Jagten",
-                    "Ikiru",
-                    "North by Northwest"
-                ],
-                "questionTitle": "What movie does this plot describe?",
-                "questionText": "The history of the United States from the 1950s to the '70s unfolds from the perspective of an Alabama man with an IQ of 75, who yearns to be reunited with his childhood sweetheart."
-            },
-            {
-                "questionID": 1,
-                "type": "actors",
-                "correctAnswer": "Citizen Kane",
-                "alternatives": [
-                    "Gladiator",
-                    "Citizen Kane",
-                    "Batman Begins",
-                    "The Princess Bride"
-                ],
-                "questionTitle": "What movie has these actors in it?",
-                "questionText": "Orson Welles, Joseph Cotten, Dorothy Comingore"
-            },
-            {
-                "questionID": 2,
-                "type": "plot",
-                "correctAnswer": "El laberinto del fauno: Detras de las camaras",
-                "alternatives": [
-                    "Scarface",
-                    "WALL\u00b7E",
-                    "El laberinto del fauno: Detras de las camaras",
-                    "Bakomfilm Smultronst\u00e4llet"
-                ],
-                "questionTitle": "What movie does this plot describe?",
-                "questionText": "Extra contained in the DVD of the movie, Pan's Labyrinth."
-            },
-            {
-                "questionID": 3,
-                "type": "poster",
-                "correctAnswer": "Eternal Sunshine of the Spotless Mind",
-                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BMTY4NzcwODg3Nl5BMl5BanBnXkFtZTcwNTEwOTMyMw@@._V1_SX300.jpg"
-            },
-            {
-                "questionID": 4,
-                "type": "poster",
-                "correctAnswer": "Monty Python and the Holy Grail",
-                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BN2IyNTE4YzUtZWU0Mi00MGIwLTgyMmQtMzQ4YzQxYWNlYWE2XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg"
-            },
-            {
-                "questionID": 5,
-                "type": "actors",
-                "correctAnswer": "Munna Bhai M.B.B.S.",
-                "alternatives": [
-                    "The Lion King",
-                    "North by Northwest",
-                    "Munna Bhai M.B.B.S.",
-                    "Ikiru"
-                ],
-                "questionTitle": "What movie has these actors in it?",
-                "questionText": "Sanjay Dutt, Arshad Warsi, Gracy Singh"
-            },
-            {
-                "questionID": 6,
-                "type": "actors",
-                "correctAnswer": "Raging Bull",
-                "alternatives": [
-                    "Raging Bull",
-                    "Scarface",
-                    "Lawrence of Arabia",
-                    "Indiana Jones and the Last Crusade"
-                ],
-                "questionTitle": "What movie has these actors in it?",
-                "questionText": "Robert De Niro, Cathy Moriarty, Joe Pesci"
-            },
-            {
-                "questionID": 7,
-                "type": "trailer",
-                "correctAnswer": "How to Train Your Dragon",
-                "youtubeLink": "https:\/\/www.youtube.com\/embed\/IT_ufPxiXl8"
-            },
-            {
-                "questionID": 8,
-                "type": "actors",
-                "correctAnswer": "Jurassic Park",
-                "alternatives": [
-                    "Toy Story 3",
-                    "Trainspotting",
-                    "Jurassic Park",
-                    "Dead Poets Society"
-                ],
-                "questionTitle": "What movie has these actors in it?",
-                "questionText": "Sam Neill, Laura Dern, Jeff Goldblum"
-            },
-            {
-                "questionID": 9,
-                "type": "actors",
-                "correctAnswer": "La haine",
-                "alternatives": [
-                    "La haine",
-                    "Paris, Texas",
-                    "The Hamster Factor and Other Tales of Twelve Monkeys",
-                    "Amores Perros"
-                ],
-                "questionTitle": "What movie has these actors in it?",
-                "questionText": "Vincent Cassel, Hubert Kound\u00e9, Sa\u00efd Taghmaoui"
-            }
-        ]
-    },
-    {
-        "gameID": [
-            54889
-        ],
+        "gameID": 10102,
         "hostID": 1,
         "genres": [
             "Crime",
@@ -139,452 +16,210 @@
             "Comedy",
             "Horror"
         ],
-        "members": [],
-        "questions": [
+        "members": [
             {
-                "questionID": 0,
-                "type": "plot",
-                "correctAnswer": "L\u00e9on: The Professional",
-                "alternatives": [
-                    "L\u00e9on: The Professional",
-                    "Memento",
-                    "Mad Max: Fury Road",
-                    "Rush"
-                ],
-                "questionTitle": "What movie does this plot describe?",
-                "questionText": "12-year-old Mathilda is reluctantly taken in by L\u00e9on, a professional assassin, after her family is murdered. An unusual relationship forms as she becomes his prot\u00e9g\u00e9e and learns the assassin's trade."
-            },
-            {
-                "questionID": 1,
-                "type": "actors",
-                "correctAnswer": "Star Wars: Episode V - The Empire Strikes Back",
-                "alternatives": [
-                    "Star Wars: Episode V - The Empire Strikes Back",
-                    "Goodfellas",
-                    "Amores Perros",
-                    "Rang De Basanti"
-                ],
-                "questionTitle": "What movie has these actors in it?",
-                "questionText": "Mark Hamill, Harrison Ford, Carrie Fisher"
-            },
-            {
-                "questionID": 2,
-                "type": "plot",
-                "correctAnswer": "The Pianist",
-                "alternatives": [
-                    "Blade Runner 2049",
-                    "The Pianist",
-                    "Paths of Glory",
-                    "The Princess Bride"
-                ],
-                "questionTitle": "What movie does this plot describe?",
-                "questionText": "A Polish Jewish musician struggles to survive the destruction of the Warsaw ghetto of World War II."
-            },
-            {
-                "questionID": 3,
-                "type": "poster",
-                "correctAnswer": "Raiders of the Lost Ark",
-                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BNTU2ODkyY2MtMjU1NC00NjE1LWEzYjgtMWQ3MzRhMTE0NDc0XkEyXkFqcGdeQXVyMjM4MzQ4OTQ@._V1_SX300.jpg"
-            },
-            {
-                "questionID": 4,
-                "type": "trailer",
-                "correctAnswer": "The Apartment",
-                "youtubeLink": "https:\/\/www.youtube.com\/embed\/OcslkrBMLGc"
-            },
-            {
-                "questionID": 5,
-                "type": "plot",
-                "correctAnswer": "Blade Runner 2049",
-                "alternatives": [
-                    "Rush",
-                    "Singin' in the Rain",
-                    "Blade Runner 2049",
-                    "Donnie Darko"
-                ],
-                "questionTitle": "What movie does this plot describe?",
-                "questionText": "Young Blade Runner K's discovery of a long-buried secret leads him to track down former Blade Runner Rick Deckard, who's been missing for thirty years."
-            },
-            {
-                "questionID": 6,
-                "type": "trailer",
-                "correctAnswer": "Warrior",
-                "youtubeLink": "https:\/\/www.youtube.com\/embed\/I5kzcwcQA1Q"
-            },
-            {
-                "questionID": 7,
-                "type": "plot",
-                "correctAnswer": "Shutter Island",
-                "alternatives": [
-                    "Star Wars: Episode IV - A New Hope",
-                    "Modern Times",
-                    "Shutter Island",
-                    "Ben-Hur"
-                ],
-                "questionTitle": "What movie does this plot describe?",
-                "questionText": "Teddy Daniels and Chuck Aule, two US marshals, are sent to an asylum on a remote island in order to investigate the disappearance of a patient, where Teddy uncovers a shocking truth about the place."
-            },
-            {
-                "questionID": 8,
-                "type": "poster",
-                "correctAnswer": "Network",
-                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BNzY0NjU5ODUtOTAzMC00NTU5LWJkZjctYWMyOWY2MTZmOWM1XkEyXkFqcGdeQXVyMTI3ODAyMzE2._V1_SX300.jpg"
-            },
-            {
-                "questionID": 9,
-                "type": "poster",
-                "correctAnswer": "No Country for Old Men",
-                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BMjA5Njk3MjM4OV5BMl5BanBnXkFtZTcwMTc5MTE1MQ@@._V1_SX300.jpg"
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "url",
+                "points": 0
             }
-        ]
-    },
-    {
-        "gameID": [
-            47557
         ],
-        "hostID": 1,
-        "genres": {
-            "isTrusted": true
-        },
-        "members": [],
         "questions": [
             {
                 "questionID": 0,
-                "type": "plot",
-                "correctAnswer": "Star Wars: Episode V - The Empire Strikes Back",
-                "alternatives": [
-                    "Indiana Jones and the Last Crusade",
-                    "Star Wars: Episode V - The Empire Strikes Back",
-                    "The Princess Bride",
-                    "Aliens"
-                ],
-                "questionTitle": "What movie does this plot describe?",
-                "questionText": "After the Rebels are overpowered by the Empire, Luke Skywalker begins his Jedi training with Yoda, while his friends are pursued across the galaxy by Darth Vader and bounty hunter Boba Fett."
+                "type": "poster",
+                "correctAnswer": "Alien",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BOGQzZTBjMjQtOTVmMS00NGE5LWEyYmMtOGQ1ZGZjNmRkYjFhXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg"
             },
             {
                 "questionID": 1,
                 "type": "plot",
-                "correctAnswer": "Star Wars: Episode IV - A New Hope",
+                "correctAnswer": "The Godfather",
                 "alternatives": [
-                    "The Sting",
-                    "Star Wars: Episode IV - A New Hope",
-                    "Memento",
-                    "Mr. Smith Goes to Washington"
+                    {
+                        "title": "The Godfather",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Se7en",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Raging Bull",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Amadeus",
+                        "whoGuessed": []
+                    }
                 ],
                 "questionTitle": "What movie does this plot describe?",
-                "questionText": "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth ..."
-            },
-            {
-                "questionID": 2,
-                "type": "trailer",
-                "correctAnswer": "Django Unchained",
-                "youtubeLink": "https:\/\/www.youtube.com\/embed\/_iH0UBYDI4g"
-            },
-            {
-                "questionID": 3,
-                "type": "plot",
-                "correctAnswer": "The Apartment",
-                "alternatives": [
-                    "The Wizard of Oz",
-                    "La vita \u00e8 bella",
-                    "Paths of Glory",
-                    "The Apartment"
-                ],
-                "questionTitle": "What movie does this plot describe?",
-                "questionText": "A Manhattan insurance clerk tries to rise in his company by letting its executives use his apartment for trysts, but complications and a romance of his own ensue."
-            },
-            {
-                "questionID": 4,
-                "type": "actors",
-                "correctAnswer": "Aliens",
-                "alternatives": [
-                    "Platoon",
-                    "The Pianist",
-                    "Snatch",
-                    "Aliens"
-                ],
-                "questionTitle": "What movie has these actors in it?",
-                "questionText": "Sigourney Weaver, Michael Biehn, Carrie Henn"
-            },
-            {
-                "questionID": 5,
-                "type": "actors",
-                "correctAnswer": "Lawrence of Arabia",
-                "alternatives": [
-                    "Amores Perros",
-                    "Toy Story",
-                    "Lawrence of Arabia",
-                    "Shutter Island"
-                ],
-                "questionTitle": "What movie has these actors in it?",
-                "questionText": "Peter O'Toole, Alec Guinness, Anthony Quinn"
-            },
-            {
-                "questionID": 6,
-                "type": "plot",
-                "correctAnswer": "Ben-Hur",
-                "alternatives": [
-                    "Singin' in the Rain",
-                    "Lock, Stock and Two Smoking Barrels",
-                    "Ben-Hur",
-                    "The Grapes of Wrath"
-                ],
-                "questionTitle": "What movie does this plot describe?",
-                "questionText": "After a Jewish prince is betrayed and sent into slavery by a Roman friend in 1st-century Jerusalem, he regains his freedom and comes back for revenge."
-            },
-            {
-                "questionID": 7,
-                "type": "plot",
-                "correctAnswer": "The Wizard of Oz",
-                "alternatives": [
-                    "Star Wars: Episode V - The Empire Strikes Back",
-                    "The Wizard of Oz",
-                    "The Sixth Sense",
-                    "Ikiru"
-                ],
-                "questionTitle": "What movie does this plot describe?",
-                "questionText": "Young Dorothy Gale and her dog Toto are swept away by a tornado from their Kansas farm to the magical Land of Oz, and embark on a quest with three new friends to see the Wizard, who can return her to her home and fulfill the other..."
-            },
-            {
-                "questionID": 8,
-                "type": "trailer",
-                "correctAnswer": "Network",
-                "youtubeLink": "https:\/\/www.youtube.com\/embed\/xxajGBZeQZc"
-            },
-            {
-                "questionID": 9,
-                "type": "actors",
-                "correctAnswer": "Dog Day Afternoon",
-                "alternatives": [
-                    "Dog Day Afternoon",
-                    "Rang De Basanti",
-                    "Amores Perros",
-                    "L\u00e9on: The Professional"
-                ],
-                "questionTitle": "What movie has these actors in it?",
-                "questionText": "Al Pacino, John Cazale, Penelope Allen"
-            }
-        ]
-    },
-    {
-        "gameID": [
-            86561
-        ],
-        "hostID": 1,
-        "genres": {
-            "isTrusted": true
-        },
-        "members": [],
-        "questions": [
-            {
-                "questionID": 0,
-                "type": "trailer",
-                "correctAnswer": "Memento",
-                "youtubeLink": "https:\/\/www.youtube.com\/embed\/Rq9eM4ZXRgs"
-            },
-            {
-                "questionID": 1,
-                "type": "poster",
-                "correctAnswer": "The Apartment",
-                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BNzkwODFjNzItMmMwNi00MTU5LWE2MzktM2M4ZDczZGM1MmViXkEyXkFqcGdeQXVyNDY2MTk1ODk@._V1_SX300.jpg"
+                "questionText": "Don Vito Corleone, head of a mafia family, decides to hand over his empire to his youngest son Michael. However, his decision unintentionally puts the lives of his loved ones in grave danger."
             },
             {
                 "questionID": 2,
                 "type": "poster",
-                "correctAnswer": "The Shining",
-                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BZWFlYmY2MGEtZjVkYS00YzU4LTg0YjQtYzY1ZGE3NTA5NGQxXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
+                "correctAnswer": "Interstellar",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg"
             },
             {
                 "questionID": 3,
-                "type": "poster",
-                "correctAnswer": "Inglourious Basterds",
-                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BOTJiNDEzOWYtMTVjOC00ZjlmLWE0NGMtZmE1OWVmZDQ2OWJhXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SX300.jpg"
+                "type": "plot",
+                "correctAnswer": "Terminator 2: Judgment Day",
+                "alternatives": [
+                    {
+                        "title": "Terminator 2: Judgment Day",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Lion King",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Million Dollar Baby",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Pulp Fiction",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "A cyborg, identical to the one who failed to kill Sarah Connor, must now protect her ten year old son John from an even more advanced and powerful cyborg."
             },
             {
                 "questionID": 4,
-                "type": "actors",
-                "correctAnswer": "Batman Begins",
-                "alternatives": [
-                    "Batman Begins",
-                    "Full Metal Jacket",
-                    "Raiders of the Lost Ark",
-                    "Star Wars: Episode IV - A New Hope"
-                ],
-                "questionTitle": "What movie has these actors in it?",
-                "questionText": "Christian Bale, Michael Caine, Ken Watanabe"
+                "type": "trailer",
+                "correctAnswer": "City Lights",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/7vl7F8S4cpQ"
             },
             {
                 "questionID": 5,
-                "type": "poster",
-                "correctAnswer": "Mad Max: Fury Road",
-                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BN2EwM2I5OWMtMGQyMi00Zjg1LWJkNTctZTdjYTA4OGUwZjMyXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg"
+                "type": "plot",
+                "correctAnswer": "Finding Nemo",
+                "alternatives": [
+                    {
+                        "title": "8\u00bd",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Hamster Factor and Other Tales of Twelve Monkeys",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Finding Nemo",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Hacksaw Ridge",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "After his son is captured in the Great Barrier Reef and taken to Sydney, a timid clownfish sets out on a journey to bring him home."
             },
             {
                 "questionID": 6,
-                "type": "plot",
-                "correctAnswer": "The Help",
+                "type": "actors",
+                "correctAnswer": "L.A. Confidential",
                 "alternatives": [
-                    "Indiana Jones and the Last Crusade",
-                    "Amores Perros",
-                    "Warrior",
-                    "The Help"
+                    {
+                        "title": "L.A. Confidential",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Vertigo",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Gandhi",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Best Years of Our Lives",
+                        "whoGuessed": []
+                    }
                 ],
-                "questionTitle": "What movie does this plot describe?",
-                "questionText": "An aspiring author during the civil rights movement of the 1960s decides to write a book detailing the African American maids' point of view on the white families for which they work, and the hardships they go through on a daily b..."
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Kevin Spacey, Russell Crowe, Guy Pearce"
             },
             {
                 "questionID": 7,
-                "type": "poster",
-                "correctAnswer": "The General",
-                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BYmRiMDFlYjYtOTMwYy00OGY2LWE0Y2QtYzQxOGNhZmUwNTIxXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg"
+                "type": "plot",
+                "correctAnswer": "Before Sunrise",
+                "alternatives": [
+                    {
+                        "title": "A Clockwork Orange",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Great Dictator",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Before Sunrise",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "8\u00bd",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "A young man and woman meet on a train in Europe, and wind up spending one evening together in Vienna. Unfortunately, both know that this will probably be their only night together."
             },
             {
                 "questionID": 8,
-                "type": "plot",
-                "correctAnswer": "Rebecca",
+                "type": "actors",
+                "correctAnswer": "Raging Bull",
                 "alternatives": [
-                    "Butch Cassidy and the Sundance Kid",
-                    "Rebecca",
-                    "Jaws",
-                    "Warrior"
+                    {
+                        "title": "Bakomfilm Smultronst\u00e4llet",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Lion King",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Raging Bull",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Bridge on the River Kwai",
+                        "whoGuessed": []
+                    }
                 ],
-                "questionTitle": "What movie does this plot describe?",
-                "questionText": "A self-conscious woman juggles adjusting to her new role as an aristocrat's wife and avoiding being intimidated by his first wife's spectral presence."
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Robert De Niro, Cathy Moriarty, Joe Pesci"
             },
             {
                 "questionID": 9,
                 "type": "plot",
-                "correctAnswer": "How to Train Your Dragon",
-                "alternatives": [
-                    "Vertigo",
-                    "How to Train Your Dragon",
-                    "Paris, Texas",
-                    "Blade Runner 2049"
-                ],
-                "questionTitle": "What movie does this plot describe?",
-                "questionText": "A hapless young Viking who aspires to hunt dragons becomes the unlikely friend of a young dragon himself, and learns there may be more to the creatures than he assumed."
-            }
-        ]
-    },
-    {
-        "gameID": [
-            50265
-        ],
-        "hostID": 1,
-        "genres": [
-            "Crime"
-        ],
-        "members": [],
-        "questions": [
-            {
-                "questionID": 0,
-                "type": "actors",
-                "correctAnswer": "The Shawshank Redemption",
-                "alternatives": [
-                    "The Gold Rush",
-                    "Star Wars: Episode IV - A New Hope",
-                    "The Shawshank Redemption",
-                    "Annie Hall"
-                ],
-                "questionTitle": "What movie has these actors in it?",
-                "questionText": "Tim Robbins, Morgan Freeman, Bob Gunton"
-            },
-            {
-                "questionID": 1,
-                "type": "actors",
-                "correctAnswer": "Saving Private Ryan",
-                "alternatives": [
-                    "Lock, Stock and Two Smoking Barrels",
-                    "Memento",
-                    "Saving Private Ryan",
-                    "Heat"
-                ],
-                "questionTitle": "What movie has these actors in it?",
-                "questionText": "Tom Hanks, Matt Damon, Tom Sizemore"
-            },
-            {
-                "questionID": 2,
-                "type": "plot",
-                "correctAnswer": "Blade Runner 2049",
-                "alternatives": [
-                    "12 Years a Slave",
-                    "The Princess Bride",
-                    "12 Angry Men",
-                    "Blade Runner 2049"
-                ],
-                "questionTitle": "What movie does this plot describe?",
-                "questionText": "Young Blade Runner K's discovery of a long-buried secret leads him to track down former Blade Runner Rick Deckard, who's been missing for thirty years."
-            },
-            {
-                "questionID": 3,
-                "type": "plot",
-                "correctAnswer": "Ran",
-                "alternatives": [
-                    "To Kill a Mockingbird",
-                    "Spotlight",
-                    "Ran",
-                    "The Godfather"
-                ],
-                "questionTitle": "What movie does this plot describe?",
-                "questionText": "In Medieval Japan, an elderly warlord retires, handing over his empire to his three sons. However, he vastly underestimates how the new-found power will corrupt them and cause them to turn on each other...and him."
-            },
-            {
-                "questionID": 4,
-                "type": "plot",
-                "correctAnswer": "Million Dollar Baby",
-                "alternatives": [
-                    "Million Dollar Baby",
-                    "Rang De Basanti",
-                    "Psycho",
-                    "Dial M for Murder"
-                ],
-                "questionTitle": "What movie does this plot describe?",
-                "questionText": "Frankie, an ill-tempered old coach, reluctantly agrees to train aspiring boxer Maggie. Impressed with her determination and talent, he helps her become the best and the two soon form a close bond."
-            },
-            {
-                "questionID": 5,
-                "type": "plot",
-                "correctAnswer": "The Princess Bride",
-                "alternatives": [
-                    "Braveheart",
-                    "Fargo",
-                    "Room",
-                    "The Princess Bride"
-                ],
-                "questionTitle": "What movie does this plot describe?",
-                "questionText": "A bedridden boy's grandfather reads him the story of a farmboy-turned-pirate who encounters numerous obstacles, enemies and allies in his quest to be reunited with his true love."
-            },
-            {
-                "questionID": 6,
-                "type": "plot",
-                "correctAnswer": "Munna Bhai M.B.B.S.",
-                "alternatives": [
-                    "Finding Nemo",
-                    "A Beautiful Mind",
-                    "Munna Bhai M.B.B.S.",
-                    "The Terminator"
-                ],
-                "questionTitle": "What movie does this plot describe?",
-                "questionText": "A gangster sets out to fulfill his father's dream of becoming a doctor."
-            },
-            {
-                "questionID": 7,
-                "type": "trailer",
-                "correctAnswer": "The Terminator",
-                "youtubeLink": "https:\/\/www.youtube.com\/embed\/CaJWHBgD7TE"
-            },
-            {
-                "questionID": 8,
-                "type": "trailer",
                 "correctAnswer": "There Will Be Blood",
-                "youtubeLink": "https:\/\/www.youtube.com\/embed\/0FIm5ATyAY0"
-            },
-            {
-                "questionID": 9,
-                "type": "poster",
-                "correctAnswer": "Monsters, Inc.",
-                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BMTY1NTI0ODUyOF5BMl5BanBnXkFtZTgwNTEyNjQ0MDE@._V1_SX300.jpg"
+                "alternatives": [
+                    {
+                        "title": "There Will Be Blood",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Bakomfilm Smultronst\u00e4llet",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "A Clockwork Orange",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Blade Runner",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "A story of family, religion, hatred, oil and madness, focusing on a turn-of-the-century prospector in the early days of the business."
             }
-        ]
+        ],
+        "isStarted": false,
+        "currentQuestion": ""
     }
 ]
