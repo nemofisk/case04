@@ -33,30 +33,49 @@ function liveGame($users, $games, $recieved_data){
 
         foreach($currentGame["questions"] as $indexx => $question){
             if($question["questionID"] == $questionID){
+
+                foreach($question["alternatives"] as $altIndex => $alternative){
+                    if($alternative["title"] == $answer){
+                        foreach($currentGame["members"] as $index => $member){
+                            if($member["userID"] == $userID){
+
+                                $userFound = false;
+
+                                foreach($alternative["whoGuessed"] as $member2){
+                                    if($member2["userID"] == $userID){
+                                        $userFound = true;
+                                    }
+                                }
+
+                                if(!$userFound){
+                                    unset($member["points"]);
+                                    $games[$currentGameIndex]["questions"][$indexx]["alternatives"][$altIndex]["whoGuessed"][] = $member;
+                                }
+
+                            }
+                        }
+                    }
+                }
+
                 if($answer == $question["correctAnswer"]){
 
                     foreach($currentGame["members"] as $index => $member){
                         if($member["userID"] == $userID){
                             $games[$currentGameIndex]["members"][$index]["points"] += $answerTime;
-                            
-                            foreach($games[$currentGameIndex]["questions"][$indexx]["alternatives"] as $iindex => $alternative){
-                                if($alternative["title"] == $answer){
-                                    $gamers[$currentGameIndex]["questions"][$indexx]["alternatives"][$iindex]["whoGuessed"][] = $currentGame["members"][$index];
-                                }
-                            }
 
                             putInMultiplayerJSON($games);
                             sendJSON(["correct" => true]);
                         }
                     }
 
-                }else{
-                    sendJSON(["correct" => false]);
                 }
-            }
-        }
 
-    }
+                putInMultiplayerJSON($games);
+                sendJSON(["correct" => false]);
+            }
+
+        }
+    }   
 
     if($subAction === "startGame"){
         $games[$currentGameIndex]["isStarted"] = true;
@@ -76,6 +95,15 @@ function liveGame($users, $games, $recieved_data){
         putInMultiplayerJSON($games);
     }
 
-}
+    if($subAction == "fetchQuestion"){
+        $questionID = $recieved_data["questionID"];
 
+        foreach($games[$currentGameIndex]["questions"] as $question){
+            if($questionID == $question["questionID"]){
+                sendJSON($question, 200);
+            }
+        }
+    }
+
+}
 ?>

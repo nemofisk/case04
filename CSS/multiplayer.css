@@ -26,3 +26,72 @@
 .SelectedGanras {
     background-color: #8184F8;
 }
+
+.correct {
+    background-color: greenyellow;
+}
+
+.wrong {
+    background-color: red;
+}
+
+.alternative {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    border-radius: 20px;
+    border: 1px solid #8184F8;
+
+    color: white;
+    padding: 12px;
+}
+
+#alternatives {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.playerImg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+#contentWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+#questionContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: white;
+    font-family: jost;
+
+    text-align: center;
+}
+
+#timer {
+    font-size: 20px;
+}
+
+#questionTitle {
+    font-size: 14px;
+}
+
+#questionText {
+    font-size: 14px;
+}
+
+#countdown {
+    color: #FF6868;
+    font-size: 30px;
+}

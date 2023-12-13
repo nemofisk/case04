@@ -259,14 +259,35 @@ function mpTextQuestion(question) {
         const alt = document.createElement("div");
         alt.classList.add("alternative");
 
-        alt.textContent = alternative.title;
+        alt.dataset.title = alternative.title
 
-        alt.addEventListener("click", (event) => {
-            mpCheckAnswer(event, question)
-        })
+        alt.innerHTML = `
+            <div class="altTitle">${alternative.title}</div>
+        `
 
+        alt.querySelector(".altTitle").dataset.title = alternative.title;
         altDiv.append(alt);
     })
+
+    const allAlts = document.querySelectorAll(".alternative")
+
+    function altEvent(event) {
+        const allAlternatives = document.querySelectorAll(".alternative")
+
+        console.log(allAlternatives);
+
+        allAlternatives.forEach(altern => {
+            altern.removeEventListener("click", altEvent)
+        })
+
+        mpCheckAnswer(event, question)
+    }
+
+    allAlts.forEach(al => {
+        al.addEventListener("click", altEvent);
+    })
+
+
 
 }
 
@@ -329,6 +350,8 @@ function mpPosterQuestion(question) {
 
 async function mpCheckAnswer(ev, question) {
 
+    console.log(ev.target);
+
     const gameInfo = JSON.parse(window.localStorage.getItem("gameInfo"));
     const answerTime = document.querySelector("#timer").textContent
     const questType = question.type;
@@ -338,9 +361,9 @@ async function mpCheckAnswer(ev, question) {
     let answer;
     switch (questType) {
         case "actor":
-            answer = ev.target.textContent;
+            answer = ev.target.dataset.title;
         case "plot":
-            answer = ev.target.textContent;
+            answer = ev.target.dataset.title;
     }
 
     const request = new Request("../PHP/api.php", {
@@ -354,7 +377,7 @@ async function mpCheckAnswer(ev, question) {
             gameID: gameInfo.gameID,
             questionID: question.questionID,
             answerTime: parseFloat(answerTime).toFixed(1),
-            answer: ev.target.textContent
+            answer: answer
         })
     })
 
@@ -362,11 +385,11 @@ async function mpCheckAnswer(ev, question) {
     const resource = await response.json();
 
     if (resource.correct == false) {
-
+        ev.target.classList.add("wrong")
     }
 
     if (resource.correct == true) {
-
+        ev.target.classList.add("correct")
     }
 }
 
@@ -380,11 +403,84 @@ function startQuestionTimer(question) {
             timer.textContent = (currentTimerValue - 0.1).toFixed(1);
 
             if (currentTimerValue == 0) {
+
                 clearInterval(intervalID);
-                checkNextQuestion(question);
+
+                endOfQuestion(question);
             }
         }, 100);
     }
+}
+
+async function endOfQuestion(question) {
+    document.querySelector("#timer").textContent = "0";
+
+    const qType = question.type;
+    const gameInfo = JSON.parse(window.localStorage.getItem("gameInfo"));
+    const request = new Request("../PHP/api.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            action: "liveGame",
+            subAction: "fetchQuestion",
+            questionID: question.questionID,
+            gameID: gameInfo.gameID
+        })
+    })
+
+    const response = await callAPI(request, true, false);
+    const resource = await response.json();
+
+    const correctAnswer = resource.correctAnswer;
+
+    if (qType == "plot" || qType == "actors") {
+        const alternativeDivs = document.querySelectorAll(".alternative");
+        const alternativesDiv = document.querySelector("#alternatives")
+
+        alternativeDivs.forEach(alternative => {
+
+            const title = alternative.querySelector(".altTitle")
+
+            if (title.textContent == correctAnswer) {
+                alternative.classList.add("correct");
+            } else {
+                alternative.classList.add("wrong");
+            }
+
+            const whoGuessed = document.createElement("div");
+            whoGuessed.classList.add("whoGuessed");
+
+            console.log(whoGuessed);
+
+            resource.alternatives.forEach(alt => {
+                if (alt.title == title.textContent) {
+                    alt.whoGuessed.forEach(player => {
+                        console.log(player);
+                        const playerDiv = document.createElement("div");
+
+                        playerDiv.classList.add("playerImg");
+
+                        playerDiv.style.backgroundImage = `url('../images/${player.profilePicture}')`;
+
+                        whoGuessed.appendChild(playerDiv);
+                    })
+                }
+            })
+
+            alternative.appendChild(whoGuessed);
+
+        })
+
+    }
+
+    if (qType == "trailer" || qType == "poster") {
+
+    }
+
+    setTimeout(() => {
+        checkNextQuestion(question);
+    }, 3000)
+
 }
 
 function checkNextQuestion(question) {
