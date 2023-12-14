@@ -117,7 +117,14 @@ function profile($users, $received_data){
             }
         }
     }
-        
+        if ($subAction === "getfriends") {
+            foreach ($users as $index => $user) {
+                if($user["username"] === $username){
+                    sendJSON(["message" => $user["friends"]], 200);
+                        
+                }
+            }
+        }
 }
 
 function uploadImage($users, $received_data){

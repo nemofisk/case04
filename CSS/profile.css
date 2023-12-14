@@ -1,0 +1,119 @@
+#upload_profile_picture {
+    height: 50px;
+    width: 50px;
+    background-color: aqua;
+}
+
+#pointsInfo {
+    color: white;
+    text-align: center;
+    display: flex;
+}
+
+#profileImage {
+    border-radius: 50%;
+    width: 198px;
+}
+
+#levelBar {
+    border: 2px solid #FF6868;
+    border-radius: 20px;
+    height: 8px;
+    width: 300px;
+
+}
+
+#progressBar {
+    background-color: #FF6868;
+    border-radius: 20px;
+    height: 8px;
+}
+
+#displayLevels {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+#showlevel {
+    color: white;
+}
+
+#ProfilePageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+#myProfileImage {
+    width: 100px;
+}
+
+#friendsAndPoints {
+    display: flex;
+    justify-content: space-between;
+}
+
+#friendsAndPoints>p {
+    color: white;
+}
+
+#leftSide {
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#rightSide {
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#myProfile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid gray;
+}
+
+.myProfile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid gray;
+}
+
+#myProfileImage {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.myProfileImage {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+#myProfile>p {
+    margin-right: 160px;
+    color: white;
+}
+
+.myProfile>p {
+    margin-right: 160px;
+    color: white;
+}
+
+#rightSideContainer {
+    width: 297px;
+    height: 520px;
+}

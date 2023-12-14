@@ -4,7 +4,18 @@
         "password": "",
         "level": 666,
         "popcorn": 1080,
-        "friends": [],
+        "friends": [
+            {
+                "name": "www",
+                "profilePicture": "Sons (kopia).jpg",
+                "popcorn": 150
+            },
+            {
+                "name": "wwww",
+                "profilePicture": "Peaky Blinders (kopia).webp",
+                "popcorn": 1300
+            }
+        ],
         "friendRequests": [],
         "gameInvites": [],
         "xpGoal": 1300,
@@ -22,7 +33,8 @@
         "friendRequests": [],
         "gameInvites": [],
         "xpGoal": 1525,
-        "id": 2
+        "id": 2,
+        "profile_picture": "Sons (kopia).jpg"
     },
     {
         "username": "www",
@@ -36,6 +48,98 @@
         "friendRequests": [],
         "gameInvites": [],
         "xpGoal": 300,
-        "id": 3
+        "id": 3,
+        "profile_picture": "Peaky Blinders (kopia).webp"
+    },
+    {
+        "username": "hello",
+        "password": "hello",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 100,
+        "clues": 0,
+        "resetTimer": 0,
+        "id": 4
+    },
+    {
+        "username": "hello1",
+        "password": "hello1",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 100,
+        "clues": 0,
+        "resetTimer": 0,
+        "id": 5
+    },
+    {
+        "username": "hello12",
+        "password": "hello12",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 100,
+        "clues": 0,
+        "resetTimer": 0,
+        "id": 6
+    },
+    {
+        "username": "hello123",
+        "password": "hello123",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 100,
+        "clues": 0,
+        "resetTimer": 0,
+        "id": 7
+    },
+    {
+        "username": "hello1234",
+        "password": "hello1234",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 100,
+        "clues": 0,
+        "resetTimer": 0,
+        "id": 8
+    },
+    {
+        "username": "hello12345",
+        "password": "hello12345",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 100,
+        "clues": 0,
+        "resetTimer": 0,
+        "id": 9
+    },
+    {
+        "username": "hello123456",
+        "password": "hello123456",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 100,
+        "clues": 0,
+        "resetTimer": 0,
+        "id": 10
     }
 ]
