@@ -4,7 +4,7 @@ function renderLeaderBoard() {
     document.querySelector("main").innerHTML =
         `
         <h1>Leaderboards</h1>
-
+    
         
         <div id="WorldLeaderboard"></div>
         <div id="friendsLeaderboard">Friends</div>

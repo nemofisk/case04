@@ -58,9 +58,13 @@ async function DisplaySidebar(event) {
     <div id="CloseSidebar">X</div>
 
     <div id="Profile">
-        <div id="ProfilePicContainer">
-            <img id="displayProfilePic"></img>
+
+        <div id="progress">
+            <div id="ProfilePicContainer">
+                <img id="displayProfilePic"></img>
+            </div>
         </div>
+        
         <h2>${username}</h2>
     </div>
 
@@ -95,6 +99,7 @@ async function DisplaySidebar(event) {
     `
 
 
+
     nav.querySelector("#CloseSidebar").addEventListener("click", e => {
         Sidebar = document.getElementById("Sidebar");
         Sidebar.remove();
@@ -114,6 +119,7 @@ async function DisplaySidebar(event) {
     document.getElementById("renderSettings").addEventListener("click", e => {
         //renderSettings()
     })
+    progress();
 
     let userInfo = await getUserinformation(window.localStorage.getItem("username"));
     console.log(userInfo);
@@ -132,4 +138,14 @@ function renderInvites() {
 
         })
 
+}
+
+
+async function progress() {
+    let userInfo = await getUserinformation(window.localStorage.getItem("username"));
+    let lvlProgress = levelprogress(userInfo.popcorn, userInfo.xpGoal)
+
+    let circularProgress = document.getElementById("progress");
+
+    circularProgress.style.background = `conic-gradient(#FFF8BA ${lvlProgress * 3.6}deg, #323059 0deg)`;
 }
