@@ -46,9 +46,10 @@ span {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    width: 350.885px;
+    
     position: absolute;
-    height: 260px;
+    width: 502px;
+    height: 293px;
     background-color: #2B2A4C;
     color: white;
     border-radius: 20px;

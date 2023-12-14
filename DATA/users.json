@@ -3,8 +3,10 @@
         "username": "w",
         "password": "",
         "level": 667,
-        "popcorn": 1300,
-        "friends": [],
+        "popcorn": 1340,
+        "friends": [
+            "www"
+        ],
         "friendRequests": [],
         "gameInvites": [],
         "xpGoal": 18125,
@@ -32,7 +34,8 @@
         "popcorn": 150,
         "friends": [
             "wwww",
-            "calle"
+            "calle",
+            "w"
         ],
         "friendRequests": [],
         "gameInvites": [],

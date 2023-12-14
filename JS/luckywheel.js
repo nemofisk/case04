@@ -3,6 +3,7 @@ function renderLuckyWheel(){
     `
     
     <body>
+    <h1>Lucky Wheel!</h1>
     <img id="pin" src="../images/pin.png">
     
     <div class="wheel" id="wheel">
