@@ -4,10 +4,10 @@ function popUpFunction(action, information) {
 
     let main = document.querySelector("main");
     let message;
+    let div = document.createElement("div");
     if (action === "gameInvites") {
         message = information.message[0].hostName + " invited you to a game!"
-    }
-    let div = document.createElement("div");
+    
     div.setAttribute("id", "invitationPopUp")
     div.textContent = message;
     div.classList.add("#gameInvite");
@@ -26,6 +26,22 @@ function popUpFunction(action, information) {
     main.appendChild(declineBtn);
 
     clearInterval()
+}
+    if(action === "wheel"){
+        div.innerHTML = `
+        <div id="removePopUp">X</div>
+        You got ${information}
+        <br>
+        <p>You get a new chance tomorrow</p>
+    `
+        console.log(div.textContent);
+        div.classList.add("wheelClass")
+        main.appendChild(div);
+    }
+    document.getElementById("removePopUp").addEventListener("click", element => {
+        console.log(element);
+        element.target.parentElement.remove();
+    })
 
 }
 

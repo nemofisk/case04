@@ -30,12 +30,17 @@ function friendRequest($received_data, $users){
 
     if($subAction === "accept"){
         $userToRespondTo = $received_data["requestedUser"];
-        foreach($users as &$user){
+        foreach($users as $index => &$user){
             if($user["username"] === $userToRespondTo){
                 $user["friends"][] = $username;
             }
             if($user["username"] === $username){
-                $user["friends"][] = $userToRespondTo;
+                $friendObject = [
+                    "name" => $userToRespondTo,
+                    "profilePicture" => $users[$index]["profile_picture"],
+                    "popcorn" => $users[$index]["popcorn"]
+                ];
+                $user["friends"][] = $friendObject;
                 for($i = 0;$i < count($user["friendRequests"]); $i++){
                     if($user["friendRequests"][$i] === $userToRespondTo){
                         unset($user["friendRequests"][$i]);

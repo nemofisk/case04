@@ -18,11 +18,12 @@
         ],
         "friendRequests": [],
         "gameInvites": [],
-        "xpGoal": 1300,
+        "xpGoal": 18125,
         "id": 1,
-        "clues": 22,
-        "resetTimer": 20,
-        "profile_picture": "kent-omslag_ny.jpg"
+        "clues": 33,
+        "resetTimer": 25,
+        "profile_picture": "kent-omslag_ny.jpg",
+        "lastSpun": "14"
     },
     {
         "username": "wwww",
@@ -43,7 +44,8 @@
         "popcorn": 150,
         "friends": [
             "wwww",
-            "calle"
+            "calle",
+            "w"
         ],
         "friendRequests": [],
         "gameInvites": [],

@@ -22,8 +22,12 @@ main>img {
 }
 
 #message {
-    color: #FF8484;
+    color: white;
     text-align: center;
+}
+
+#message>span {
+    color: #FF8484
 }
 
 #Multiplayer {
@@ -134,7 +138,7 @@ main>img {
 }
 
 #SidebarMenuContainer>p {
-    color: red;
+    color: #FF6868;
     margin: 0;
 }
 
@@ -191,6 +195,40 @@ main>img {
     object-fit: cover;
 }
 
+
+
+#pointsInfo {
+    color: white;
+    text-align: center;
+}
+
+#profileImage {
+    border-radius: 50%;
+}
+
+#levelBar {
+    border: 2px solid #FF6868;
+    border-radius: 20px;
+    height: 8px;
+    width: 300px;
+
+}
+
+#progressBar {
+    background-color: #FF6868;
+    border-radius: 20px;
+    height: 8px;
+}
+
+#displayLevels {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+#showlevel {
+    color: white;
+}
 
 
 #progress {
