@@ -26,6 +26,7 @@ function liveGame($users, $games, $recieved_data){
     }
 
     if($subAction === "answerQuestion"){
+
         $answer = $recieved_data["answer"];
         $questionID = $recieved_data["questionID"];
         $answerTime = $recieved_data["answerTime"];
@@ -78,8 +79,27 @@ function liveGame($users, $games, $recieved_data){
     }   
 
     if($subAction === "startGame"){
+
         $games[$currentGameIndex]["isStarted"] = true;
         putInMultiplayerJSON($games);
+    }
+
+    if($subAction === "endGame"){
+        $genres = $recieved_data["genres"];
+        $userID = $recieved_data["userID"];
+
+        if($games[$currentGameIndex]["isStarted"] == true){
+            $games[$currentGameIndex]["isStarted"] = false;
+            $newQuestions = getRandomMovies(10, $genres);
+
+            $games[$currentGameIndex]["questions"] = $newQuestions;
+        }
+
+        foreach($games[$currentGameIndex]["members"] as $index => $member){
+            if($member["userID"] == $userID){
+                array_splice($games[$currentGameIndex]["members"], $index, 1);
+            }
+        }
     }
 
     if($subAction === "leaveGame"){

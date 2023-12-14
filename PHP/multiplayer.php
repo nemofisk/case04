@@ -50,7 +50,7 @@ function multiplayer($users, $received_data){
                     ]],
                     "questions" => getRandomMovies(10, $selectedGenres),
                     "isStarted" => false,
-                    "playAgain" => false,
+                    "replay" => false,
                     "currentQuestion" => "",
                 ];
                 

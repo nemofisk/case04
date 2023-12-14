@@ -71,8 +71,6 @@ async function startFetchGameInfo(gameID) {
 
 async function renderLobby(fetchIntervalID) {
 
-    console.log(fetchIntervalID);
-
     const main = document.querySelector("main");
 
     main.innerHTML = `
@@ -126,6 +124,8 @@ async function renderLobby(fetchIntervalID) {
             }
         }
     }, 1000)
+
+    window.localStorage.setItem("fetchIntervalID", intervalID);
 
     if (userID == gameInfo.hostID) {
         const button = main.querySelector("#lobbyButton")
@@ -551,6 +551,25 @@ function currentStanding(question) {
     }
 
     if (question.questionID + 1 == questions.length) {
+
+        const fetchIntervalID = window.localStorage.getItem("fetchIntervalID");
+
+        clearInterval(fetchIntervalID);
+
+        const request = new Request("../PHP/api.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                action: "liveGame",
+                subAction: "endGame",
+                userID: window.localStorage.getItem("userID"),
+                gameID: gameInfo.gameID,
+                genres: gameInfo.genres
+            })
+        })
+
+        callAPI(request, true, false);
+
         main.innerHTML = `
             <div id="contentWrapper">
             
@@ -560,10 +579,17 @@ function currentStanding(question) {
         
                 <div id="restList"></div>
 
-                <button id="endScreenButton">PLAY AGAIN</button>
+                <button id="playAgainButton">PLAY AGAIN</button>
             
             </div>
         `
+
+        const playAgainButton = document.querySelector("#playAgainButton");
+
+        playAgainButton.addEventListener("click", ev => {
+            joinGame(gameInfo.gameID);
+        })
+
     }
 
     for (let i = 0; i < gameMembers.length; i++) {
