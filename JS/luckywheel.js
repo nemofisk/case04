@@ -22,17 +22,35 @@ function renderLuckyWheel(){
         
        
     </div>
-
+    
     </body>
     </html>
     
     `
-    document.querySelector("#spinWheel").addEventListener("click", e => {
+    fetch("../PHP/api.php", {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({ username: window.localStorage.getItem("username"), action: "profile", subAction: "getLastSpun" })
+    }).then(r => r.json()).then(resource => {
+      let day = new Date() 
+      if(day.getDate() === parseInt(resource.message)){
+        document.getElementById("spinWheel").style.backgroundColor = "#FFF8BA"
+        document.querySelector("#spinWheel").style.color = "#323059";
+        document.getElementById("spinWheel").addEventListener("click", e => {
+          const randomWheelItem = getRandomItem(wheelArray);
+          console.log(randomWheelItem);
+          spinWheel(randomWheelItem)
+        })
 
-      const randomWheelItem = getRandomItem(wheelArray);
-      console.log(randomWheelItem);
-      spinWheel(randomWheelItem)
-    })
+      }else{
+        console.log("wait until tommorow");
+        let p = document.createElement("p");
+        p.textContent = "Come back tomorrow to spin the wheel"
+        p.style.color = "#FF6868"
+        document.querySelector("main").appendChild(p)
+      }
+      });
+      document.querySelector("footer").innerHTML = ``;
   }
 
 const wheelArray = [
@@ -179,9 +197,14 @@ const wheelArray = [
           break;
     }
       spinning = true;
-  
-      // Choose the slice you want to land on (0 to 7)
-      
+
+      fetch("../PHP/api.php", {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({ username: window.localStorage.getItem("username"), action: "profile", subAction: "saveSpinDate" })
+      }).then(r => r.json()).then(resource => {
+        console.log(resource);
+      });
   
       // Apply the spin animation
       const wheel = document.getElementById('wheel');
@@ -214,33 +237,43 @@ function handleTransitionEnd(desiredSlice) {
   const landedSlice = Math.floor((rotation % 360 + 360) % 360 / sliceWidth);
 
   // Display information about the landed slice
+  let message;
   
   switch (desiredSlice) {
     case 0:
         resetTimer()
+        message = "A Timer Reset!"
         break;
     case 1:
         giveClue()
+        message = "A Clue!"
         break;
     case 2:
         addPoints(5)
+        message = "5 points!"
         break;
     case 3:
         nothing()
+        message = "Nothing :("
         break;
     case 4:
         addPoints(20)
+        message = "20 points!"
         break;
     case 5:
         giveClue()
+        message = "A Clue!"
         break;
     case 6:
         resetTimer()
+        message = "Timer Reset"
         break;
     case 7:
         addPoints(10)
+        message = "20 points!"
         break;
   }
+  popUpFunction("wheel", message)
 
   // Reset the wheel for the next spin
   wheel.style.transition = 'none';

@@ -117,6 +117,25 @@ function profile($users, $received_data){
             }
         }
     }
+    if($subAction === "saveSpinDate"){
+        foreach($users as $index => $user){
+            if($user["username"] === $username){
+                $users[$index]["lastSpun"] = date("d");
+                putInUsersJSON($users);
+                sendJSON(["message" => date("d")], 200);
+                    
+            }
+        }
+    }
+    if($subAction === "getLastSpun"){
+        foreach($users as $index => $user){
+            if($user["username"] === $username){
+                
+                sendJSON(["message" => $user["lastSpun"]], 200);
+                    
+            }
+        }
+    }
         
 }
 

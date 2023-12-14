@@ -18,7 +18,7 @@ async function renderStartingpage() {
         `
         <img src="/Title.png" alt="Logo">
     
-    <p id="message">Welcome ${username}, how would you like to play?</p>
+    <p id="message">Welcome <span>${username}</span>, how would you like to play?</p>
     
     <button id="Multiplayer" class="Buttons">Multiplayer</button>
     <button id="Singelplayer" class="Buttons">Singelplayer</button>
