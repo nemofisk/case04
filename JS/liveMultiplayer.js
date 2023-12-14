@@ -525,7 +525,7 @@ function currentStanding(question) {
         main.innerHTML = `
             <div id="contentWrapper">
             
-                <div id="counter">15</div>
+                <div id="countdown">15</div>
         
                 <div id="topThree"></div>
         
@@ -535,7 +535,7 @@ function currentStanding(question) {
         `
 
         const intervalID = setInterval(function () {
-            const countdown = main.querySelector("#counter");
+            const countdown = main.querySelector("#countdown");
 
             const currentSec = parseInt(countdown.textContent);
 
@@ -598,7 +598,7 @@ function currentStanding(question) {
                 
                 </div>
 
-                <div class="currentPoints"></div>
+                <div class="currentPoints">${gameMembers[i].points}</div>
             `
 
             document.querySelector("#restList").appendChild(restListDiv);

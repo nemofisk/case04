@@ -111,11 +111,12 @@
 .topThreeDiv {
     display: flex;
     flex-direction: column;
-
+    color: white;
     gap: 10px;
 }
 
 .restListDiv {
+    color: white;
     display: flex;
     justify-content: space-between;
 }
