@@ -56,14 +56,14 @@ async function startFetchGameInfo(gameID) {
             body: JSON.stringify(body)
         })
 
-        console.log(body);
+        // console.log(body);
 
         const response = await callAPI(request, true, false);
         const resource = await response.json();
 
         window.localStorage.setItem("gameInfo", JSON.stringify(await resource));
         const randomNum = Math.floor(Math.random() * 100) + 1;
-        console.log("**************************************" + randomNum);
+        // console.log("**************************************" + randomNum);
     }, 1000)
 
     return intervalID;
@@ -260,6 +260,7 @@ function mpTextQuestion(question) {
         alt.classList.add("alternative");
 
         alt.dataset.title = alternative.title
+        console.log(alternative.title);
 
         alt.innerHTML = `
             <div class="altTitle">${alternative.title}</div>
@@ -350,50 +351,70 @@ function mpPosterQuestion(question) {
 
 async function mpCheckAnswer(ev, question) {
 
-    console.log(ev.target);
+    console.log(ev.target.dataset.title);
 
     const gameInfo = JSON.parse(window.localStorage.getItem("gameInfo"));
     const answerTime = document.querySelector("#timer").textContent
     const questType = question.type;
 
+    console.log(questType);
     console.log(gameInfo);
 
     let answer;
     switch (questType) {
-        case "actor":
+        case "actors":
             answer = ev.target.dataset.title;
+            break;
         case "plot":
             answer = ev.target.dataset.title;
+            break
+    }
+
+    console.log(answer);
+
+    const rBody = {
+        action: "liveGame",
+        subAction: "answerQuestion",
+        userID: window.localStorage.getItem("userID"),
+        username: window.localStorage.getItem("username"),
+        gameID: gameInfo.gameID,
+        questionID: question.questionID,
+        answerTime: parseFloat(answerTime).toFixed(1),
+        answer: answer
     }
 
     const request = new Request("../PHP/api.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            action: "liveGame",
-            subAction: "answerQuestion",
-            userID: window.localStorage.getItem("userID"),
-            username: window.localStorage.getItem("username"),
-            gameID: gameInfo.gameID,
-            questionID: question.questionID,
-            answerTime: parseFloat(answerTime).toFixed(1),
-            answer: answer
-        })
+        body: JSON.stringify(rBody)
     })
 
     const response = await callAPI(request, true, false);
     const resource = await response.json();
 
+    const alternatives = document.querySelectorAll(".alternative");
+
+    let targetAlt;
+
+    alternatives.forEach(alt => {
+        if (alt.querySelector(".altTitle").textContent == answer) {
+            targetAlt = alt;
+        }
+    })
+
+
     if (resource.correct == false) {
-        ev.target.classList.add("wrong")
+        targetAlt.classList.add("wrong")
     }
 
     if (resource.correct == true) {
-        ev.target.classList.add("correct")
+        targetAlt.classList.add("correct")
     }
 }
 
 function startQuestionTimer(question) {
+
+    console.log(question.questionID + 1);
     const timer = document.querySelector("#timer");
 
     if (timer) {
@@ -477,10 +498,114 @@ async function endOfQuestion(question) {
 
     }
 
-    setTimeout(() => {
-        checkNextQuestion(question);
-    }, 3000)
+    const questions = gameInfo.questions;
 
+    if (question.questionID + 1 == questions.length / 2 || question.questionID + 1 == questions.length) {
+        setTimeout(() => {
+            currentStanding(question);
+        }, 3000)
+    } else {
+        setTimeout(() => {
+            checkNextQuestion(question);
+        }, 3000)
+    }
+
+}
+
+function currentStanding(question) {
+    const gameInfo = JSON.parse(window.localStorage.getItem("gameInfo"));
+    const gameMembers = gameInfo.members;
+    const questions = gameInfo.questions;
+
+    gameMembers.sort((a, b) => b.points - a.points);
+
+    const main = document.querySelector("main");
+
+    if (question.questionID + 1 == questions.length / 2) {
+        main.innerHTML = `
+            <div id="contentWrapper">
+            
+                <div id="counter">15</div>
+        
+                <div id="topThree"></div>
+        
+                <div id="restList"></div>
+            
+            </div>
+        `
+
+        const intervalID = setInterval(function () {
+            const countdown = main.querySelector("#counter");
+
+            const currentSec = parseInt(countdown.textContent);
+
+            if (currentSec === 0) {
+                clearInterval(intervalID);
+                checkNextQuestion(question);
+
+            } else {
+                countdown.textContent = currentSec - 1;
+            }
+
+        }, 1000)
+    }
+
+    if (question.questionID + 1 == questions.length) {
+        main.innerHTML = `
+            <div id="contentWrapper">
+            
+                <h1 id="endScreenHead">RESULTS</h1>
+        
+                <div id="topThree"></div>
+        
+                <div id="restList"></div>
+
+                <button id="endScreenButton">PLAY AGAIN</button>
+            
+            </div>
+        `
+    }
+
+    for (let i = 0; i < gameMembers.length; i++) {
+        if (i <= 2) {
+            const topThreeDiv = document.createElement("div");
+            topThreeDiv.id = `topThree${i + 1}`;
+            topThreeDiv.classList.add("topThreeDiv")
+            topThreeDiv.innerHTML = `
+                <div class="playerImageDiv">
+                    <div class="positionImage"></div>
+                    <div class="playerImage" style="background-image: url('../images/${gameMembers[i].profilePicture}')"></div>
+                </div>
+                <div class="currentPoints">${gameMembers[i].points}</div>
+            `
+
+            document.querySelector("#topThree").appendChild(topThreeDiv);
+        }
+
+        if (i >= 3 && gameMembers.length > 3) {
+            const restListDiv = document.createElement("div");
+            restListDiv.classList.add("restListDiv");
+
+            restListDiv.innerHTML = `
+                <div class="restListDivLeft">
+
+                    <div class="playerImageDiv">
+                        <div class="positionImage"></div>
+                        <div class="playerImage" style="background-image: url('../images/${gameMembers[i].profilePicture}')"></div>
+                    </div>
+
+                    <div>${gameMembers[i].name}</div>
+                
+                </div>
+
+                <div class="currentPoints"></div>
+            `
+
+            document.querySelector("#restList").appendChild(restListDiv);
+        }
+    }
+
+    console.log(gameMembers);
 }
 
 function checkNextQuestion(question) {

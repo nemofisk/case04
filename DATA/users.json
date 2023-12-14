@@ -22,7 +22,8 @@
         "friendRequests": [],
         "gameInvites": [],
         "xpGoal": 1525,
-        "id": 2
+        "id": 2,
+        "profile_picture": "kent-omslag_ny.jpg"
     },
     {
         "username": "www",
@@ -36,6 +37,7 @@
         "friendRequests": [],
         "gameInvites": [],
         "xpGoal": 300,
-        "id": 3
+        "id": 3,
+        "profile_picture": "kent-omslag_ny.jpg"
     }
 ]
