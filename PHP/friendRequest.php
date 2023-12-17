@@ -29,13 +29,16 @@ function friendRequest($received_data, $users){
     }
 
     if($subAction === "accept"){
+        $userID = $received_data["userID"];
         $userToRespondTo = $received_data["requestedUser"];
+        $userToRespondID;
         foreach($users as &$user){
             if($user["username"] === $userToRespondTo){
-                $user["friends"][] = $username;
+                $userToRespondID = $user["userID"];
+                $user["friends"][] = ["username" => $username, "userID" => $userID];
             }
             if($user["username"] === $username){
-                $user["friends"][] = $userToRespondTo;
+                $user["friends"][] = ["username" => $userToRespondTo, "userID", "userID" => $userToRespondID];
                 for($i = 0;$i < count($user["friendRequests"]); $i++){
                     if($user["friendRequests"][$i] === $userToRespondTo){
                         unset($user["friendRequests"][$i]);

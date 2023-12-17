@@ -48,7 +48,7 @@ function multiplayer($users, $received_data){
                         "profilePicture" => $user["profile_picture"],
                         "points" => 0
                     ]],
-                    "questions" => getRandomMovies(10, $selectedGenres),
+                    "questions" => getRandomMovies(2, $selectedGenres),
                     "isStarted" => false,
                     "replay" => false,
                     "currentQuestion" => "",
@@ -103,6 +103,16 @@ function multiplayer($users, $received_data){
         putInUsersJSON($users);
         $message = ["message" => "Success!"];
         sendJSON($message, 200);
+    }
+
+    if($subAction == "fetchFriends"){
+        $userID = $received_data["userID"];
+
+        foreach($users as $user){
+            if($user["userID"] == $userID){
+                sendJSON($user["friends"]);
+            };
+        }
     }
 
     file_put_contents($filename, json_encode($users, JSON_PRETTY_PRINT));
