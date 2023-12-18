@@ -87,15 +87,17 @@ function singlePlayer(event) {
 
 
 function chooseGenre(array) {
-    console.log(array);
-    let chosenGenre = array
-    window.localStorage.setItem("genre", chosenGenre);
+    
+    let chosenGenre;
 
     if (window.localStorage.getItem("genre")) {
-        chosenGenre = window.localStorage.getItem("genre")
+        chosenGenre = JSON.parse(window.localStorage.getItem("genre"));
     } else {
-        chosenGenre = event.target.textContent;
+        chosenGenre = array; 
+        window.localStorage.setItem("genre", JSON.stringify(chosenGenre));
     }
+
+   
 
     console.log(chosenGenre);
 
@@ -114,7 +116,7 @@ function chooseGenre(array) {
         for (let i = 0; i < resource.length; i++) {
 
             if (resource[i].Genre !== undefined) {
-                array.forEach(genre => {
+                chosenGenre.forEach(genre => {
                     if (resource[i].Genre.includes(genre)) {
                         movieGenerArray.push(resource[i])
                     }
