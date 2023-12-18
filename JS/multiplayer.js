@@ -154,35 +154,36 @@ async function inviteFriends(gameID) {
     document.querySelector("main").innerHTML = `
         <h1>Invite your friends</h1>
 
-            <input id="startSearch">
-            <div id="operation">
+        <input id="startSearch">
+        <div id="addedUsers"></div>
 
-                <input id="userSearch"></input>
-                <div id="foundUsers"></div>
-                
-            </div>
-
-        <button id="inviteUsersJoinGame">Next</button>
+        <button id="inviteUsersJoinGame">Invite</button>
+        <button id="joinGame">Join</button>
     `
 
-    const request = new Request(`../PHP/api.php?action=multiplayer&subAction=fetchFriends&userID=${userID}&username=${username}`);
+    // const request = new Request(`../PHP/api.php?action=multiplayer&subAction=fetchFriends&userID=${userID}&username=${username}`);
 
-    const response = await callAPI(request, true, false);
-    const resource = await response.json();
+    // const response = await callAPI(request, true, false);
+    // const resource = await response.json();
 
-    const friendsArray = await resource;
+    // const friendsArray = await resource;
 
-    const fakeInput = document.querySelector("#startSearch");
+    // const fakeInput = document.querySelector("#startSearch");
 
-    fakeInput.addEventListener("click", ev => {
-        const operation = document.querySelector("#operation");
-        operation.classList.add("popout");
+    // fakeInput.addEventListener("click", ev => {
+    //     const operation = document.querySelector("#operation");
+    //     operation.classList.add("popout");
+    // })
+
+    document.querySelector("#joinGame").addEventListener("click", ev => {
+        joinGame(gameID)
     })
 
     document.getElementById("inviteUsersJoinGame").addEventListener("click", e => {
+
+
         let inviteUser = document.querySelector("input").value;
         let hostUsername = window.localStorage.getItem("username");
-
 
         fetch("../PHP/api.php", {
             method: "POST",

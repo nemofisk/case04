@@ -1046,5 +1046,410 @@
         "isStarted": false,
         "replay": false,
         "currentQuestion": ""
+    },
+    {
+        "gameID": 88699,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "kent-omslag_ny.jpg",
+                "points": 0
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "poster",
+                "correctAnswer": "Incendies",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BMWE3MGYzZjktY2Q5Mi00Y2NiLWIyYWUtMmIyNzA3YmZlMGFhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 1,
+                "type": "trailer",
+                "correctAnswer": "Before Sunrise",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/25v7N34d5HE",
+                "guesses": []
+            }
+        ],
+        "isStarted": false,
+        "replay": false,
+        "currentQuestion": ""
+    },
+    {
+        "gameID": 42876,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "kent-omslag_ny.jpg",
+                "points": 0
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "actors",
+                "correctAnswer": "Up",
+                "alternatives": [
+                    {
+                        "title": "Some Like It Hot",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Hotel Rwanda",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Up",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Hamster Factor and Other Tales of Twelve Monkeys",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Edward Asner, Jordan Nagai, John Ratzenberger"
+            },
+            {
+                "questionID": 1,
+                "type": "poster",
+                "correctAnswer": "Prisoners",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BMTg0NTIzMjQ1NV5BMl5BanBnXkFtZTcwNDc3MzM5OQ@@._V1_SX300.jpg",
+                "guesses": []
+            }
+        ],
+        "isStarted": false,
+        "replay": false,
+        "currentQuestion": ""
+    },
+    {
+        "gameID": 63598,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "kent-omslag_ny.jpg",
+                "points": 0
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "actors",
+                "correctAnswer": "Amadeus",
+                "alternatives": [
+                    {
+                        "title": "Amadeus",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "North by Northwest",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Terminator 2: Judgment Day",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Treasure of the Sierra Madre",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "F. Murray Abraham, Tom Hulce, Elizabeth Berridge"
+            },
+            {
+                "questionID": 1,
+                "type": "actors",
+                "correctAnswer": "Beauty and the Beast",
+                "alternatives": [
+                    {
+                        "title": "Taxi Driver",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "La La Land",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Gandhi",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Beauty and the Beast",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Paige O'Hara, Robby Benson, Jesse Corti"
+            }
+        ],
+        "isStarted": false,
+        "replay": false,
+        "currentQuestion": ""
+    },
+    {
+        "gameID": 11502,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "kent-omslag_ny.jpg",
+                "points": 0
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "trailer",
+                "correctAnswer": "The Departed",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/n4O3x5BH18E",
+                "guesses": []
+            },
+            {
+                "questionID": 1,
+                "type": "plot",
+                "correctAnswer": "Eternal Sunshine of the Spotless Mind",
+                "alternatives": [
+                    {
+                        "title": "Judgment at Nuremberg",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Touch of Evil",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Eternal Sunshine of the Spotless Mind",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Unforgiven",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "When their relationship turns sour, a couple undergoes a medical procedure to have each other erased from their memories for ever."
+            }
+        ],
+        "isStarted": false,
+        "replay": false,
+        "currentQuestion": ""
+    },
+    {
+        "gameID": 78763,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "kent-omslag_ny.jpg",
+                "points": 0
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "actors",
+                "correctAnswer": "M",
+                "alternatives": [
+                    {
+                        "title": "North by Northwest",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "M",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Treasure of the Sierra Madre",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Citizen Kane",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Peter Lorre, Ellen Widmann, Inge Landgut"
+            },
+            {
+                "questionID": 1,
+                "type": "poster",
+                "correctAnswer": "Harry Potter and the Deathly Hallows: Part 2",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BMGVmMWNiMDktYjQ0Mi00MWIxLTk0N2UtN2ZlYTdkN2IzNDNlXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg",
+                "guesses": []
+            }
+        ],
+        "isStarted": false,
+        "replay": false,
+        "currentQuestion": ""
+    },
+    {
+        "gameID": 72570,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "kent-omslag_ny.jpg",
+                "points": 0
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "trailer",
+                "correctAnswer": "American Beauty",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/3ycmmJ6rxA8",
+                "guesses": []
+            },
+            {
+                "questionID": 1,
+                "type": "trailer",
+                "correctAnswer": "12 Years a Slave",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/z02Ie8wKKRg",
+                "guesses": []
+            }
+        ],
+        "isStarted": false,
+        "replay": false,
+        "currentQuestion": ""
+    },
+    {
+        "gameID": 49775,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "kent-omslag_ny.jpg",
+                "points": 0
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "trailer",
+                "correctAnswer": "Beauty and the Beast",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/herCuCHSR2s",
+                "guesses": []
+            },
+            {
+                "questionID": 1,
+                "type": "trailer",
+                "correctAnswer": "Judgment at Nuremberg",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/jG8JsLy_aTI",
+                "guesses": []
+            }
+        ],
+        "isStarted": false,
+        "replay": false,
+        "currentQuestion": ""
     }
 ]

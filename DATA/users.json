@@ -6,7 +6,12 @@
         "popcorn": 1080,
         "friends": [],
         "friendRequests": [],
-        "gameInvites": [],
+        "gameInvites": [
+            {
+                "hostName": "w",
+                "gameID": 49775
+            }
+        ],
         "xpGoal": 1300,
         "id": 1,
         "clues": 22,

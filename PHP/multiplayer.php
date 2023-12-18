@@ -109,7 +109,7 @@ function multiplayer($users, $received_data){
         $userID = $received_data["userID"];
 
         foreach($users as $user){
-            if($user["userID"] == $userID){
+            if($user["id"] == $userID){
                 sendJSON($user["friends"]);
             };
         }
