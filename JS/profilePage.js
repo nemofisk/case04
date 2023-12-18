@@ -26,6 +26,8 @@ async function renderProfilePage() {
 
     </div>
     <div id="showfriends"></div>
+    <input id="friendUsername"></input>
+    <button id="sendRequest">Send Friend Request!</button>
     `
     document.querySelector("h1").textContent = window.localStorage.getItem("username");
     document.getElementById("upload_profile_picture").addEventListener("change", upload_picture);
@@ -39,6 +41,9 @@ async function renderProfilePage() {
     document.getElementById("currentLevel").textContent = userInfo.level;
     document.getElementById("nextLevel").textContent = userInfo.level + 1;
 
+    document.getElementById("sendRequest").addEventListener("click", () => {
+        searchUsers(document.getElementById("friendUsername").value)
+    })
 
 }
 

@@ -1,10 +1,10 @@
 
 
-function searchUsers(event) {
+function searchUsers(searchedUser) {
+    
     let username = localStorage.getItem("username");
-    console.log(event);
-    let searchedUser = document.querySelector("#searchBar").value;
-    console.log(event);
+    
+    
 
     fetch("../PHP/api.php", {
         method: "POST",
