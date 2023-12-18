@@ -23,6 +23,9 @@ async function renderProfilePage() {
     </div>
 
     <form id="profile_image" action="./profile/php/upload.php" method="POST" enctype="multipart/form-data">
+        <label for="upload_profile_picture" class="customFileUpload">
+            Edit
+        </label>
         <input type="file" id="upload_profile_picture" name="upload">
     </form>
     

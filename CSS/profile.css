@@ -1,6 +1,23 @@
 #upload_profile_picture {
-    height: 50px;
-    width: 50px;
+    display: none;
+}
+
+
+.customFileUpload {
+    height: 39px;
+    width: 108px;
+    position: absolute;
+    top: 375px;
+    left: 190px;
+    background-color: #000000d6;
+    border-radius: 28px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
 }
 
 #pointsInfo {

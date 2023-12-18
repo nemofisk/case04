@@ -149,9 +149,12 @@ function chooseCatagoryMultiplayer(event) {
 
 function inviteFriends(gameID) {
     document.querySelector("main").innerHTML = `
-    <input id="userSearch"></input>
-    <button id="inviteUser">Invite User!</button>
-    <button id="inviteJoinButton"></button>
+    <div id="inviteFriendsWrapper">
+        <h1 id="inviteFriendsHeader">Bjud in dina vänner</h1>
+        <input id="userSearch"></input>
+        <button id="inviteUser">Invite User!</button>
+        <button id="inviteJoinButton"></button>
+    </div>
     `
 
     const button = document.querySelector("#inviteJoinButton");
