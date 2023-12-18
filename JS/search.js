@@ -4,7 +4,7 @@ function searchUsers(searchedUser) {
     
     let username = localStorage.getItem("username");
     
-    
+    console.log(searchedUser);
 
     fetch("../PHP/api.php", {
         method: "POST",
@@ -14,3 +14,4 @@ function searchUsers(searchedUser) {
         console.log(resource);
     });
 }
+

@@ -14,6 +14,11 @@
                 "name": "wwww",
                 "profilePicture": "Peaky Blinders (kopia).webp",
                 "popcorn": 1300
+            },
+            {
+                "name": "hello",
+                "profilePicture": "Sons (kopia).jpg",
+                "popcorn": 0
             }
         ],
         "friendRequests": [],
@@ -33,10 +38,9 @@
         "friends": [],
         "friendRequests": [],
         "gameInvites": [],
-        "profile_picture": "guts.jpg",
+        "profile_picture": "Sons (kopia).jpg",
         "xpGoal": 1525,
-        "id": 2,
-        "profile_picture": "Sons (kopia).jpg"
+        "id": 2
     },
     {
         "username": "www",
@@ -60,12 +64,19 @@
         "level": 1,
         "popcorn": 0,
         "gameInvites": [],
-        "friends": [],
+        "friends": [
+            {
+                "name": "w",
+                "profilePicture": "kent-omslag_ny.jpg",
+                "popcorn": 1340
+            }
+        ],
         "friendRequests": [],
         "xpGoal": 100,
         "clues": 0,
         "resetTimer": 0,
-        "id": 4
+        "id": 4,
+        "profile_picture": "Sons (kopia).jpg"
     },
     {
         "username": "hello1",

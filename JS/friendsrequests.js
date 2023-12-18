@@ -35,6 +35,7 @@ function respondFriendRequest(event) {
     let action;
     let user = event.target.parentElement.id;
     console.log(user);
+    console.log(window.localStorage.getItem("username"));
     if (event.target.id === "accept") {
         action = "accept"
 

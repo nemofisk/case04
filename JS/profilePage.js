@@ -29,6 +29,9 @@ async function renderProfilePage() {
         </div>
 
     </div>
+    <div id="showfriends"></div>
+    <input id="friendUsername"></input>
+    <button id="sendRequest">Send Friend Request!</button>
     <div id="AddFriends"></div>
 </div>
 
@@ -65,6 +68,7 @@ async function renderProfilePage() {
     document.getElementById("nextLevel").textContent = userInfo.level + 1;
 
     document.getElementById("sendRequest").addEventListener("click", () => {
+        console.log(document.getElementById("friendUsername").value);
         searchUsers(document.getElementById("friendUsername").value)
     })
 

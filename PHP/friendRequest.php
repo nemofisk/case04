@@ -20,60 +20,67 @@ function friendRequest($received_data, $users){
                     $user["friendRequests"][] = $username;
                 }
             }
-            
+
         }
         file_put_contents($filename, json_encode($users, JSON_PRETTY_PRINT));
         $message = ["message" => "Success!"];
         sendJSON($message, 200);
 
     }
-
-    if($subAction === "accept"){
+    if ($subAction === "accept") {
         $userToRespondTo = $received_data["requestedUser"];
-        foreach($users as $index => &$user){
-            if($user["username"] === $userToRespondTo){
-
-                foreach($users as $newUser){
-                    if($newUser["username"] === $username){
+        $userToRespondToData = null;
+    
+        foreach ($users as &$userOuter) {
+            
+            if ($userOuter["username"] === $userToRespondTo) {
+                foreach ($users as &$userInner) {
+                    if ($userInner["username"] === $username) {
                         $friendObject = [
-                            "name" => $username,
-                            "profilePicture" => $newUser["profile_picture"],
-                            "popcorn" => $newUser["popcorn"]
+                            "name" => $userInner["username"],
+                            "profilePicture" => $userInner["profile_picture"],
+                            "popcorn" => $userInner["popcorn"]
                         ];
-        
-                        
+    
+                        foreach ($users as &$user) {
+                            if ($user["username"] === $userToRespondTo) {
+                                $user["friends"][] = $friendObject;
+                            }
+                        }
                     }
                 }
-                $newUser["friends"][] = $friendObject;
-                
-                
-            }
-            if($user["username"] === $username){
-                foreach($users as $newUsers){
-                    if($newUsers["username"] === $userToRespondTo){
-                        $friendObject = [
-                            "name" => $username,
-                            "profilePicture" => $newUsers["profile_picture"],
-                            "popcorn" => $newUsers["popcorn"]
-                        ];
-        
-                        
-
-                    }
-                }
-                $newUsers["friends"][] = $friendObject;
-                for($i = 0;$i < count($user["friendRequests"]); $i++){
-                    if($user["friendRequests"][$i] === $userToRespondTo){
-                        unset($user["friendRequests"][$i]);
+    
+                foreach ($users as &$user) {
+                    if ($user["username"] === $username) {
+                        foreach ($users as &$userInner) {
+                            if ($userInner["username"] === $userToRespondTo) {
+                                $friendObject = [
+                                    "name" => $userToRespondTo,
+                                    "profilePicture" => $userInner["profile_picture"],
+                                    "popcorn" => $userInner["popcorn"]
+                                ];
+                                foreach ($users as &$userOuter) {
+                                    if ($userOuter["username"] === $username) {
+                                        $userOuter["friends"][] = $friendObject;
+                                        $key = array_search($userToRespondTo, $userOuter["friendRequests"]);
+                                        unset($userOuter["friendRequests"][$key]);
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
         }
-        
+    
         file_put_contents($filename, json_encode($users, JSON_PRETTY_PRINT));
         $message = ["message" => "Success!"];
         sendJSON($message, 200);
     }
+    
+    
+    
+    
     if($subAction === "decline"){
         $userToRespondTo = $received_data["requestedUser"];
         foreach ($users as &$user) {
