@@ -26,3 +26,291 @@
 .SelectedGanras {
     background-color: #8184F8;
 }
+
+#inviteFriendsHeader {
+    font-size: 40px;
+    position: relative;
+    bottom: 138px;
+}
+
+#inviteFriendsWrapper {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#inviteFriendsWrapper>input {
+    position: relative;
+    bottom: 110px;
+    width: 524px;
+    height: 50px;
+    background-color: #333247;
+    border: 0;
+    border-radius: 20px;
+}
+
+.correct {
+    background-color: greenyellow;
+}
+
+.wrong {
+    background-color: red;
+}
+
+.alternative {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    border-radius: 20px;
+    border: 1px solid #8184F8;
+
+    color: white;
+    padding: 12px;
+}
+
+#alternatives {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.playerImg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+#contentWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+#questionContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: white;
+    font-family: jost;
+
+    text-align: center;
+}
+
+#timer {
+    font-size: 20px;
+    color: white;
+    font-family: jost;
+    text-align: center;
+}
+
+#questionTitle {
+    font-size: 14px;
+}
+
+#questionText {
+    font-size: 14px;
+}
+
+#countdown {
+    color: #FF6868;
+    font-size: 30px;
+    text-align: center;
+}
+
+#topThree {
+    display: flex;
+    flex-direction: row;
+    gap: 10px
+}
+
+#restList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.topThreeDiv {
+    display: flex;
+    flex-direction: column;
+    color: white;
+
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.restListDiv {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.playerImage {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 50%;
+}
+
+.restListDivLeft {
+    display: flex;
+    gap: 10px;
+}
+
+.restListDivLeft>.playerImageDiv>.playerImage {
+    height: 50px;
+    width: 50px;
+}
+
+#topThree1>.playerImageDiv>.playerImage {
+    height: 112px;
+    width: 112px;
+}
+
+#topThree2>.playerImageDiv>.playerImage {
+    height: 94px;
+    width: 94px;
+}
+
+#topThree3>.playerImageDiv>.playerImage {
+    height: 77px;
+    width: 77px;
+}
+
+#poster {
+    height: 300px;
+    width: 200px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: blur(20px);
+    /* Initial blur value */
+    transition: filter 14s;
+    /* Transition over 10 seconds with ease-in-out timing function */
+
+}
+
+#poster.blur {
+    filter: blur(0px);
+}
+
+.member {
+    display: flex;
+    flex-direction: column;
+
+    color: white;
+    text-align: center;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.member>.lobbyProfilePic {
+    height: 50px;
+    width: 50px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 50%;
+}
+
+#lobbyMemberList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 45px;
+    width: 300px;
+}
+
+#videoContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1.8fr 1.8fr 1fr;
+    height: 350px;
+    width: 400px;
+}
+
+iframe {
+    pointer-events: none;
+    grid-row: 1 / span 4;
+    grid-column: 1;
+    z-index: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 20px;
+}
+
+#movieCoverUp {
+    grid-row: 1;
+    grid-column: 1;
+
+    background-color: black;
+    z-index: 1;
+
+    border-radius: 20px 20px 0px 0px;
+}
+
+#movieCoverDown {
+    grid-row: 4;
+    grid-column: 1;
+
+    background-color: black;
+    z-index: 1;
+
+    border-radius: 0px 0px 20px 20px;
+}
+
+#answerContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#foundMovies {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#searchMovie {
+    border-radius: 20px;
+    height: 50px;
+    background-color: rgba(103, 101, 159, 0.35);
+    border: none;
+    padding: 0px 25px;
+    color: white;
+}
+
+#operation {
+    display: none;
+}
+
+#operation.popout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: rgba(0, 0, 0, 0.6);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

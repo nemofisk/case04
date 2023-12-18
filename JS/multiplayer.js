@@ -147,22 +147,42 @@ function chooseCatagoryMultiplayer(event) {
     }
 }
 
-function inviteFriends(gameID) {
+async function inviteFriends(gameID) {
+    const userID = parseInt(window.localStorage.getItem("userID"));
+    const username = window.localStorage.getItem("username")
+
     document.querySelector("main").innerHTML = `
-    <input id="userSearch"></input>
-    <button id="inviteUser">Invite User!</button>
-    <button id="inviteJoinButton"></button>
+    <div id="inviteFriendsWrapper">
+        <h1 id="inviteFriendsHeader">Bjud in dina vänner</h1>
+        <input id="userSearch"></input>
+        <button id="inviteUser">Invite User!</button>
+        <button id="inviteJoinButton"></button>
+    </div>
     `
 
-    const button = document.querySelector("#inviteJoinButton");
-    button.addEventListener("click", ev => {
+    // const request = new Request(`../PHP/api.php?action=multiplayer&subAction=fetchFriends&userID=${userID}&username=${username}`);
+
+    // const response = await callAPI(request, true, false);
+    // const resource = await response.json();
+
+    // const friendsArray = await resource;
+
+    // const fakeInput = document.querySelector("#startSearch");
+
+    // fakeInput.addEventListener("click", ev => {
+    //     const operation = document.querySelector("#operation");
+    //     operation.classList.add("popout");
+    // })
+
+    document.querySelector("#inviteJoinButton").addEventListener("click", ev => {
         joinGame(gameID)
     })
 
     document.getElementById("inviteUser").addEventListener("click", e => {
+
+
         let inviteUser = document.querySelector("input").value;
         let hostUsername = window.localStorage.getItem("username");
-
 
         fetch("../PHP/api.php", {
             method: "POST",
@@ -176,4 +196,47 @@ function inviteFriends(gameID) {
 
 }
 
+async function findUsers(event, question) {
+    let movieResults = document.getElementById("foundMovies");
+    movieResults.innerHTML = ``;
+    let input = document.getElementById("searchMovie");
+
+    //input event listner för att hämta strängen. 
+    const string = event.target.value;
+
+    const response = await fetch(`../DATA/movies.json`);
+    const data = await response.json();
+    let movies = [];
+
+    for (let i = 0; i < data.length; i++) {
+        movies.push(data[i].Title)
+
+    }
+    let filteredArray = [];
+
+    movies.forEach(movie => {
+        if (movie !== undefined) {
+            //The startsWith method is like the includes() method but it checks the beginning of the string instead. 
+            if (movie.toLowerCase().startsWith(string.toLowerCase())) {
+                filteredArray.push(movie);
+            }
+        }
+    })
+
+    filteredArray.splice(3);
+
+    for (let i = 0; i < filteredArray.length; i++) {
+
+        let movieDiv = document.createElement("div");
+        movieDiv.classList.add("alternative");
+        movieDiv.textContent = filteredArray[i];
+
+        movieDiv.addEventListener("click", ev => {
+            const txtAnswer = ev.target.textContent;
+            mpCheckAnswer(ev, question, txtAnswer);
+        })
+
+        movieResults.appendChild(movieDiv);
+    }
+}
 

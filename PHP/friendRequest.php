@@ -27,7 +27,10 @@ function friendRequest($received_data, $users){
         sendJSON($message, 200);
 
     }
-    if ($subAction === "accept") {
+    
+
+    if($subAction === "accept"){
+        $userID = $received_data["userID"];
         $userToRespondTo = $received_data["requestedUser"];
         $userToRespondToData = null;
     
