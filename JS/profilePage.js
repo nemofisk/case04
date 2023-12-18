@@ -73,6 +73,9 @@ async function renderProfilePage() {
     document.getElementById("currentLevel").textContent = userInfo.level;
     document.getElementById("nextLevel").textContent = userInfo.level + 1;
 
+    document.getElementById("sendRequest").addEventListener("click", () => {
+        searchUsers(document.getElementById("friendUsername").value)
+    })
 
 
 }

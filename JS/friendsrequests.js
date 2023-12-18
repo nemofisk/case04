@@ -1,6 +1,6 @@
 
 function displayFriendRequests() {
-    let requestBox = document.querySelector(".friendRequests");
+    let requestBox = document.querySelector("main");
 
     fetch("../PHP/api.php", {
         method: "POST",

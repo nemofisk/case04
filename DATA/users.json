@@ -2,8 +2,8 @@
     {
         "username": "w",
         "password": "",
-        "level": 666,
-        "popcorn": 1080,
+        "level": 667,
+        "popcorn": 1340,
         "friends": [
             {
                 "name": "www",
@@ -33,6 +33,7 @@
         "friends": [],
         "friendRequests": [],
         "gameInvites": [],
+        "profile_picture": "guts.jpg",
         "xpGoal": 1525,
         "id": 2,
         "profile_picture": "Sons (kopia).jpg"
