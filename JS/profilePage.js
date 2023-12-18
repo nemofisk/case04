@@ -6,18 +6,27 @@ async function renderProfilePage() {
 <div id="ProfilePageContainer">
 <div id="leftSide">        
     <div id="pointsInfo">
+    <div class="flexIt">
         <div>Total Score</div>
         <div id="totalPoints"></div>
-        <div id="seperator"></div>
-        <div id="WeeklyPoints">Weekly Points</div>
     </div>
+    <div id="seperator"></div>
+    <div class="flexIt">
+        <div id="WeeklyPoints">Weekly Points</div>
+        <div>12374 p</div>
+    </div>
+    </div>
+
+    <div id="profilePicWrapper">
     <img id="profileImage" src="" alt="Profile Picture">
+    <h1 id="profilePageUsername"></h1>
+    </div>
+
     <form id="profile_image" action="./profile/php/upload.php" method="POST" enctype="multipart/form-data">
         <input type="file" id="upload_profile_picture" name="upload">
     </form>
     
 
-    <h1></h1>
 
     <div id="showlevel">Level
         <div id="levelBar">
@@ -29,7 +38,7 @@ async function renderProfilePage() {
         </div>
 
     </div>
-    <div id="AddFriends"></div>
+    <div id="AddFriends">+ Add Friends</div>
 </div>
 
     <div id="middle"></div>
@@ -43,7 +52,7 @@ async function renderProfilePage() {
             <div id="myProfile">
             <img id="myProfileImage" src="../images/${userInfo.profile_picture}" alt="Profile Picture">
                 <p>${username}</p>
-                <div>${userInfo.popcorn} p</div>
+                <div class="userPoints">${userInfo.popcorn} p</div>
             </div>
         </div>
     </div>  
@@ -86,7 +95,7 @@ async function displayFriendList(userInfo) {
             `
         <img class="myProfileImage" src="../images/${friend.profilePicture}" alt="Profile Picture">
                 <p>${friend.name}</p>
-                <div>${friend.popcorn} p</div>
+                <div class="userPoints">${friend.popcorn} p</div>
         `
         container.appendChild(div);
     });
