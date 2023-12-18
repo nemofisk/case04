@@ -26,40 +26,107 @@ function liveGame($users, $games, $recieved_data){
     }
 
     if($subAction === "answerQuestion"){
+
         $answer = $recieved_data["answer"];
         $questionID = $recieved_data["questionID"];
+        $questionGlobal;
+        $questionIndex;
         $answerTime = $recieved_data["answerTime"];
+        $qType = $recieved_data["qType"];
         $userID = $recieved_data["userID"];
 
-        foreach($currentGame["questions"] as $indexx => $question){
-            if($question["questionID"] == $questionID){
-                if($answer == $question["correctAnswer"]){
+        foreach($currentGame["questions"] as $index => $question){
 
-                    foreach($currentGame["members"] as $index => $member){
-                        if($member["userID"] == $userID){
-                            $games[$currentGameIndex]["members"][$index]["points"] += $answerTime;
-                            
-                            foreach($games[$currentGameIndex]["questions"][$indexx]["alternatives"] as $iindex => $alternative){
-                                if($alternative["title"] == $answer){
-                                    $gamers[$currentGameIndex]["questions"][$indexx]["alternatives"][$iindex]["whoGuessed"][] = $currentGame["members"][$index];
+            if($question["questionID"] == $questionID){
+                $questionGlobal = $question;
+                $questionIndex = $index;
+            }
+
+        }
+
+        if($qType == "actors" or $qType == "plot"){
+            foreach($currentGame["questions"] as $indexx => $question){
+                if($question["questionID"] == $questionID){
+    
+                    foreach($question["alternatives"] as $altIndex => $alternative){
+                        if($alternative["title"] == $answer){
+                            foreach($currentGame["members"] as $index => $member){
+                                if($member["userID"] == $userID){
+    
+                                    $userFound = false;
+    
+                                    foreach($alternative["whoGuessed"] as $member2){
+                                        if($member2["userID"] == $userID){
+                                            $userFound = true;
+                                        }
+                                    }
+    
+                                    if(!$userFound){
+                                        unset($member["points"]);
+                                        $games[$currentGameIndex]["questions"][$indexx]["alternatives"][$altIndex]["whoGuessed"][] = $member;
+                                    }
+    
                                 }
                             }
-
-                            putInMultiplayerJSON($games);
-                            sendJSON(["correct" => true]);
                         }
                     }
 
-                }else{
-                    sendJSON(["correct" => false]);
                 }
+    
             }
         }
 
-    }
+        if($qType == "poster" or $qType == "trailer"){
+            
+            foreach($currentGame["questions"] as $index => $question){
+                if($question["questionID"] == $questionID){
+
+                    $games[$currentGameIndex]["questions"][$index]["guesses"][] = $answer;
+
+                }
+            }
+
+        }
+
+        if($answer == $questionGlobal["correctAnswer"]){
+    
+            foreach($currentGame["members"] as $index => $member){
+                if($member["userID"] == $userID){
+                    $games[$currentGameIndex]["members"][$index]["points"] += $answerTime;
+
+                    putInMultiplayerJSON($games);
+                    sendJSON(["correct" => true]);
+                }
+            }
+
+        }
+
+        putInMultiplayerJSON($games);
+        sendJSON(["correct" => false]);
+    }   
 
     if($subAction === "startGame"){
         $games[$currentGameIndex]["isStarted"] = true;
+        putInMultiplayerJSON($games);
+    }
+
+    if($subAction === "endGame"){
+        $genres = $recieved_data["genres"];
+        $userID = $recieved_data["userID"];
+
+        if($games[$currentGameIndex]["isStarted"] == true){
+            $games[$currentGameIndex]["isStarted"] = false;
+            $newQuestions = getRandomMovies(10, $genres);
+
+            $games[$currentGameIndex]["questions"] = $newQuestions;
+        }
+
+        foreach($games[$currentGameIndex]["members"] as $index => $member){
+            if($member["userID"] == $userID){
+                array_splice($games[$currentGameIndex]["members"], $index, 1);
+            }
+        }
+
         putInMultiplayerJSON($games);
     }
 
@@ -76,6 +143,15 @@ function liveGame($users, $games, $recieved_data){
         putInMultiplayerJSON($games);
     }
 
-}
+    if($subAction == "fetchQuestion"){
+        $questionID = $recieved_data["questionID"];
 
+        foreach($games[$currentGameIndex]["questions"] as $question){
+            if($questionID == $question["questionID"]){
+                sendJSON($question, 200);
+            }
+        }
+    }
+
+}
 ?>

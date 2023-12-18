@@ -39,8 +39,7 @@ function getRandomMovies($number, $genres){
 
     $questionsArray = [];
 
-    $questionTypes = ["poster", "plot", "actors", "trailer"];
-
+    $questionTypes = ["trailer", "poster", "actors", "plot"];
 
     foreach(array_rand($filteredMovieArray, $number) as $arrIndex => $index){
         $movie = $filteredMovieArray[$index];
@@ -97,12 +96,15 @@ function createQuestion($movie, $type, $arrIndex, $alternatives){
 
     if($type == "trailer"){
         $question["youtubeLink"] = $movie["youtubeLink"];
+        $question["guesses"] = [];
         unset($question["alternatives"]);
     }
 
     if($type == "poster"){
         $question["poster"] = $movie["Poster"];
+        $question["guesses"] = [];
         unset($question["alternatives"]);
+
     }
 
     return $question;
