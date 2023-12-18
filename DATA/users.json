@@ -19,11 +19,16 @@
                 "name": "hello",
                 "profilePicture": "Sons (kopia).jpg",
                 "popcorn": 0
+            },
+            {
+                "name": "hello1",
+                "profilePicture": null,
+                "popcorn": 0
             }
         ],
         "friendRequests": [],
         "gameInvites": [],
-        "xpGoal": 1300,
+        "xpGoal": 1500,
         "id": 1,
         "clues": 33,
         "resetTimer": 25,
@@ -67,7 +72,7 @@
         "friends": [
             {
                 "name": "w",
-                "profilePicture": "kent-omslag_ny.jpg",
+                "profilePicture": "The bear.jpg",
                 "popcorn": 1340
             }
         ],
@@ -84,7 +89,13 @@
         "level": 1,
         "popcorn": 0,
         "gameInvites": [],
-        "friends": [],
+        "friends": [
+            {
+                "name": "w",
+                "profilePicture": "The bear.jpg",
+                "popcorn": 1340
+            }
+        ],
         "friendRequests": [],
         "xpGoal": 100,
         "clues": 0,

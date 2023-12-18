@@ -43,9 +43,8 @@ async function renderProfilePage() {
     </div>
     <div id="showfriends"></div>
     <input id="friendUsername"></input>
-    <button id="sendRequest">Send Friend Request!</button>
-    <div id="AddFriends"></div>
-    <div id="AddFriends">+ Add Friends</div>
+    <button class="AddFriends" id="sendRequest">+ Add Friends!</button>
+    
 </div>
 
     <div id="middle"></div>
