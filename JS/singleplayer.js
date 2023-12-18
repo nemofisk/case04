@@ -225,7 +225,7 @@ function posterQuestion(correctMovie, otherMovies) {
         clearInterval(intervalID);
         if (inputGuess.value === correctMovie.Title) {
 
-            let request = new Request("../PHP/api.php", {
+            let request = new Request("PHP/api.php", {
                 method: "POST",
                 headers: { "Content-type": "application/json" },
                 body: JSON.stringify({ username: window.localStorage.getItem("username"), guess: "correct", action: "profile", subAction: "quizGuess", points: 25 })
@@ -349,7 +349,7 @@ function checkAnswer(event) {
     if (movie === window.localStorage.getItem("movie")) {
         console.log("Correct");
 
-        let request = new Request("../PHP/api.php", {
+        let request = new Request("PHP/api.php", {
             method: "POST",
             headers: { "Content-type": "application/json" },
             body: JSON.stringify({ username: window.localStorage.getItem("username"), guess: "correct", action: "profile", subAction: "quizGuess", points: 25 })
@@ -424,7 +424,7 @@ function goToHomePage(event) {
 
 function getClue(movie) {
 
-    let request = new Request("../PHP/api.php", {
+    let request = new Request("PHP/api.php", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ username: window.localStorage.getItem("username"), action: "profile", subAction: "useClue" })

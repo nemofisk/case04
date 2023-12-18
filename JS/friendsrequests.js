@@ -2,7 +2,7 @@
 function displayFriendRequests() {
     let requestBox = document.querySelector("main");
 
-    fetch("../PHP/api.php", {
+    fetch("PHP/api.php", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ username: window.localStorage.getItem("username"), action: "displayFriends" })
@@ -43,7 +43,7 @@ function respondFriendRequest(event) {
 
     }
 
-    fetch("../PHP/api.php", {
+    fetch("PHP/api.php", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ username: window.localStorage.getItem("username"), requestedUser: user, action: "friendRequest", subAction: action })

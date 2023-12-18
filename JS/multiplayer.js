@@ -98,7 +98,7 @@ function chooseCatagoryMultiplayer(event) {
     ContinueButton.addEventListener("click", async function () {
 
 
-        const request = new Request("../PHP/api.php", {
+        const request = new Request("PHP/api.php", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -160,7 +160,7 @@ async function inviteFriends(gameID) {
     </div>
     `
 
-    // const request = new Request(`../PHP/api.php?action=multiplayer&subAction=fetchFriends&userID=${userID}&username=${username}`);
+    // const request = new Request(`PHP/api.php?action=multiplayer&subAction=fetchFriends&userID=${userID}&username=${username}`);
 
     // const response = await callAPI(request, true, false);
     // const resource = await response.json();
@@ -179,12 +179,10 @@ async function inviteFriends(gameID) {
     })
 
     document.getElementById("inviteUser").addEventListener("click", e => {
-
-
         let inviteUser = document.querySelector("input").value;
         let hostUsername = window.localStorage.getItem("username");
 
-        fetch("../PHP/api.php", {
+        fetch("PHP/api.php", {
             method: "POST",
             headers: { "Content-type": "application/json" },
             body: JSON.stringify({ username: hostUsername, invitedUser: inviteUser, action: "multiplayer", gameID: gameID, subAction: "inviteToGame" })

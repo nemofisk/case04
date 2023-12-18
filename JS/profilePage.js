@@ -85,7 +85,7 @@ async function renderProfilePage() {
 async function displayFriendList(userInfo) {
     let friends;
     try {
-        const response = await fetch(`../PHP/api.php?action=profile&subAction=getfriends&username=${userInfo.username}`);
+        const response = await fetch(`PHP/api.php?action=profile&subAction=getfriends&username=${userInfo.username}`);
         const data = await response.json();
         friends = data.message;
     } catch (error) {
@@ -125,7 +125,7 @@ function upload_picture(event) {
     formData.append("username", localStorage.getItem("username"));
 
 
-    let request = new Request("../PHP/api.php", {
+    let request = new Request("PHP/api.php", {
         method: "POST",
         body: formData,
     })
