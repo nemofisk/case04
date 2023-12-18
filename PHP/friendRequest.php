@@ -29,6 +29,7 @@ function friendRequest($received_data, $users){
     }
 
     if($subAction === "accept"){
+        $userID = $received_data["userID"];
         $userToRespondTo = $received_data["requestedUser"];
         foreach($users as $index => &$user){
             if($user["username"] === $userToRespondTo){

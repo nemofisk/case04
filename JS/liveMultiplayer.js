@@ -56,22 +56,22 @@ async function startFetchGameInfo(gameID) {
             body: JSON.stringify(body)
         })
 
-        console.log(body);
+        // console.log(body);
 
         const response = await callAPI(request, true, false);
         const resource = await response.json();
 
         window.localStorage.setItem("gameInfo", JSON.stringify(await resource));
         const randomNum = Math.floor(Math.random() * 100) + 1;
-        console.log("**************************************" + randomNum);
+        // console.log("**************************************" + randomNum);
     }, 1000)
+
+    window.localStorage.setItem("fetchIntervalID", intervalID)
 
     return intervalID;
 }
 
 async function renderLobby(fetchIntervalID) {
-
-    console.log(fetchIntervalID);
 
     const main = document.querySelector("main");
 
@@ -112,7 +112,7 @@ async function renderLobby(fetchIntervalID) {
 
                     memberDiv.innerHTML = `
                         <div class="crown"></div>
-                        <div class="lobbyProfilePic" style="background-image: url('${member.profilePicture}')"></div>
+                        <div class="lobbyProfilePic" style="background-image: url('images/${member.profilePicture}')"></div>
                         <div class="lobbyProfileName">${member.name}</div>
                     `
 
@@ -259,14 +259,36 @@ function mpTextQuestion(question) {
         const alt = document.createElement("div");
         alt.classList.add("alternative");
 
-        alt.textContent = alternative.title;
+        alt.dataset.title = alternative.title
+        console.log(alternative.title);
 
-        alt.addEventListener("click", (event) => {
-            mpCheckAnswer(event, question)
-        })
+        alt.innerHTML = `
+            <div class="altTitle">${alternative.title}</div>
+        `
 
+        alt.querySelector(".altTitle").dataset.title = alternative.title;
         altDiv.append(alt);
     })
+
+    const allAlts = document.querySelectorAll(".alternative")
+
+    function altEvent(event) {
+        const allAlternatives = document.querySelectorAll(".alternative")
+
+        console.log(allAlternatives);
+
+        allAlternatives.forEach(altern => {
+            altern.removeEventListener("click", altEvent)
+        })
+
+        mpCheckAnswer(event, question)
+    }
+
+    allAlts.forEach(al => {
+        al.addEventListener("click", altEvent);
+    })
+
+
 
 }
 
@@ -277,17 +299,20 @@ function mpTrailerQuestion(question) {
     
         <div id="contentWrapper">
         
-            <div id="timer">10</div>
+            <div id="timer">20</div>
             <div id="videoContainer">
             
-                <iframe></iframe>
+                <iframe src=${question.youtubeLink}?autoplay=1&mute=1&controls=0&disablekb=1&showinfo=0 title="" frameborder="0" controls="0" disablekb="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                <div id="movieCoverUp"></div>
+                <div id="movieCoverDown"></div>
 
             </div>
 
             <div id="answerContainer">
 
-                <input id="searchAnswer">
-                <div id="foundAnswers"></div>
+                <input id="searchMovie">
+                <div id="foundMovies"></div>
 
             </div>
 
@@ -295,7 +320,13 @@ function mpTrailerQuestion(question) {
 
     `
 
+
     startQuestionTimer(question)
+
+    const searchMovie = document.querySelector("#searchMovie");
+    searchMovie.addEventListener("input", ev => {
+        findMovie(ev, question)
+    })
 
 }
 
@@ -306,7 +337,7 @@ function mpPosterQuestion(question) {
     
         <div id="contentWrapper">
         
-            <div id="contentWrapper">
+            <div id="questionContainer">
                 <div id="timer">10</div>
                 <div id="poster"></div>
 
@@ -314,8 +345,8 @@ function mpPosterQuestion(question) {
         
             <div id="answerContainer">
             
-                <input id="searchAnswer">
-                <div id="foundAnswers"></div>
+                <input id="searchMovie">
+                <div id="foundMovies"></div>
             
             </div>
 
@@ -323,54 +354,105 @@ function mpPosterQuestion(question) {
 
     `
 
-    startQuestionTimer(question)
+    const posterDiv = document.querySelector("#poster");
+
+    posterDiv.style.backgroundImage = `url('${question.poster}')`;
+
+    setTimeout(() => {
+        posterDiv.classList.add("blur")
+    }, 100)
+
+    startQuestionTimer(question);
+
+    const searchMovie = document.querySelector("#searchMovie");
+    searchMovie.addEventListener("input", ev => {
+        findMovie(ev, question)
+    })
 
 }
 
-async function mpCheckAnswer(ev, question) {
+async function mpCheckAnswer(ev, question, txtAnswer = undefined) {
+
+    console.log(ev.target.dataset.title);
 
     const gameInfo = JSON.parse(window.localStorage.getItem("gameInfo"));
     const answerTime = document.querySelector("#timer").textContent
     const questType = question.type;
 
+    console.log(questType);
     console.log(gameInfo);
 
     let answer;
     switch (questType) {
-        case "actor":
-            answer = ev.target.textContent;
+        case "actors":
+            answer = ev.target.dataset.title;
+            break;
         case "plot":
-            answer = ev.target.textContent;
+            answer = ev.target.dataset.title;
+            break;
+        case "trailer":
+            answer = txtAnswer;
+            break;
+        case "poster":
+            answer = txtAnswer;
+            break;
+    }
+
+    console.log(answer);
+
+    const rBody = {
+        action: "liveGame",
+        subAction: "answerQuestion",
+        userID: window.localStorage.getItem("userID"),
+        username: window.localStorage.getItem("username"),
+        gameID: gameInfo.gameID,
+        questionID: question.questionID,
+        answerTime: parseFloat(answerTime).toFixed(1),
+        qType: question.type,
+        answer: answer
     }
 
     const request = new Request("../PHP/api.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            action: "liveGame",
-            subAction: "answerQuestion",
-            userID: window.localStorage.getItem("userID"),
-            username: window.localStorage.getItem("username"),
-            gameID: gameInfo.gameID,
-            questionID: question.questionID,
-            answerTime: parseFloat(answerTime).toFixed(1),
-            answer: ev.target.textContent
-        })
+        body: JSON.stringify(rBody)
     })
 
     const response = await callAPI(request, true, false);
     const resource = await response.json();
 
-    if (resource.correct == false) {
+    let targetAlt;
 
+    if (questType == "actors" || questType == "plot") {
+        const alternatives = document.querySelectorAll(".alternative");
+        alternatives.forEach(alt => {
+            if (alt.querySelector(".altTitle").textContent == answer) {
+                targetAlt = alt;
+            }
+        })
+    }
+
+    if (questType == "trailer" || questType == "poster") {
+        const alternatives = document.querySelectorAll(".alternative");
+        alternatives.forEach(alt => {
+            if (alt.textContent == answer) {
+                targetAlt = alt;
+            }
+        })
+    }
+
+    if (resource.correct == false) {
+        targetAlt.classList.add("wrong")
     }
 
     if (resource.correct == true) {
-
+        targetAlt.classList.add("correct")
     }
 }
 
 function startQuestionTimer(question) {
+
+    console.log(question.questionID + 1);
     const timer = document.querySelector("#timer");
 
     if (timer) {
@@ -380,11 +462,255 @@ function startQuestionTimer(question) {
             timer.textContent = (currentTimerValue - 0.1).toFixed(1);
 
             if (currentTimerValue == 0) {
+
                 clearInterval(intervalID);
-                checkNextQuestion(question);
+
+                endOfQuestion(question);
             }
         }, 100);
     }
+}
+
+async function endOfQuestion(question) {
+    document.querySelector("#timer").textContent = "0";
+
+    const qType = question.type;
+    const gameInfo = JSON.parse(window.localStorage.getItem("gameInfo"));
+    const request = new Request("../PHP/api.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            action: "liveGame",
+            subAction: "fetchQuestion",
+            questionID: question.questionID,
+            gameID: gameInfo.gameID
+        })
+    })
+
+    const response = await callAPI(request, true, false);
+    const resource = await response.json();
+
+    const correctAnswer = resource.correctAnswer;
+
+    if (qType == "plot" || qType == "actors") {
+        const alternativeDivs = document.querySelectorAll(".alternative");
+        const alternativesDiv = document.querySelector("#alternatives")
+
+        alternativeDivs.forEach(alternative => {
+
+            const title = alternative.querySelector(".altTitle")
+
+            if (title.textContent == correctAnswer) {
+                alternative.classList.add("correct");
+            } else {
+                alternative.classList.add("wrong");
+            }
+
+            const whoGuessed = document.createElement("div");
+            whoGuessed.classList.add("whoGuessed");
+
+            console.log(whoGuessed);
+
+            resource.alternatives.forEach(alt => {
+                if (alt.title == title.textContent) {
+                    alt.whoGuessed.forEach(player => {
+                        console.log(player);
+                        const playerDiv = document.createElement("div");
+
+                        playerDiv.classList.add("playerImg");
+
+                        playerDiv.style.backgroundImage = `url('../images/${player.profilePicture}')`;
+
+                        whoGuessed.appendChild(playerDiv);
+                    })
+                }
+            })
+
+            alternative.appendChild(whoGuessed);
+
+        })
+
+    }
+
+    if (qType == "trailer" || qType == "poster") {
+
+    }
+
+    const questions = gameInfo.questions;
+
+    if (question.questionID + 1 == questions.length / 2 || question.questionID + 1 == questions.length) {
+        setTimeout(() => {
+            currentStanding(question);
+        }, 3000)
+    } else {
+        setTimeout(() => {
+            checkNextQuestion(question);
+        }, 3000)
+    }
+
+}
+
+async function currentStanding(question) {
+
+    const allLightCurtains = document.querySelectorAll(".curtainsLightStartingpage");
+    const allDarkCurtains = document.querySelectorAll(".curtainsStartingpage");
+
+    console.log(allLightCurtains);
+
+    allLightCurtains.forEach(crtn => {
+        crtn.style.height = "93vh"
+    });
+
+    allDarkCurtains.forEach(crtn => {
+        crtn.style.height = "91vh"
+    });
+
+    const gameInfo = JSON.parse(window.localStorage.getItem("gameInfo"));
+    const gameMembers = gameInfo.members;
+    const questions = gameInfo.questions;
+
+    gameMembers.sort((a, b) => b.points - a.points);
+
+    const main = document.querySelector("main");
+
+    if (question.questionID + 1 == questions.length / 2) {
+        main.innerHTML = `
+            <div id="contentWrapper">
+            
+                <div id="countdown">15</div>
+        
+                <div id="topThree"></div>
+        
+                <div id="restList"></div>
+            
+            </div>
+        `
+
+        const intervalID = setInterval(function () {
+            const countdown = main.querySelector("#countdown");
+
+            const currentSec = parseInt(countdown.textContent);
+
+            if (currentSec === 0) {
+                clearInterval(intervalID);
+
+                allLightCurtains.forEach(crtn => {
+                    crtn.style.height = "117px"
+                });
+
+                allDarkCurtains.forEach(crtn => {
+                    crtn.style.height = "109px"
+                });
+
+                checkNextQuestion(question);
+
+            } else {
+                countdown.textContent = currentSec - 1;
+            }
+
+        }, 1000)
+    }
+
+    if (question.questionID + 1 == questions.length) {
+
+        const fetchIntervalID = parseInt(JSON.parse(window.localStorage.getItem("fetchIntervalID")));
+
+        console.log(fetchIntervalID);
+
+        clearInterval(fetchIntervalID);
+
+        const request = new Request("../PHP/api.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                action: "liveGame",
+                subAction: "endGame",
+                userID: window.localStorage.getItem("userID"),
+                gameID: gameInfo.gameID,
+                genres: gameInfo.genres
+            })
+        })
+
+        await callAPI(request, true, false);
+
+        main.innerHTML = `
+            <div id="contentWrapper">
+            
+                <h1 id="endScreenHead">RESULTS</h1>
+        
+                <div id="topThree"></div>
+        
+                <div id="restList"></div>
+
+                <button id="playAgainButton">PLAY AGAIN</button>
+            
+            </div>
+        `
+
+        const playAgainButton = document.querySelector("#playAgainButton");
+
+        playAgainButton.addEventListener("click", async function (ev) {
+
+            const request = new Request("../PHP/api.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    username: window.localStorage.getItem("username"),
+                    userID: window.localStorage.getItem("userID"),
+                    gameID: gameInfo.gameID,
+                    action: "multiplayer",
+                    subAction: "acceptInvite"
+
+                })
+            })
+
+            const response = await callAPI(request, true, false);
+
+            joinGame(gameInfo.gameID);
+        })
+
+    }
+
+    for (let i = 0; i < gameMembers.length; i++) {
+        if (i <= 2) {
+            const topThreeDiv = document.createElement("div");
+            topThreeDiv.id = `topThree${i + 1}`;
+            topThreeDiv.classList.add("topThreeDiv")
+            topThreeDiv.innerHTML = `
+                <div class="playerImageDiv">
+                    <div class="positionImage"></div>
+                    <div class="playerImage" style="background-image: url('../images/${gameMembers[i].profilePicture}')"></div>
+                </div>
+                <div class="currentPoints">${gameMembers[i].points}</div>
+            `
+
+            document.querySelector("#topThree").appendChild(topThreeDiv);
+        }
+
+        if (i >= 3 && gameMembers.length > 3) {
+            const restListDiv = document.createElement("div");
+            restListDiv.classList.add("restListDiv");
+
+            restListDiv.innerHTML = `
+                <div class="restListDivLeft">
+
+                    <div class="playerImageDiv">
+                        <div class="positionImage"></div>
+                        <div class="playerImage" style="background-image: url('../images/${gameMembers[i].profilePicture}')"></div>
+                    </div>
+
+                    <div>${gameMembers[i].name}</div>
+                
+                </div>
+
+                <div class="currentPoints">${gameMembers[i].points}</div>
+            `
+
+            document.querySelector("#restList").appendChild(restListDiv);
+        }
+    }
+
+    console.log(gameMembers);
 }
 
 function checkNextQuestion(question) {
@@ -395,7 +721,49 @@ function checkNextQuestion(question) {
 
     if (questionsArray.length - 1 != question.questionID) {
         prepareQuestion(nextIndex);
-    } else {
-        // loadEndScreen()
+    }
+}
+
+async function findMovie(event, question) {
+    let movieResults = document.getElementById("foundMovies");
+    movieResults.innerHTML = ``;
+    let input = document.getElementById("searchMovie");
+
+    //input event listner för att hämta strängen. 
+    const string = event.target.value;
+
+    const response = await fetch(`../DATA/movies.json`);
+    const data = await response.json();
+    let movies = [];
+
+    for (let i = 0; i < data.length; i++) {
+        movies.push(data[i].Title)
+
+    }
+    let filteredArray = [];
+
+    movies.forEach(movie => {
+        if (movie !== undefined) {
+            //The startsWith method is like the includes() method but it checks the beginning of the string instead. 
+            if (movie.toLowerCase().startsWith(string.toLowerCase())) {
+                filteredArray.push(movie);
+            }
+        }
+    })
+
+    filteredArray.splice(3);
+
+    for (let i = 0; i < filteredArray.length; i++) {
+
+        let movieDiv = document.createElement("div");
+        movieDiv.classList.add("alternative");
+        movieDiv.textContent = filteredArray[i];
+
+        movieDiv.addEventListener("click", ev => {
+            const txtAnswer = ev.target.textContent;
+            mpCheckAnswer(ev, question, txtAnswer);
+        })
+
+        movieResults.appendChild(movieDiv);
     }
 }
