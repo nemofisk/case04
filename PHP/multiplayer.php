@@ -48,7 +48,7 @@ function multiplayer($users, $received_data){
                         "profilePicture" => $user["profile_picture"],
                         "points" => 0
                     ]],
-                    "questions" => getRandomMovies(2, $selectedGenres),
+                    "questions" => getRandomMovies(10, $selectedGenres),
                     "isStarted" => false,
                     "replay" => false,
                     "currentQuestion" => "",
