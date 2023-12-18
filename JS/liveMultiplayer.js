@@ -1,5 +1,15 @@
 "use strict";
 
+/*
+
+TODO:
+Ändra så att man väntar på alla innan nästa fråga ges:
+    nyckel som kollar så att alla som är med i gamet(userID) har svarat och nått endscreen, sen uppdateras nyckeln nextQuestion till true, sen false när nästa börjat
+
+Ändra end game - just nu nya frågor när första är klar och lämnar *BYTA*
+
+*/
+
 async function joinGame(gameID) {
     console.log(`joinGame GameID: ${gameID}`);
     const request = new Request("PHP/api.php", {

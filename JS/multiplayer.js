@@ -154,69 +154,90 @@ async function inviteFriends(gameID) {
     document.querySelector("main").innerHTML = `
     <div id="inviteFriendsWrapper">
         <h1 id="inviteFriendsHeader">Bjud in dina vänner</h1>
-        <input id="userSearch"></input>
-        <button id="inviteUser">Invite User!</button>
-        <button id="inviteJoinButton"></button>
+
+        <div id="findFriends">
+            <input id="userSearch">
+            <div id="searchResults"></div>
+        </div>
+
+        <div id="addedUsers"></div>
+        <button id="inviteUsers">Nästa</button>
     </div>
     `
 
-    // const request = new Request(`PHP/api.php?action=multiplayer&subAction=fetchFriends&userID=${userID}&username=${username}`);
+    const request = new Request(`PHP/api.php?action=multiplayer&subAction=fetchFriends&userID=${userID}&username=${username}`);
 
-    // const response = await callAPI(request, true, false);
-    // const resource = await response.json();
+    const response = await callAPI(request, true, false);
+    const resource = await response.json();
 
-    // const friendsArray = await resource;
+    const friendsArray = await resource;
 
-    // const fakeInput = document.querySelector("#startSearch");
+    console.log(friendsArray);
 
-    // fakeInput.addEventListener("click", ev => {
-    //     const operation = document.querySelector("#operation");
-    //     operation.classList.add("popout");
-    // })
+    const searchResultsDiv = document.querySelector("#searchResults");
+    const input = document.querySelector("#userSearch");
+    const body = document.querySelector("body")
 
-    document.querySelector("#inviteJoinButton").addEventListener("click", ev => {
-        joinGame(gameID)
+    input.addEventListener("click", ev => {
+        ev.stopPropagation();
+        searchResultsDiv.classList.add("searching");
+        searchResultsDiv.innerHTML = "";
+        input.style.borderRadius = "20px 20px 0px 0px";
+        findUsers(ev, friendsArray);
+    });
+
+    input.addEventListener("input", ev => {
+        findUsers(ev, friendsArray);
     })
 
-    document.getElementById("inviteUser").addEventListener("click", e => {
-        let inviteUser = document.querySelector("input").value;
-        let hostUsername = window.localStorage.getItem("username");
+    document.querySelector("#searchResults").addEventListener("click", ev => {
+        ev.stopPropagation();
+    })
 
-        fetch("PHP/api.php", {
-            method: "POST",
-            headers: { "Content-type": "application/json" },
-            body: JSON.stringify({ username: hostUsername, invitedUser: inviteUser, action: "multiplayer", gameID: gameID, subAction: "inviteToGame" })
-        }).then(r => r.json()).then(resource => {
-            console.log(resource);
-        });
+    body.addEventListener("click", ev => {
+        ev.stopPropagation();
+        searchResultsDiv.classList.remove("searching");
+        input.value = "";
+        input.style.borderRadius = "20px 20px 20px 20px";
+    })
 
+    document.getElementById("inviteUsers").addEventListener("click", e => {
+
+        const addedUsers = document.querySelectorAll(".addedUser");
+
+        addedUsers.forEach(user => {
+            let inviteUser = user.querySelector(".addedUserName").textContent;
+            let hostUsername = window.localStorage.getItem("username");
+
+            fetch("PHP/api.php", {
+                method: "POST",
+                headers: { "Content-type": "application/json" },
+                body: JSON.stringify({ username: hostUsername, invitedUser: inviteUser, action: "multiplayer", gameID: gameID, subAction: "inviteToGame" })
+            }).then(r => r.json()).then(resource => {
+                console.log(resource);
+            });
+        })
+
+        joinGame(gameID);
     })
 
 }
 
-async function findUsers(event, question) {
-    let movieResults = document.getElementById("foundMovies");
-    movieResults.innerHTML = ``;
-    let input = document.getElementById("searchMovie");
+async function findUsers(event, ar) {
+    let searchResults = document.getElementById("searchResults");
+    searchResults.innerHTML = ``;
 
     //input event listner för att hämta strängen. 
     const string = event.target.value;
 
-    const response = await fetch(`../DATA/movies.json`);
-    const data = await response.json();
-    let movies = [];
-
-    for (let i = 0; i < data.length; i++) {
-        movies.push(data[i].Title)
-
-    }
     let filteredArray = [];
 
-    movies.forEach(movie => {
-        if (movie !== undefined) {
+    ar.forEach(friend => {
+        if (friend !== undefined) {
+            const friendName = friend.name;
             //The startsWith method is like the includes() method but it checks the beginning of the string instead. 
-            if (movie.toLowerCase().startsWith(string.toLowerCase())) {
-                filteredArray.push(movie);
+            if (friendName.toLowerCase().startsWith(string.toLowerCase())) {
+                filteredArray.push(friend);
             }
         }
     })
@@ -225,16 +246,62 @@ async function findUsers(event, question) {
 
     for (let i = 0; i < filteredArray.length; i++) {
 
-        let movieDiv = document.createElement("div");
-        movieDiv.classList.add("alternative");
-        movieDiv.textContent = filteredArray[i];
+        let friendDiv = document.createElement("div");
+        friendDiv.classList.add("mpFriend");
 
-        movieDiv.addEventListener("click", ev => {
-            const txtAnswer = ev.target.textContent;
-            mpCheckAnswer(ev, question, txtAnswer);
+        friendDiv.innerHTML = `
+            <div class="friendDivLeft">
+                <div class="friendDivImage" style="background-image: url('images/${filteredArray[i].profilePicture}')"></div>
+                <div class="friendDivName">${filteredArray[i].name}</div>
+            </div>
+
+            <div class="inviteFriendButton">+</div>
+        `
+
+        const inviteButton = friendDiv.querySelector(".inviteFriendButton");
+
+        const addedUsers = document.querySelectorAll(".addedUser");
+
+        let eventListAdded = false;
+
+        addedUsers.forEach(user => {
+            if (user.querySelector(".addedUserName").textContent == filteredArray[i].name) {
+                inviteButton.textContent = "x";
+
+                inviteButton.addEventListener("click", ev => {
+                    document.querySelector(`#username${filteredArray[i].name}`).remove();
+                })
+
+                eventListAdded = true;
+            }
         })
 
-        movieResults.appendChild(movieDiv);
+        if (!eventListAdded) {
+            inviteButton.addEventListener("click", addUser);
+        }
+
+        searchResults.appendChild(friendDiv);
+
+        function addUser(ev) {
+            const userDiv = document.createElement("div");
+
+            userDiv.innerHTML = `
+                <div class="removeAddedUser">
+                    <div>x</div>
+                </div>
+                <div class="addedUserImage" style="background-image: url('images/${filteredArray[i].profilePicture}')"></div>
+                <div class="addedUserName">${filteredArray[i].name}</div>
+            `
+
+            userDiv.querySelector(".removeAddedUser > div").addEventListener("click", eve => {
+                userDiv.remove();
+            })
+
+            userDiv.id = "username" + filteredArray[i].name;
+            userDiv.classList.add("addedUser");
+
+            document.querySelector("#addedUsers").appendChild(userDiv);
+        }
     }
 }
 
