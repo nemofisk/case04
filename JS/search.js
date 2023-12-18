@@ -14,3 +14,4 @@ function searchUsers(searchedUser) {
         console.log(resource);
     });
 }
+
