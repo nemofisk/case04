@@ -6,9 +6,8 @@
 .customFileUpload {
     height: 39px;
     width: 108px;
-    position: absolute;
-    top: 375px;
-    left: 190px;
+    position: relative;
+    bottom: 129px;
     background-color: #000000d6;
     border-radius: 28px;
 
