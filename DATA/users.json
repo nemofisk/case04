@@ -17,12 +17,7 @@
             }
         ],
         "friendRequests": [],
-        "gameInvites": [
-            {
-                "hostName": "w",
-                "gameID": 49775
-            }
-        ],
+        "gameInvites": [],
         "xpGoal": 1300,
         "id": 1,
         "clues": 33,

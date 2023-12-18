@@ -3037,5 +3037,239 @@
         ],
         "isStarted": false,
         "currentQuestion": ""
+    },
+    {
+        "gameID": 84089,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 0
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "poster",
+                "correctAnswer": "The Gold Rush",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BZjEyOTE4MzMtNmMzMy00Mzc3LWJlOTQtOGJiNDE0ZmJiOTU4L2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 1,
+                "type": "trailer",
+                "correctAnswer": "Hotel Rwanda",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/j2vMvyQeb1U",
+                "guesses": []
+            }
+        ],
+        "isStarted": false,
+        "replay": false,
+        "currentQuestion": ""
+    },
+    {
+        "gameID": 40981,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 0
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "trailer",
+                "correctAnswer": "Vertigo",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/UHhsEYDg8GI",
+                "guesses": []
+            },
+            {
+                "questionID": 1,
+                "type": "plot",
+                "correctAnswer": "Citizen Kane",
+                "alternatives": [
+                    {
+                        "title": "Citizen Kane",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Wolf of Wall Street",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Modern Times",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Mary and Max",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "Following the death of publishing tycoon Charles Foster Kane, reporters scramble to uncover the meaning of his final utterance: 'Rosebud.'"
+            }
+        ],
+        "isStarted": false,
+        "replay": false,
+        "currentQuestion": ""
+    },
+    {
+        "gameID": 54523,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 0
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "trailer",
+                "correctAnswer": "City Lights",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/7vl7F8S4cpQ",
+                "guesses": []
+            },
+            {
+                "questionID": 1,
+                "type": "trailer",
+                "correctAnswer": "Gandhi",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/vziq3CA_C30",
+                "guesses": []
+            }
+        ],
+        "isStarted": false,
+        "replay": false,
+        "currentQuestion": ""
+    },
+    {
+        "gameID": 70586,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 0
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "actors",
+                "correctAnswer": "L\u00e9on: The Professional",
+                "alternatives": [
+                    {
+                        "title": "Monty Python and the Holy Grail",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Logan",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Citizen Kane",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "L\u00e9on: The Professional",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Jean Reno, Gary Oldman, Natalie Portman"
+            },
+            {
+                "questionID": 1,
+                "type": "actors",
+                "correctAnswer": "Into the Wild",
+                "alternatives": [
+                    {
+                        "title": "Into the Wild",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Blade Runner",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Monty Python and the Holy Grail",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Unforgiven",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Emile Hirsch, Vince Vaughn, Catherine Keener"
+            }
+        ],
+        "isStarted": false,
+        "replay": false,
+        "currentQuestion": ""
     }
 ]

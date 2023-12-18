@@ -174,11 +174,11 @@ async function inviteFriends(gameID) {
     //     operation.classList.add("popout");
     // })
 
-    document.querySelector("#joinGame").addEventListener("click", ev => {
+    document.querySelector("#inviteJoinButton").addEventListener("click", ev => {
         joinGame(gameID)
     })
 
-    document.getElementById("inviteUsersJoinGame").addEventListener("click", e => {
+    document.getElementById("inviteUser").addEventListener("click", e => {
 
 
         let inviteUser = document.querySelector("input").value;
