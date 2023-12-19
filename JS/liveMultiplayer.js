@@ -1,8 +1,18 @@
 "use strict";
 
+/*
+
+TODO:
+Ändra så att man väntar på alla innan nästa fråga ges:
+    nyckel som kollar så att alla som är med i gamet(userID) har svarat och nått endscreen, sen uppdateras nyckeln nextQuestion till true, sen false när nästa börjat
+
+Ändra end game - just nu nya frågor när första är klar och lämnar *BYTA*
+
+*/
+
 async function joinGame(gameID) {
     console.log(`joinGame GameID: ${gameID}`);
-    const request = new Request("../PHP/api.php", {
+    const request = new Request("PHP/api.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -50,7 +60,7 @@ async function startFetchGameInfo(gameID) {
             subAction: "fetchGameInfo",
             gameID: gameID
         }
-        const request = new Request("../PHP/api.php", {
+        const request = new Request("PHP/api.php", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(body)
@@ -131,7 +141,7 @@ async function renderLobby(fetchIntervalID) {
         const button = main.querySelector("#lobbyButton")
         button.textContent = "Start game!";
         button.addEventListener("click", async function (ev) {
-            const request = new Request("../PHP/api.php", {
+            const request = new Request("PHP/api.php", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -149,7 +159,7 @@ async function renderLobby(fetchIntervalID) {
         button.textContent = "Leave game";
 
         button.addEventListener("click", async function (ev) {
-            const request = new Request("../PHP/api.php", {
+            const request = new Request("PHP/api.php", {
                 method: "DELETE",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -412,7 +422,7 @@ async function mpCheckAnswer(ev, question, txtAnswer = undefined) {
         answer: answer
     }
 
-    const request = new Request("../PHP/api.php", {
+    const request = new Request("PHP/api.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(rBody)
@@ -476,7 +486,7 @@ async function endOfQuestion(question) {
 
     const qType = question.type;
     const gameInfo = JSON.parse(window.localStorage.getItem("gameInfo"));
-    const request = new Request("../PHP/api.php", {
+    const request = new Request("PHP/api.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -619,7 +629,7 @@ async function currentStanding(question) {
 
         clearInterval(fetchIntervalID);
 
-        const request = new Request("../PHP/api.php", {
+        const request = new Request("PHP/api.php", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -651,7 +661,7 @@ async function currentStanding(question) {
 
         playAgainButton.addEventListener("click", async function (ev) {
 
-            const request = new Request("../PHP/api.php", {
+            const request = new Request("PHP/api.php", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -732,7 +742,7 @@ async function findMovie(event, question) {
     //input event listner för att hämta strängen. 
     const string = event.target.value;
 
-    const response = await fetch(`../DATA/movies.json`);
+    const response = await fetch(`DATA/movies.json`);
     const data = await response.json();
     let movies = [];
 

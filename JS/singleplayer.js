@@ -87,15 +87,17 @@ function singlePlayer(event) {
 
 
 function chooseGenre(array) {
-    console.log(array);
-    let chosenGenre = array
-    window.localStorage.setItem("genre", chosenGenre);
+    
+    let chosenGenre;
 
     if (window.localStorage.getItem("genre")) {
-        chosenGenre = window.localStorage.getItem("genre")
+        chosenGenre = JSON.parse(window.localStorage.getItem("genre"));
     } else {
-        chosenGenre = event.target.textContent;
+        chosenGenre = array; 
+        window.localStorage.setItem("genre", JSON.stringify(chosenGenre));
     }
+
+   
 
     console.log(chosenGenre);
 
@@ -114,7 +116,7 @@ function chooseGenre(array) {
         for (let i = 0; i < resource.length; i++) {
 
             if (resource[i].Genre !== undefined) {
-                array.forEach(genre => {
+                chosenGenre.forEach(genre => {
                     if (resource[i].Genre.includes(genre)) {
                         movieGenerArray.push(resource[i])
                     }
@@ -225,7 +227,7 @@ function posterQuestion(correctMovie, otherMovies) {
         clearInterval(intervalID);
         if (inputGuess.value === correctMovie.Title) {
 
-            let request = new Request("../PHP/api.php", {
+            let request = new Request("PHP/api.php", {
                 method: "POST",
                 headers: { "Content-type": "application/json" },
                 body: JSON.stringify({ username: window.localStorage.getItem("username"), guess: "correct", action: "profile", subAction: "quizGuess", points: 25 })
@@ -349,7 +351,7 @@ function checkAnswer(event) {
     if (movie === window.localStorage.getItem("movie")) {
         console.log("Correct");
 
-        let request = new Request("../PHP/api.php", {
+        let request = new Request("PHP/api.php", {
             method: "POST",
             headers: { "Content-type": "application/json" },
             body: JSON.stringify({ username: window.localStorage.getItem("username"), guess: "correct", action: "profile", subAction: "quizGuess", points: 25 })
@@ -424,7 +426,7 @@ function goToHomePage(event) {
 
 function getClue(movie) {
 
-    let request = new Request("../PHP/api.php", {
+    let request = new Request("PHP/api.php", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ username: window.localStorage.getItem("username"), action: "profile", subAction: "useClue" })

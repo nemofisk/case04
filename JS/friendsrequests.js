@@ -2,7 +2,7 @@
 function displayFriendRequests() {
     let requestBox = document.querySelector("main");
 
-    fetch("../PHP/api.php", {
+    fetch("PHP/api.php", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ username: window.localStorage.getItem("username"), action: "displayFriends" })
@@ -35,6 +35,7 @@ function respondFriendRequest(event) {
     let action;
     let user = event.target.parentElement.id;
     console.log(user);
+    console.log(window.localStorage.getItem("username"));
     if (event.target.id === "accept") {
         action = "accept"
 
@@ -43,7 +44,7 @@ function respondFriendRequest(event) {
 
     }
 
-    fetch("../PHP/api.php", {
+    fetch("PHP/api.php", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ username: window.localStorage.getItem("username"), requestedUser: user, action: "friendRequest", subAction: action })

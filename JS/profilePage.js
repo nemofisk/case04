@@ -48,7 +48,10 @@ async function renderProfilePage() {
         </div>
 
     </div>
-    <div id="AddFriends">+ Add Friends</div>
+    <div id="showfriends"></div>
+    <input id="friendUsername"></input>
+    <button class="AddFriends" id="sendRequest">+ Add Friends!</button>
+    
 </div>
 
     <div id="middle"></div>
@@ -84,6 +87,7 @@ async function renderProfilePage() {
     document.getElementById("nextLevel").textContent = userInfo.level + 1;
 
     document.getElementById("sendRequest").addEventListener("click", () => {
+        console.log(document.getElementById("friendUsername").value);
         searchUsers(document.getElementById("friendUsername").value)
     })
 
@@ -92,7 +96,7 @@ async function renderProfilePage() {
 async function displayFriendList(userInfo) {
     let friends;
     try {
-        const response = await fetch(`../PHP/api.php?action=profile&subAction=getfriends&username=${userInfo.username}`);
+        const response = await fetch(`PHP/api.php?action=profile&subAction=getfriends&username=${userInfo.username}`);
         const data = await response.json();
         friends = data.message;
     } catch (error) {
@@ -132,7 +136,7 @@ function upload_picture(event) {
     formData.append("username", localStorage.getItem("username"));
 
 
-    let request = new Request("../PHP/api.php", {
+    let request = new Request("PHP/api.php", {
         method: "POST",
         body: formData,
     })

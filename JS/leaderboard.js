@@ -18,7 +18,7 @@ function renderLeaderBoard() {
 
 async function fetchFriendsLeaderboard(userId) {
     try {
-        const response = await fetch(`../PHP/api.php?action=leaderboard&subAction=friendly&userId=${userId}`);
+        const response = await fetch(`PHP/api.php?action=leaderboard&subAction=friendly&userId=${userId}`);
         const data = await response.json();
         console.log(data);
         return data;
@@ -40,7 +40,7 @@ function displayFriendsLeaderboard(leaderboardData) {
 
 async function fetchLeaderboard() {
     try {
-        const response = await fetch(`../PHP/api.php?action=leaderboard&subAction=global`);
+        const response = await fetch(`PHP/api.php?action=leaderboard&subAction=global`);
         const data = await response.json();
         return data;
     } catch (error) {

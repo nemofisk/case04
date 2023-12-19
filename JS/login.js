@@ -32,7 +32,7 @@ function loginFunction(event) {
     let password = document.getElementById("loginPassword").value;
     console.log(username);
 
-    fetch("../PHP/api.php", {
+    fetch("PHP/api.php", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ username: username, password: password, action: "login" })

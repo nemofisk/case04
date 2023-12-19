@@ -127,7 +127,7 @@ async function DisplaySidebar(event) {
 }
 
 function renderInvites() {
-    fetch(`../PHP/api.php?action=multiplayer&subAction=invitations&username=${localStorage.getItem("username")}`)
+    fetch(`PHP/api.php?action=multiplayer&subAction=invitations&username=${localStorage.getItem("username")}`)
         .then(r => r.json())
         .then(resource => {
             resource.message.forEach(invite => {

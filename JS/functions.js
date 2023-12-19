@@ -7,27 +7,27 @@ function popUpFunction(action, information) {
     let div = document.createElement("div");
     if (action === "gameInvites") {
         message = information.message[0].hostName + " invited you to a game!"
-    
-    div.setAttribute("id", "invitationPopUp")
-    div.textContent = message;
-    div.classList.add("#gameInvite");
-    let acceptBtn = document.createElement("button");
-    acceptBtn.textContent = "Accept!"
-    let declineBtn = document.createElement("button");
-    declineBtn.textContent = "Decline"
 
-    acceptBtn.addEventListener("click", accept => {
-        acceptInvite(information.message[0].gameID)
-    });
-    declineBtn.addEventListener("click", declineInvite);
+        div.setAttribute("id", "invitationPopUp")
+        div.textContent = message;
+        div.classList.add("#gameInvite");
+        let acceptBtn = document.createElement("button");
+        acceptBtn.textContent = "Accept!"
+        let declineBtn = document.createElement("button");
+        declineBtn.textContent = "Decline"
 
-    main.appendChild(div);
-    main.appendChild(acceptBtn);
-    main.appendChild(declineBtn);
+        acceptBtn.addEventListener("click", accept => {
+            acceptInvite(information.message[0].gameID)
+        });
+        declineBtn.addEventListener("click", declineInvite);
 
-    clearInterval()
-}
-    if(action === "wheel"){
+        main.appendChild(div);
+        main.appendChild(acceptBtn);
+        main.appendChild(declineBtn);
+
+        clearInterval()
+    }
+    if (action === "wheel") {
         div.innerHTML = `
         <div id="removePopUp">X</div>
         You got ${information}
@@ -46,7 +46,7 @@ function popUpFunction(action, information) {
 }
 
 async function acceptInvite(gameID) {
-    const request = new Request("../PHP/api.php", {
+    const request = new Request("PHP/api.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -67,7 +67,7 @@ function declineInvite(event) {
 }
 
 function resetTimer() {
-    let request = new Request("../PHP/api.php", {
+    let request = new Request("PHP/api.php", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ username: window.localStorage.getItem("username"), action: "profile", subAction: "addResetTimer" })
@@ -76,7 +76,7 @@ function resetTimer() {
 }
 function giveClue() {
     console.log("You have reciedev one clue, you can use in the singleplayer mode!");
-    let request = new Request("../PHP/api.php", {
+    let request = new Request("PHP/api.php", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ username: window.localStorage.getItem("username"), action: "profile", subAction: "addClue" })
@@ -86,7 +86,7 @@ function giveClue() {
 
 }
 function addPoints(num) {
-    let request = new Request("../PHP/api.php", {
+    let request = new Request("PHP/api.php", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ username: window.localStorage.getItem("username"), guess: "correct", action: "profile", subAction: "quizGuess", points: num })
@@ -129,13 +129,13 @@ function displayCurtains(ClassName1, ClassName2) {
     return curtains;
 }
 
-async function getUserinformation(user){
+async function getUserinformation(user) {
     try {
-        const response = await fetch(`../PHP/api.php?action=profile&subAction=getInfo&username=${user}`);
+        const response = await fetch(`PHP/api.php?action=profile&subAction=getInfo&username=${user}`);
         const data = await response.json();
         return data.message;
     } catch (error) {
         console.error('Error fetching leaderboard:', error);
     }
-    
+
 }
