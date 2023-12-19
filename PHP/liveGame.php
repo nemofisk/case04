@@ -94,11 +94,18 @@ function liveGame($users, $games, $recieved_data){
                 if($member["userID"] == $userID){
                     $games[$currentGameIndex]["members"][$index]["points"] += $answerTime;
 
-                    foreach($users as $index => $user){
-                        if($user["id"] === $userID){
-                            $users[$userID]["popcorn"] += $answerTime * 100;        
+                    foreach($users as $index => &$user){   
+                        if($user["id"] == $userID){
+                            $user["popcorn"] += $answerTime * 10;  
+                                  
                         }
                     }
+                    if($users[$index]["popcorn"] > $users[$index]["xpGoal"]){
+                        $users[$index]["level"] += 1;
+                        $level = $users[$index]["level"] * 25;
+                        $users[$index]["xpGoal"] += 1000 + $level;
+                    }
+                    putInUsersJSON($users);
                     putInMultiplayerJSON($games);
                     sendJSON(["correct" => true]);
                 }

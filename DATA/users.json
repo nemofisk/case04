@@ -3,7 +3,7 @@
         "username": "w",
         "password": "",
         "level": 667,
-        "popcorn": 1540,
+        "popcorn": 1631,
         "friends": [
             {
                 "name": "ww",
@@ -33,7 +33,7 @@
         ],
         "friendRequests": [],
         "gameInvites": [],
-        "xpGoal": 1500,
+        "xpGoal": 1700,
         "id": 1,
         "clues": 32,
         "resetTimer": 25,
@@ -177,5 +177,19 @@
         "clues": 0,
         "resetTimer": 0,
         "id": 9
+    },
+    {
+        "username": "fefefefe",
+        "password": "fefefefe",
+        "level": 6,
+        "popcorn": 6444,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 6500,
+        "clues": 0,
+        "resetTimer": 0,
+        "id": 10,
+        "profile_picture": "The bear.jpg"
     }
 ]

@@ -45,7 +45,7 @@ function loginFunction(event) {
             renderStartingpage();
             //RenderStartingpage();
         } else {
-            console.log("login failed");
+            console.log(resource);
         }
     });
 
