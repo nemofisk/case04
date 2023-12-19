@@ -246,23 +246,17 @@ function posterQuestion(correctMovie, otherMovies) {
 
 function textQuestion(correctMovie, otherMovies, type) {
     document.querySelector("main").innerHTML = `
-    <header id="menu">
-
-    <div class="profile">
-        <div id="profilePic"></div>
-        <p>TheMovieStar</p>
-    </div>
-    </header>
-    <div id="box">
+   <div id="contentWrapper">
+    <div id="questionContainer">
         <div id="timer">Time left: </div>
         <div id="question"></div>
         <div id="plotText"></div>
     </div>
-    <div id="questions"></div>
+    <div id="alternatives"></div>
     <button id="nextQuestion">Next</button>
     <button id="clue">Get Clue</button>
     <button id="resetTimer">Reset Timer</button>
-    <br>
+    </div>
     `
     let startTimer = 20;
 
@@ -306,11 +300,13 @@ function textQuestion(correctMovie, otherMovies, type) {
     }
 
     let quiestionDiv = document.getElementById("question");
+    
     quiestionDiv.textContent = questionText;
     document.getElementById("plotText").textContent = plotText;
 
     let div = document.createElement("div")
-    let divApped = document.getElementById("questions");
+    div.classList.add("alternative")
+    let divApped = document.querySelector("#alternatives");
 
     let moveisArray = []
     moveisArray.push(correctMovie.Title)
@@ -329,7 +325,6 @@ function textQuestion(correctMovie, otherMovies, type) {
     moveisArray.forEach(movie => {
         let div = document.createElement("div")
         div.classList.add("questions")
-        let divApped = document.getElementById("questions");
         div.textContent = movie;
         divApped.appendChild(div)
         div.addEventListener("click", e => {

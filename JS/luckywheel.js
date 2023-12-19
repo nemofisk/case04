@@ -34,7 +34,14 @@ function renderLuckyWheel() {
     body: JSON.stringify({ username: window.localStorage.getItem("username"), action: "profile", subAction: "getLastSpun" })
   }).then(r => r.json()).then(resource => {
     let day = new Date()
-    if (day.getDate() === parseInt(resource.message)) {
+    if (day.getDate() > parseInt(resource.message || day.getDate() === 1)) {
+      if(day.getDate() === 1){
+        fetch("PHP/api.php", {
+          method: "POST",
+          headers: { "Content-type": "application/json" },
+          body: JSON.stringify({ username: window.localStorage.getItem("username"), action: "profile", subAction: "resetMonth" })
+        }).then(r => r.json()).then(resource => console.log(resource))
+      }
       document.getElementById("spinWheel").style.backgroundColor = "#FFF8BA"
       document.querySelector("#spinWheel").style.color = "#323059";
       document.getElementById("spinWheel").addEventListener("click", e => {
