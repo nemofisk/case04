@@ -144,6 +144,16 @@ function profile($users, $received_data){
             }
         }
     }
+    if($subAction === "resetMonth"){
+        foreach($users as $index => $user){
+            if($user["username"] === $username){
+                $user["lastSpun"] = 1;
+                putInUsersJSON($users);
+                sendJSON(["message" => $user["lastSpun"]], 200);
+                    
+            }
+        }
+    }
         
 }
 
