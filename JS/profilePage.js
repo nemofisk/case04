@@ -2,7 +2,14 @@ async function renderProfilePage() {
     let username = localStorage.getItem("username");
     let userInfo = await getUserinformation(window.localStorage.getItem("username"));
     document.querySelector("main").innerHTML =
+
         `
+    <div class="profile">
+        <div id="profilePic"></div>
+        <img src="/Frame 263.png" alt="Logo">
+    </div>
+
+
 <div id="ProfilePageContainer">
 <div id="leftSide">        
     <div id="pointsInfo">
