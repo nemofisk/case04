@@ -36,5 +36,5 @@ function registerFunction(event) {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ username: username, password: password, action: "register" })
-    });
+    }).then(r => r.json()).then(l => console.log(l))
 }

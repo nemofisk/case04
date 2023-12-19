@@ -3,7 +3,7 @@
         "username": "w",
         "password": "",
         "level": 667,
-        "popcorn": 1515,
+        "popcorn": 1540,
         "friends": [
             {
                 "name": "ww",
@@ -35,7 +35,7 @@
         "gameInvites": [],
         "xpGoal": 1500,
         "id": 1,
-        "clues": 33,
+        "clues": 32,
         "resetTimer": 25,
         "profile_picture": "The bear.jpg",
         "lastSpun": "19"
@@ -123,6 +123,59 @@
         "clues": 0,
         "resetTimer": 0,
         "profile_picture": "The bear.jpg",
-        "lastSpun": "14"
+        "lastSpun": "14",
+        "id": 5
+    },
+    {
+        "username": "fefefef",
+        "password": "fefefef",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 100,
+        "clues": 0,
+        "resetTimer": 0,
+        "id": 6
+    },
+    {
+        "username": "fegegeg",
+        "password": "gertg",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 100,
+        "clues": 0,
+        "resetTimer": 0,
+        "id": 7
+    },
+    {
+        "username": "gggg",
+        "password": "gggg",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 100,
+        "clues": 0,
+        "resetTimer": 0,
+        "id": 8
+    },
+    {
+        "username": "ogrtgr",
+        "password": "grgrgr",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 100,
+        "clues": 0,
+        "resetTimer": 0,
+        "id": 9
     }
 ]
