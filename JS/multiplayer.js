@@ -155,6 +155,7 @@ async function inviteFriends(gameID) {
     <div id="inviteFriendsWrapper">
         <h1 id="inviteFriendsHeader">Bjud in dina vänner</h1>
         <input id="userSearch"></input>
+        <div id="displayFriends"></div>
         <button id="inviteUser">Invite User!</button>
         <button id="inviteJoinButton"></button>
     </div>

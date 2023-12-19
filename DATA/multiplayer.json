@@ -3271,5 +3271,371 @@
         "isStarted": false,
         "replay": false,
         "currentQuestion": ""
+    },
+    {
+        "gameID": 26353,
+        "hostID": 1,
+        "genres": [
+            "Comedy"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 0
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "actors",
+                "correctAnswer": "The Godfather Part II",
+                "alternatives": [
+                    {
+                        "title": "Up",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Godfather Part II",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Paris, Texas",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Trainspotting",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Al Pacino, Robert De Niro, Robert Duvall"
+            },
+            {
+                "questionID": 1,
+                "type": "plot",
+                "correctAnswer": "Sholay",
+                "alternatives": [
+                    {
+                        "title": "3 Idiots",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Double Indemnity",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Sholay",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Inside Out",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "After his family is murdered by a notorious and ruthless bandit, a former police officer enlists the services of two outlaws to capture the bandit."
+            }
+        ],
+        "isStarted": false,
+        "replay": false,
+        "currentQuestion": ""
+    },
+    {
+        "gameID": 60656,
+        "hostID": 1,
+        "genres": [
+            "Sci-Fi"
+        ],
+        "members": [
+            {
+                "userID": 1,
+                "name": "w",
+                "profilePicture": "The bear.jpg",
+                "points": 9.399999999999999
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "actors",
+                "correctAnswer": "Gladiator",
+                "alternatives": [
+                    {
+                        "title": "The Dark Knight",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Gladiator",
+                        "whoGuessed": [
+                            {
+                                "userID": 1,
+                                "name": "w",
+                                "profilePicture": "The bear.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Blade Runner",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "A Wednesday",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Russell Crowe, Joaquin Phoenix, Connie Nielsen"
+            },
+            {
+                "questionID": 1,
+                "type": "plot",
+                "correctAnswer": "The Great Dictator",
+                "alternatives": [
+                    {
+                        "title": "Mad Max: Fury Road",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Amores Perros",
+                        "whoGuessed": [
+                            {
+                                "userID": 1,
+                                "name": "w",
+                                "profilePicture": "The bear.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Star Wars: Episode VII - The Force Awakens",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Great Dictator",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "Dictator Adenoid Hynkel tries to expand his empire while a poor Jewish barber tries to avoid persecution from Hynkel's regime."
+            },
+            {
+                "questionID": 2,
+                "type": "trailer",
+                "correctAnswer": "La haine",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/FKwcXt3JIaU",
+                "guesses": []
+            },
+            {
+                "questionID": 3,
+                "type": "plot",
+                "correctAnswer": "The Lion King",
+                "alternatives": [
+                    {
+                        "title": "The Lion King",
+                        "whoGuessed": [
+                            {
+                                "userID": 1,
+                                "name": "w",
+                                "profilePicture": "The bear.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Warrior",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "M",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "There Will Be Blood",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself."
+            },
+            {
+                "questionID": 4,
+                "type": "poster",
+                "correctAnswer": "Eternal Sunshine of the Spotless Mind",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BMTY4NzcwODg3Nl5BMl5BanBnXkFtZTcwNTEwOTMyMw@@._V1_SX300.jpg",
+                "guesses": [
+                    "Eternal Sunshine of the Spotless Mind"
+                ]
+            },
+            {
+                "questionID": 5,
+                "type": "poster",
+                "correctAnswer": "Monty Python and the Holy Grail",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BN2IyNTE4YzUtZWU0Mi00MGIwLTgyMmQtMzQ4YzQxYWNlYWE2XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+                "guesses": [
+                    "Monty Python and the Holy Grail"
+                ]
+            },
+            {
+                "questionID": 6,
+                "type": "actors",
+                "correctAnswer": "Psycho",
+                "alternatives": [
+                    {
+                        "title": "La vita \u00e8 bella",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Psycho",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Donnie Darko",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Touch of Evil",
+                        "whoGuessed": [
+                            {
+                                "userID": 1,
+                                "name": "w",
+                                "profilePicture": "The bear.jpg"
+                            }
+                        ]
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Anthony Perkins, Janet Leigh, Vera Miles"
+            },
+            {
+                "questionID": 7,
+                "type": "plot",
+                "correctAnswer": "Heat",
+                "alternatives": [
+                    {
+                        "title": "Amadeus",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Heat",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Fight Club",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Princess Bride",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "A group of high-end professional thieves start to feel the heat from the LAPD when they unknowingly leave a clue at their latest heist."
+            },
+            {
+                "questionID": 8,
+                "type": "plot",
+                "correctAnswer": "Touch of Evil",
+                "alternatives": [
+                    {
+                        "title": "Touch of Evil",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Eskiya",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Witness for the Prosecution",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Life of Brian",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "A stark, perverse story of murder, kidnapping and police corruption in a Mexican border town."
+            },
+            {
+                "questionID": 9,
+                "type": "trailer",
+                "correctAnswer": "Into the Wild",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/g7ArZ7VD-QQ",
+                "guesses": []
+            }
+        ],
+        "isStarted": true,
+        "replay": false,
+        "currentQuestion": ""
+    },
+    {
+        "gameID": 74046,
+        "hostID": 1,
+        "genres": [
+            "Romance"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 0
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "plot",
+                "correctAnswer": "Butch Cassidy and the Sundance Kid",
+                "alternatives": [
+                    {
+                        "title": "The Pianist",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "American Beauty",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Butch Cassidy and the Sundance Kid",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Full Metal Jacket",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "In 1890s Wyoming, Butch Cassidy and The Sundance Kid lead a band of outlaws. When a train robbery goes wrong, they find themselves on the run with a posse hard on their heels. After considering their options, they escape to South ..."
+            },
+            {
+                "questionID": 1,
+                "type": "actors",
+                "correctAnswer": "A Beautiful Mind",
+                "alternatives": [
+                    {
+                        "title": "Pulp Fiction",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Modern Times",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "A Beautiful Mind",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Interstellar",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Russell Crowe, Ed Harris, Jennifer Connelly"
+            }
+        ],
+        "isStarted": false,
+        "replay": false,
+        "currentQuestion": ""
     }
 ]

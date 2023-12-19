@@ -314,3 +314,18 @@ iframe {
     justify-content: center;
     align-items: center;
 }
+
+#displayFriends {
+    display: flex;
+    width: 526px;
+    height: 200px;
+}
+
+#displayFriends>div {
+    width: 98px;
+    height: 102px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
