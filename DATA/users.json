@@ -35,9 +35,9 @@
         "gameInvites": [],
         "xpGoal": 1500,
         "id": 1,
-        "clues": 33,
+        "clues": 32,
         "resetTimer": 25,
-        "profile_picture": "The bear.jpg",
+        "profile_picture": "Sons (kopia).jpg",
         "lastSpun": "14"
     },
     {
@@ -100,7 +100,18 @@
             }
         ],
         "friendRequests": [],
-        "gameInvites": [],
+        "gameInvites": [
+            {
+                "hostName": "w",
+                "gameID": [
+                    "History"
+                ]
+            },
+            {
+                "hostName": "w",
+                "gameID": 32273
+            }
+        ],
         "xpGoal": 1300,
         "id": 4,
         "profile_picture": "Sons (kopia).jpg"

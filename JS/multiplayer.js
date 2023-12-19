@@ -21,7 +21,7 @@ function chooseCatagoryMultiplayer(event) {
 
         <div class="profile">
             <div id="profilePic"></div>
-            <img src="/Frame 263.png" alt="Logo">
+            <img src="images/Frame 263.png" alt="Logo">
         </div>
     </header>
     

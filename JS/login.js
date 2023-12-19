@@ -3,7 +3,7 @@
 function signInpage(event) {
     document.querySelector("header").innerHTML =
         `
-    <img src="/Title.png" alt="Logo">
+    <img src="images/Title.png" alt="Logo">
     `
     document.querySelector("main").innerHTML = `
     <main>

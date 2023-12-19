@@ -16,7 +16,7 @@ async function renderStartingpage() {
     `
     document.querySelector("main").innerHTML =
         `
-        <img src="/Title.png" alt="Logo">
+        <img src="images/Title.png" alt="Logo">
     
     <p id="message">Welcome <span>${username}</span>, how would you like to play?</p>
     
@@ -70,22 +70,22 @@ async function DisplaySidebar(event) {
 
     <div id="SidebarMenuContainer">
         <div id="home">
-            <img src="/house.png" alt="Logo">
+            <img src="images/house.png" alt="Logo">
             <p>Home</p>
         </div>
 
         <div id="profilePage">
-            <img src="/account_circle.png" alt="Logo">
+            <img src="images/account_circle.png" alt="Logo">
             <p>Profile</p>
         </div>
 
         <div id="RenderLeaderboard">
-            <img src="/leaderboard.png" alt="Logo">
+            <img src="images/leaderboard.png" alt="Logo">
             <p>Leaderboard</p>
         </div>
 
         <div id="renderLyckyWheel">
-            <img src="/emoji_events.png" alt="Logo">
+            <img src="images/emoji_events.png" alt="Logo">
             <p>Lucky Wheel</p>
         </div>
 
@@ -93,7 +93,7 @@ async function DisplaySidebar(event) {
     </div>
 
     <div id="renderSettings">
-        <img src="/settings.png" alt="Logo">
+        <img src="images/settings.png" alt="Logo">
         <p>Settings</p>
     </div>
     `
@@ -123,7 +123,7 @@ async function DisplaySidebar(event) {
 
     let userInfo = await getUserinformation(window.localStorage.getItem("username"));
     console.log(userInfo);
-    document.querySelector("#displayProfilePic").src = `../images/${userInfo.profile_picture}`
+    document.querySelector("#displayProfilePic").src = `images/${userInfo.profile_picture}`
 }
 
 function renderInvites() {

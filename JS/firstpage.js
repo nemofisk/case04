@@ -9,7 +9,7 @@ function renderFirstPage() {
 
     document.querySelector("main").innerHTML = `
         <div id="container">
-        <img src="/Title.png" alt="Logo">
+        <img src="images/Title.png" alt="Logo">
             <div id="SignInOrUpContainer">
             <button class="Buttons" id="SignIn">Login</button>
             <button class="Buttons" id="SignUp">Register</button>
