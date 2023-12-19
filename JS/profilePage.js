@@ -6,7 +6,7 @@ async function renderProfilePage() {
         `
     <div class="profile">
         <div id="profilePic"></div>
-        <img src="/Frame 263.png" alt="Logo">
+        <img src="images/Frame 263.png" alt="Logo">
     </div>
 
 
@@ -63,7 +63,7 @@ async function renderProfilePage() {
                 <p>Total Points</p>
             </div>
             <div id="myProfile">
-            <img id="myProfileImage" src="../images/${userInfo.profile_picture}" alt="Profile Picture">
+            <img id="myProfileImage" src="images/${userInfo.profile_picture}" alt="Profile Picture">
                 <p>${username}</p>
                 <div class="userPoints">${userInfo.popcorn} p</div>
             </div>
@@ -78,7 +78,7 @@ async function renderProfilePage() {
     document.getElementById("upload_profile_picture").addEventListener("change", upload_picture);
 
     console.log(userInfo);
-    document.querySelector("#profileImage").src = `../images/${userInfo.profile_picture}`
+    document.querySelector("#profileImage").src = `images/${userInfo.profile_picture}`
     document.getElementById("totalPoints").textContent = userInfo.popcorn + " p"
     let lvlProgress = levelprogress(userInfo.popcorn, userInfo.xpGoal)
     console.log(lvlProgress);
@@ -110,7 +110,7 @@ async function displayFriendList(userInfo) {
         div.classList.add("myProfile")
         div.innerHTML =
             `
-        <img class="myProfileImage" src="../images/${friend.profilePicture}" alt="Profile Picture">
+        <img class="myProfileImage" src="images/${friend.profilePicture}" alt="Profile Picture">
                 <p>${friend.name}</p>
                 <div class="userPoints">${friend.popcorn} p</div>
         `
@@ -146,7 +146,7 @@ function upload_picture(event) {
     fetch(request)
         .then(response => response.json())
         .then(data => {
-            document.getElementById("profileImage").src = `../images/${data.filename}`;
+            document.getElementById("profileImage").src = `images/${data.filename}`;
         })
 }
 function levelprogress(points, goal) {

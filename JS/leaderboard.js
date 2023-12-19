@@ -3,6 +3,11 @@ function renderLeaderBoard() {
     document.querySelector("footer").innerHTML = ``;
     document.querySelector("main").innerHTML =
         `
+        <div class="profile">
+            <div id="profilePic"></div>
+            <img src="images/Frame 263.png" alt="Logo">
+        </div>
+
         <h1>Leaderboards</h1>
     
         

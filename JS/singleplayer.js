@@ -22,7 +22,7 @@ function singlePlayer(event) {
 
         <div class="profile">
             <div id="profilePic"></div>
-            <img src="/Frame 263.png" alt="Logo">
+            <img src="images/Frame 263.png" alt="Logo">
         </div>
     </header>
     
@@ -87,17 +87,17 @@ function singlePlayer(event) {
 
 
 function chooseGenre(array) {
-    
+
     let chosenGenre;
 
     if (window.localStorage.getItem("genre")) {
         chosenGenre = JSON.parse(window.localStorage.getItem("genre"));
     } else {
-        chosenGenre = array; 
+        chosenGenre = array;
         window.localStorage.setItem("genre", JSON.stringify(chosenGenre));
     }
 
-   
+
 
     console.log(chosenGenre);
 
@@ -106,7 +106,7 @@ function chooseGenre(array) {
 
     <div class="profile">
         <div id="profilePic"></div>
-        <img src="/Frame 263.png" alt="Logo">
+        <img src="images/Frame 263.png" alt="Logo">
     </div>
     
     </header>
