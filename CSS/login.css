@@ -41,12 +41,13 @@ span {
 #registerHeader {
     margin-top: 241px;
 }
-.wheelClass{
+
+.wheelClass {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    
+
     position: absolute;
     width: 502px;
     height: 293px;
@@ -55,8 +56,47 @@ span {
     border-radius: 20px;
     text-align: center;
 }
-#removePopUp{
+
+#removePopUp {
     position: absolute;
     top: 10px;
     right: 15px;
+}
+
+.registerLoginPopup {
+    width: 394px;
+    height: 293px;
+    display: flex;
+    align-items: center;
+    background-color: #2B2A4C;
+
+    color: white;
+    border-radius: 20px;
+    position: absolute;
+    z-index: 1;
+    flex-direction: column;
+}
+
+#exitPopup {
+    position: relative;
+    bottom: -16px;
+    left: 172px;
+}
+
+
+#registerFeedback {
+    color: red;
+    position: absolute;
+    bottom: 204px;
+}
+
+#loginFeedback {
+    color: red;
+    position: absolute;
+    bottom: 274px;
+}
+
+#h1RegisterFeedback {
+    margin-bottom: 30px;
+    margin-top: 50px;
 }

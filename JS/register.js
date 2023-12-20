@@ -6,18 +6,19 @@ function signUppage(event) {
 <img src="images/Title.png" alt="Logo">
 `
     document.querySelector("main").innerHTML = `
-    <main>
+    
     <h1 id="registerHeader" class="LoginHeader">Create an account</h1>
     <div>
         <div class="box">
         <input placeholder="Username" id="registerUsername" class="loginRegisterInput"></input>
         <input placeholder="Password" id="registerPassword" class="loginRegisterInput"></input>
         <input placeholder="Confirm Password" id="ConfirmPassword" class="loginRegisterInput"></input>
+        <p id="registerFeedback"></p>
         <button class="loginRegister" id="register">Register</button>
         </div>
         <button id="loginShortCut">Already have an account? <span>Login</span></button>
     </div>
-</main>
+
     `
     let curtains = displayCurtains("footercurtains", "footercurtainsLight");
     document.querySelector("footer").innerHTML =
@@ -36,5 +37,22 @@ function registerFunction(event) {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ username: username, password: password, action: "register" })
-    }).then(r => r.json()).then(l => console.log(l))
+    }).then(r => r.json()).then(l => {
+        let main = document.querySelector(`main`);
+
+        if (l.message === `${username} has been registered successfully!`) {
+            let popup = document.createElement("div");
+            popup.classList.add("registerLoginPopup");
+            popup.innerHTML = `<p id="exitPopup">X</p> <h1 id="h1RegisterFeedback">Registered</h1> ${l.message}`;
+            main.appendChild(popup);
+            document.querySelector("#exitPopup").addEventListener("click", e => {
+                signInpage();
+            })
+        } else {
+            let feedback = document.getElementById("registerFeedback")
+            feedback.innerHTML = `${l.message}`;
+            main.appendChild(feedback)
+        }
+
+    })
 }

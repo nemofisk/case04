@@ -6,17 +6,22 @@ function signInpage(event) {
     <img src="images/Title.png" alt="Logo">
     `
     document.querySelector("main").innerHTML = `
-    <main>
+   
         <h1 class="LoginHeader">Login</h1>
         <div>
             <div class="box">
             <input placeholder="Username" id="loginUsername" class="loginRegisterInput"></input>
             <input placeholder="Password" id="loginPassword" class="loginRegisterInput"></input>
+            <p id="loginFeedback"></p>
             <button class="loginRegister "id="login">Login</button>
+            <p id="loginShortCut">Don't have an account?<span> Register</span></p>
             </div>
         </div>
-    </main>
+    
     `
+    document.getElementById("loginShortCut").addEventListener("click", f => {
+        signUppage()
+    })
 
     let curtains = displayCurtains("footercurtains", "footercurtainsLight");
     document.querySelector("footer").innerHTML =
@@ -46,6 +51,9 @@ function loginFunction(event) {
             //RenderStartingpage();
         } else {
             console.log("login failed");
+
+            let feedback = document.getElementById("loginFeedback")
+            feedback.innerHTML = `login failed`;
         }
     });
 
