@@ -1,1 +1,209 @@
-null
+[
+    {
+        "username": "w",
+        "password": "",
+        "level": 669,
+        "popcorn": 101764,
+        "friends": [
+            {
+                "name": "ww",
+                "profilePicture": "The bear.jpg",
+                "popcorn": 1340
+            },
+            {
+                "name": "www",
+                "profilePicture": "The bear.jpg",
+                "popcorn": 1340
+            },
+            {
+                "name": "wwww",
+                "profilePicture": "Peaky Blinders (kopia).webp",
+                "popcorn": 1300
+            },
+            {
+                "name": "hello",
+                "profilePicture": "Sons (kopia).jpg",
+                "popcorn": 0
+            },
+            {
+                "name": "hello1",
+                "profilePicture": null,
+                "popcorn": 0
+            }
+        ],
+        "friendRequests": [],
+        "gameInvites": [],
+        "xpGoal": 221764,
+        "id": 1,
+        "clues": 32,
+        "resetTimer": 25,
+        "profile_picture": "The bear.jpg",
+        "lastSpun": "20"
+    },
+    {
+        "username": "ww",
+        "password": "",
+        "level": 667,
+        "popcorn": 1340,
+        "friends": [
+            {
+                "name": "w",
+                "profilePicture": "The bear.jpg",
+                "popcorn": 1340
+            }
+        ],
+        "friendRequests": [],
+        "gameInvites": [],
+        "xpGoal": 1300,
+        "id": 2,
+        "clues": 0,
+        "resetTimer": 0,
+        "profile_picture": "The bear.jpg",
+        "lastSpun": "14"
+    },
+    {
+        "username": "www",
+        "password": "",
+        "level": 667,
+        "popcorn": 1340,
+        "friends": [
+            {
+                "name": "w",
+                "profilePicture": "The bear.jpg",
+                "popcorn": 1340
+            }
+        ],
+        "friendRequests": [],
+        "gameInvites": [],
+        "xpGoal": 1300,
+        "id": 3,
+        "clues": 0,
+        "resetTimer": 0,
+        "profile_picture": "The bear.jpg",
+        "lastSpun": "14"
+    },
+    {
+        "username": "wwww",
+        "password": "",
+        "level": 667,
+        "popcorn": 1340,
+        "friends": [
+            {
+                "name": "w",
+                "profilePicture": "The bear.jpg",
+                "popcorn": 1340
+            },
+            {
+                "name": "w",
+                "profilePicture": "The bear.jpg",
+                "popcorn": 1340
+            }
+        ],
+        "friendRequests": [],
+        "gameInvites": [],
+        "xpGoal": 1300,
+        "id": 4,
+        "profile_picture": "Sons (kopia).jpg"
+    },
+    {
+        "username": "hello1",
+        "password": "hello1",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [
+            {
+                "name": "w",
+                "profilePicture": "The bear.jpg",
+                "popcorn": 1340
+            }
+        ],
+        "friendRequests": [],
+        "xpGoal": 100,
+        "clues": 0,
+        "resetTimer": 0,
+        "profile_picture": "The bear.jpg",
+        "lastSpun": "14",
+        "id": 5
+    },
+    {
+        "username": "fefefef",
+        "password": "fefefef",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 100,
+        "clues": 0,
+        "resetTimer": 0,
+        "id": 6
+    },
+    {
+        "username": "fegegeg",
+        "password": "gertg",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 100,
+        "clues": 0,
+        "resetTimer": 0,
+        "id": 7
+    },
+    {
+        "username": "gggg",
+        "password": "gggg",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 100,
+        "clues": 0,
+        "resetTimer": 0,
+        "id": 8
+    },
+    {
+        "username": "ogrtgr",
+        "password": "grgrgr",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 100,
+        "clues": 0,
+        "resetTimer": 0,
+        "id": 9
+    },
+    {
+        "username": "fefefefe",
+        "password": "fefefefe",
+        "level": 6,
+        "popcorn": 6444,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 6500,
+        "clues": 0,
+        "resetTimer": 0,
+        "id": 10,
+        "profile_picture": "The bear.jpg"
+    },
+    {
+        "username": "hehehe",
+        "password": "hehehe",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 1000,
+        "clues": 0,
+        "resetTimer": 0,
+        "id": 11,
+        "profile_picture": "Peaky Blinders (kopia).webp"
+    }
+]

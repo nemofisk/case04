@@ -82,6 +82,7 @@ main>img {
 #home {
     display: flex;
     gap: 10px;
+    cursor: pointer;
 }
 
 #home>img {
@@ -96,6 +97,7 @@ main>img {
 #profilePage {
     display: flex;
     gap: 10px;
+    cursor: pointer;
 }
 
 #profilePage>img {
@@ -111,6 +113,7 @@ main>img {
 #RenderLeaderboard {
     display: flex;
     gap: 10px;
+    cursor: pointer;
 }
 
 #RenderLeaderboard>img {
@@ -125,6 +128,7 @@ main>img {
 #renderLyckyWheel {
     display: flex;
     gap: 10px;
+    cursor: pointer;
 }
 
 #renderLyckyWheel>img {
@@ -157,6 +161,7 @@ main>img {
     display: flex;
     gap: 10px;
     margin-right: 45px;
+    cursor: pointer;
 }
 
 #renderSettings>p {

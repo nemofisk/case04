@@ -4,11 +4,12 @@
 
 
 .customFileUpload {
-    height: 39px;
-    width: 108px;
+    height: 34px;
+    width: 35px;
     position: relative;
-    bottom: 129px;
-    background-color: #000000d6;
+    bottom: 93px;
+    left: 54px;
+    background-color: #FF6868;
     border-radius: 28px;
 
     display: flex;
@@ -136,15 +137,24 @@
     background-color: black;
 }
 
-#myProfile>p {
-    margin-right: 160px;
+#CameraImg {
+    object-fit: cover;
+    width: 20px;
+    height: 20px;
+}
+
+
+
+.WrapperForPicAndName>p {
     color: white;
 }
 
-.myProfile>p {
-    margin-right: 160px;
-    color: white;
+.WrapperForPicAndName {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
+
 
 #rightSideContainer {
     width: 297px;
@@ -158,7 +168,7 @@
     flex-direction: column;
 }
 
-#seperator {
+#seperatorProfile {
     height: 52px;
     width: 1px;
     background-color: gray;
@@ -199,20 +209,23 @@
 #profilePageUsername {
     margin: 0;
 }
-#addFriendsContainer{
+
+#addFriendsContainer {
     position: absolute;
     left: 465px;
     top: 137px;
     margin: auto;
 }
-#userDisplay{
+
+#userDisplay {
     width: 526px;
     height: 359px;
     border-radius: 0px 0px var(--Radius-Radius-md, 20px) var(--Radius-Radius-md, 20px);
     background: var(--Colors-Menu-Background, #2B2A4C);
     z-index: 1;
 }
-#searchField{
+
+#searchField {
     width: 526px;
     height: 55px;
     border-radius: var(--Radius-Radius-md, 20px) var(--Radius-Radius-md, 20px) 0px 0px;
@@ -220,14 +233,14 @@
     z-index: 1;
     display: flex;
     justify-content: flex-start;
-    
+
 }
 
-#searchField input{
+#searchField input {
     background-color: #2C2C40;
     border: none;
     margin-left: 30px;
     font-family: Jost;
-font-size: 20px;
-font-style: normal;
+    font-size: 20px;
+    font-style: normal;
 }
