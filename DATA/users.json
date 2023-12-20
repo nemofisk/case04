@@ -2,8 +2,8 @@
     {
         "username": "w",
         "password": "",
-        "level": 667,
-        "popcorn": 1631,
+        "level": 669,
+        "popcorn": 101764,
         "friends": [
             {
                 "name": "ww",
@@ -33,12 +33,12 @@
         ],
         "friendRequests": [],
         "gameInvites": [],
-        "xpGoal": 1700,
+        "xpGoal": 221764,
         "id": 1,
         "clues": 32,
         "resetTimer": 25,
         "profile_picture": "The bear.jpg",
-        "lastSpun": "19"
+        "lastSpun": "20"
     },
     {
         "username": "ww",

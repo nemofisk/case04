@@ -154,6 +154,16 @@ function profile($users, $received_data){
             }
         }
     }
+    if($subAction === "deleteAccount"){
+        foreach($users as $index => $user){
+            if($user["username"] === $username){
+                unset($users[$user]);
+                putInUsersJSON($users);
+                sendJSON(["message" => $user["lastSpun"]], 200);
+                    
+            }
+        }
+    }
         
 }
 

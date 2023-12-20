@@ -121,6 +121,9 @@ async function DisplaySidebar(event) {
     })
     progress();
 
+    document.getElementById("renderSettings").addEventListener("click", e => {
+        renderSettings()
+    })
     let userInfo = await getUserinformation(window.localStorage.getItem("username"));
     console.log(userInfo);
     document.querySelector("#displayProfilePic").src = `images/${userInfo.profile_picture}`

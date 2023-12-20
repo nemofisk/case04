@@ -1,0 +1,40 @@
+#settingsContainer{
+    display: flex;
+    color: white;
+    width: 717px;
+    justify-content: space-between;
+    
+}
+#leftSideBox{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    gap: 30px;
+}
+#seperator{
+    width: 1px;
+    height: 288px;
+    background: var(--colors-search-background, rgba(103, 101, 159, 0.35));
+}
+#rightSideBox{
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: end;
+gap: 30px;
+}
+.settingsDivs{
+    display: flex;
+    align-items: center;
+}
+.settingsDivs img{
+    width: 35%;
+}
+.specificWidth img{
+    width: 25%;
+}
+.specificWidth{
+    display: flex;
+    align-items: center;
+}
