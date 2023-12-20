@@ -87,8 +87,9 @@ async function renderProfilePage() {
     document.getElementById("nextLevel").textContent = userInfo.level + 1;
 
     document.getElementById("sendRequest").addEventListener("click", () => {
+        popUpFunction("addFriends", document.getElementById("friendUsername").value)
         console.log(document.getElementById("friendUsername").value);
-        searchUsers(document.getElementById("friendUsername").value)
+        //searchUsers(document.getElementById("friendUsername").value)
     })
 
 

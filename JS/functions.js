@@ -37,11 +37,30 @@ function popUpFunction(action, information) {
         console.log(div.textContent);
         div.classList.add("wheelClass")
         main.appendChild(div);
+        document.getElementById("removePopUp").addEventListener("click", element => {
+            console.log(element);
+            element.target.parentElement.remove();
+        })
     }
-    document.getElementById("removePopUp").addEventListener("click", element => {
-        console.log(element);
-        element.target.parentElement.remove();
-    })
+    
+    if(action === "changeUserOrPass"){
+        div.innerHTML = `
+        <h1>Your profile</h1>
+        
+        `
+    }
+    if(action === "addFriends"){
+        div.innerHTML = `
+        <div id="addFriendsContainer">
+            <div id="searchField">
+                <img src="../images/searchlala.png">
+                <input placeholder="Add new friends"></input>    
+            </div>
+            <div id="userDisplay"></div>
+        </div>
+        `
+        main.appendChild(div)
+    }
 
 }
 

@@ -1,6 +1,6 @@
 [
     {
-        "gameID": 77421,
+        "gameID": 57452,
         "hostID": 1,
         "genres": [
             "Crime",
@@ -21,7 +21,626 @@
                 "name": "w",
                 "userID": 1,
                 "profilePicture": "The bear.jpg",
-                "points": 3.2
+                "points": 17.6
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "plot",
+                "correctAnswer": "L\u00e9on: The Professional",
+                "alternatives": [
+                    {
+                        "title": "L\u00e9on: The Professional",
+                        "whoGuessed": [
+                            {
+                                "name": "w",
+                                "userID": 1,
+                                "profilePicture": "The bear.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Jurassic Park",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Raging Bull",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Unforgiven",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "12-year-old Mathilda is reluctantly taken in by L\u00e9on, a professional assassin, after her family is murdered. An unusual relationship forms as she becomes his prot\u00e9g\u00e9e and learns the assassin's trade."
+            },
+            {
+                "questionID": 1,
+                "type": "trailer",
+                "correctAnswer": "Modern Times",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/NNznUyDmSFc",
+                "guesses": [
+                    "Modern Times"
+                ]
+            },
+            {
+                "questionID": 2,
+                "type": "actors",
+                "correctAnswer": "Goodfellas",
+                "alternatives": [
+                    {
+                        "title": "Goodfellas",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Up",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Beauty and the Beast",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Incendies",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Robert De Niro, Ray Liotta, Joe Pesci"
+            },
+            {
+                "questionID": 3,
+                "type": "actors",
+                "correctAnswer": "Interstellar",
+                "alternatives": [
+                    {
+                        "title": "Sunset Blvd.",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Interstellar",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Raging Bull",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Great Dictator",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Matthew McConaughey, Anne Hathaway, Jessica Chastain"
+            },
+            {
+                "questionID": 4,
+                "type": "poster",
+                "correctAnswer": "WALL\u00b7E",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BMjExMTg5OTU0NF5BMl5BanBnXkFtZTcwMjMxMzMzMw@@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 5,
+                "type": "plot",
+                "correctAnswer": "2001: A Space Odyssey",
+                "alternatives": [
+                    {
+                        "title": "The Lion King",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Pulp Fiction",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "2001: A Space Odyssey",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Pulp Fiction",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "After uncovering a mysterious artifact buried beneath the Lunar surface, a spacecraft is sent to Jupiter to find its origins: a spacecraft manned by two men and the supercomputer HAL 9000."
+            },
+            {
+                "questionID": 6,
+                "type": "trailer",
+                "correctAnswer": "A Wednesday",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/LGfwASavWNQ",
+                "guesses": []
+            },
+            {
+                "questionID": 7,
+                "type": "poster",
+                "correctAnswer": "L.A. Confidential",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BMDQ2YzEyZGItYWRhOS00MjBmLTkzMDUtMTdjYzkyMmQxZTJlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 8,
+                "type": "poster",
+                "correctAnswer": "Harry Potter and the Deathly Hallows: Part 2",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BMGVmMWNiMDktYjQ0Mi00MWIxLTk0N2UtN2ZlYTdkN2IzNDNlXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 9,
+                "type": "trailer",
+                "correctAnswer": "Paper Moon",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/ORTv3jORX-I",
+                "guesses": []
+            }
+        ],
+        "isStarted": true,
+        "replay": false,
+        "currentQuestion": ""
+    },
+    {
+        "gameID": 51482,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 18.9
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "trailer",
+                "correctAnswer": "Taxi Driver",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/UUxD4-dEzn0",
+                "guesses": [
+                    "Taxi Driver"
+                ]
+            },
+            {
+                "questionID": 1,
+                "type": "actors",
+                "correctAnswer": "Forrest Gump",
+                "alternatives": [
+                    {
+                        "title": "Forrest Gump",
+                        "whoGuessed": [
+                            {
+                                "name": "w",
+                                "userID": 1,
+                                "profilePicture": "The bear.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Witness for the Prosecution",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "To Kill a Mockingbird",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Saving Private Ryan",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Tom Hanks, Robin Wright, Gary Sinise"
+            },
+            {
+                "questionID": 2,
+                "type": "trailer",
+                "correctAnswer": "The Godfather",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/Ma1-sIoZnMs",
+                "guesses": []
+            },
+            {
+                "questionID": 3,
+                "type": "trailer",
+                "correctAnswer": "V for Vendetta",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/lSA7mAHolAw",
+                "guesses": []
+            },
+            {
+                "questionID": 4,
+                "type": "trailer",
+                "correctAnswer": "Room",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/6C6fZ-fwDws",
+                "guesses": []
+            },
+            {
+                "questionID": 5,
+                "type": "trailer",
+                "correctAnswer": "Logan",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/Div0iP65aZo",
+                "guesses": []
+            },
+            {
+                "questionID": 6,
+                "type": "poster",
+                "correctAnswer": "Psycho",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BNTQwNDM1YzItNDAxZC00NWY2LTk0M2UtNDIwNWI5OGUyNWUxXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 7,
+                "type": "plot",
+                "correctAnswer": "Prisoners",
+                "alternatives": [
+                    {
+                        "title": "North by Northwest",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Prisoners",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Munna Bhai M.B.B.S.",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Unforgiven",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "When Keller Dover's daughter and her friend go missing, he takes matters into his own hands as the police pursue multiple leads and the pressure mounts."
+            },
+            {
+                "questionID": 8,
+                "type": "actors",
+                "correctAnswer": "Barry Lyndon",
+                "alternatives": [
+                    {
+                        "title": "Hotel Rwanda",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Wolf of Wall Street",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Barry Lyndon",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "In the Name of the Father",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Ryan O'Neal, Marisa Berenson, Patrick Magee"
+            },
+            {
+                "questionID": 9,
+                "type": "actors",
+                "correctAnswer": "Into the Wild",
+                "alternatives": [
+                    {
+                        "title": "The Gold Rush",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "M",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Bridge on the River Kwai",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Into the Wild",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Emile Hirsch, Vince Vaughn, Catherine Keener"
+            }
+        ],
+        "isStarted": true,
+        "replay": false,
+        "currentQuestion": ""
+    },
+    {
+        "gameID": 51897,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 14.4
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "actors",
+                "correctAnswer": "M",
+                "alternatives": [
+                    {
+                        "title": "M",
+                        "whoGuessed": [
+                            {
+                                "name": "w",
+                                "userID": 1,
+                                "profilePicture": "The bear.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Monty Python and the Holy Grail",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Prisoners",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Hotel Rwanda",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Peter Lorre, Ellen Widmann, Inge Landgut"
+            },
+            {
+                "questionID": 1,
+                "type": "plot",
+                "correctAnswer": "The Departed",
+                "alternatives": [
+                    {
+                        "title": "The Departed",
+                        "whoGuessed": [
+                            {
+                                "name": "w",
+                                "userID": 1,
+                                "profilePicture": "The bear.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Barry Lyndon",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Scarface",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Vertigo",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "An undercover cop and a mole in the police attempt to identify each other while infiltrating an Irish gang in South Boston."
+            },
+            {
+                "questionID": 2,
+                "type": "actors",
+                "correctAnswer": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
+                "alternatives": [
+                    {
+                        "title": "Dunkirk",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Wolf of Wall Street",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Whiplash",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Peter Sellers, George C. Scott, Sterling Hayden"
+            },
+            {
+                "questionID": 3,
+                "type": "poster",
+                "correctAnswer": "Requiem for a Dream",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BOTdiNzJlOWUtNWMwNS00NmFlLWI0YTEtZmI3YjIzZWUyY2Y3XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 4,
+                "type": "plot",
+                "correctAnswer": "V for Vendetta",
+                "alternatives": [
+                    {
+                        "title": "V for Vendetta",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Amadeus",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Monty Python and the Holy Grail",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Gone with the Wind",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "In a future British dystopian society, a shadowy freedom fighter, known only by the alias of \"V\", plots to overthrow the tyrannical government - with the help of a young woman."
+            },
+            {
+                "questionID": 5,
+                "type": "actors",
+                "correctAnswer": "Dunkirk",
+                "alternatives": [
+                    {
+                        "title": "Up",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Touch of Evil",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Dunkirk",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Gandhi",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Fionn Whitehead, Barry Keoghan, Mark Rylance"
+            },
+            {
+                "questionID": 6,
+                "type": "plot",
+                "correctAnswer": "Raging Bull",
+                "alternatives": [
+                    {
+                        "title": "Raging Bull",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Eternal Sunshine of the Spotless Mind",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "To Kill a Mockingbird",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "In the Name of the Father",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "The life of boxer Jake LaMotta, whose violence and temper that led him to the top in the ring destroyed his life outside of it."
+            },
+            {
+                "questionID": 7,
+                "type": "plot",
+                "correctAnswer": "The Bridge on the River Kwai",
+                "alternatives": [
+                    {
+                        "title": "V for Vendetta",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Prisoners",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Bridge on the River Kwai",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Before Sunrise",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "British POWs are forced to build a railway bridge across the river Kwai for their Japanese captors in occupied Burma, not knowing that the allied forces are planning a daring commando raid through the jungle to destroy it."
+            },
+            {
+                "questionID": 8,
+                "type": "poster",
+                "correctAnswer": "On the Waterfront",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BY2I0MWFiZDMtNWQyYy00Njk5LTk3MDktZjZjNTNmZmVkYjkxXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 9,
+                "type": "plot",
+                "correctAnswer": "It Happened One Night",
+                "alternatives": [
+                    {
+                        "title": "The Godfather Part II",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Monty Python and the Holy Grail",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Beauty and the Beast",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "It Happened One Night",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "A renegade reporter trailing a young runaway heiress for a big story joins her on a bus heading from Florida to New York, and they end up stuck with each other when the bus leaves them behind at one of the stops."
+            }
+        ],
+        "isStarted": true,
+        "replay": false,
+        "currentQuestion": ""
+    },
+    {
+        "gameID": 48893,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 0
             }
         ],
         "questions": [
@@ -31,20 +650,536 @@
                 "correctAnswer": "L\u00e9on: The Professional",
                 "youtubeLink": "https:\/\/www.youtube.com\/embed\/aNQqoExfQsg",
                 "guesses": [
-                    "Forrest Gump"
+                    "L\u00e9on: The Professional"
                 ]
             },
             {
                 "questionID": 1,
-                "type": "actors",
-                "correctAnswer": "Modern Times",
+                "type": "trailer",
+                "correctAnswer": "Terminator 2: Judgment Day",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/Zl7zwFaqQA0",
+                "guesses": []
+            },
+            {
+                "questionID": 2,
+                "type": "plot",
+                "correctAnswer": "City Lights",
                 "alternatives": [
+                    {
+                        "title": "The Hamster Factor and Other Tales of Twelve Monkeys",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "L.A. Confidential",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Harry Potter and the Deathly Hallows: Part 2",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "City Lights",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "With the aid of a wealthy erratic tippler, a dewy-eyed tramp who has fallen in love with a sightless flower girl accumulates money to be able to help her medically."
+            },
+            {
+                "questionID": 3,
+                "type": "actors",
+                "correctAnswer": "The Departed",
+                "alternatives": [
+                    {
+                        "title": "The Departed",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Deer Hunter",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Saving Private Ryan",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Gone with the Wind",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Leonardo DiCaprio, Matt Damon, Jack Nicholson"
+            },
+            {
+                "questionID": 4,
+                "type": "poster",
+                "correctAnswer": "American Beauty",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BNTBmZWJkNjctNDhiNC00MGE2LWEwOTctZTk5OGVhMWMyNmVhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 5,
+                "type": "plot",
+                "correctAnswer": "Requiem for a Dream",
+                "alternatives": [
+                    {
+                        "title": "Requiem for a Dream",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Eternal Sunshine of the Spotless Mind",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Pulp Fiction",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "In the Name of the Father",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "The drug-induced utopias of four Coney Island people are shattered when their addictions run deep."
+            },
+            {
+                "questionID": 6,
+                "type": "poster",
+                "correctAnswer": "To Kill a Mockingbird",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BNmVmYzcwNzMtMWM1NS00MWIyLThlMDEtYzUwZDgzODE1NmE2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 7,
+                "type": "trailer",
+                "correctAnswer": "Harry Potter and the Deathly Hallows: Part 2",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/mObK5XD8udk",
+                "guesses": []
+            },
+            {
+                "questionID": 8,
+                "type": "trailer",
+                "correctAnswer": "Stand by Me",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/Ao9AI1pLeG0",
+                "guesses": []
+            },
+            {
+                "questionID": 9,
+                "type": "plot",
+                "correctAnswer": "In the Name of the Father",
+                "alternatives": [
+                    {
+                        "title": "3 Idiots",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Psycho",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "In the Name of the Father",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "A Wednesday",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "A man's coerced confession to an I.R.A. bombing he did not commit results in the imprisonment of his father as well. An English lawyer fights to free them."
+            }
+        ],
+        "isStarted": true,
+        "replay": false,
+        "currentQuestion": ""
+    },
+    {
+        "gameID": 74626,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 2.7
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "poster",
+                "correctAnswer": "L\u00e9on: The Professional",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BOTgyMWQ0ZWUtN2Q2MS00NmY0LWI3OWMtNjFkMzZlNDZjNTk0XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg",
+                "guesses": [
+                    "L\u00e9on: The Professional"
+                ]
+            },
+            {
+                "questionID": 1,
+                "type": "poster",
+                "correctAnswer": "Taxi Driver",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BM2M1MmVhNDgtNmI0YS00ZDNmLTkyNjctNTJiYTQ2N2NmYzc2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 2,
+                "type": "plot",
+                "correctAnswer": "Scarface",
+                "alternatives": [
+                    {
+                        "title": "Scarface",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "PK",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Taxi Driver",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Vertigo",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "In 1980 Miami, a determined Cuban immigrant takes over a drug cartel and succumbs to greed."
+            },
+            {
+                "questionID": 3,
+                "type": "actors",
+                "correctAnswer": "American Beauty",
+                "alternatives": [
+                    {
+                        "title": "American Beauty",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Finding Nemo",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "A Wednesday",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Finding Nemo",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Kevin Spacey, Annette Bening, Thora Birch"
+            },
+            {
+                "questionID": 4,
+                "type": "poster",
+                "correctAnswer": "A Clockwork Orange",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BMTY3MjM1Mzc4N15BMl5BanBnXkFtZTgwODM0NzAxMDE@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 5,
+                "type": "poster",
+                "correctAnswer": "To Kill a Mockingbird",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BNmVmYzcwNzMtMWM1NS00MWIyLThlMDEtYzUwZDgzODE1NmE2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 6,
+                "type": "actors",
+                "correctAnswer": "The Deer Hunter",
+                "alternatives": [
+                    {
+                        "title": "The Deer Hunter",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Se7en",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Unforgiven",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Blade Runner",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Robert De Niro, Christopher Walken, John Cazale"
+            },
+            {
+                "questionID": 7,
+                "type": "plot",
+                "correctAnswer": "Dunkirk",
+                "alternatives": [
+                    {
+                        "title": "Citizen Kane",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Star Wars: Episode V - The Empire Strikes Back",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Dunkirk",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Before Sunrise",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "Allied soldiers from Belgium, the British Commonwealth and Empire, and France are surrounded by the German Army and evacuated during a fierce battle in World War II."
+            },
+            {
+                "questionID": 8,
+                "type": "poster",
+                "correctAnswer": "Stand by Me",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BODJmY2Y2OGQtMDg2My00N2Q3LWJmZTUtYTc2ODBjZDVlNDlhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 9,
+                "type": "poster",
+                "correctAnswer": "Paper Moon",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BOWVmYzQwY2MtOTBjNi00MDNhLWI5OGMtN2RiMDYxODI3MjU5XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg",
+                "guesses": []
+            }
+        ],
+        "isStarted": true,
+        "replay": false,
+        "currentQuestion": ""
+    },
+    {
+        "gameID": 73134,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 7
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "trailer",
+                "correctAnswer": "Scarface",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/7pQQHnqBa2E",
+                "guesses": [
+                    "Scarface"
+                ]
+            },
+            {
+                "questionID": 1,
+                "type": "plot",
+                "correctAnswer": "The Dark Knight Rises",
+                "alternatives": [
+                    {
+                        "title": "The Departed",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Taxi Driver",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Gone Girl",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Dark Knight Rises",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "Eight years after the Joker's reign of chaos, Batman is coerced out of exile with the assistance of the mysterious Selina Kyle in order to defend Gotham City from the vicious guerrilla terrorist Bane."
+            },
+            {
+                "questionID": 2,
+                "type": "actors",
+                "correctAnswer": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
+                "alternatives": [
+                    {
+                        "title": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "L.A. Confidential",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Touch of Evil",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "On the Waterfront",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Peter Sellers, George C. Scott, Sterling Hayden"
+            },
+            {
+                "questionID": 3,
+                "type": "trailer",
+                "correctAnswer": "Die Hard",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/osIeLeqCRmw",
+                "guesses": []
+            },
+            {
+                "questionID": 4,
+                "type": "actors",
+                "correctAnswer": "The Wolf of Wall Street",
+                "alternatives": [
+                    {
+                        "title": "Eternal Sunshine of the Spotless Mind",
+                        "whoGuessed": []
+                    },
                     {
                         "title": "The Wolf of Wall Street",
                         "whoGuessed": []
                     },
                     {
-                        "title": "Modern Times",
+                        "title": "Amadeus",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Alien",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Leonardo DiCaprio, Jonah Hill, Margot Robbie"
+            },
+            {
+                "questionID": 5,
+                "type": "actors",
+                "correctAnswer": "Casino",
+                "alternatives": [
+                    {
+                        "title": "8\u00bd",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Star Wars: Episode IV - A New Hope",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Casino",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Witness for the Prosecution",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Robert De Niro, Sharon Stone, Joe Pesci"
+            },
+            {
+                "questionID": 6,
+                "type": "trailer",
+                "correctAnswer": "Some Like It Hot",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/vvgWJ4VRwrg",
+                "guesses": []
+            },
+            {
+                "questionID": 7,
+                "type": "trailer",
+                "correctAnswer": "Whiplash",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/Df1xkYYbYrY",
+                "guesses": []
+            },
+            {
+                "questionID": 8,
+                "type": "trailer",
+                "correctAnswer": "The Great Dictator",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/i1C6qZVeFtA",
+                "guesses": []
+            },
+            {
+                "questionID": 9,
+                "type": "trailer",
+                "correctAnswer": "The Best Years of Our Lives",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/X9lufYAOxes",
+                "guesses": []
+            }
+        ],
+        "isStarted": true,
+        "replay": false,
+        "currentQuestion": ""
+    },
+    {
+        "gameID": 99232,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 6.1
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "actors",
+                "correctAnswer": "Se7en",
+                "alternatives": [
+                    {
+                        "title": "Taxi Driver",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Se7en",
                         "whoGuessed": [
                             {
                                 "name": "w",
@@ -54,7 +1189,1157 @@
                         ]
                     },
                     {
-                        "title": "Jurassic Park",
+                        "title": "The Dark Knight Rises",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Godfather Part II",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Morgan Freeman, Brad Pitt, Kevin Spacey"
+            },
+            {
+                "questionID": 1,
+                "type": "poster",
+                "correctAnswer": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BMWMxYjZkOWUtM2FjMi00MmI1LThkNzQtNTM5Y2E2ZGQ2NGFhXkEyXkFqcGdeQXVyMTA0MTM5NjI2._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 2,
+                "type": "actors",
+                "correctAnswer": "3 Idiots",
+                "alternatives": [
+                    {
+                        "title": "Judgment at Nuremberg",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Incendies",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "American Beauty",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "3 Idiots",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Aamir Khan, Madhavan, Mona Singh"
+            },
+            {
+                "questionID": 3,
+                "type": "trailer",
+                "correctAnswer": "A Wednesday",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/LGfwASavWNQ",
+                "guesses": []
+            },
+            {
+                "questionID": 4,
+                "type": "poster",
+                "correctAnswer": "Psycho",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BNTQwNDM1YzItNDAxZC00NWY2LTk0M2UtNDIwNWI5OGUyNWUxXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 5,
+                "type": "plot",
+                "correctAnswer": "Raging Bull",
+                "alternatives": [
+                    {
+                        "title": "The Lion King",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Raging Bull",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Munna Bhai M.B.B.S.",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Beauty and the Beast",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "The life of boxer Jake LaMotta, whose violence and temper that led him to the top in the ring destroyed his life outside of it."
+            },
+            {
+                "questionID": 6,
+                "type": "plot",
+                "correctAnswer": "Pulp Fiction",
+                "alternatives": [
+                    {
+                        "title": "Gone with the Wind",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Pulp Fiction",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Best Years of Our Lives",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Into the Wild",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption."
+            },
+            {
+                "questionID": 7,
+                "type": "plot",
+                "correctAnswer": "Beauty and the Beast",
+                "alternatives": [
+                    {
+                        "title": "Pulp Fiction",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Beauty and the Beast",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "American History X",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Deer Hunter",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "A prince cursed to spend his days as a hideous monster sets out to regain his humanity by earning a young woman's love."
+            },
+            {
+                "questionID": 8,
+                "type": "poster",
+                "correctAnswer": "Paper Moon",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BOWVmYzQwY2MtOTBjNi00MDNhLWI5OGMtN2RiMDYxODI3MjU5XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 9,
+                "type": "poster",
+                "correctAnswer": "8\u00bd",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BNTkzZTZjOTgtYjgzMS00MTdkLWE2NDAtNTVmM2I3MGYyM2I0XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg",
+                "guesses": []
+            }
+        ],
+        "isStarted": true,
+        "replay": false,
+        "currentQuestion": ""
+    },
+    {
+        "gameID": 61147,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 6.5
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "actors",
+                "correctAnswer": "Se7en",
+                "alternatives": [
+                    {
+                        "title": "The Hamster Factor and Other Tales of Twelve Monkeys",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Monty Python and the Holy Grail",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Se7en",
+                        "whoGuessed": [
+                            {
+                                "name": "w",
+                                "userID": 1,
+                                "profilePicture": "The bear.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Gone Girl",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Morgan Freeman, Brad Pitt, Kevin Spacey"
+            },
+            {
+                "questionID": 1,
+                "type": "plot",
+                "correctAnswer": "Vertigo",
+                "alternatives": [
+                    {
+                        "title": "Vertigo",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Gold Rush",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "8\u00bd",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Star Wars: Episode IV - A New Hope",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "A former San Francisco police detective juggles wrestling with his personal demons and becoming obsessed with the hauntingly beautiful woman he has been hired to trail, who may be deeply disturbed."
+            },
+            {
+                "questionID": 2,
+                "type": "actors",
+                "correctAnswer": "Star Wars: Episode V - The Empire Strikes Back",
+                "alternatives": [
+                    {
+                        "title": "Vertigo",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "A Clockwork Orange",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Star Wars: Episode V - The Empire Strikes Back",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "La haine",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Mark Hamill, Harrison Ford, Carrie Fisher"
+            },
+            {
+                "questionID": 3,
+                "type": "poster",
+                "correctAnswer": "Saving Private Ryan",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BZjhkMDM4MWItZTVjOC00ZDRhLThmYTAtM2I5NzBmNmNlMzI1XkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 4,
+                "type": "actors",
+                "correctAnswer": "Unforgiven",
+                "alternatives": [
+                    {
+                        "title": "Scarface",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Mary and Max",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Unforgiven",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Paper Moon",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Clint Eastwood, Gene Hackman, Morgan Freeman"
+            },
+            {
+                "questionID": 5,
+                "type": "plot",
+                "correctAnswer": "American Beauty",
+                "alternatives": [
+                    {
+                        "title": "Mary and Max",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "American Beauty",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Logan",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Barry Lyndon",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "A sexually frustrated suburban father has a mid-life crisis after becoming infatuated with his daughter's best friend."
+            },
+            {
+                "questionID": 6,
+                "type": "plot",
+                "correctAnswer": "A Clockwork Orange",
+                "alternatives": [
+                    {
+                        "title": "A Clockwork Orange",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Amadeus",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Star Wars: Episode V - The Empire Strikes Back",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "M",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "In the future, a sadistic gang leader is imprisoned and volunteers for a conduct-aversion experiment, but it doesn't go as planned."
+            },
+            {
+                "questionID": 7,
+                "type": "trailer",
+                "correctAnswer": "Gone Girl",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/JU9PdgB3rsk",
+                "guesses": []
+            },
+            {
+                "questionID": 8,
+                "type": "actors",
+                "correctAnswer": "Bakomfilm Smultronst\u00e4llet",
+                "alternatives": [
+                    {
+                        "title": "American History X",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Blade Runner",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Scarface",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Bakomfilm Smultronst\u00e4llet",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Bibi Andersson, Victor Sj\u00f6str\u00f6m, Naima Wifstrand"
+            },
+            {
+                "questionID": 9,
+                "type": "actors",
+                "correctAnswer": "8\u00bd",
+                "alternatives": [
+                    {
+                        "title": "Saving Private Ryan",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "8\u00bd",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Forrest Gump",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Terminator 2: Judgment Day",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Marcello Mastroianni, Anouk Aim\u00e9e, Claudia Cardinale"
+            }
+        ],
+        "isStarted": true,
+        "replay": false,
+        "currentQuestion": ""
+    },
+    {
+        "gameID": 13227,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 11.7
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "trailer",
+                "correctAnswer": "L\u00e9on: The Professional",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/aNQqoExfQsg",
+                "guesses": [
+                    "L\u00e9on: The Professional"
+                ]
+            },
+            {
+                "questionID": 1,
+                "type": "poster",
+                "correctAnswer": "Alien",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BOGQzZTBjMjQtOTVmMS00NGE5LWEyYmMtOGQ1ZGZjNmRkYjFhXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 2,
+                "type": "plot",
+                "correctAnswer": "Taxi Driver",
+                "alternatives": [
+                    {
+                        "title": "The Godfather",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Taxi Driver",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Alien",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Alien",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "A mentally unstable veteran works as a nighttime taxi driver in New York City, where the perceived decadence and sleaze fuels his urge for violent action."
+            },
+            {
+                "questionID": 3,
+                "type": "trailer",
+                "correctAnswer": "Scarface",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/7pQQHnqBa2E",
+                "guesses": []
+            },
+            {
+                "questionID": 4,
+                "type": "trailer",
+                "correctAnswer": "Whiplash",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/Df1xkYYbYrY",
+                "guesses": []
+            },
+            {
+                "questionID": 5,
+                "type": "actors",
+                "correctAnswer": "The Wolf of Wall Street",
+                "alternatives": [
+                    {
+                        "title": "Modern Times",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Wolf of Wall Street",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Maltese Falcon",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Terminator 2: Judgment Day",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Leonardo DiCaprio, Jonah Hill, Margot Robbie"
+            },
+            {
+                "questionID": 6,
+                "type": "poster",
+                "correctAnswer": "2001: A Space Odyssey",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BMmNlYzRiNDctZWNhMi00MzI4LThkZTctMTUzMmZkMmFmNThmXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 7,
+                "type": "actors",
+                "correctAnswer": "The Best Years of Our Lives",
+                "alternatives": [
+                    {
+                        "title": "The Best Years of Our Lives",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Stand by Me",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Se7en",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "2001: A Space Odyssey",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Myrna Loy, Dana Andrews, Fredric March"
+            },
+            {
+                "questionID": 8,
+                "type": "poster",
+                "correctAnswer": "Hotel Rwanda",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BZGJjYmIzZmQtNWE4Yy00ZGVmLWJkZGEtMzUzNmQ4ZWFlMjRhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 9,
+                "type": "trailer",
+                "correctAnswer": "Gandhi",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/vziq3CA_C30",
+                "guesses": []
+            }
+        ],
+        "isStarted": true,
+        "replay": false,
+        "currentQuestion": ""
+    },
+    {
+        "gameID": 48520,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 9.1
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "trailer",
+                "correctAnswer": "M",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/nsVproWjN6c",
+                "guesses": []
+            },
+            {
+                "questionID": 1,
+                "type": "plot",
+                "correctAnswer": "Saving Private Ryan",
+                "alternatives": [
+                    {
+                        "title": "Requiem for a Dream",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "City Lights",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Hotel Rwanda",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Saving Private Ryan",
+                        "whoGuessed": [
+                            {
+                                "name": "w",
+                                "userID": 1,
+                                "profilePicture": "The bear.jpg"
+                            }
+                        ]
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "Following the Normandy Landings, a group of U.S. soldiers go behind enemy lines to retrieve a paratrooper whose brothers have been killed in action."
+            },
+            {
+                "questionID": 2,
+                "type": "plot",
+                "correctAnswer": "WALL\u00b7E",
+                "alternatives": [
+                    {
+                        "title": "Chinatown",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Judgment at Nuremberg",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "WALL\u00b7E",
+                        "whoGuessed": [
+                            {
+                                "name": "w",
+                                "userID": 1,
+                                "profilePicture": "The bear.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Amadeus",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind."
+            },
+            {
+                "questionID": 3,
+                "type": "plot",
+                "correctAnswer": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
+                "alternatives": [
+                    {
+                        "title": "Star Wars: Episode IV - A New Hope",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "8\u00bd",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Terminator",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "An insane American general orders a bombing attack on the Soviet Union, triggering a path to nuclear holocaust that a war room full of politicians and generals frantically tries to stop."
+            },
+            {
+                "questionID": 4,
+                "type": "poster",
+                "correctAnswer": "The Wolf of Wall Street",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 5,
+                "type": "plot",
+                "correctAnswer": "V for Vendetta",
+                "alternatives": [
+                    {
+                        "title": "8\u00bd",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "City Lights",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "V for Vendetta",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "L.A. Confidential",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "In a future British dystopian society, a shadowy freedom fighter, known only by the alias of \"V\", plots to overthrow the tyrannical government - with the help of a young woman."
+            },
+            {
+                "questionID": 6,
+                "type": "poster",
+                "correctAnswer": "2001: A Space Odyssey",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BMmNlYzRiNDctZWNhMi00MzI4LThkZTctMTUzMmZkMmFmNThmXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 7,
+                "type": "trailer",
+                "correctAnswer": "The Great Escape",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/I9jSKTSY5Bs",
+                "guesses": []
+            },
+            {
+                "questionID": 8,
+                "type": "plot",
+                "correctAnswer": "Pulp Fiction",
+                "alternatives": [
+                    {
+                        "title": "Stand by Me",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Pulp Fiction",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Good Will Hunting",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Godfather",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption."
+            },
+            {
+                "questionID": 9,
+                "type": "trailer",
+                "correctAnswer": "Paper Moon",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/ORTv3jORX-I",
+                "guesses": []
+            }
+        ],
+        "isStarted": true,
+        "replay": false,
+        "currentQuestion": ""
+    },
+    {
+        "gameID": 13733,
+        "hostID": 10,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "fefefefe",
+                "userID": 10,
+                "profilePicture": null,
+                "points": 0
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "actors",
+                "correctAnswer": "Forrest Gump",
+                "alternatives": [
+                    {
+                        "title": "Chinatown",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Casino",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Maltese Falcon",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Forrest Gump",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Tom Hanks, Robin Wright, Gary Sinise"
+            },
+            {
+                "questionID": 1,
+                "type": "actors",
+                "correctAnswer": "American History X",
+                "alternatives": [
+                    {
+                        "title": "Into the Wild",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "American History X",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Departed",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Hotel Rwanda",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Edward Norton, Edward Furlong, Beverly D'Angelo"
+            },
+            {
+                "questionID": 2,
+                "type": "actors",
+                "correctAnswer": "Interstellar",
+                "alternatives": [
+                    {
+                        "title": "Interstellar",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "12 Years a Slave",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Godfather Part II",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Incendies",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Matthew McConaughey, Anne Hathaway, Jessica Chastain"
+            },
+            {
+                "questionID": 3,
+                "type": "plot",
+                "correctAnswer": "WALL\u00b7E",
+                "alternatives": [
+                    {
+                        "title": "Judgment at Nuremberg",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "8\u00bd",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Touch of Evil",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "WALL\u00b7E",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind."
+            },
+            {
+                "questionID": 4,
+                "type": "poster",
+                "correctAnswer": "Eternal Sunshine of the Spotless Mind",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BMTY4NzcwODg3Nl5BMl5BanBnXkFtZTcwNTEwOTMyMw@@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 5,
+                "type": "plot",
+                "correctAnswer": "2001: A Space Odyssey",
+                "alternatives": [
+                    {
+                        "title": "2001: A Space Odyssey",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "A Wednesday",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Modern Times",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Wolf of Wall Street",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "After uncovering a mysterious artifact buried beneath the Lunar surface, a spacecraft is sent to Jupiter to find its origins: a spacecraft manned by two men and the supercomputer HAL 9000."
+            },
+            {
+                "questionID": 6,
+                "type": "trailer",
+                "correctAnswer": "The Best Years of Our Lives",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/X9lufYAOxes",
+                "guesses": []
+            },
+            {
+                "questionID": 7,
+                "type": "poster",
+                "correctAnswer": "The Gold Rush",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BZjEyOTE4MzMtNmMzMy00Mzc3LWJlOTQtOGJiNDE0ZmJiOTU4L2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 8,
+                "type": "plot",
+                "correctAnswer": "Gone with the Wind",
+                "alternatives": [
+                    {
+                        "title": "The Lion King",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Before Sunrise",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Gone with the Wind",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Mary and Max",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "A sheltered and manipulative Southern belle and a roguish profiteer face off in a turbulent romance as the society around them crumbles with the end of slavery and is rebuilt during the Civil War and Reconstruction periods."
+            },
+            {
+                "questionID": 9,
+                "type": "plot",
+                "correctAnswer": "Gandhi",
+                "alternatives": [
+                    {
+                        "title": "A Wednesday",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Star Wars: Episode IV - A New Hope",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Gandhi",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Harry Potter and the Deathly Hallows: Part 2",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "The life of the lawyer who became the famed leader of the Indian revolts against the British rule through his philosophy of nonviolent protest."
+            }
+        ],
+        "isStarted": false,
+        "replay": false,
+        "currentQuestion": ""
+    },
+    {
+        "gameID": 25793,
+        "hostID": 10,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "fefefefe",
+                "userID": 10,
+                "profilePicture": null,
+                "points": 0
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "trailer",
+                "correctAnswer": "Inception",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/Jvurpf91omw",
+                "guesses": []
+            },
+            {
+                "questionID": 1,
+                "type": "actors",
+                "correctAnswer": "Rear Window",
+                "alternatives": [
+                    {
+                        "title": "Million Dollar Baby",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Rear Window",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Million Dollar Baby",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Lion King",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "James Stewart, Grace Kelly, Wendell Corey"
+            },
+            {
+                "questionID": 2,
+                "type": "plot",
+                "correctAnswer": "Witness for the Prosecution",
+                "alternatives": [
+                    {
+                        "title": "Witness for the Prosecution",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Deer Hunter",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Gold Rush",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "2001: A Space Odyssey",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "A veteran British barrister must defend his client in a murder trial that has surprise after surprise."
+            },
+            {
+                "questionID": 3,
+                "type": "actors",
+                "correctAnswer": "Some Like It Hot",
+                "alternatives": [
+                    {
+                        "title": "The Wolf of Wall Street",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "American Beauty",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Some Like It Hot",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "La haine",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Marilyn Monroe, Tony Curtis, Jack Lemmon"
+            },
+            {
+                "questionID": 4,
+                "type": "poster",
+                "correctAnswer": "The Hamster Factor and Other Tales of Twelve Monkeys",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BZTAxNzY1NTktNjA1Zi00MjJjLThkMTgtNTM0NTI1NWIzNDQ3XkEyXkFqcGdeQXVyODAyNDE3Mw@@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 5,
+                "type": "actors",
+                "correctAnswer": "The Best Years of Our Lives",
+                "alternatives": [
+                    {
+                        "title": "The Best Years of Our Lives",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Terminator",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Star Wars: Episode IV - A New Hope",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Amadeus",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Myrna Loy, Dana Andrews, Fredric March"
+            },
+            {
+                "questionID": 6,
+                "type": "trailer",
+                "correctAnswer": "On the Waterfront",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/boekTHsOIY8",
+                "guesses": []
+            },
+            {
+                "questionID": 7,
+                "type": "actors",
+                "correctAnswer": "Beauty and the Beast",
+                "alternatives": [
+                    {
+                        "title": "Beauty and the Beast",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Star Wars: Episode IV - A New Hope",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Gold Rush",
                         "whoGuessed": []
                     },
                     {
@@ -63,41 +2348,801 @@
                     }
                 ],
                 "questionTitle": "What movie has these actors in it?",
-                "questionText": "Charles Chaplin, Paulette Goddard, Henry Bergman"
+                "questionText": "Paige O'Hara, Robby Benson, Jesse Corti"
+            },
+            {
+                "questionID": 8,
+                "type": "trailer",
+                "correctAnswer": "Gone with the Wind",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/0dTsfsr6-X8",
+                "guesses": []
+            },
+            {
+                "questionID": 9,
+                "type": "actors",
+                "correctAnswer": "Hotel Rwanda",
+                "alternatives": [
+                    {
+                        "title": "Star Wars: Episode V - The Empire Strikes Back",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "On the Waterfront",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Hotel Rwanda",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Stand by Me",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Don Cheadle, Sophie Okonedo, Joaquin Phoenix"
+            }
+        ],
+        "isStarted": false,
+        "replay": false,
+        "currentQuestion": ""
+    },
+    {
+        "gameID": 28653,
+        "hostID": 10,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "fefefefe",
+                "userID": 10,
+                "profilePicture": "The bear.jpg",
+                "points": 103.2
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "plot",
+                "correctAnswer": "The Great Dictator",
+                "alternatives": [
+                    {
+                        "title": "Paper Moon",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "American History X",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Great Dictator",
+                        "whoGuessed": [
+                            {
+                                "name": "fefefefe",
+                                "userID": 10,
+                                "profilePicture": "The bear.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "WALL\u00b7E",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "Dictator Adenoid Hynkel tries to expand his empire while a poor Jewish barber tries to avoid persecution from Hynkel's regime."
+            },
+            {
+                "questionID": 1,
+                "type": "trailer",
+                "correctAnswer": "Forrest Gump",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/bLvqoHBptjg",
+                "guesses": [
+                    "Forrest Gump",
+                    "Forrest Gump",
+                    "Forrest Gump",
+                    "Forrest Gump",
+                    "Forrest Gump",
+                    "Forrest Gump"
+                ]
             },
             {
                 "questionID": 2,
-                "type": "poster",
-                "correctAnswer": "American Beauty",
-                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BNTBmZWJkNjctNDhiNC00MGE2LWEwOTctZTk5OGVhMWMyNmVhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+                "type": "trailer",
+                "correctAnswer": "Inception",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/Jvurpf91omw",
                 "guesses": [
-                    "Fight Club"
+                    "Inception",
+                    "Inception",
+                    "Inception",
+                    "Inception",
+                    "Inception",
+                    "Inception",
+                    "Inception",
+                    "Inception",
+                    "Inception",
+                    "Inception",
+                    "Inception",
+                    "Inception",
+                    "Inception",
+                    "Inception",
+                    "Inception",
+                    "Inception"
                 ]
             },
             {
                 "questionID": 3,
-                "type": "poster",
-                "correctAnswer": "Eternal Sunshine of the Spotless Mind",
-                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BMTY4NzcwODg3Nl5BMl5BanBnXkFtZTcwNTEwOTMyMw@@._V1_SX300.jpg",
-                "guesses": [
-                    "L\u00e9on: The Professional"
-                ]
-            },
-            {
-                "questionID": 4,
-                "type": "actors",
-                "correctAnswer": "Before Sunrise",
+                "type": "plot",
+                "correctAnswer": "The Godfather Part II",
                 "alternatives": [
                     {
-                        "title": "2001: A Space Odyssey",
+                        "title": "The Gold Rush",
                         "whoGuessed": []
                     },
                     {
-                        "title": "Gandhi",
+                        "title": "The Godfather Part II",
+                        "whoGuessed": [
+                            {
+                                "name": "fefefefe",
+                                "userID": 10,
+                                "profilePicture": "The bear.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "American Beauty",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "La La Land",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate."
+            },
+            {
+                "questionID": 4,
+                "type": "poster",
+                "correctAnswer": "Scarface",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BNjdjNGQ4NDEtNTEwYS00MTgxLTliYzQtYzE2ZDRiZjFhZmNlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+                "guesses": [
+                    "Scarface",
+                    "Scarface",
+                    "Scarface"
+                ]
+            },
+            {
+                "questionID": 5,
+                "type": "actors",
+                "correctAnswer": "Incendies",
+                "alternatives": [
+                    {
+                        "title": "Good Will Hunting",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "12 Years a Slave",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Incendies",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Lubna Azabal, M\u00e9lissa D\u00e9sormeaux-Poulin, Maxim Gaudette"
+            },
+            {
+                "questionID": 6,
+                "type": "poster",
+                "correctAnswer": "Die Hard",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BZjRlNDUxZjAtOGQ4OC00OTNlLTgxNmQtYTBmMDgwZmNmNjkxXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 7,
+                "type": "plot",
+                "correctAnswer": "A Wednesday",
+                "alternatives": [
+                    {
+                        "title": "The Treasure of the Sierra Madre",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Sunset Blvd.",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Godfather Part II",
                         "whoGuessed": []
                     },
                     {
                         "title": "A Wednesday",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "A retiring police officer reminisces about the most astounding day of his career. About a case that was never filed but continues to haunt him in his memories - the case of a man and a Wednesday."
+            },
+            {
+                "questionID": 8,
+                "type": "plot",
+                "correctAnswer": "Beauty and the Beast",
+                "alternatives": [
+                    {
+                        "title": "Inception",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Mary and Max",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Forrest Gump",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Beauty and the Beast",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "A prince cursed to spend his days as a hideous monster sets out to regain his humanity by earning a young woman's love."
+            },
+            {
+                "questionID": 9,
+                "type": "actors",
+                "correctAnswer": "La haine",
+                "alternatives": [
+                    {
+                        "title": "The Great Escape",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "On the Waterfront",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Terminator",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "La haine",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Vincent Cassel, Hubert Kound\u00e9, Sa\u00efd Taghmaoui"
+            }
+        ],
+        "isStarted": true,
+        "replay": false,
+        "currentQuestion": ""
+    },
+    {
+        "gameID": 98676,
+        "hostID": 10,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "fefefefe",
+                "userID": 10,
+                "profilePicture": "The bear.jpg",
+                "points": 0
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "actors",
+                "correctAnswer": "Vertigo",
+                "alternatives": [
+                    {
+                        "title": "Scarface",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Eternal Sunshine of the Spotless Mind",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "A Clockwork Orange",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Vertigo",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "James Stewart, Kim Novak, Barbara Bel Geddes"
+            },
+            {
+                "questionID": 1,
+                "type": "plot",
+                "correctAnswer": "Forrest Gump",
+                "alternatives": [
+                    {
+                        "title": "La haine",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Great Escape",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Forrest Gump",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Great Dictator",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "The history of the United States from the 1950s to the '70s unfolds from the perspective of an Alabama man with an IQ of 75, who yearns to be reunited with his childhood sweetheart."
+            },
+            {
+                "questionID": 2,
+                "type": "poster",
+                "correctAnswer": "The Godfather",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 3,
+                "type": "trailer",
+                "correctAnswer": "The Godfather Part II",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/9O1Iy9od7-A",
+                "guesses": []
+            },
+            {
+                "questionID": 4,
+                "type": "poster",
+                "correctAnswer": "Blade Runner",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BNzQzMzJhZTEtOWM4NS00MTdhLTg0YjgtMjM4MDRkZjUwZDBlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 5,
+                "type": "trailer",
+                "correctAnswer": "Hacksaw Ridge",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/s2-1hz1juBI",
+                "guesses": []
+            },
+            {
+                "questionID": 6,
+                "type": "trailer",
+                "correctAnswer": "Some Like It Hot",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/vvgWJ4VRwrg",
+                "guesses": []
+            },
+            {
+                "questionID": 7,
+                "type": "trailer",
+                "correctAnswer": "Chinatown",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/T37QkBc4IGY",
+                "guesses": []
+            },
+            {
+                "questionID": 8,
+                "type": "trailer",
+                "correctAnswer": "On the Waterfront",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/boekTHsOIY8",
+                "guesses": []
+            },
+            {
+                "questionID": 9,
+                "type": "actors",
+                "correctAnswer": "Paper Moon",
+                "alternatives": [
+                    {
+                        "title": "Paper Moon",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Bridge on the River Kwai",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "City Lights",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Alien",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Ryan O'Neal, Tatum O'Neal, Madeline Kahn"
+            }
+        ],
+        "isStarted": false,
+        "replay": false,
+        "currentQuestion": ""
+    },
+    {
+        "gameID": 77635,
+        "hostID": 10,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "fefefefe",
+                "userID": 10,
+                "profilePicture": "The bear.jpg",
+                "points": 554.4
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "plot",
+                "correctAnswer": "Se7en",
+                "alternatives": [
+                    {
+                        "title": "Star Wars: Episode V - The Empire Strikes Back",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Bakomfilm Smultronst\u00e4llet",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Se7en",
+                        "whoGuessed": [
+                            {
+                                "name": "fefefefe",
+                                "userID": 10,
+                                "profilePicture": "The bear.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "PK",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "Two detectives, a rookie and a veteran, hunt a serial killer who uses the seven deadly sins as his motives."
+            },
+            {
+                "questionID": 1,
+                "type": "trailer",
+                "correctAnswer": "Modern Times",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/NNznUyDmSFc",
+                "guesses": [
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times",
+                    "Modern Times"
+                ]
+            },
+            {
+                "questionID": 2,
+                "type": "actors",
+                "correctAnswer": "Eskiya",
+                "alternatives": [
+                    {
+                        "title": "Blade Runner",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Bakomfilm Smultronst\u00e4llet",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Eskiya",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "A Clockwork Orange",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Sibel G\u00f6ksel, Tanju Korel, Ali Cagaloglu"
+            },
+            {
+                "questionID": 3,
+                "type": "poster",
+                "correctAnswer": "Monty Python and the Holy Grail",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BN2IyNTE4YzUtZWU0Mi00MGIwLTgyMmQtMzQ4YzQxYWNlYWE2XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 4,
+                "type": "plot",
+                "correctAnswer": "A Wednesday",
+                "alternatives": [
+                    {
+                        "title": "A Wednesday",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Saving Private Ryan",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Best Years of Our Lives",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Deer Hunter",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "A retiring police officer reminisces about the most astounding day of his career. About a case that was never filed but continues to haunt him in his memories - the case of a man and a Wednesday."
+            },
+            {
+                "questionID": 5,
+                "type": "poster",
+                "correctAnswer": "Some Like It Hot",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BNzAyOGIxYjAtMGY2NC00ZTgyLWIwMWEtYzY0OWQ4NDFjOTc5XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 6,
+                "type": "plot",
+                "correctAnswer": "Bakomfilm Smultronst\u00e4llet",
+                "alternatives": [
+                    {
+                        "title": "V for Vendetta",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Godfather",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "American History X",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Bakomfilm Smultronst\u00e4llet",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "Behind the scenes of the well known film Wild Strawberries written and directed by Ingmar Bergman"
+            },
+            {
+                "questionID": 7,
+                "type": "actors",
+                "correctAnswer": "Gone with the Wind",
+                "alternatives": [
+                    {
+                        "title": "Some Like It Hot",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "City Lights",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Gone with the Wind",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Departed",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Clark Gable, Vivien Leigh, Thomas Mitchell"
+            },
+            {
+                "questionID": 8,
+                "type": "plot",
+                "correctAnswer": "There Will Be Blood",
+                "alternatives": [
+                    {
+                        "title": "A Clockwork Orange",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "There Will Be Blood",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "City Lights",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "It Happened One Night",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "A story of family, religion, hatred, oil and madness, focusing on a turn-of-the-century prospector in the early days of the business."
+            },
+            {
+                "questionID": 9,
+                "type": "actors",
+                "correctAnswer": "Paper Moon",
+                "alternatives": [
+                    {
+                        "title": "PK",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Paper Moon",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Star Wars: Episode IV - A New Hope",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "M",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Ryan O'Neal, Tatum O'Neal, Madeline Kahn"
+            }
+        ],
+        "isStarted": true,
+        "replay": false,
+        "currentQuestion": ""
+    },
+    {
+        "gameID": 79695,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 11.3
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "actors",
+                "correctAnswer": "Se7en",
+                "alternatives": [
+                    {
+                        "title": "Se7en",
                         "whoGuessed": [
                             {
                                 "name": "w",
@@ -107,119 +3152,183 @@
                         ]
                     },
                     {
-                        "title": "Before Sunrise",
-                        "whoGuessed": []
-                    }
-                ],
-                "questionTitle": "What movie has these actors in it?",
-                "questionText": "Ethan Hawke, Julie Delpy, Andrea Eckert"
-            },
-            {
-                "questionID": 5,
-                "type": "actors",
-                "correctAnswer": "Raging Bull",
-                "alternatives": [
-                    {
-                        "title": "3 Idiots",
+                        "title": "2001: A Space Odyssey",
                         "whoGuessed": []
                     },
                     {
-                        "title": "Raging Bull",
-                        "whoGuessed": []
-                    },
-                    {
-                        "title": "American Beauty",
-                        "whoGuessed": []
-                    },
-                    {
-                        "title": "12 Years a Slave",
-                        "whoGuessed": []
-                    }
-                ],
-                "questionTitle": "What movie has these actors in it?",
-                "questionText": "Robert De Niro, Cathy Moriarty, Joe Pesci"
-            },
-            {
-                "questionID": 6,
-                "type": "actors",
-                "correctAnswer": "Barry Lyndon",
-                "alternatives": [
-                    {
-                        "title": "Munna Bhai M.B.B.S.",
-                        "whoGuessed": []
-                    },
-                    {
-                        "title": "Eternal Sunshine of the Spotless Mind",
-                        "whoGuessed": []
-                    },
-                    {
-                        "title": "Barry Lyndon",
-                        "whoGuessed": []
-                    },
-                    {
-                        "title": "The Best Years of Our Lives",
-                        "whoGuessed": []
-                    }
-                ],
-                "questionTitle": "What movie has these actors in it?",
-                "questionText": "Ryan O'Neal, Marisa Berenson, Patrick Magee"
-            },
-            {
-                "questionID": 7,
-                "type": "actors",
-                "correctAnswer": "The Third Man",
-                "alternatives": [
-                    {
-                        "title": "Jurassic Park",
+                        "title": "Modern Times",
                         "whoGuessed": []
                     },
                     {
                         "title": "The Treasure of the Sierra Madre",
                         "whoGuessed": []
-                    },
-                    {
-                        "title": "The Third Man",
-                        "whoGuessed": []
-                    },
-                    {
-                        "title": "American Beauty",
-                        "whoGuessed": []
                     }
                 ],
                 "questionTitle": "What movie has these actors in it?",
-                "questionText": "Orson Welles, Joseph Cotten, Alida Valli"
+                "questionText": "Morgan Freeman, Brad Pitt, Kevin Spacey"
             },
             {
-                "questionID": 8,
+                "questionID": 1,
                 "type": "poster",
-                "correctAnswer": "Pulp Fiction",
-                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
-                "guesses": []
+                "correctAnswer": "L\u00e9on: The Professional",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BOTgyMWQ0ZWUtN2Q2MS00NmY0LWI3OWMtNjFkMzZlNDZjNTk0XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg",
+                "guesses": [
+                    "L\u00e9on: The Professional"
+                ]
             },
             {
-                "questionID": 9,
+                "questionID": 2,
                 "type": "plot",
-                "correctAnswer": "Jurassic Park",
+                "correctAnswer": "A Clockwork Orange",
                 "alternatives": [
                     {
-                        "title": "There Will Be Blood",
+                        "title": "A Clockwork Orange",
+                        "whoGuessed": [
+                            {
+                                "name": "w",
+                                "userID": 1,
+                                "profilePicture": "The bear.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "American History X",
                         "whoGuessed": []
                     },
                     {
-                        "title": "Jurassic Park",
+                        "title": "Finding Nemo",
                         "whoGuessed": []
                     },
                     {
-                        "title": "Rear Window",
-                        "whoGuessed": []
-                    },
-                    {
-                        "title": "Scarface",
+                        "title": "Some Like It Hot",
                         "whoGuessed": []
                     }
                 ],
                 "questionTitle": "What movie does this plot describe?",
-                "questionText": "A pragmatic paleontologist touring an almost complete theme park on an island in Central America is tasked with protecting a couple of kids after a power failure causes the park's cloned dinosaurs to run loose."
+                "questionText": "In the future, a sadistic gang leader is imprisoned and volunteers for a conduct-aversion experiment, but it doesn't go as planned."
+            },
+            {
+                "questionID": 3,
+                "type": "poster",
+                "correctAnswer": "3 Idiots",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BNTkyOGVjMGEtNmQzZi00NzFlLTlhOWQtODYyMDc2ZGJmYzFhXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 4,
+                "type": "poster",
+                "correctAnswer": "2001: A Space Odyssey",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BMmNlYzRiNDctZWNhMi00MzI4LThkZTctMTUzMmZkMmFmNThmXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+                "guesses": [
+                    "Eternal Sunshine of the Spotless Mind"
+                ]
+            },
+            {
+                "questionID": 5,
+                "type": "actors",
+                "correctAnswer": "Logan",
+                "alternatives": [
+                    {
+                        "title": "The Godfather Part II",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Touch of Evil",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "La haine",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Logan",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "Hugh Jackman, Patrick Stewart, Dafne Keen"
+            },
+            {
+                "questionID": 6,
+                "type": "plot",
+                "correctAnswer": "A Wednesday",
+                "alternatives": [
+                    {
+                        "title": "Psycho",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Dark Knight Rises",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "A Wednesday",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Godfather",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "A retiring police officer reminisces about the most astounding day of his career. About a case that was never filed but continues to haunt him in his memories - the case of a man and a Wednesday."
+            },
+            {
+                "questionID": 7,
+                "type": "plot",
+                "correctAnswer": "12 Years a Slave",
+                "alternatives": [
+                    {
+                        "title": "City Lights",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "12 Years a Slave",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Forrest Gump",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Before Sunrise",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie does this plot describe?",
+                "questionText": "In the antebellum United States, Solomon Northup, a free black man from upstate New York, is abducted and sold into slavery."
+            },
+            {
+                "questionID": 8,
+                "type": "poster",
+                "correctAnswer": "The Great Escape",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BNzA2NmYxMWUtNzBlMC00MWM2LTkwNmQtYTFlZjQwODNhOWE0XkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 9,
+                "type": "actors",
+                "correctAnswer": "Pulp Fiction",
+                "alternatives": [
+                    {
+                        "title": "Blade Runner",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "American History X",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "L\u00e9on: The Professional",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Pulp Fiction",
+                        "whoGuessed": []
+                    }
+                ],
+                "questionTitle": "What movie has these actors in it?",
+                "questionText": "John Travolta, Uma Thurman, Samuel L. Jackson"
             }
         ],
         "isStarted": true,

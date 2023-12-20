@@ -199,3 +199,35 @@
 #profilePageUsername {
     margin: 0;
 }
+#addFriendsContainer{
+    position: absolute;
+    left: 465px;
+    top: 137px;
+    margin: auto;
+}
+#userDisplay{
+    width: 526px;
+    height: 359px;
+    border-radius: 0px 0px var(--Radius-Radius-md, 20px) var(--Radius-Radius-md, 20px);
+    background: var(--Colors-Menu-Background, #2B2A4C);
+    z-index: 1;
+}
+#searchField{
+    width: 526px;
+    height: 55px;
+    border-radius: var(--Radius-Radius-md, 20px) var(--Radius-Radius-md, 20px) 0px 0px;
+    background: linear-gradient(0deg, var(--Colors-Search-background, #2C2C40) 0%, var(--Colors-Search-background, #2C2C40) 100%), var(--Colors-Blue-Disable, rgba(103, 101, 159, 0.35));
+    z-index: 1;
+    display: flex;
+    justify-content: flex-start;
+    
+}
+
+#searchField input{
+    background-color: #2C2C40;
+    border: none;
+    margin-left: 30px;
+    font-family: Jost;
+font-size: 20px;
+font-style: normal;
+}

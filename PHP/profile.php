@@ -43,10 +43,10 @@ function profile($users, $received_data){
                     
                     $users[$index]["popcorn"] += $points;
 
-                    if($users[$index]["popcorn"] === $users[$index]["xpGoal"]){
+                    if($users[$index]["popcorn"] > $users[$index]["xpGoal"]){
                         $users[$index]["level"] += 1;
                         $level = $users[$index]["level"] * 25;
-                        $users[$index]["xpGoal"] += 150 + $level;
+                        $users[$index]["xpGoal"] += 1000 + $level;
                     }
                     putInUsersJSON($users);
                     sendJSON(["message" => $user], 200);
@@ -148,6 +148,16 @@ function profile($users, $received_data){
         foreach($users as $index => $user){
             if($user["username"] === $username){
                 $user["lastSpun"] = 1;
+                putInUsersJSON($users);
+                sendJSON(["message" => $user["lastSpun"]], 200);
+                    
+            }
+        }
+    }
+    if($subAction === "deleteAccount"){
+        foreach($users as $index => $user){
+            if($user["username"] === $username){
+                unset($users[$user]);
                 putInUsersJSON($users);
                 sendJSON(["message" => $user["lastSpun"]], 200);
                     
