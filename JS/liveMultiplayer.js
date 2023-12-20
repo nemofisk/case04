@@ -6,7 +6,7 @@ TODO:
 Ändra så att man väntar på alla innan nästa fråga ges:
     nyckel som kollar så att alla som är med i gamet(userID) har svarat och nått endscreen, sen uppdateras nyckeln nextQuestion till true, sen false när nästa börjat
 
-Ändra end game - just nu nya frågor när första är klar och lämnar *BYTA*
+Ändra end game - just nu nya frågor när första är klar och lämnar *BYTA* Nya frågor när startGame klickas, inte tas bort från members när når end screen, resetta alla poäng när klickar startGame
 
 */
 
@@ -134,6 +134,8 @@ async function renderLobby(fetchIntervalID) {
                 clearInterval(intervalID);
                 prepareQuestion(0);
             }
+        } else {
+            clearInterval(intervalID);
         }
     }, 1000)
 
@@ -539,10 +541,6 @@ async function endOfQuestion(question) {
             alternative.appendChild(whoGuessed);
 
         })
-
-    }
-
-    if (qType == "trailer" || qType == "poster") {
 
     }
 

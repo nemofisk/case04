@@ -107,13 +107,20 @@ async function DisplaySidebar(event) {
     })
     document.querySelector("main").appendChild(nav);
     document.getElementById("home").addEventListener("click", e => {
+        window.localStorage.removeItem("gameInfo");
+        console.log();
         renderStartingpage()
     })
     document.getElementById("profilePage").addEventListener("click", e => {
+        window.localStorage.removeItem("gameInfo");
         renderProfilePage()
     })
-    document.getElementById("RenderLeaderboard").addEventListener("click", renderLeaderBoard)
+    document.getElementById("RenderLeaderboard").addEventListener("click", ev => {
+        window.localStorage.removeItem("gameInfo");
+        renderLeaderBoard(ev);
+    })
     document.getElementById("renderLyckyWheel").addEventListener("click", e => {
+        window.localStorage.removeItem("gameInfo");
         renderLuckyWheel()
     })
     document.getElementById("renderSettings").addEventListener("click", e => {

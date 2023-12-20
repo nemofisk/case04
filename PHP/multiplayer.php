@@ -48,9 +48,8 @@ function multiplayer($users, $received_data){
                         "profilePicture" => $user["profile_picture"],
                         "points" => 0
                     ]],
-                    "questions" => getRandomMovies(10, $selectedGenres),
+                    "questions" => getRandomMovies(4, $selectedGenres),
                     "isStarted" => false,
-                    "replay" => false,
                     "currentQuestion" => "",
                 ];
                 
@@ -92,8 +91,18 @@ function multiplayer($users, $received_data){
                             "profilePicture" => $user["profile_picture"],
                             "points" => 0
                         ];
-                        $game["members"][] = $gameobject;
-                    
+
+                        $alreadyInGame = false;
+
+                        foreach($game["members"] as $member){
+                            if($member["userID"] == $gameObject["userID"]){
+                                $alreadyInGame = true;
+                            }
+                        }
+
+                        if(!$alreadyInGame){
+                            $game["members"][] = $gameobject;
+                        }
                     }
                 }
             }

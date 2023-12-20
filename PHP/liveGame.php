@@ -107,6 +107,9 @@ function liveGame($users, $games, $recieved_data){
 
     if($subAction === "startGame"){
         $games[$currentGameIndex]["isStarted"] = true;
+        foreach($games[$currentGameIndex]["members"] as &$member){
+            $member["points"] == 0;
+        }
         putInMultiplayerJSON($games);
     }
 
@@ -119,12 +122,6 @@ function liveGame($users, $games, $recieved_data){
             $newQuestions = getRandomMovies(10, $genres);
 
             $games[$currentGameIndex]["questions"] = $newQuestions;
-        }
-
-        foreach($games[$currentGameIndex]["members"] as $index => $member){
-            if($member["userID"] == $userID){
-                array_splice($games[$currentGameIndex]["members"], $index, 1);
-            }
         }
 
         putInMultiplayerJSON($games);
