@@ -1,46 +1,67 @@
 
-function renderSettings(){
+function renderSettings() {
     document.querySelector("main").innerHTML = `
     <div class="profile">
         <div id="profilePic"></div>
         <img src="images/Frame 263.png" alt="Logo">
     </div>
 
-    <h1>Settings</h1>
+    <h1 id="settingsHeader">Settings</h1>
     <div id="settingsContainer">
         <div id="leftSideBox">
             <div class="settingsDivs">
+            <div class="middlediv">
                 <img src="../images/person.png">
                 <p id="account">Account</p>
             </div>
-            <div class="specificWidth">
+                <img class="chevron" src="images/chevron_right.png"></img>
+            </div>
+            <div class="settingsDivs">
+            <div class="middlediv">
                 <img src="../images/notifications (1).png">
                 <p>Notifications</p>
             </div>
-            <div class="settingsDivs">
+                <img class="chevron" src="images/chevron_right.png"></img>
+            </div>
+            <div class="settingsDivs2">
+            <div class="middlediv">
                 <img src="../images/help.png">
                 <p>Help</p>
             </div>
+                <img class="chevron" src="images/chevron_right.png"></img>
+            </div>
             <div class="settingsDivs">
+            <div class="middlediv">
             <img src="../images/info.png">
             <p>About</p>
             </div>
-            <div class="specificWidth">
+            <img class="chevron" src="images/chevron_right.png"></img>
+            </div>
+            <div class="settingsDivs2">
+            <div class="middlediv">
                 <img src="../images/language.png">
                 <p>Language</p>
+                </div>
+                <img class="chevron" src="images/chevron_right.png"></img>
             </div>
         </div>
 
         <div id="seperator"></div>
 
         <div id="rightSideBox">
-            <div class="specificWidth">
+            <div class="settingsDivs">
+            <div class="middlediv">
                 <img src="../images/delete.png">
                 <p id="deleteAccount">Delete Account</p>
             </div>
-            <div class="specificWidth">
+                <img class="chevron" src="images/chevron_right.png"></img>
+            </div>
+            <div class="settingsDivs3">
+            <div class="middlediv">
                 <img src="../images/logout.png">
                 <p id="logout">Logout</p>
+            </div>
+                <img class="chevron" src="images/chevron_right.png"></img>
             </div>
         </div>
     </div>
@@ -53,13 +74,13 @@ function renderSettings(){
     document.querySelector("#logout").addEventListener("click", logout)
 }
 
-function displayAccountOptions(event){
+function displayAccountOptions(event) {
     popUpFunction("changeUserOrPass", event)
 }
-function deleteAccount(event){
+function deleteAccount(event) {
 
 }
-function logout(event){
+function logout(event) {
     window.localStorage.clear();
     renderFirstPage()
 }
