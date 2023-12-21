@@ -98,6 +98,7 @@ function popUpFunction(action, information) {
                 userDisplayDiv.appendChild(userDiv);
 
                 userDiv.querySelector(".sendRequestButton").addEventListener("click", event => {
+
                     event.target.style.backgroundColor = "rgba(103, 101, 159, 0.35)"
 
                     
