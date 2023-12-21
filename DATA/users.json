@@ -185,7 +185,9 @@
         "popcorn": 6444,
         "gameInvites": [],
         "friends": [],
-        "friendRequests": [],
+        "friendRequests": [
+            "w"
+        ],
         "xpGoal": 6500,
         "clues": 0,
         "resetTimer": 0,
@@ -205,5 +207,19 @@
         "resetTimer": 0,
         "id": 11,
         "profile_picture": "Peaky Blinders (kopia).webp"
+    },
+    {
+        "username": "grgrgr",
+        "password": "grgrgrg",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 1000,
+        "clues": 0,
+        "resetTimer": 0,
+        "profile_picture": "Frame 621.png",
+        "id": 12
     }
 ]

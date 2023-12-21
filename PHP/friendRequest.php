@@ -100,6 +100,10 @@ function friendRequest($received_data, $users){
         sendJSON($message, 200);
  
     }
+    if($subAction === "getAllUsers"){
+        $message = ["message" => $users];
+        sendJSON($message, 200);
+    }
 }
 
 
