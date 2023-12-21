@@ -107,20 +107,27 @@ async function DisplaySidebar(event) {
     })
     document.querySelector("main").appendChild(nav);
     document.getElementById("home").addEventListener("click", e => {
-        window.localStorage.removeItem("gameInfo");
-        console.log();
+        if (document.querySelector("main").classList.contains("mpMain")) {
+            document.querySelector("main").classList.remove("mpMain");
+        }
         renderStartingpage()
     })
     document.getElementById("profilePage").addEventListener("click", e => {
-        window.localStorage.removeItem("gameInfo");
+        if (document.querySelector("main").classList.contains("mpMain")) {
+            document.querySelector("main").classList.remove("mpMain");
+        }
         renderProfilePage()
     })
     document.getElementById("RenderLeaderboard").addEventListener("click", ev => {
-        window.localStorage.removeItem("gameInfo");
+        if (document.querySelector("main").classList.contains("mpMain")) {
+            document.querySelector("main").classList.remove("mpMain");
+        }
         renderLeaderBoard(ev);
     })
     document.getElementById("renderLyckyWheel").addEventListener("click", e => {
-        window.localStorage.removeItem("gameInfo");
+        if (document.querySelector("main").classList.contains("mpMain")) {
+            document.querySelector("main").classList.remove("mpMain");
+        }
         renderLuckyWheel()
     })
     document.getElementById("renderSettings").addEventListener("click", e => {

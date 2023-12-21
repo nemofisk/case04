@@ -11,6 +11,8 @@ TODO:
 */
 
 async function joinGame(gameID) {
+    document.querySelector("main").classList.add("mpMain");
+
     console.log(`joinGame GameID: ${gameID}`);
     const request = new Request("PHP/api.php", {
         method: "POST",
@@ -54,28 +56,34 @@ async function calculateNextFetch(initialEpoch, gameID) {
 async function startFetchGameInfo(gameID) {
     console.log(`startFetch GameID: ${gameID}`);
     const intervalID = setInterval(async function () {
-        console.log(`interval GameID: ${gameID}`);
-        const body = {
-            username: window.localStorage.getItem("username"),
-            action: "liveGame",
-            subAction: "fetchGameInfo",
-            gameID: gameID,
-            userID: parseInt(window.localStorage.getItem("userID"))
+        if (document.querySelector("main").classList.contains("mpMain")) {
+            console.log(`interval GameID: ${gameID}`);
+            const body = {
+                username: window.localStorage.getItem("username"),
+                action: "liveGame",
+                subAction: "fetchGameInfo",
+                gameID: gameID,
+                userID: parseInt(window.localStorage.getItem("userID"))
+            }
+            const request = new Request("PHP/api.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(body)
+            })
+
+            // console.log(body);
+
+            const response = await callAPI(request, true, false);
+            const resource = await response.json();
+
+            window.localStorage.setItem("gameInfo", JSON.stringify(await resource));
+            const randomNum = Math.floor(Math.random() * 100) + 1;
+            // console.log("**************************************" + randomNum);
+        } else {
+            clearInterval(intervalID);
+            window.localStorage.removeItem("gameInfo");
         }
-        const request = new Request("PHP/api.php", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(body)
-        })
 
-        // console.log(body);
-
-        const response = await callAPI(request, true, false);
-        const resource = await response.json();
-
-        window.localStorage.setItem("gameInfo", JSON.stringify(await resource));
-        const randomNum = Math.floor(Math.random() * 100) + 1;
-        // console.log("**************************************" + randomNum);
     }, 1000)
 
     window.localStorage.setItem("fetchIntervalID", intervalID)
@@ -88,9 +96,9 @@ async function renderLobby(fetchIntervalID) {
     const main = document.querySelector("main");
 
     main.innerHTML = `
-        <div id="contentWrapper">
+        <div id="contentWrapper" class="lobbyWrapper">
         
-            <h1>Waiting for the host to start the game</h1>
+            <div id="lobbyInfo">Waiting for the host to start the game</div>
             <div id="lobbyMemberList"></div>
             <button id="lobbyButton" class="mpButton"></button>
 
@@ -114,7 +122,6 @@ async function renderLobby(fetchIntervalID) {
             const memberListDom = main.querySelector("#lobbyMemberList")
             const lobbyMembers = memberListDom.querySelectorAll(".member");
 
-
             if (lobbyMembers.length != gameMembers.length) {
                 memberListDom.innerHTML = "";
 
@@ -130,6 +137,10 @@ async function renderLobby(fetchIntervalID) {
                         `
 
                         memberListDom.appendChild(memberDiv);
+                        if (gameInfo.hostID == member.userID) {
+                            memberDiv.querySelector(".crown").classList.add("active");
+                        }
+
                     }
                 })
             }
@@ -266,10 +277,14 @@ function mpTextQuestion(question) {
 
     main.innerHTML = `
 
-        <div id="contentWrapper">
+        <div id="contentWrapper" class="cwType${question.type}">
+
+            <div id="timer" data-current-time="30">
+                <div id="timerProgress"></div>
+            </div>
+
             <div id="questionContainer">
             
-                <div id="timer">10</div>
                 <div id="questionText" class="type${question.type}">${question.questionText}</div>
         
             </div>
@@ -326,9 +341,11 @@ function mpTrailerQuestion(question) {
 
     main.innerHTML = `
     
-        <div id="contentWrapper">
+        <div id="contentWrapper" class="cwType${question.type}">
         
-            <div id="timer">20</div>
+            <div id="timer" data-current-time="30">
+                <div id="timerProgress"></div>
+            </div>
             <div id="videoContainer">
             
                 <iframe src=${question.youtubeLink}?autoplay=1&mute=1&controls=0&disablekb=1&showinfo=0 title="" frameborder="0" controls="0" disablekb="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -340,7 +357,7 @@ function mpTrailerQuestion(question) {
 
             <div id="answerContainer">
 
-                <input id="searchMovie">
+                <input id="searchMovie" placeholder="Which movie?">
                 <div id="foundMovies"></div>
 
             </div>
@@ -364,17 +381,22 @@ function mpPosterQuestion(question) {
 
     main.innerHTML = `
     
-        <div id="contentWrapper">
+        <div id="contentWrapper" class="cwType${question.type}">
         
+
+            <div id="timer" data-current-time="30">
+                <div id="timerProgress"></div>
+            </div>
+
             <div id="questionContainer">
-                <div id="timer">10</div>
+
                 <div id="poster"></div>
 
             </div>
         
             <div id="answerContainer">
             
-                <input id="searchMovie">
+                <input id="searchMovie" placeholder="Which movie?">
                 <div id="foundMovies"></div>
             
             </div>
@@ -405,7 +427,7 @@ async function mpCheckAnswer(ev, question) {
     console.log(ev.target.dataset.title);
 
     const gameInfo = JSON.parse(window.localStorage.getItem("gameInfo"));
-    const answerTime = document.querySelector("#timer").textContent
+    const answerTime = document.querySelector("#timer").dataset.currentTime;
     const questType = question.type;
 
     console.log(questType);
@@ -480,49 +502,53 @@ async function startQuestionTimer(question) {
 
     console.log(question.questionID + 1);
     const timer = document.querySelector("#timer");
+    const timerProgress = document.querySelector("#timerProgress");
+    timerProgress.style.transitionDuration = timer.dataset.currentTime + "s"
+    setTimeout(() => {
+        timerProgress.classList.add("active");
+    }, 50)
+
+    timerProgress.addEventListener("transitionend", async function (ev) {
+        const gameInfo = JSON.parse(window.localStorage.getItem("gameInfo"));
+
+        const request = new Request("PHP/api.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                action: "liveGame",
+                subAction: "doneQuestion",
+                gameID: gameInfo.gameID,
+                userID: parseInt(window.localStorage.getItem("userID"))
+            })
+        })
+
+        await callAPI(request, false, false);
+
+        const intervalID = setInterval(() => {
+            const gameObject = JSON.parse(window.localStorage.getItem("gameInfo"));
+
+            if (gameObject.nextQuestion) {
+                clearInterval(intervalID);
+                endOfQuestion(question);
+            }
+        }, 100)
+
+
+
+    })
 
     if (timer) {
-        let requestSent = false;
-
         const intervalID = setInterval(async function () {
 
-            let currentTimerValue = parseFloat(timer.textContent);
+            let currentTimerValue = parseFloat(timer.dataset.currentTime);
 
-            if (currentTimerValue != 0) {
+            if (currentTimerValue != 0.0) {
 
-                timer.textContent = (currentTimerValue - 0.1).toFixed(1);
+                timer.dataset.currentTime = (currentTimerValue - 0.1).toFixed(1);
 
+            } else {
+                clearInterval(intervalID);
             }
-
-            if (currentTimerValue <= 0) {
-                timer.textContent = 0;
-
-                const gameInfo = JSON.parse(window.localStorage.getItem("gameInfo"));
-
-                if (requestSent == false) {
-                    const request = new Request("PHP/api.php", {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({
-                            action: "liveGame",
-                            subAction: "doneQuestion",
-                            gameID: gameInfo.gameID,
-                            userID: parseInt(window.localStorage.getItem("userID"))
-                        })
-                    })
-
-                    await callAPI(request, false, false);
-
-                    requestSent = true;
-                }
-
-                if (gameInfo.nextQuestion) {
-                    clearInterval(intervalID);
-                    endOfQuestion(question);
-                }
-
-            }
-
 
         }, 100);
     }
@@ -579,19 +605,38 @@ async function endOfQuestion(question) {
             const whoGuessed = document.createElement("div");
             whoGuessed.classList.add("whoGuessed");
 
+            whoGuessed.innerHTML = `
+                <span id="restSpan"></span>
+            `
+
             console.log(whoGuessed);
+
+            let answersInWhoGuessed = 0;
 
             resource.alternatives.forEach(alt => {
                 if (alt.title == title.textContent) {
                     alt.whoGuessed.forEach(player => {
-                        console.log(player);
-                        const playerDiv = document.createElement("div");
 
-                        playerDiv.classList.add("playerImg");
+                        if (answersInWhoGuessed >= 2) {
+                            const restSpan = whoGuessed.querySelector("#restSpan");
+                            if (restSpan.textContent == "") {
+                                restSpan.textContent = "+1";
+                            } else {
+                                const newNumber = parseInt(restSpan.textContent.substring(1)) + 1;
+                                restSpan.textContent = "+" + newNumber;
+                            }
+                        } else {
+                            console.log(player);
+                            const playerDiv = document.createElement("div");
 
-                        playerDiv.style.backgroundImage = `url('../images/${player.profilePicture}')`;
+                            playerDiv.classList.add("playerImg");
 
-                        whoGuessed.appendChild(playerDiv);
+                            playerDiv.style.backgroundImage = `url('../images/${player.profilePicture}')`;
+
+                            whoGuessed.prepend(playerDiv);
+
+                            answersInWhoGuessed += 1;
+                        }
                     })
                 }
             })
@@ -623,14 +668,6 @@ async function currentStanding(question) {
 
     console.log(allLightCurtains);
 
-    allLightCurtains.forEach(crtn => {
-        crtn.style.height = "93vh"
-    });
-
-    allDarkCurtains.forEach(crtn => {
-        crtn.style.height = "91vh"
-    });
-
     const gameInfo = JSON.parse(window.localStorage.getItem("gameInfo"));
     const gameMembers = gameInfo.members;
     const questions = gameInfo.questions;
@@ -640,10 +677,19 @@ async function currentStanding(question) {
     const main = document.querySelector("main");
 
     if (question.questionID + 1 == questions.length / 2) {
+
+        allLightCurtains.forEach(crtn => {
+            crtn.style.height = "93vh"
+        });
+
+        allDarkCurtains.forEach(crtn => {
+            crtn.style.height = "91vh"
+        });
+
         main.innerHTML = `
-            <div id="contentWrapper">
+            <div id="contentWrapper" class="currentStandingHalf">
             
-                <div id="countdown">15</div>
+                <div id="getReadyDiv">GET READY IN <span id="countdown">10</span></div>
         
                 <div id="topThree"></div>
         
@@ -679,6 +725,14 @@ async function currentStanding(question) {
 
     if (question.questionID + 1 == questions.length) {
 
+        allLightCurtains.forEach(crtn => {
+            crtn.style.height = "100vh"
+        });
+
+        allDarkCurtains.forEach(crtn => {
+            crtn.style.height = "100vh"
+        });
+
         const fetchIntervalID = parseInt(JSON.parse(window.localStorage.getItem("fetchIntervalID")));
 
         console.log(fetchIntervalID);
@@ -700,7 +754,7 @@ async function currentStanding(question) {
         await callAPI(request, true, false);
 
         main.innerHTML = `
-            <div id="contentWrapper">
+            <div id="contentWrapper" class="currentStandingResults">
             
                 <h1 id="endScreenHead">RESULTS</h1>
         
@@ -708,7 +762,10 @@ async function currentStanding(question) {
         
                 <div id="restList"></div>
 
-                <button id="playAgainButton" class="mpButton">PLAY AGAIN</button>
+                <div id="resultButtons">
+                    <button id="exitGameButton" class="mpButton">Exit Game</button>
+                    <button id="playAgainButton" class="mpButton">Play Again</button>
+                </div>
             
             </div>
         `
@@ -754,11 +811,9 @@ async function currentStanding(question) {
             topThreeDiv.id = `topThree${i + 1}`;
             topThreeDiv.classList.add("topThreeDiv")
             topThreeDiv.innerHTML = `
-                <div class="playerImageDiv">
-                    <div class="positionImage"></div>
-                    <div class="playerImage" style="background-image: url('../images/${gameMembers[i].profilePicture}')"></div>
-                </div>
-                <div class="currentPoints">${gameMembers[i].points}</div>
+                <div class="positionImage" style="background-image: url('../images/position${i + 1}.svg')"></div>
+                <div class="playerImage" style="background-image: url('../images/${gameMembers[i].profilePicture}')"></div>
+                <div class="currentPoints">${gameMembers[i].points} <span class="opacP">p</span></div>
             `
 
             document.querySelector("#topThree").appendChild(topThreeDiv);
@@ -771,11 +826,7 @@ async function currentStanding(question) {
             restListDiv.innerHTML = `
                 <div class="restListDivLeft">
 
-                    <div class="playerImageDiv">
-                        <div class="positionImage"></div>
-                        <div class="playerImage" style="background-image: url('../images/${gameMembers[i].profilePicture}')"></div>
-                    </div>
-
+                    <div class="positionImage" style="background-image: url('../images/position${i + 1}.svg')"></div>
                     <div>${gameMembers[i].name}</div>
                 
                 </div>

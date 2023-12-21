@@ -1,1 +1,227 @@
-[]
+[
+    {
+        "gameID": 62130,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 0,
+                "inLobby": false,
+                "latestFetch": 1703189169
+            },
+            {
+                "userID": 2,
+                "name": "ww",
+                "profilePicture": "The bear.jpg",
+                "points": 0,
+                "inLobby": false,
+                "latestFetch": 1703189169
+            },
+            {
+                "userID": 3,
+                "name": "www",
+                "profilePicture": "The bear.jpg",
+                "points": 0,
+                "inLobby": false,
+                "latestFetch": 1703189169
+            },
+            {
+                "userID": 4,
+                "name": "wwww",
+                "profilePicture": "Sons (kopia).jpg",
+                "points": 0,
+                "inLobby": false,
+                "latestFetch": 1703189170
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "trailer",
+                "correctAnswer": "Citizen Kane",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/_qvjbH50IBw",
+                "guesses": []
+            },
+            {
+                "questionID": 1,
+                "type": "poster",
+                "correctAnswer": "To Kill a Mockingbird",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BNmVmYzcwNzMtMWM1NS00MWIyLThlMDEtYzUwZDgzODE1NmE2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+                "guesses": []
+            }
+        ],
+        "isStarted": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 56079,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 0,
+                "inLobby": false,
+                "latestFetch": 1703189557
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "directors",
+                "correctAnswer": "Casino",
+                "alternatives": [
+                    {
+                        "title": "Casino",
+                        "whoGuessed": [
+                            {
+                                "userID": 2,
+                                "name": "ww",
+                                "profilePicture": "The bear.jpg",
+                                "inLobby": false,
+                                "latestFetch": 1703189474
+                            },
+                            {
+                                "userID": 3,
+                                "name": "www",
+                                "profilePicture": "The bear.jpg",
+                                "inLobby": false,
+                                "latestFetch": 1703189476
+                            },
+                            {
+                                "userID": 4,
+                                "name": "wwww",
+                                "profilePicture": "Sons (kopia).jpg",
+                                "inLobby": false,
+                                "latestFetch": 1703189478
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Modern Times",
+                        "whoGuessed": [
+                            {
+                                "name": "w",
+                                "userID": 1,
+                                "profilePicture": "The bear.jpg",
+                                "inLobby": false,
+                                "latestFetch": 1703189473
+                            }
+                        ]
+                    }
+                ],
+                "questionText": "Which movie has Martin Scorsese directed?"
+            },
+            {
+                "questionID": 1,
+                "type": "trailer",
+                "correctAnswer": "La La Land",
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/je0aAf2f8XQ",
+                "guesses": []
+            }
+        ],
+        "isStarted": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 38452,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 0,
+                "inLobby": true,
+                "latestFetch": 1703189630
+            }
+        ],
+        "questions": "",
+        "isStarted": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 10413,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 0,
+                "inLobby": true,
+                "latestFetch": 1703189683
+            }
+        ],
+        "questions": "",
+        "isStarted": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    }
+]

@@ -86,7 +86,7 @@ function liveGame($users, $games, $recieved_data){
 
         }
 
-        if($qType == "actors" or $qType == "plot"){
+        if($qType == "actors" or $qType == "plot" or $qType == "directors"){
             foreach($currentGame["questions"] as $indexx => $question){
                 if($question["questionID"] == $questionID){
     
@@ -149,7 +149,7 @@ function liveGame($users, $games, $recieved_data){
 
     if($subAction === "startGame"){
         $games[$currentGameIndex]["isStarted"] = true;
-        $games[$currentGameIndex]["questions"] = getRandomMovies(4, $currentGame["genres"]);
+        $games[$currentGameIndex]["questions"] = getRandomMovies(2, $currentGame["genres"]);
         foreach($games[$currentGameIndex]["members"] as &$member){
             $member["points"] = 0;
             $member["inLobby"] = false;

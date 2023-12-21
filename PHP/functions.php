@@ -60,12 +60,12 @@ function getRandomMovies($number, $genres){
         $howManyAlts = 0;
 
         if($type == "directors"){
-            $howManyAlts = 2;
+            $howManyAlts = 1;
         }else{
-            $howManyAlts = 4;
+            $howManyAlts = 3;
         }
 
-        for($i = 0; $i < 3; $i++){
+        for($i = 0; $i < $howManyAlts; $i++){
             $altMovie = $filteredMovieArray[array_rand($filteredMovieArray, 1)];
 
             if(in_array($altMovie["Title"], $alternatives)){
@@ -97,7 +97,7 @@ function createQuestion($movie, $type, $arrIndex, $alternatives){
     ];
 
     if($type == "directors"){
-        $question["questionText"] = "Which movie has<br>" . $movie["Director"] . "<br>directed?";
+        $question["questionText"] = "Which movie has " . $movie["Director"] . " directed?";
     }
 
     if($type == "plot"){
