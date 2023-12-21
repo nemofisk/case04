@@ -60,13 +60,16 @@ function popUpFunction(action, information) {
         <div id="addFriendsContainer">
             <div id="searchField">
                 <img id="searchImage" src="../images/searchlala.png">
-                <input id="searchUsers"placeholder="Add new friends"></input>    
+                <input id="searchUsers"placeholder="Add new friends"></input> 
+                <div id="removeBox">X</div>   
             </div>
             <div id="userDisplay"></div>
         </div>
         `
         main.appendChild(div)
-
+        document.querySelector("#removeBox").addEventListener("click", e => {
+            e.target.parentElement.parentElement.remove()
+        })
         fetch("PHP/api.php", {
             method: "POST",
             headers: { "Content-type": "application/json" },
