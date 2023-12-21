@@ -248,13 +248,16 @@
     font-family: Jost;
     font-size: 20px;
     font-style: normal;
+    color: white;
 }
-#userDisplay > div{
+
+#userDisplay>div {
     display: flex;
     justify-content: space-between;
-    margin: 10px;
+    margin: 28px 19px 28px 19px;
 }
-.sendRequestButton{
+
+.sendRequestButton {
     display: flex;
     width: 80px;
     height: 32px;
@@ -264,7 +267,8 @@
     border-radius: var(--Radius-Radius-md, 20px);
     background: var(--Colors-Button-Background-2, #8184F8);
 }
-#searchImage{
+
+#searchImage {
     width: 30px;
     height: 30px;
     position: absolute;

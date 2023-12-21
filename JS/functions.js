@@ -79,14 +79,14 @@ function popUpFunction(action, information) {
                 let matchingUsers = usersArray.filter(user => user.username.includes(searchField));
 
                 let userDisplayDiv = document.querySelector("#userDisplay");
-                userDisplayDiv.innerHTML = ""; 
+                userDisplayDiv.innerHTML = "";
 
                 matchingUsers.forEach(matchingUser => {
-                    
-                let userDiv = document.createElement("div");
-                userDiv.innerHTML = `
+
+                    let userDiv = document.createElement("div");
+                    userDiv.innerHTML = `
                 <div class="friendDivLeft">
-                    <div class="friendDivImage" style="background-image: url('images/${matchingUser.profile_picture}')"></div>
+                    <div class="friendDivImages" style="background-image: url('images/${matchingUser.profile_picture}')"></div>
                     <div class="friendDivName">${matchingUser.username}</div>
                 </div>
                 <div>
@@ -95,21 +95,21 @@ function popUpFunction(action, information) {
 
                 
                 `
-                userDisplayDiv.appendChild(userDiv);
+                    userDisplayDiv.appendChild(userDiv);
 
-                userDiv.querySelector(".sendRequestButton").addEventListener("click", event => {
-                    event.target.style.backgroundColor = "rgba(103, 101, 159, 0.35)"
+                    userDiv.querySelector(".sendRequestButton").addEventListener("click", event => {
+                        event.target.style.backgroundColor = "rgba(103, 101, 159, 0.35)"
 
-                    
-                    searchUsers(matchingUser.username)
+
+                        searchUsers(matchingUser.username)
+                    });
+
                 });
-                
-            });
 
             })
-            
+
         });
-        
+
     }
 
 }
