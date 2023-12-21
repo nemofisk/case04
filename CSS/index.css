@@ -27,8 +27,11 @@ main {
     gap: 40px;
     margin-top: 64px;
 }
-h1{
+#lucky{
     margin-bottom: 0;
+    top: 110px;
+    position: absolute;
+    
 }
 #moviePoster {
     filter: blur(20px);
@@ -61,14 +64,16 @@ body {
     height: 100vh;
     margin: 0;
 }
-p{
+#noMoreSpin{
     margin: 0;
+    position: absolute;
+    top: 560px;
 }
 .wheel {
     width: 500px;
     height: 500px;
     border-radius: 50%;
-    position: relative;
+    position: absolute;
     background: conic-gradient(red 0deg 45deg,
             yellow 45deg 90deg,
             green 90deg 135deg,
@@ -79,8 +84,7 @@ p{
             brown 315deg 360deg);
     background-image: url("../images/wheelplswosk.png");
     background-size: cover;
-    top: -25px;
-
+    top: 135px;
 }
 
 .slice {
@@ -97,8 +101,10 @@ button {
     margin-top: 20px;
     padding: 10px;
     cursor: pointer;
-
+    
 }
+
+
 #spinWheel{
     display: flex;
     width: 181px;
@@ -112,6 +118,8 @@ button {
     color: rgba(255, 255, 255, 0.40);
     background-color: #171717;
     margin: 0;
+    position: absolute;
+  top: 600px;
 }
 
 #pin {

@@ -240,7 +240,7 @@
 #searchField input {
     background-color: #2C2C40;
     border: none;
-    margin-left: 30px;
+    margin-left: 60px;
     font-family: Jost;
     font-size: 20px;
     font-style: normal;
@@ -259,4 +259,11 @@
     flex-shrink: 0;
     border-radius: var(--Radius-Radius-md, 20px);
     background: var(--Colors-Button-Background-2, #8184F8);
+}
+#searchImage{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 12px;
+    left: 20px;
 }

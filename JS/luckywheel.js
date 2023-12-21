@@ -3,7 +3,7 @@ function renderLuckyWheel() {
     `
     
     <body>
-    <h1>Lucky Wheel!</h1>
+    <h1 id="lucky">Lucky Wheel!</h1>
     <img id="pin" src="../images/pin.png">
     
     <div class="wheel" id="wheel">
@@ -53,6 +53,7 @@ function renderLuckyWheel() {
     } else {
       console.log("wait until tommorow");
       let p = document.createElement("p");
+      p.setAttribute("id", "noMoreSpin")
       p.textContent = "Come back tomorrow to spin the wheel"
       p.style.color = "#FF6868"
       document.querySelector("main").appendChild(p)

@@ -53,7 +53,7 @@ function popUpFunction(action, information) {
         div.innerHTML = `
         <div id="addFriendsContainer">
             <div id="searchField">
-                <img src="../images/searchlala.png">
+                <img id="searchImage" src="../images/searchlala.png">
                 <input id="searchUsers"placeholder="Add new friends"></input>    
             </div>
             <div id="userDisplay"></div>
@@ -92,6 +92,9 @@ function popUpFunction(action, information) {
                 userDisplayDiv.appendChild(userDiv);
 
                 userDiv.querySelector(".sendRequestButton").addEventListener("click", event => {
+                    event.target.style.backgroundColor = "rgba(103, 101, 159, 0.35)"
+
+                    
                     searchUsers(matchingUser.username)
                 });
                 

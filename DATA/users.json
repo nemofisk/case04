@@ -3,7 +3,7 @@
         "username": "w",
         "password": "",
         "level": 669,
-        "popcorn": 101764,
+        "popcorn": 101774,
         "friends": [
             {
                 "name": "ww",
@@ -36,9 +36,9 @@
         "xpGoal": 221764,
         "id": 1,
         "clues": 32,
-        "resetTimer": 25,
+        "resetTimer": 27,
         "profile_picture": "The bear.jpg",
-        "lastSpun": "20"
+        "lastSpun": "21"
     },
     {
         "username": "ww",
@@ -59,7 +59,7 @@
         "clues": 0,
         "resetTimer": 0,
         "profile_picture": "The bear.jpg",
-        "lastSpun": "14"
+        "lastSpun": "21"
     },
     {
         "username": "www",
@@ -73,14 +73,16 @@
                 "popcorn": 1340
             }
         ],
-        "friendRequests": [],
+        "friendRequests": [
+            "w"
+        ],
         "gameInvites": [],
         "xpGoal": 1300,
         "id": 3,
         "clues": 0,
         "resetTimer": 0,
         "profile_picture": "The bear.jpg",
-        "lastSpun": "14"
+        "lastSpun": "21"
     },
     {
         "username": "wwww",
@@ -215,7 +217,9 @@
         "popcorn": 0,
         "gameInvites": [],
         "friends": [],
-        "friendRequests": [],
+        "friendRequests": [
+            "w"
+        ],
         "xpGoal": 1000,
         "clues": 0,
         "resetTimer": 0,
