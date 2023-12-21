@@ -8,6 +8,7 @@ function popUpFunction(action, information) {
     if (action === "gameInvites") {
         message = information.message[0].hostName + " invited you to a game!"
 
+
         div.setAttribute("id", "invitationPopUp")
         div.textContent = message;
         div.classList.add("#gameInvite");
@@ -34,22 +35,27 @@ function popUpFunction(action, information) {
         <br>
         <p>You get a new chance tomorrow</p>
     `
+        let Overlaydiv = document.createElement("div");
+        Overlaydiv.setAttribute("id", "Overlay");
+        main.appendChild(Overlaydiv);
+
         console.log(div.textContent);
         div.classList.add("wheelClass")
         main.appendChild(div);
         document.getElementById("removePopUp").addEventListener("click", element => {
+            document.querySelector("#Overlay").remove();
             console.log(element);
             element.target.parentElement.remove();
         })
     }
-    
-    if(action === "changeUserOrPass"){
+
+    if (action === "changeUserOrPass") {
         div.innerHTML = `
         <h1>Your profile</h1>
         
         `
     }
-    if(action === "addFriends"){
+    if (action === "addFriends") {
         div.innerHTML = `
         <div id="addFriendsContainer">
             <div id="searchField">
