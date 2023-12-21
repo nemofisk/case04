@@ -60,12 +60,53 @@ function popUpFunction(action, information) {
         <div id="addFriendsContainer">
             <div id="searchField">
                 <img src="../images/searchlala.png">
-                <input placeholder="Add new friends"></input>    
+                <input id="searchUsers"placeholder="Add new friends"></input>    
             </div>
             <div id="userDisplay"></div>
         </div>
         `
         main.appendChild(div)
+
+        fetch("PHP/api.php", {
+            method: "POST",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({ username: window.localStorage.getItem("username"), action: "friendRequest", subAction: "getAllUsers" })
+        }).then(r => r.json()).then(resource => {
+            let usersArray = resource.message;
+
+            document.querySelector("#searchUsers").addEventListener("keydown", event => {
+                let searchField = document.querySelector("#searchUsers").value;
+                let matchingUsers = usersArray.filter(user => user.username.includes(searchField));
+
+                let userDisplayDiv = document.querySelector("#userDisplay");
+                userDisplayDiv.innerHTML = ""; 
+
+                matchingUsers.forEach(matchingUser => {
+                    
+                let userDiv = document.createElement("div");
+                userDiv.innerHTML = `
+                <div class="friendDivLeft">
+                    <div class="friendDivImage" style="background-image: url('images/${matchingUser.profile_picture}')"></div>
+                    <div class="friendDivName">${matchingUser.username}</div>
+                </div>
+                <div>
+                    <div class="sendRequestButton">Add +</div>
+                </div>
+
+                
+                `
+                userDisplayDiv.appendChild(userDiv);
+
+                userDiv.querySelector(".sendRequestButton").addEventListener("click", event => {
+                    searchUsers(matchingUser.username)
+                });
+                
+            });
+
+            })
+            
+        });
+        
     }
 
 }
