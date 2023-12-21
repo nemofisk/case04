@@ -42,7 +42,15 @@ function singlePlayer(event) {
         div.textContent = genreArray[i];
         genresCategorty.appendChild(div)
         div.addEventListener("click", () => {
+            if(document.getElementById("mixed").classList.contains("mixedMark")){
+                document.getElementById("mixed").classList.remove("selected");
+                document.getElementById("mixed").style.backgroundColor = "";
+                document.querySelectorAll("#catergoryMenu > div").forEach(div => {
+                    div.classList.remove("selected")
+                })
+            }
             div.classList.toggle("selected");
+            div.style.backgroundColor = "rgb(129, 132, 248)"
             document.querySelector("#Continue").style.backgroundColor = "#FFF8BA"
             document.querySelector("#Continue").style.color = "#323059"
         });
@@ -64,7 +72,7 @@ function singlePlayer(event) {
             document.querySelectorAll("#catergoryMenu > div").forEach(div => {
                 div.classList.add("selected");
                 div.style.backgroundColor = "#171717";
-                div.style.pointerEvents = "none";
+                //div.style.pointerEvents = "none";
 
             })
             document.getElementById("mixed").classList.add("mixedMark")

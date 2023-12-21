@@ -65,6 +65,7 @@ function chooseCatagoryMultiplayer(event) {
                 if (catagory.classList.contains("SelectedGanras")) {
                     catagory.classList.remove("SelectedGanras");
                 }
+                
                 catagory.removeEventListener("click", chooseGenre);
             })
 

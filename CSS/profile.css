@@ -275,3 +275,10 @@
     top: 12px;
     left: 20px;
 }
+#removeBox{
+    position: absolute;
+  top: 17px;
+  right: 20px;
+  color: white;
+
+}
