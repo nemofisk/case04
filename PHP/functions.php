@@ -39,7 +39,7 @@ function getRandomMovies($number, $genres){
 
     $questionsArray = [];
 
-    $questionTypes = ["trailer", "poster", "actors", "plot"];
+    $questionTypes = ["trailer", "poster", "actors", "plot", "directors"];
 
     foreach(array_rand($filteredMovieArray, $number) as $arrIndex => $index){
         $movie = $filteredMovieArray[$index];
@@ -57,13 +57,25 @@ function getRandomMovies($number, $genres){
 
         $alternatives = [["title" => $movie["Title"], "whoGuessed" => []]];
 
+        $howManyAlts = 0;
+
+        if($type == "directors"){
+            $howManyAlts = 2;
+        }else{
+            $howManyAlts = 4;
+        }
+
         for($i = 0; $i < 3; $i++){
             $altMovie = $filteredMovieArray[array_rand($filteredMovieArray, 1)];
+
             if(in_array($altMovie["Title"], $alternatives)){
+                $i--;
+            }elseif ($type === "directors" and $altMovie["Director"] == $movie["Director"]) {
                 $i--;
             }else{
                 $alternatives[] = ["title" => $altMovie["Title"], "whoGuessed" => []];
             }
+            
         }
 
         shuffle($alternatives);
@@ -84,14 +96,16 @@ function createQuestion($movie, $type, $arrIndex, $alternatives){
         "alternatives" => $alternatives
     ];
 
+    if($type == "directors"){
+        $question["questionText"] = "Which movie has<br>" . $movie["Director"] . "<br>directed?";
+    }
+
     if($type == "plot"){
-        $question["questionTitle"] = "What movie does this plot describe?";
         $question["questionText"] = $movie["Plot"];
     }
 
     if($type == "actors"){
-        $question["questionTitle"] = "What movie has these actors in it?";
-        $question["questionText"] = $movie["Actors"];
+        $question["questionText"] = "Which movie does<br>" . $movie["Actors"] . "<br>star in?";
     }
 
     if($type == "trailer"){

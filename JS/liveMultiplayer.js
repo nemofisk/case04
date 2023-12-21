@@ -19,7 +19,8 @@ async function joinGame(gameID) {
             username: window.localStorage.getItem("username"),
             action: "liveGame",
             subAction: "fetchGameInfo",
-            gameID: gameID
+            gameID: gameID,
+            userID: parseInt(window.localStorage.getItem("userID"))
         })
     })
 
@@ -58,7 +59,8 @@ async function startFetchGameInfo(gameID) {
             username: window.localStorage.getItem("username"),
             action: "liveGame",
             subAction: "fetchGameInfo",
-            gameID: gameID
+            gameID: gameID,
+            userID: parseInt(window.localStorage.getItem("userID"))
         }
         const request = new Request("PHP/api.php", {
             method: "POST",
@@ -90,7 +92,7 @@ async function renderLobby(fetchIntervalID) {
         
             <h1>Waiting for the host to start the game</h1>
             <div id="lobbyMemberList"></div>
-            <button id="lobbyButton"></button>
+            <button id="lobbyButton" class="mpButton"></button>
 
         </div>
     `
@@ -117,16 +119,18 @@ async function renderLobby(fetchIntervalID) {
                 memberListDom.innerHTML = "";
 
                 gameMembers.forEach(member => {
-                    const memberDiv = document.createElement("div");
-                    memberDiv.classList.add("member");
+                    if (member.inLobby == true) {
+                        const memberDiv = document.createElement("div");
+                        memberDiv.classList.add("member");
 
-                    memberDiv.innerHTML = `
-                        <div class="crown"></div>
-                        <div class="lobbyProfilePic" style="background-image: url('images/${member.profilePicture}')"></div>
-                        <div class="lobbyProfileName">${member.name}</div>
-                    `
+                        memberDiv.innerHTML = `
+                            <div class="crown"></div>
+                            <div class="lobbyProfilePic" style="background-image: url('images/${member.profilePicture}')"></div>
+                            <div class="lobbyProfileName">${member.name}</div>
+                        `
 
-                    memberListDom.appendChild(memberDiv);
+                        memberListDom.appendChild(memberDiv);
+                    }
                 })
             }
 
@@ -188,6 +192,17 @@ async function renderLobby(fetchIntervalID) {
 
 
 function prepareQuestion(questionToLoad) {
+    const allLightCurtains = document.querySelectorAll(".curtainsLightStartingpage");
+    const allDarkCurtains = document.querySelectorAll(".curtainsStartingpage");
+
+    allLightCurtains.forEach(crtn => {
+        crtn.style.height = "0px"
+    });
+
+    allDarkCurtains.forEach(crtn => {
+        crtn.style.height = "0px"
+    });
+
     const main = document.querySelector("main");
 
     const gameInfo = JSON.parse(window.localStorage.getItem("gameInfo"));
@@ -228,6 +243,9 @@ function nextQuestion(questionToLoad) {
     console.log(currentQuestion);
 
     switch (questionType) {
+        case "directors":
+            mpTextQuestion(currentQuestion);
+            break;
         case "plot":
             mpTextQuestion(currentQuestion);
             break;
@@ -252,8 +270,7 @@ function mpTextQuestion(question) {
             <div id="questionContainer">
             
                 <div id="timer">10</div>
-                <div id="questionTitle">${question.questionTitle}</div>
-                <div id="questionText">${question.questionText}</div>
+                <div id="questionText" class="type${question.type}">${question.questionText}</div>
         
             </div>
             <div id="alternatives"></div>
@@ -383,7 +400,7 @@ function mpPosterQuestion(question) {
 
 }
 
-async function mpCheckAnswer(ev, question, txtAnswer = undefined) {
+async function mpCheckAnswer(ev, question) {
 
     console.log(ev.target.dataset.title);
 
@@ -394,21 +411,7 @@ async function mpCheckAnswer(ev, question, txtAnswer = undefined) {
     console.log(questType);
     console.log(gameInfo);
 
-    let answer;
-    switch (questType) {
-        case "actors":
-            answer = ev.target.dataset.title;
-            break;
-        case "plot":
-            answer = ev.target.dataset.title;
-            break;
-        case "trailer":
-            answer = txtAnswer;
-            break;
-        case "poster":
-            answer = txtAnswer;
-            break;
-    }
+    let answer = ev.target.dataset.title;
 
     console.log(answer);
 
@@ -435,59 +438,114 @@ async function mpCheckAnswer(ev, question, txtAnswer = undefined) {
 
     let targetAlt;
 
-    if (questType == "actors" || questType == "plot") {
+    if (questType == "actors" || questType == "plot" || questType == "directors") {
         const alternatives = document.querySelectorAll(".alternative");
         alternatives.forEach(alt => {
             if (alt.querySelector(".altTitle").textContent == answer) {
                 targetAlt = alt;
             }
         })
+
+        targetAlt.classList.add("selected");
+
+        if (resource.correct == false) {
+            targetAlt.querySelector(".altTitle").classList.add("wrong");
+        }
     }
 
     if (questType == "trailer" || questType == "poster") {
         const alternatives = document.querySelectorAll(".alternative");
         alternatives.forEach(alt => {
-            if (alt.textContent == answer) {
+            if (alt.querySelector(".altTitle").textContent == answer) {
                 targetAlt = alt;
             }
         })
-    }
 
-    if (resource.correct == false) {
-        targetAlt.classList.add("wrong")
+        if (resource.correct == false) {
+            targetAlt.classList.add("shake");
+
+            setTimeout(() => {
+                targetAlt.classList.remove("shake");
+            }, 200)
+        }
     }
 
     if (resource.correct == true) {
-        targetAlt.classList.add("correct")
+        targetAlt.classList.add("selected");
+        targetAlt.querySelector(".altTitle").classList.add("correct")
     }
 }
 
-function startQuestionTimer(question) {
+async function startQuestionTimer(question) {
 
     console.log(question.questionID + 1);
     const timer = document.querySelector("#timer");
 
     if (timer) {
-        const intervalID = setInterval(() => {
+        let requestSent = false;
+
+        const intervalID = setInterval(async function () {
+
             let currentTimerValue = parseFloat(timer.textContent);
 
-            timer.textContent = (currentTimerValue - 0.1).toFixed(1);
+            if (currentTimerValue != 0) {
 
-            if (currentTimerValue == 0) {
+                timer.textContent = (currentTimerValue - 0.1).toFixed(1);
 
-                clearInterval(intervalID);
-
-                endOfQuestion(question);
             }
+
+            if (currentTimerValue <= 0) {
+                timer.textContent = 0;
+
+                const gameInfo = JSON.parse(window.localStorage.getItem("gameInfo"));
+
+                if (requestSent == false) {
+                    const request = new Request("PHP/api.php", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            action: "liveGame",
+                            subAction: "doneQuestion",
+                            gameID: gameInfo.gameID,
+                            userID: parseInt(window.localStorage.getItem("userID"))
+                        })
+                    })
+
+                    await callAPI(request, false, false);
+
+                    requestSent = true;
+                }
+
+                if (gameInfo.nextQuestion) {
+                    clearInterval(intervalID);
+                    endOfQuestion(question);
+                }
+
+            }
+
+
         }, 100);
     }
 }
 
 async function endOfQuestion(question) {
-    document.querySelector("#timer").textContent = "0";
+
+    const gameInfo = JSON.parse(window.localStorage.getItem("gameInfo"));
+
+    const rqst = new Request("PHP/api.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            action: "liveGame",
+            subAction: "endedQuestion",
+            gameID: gameInfo.gameID,
+            userID: parseInt(window.localStorage.getItem("userID"))
+        })
+    })
+
+    await callAPI(rqst, false, false);
 
     const qType = question.type;
-    const gameInfo = JSON.parse(window.localStorage.getItem("gameInfo"));
     const request = new Request("PHP/api.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -504,7 +562,7 @@ async function endOfQuestion(question) {
 
     const correctAnswer = resource.correctAnswer;
 
-    if (qType == "plot" || qType == "actors") {
+    if (qType == "plot" || qType == "actors" || qType == "directors") {
         const alternativeDivs = document.querySelectorAll(".alternative");
         const alternativesDiv = document.querySelector("#alternatives")
 
@@ -513,9 +571,9 @@ async function endOfQuestion(question) {
             const title = alternative.querySelector(".altTitle")
 
             if (title.textContent == correctAnswer) {
-                alternative.classList.add("correct");
+                alternative.querySelector(".altTitle").classList.add("correct");
             } else {
-                alternative.classList.add("wrong");
+                alternative.querySelector(".altTitle").classList.add("wrong");
             }
 
             const whoGuessed = document.createElement("div");
@@ -603,11 +661,11 @@ async function currentStanding(question) {
                 clearInterval(intervalID);
 
                 allLightCurtains.forEach(crtn => {
-                    crtn.style.height = "117px"
+                    crtn.style.height = "0px"
                 });
 
                 allDarkCurtains.forEach(crtn => {
-                    crtn.style.height = "109px"
+                    crtn.style.height = "0px"
                 });
 
                 checkNextQuestion(question);
@@ -650,7 +708,7 @@ async function currentStanding(question) {
         
                 <div id="restList"></div>
 
-                <button id="playAgainButton">PLAY AGAIN</button>
+                <button id="playAgainButton" class="mpButton">PLAY AGAIN</button>
             
             </div>
         `
@@ -658,6 +716,17 @@ async function currentStanding(question) {
         const playAgainButton = document.querySelector("#playAgainButton");
 
         playAgainButton.addEventListener("click", async function (ev) {
+
+            const allLightCurtains = document.querySelectorAll(".curtainsLightStartingpage");
+            const allDarkCurtains = document.querySelectorAll(".curtainsStartingpage");
+
+            allLightCurtains.forEach(crtn => {
+                crtn.style.height = "117px"
+            });
+
+            allDarkCurtains.forEach(crtn => {
+                crtn.style.height = "109px"
+            });
 
             const request = new Request("PHP/api.php", {
                 method: "POST",
@@ -765,13 +834,19 @@ async function findMovie(event, question) {
 
         let movieDiv = document.createElement("div");
         movieDiv.classList.add("alternative");
-        movieDiv.textContent = filteredArray[i];
+        movieDiv.innerHTML = `
+            <div class="altTitle">${filteredArray[i]}</div>
+        `
+
+        movieDiv.dataset.title = filteredArray[i];
+        movieDiv.querySelector(".altTitle").dataset.title = filteredArray[i];
 
         movieDiv.addEventListener("click", ev => {
-            const txtAnswer = ev.target.textContent;
-            mpCheckAnswer(ev, question, txtAnswer);
+            mpCheckAnswer(ev, question);
         })
 
         movieResults.appendChild(movieDiv);
     }
+
+
 }

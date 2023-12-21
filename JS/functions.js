@@ -37,12 +37,12 @@ function popUpFunction(action, information) {
         console.log(div.textContent);
         div.classList.add("wheelClass")
         main.appendChild(div);
-    }
-    document.getElementById("removePopUp").addEventListener("click", element => {
-        console.log(element);
-        element.target.parentElement.remove();
-    })
 
+        document.getElementById("removePopUp").addEventListener("click", element => {
+            console.log(element);
+            element.target.parentElement.remove();
+        })
+    }
 }
 
 async function acceptInvite(gameID) {

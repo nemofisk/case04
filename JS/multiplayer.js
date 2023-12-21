@@ -17,19 +17,10 @@ function chooseCatagoryMultiplayer(event) {
 
 
     document.querySelector("main").innerHTML = `
-    <header id="menu">
-
-        <div class="profile">
-            <div id="profilePic"></div>
-            <img src="/Frame 263.png" alt="Logo">
-        </div>
-    </header>
-    
-
     <h1>Choose a category!</h1>
     <div id="catergoryMenu"></div>
     <button id="Mixed">Mixed Catagories</button>
-    <button id="Continue">Continue</button>
+    <button id="Continue" class="mpButton">Continue</button>
         
 
     </div>`
@@ -161,7 +152,7 @@ async function inviteFriends(gameID) {
         </div>
 
         <div id="addedUsers"></div>
-        <button id="inviteUsers">Nästa</button>
+        <button id="inviteUsers" class="mpButton">Nästa</button>
     </div>
     `
 
