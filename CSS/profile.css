@@ -70,6 +70,10 @@
 
 }
 
+#profile_image {
+    height: 0;
+}
+
 #myProfileImage {
     width: 100px;
 }

@@ -41,11 +41,17 @@ function registerFunction(event) {
         let main = document.querySelector(`main`);
 
         if (l.message === `${username} has been registered successfully!`) {
+            let main = document.querySelector("main");
+            let div = document.createElement("div");
+            div.setAttribute("id", "Overlay");
+            main.appendChild(div);
+
             let popup = document.createElement("div");
             popup.classList.add("registerLoginPopup");
             popup.innerHTML = `<p id="exitPopup">X</p> <h1 id="h1RegisterFeedback">Registered</h1> ${l.message}`;
             main.appendChild(popup);
             document.querySelector("#exitPopup").addEventListener("click", e => {
+                document.querySelector("#Overlay").remove();
                 signInpage();
             })
         } else {

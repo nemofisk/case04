@@ -35,7 +35,7 @@ function renderLuckyWheel() {
   }).then(r => r.json()).then(resource => {
     let day = new Date()
     if (day.getDate() > parseInt(resource.message || day.getDate() === 1)) {
-      if(day.getDate() === 1){
+      if (day.getDate() === 1) {
         fetch("PHP/api.php", {
           method: "POST",
           headers: { "Content-type": "application/json" },
