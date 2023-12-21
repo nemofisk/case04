@@ -247,3 +247,12 @@ main>img {
     justify-content: center;
     align-items: center;
 }
+
+.friendDivImages {
+    height: 55px;
+    width: 55px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
