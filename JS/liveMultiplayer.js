@@ -591,7 +591,6 @@ async function mpCheckAnswer(ev, question) {
     if (resource.correct == true) {
         targetAlt.classList.add("selected");
         targetAlt.querySelector(".altTitle").classList.add("correct")
-        document.querySelector("#searchMovie").setAttribute("disabled", "true");
     }
 }
 
