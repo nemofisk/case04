@@ -107,13 +107,27 @@ async function DisplaySidebar(event) {
     })
     document.querySelector("main").appendChild(nav);
     document.getElementById("home").addEventListener("click", e => {
+        if (document.querySelector("main").classList.contains("mpMain")) {
+            document.querySelector("main").classList.remove("mpMain");
+        }
         renderStartingpage()
     })
     document.getElementById("profilePage").addEventListener("click", e => {
+        if (document.querySelector("main").classList.contains("mpMain")) {
+            document.querySelector("main").classList.remove("mpMain");
+        }
         renderProfilePage()
     })
-    document.getElementById("RenderLeaderboard").addEventListener("click", renderLeaderBoard)
+    document.getElementById("RenderLeaderboard").addEventListener("click", ev => {
+        if (document.querySelector("main").classList.contains("mpMain")) {
+            document.querySelector("main").classList.remove("mpMain");
+        }
+        renderLeaderBoard(ev);
+    })
     document.getElementById("renderLyckyWheel").addEventListener("click", e => {
+        if (document.querySelector("main").classList.contains("mpMain")) {
+            document.querySelector("main").classList.remove("mpMain");
+        }
         renderLuckyWheel()
     })
     document.getElementById("renderSettings").addEventListener("click", e => {

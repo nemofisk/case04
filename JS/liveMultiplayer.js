@@ -6,11 +6,13 @@ TODO:
 Ändra så att man väntar på alla innan nästa fråga ges:
     nyckel som kollar så att alla som är med i gamet(userID) har svarat och nått endscreen, sen uppdateras nyckeln nextQuestion till true, sen false när nästa börjat
 
-Ändra end game - just nu nya frågor när första är klar och lämnar *BYTA*
+Ändra end game - just nu nya frågor när första är klar och lämnar *BYTA* Nya frågor när startGame klickas, inte tas bort från members när når end screen, resetta alla poäng när klickar startGame
 
 */
 
 async function joinGame(gameID) {
+    document.querySelector("main").classList.add("mpMain");
+
     console.log(`joinGame GameID: ${gameID}`);
     const request = new Request("PHP/api.php", {
         method: "POST",
@@ -19,7 +21,8 @@ async function joinGame(gameID) {
             username: window.localStorage.getItem("username"),
             action: "liveGame",
             subAction: "fetchGameInfo",
-            gameID: gameID
+            gameID: gameID,
+            userID: parseInt(window.localStorage.getItem("userID"))
         })
     })
 
@@ -53,27 +56,34 @@ async function calculateNextFetch(initialEpoch, gameID) {
 async function startFetchGameInfo(gameID) {
     console.log(`startFetch GameID: ${gameID}`);
     const intervalID = setInterval(async function () {
-        console.log(`interval GameID: ${gameID}`);
-        const body = {
-            username: window.localStorage.getItem("username"),
-            action: "liveGame",
-            subAction: "fetchGameInfo",
-            gameID: gameID
+        if (document.querySelector("main").classList.contains("mpMain")) {
+            console.log(`interval GameID: ${gameID}`);
+            const body = {
+                username: window.localStorage.getItem("username"),
+                action: "liveGame",
+                subAction: "fetchGameInfo",
+                gameID: gameID,
+                userID: parseInt(window.localStorage.getItem("userID"))
+            }
+            const request = new Request("PHP/api.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(body)
+            })
+
+            // console.log(body);
+
+            const response = await callAPI(request, true, false);
+            const resource = await response.json();
+
+            window.localStorage.setItem("gameInfo", JSON.stringify(await resource));
+            const randomNum = Math.floor(Math.random() * 100) + 1;
+            // console.log("**************************************" + randomNum);
+        } else {
+            clearInterval(intervalID);
+            window.localStorage.removeItem("gameInfo");
         }
-        const request = new Request("PHP/api.php", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(body)
-        })
 
-        // console.log(body);
-
-        const response = await callAPI(request, true, false);
-        const resource = await response.json();
-
-        window.localStorage.setItem("gameInfo", JSON.stringify(await resource));
-        const randomNum = Math.floor(Math.random() * 100) + 1;
-        // console.log("**************************************" + randomNum);
     }, 1000)
 
     window.localStorage.setItem("fetchIntervalID", intervalID)
@@ -86,11 +96,11 @@ async function renderLobby(fetchIntervalID) {
     const main = document.querySelector("main");
 
     main.innerHTML = `
-        <div id="contentWrapper">
+        <div id="contentWrapper" class="lobbyWrapper">
         
-            <h1>Waiting for the host to start the game</h1>
+            <div id="lobbyInfo">Waiting for the host to start the game</div>
             <div id="lobbyMemberList"></div>
-            <button id="lobbyButton"></button>
+            <button id="lobbyButton" class="mpButton"></button>
 
         </div>
     `
@@ -112,21 +122,25 @@ async function renderLobby(fetchIntervalID) {
             const memberListDom = main.querySelector("#lobbyMemberList")
             const lobbyMembers = memberListDom.querySelectorAll(".member");
 
-
             if (lobbyMembers.length != gameMembers.length) {
                 memberListDom.innerHTML = "";
 
                 gameMembers.forEach(member => {
-                    const memberDiv = document.createElement("div");
-                    memberDiv.classList.add("member");
+                    if (member.inLobby == true) {
+                        const memberDiv = document.createElement("div");
+                        memberDiv.classList.add("member");
 
-                    memberDiv.innerHTML = `
-                        <div class="crown"></div>
-                        <div class="lobbyProfilePic" style="background-image: url('images/${member.profilePicture}')"></div>
-                        <div class="lobbyProfileName">${member.name}</div>
-                    `
+                        memberDiv.innerHTML = `
+                            <div class="lobbyProfilePic" style="background-image: url('images/${member.profilePicture}')"></div>
+                            <div class="lobbyProfileName">${member.name}</div>
+                        `
 
-                    memberListDom.appendChild(memberDiv);
+                        memberListDom.appendChild(memberDiv);
+                        if (gameInfo.hostID == member.userID) {
+                            memberDiv.querySelector(".lobbyProfilePic").classList.add("leader");
+                        }
+
+                    }
                 })
             }
 
@@ -134,11 +148,15 @@ async function renderLobby(fetchIntervalID) {
                 clearInterval(intervalID);
                 prepareQuestion(0);
             }
+        } else {
+            clearInterval(intervalID);
         }
     }, 1000)
 
     if (userID == gameInfo.hostID) {
         const button = main.querySelector("#lobbyButton")
+        const lobbyInfo = main.querySelector("#lobbyInfo");
+        lobbyInfo.textContent = "Wait for your friends to join"
         button.textContent = "Start game!";
         button.addEventListener("click", async function (ev) {
             const request = new Request("PHP/api.php", {
@@ -156,6 +174,8 @@ async function renderLobby(fetchIntervalID) {
         })
     } else {
         const button = main.querySelector("#lobbyButton")
+        const lobbyInfo = main.querySelector("#lobbyInfo");
+        lobbyInfo.textContent = "Wait for the leader to start the game"
         button.textContent = "Leave game";
 
         button.addEventListener("click", async function (ev) {
@@ -184,35 +204,134 @@ async function renderLobby(fetchIntervalID) {
 
 }
 
+function prepareQuestion(questionToLoad, skipPointCheck = false) {
 
-function prepareQuestion(questionToLoad) {
-    const main = document.querySelector("main");
+    if (!skipPointCheck) {
+        const main = document.querySelector("main");
 
-    const gameInfo = JSON.parse(window.localStorage.getItem("gameInfo"));
-    window.localStorage.removeItem("gameInfo");
+        const allLightCurtains = document.querySelectorAll(".curtainsLightStartingpage");
+        const allDarkCurtains = document.querySelectorAll(".curtainsStartingpage");
 
-    gameInfo.currentQuestion = gameInfo.questions[questionToLoad];
+        const userID = parseInt(JSON.parse(window.localStorage.getItem("userID")));
 
-    window.localStorage.setItem("gameInfo", gameInfo);
+        const gameInfo = JSON.parse(window.localStorage.getItem("gameInfo"));
+        window.localStorage.removeItem("gameInfo");
 
-    main.innerHTML = `
-        <h1>GET READY</h1>
-        <div id="countdown">5</div>
-    `
+        gameInfo.currentQuestion = gameInfo.questions[questionToLoad];
 
-    const intervalID = setInterval(function () {
-        const countdown = document.querySelector("main > #countdown")
+        window.localStorage.setItem("gameInfo", gameInfo);
 
-        const currentSec = parseInt(countdown.textContent);
+        const gameMembers = gameInfo.members;
 
-        if (currentSec === 0) {
-            clearInterval(intervalID);
-            nextQuestion(questionToLoad);
-        } else {
-            countdown.textContent = currentSec - 1;
+        gameMembers.sort((a, b) => b.points - a.points);
+
+        if (questionToLoad != 0) {
+
+            const lastRoundQuestion = gameInfo.questions[questionToLoad - 1];
+
+            allLightCurtains.forEach(crtn => {
+                crtn.style.height = "93vh"
+            });
+
+            allDarkCurtains.forEach(crtn => {
+                crtn.style.height = "91vh"
+            });
+
+            main.innerHTML = `
+                <div id="contentWrapper" class="currentStandingRound">
+                
+                    <div id="getReadyDiv">GET READY IN <span id="countdown">10</span></div>
+            
+                    <div id="topThree"></div>
+    
+                    <div id="personalPoints">
+                        <div id="pointsThisRound"></div>
+                        <div id="totalPoints"></div>
+                    </div>
+                </div>
+            `
+
+            lastRoundQuestion.pointsFromRound.forEach(user => {
+                if (user.userID == userID) {
+                    main.querySelector("#pointsThisRound").textContent = "You got " + user.roundPoints + " points from this round";
+                }
+            })
+
+            gameMembers.forEach(gMember => {
+                if (gMember.userID == userID) {
+                    main.querySelector("#totalPoints").innerHTML = `Total points: <span id="ttlPoints">${gMember.points}</span>`
+                }
+            })
+
+            for (let i = 0; i < gameMembers.length; i++) {
+                if (i <= 2) {
+                    const topThreeDiv = document.createElement("div");
+                    topThreeDiv.id = `topThree${i + 1}`;
+                    topThreeDiv.classList.add("topThreeDiv")
+                    topThreeDiv.innerHTML = `
+                        <div class="positionImage" style="background-image: url('../images/position${i + 1}.svg')"></div>
+                        <div class="playerImage" style="background-image: url('../images/${gameMembers[i].profilePicture}')"></div>
+                        <div class="currentPoints">${gameMembers[i].points} <span class="opacP">p</span></div>
+                    `
+
+                    document.querySelector("#topThree").appendChild(topThreeDiv);
+                }
+            }
+
+            const intervalID = setInterval(function () {
+                const countdown = main.querySelector("#countdown");
+
+                const currentSec = parseInt(countdown.textContent);
+
+                if (currentSec === 0) {
+                    clearInterval(intervalID);
+
+                    allLightCurtains.forEach(crtn => {
+                        crtn.style.height = "0px"
+                    });
+
+                    allDarkCurtains.forEach(crtn => {
+                        crtn.style.height = "0px"
+                    });
+
+                    nextQuestion(questionToLoad);
+
+                } else {
+                    countdown.textContent = currentSec - 1;
+                }
+
+            }, 1000)
+
         }
 
-    }, 1000)
+        if (questionToLoad == 0) {
+
+            main.innerHTML = `
+                <h1>GET READY</h1>
+                <div id="countdown">10</div>
+            `
+
+            const intervalID = setInterval(function () {
+                const countdown = document.querySelector("main > #countdown")
+
+                const currentSec = parseInt(countdown.textContent);
+
+                if (currentSec === 0) {
+                    clearInterval(intervalID);
+                    nextQuestion(questionToLoad);
+                } else {
+                    countdown.textContent = currentSec - 1;
+                }
+
+            }, 1000)
+        }
+    }
+
+    if (skipPointCheck) {
+        nextQuestion(questionToLoad);
+    }
+
+
 }
 
 function nextQuestion(questionToLoad) {
@@ -226,6 +345,9 @@ function nextQuestion(questionToLoad) {
     console.log(currentQuestion);
 
     switch (questionType) {
+        case "directors":
+            mpTextQuestion(currentQuestion);
+            break;
         case "plot":
             mpTextQuestion(currentQuestion);
             break;
@@ -246,12 +368,15 @@ function mpTextQuestion(question) {
 
     main.innerHTML = `
 
-        <div id="contentWrapper">
-            <div id="questionContainer">
+        <div id="contentWrapper" class="cwType${question.type}">
+
+            <div id="timer" data-current-time="30">
+                <div id="timerProgress"></div>
+            </div>
+
+            <div id="questionContainer" class="qctype${question.type}">
             
-                <div id="timer">10</div>
-                <div id="questionTitle">${question.questionTitle}</div>
-                <div id="questionText">${question.questionText}</div>
+                <div id="questionText" class="type${question.type}">${question.questionText}</div>
         
             </div>
             <div id="alternatives"></div>
@@ -278,6 +403,8 @@ function mpTextQuestion(question) {
 
         alt.querySelector(".altTitle").dataset.title = alternative.title;
         altDiv.append(alt);
+
+
     })
 
     const allAlts = document.querySelectorAll(".alternative")
@@ -299,7 +426,6 @@ function mpTextQuestion(question) {
     })
 
 
-
 }
 
 function mpTrailerQuestion(question) {
@@ -307,9 +433,11 @@ function mpTrailerQuestion(question) {
 
     main.innerHTML = `
     
-        <div id="contentWrapper">
+        <div id="contentWrapper" class="cwType${question.type}">
         
-            <div id="timer">20</div>
+            <div id="timer" data-current-time="30">
+                <div id="timerProgress"></div>
+            </div>
             <div id="videoContainer">
             
                 <iframe src=${question.youtubeLink}?autoplay=1&mute=1&controls=0&disablekb=1&showinfo=0 title="" frameborder="0" controls="0" disablekb="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -321,7 +449,7 @@ function mpTrailerQuestion(question) {
 
             <div id="answerContainer">
 
-                <input id="searchMovie">
+                <input id="searchMovie" placeholder="Which movie?">
                 <div id="foundMovies"></div>
 
             </div>
@@ -345,17 +473,22 @@ function mpPosterQuestion(question) {
 
     main.innerHTML = `
     
-        <div id="contentWrapper">
+        <div id="contentWrapper" class="cwType${question.type}">
         
+
+            <div id="timer" data-current-time="30">
+                <div id="timerProgress"></div>
+            </div>
+
             <div id="questionContainer">
-                <div id="timer">10</div>
+
                 <div id="poster"></div>
 
             </div>
         
             <div id="answerContainer">
             
-                <input id="searchMovie">
+                <input id="searchMovie" placeholder="Which movie?">
                 <div id="foundMovies"></div>
             
             </div>
@@ -381,32 +514,18 @@ function mpPosterQuestion(question) {
 
 }
 
-async function mpCheckAnswer(ev, question, txtAnswer = undefined) {
+async function mpCheckAnswer(ev, question) {
 
     console.log(ev.target.dataset.title);
 
     const gameInfo = JSON.parse(window.localStorage.getItem("gameInfo"));
-    const answerTime = document.querySelector("#timer").textContent
+    const answerTime = document.querySelector("#timer").dataset.currentTime;
     const questType = question.type;
 
     console.log(questType);
     console.log(gameInfo);
 
-    let answer;
-    switch (questType) {
-        case "actors":
-            answer = ev.target.dataset.title;
-            break;
-        case "plot":
-            answer = ev.target.dataset.title;
-            break;
-        case "trailer":
-            answer = txtAnswer;
-            break;
-        case "poster":
-            answer = txtAnswer;
-            break;
-    }
+    let answer = ev.target.dataset.title;
 
     console.log(answer);
 
@@ -433,59 +552,122 @@ async function mpCheckAnswer(ev, question, txtAnswer = undefined) {
 
     let targetAlt;
 
-    if (questType == "actors" || questType == "plot") {
+    if (questType == "actors" || questType == "plot" || questType == "directors") {
         const alternatives = document.querySelectorAll(".alternative");
         alternatives.forEach(alt => {
             if (alt.querySelector(".altTitle").textContent == answer) {
                 targetAlt = alt;
             }
         })
+
+        targetAlt.classList.add("selected");
+
+        if (resource.correct == false) {
+            targetAlt.querySelector(".altTitle").classList.add("wrong");
+        }
     }
 
     if (questType == "trailer" || questType == "poster") {
         const alternatives = document.querySelectorAll(".alternative");
         alternatives.forEach(alt => {
-            if (alt.textContent == answer) {
+            if (alt.querySelector(".altTitle").textContent == answer) {
                 targetAlt = alt;
             }
         })
-    }
 
-    if (resource.correct == false) {
-        targetAlt.classList.add("wrong")
+        if (resource.correct == false) {
+            targetAlt.classList.add("shake");
+
+            setTimeout(() => {
+                targetAlt.classList.remove("shake");
+            }, 200)
+        }
+
+        if (resource.correct == true) {
+            document.querySelector("#searchMovie").setAttribute("disabled", "true");
+        }
     }
 
     if (resource.correct == true) {
-        targetAlt.classList.add("correct")
+        targetAlt.classList.add("selected");
+        targetAlt.querySelector(".altTitle").classList.add("correct")
     }
 }
 
-function startQuestionTimer(question) {
+async function startQuestionTimer(question) {
 
     console.log(question.questionID + 1);
     const timer = document.querySelector("#timer");
+    const timerProgress = document.querySelector("#timerProgress");
+    timerProgress.style.transitionDuration = timer.dataset.currentTime + "s"
+    setTimeout(() => {
+        timerProgress.classList.add("active");
+    }, 50)
 
-    if (timer) {
+    timerProgress.addEventListener("transitionend", async function (ev) {
+        const gameInfo = JSON.parse(window.localStorage.getItem("gameInfo"));
+
+        const request = new Request("PHP/api.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                action: "liveGame",
+                subAction: "doneQuestion",
+                gameID: gameInfo.gameID,
+                userID: parseInt(window.localStorage.getItem("userID"))
+            })
+        })
+
+        await callAPI(request, false, false);
+
         const intervalID = setInterval(() => {
-            let currentTimerValue = parseFloat(timer.textContent);
+            const gameObject = JSON.parse(window.localStorage.getItem("gameInfo"));
 
-            timer.textContent = (currentTimerValue - 0.1).toFixed(1);
-
-            if (currentTimerValue == 0) {
-
+            if (gameObject.nextQuestion) {
                 clearInterval(intervalID);
-
                 endOfQuestion(question);
             }
+        }, 100)
+
+
+
+    })
+
+    if (timer) {
+        const intervalID = setInterval(async function () {
+
+            let currentTimerValue = parseFloat(timer.dataset.currentTime);
+
+            if (currentTimerValue != 0.0) {
+
+                timer.dataset.currentTime = (currentTimerValue - 0.1).toFixed(1);
+
+            } else {
+                clearInterval(intervalID);
+            }
+
         }, 100);
     }
 }
 
 async function endOfQuestion(question) {
-    document.querySelector("#timer").textContent = "0";
+
+    const gameInfo = JSON.parse(window.localStorage.getItem("gameInfo"));
+
+    const rqst = new Request("PHP/api.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            action: "liveGame",
+            subAction: "endedQuestion",
+            gameID: gameInfo.gameID,
+            userID: parseInt(window.localStorage.getItem("userID"))
+        })
+    })
+
+    await callAPI(rqst, false, false);
 
     const qType = question.type;
-    const gameInfo = JSON.parse(window.localStorage.getItem("gameInfo"));
     const request = new Request("PHP/api.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -502,7 +684,7 @@ async function endOfQuestion(question) {
 
     const correctAnswer = resource.correctAnswer;
 
-    if (qType == "plot" || qType == "actors") {
+    if (qType == "plot" || qType == "actors" || qType == "directors") {
         const alternativeDivs = document.querySelectorAll(".alternative");
         const alternativesDiv = document.querySelector("#alternatives")
 
@@ -511,27 +693,46 @@ async function endOfQuestion(question) {
             const title = alternative.querySelector(".altTitle")
 
             if (title.textContent == correctAnswer) {
-                alternative.classList.add("correct");
+                alternative.querySelector(".altTitle").classList.add("correct");
             } else {
-                alternative.classList.add("wrong");
+                alternative.querySelector(".altTitle").classList.add("wrong");
             }
 
             const whoGuessed = document.createElement("div");
             whoGuessed.classList.add("whoGuessed");
 
+            whoGuessed.innerHTML = `
+                <span id="restSpan"></span>
+            `
+
             console.log(whoGuessed);
+
+            let answersInWhoGuessed = 0;
 
             resource.alternatives.forEach(alt => {
                 if (alt.title == title.textContent) {
                     alt.whoGuessed.forEach(player => {
-                        console.log(player);
-                        const playerDiv = document.createElement("div");
 
-                        playerDiv.classList.add("playerImg");
+                        if (answersInWhoGuessed >= 2) {
+                            const restSpan = whoGuessed.querySelector("#restSpan");
+                            if (restSpan.textContent == "") {
+                                restSpan.textContent = "+1";
+                            } else {
+                                const newNumber = parseInt(restSpan.textContent.substring(1)) + 1;
+                                restSpan.textContent = "+" + newNumber;
+                            }
+                        } else {
+                            console.log(player);
+                            const playerDiv = document.createElement("div");
 
-                        playerDiv.style.backgroundImage = `url('../images/${player.profilePicture}')`;
+                            playerDiv.classList.add("playerImg");
 
-                        whoGuessed.appendChild(playerDiv);
+                            playerDiv.style.backgroundImage = `url('../images/${player.profilePicture}')`;
+
+                            whoGuessed.prepend(playerDiv);
+
+                            answersInWhoGuessed += 1;
+                        }
                     })
                 }
             })
@@ -539,10 +740,6 @@ async function endOfQuestion(question) {
             alternative.appendChild(whoGuessed);
 
         })
-
-    }
-
-    if (qType == "trailer" || qType == "poster") {
 
     }
 
@@ -567,14 +764,6 @@ async function currentStanding(question) {
 
     console.log(allLightCurtains);
 
-    allLightCurtains.forEach(crtn => {
-        crtn.style.height = "93vh"
-    });
-
-    allDarkCurtains.forEach(crtn => {
-        crtn.style.height = "91vh"
-    });
-
     const gameInfo = JSON.parse(window.localStorage.getItem("gameInfo"));
     const gameMembers = gameInfo.members;
     const questions = gameInfo.questions;
@@ -584,10 +773,19 @@ async function currentStanding(question) {
     const main = document.querySelector("main");
 
     if (question.questionID + 1 == questions.length / 2) {
+
+        allLightCurtains.forEach(crtn => {
+            crtn.style.height = "93vh"
+        });
+
+        allDarkCurtains.forEach(crtn => {
+            crtn.style.height = "91vh"
+        });
+
         main.innerHTML = `
-            <div id="contentWrapper">
+            <div id="contentWrapper" class="currentStandingHalf">
             
-                <div id="countdown">15</div>
+                <div id="getReadyDiv">GET READY IN <span id="countdown">10</span></div>
         
                 <div id="topThree"></div>
         
@@ -605,14 +803,14 @@ async function currentStanding(question) {
                 clearInterval(intervalID);
 
                 allLightCurtains.forEach(crtn => {
-                    crtn.style.height = "117px"
+                    crtn.style.height = "0px"
                 });
 
                 allDarkCurtains.forEach(crtn => {
-                    crtn.style.height = "109px"
+                    crtn.style.height = "0px"
                 });
 
-                checkNextQuestion(question);
+                checkNextQuestion(question, true);
 
             } else {
                 countdown.textContent = currentSec - 1;
@@ -622,6 +820,16 @@ async function currentStanding(question) {
     }
 
     if (question.questionID + 1 == questions.length) {
+
+        allLightCurtains.forEach(crtn => {
+            crtn.style.height = "100vh"
+            crtn.style.borderRadius = "0";
+        });
+
+        allDarkCurtains.forEach(crtn => {
+            crtn.style.height = "100vh"
+            crtn.style.borderRadius = "0";
+        });
 
         const fetchIntervalID = parseInt(JSON.parse(window.localStorage.getItem("fetchIntervalID")));
 
@@ -644,7 +852,7 @@ async function currentStanding(question) {
         await callAPI(request, true, false);
 
         main.innerHTML = `
-            <div id="contentWrapper">
+            <div id="contentWrapper" class="currentStandingResults">
             
                 <h1 id="endScreenHead">RESULTS</h1>
         
@@ -652,7 +860,10 @@ async function currentStanding(question) {
         
                 <div id="restList"></div>
 
-                <button id="playAgainButton">PLAY AGAIN</button>
+                <div id="resultButtons">
+                    <button id="exitGameButton" class="mpButton">Exit Game</button>
+                    <button id="playAgainButton" class="mpButton">Play Again</button>
+                </div>
             
             </div>
         `
@@ -660,6 +871,19 @@ async function currentStanding(question) {
         const playAgainButton = document.querySelector("#playAgainButton");
 
         playAgainButton.addEventListener("click", async function (ev) {
+
+            const allLightCurtains = document.querySelectorAll(".curtainsLightStartingpage");
+            const allDarkCurtains = document.querySelectorAll(".curtainsStartingpage");
+
+            allLightCurtains.forEach(crtn => {
+                crtn.style.height = "0vh"
+                crtn.style.borderRadius = "0 0 30px 30px";
+            });
+
+            allDarkCurtains.forEach(crtn => {
+                crtn.style.height = "0vh"
+                crtn.style.borderRadius = "0 0 30px 30px";
+            });
 
             const request = new Request("PHP/api.php", {
                 method: "POST",
@@ -687,11 +911,9 @@ async function currentStanding(question) {
             topThreeDiv.id = `topThree${i + 1}`;
             topThreeDiv.classList.add("topThreeDiv")
             topThreeDiv.innerHTML = `
-                <div class="playerImageDiv">
-                    <div class="positionImage"></div>
-                    <div class="playerImage" style="background-image: url('../images/${gameMembers[i].profilePicture}')"></div>
-                </div>
-                <div class="currentPoints">${gameMembers[i].points}</div>
+                <div class="positionImage" style="background-image: url('../images/position${i + 1}.svg')"></div>
+                <div class="playerImage" style="background-image: url('../images/${gameMembers[i].profilePicture}')"></div>
+                <div class="currentPoints">${gameMembers[i].points} <span class="opacP">p</span></div>
             `
 
             document.querySelector("#topThree").appendChild(topThreeDiv);
@@ -704,11 +926,7 @@ async function currentStanding(question) {
             restListDiv.innerHTML = `
                 <div class="restListDivLeft">
 
-                    <div class="playerImageDiv">
-                        <div class="positionImage"></div>
-                        <div class="playerImage" style="background-image: url('../images/${gameMembers[i].profilePicture}')"></div>
-                    </div>
-
+                    <div class="positionImage" style="background-image: url('../images/position${i + 1}.svg')"></div>
                     <div>${gameMembers[i].name}</div>
                 
                 </div>
@@ -723,19 +941,20 @@ async function currentStanding(question) {
     console.log(gameMembers);
 }
 
-function checkNextQuestion(question) {
+function checkNextQuestion(question, skipPointCheck) {
     const currentGame = JSON.parse(window.localStorage.getItem("gameInfo"));
     const questionsArray = currentGame.questions;
 
     const nextIndex = question.questionID + 1;
 
     if (questionsArray.length - 1 != question.questionID) {
-        prepareQuestion(nextIndex);
+        prepareQuestion(nextIndex, skipPointCheck);
     }
 }
 
 async function findMovie(event, question) {
     let movieResults = document.getElementById("foundMovies");
+
     movieResults.innerHTML = ``;
     let input = document.getElementById("searchMovie");
 
@@ -767,13 +986,19 @@ async function findMovie(event, question) {
 
         let movieDiv = document.createElement("div");
         movieDiv.classList.add("alternative");
-        movieDiv.textContent = filteredArray[i];
+        movieDiv.innerHTML = `
+            <div class="altTitle">${filteredArray[i]}</div>
+        `
+
+        movieDiv.dataset.title = filteredArray[i];
+        movieDiv.querySelector(".altTitle").dataset.title = filteredArray[i];
 
         movieDiv.addEventListener("click", ev => {
-            const txtAnswer = ev.target.textContent;
-            mpCheckAnswer(ev, question, txtAnswer);
+            mpCheckAnswer(ev, question);
         })
 
         movieResults.appendChild(movieDiv);
     }
+
+
 }

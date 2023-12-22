@@ -1,4 +1,16 @@
 function chooseCatagoryMultiplayer(event) {
+
+    const allLightCurtains = document.querySelectorAll(".curtainsLightStartingpage");
+    const allDarkCurtains = document.querySelectorAll(".curtainsStartingpage");
+
+    allLightCurtains.forEach(crtn => {
+        crtn.style.height = "0px"
+    });
+
+    allDarkCurtains.forEach(crtn => {
+        crtn.style.height = "0px"
+    });
+
     genreArray = [
         "Crime",
         "Drama",
@@ -17,15 +29,6 @@ function chooseCatagoryMultiplayer(event) {
 
 
     document.querySelector("main").innerHTML = `
-    <header id="menu">
-
-        <div class="profile">
-            <div id="profilePic"></div>
-            <img src="images/Frame 263.png" alt="Logo">
-        </div>
-    </header>
-    
-
     <h1>Choose a category!</h1>
     <div id="catergoryMenu"></div>
     <button id="Mixed">Mixed Catagories</button>
@@ -65,7 +68,7 @@ function chooseCatagoryMultiplayer(event) {
                 if (catagory.classList.contains("SelectedGanras")) {
                     catagory.classList.remove("SelectedGanras");
                 }
-                
+
                 catagory.removeEventListener("click", chooseGenre);
             })
 
@@ -154,17 +157,21 @@ async function inviteFriends(gameID) {
 
     document.querySelector("main").innerHTML = `
     <div id="inviteFriendsWrapper">
-        <h1 id="inviteFriendsHeader">Bjud in dina vänner</h1>
+        <div id="inviteFriendsHeader">Bjud in dina vänner</div>
 
         <div id="findFriends">
-            <input id="userSearch">
+            <input id="userSearch" placeholder="Sök">
             <div id="searchResults"></div>
+            <div id="addedUsers"></div>
         </div>
 
-        <div id="addedUsers"></div>
-        <button id="inviteUsers">Nästa</button>
+ 
+        <button id="inviteUsers" class="mpButton">Nästa</button>
     </div>
     `
+
+    let root = document.querySelector(":root");
+    root.style.setProperty('--beforeOpacity', '0.4')
 
     const request = new Request(`PHP/api.php?action=multiplayer&subAction=fetchFriends&userID=${userID}&username=${username}`);
 
@@ -181,6 +188,9 @@ async function inviteFriends(gameID) {
 
     input.addEventListener("click", ev => {
         ev.stopPropagation();
+        input.setAttribute("placeholder", "");
+        let root = document.querySelector(":root");
+        root.style.setProperty('--beforeOpacity', '1')
         searchResultsDiv.classList.add("searching");
         searchResultsDiv.innerHTML = "";
         input.style.borderRadius = "20px 20px 0px 0px";
@@ -197,12 +207,18 @@ async function inviteFriends(gameID) {
 
     body.addEventListener("click", ev => {
         ev.stopPropagation();
+        input.setAttribute("placeholder", "Sök");
+        let root = document.querySelector(":root");
+        root.style.setProperty('--beforeOpacity', '0.4')
         searchResultsDiv.classList.remove("searching");
         input.value = "";
         input.style.borderRadius = "20px 20px 20px 20px";
     })
 
-    document.getElementById("inviteUsers").addEventListener("click", e => {
+    document.getElementById("inviteUsers").addEventListener("click", finalizeInvite);
+
+    async function finalizeInvite(e) {
+        document.getElementById("inviteUsers").removeEventListener("click", finalizeInvite)
 
         const addedUsers = document.querySelectorAll(".addedUser");
 
@@ -220,7 +236,7 @@ async function inviteFriends(gameID) {
         })
 
         joinGame(gameID);
-    })
+    }
 
 }
 
@@ -256,45 +272,70 @@ async function findUsers(event, ar) {
                 <div class="friendDivName">${filteredArray[i].name}</div>
             </div>
 
-            <div class="inviteFriendButton">+</div>
+            <div class="inviteFriendButton">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="close" d="M2 20L0 18L8 10L0 2L2 0L10 8L18 0L20 2L12 10L20 18L18 20L10 12L2 20Z" fill="#8184F8"/>
+                </svg>
+            </div>
         `
 
         const inviteButton = friendDiv.querySelector(".inviteFriendButton");
 
+        searchResults.appendChild(friendDiv);
+
         const addedUsers = document.querySelectorAll(".addedUser");
 
-        let eventListAdded = false;
+        let addedEventListener = false;
 
         addedUsers.forEach(user => {
             if (user.querySelector(".addedUserName").textContent == filteredArray[i].name) {
-                inviteButton.textContent = "x";
-
-                inviteButton.addEventListener("click", ev => {
-                    document.querySelector(`#username${filteredArray[i].name}`).remove();
-                })
-
-                eventListAdded = true;
+                inviteButton.addEventListener("click", removeUser);
+                inviteButton.classList.add("remove");
+                inviteButton.classList.remove("add");
+                const pathElement = inviteButton.querySelector("#close");
+                pathElement.setAttribute("fill", "#8184F8")
+                addedEventListener = true;
             }
         })
 
-        if (!eventListAdded) {
+        if (!addedEventListener) {
             inviteButton.addEventListener("click", addUser);
+            inviteButton.classList.add("add");
+            inviteButton.classList.remove("remove");
+            inviteButton.classList.add("rotated")
+            const pathElement = inviteButton.querySelector("#close");
+            pathElement.setAttribute("fill", "white")
         }
 
-        searchResults.appendChild(friendDiv);
+        function removeUser(ev) {
+            const addedUserss = document.querySelectorAll(".addedUser");
+
+            addedUserss.forEach(user => {
+                if (user.querySelector(".addedUserName").textContent == filteredArray[i].name) {
+                    user.remove()
+                }
+            })
+
+            inviteButton.addEventListener("click", addUser);
+            inviteButton.removeEventListener("click", removeUser);
+            inviteButton.classList.add("add");
+            inviteButton.classList.remove("remove");
+            inviteButton.classList.add("rotated")
+            const pathElement = inviteButton.querySelector("#close");
+            pathElement.setAttribute("fill", "white")
+
+        }
 
         function addUser(ev) {
             const userDiv = document.createElement("div");
 
             userDiv.innerHTML = `
-                <div class="removeAddedUser">
-                    <div>x</div>
-                </div>
+                <div class="removeAddedUser"></div>
                 <div class="addedUserImage" style="background-image: url('images/${filteredArray[i].profilePicture}')"></div>
                 <div class="addedUserName">${filteredArray[i].name}</div>
             `
 
-            userDiv.querySelector(".removeAddedUser > div").addEventListener("click", eve => {
+            userDiv.querySelector(".removeAddedUser").addEventListener("click", eve => {
                 userDiv.remove();
             })
 
@@ -302,7 +343,14 @@ async function findUsers(event, ar) {
             userDiv.classList.add("addedUser");
 
             document.querySelector("#addedUsers").appendChild(userDiv);
+
+            inviteButton.addEventListener("click", removeUser);
+            inviteButton.removeEventListener("click", addUser);
+            inviteButton.classList.remove("add");
+            inviteButton.classList.add("remove");
+            inviteButton.classList.remove("rotated")
+            const pathElement = inviteButton.querySelector("#close");
+            pathElement.setAttribute("fill", "#8184F8")
         }
     }
 }
-

@@ -1,0 +1,33 @@
+<svg width="34" height="31" viewBox="0 0 34 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 17">
+<path id="Polygon 3" d="M10.7772 8.13554C12.6488 12.0898 14.0335 13.794 16.9554 16.1397L9.09857 18.1064C10.7132 14.2918 11.1 12.111 10.7772 8.13554Z" fill="#FFF8BA" fill-opacity="0.33"/>
+<path id="Polygon 4" d="M23.2886 5.40141C25.1602 9.35564 26.5449 11.0599 29.4668 13.4056L21.61 15.3723C23.2246 11.5577 23.6114 9.37685 23.2886 5.40141Z" fill="#FFF8BA" fill-opacity="0.33"/>
+<g id="Rectangle 148" filter="url(#filter0_d_679_986)">
+<path d="M4.06171 7.37207C11.6872 22.8373 18.0019 14.1933 16.3093 4.30626L20.166 19.7134L7.91843 22.7792L4.06171 7.37207Z" fill="#FFF8BA"/>
+</g>
+<path id="Rectangle 149" d="M16.3092 4.30615C23.9347 19.7714 30.2494 11.1274 28.5568 1.24034L32.4135 16.6475L20.1659 19.7133L16.3092 4.30615Z" fill="#FFF8BA"/>
+<ellipse id="Ellipse 122" cx="3.84112" cy="6.97237" rx="0.701414" ry="0.661773" transform="rotate(-14.0535 3.84112 6.97237)" fill="#FF6868"/>
+<g id="Ellipse 125">
+<ellipse cx="10.6407" cy="7.65793" rx="0.584511" ry="0.551477" transform="rotate(-14.0535 10.6407 7.65793)" fill="#FF6868"/>
+<ellipse cx="10.6407" cy="7.65793" rx="0.584511" ry="0.551477" transform="rotate(-14.0535 10.6407 7.65793)" fill="black" fill-opacity="0.5"/>
+</g>
+<g id="Ellipse 126">
+<ellipse cx="23.2222" cy="4.96335" rx="0.584511" ry="0.551477" transform="rotate(-14.0535 23.2222 4.96335)" fill="#FF6868"/>
+<ellipse cx="23.2222" cy="4.96335" rx="0.584511" ry="0.551477" transform="rotate(-14.0535 23.2222 4.96335)" fill="black" fill-opacity="0.5"/>
+</g>
+<ellipse id="Ellipse 123" cx="16.2021" cy="3.87814" rx="0.701414" ry="0.661773" transform="rotate(-14.0535 16.2021 3.87814)" fill="#FF6868"/>
+<ellipse id="Ellipse 124" cx="28.4497" cy="0.812463" rx="0.701414" ry="0.661773" transform="rotate(-14.0535 28.4497 0.812463)" fill="#FF6868"/>
+</g>
+<defs>
+<filter id="filter0_d_679_986" x="0.0617065" y="4.30615" width="24.1042" height="26.4731" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_679_986"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_679_986" result="shape"/>
+</filter>
+</defs>
+</svg>

@@ -115,6 +115,11 @@ function popUpFunction(action, information) {
 
     }
 
+    document.getElementById("removePopUp").addEventListener("click", element => {
+        console.log(element);
+        element.target.parentElement.remove();
+    })
+}
 }
 
 async function acceptInvite(gameID) {

@@ -46,12 +46,15 @@ function multiplayer($users, $received_data){
                         "name" => $hostUsername,
                         "userID" => $user["id"],
                         "profilePicture" => $user["profile_picture"],
-                        "points" => 0
+                        "points" => 0,
+                        "inLobby" => true,
+                        "latestFetch" => time()
                     ]],
-                    "questions" => getRandomMovies(10, $selectedGenres),
+                    "questions" => "",
                     "isStarted" => false,
-                    "replay" => false,
-                    "currentQuestion" => "",
+                    "doneQuestion" => [],
+                    "nextQuestion" => false,
+                    "endedQuestion" => []
                 ];
                 
                 $multiplayerInformation[] = $inviteObject;
@@ -90,10 +93,26 @@ function multiplayer($users, $received_data){
                             "userID" => $user["id"],
                             "name" => $user["username"],
                             "profilePicture" => $user["profile_picture"],
-                            "points" => 0
+                            "points" => 0,
+                            "inLobby" => true,
+                            "latestFetch" => time()
                         ];
-                        $game["members"][] = $gameobject;
-                    
+
+                        $alreadyInGame = false;
+
+                        foreach($game["members"] as &$member){
+                            if($member["userID"] == $gameobject["userID"]){
+                                $alreadyInGame = true;
+
+                                if($alreadyInGame){
+                                    $member["inLobby"] = true;
+                                }
+                            }
+                        }
+
+                        if(!$alreadyInGame){
+                            $game["members"][] = $gameobject;
+                        }
                     }
                 }
             }
