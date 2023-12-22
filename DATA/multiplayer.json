@@ -1,6 +1,6 @@
 [
     {
-        "gameID": 62130,
+        "gameID": 30642,
         "hostID": 1,
         "genres": [
             "Crime",
@@ -23,31 +23,7 @@
                 "profilePicture": "The bear.jpg",
                 "points": 0,
                 "inLobby": false,
-                "latestFetch": 1703189169
-            },
-            {
-                "userID": 2,
-                "name": "ww",
-                "profilePicture": "The bear.jpg",
-                "points": 0,
-                "inLobby": false,
-                "latestFetch": 1703189169
-            },
-            {
-                "userID": 3,
-                "name": "www",
-                "profilePicture": "The bear.jpg",
-                "points": 0,
-                "inLobby": false,
-                "latestFetch": 1703189169
-            },
-            {
-                "userID": 4,
-                "name": "wwww",
-                "profilePicture": "Sons (kopia).jpg",
-                "points": 0,
-                "inLobby": false,
-                "latestFetch": 1703189170
+                "latestFetch": 1703274179
             }
         ],
         "questions": [
@@ -55,14 +31,220 @@
                 "questionID": 0,
                 "type": "trailer",
                 "correctAnswer": "Citizen Kane",
+                "pointsFromRound": [
+                    {
+                        "userID": 1,
+                        "roundPoints": 0
+                    }
+                ],
                 "youtubeLink": "https:\/\/www.youtube.com\/embed\/_qvjbH50IBw",
                 "guesses": []
             },
             {
                 "questionID": 1,
-                "type": "poster",
-                "correctAnswer": "To Kill a Mockingbird",
-                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BNmVmYzcwNzMtMWM1NS00MWIyLThlMDEtYzUwZDgzODE1NmE2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+                "type": "trailer",
+                "correctAnswer": "8\u00bd",
+                "pointsFromRound": [
+                    {
+                        "userID": 1,
+                        "roundPoints": 0
+                    }
+                ],
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/4CjMvGBY_lI",
+                "guesses": []
+            }
+        ],
+        "isStarted": true,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 47212,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 8.6,
+                "inLobby": false,
+                "latestFetch": 1703274387
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "trailer",
+                "correctAnswer": "The Departed",
+                "pointsFromRound": [
+                    {
+                        "username": "w",
+                        "userID": 1,
+                        "roundPoints": "8.6"
+                    }
+                ],
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/n4O3x5BH18E",
+                "guesses": [
+                    "The Departed"
+                ]
+            },
+            {
+                "questionID": 1,
+                "type": "trailer",
+                "correctAnswer": "V for Vendetta",
+                "pointsFromRound": [
+                    {
+                        "username": "w",
+                        "userID": 1,
+                        "roundPoints": 0
+                    }
+                ],
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/lSA7mAHolAw",
+                "guesses": []
+            }
+        ],
+        "isStarted": true,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 96581,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 18.9,
+                "inLobby": false,
+                "latestFetch": 1703274772
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "trailer",
+                "correctAnswer": "Incendies",
+                "pointsFromRound": [
+                    {
+                        "username": "w",
+                        "userID": 1,
+                        "roundPoints": "18.9"
+                    }
+                ],
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/XJ69WnwvZhE",
+                "guesses": [
+                    "Incendies"
+                ]
+            },
+            {
+                "questionID": 1,
+                "type": "trailer",
+                "correctAnswer": "Sunset Blvd.",
+                "pointsFromRound": [
+                    {
+                        "username": "w",
+                        "userID": 1,
+                        "roundPoints": 0
+                    }
+                ],
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/_dY0SVxnHjQ",
+                "guesses": []
+            }
+        ],
+        "isStarted": true,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 52712,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 13.7,
+                "inLobby": false,
+                "latestFetch": 1703274867
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "trailer",
+                "correctAnswer": "The Dark Knight Rises",
+                "pointsFromRound": [
+                    {
+                        "username": "w",
+                        "userID": 1,
+                        "roundPoints": "13.7"
+                    }
+                ],
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/z5Humz3ONgk",
+                "guesses": [
+                    "Incendies",
+                    "The Dark Knight",
+                    "The Dark Knight Rises"
+                ]
+            },
+            {
+                "questionID": 1,
+                "type": "trailer",
+                "correctAnswer": "The Terminator",
+                "pointsFromRound": [
+                    {
+                        "username": "w",
+                        "userID": 1,
+                        "roundPoints": 0
+                    }
+                ],
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/CaJWHBgD7TE",
                 "guesses": []
             }
         ],
@@ -72,7 +254,7 @@
         "endedQuestion": []
     },
     {
-        "gameID": 56079,
+        "gameID": 62263,
         "hostID": 1,
         "genres": [
             "Crime",
@@ -95,71 +277,46 @@
                 "profilePicture": "The bear.jpg",
                 "points": 0,
                 "inLobby": false,
-                "latestFetch": 1703189557
+                "latestFetch": 1703275040
             }
         ],
         "questions": [
             {
                 "questionID": 0,
-                "type": "directors",
-                "correctAnswer": "Casino",
-                "alternatives": [
+                "type": "trailer",
+                "correctAnswer": "Alien",
+                "pointsFromRound": [
                     {
-                        "title": "Casino",
-                        "whoGuessed": [
-                            {
-                                "userID": 2,
-                                "name": "ww",
-                                "profilePicture": "The bear.jpg",
-                                "inLobby": false,
-                                "latestFetch": 1703189474
-                            },
-                            {
-                                "userID": 3,
-                                "name": "www",
-                                "profilePicture": "The bear.jpg",
-                                "inLobby": false,
-                                "latestFetch": 1703189476
-                            },
-                            {
-                                "userID": 4,
-                                "name": "wwww",
-                                "profilePicture": "Sons (kopia).jpg",
-                                "inLobby": false,
-                                "latestFetch": 1703189478
-                            }
-                        ]
-                    },
-                    {
-                        "title": "Modern Times",
-                        "whoGuessed": [
-                            {
-                                "name": "w",
-                                "userID": 1,
-                                "profilePicture": "The bear.jpg",
-                                "inLobby": false,
-                                "latestFetch": 1703189473
-                            }
-                        ]
+                        "username": "w",
+                        "userID": 1,
+                        "roundPoints": 0
                     }
                 ],
-                "questionText": "Which movie has Martin Scorsese directed?"
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/L2VWfWC-wI4",
+                "guesses": []
             },
             {
                 "questionID": 1,
                 "type": "trailer",
-                "correctAnswer": "La La Land",
-                "youtubeLink": "https:\/\/www.youtube.com\/embed\/je0aAf2f8XQ",
+                "correctAnswer": "There Will Be Blood",
+                "pointsFromRound": [
+                    {
+                        "username": "w",
+                        "userID": 1,
+                        "roundPoints": 0
+                    }
+                ],
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/0FIm5ATyAY0",
                 "guesses": []
             }
         ],
-        "isStarted": false,
+        "isStarted": true,
         "doneQuestion": [],
         "nextQuestion": false,
         "endedQuestion": []
     },
     {
-        "gameID": 38452,
+        "gameID": 61042,
         "hostID": 1,
         "genres": [
             "Crime",
@@ -180,9 +337,226 @@
                 "name": "w",
                 "userID": 1,
                 "profilePicture": "The bear.jpg",
+                "points": 24,
+                "inLobby": false,
+                "latestFetch": 1703275482
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "trailer",
+                "correctAnswer": "The Great Dictator",
+                "pointsFromRound": [
+                    {
+                        "username": "w",
+                        "userID": 1,
+                        "roundPoints": "24.0"
+                    }
+                ],
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/i1C6qZVeFtA",
+                "guesses": [
+                    "The Great Dictator"
+                ]
+            },
+            {
+                "questionID": 1,
+                "type": "trailer",
+                "correctAnswer": "The Bridge on the River Kwai",
+                "pointsFromRound": [
+                    {
+                        "username": "w",
+                        "userID": 1,
+                        "roundPoints": 0
+                    }
+                ],
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/RlC7XBayj0s",
+                "guesses": []
+            }
+        ],
+        "isStarted": true,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 31477,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 16.5,
+                "inLobby": false,
+                "latestFetch": 1703275547
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "trailer",
+                "correctAnswer": "V for Vendetta",
+                "pointsFromRound": [
+                    {
+                        "username": "w",
+                        "userID": 1,
+                        "roundPoints": "16.5"
+                    }
+                ],
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/lSA7mAHolAw",
+                "guesses": [
+                    "V for Vendetta"
+                ]
+            },
+            {
+                "questionID": 1,
+                "type": "trailer",
+                "correctAnswer": "The Third Man",
+                "pointsFromRound": [
+                    {
+                        "username": "w",
+                        "userID": 1,
+                        "roundPoints": 0
+                    }
+                ],
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/r9yyDEDGlr0",
+                "guesses": []
+            }
+        ],
+        "isStarted": true,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 58338,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 22.9,
+                "inLobby": true,
+                "latestFetch": 1703275735
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "poster",
+                "correctAnswer": "The Deer Hunter",
+                "pointsFromRound": [
+                    {
+                        "username": "w",
+                        "userID": 1,
+                        "roundPoints": "9.9"
+                    }
+                ],
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BNDhmNTA0ZDMtYjhkNS00NzEzLWIzYTItOGNkMTVmYjE2YmI3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+                "guesses": [
+                    "The Deer Hunter"
+                ]
+            },
+            {
+                "questionID": 1,
+                "type": "plot",
+                "correctAnswer": "Sunset Blvd.",
+                "alternatives": [
+                    {
+                        "title": "Sunset Blvd.",
+                        "whoGuessed": [
+                            {
+                                "name": "w",
+                                "userID": 1,
+                                "profilePicture": "The bear.jpg",
+                                "inLobby": false,
+                                "latestFetch": 1703275683
+                            }
+                        ]
+                    },
+                    {
+                        "title": "It Happened One Night",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Casino",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Munna Bhai M.B.B.S.",
+                        "whoGuessed": []
+                    }
+                ],
+                "pointsFromRound": [
+                    {
+                        "username": "w",
+                        "userID": 1,
+                        "roundPoints": "13.0"
+                    }
+                ],
+                "questionText": "A screenwriter develops a dangerous relationship with a faded film star determined to make a triumphant return."
+            }
+        ],
+        "isStarted": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 18013,
+        "hostID": 5,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "puttefnask",
+                "userID": 5,
+                "profilePicture": null,
                 "points": 0,
                 "inLobby": true,
-                "latestFetch": 1703189630
+                "latestFetch": 1703275900
             }
         ],
         "questions": "",
@@ -192,8 +566,8 @@
         "endedQuestion": []
     },
     {
-        "gameID": 10413,
-        "hostID": 1,
+        "gameID": 36505,
+        "hostID": 5,
         "genres": [
             "Crime",
             "Drama",
@@ -210,12 +584,12 @@
         ],
         "members": [
             {
-                "name": "w",
-                "userID": 1,
-                "profilePicture": "The bear.jpg",
+                "name": "puttefnask",
+                "userID": 5,
+                "profilePicture": null,
                 "points": 0,
                 "inLobby": true,
-                "latestFetch": 1703189683
+                "latestFetch": 1703276136
             }
         ],
         "questions": "",

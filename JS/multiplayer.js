@@ -1,4 +1,16 @@
 function chooseCatagoryMultiplayer(event) {
+
+    const allLightCurtains = document.querySelectorAll(".curtainsLightStartingpage");
+    const allDarkCurtains = document.querySelectorAll(".curtainsStartingpage");
+
+    allLightCurtains.forEach(crtn => {
+        crtn.style.height = "0px"
+    });
+
+    allDarkCurtains.forEach(crtn => {
+        crtn.style.height = "0px"
+    });
+
     genreArray = [
         "Crime",
         "Drama",

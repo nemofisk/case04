@@ -124,5 +124,18 @@
         "resetTimer": 0,
         "profile_picture": "The bear.jpg",
         "lastSpun": "14"
+    },
+    {
+        "username": "puttefnask",
+        "password": "puttelutte",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 100,
+        "clues": 0,
+        "resetTimer": 0,
+        "id": 5
     }
 ]

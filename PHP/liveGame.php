@@ -136,6 +136,12 @@ function liveGame($users, $games, $recieved_data){
                 if($member["userID"] == $userID){
                     $games[$currentGameIndex]["members"][$index]["points"] += $answerTime;
 
+                    foreach($games[$currentGameIndex]["questions"][$questionIndex]["pointsFromRound"] as &$qMember){
+                        if($qMember["userID"] == $userID){
+                            $qMember["roundPoints"] = $answerTime;
+                        }
+                    }
+                    
                     putInMultiplayerJSON($games);
                     sendJSON(["correct" => true]);
                 }
@@ -149,10 +155,16 @@ function liveGame($users, $games, $recieved_data){
 
     if($subAction === "startGame"){
         $games[$currentGameIndex]["isStarted"] = true;
-        $games[$currentGameIndex]["questions"] = getRandomMovies(2, $currentGame["genres"]);
+        $games[$currentGameIndex]["questions"] = getRandomMovies(10, $currentGame["genres"]);
         foreach($games[$currentGameIndex]["members"] as &$member){
             $member["points"] = 0;
             $member["inLobby"] = false;
+        }
+
+        foreach($games[$currentGameIndex]["questions"] as &$question){
+            foreach($games[$currentGameIndex]["members"] as &$member){
+                $question["pointsFromRound"][] = ["username" => $member["name"] ,"userID" => $member["userID"], "roundPoints" => 0];
+            }
         }
 
         putInMultiplayerJSON($games);
