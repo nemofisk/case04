@@ -174,7 +174,7 @@ function uploadImage($users, $received_data){
         $source = $_FILES["upload"]["tmp_name"];
         $name = $_FILES["upload"]["name"];
         $size = $_FILES["upload"]["size"];
-        $destination = "../images/".$name;
+        $destination = __DIR__."/../images/".$name;
 
         if (move_uploaded_file($source, $destination)) {
             header("Content-Type: application/json");

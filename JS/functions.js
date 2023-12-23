@@ -120,7 +120,7 @@ function popUpFunction(action, information) {
         element.target.parentElement.remove();
     })
 }
-}
+
 
 async function acceptInvite(gameID) {
     const request = new Request("PHP/api.php", {

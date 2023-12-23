@@ -312,15 +312,19 @@ function prepareQuestion(questionToLoad, skipPointCheck = false) {
             `
 
             const intervalID = setInterval(function () {
-                const countdown = document.querySelector("main > #countdown")
+                if (document.querySelector("main > #countdown")) {
+                    const countdown = document.querySelector("main > #countdown")
 
-                const currentSec = parseInt(countdown.textContent);
+                    const currentSec = parseInt(countdown.textContent);
 
-                if (currentSec === 0) {
-                    clearInterval(intervalID);
-                    nextQuestion(questionToLoad);
+                    if (currentSec === 0) {
+                        clearInterval(intervalID);
+                        nextQuestion(questionToLoad);
+                    } else {
+                        countdown.textContent = currentSec - 1;
+                    }
                 } else {
-                    countdown.textContent = currentSec - 1;
+                    clearInterval(intervalID);
                 }
 
             }, 1000)
@@ -903,6 +907,11 @@ async function currentStanding(question) {
             joinGame(gameInfo.gameID);
         })
 
+        const exitButton = document.querySelector("#exitGameButton");
+
+        exitButton.addEventListener("click", eve => {
+            renderStartingpage();
+        })
     }
 
     for (let i = 0; i < gameMembers.length; i++) {

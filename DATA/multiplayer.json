@@ -1,1 +1,1269 @@
-[]
+[
+    {
+        "gameID": 73968,
+        "hostID": 13,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "Puttefnask",
+                "userID": 13,
+                "profilePicture": "71757bc1e037189933725c804f0881b6.png",
+                "points": 0,
+                "inLobby": false,
+                "latestFetch": 1703278731
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "trailer",
+                "correctAnswer": "Saving Private Ryan",
+                "pointsFromRound": [
+                    {
+                        "username": "Puttefnask",
+                        "userID": 13,
+                        "roundPoints": 0
+                    }
+                ],
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/RYExstiQlLc",
+                "guesses": []
+            },
+            {
+                "questionID": 1,
+                "type": "plot",
+                "correctAnswer": "Interstellar",
+                "alternatives": [
+                    {
+                        "title": "Interstellar",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Hamster Factor and Other Tales of Twelve Monkeys",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "La La Land",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Pulp Fiction",
+                        "whoGuessed": []
+                    }
+                ],
+                "pointsFromRound": [
+                    {
+                        "username": "Puttefnask",
+                        "userID": 13,
+                        "roundPoints": 0
+                    }
+                ],
+                "questionText": "When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans."
+            },
+            {
+                "questionID": 2,
+                "type": "poster",
+                "correctAnswer": "A Wednesday",
+                "pointsFromRound": [
+                    {
+                        "username": "Puttefnask",
+                        "userID": 13,
+                        "roundPoints": 0
+                    }
+                ],
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BOTcwMzdiMWItMjZlOS00MzAzLTg5OTItNTA4OGYyMjBhMmRiXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 3,
+                "type": "plot",
+                "correctAnswer": "L.A. Confidential",
+                "alternatives": [
+                    {
+                        "title": "L.A. Confidential",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Room",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Harry Potter and the Deathly Hallows: Part 2",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Casino",
+                        "whoGuessed": []
+                    }
+                ],
+                "pointsFromRound": [
+                    {
+                        "username": "Puttefnask",
+                        "userID": 13,
+                        "roundPoints": 0
+                    }
+                ],
+                "questionText": "As corruption grows in 1950s Los Angeles, three policemen - one strait-laced, one brutal, and one sleazy - investigate a series of murders with their own brand of justice."
+            },
+            {
+                "questionID": 4,
+                "type": "trailer",
+                "correctAnswer": "Up",
+                "pointsFromRound": [
+                    {
+                        "username": "Puttefnask",
+                        "userID": 13,
+                        "roundPoints": 0
+                    }
+                ],
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/ORFWdXl_zJ4",
+                "guesses": []
+            },
+            {
+                "questionID": 5,
+                "type": "actors",
+                "correctAnswer": "Psycho",
+                "alternatives": [
+                    {
+                        "title": "3 Idiots",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Psycho",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Amadeus",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Prisoners",
+                        "whoGuessed": []
+                    }
+                ],
+                "pointsFromRound": [
+                    {
+                        "username": "Puttefnask",
+                        "userID": 13,
+                        "roundPoints": 0
+                    }
+                ],
+                "questionText": "Which movie does<br>Anthony Perkins, Janet Leigh, Vera Miles<br>star in?"
+            },
+            {
+                "questionID": 6,
+                "type": "trailer",
+                "correctAnswer": "Prisoners",
+                "pointsFromRound": [
+                    {
+                        "username": "Puttefnask",
+                        "userID": 13,
+                        "roundPoints": 0
+                    }
+                ],
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/2SupordEUpw",
+                "guesses": []
+            },
+            {
+                "questionID": 7,
+                "type": "trailer",
+                "correctAnswer": "Munna Bhai M.B.B.S.",
+                "pointsFromRound": [
+                    {
+                        "username": "Puttefnask",
+                        "userID": 13,
+                        "roundPoints": 0
+                    }
+                ],
+                "youtubeLink": "https:\/\/www.youtube.com\/embed\/6lCGvu-hwX4",
+                "guesses": []
+            },
+            {
+                "questionID": 8,
+                "type": "poster",
+                "correctAnswer": "Gandhi",
+                "pointsFromRound": [
+                    {
+                        "username": "Puttefnask",
+                        "userID": 13,
+                        "roundPoints": 0
+                    }
+                ],
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BYjZiYmYwYjYtOTdlZS00OGM4LTg0NmQtOTg0OGMzMjkyYWM2XkEyXkFqcGdeQXVyMTUzMDUzNTI3._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 9,
+                "type": "directors",
+                "correctAnswer": "La haine",
+                "alternatives": [
+                    {
+                        "title": "Gone with the Wind",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "La haine",
+                        "whoGuessed": []
+                    }
+                ],
+                "pointsFromRound": [
+                    {
+                        "username": "Puttefnask",
+                        "userID": 13,
+                        "roundPoints": 0
+                    }
+                ],
+                "questionText": "Which movie has Mathieu Kassovitz directed?"
+            }
+        ],
+        "isStarted": true,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 64110,
+        "hostID": 13,
+        "genres": [
+            "Drama"
+        ],
+        "members": [
+            {
+                "name": "Puttefnask",
+                "userID": 13,
+                "profilePicture": "71757bc1e037189933725c804f0881b6.png",
+                "points": 0,
+                "inLobby": false,
+                "latestFetch": 1703278800
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "directors",
+                "correctAnswer": "The Dark Knight Rises",
+                "alternatives": [
+                    {
+                        "title": "Lock, Stock and Two Smoking Barrels",
+                        "whoGuessed": [
+                            {
+                                "name": "Puttefnask",
+                                "userID": 13,
+                                "profilePicture": "71757bc1e037189933725c804f0881b6.png",
+                                "inLobby": false,
+                                "latestFetch": 1703278775
+                            }
+                        ]
+                    },
+                    {
+                        "title": "The Dark Knight Rises",
+                        "whoGuessed": []
+                    }
+                ],
+                "pointsFromRound": [
+                    {
+                        "username": "Puttefnask",
+                        "userID": 13,
+                        "roundPoints": 0
+                    }
+                ],
+                "questionText": "Which movie has Christopher Nolan directed?"
+            },
+            {
+                "questionID": 1,
+                "type": "actors",
+                "correctAnswer": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
+                "alternatives": [
+                    {
+                        "title": "There Will Be Blood",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "No Country for Old Men",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Chinatown",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
+                        "whoGuessed": []
+                    }
+                ],
+                "pointsFromRound": [
+                    {
+                        "username": "Puttefnask",
+                        "userID": 13,
+                        "roundPoints": 0
+                    }
+                ],
+                "questionText": "Which movie does<br>Peter Sellers, George C. Scott, Sterling Hayden<br>star in?"
+            },
+            {
+                "questionID": 2,
+                "type": "directors",
+                "correctAnswer": "Eternal Sunshine of the Spotless Mind",
+                "alternatives": [
+                    {
+                        "title": "Catch Me If You Can",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Eternal Sunshine of the Spotless Mind",
+                        "whoGuessed": []
+                    }
+                ],
+                "pointsFromRound": [
+                    {
+                        "username": "Puttefnask",
+                        "userID": 13,
+                        "roundPoints": 0
+                    }
+                ],
+                "questionText": "Which movie has Michel Gondry directed?"
+            },
+            {
+                "questionID": 3,
+                "type": "directors",
+                "correctAnswer": "The Sixth Sense",
+                "alternatives": [
+                    {
+                        "title": "The Sixth Sense",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "On the Waterfront",
+                        "whoGuessed": []
+                    }
+                ],
+                "pointsFromRound": [
+                    {
+                        "username": "Puttefnask",
+                        "userID": 13,
+                        "roundPoints": 0
+                    }
+                ],
+                "questionText": "Which movie has M. Night Shyamalan directed?"
+            },
+            {
+                "questionID": 4,
+                "type": "plot",
+                "correctAnswer": "Metropolis",
+                "alternatives": [
+                    {
+                        "title": "Heat",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Metropolis",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Stand by Me",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Forrest Gump",
+                        "whoGuessed": []
+                    }
+                ],
+                "pointsFromRound": [
+                    {
+                        "username": "Puttefnask",
+                        "userID": 13,
+                        "roundPoints": 0
+                    }
+                ],
+                "questionText": "In a futuristic city sharply divided between the working class and the city planners, the son of the city's mastermind falls in love with a working-class prophet who predicts the coming of a savior to mediate their differences."
+            },
+            {
+                "questionID": 5,
+                "type": "actors",
+                "correctAnswer": "L.A. Confidential",
+                "alternatives": [
+                    {
+                        "title": "Dog Day Afternoon",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Blade Runner 2049",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "A Wednesday",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "L.A. Confidential",
+                        "whoGuessed": []
+                    }
+                ],
+                "pointsFromRound": [
+                    {
+                        "username": "Puttefnask",
+                        "userID": 13,
+                        "roundPoints": 0
+                    }
+                ],
+                "questionText": "Which movie does<br>Kevin Spacey, Russell Crowe, Guy Pearce<br>star in?"
+            },
+            {
+                "questionID": 6,
+                "type": "poster",
+                "correctAnswer": "Chinatown",
+                "pointsFromRound": [
+                    {
+                        "username": "Puttefnask",
+                        "userID": 13,
+                        "roundPoints": 0
+                    }
+                ],
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BMjJkMDZhYzItZTFhMi00ZGI4LThlNTAtZDNlYmEwNjFkNDYzXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 7,
+                "type": "poster",
+                "correctAnswer": "Paris, Texas",
+                "pointsFromRound": [
+                    {
+                        "username": "Puttefnask",
+                        "userID": 13,
+                        "roundPoints": 0
+                    }
+                ],
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BM2RjMmU3ZWItYzBlMy00ZmJkLWE5YzgtNTVkODdhOWM3NGZhXkEyXkFqcGdeQXVyNDA5Mjg5MjA@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 8,
+                "type": "actors",
+                "correctAnswer": "Lock, Stock and Two Smoking Barrels",
+                "alternatives": [
+                    {
+                        "title": "Lock, Stock and Two Smoking Barrels",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Great Dictator",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "V for Vendetta",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Goodfellas",
+                        "whoGuessed": []
+                    }
+                ],
+                "pointsFromRound": [
+                    {
+                        "username": "Puttefnask",
+                        "userID": 13,
+                        "roundPoints": 0
+                    }
+                ],
+                "questionText": "Which movie does<br>Jason Flemyng, Dexter Fletcher, Nick Moran<br>star in?"
+            },
+            {
+                "questionID": 9,
+                "type": "directors",
+                "correctAnswer": "Hotel Rwanda",
+                "alternatives": [
+                    {
+                        "title": "Hotel Rwanda",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Whiplash",
+                        "whoGuessed": []
+                    }
+                ],
+                "pointsFromRound": [
+                    {
+                        "username": "Puttefnask",
+                        "userID": 13,
+                        "roundPoints": 0
+                    }
+                ],
+                "questionText": "Which movie has Terry George directed?"
+            }
+        ],
+        "isStarted": true,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 29542,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 0,
+                "inLobby": false,
+                "latestFetch": 1703278958
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "plot",
+                "correctAnswer": "Alien",
+                "alternatives": [
+                    {
+                        "title": "Gone Girl",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Alien",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Se7en",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Good Will Hunting",
+                        "whoGuessed": []
+                    }
+                ],
+                "pointsFromRound": [
+                    {
+                        "username": "w",
+                        "userID": 1,
+                        "roundPoints": 0
+                    }
+                ],
+                "questionText": "The crew of a commercial spacecraft encounters a deadly lifeform after investigating an unknown transmission."
+            },
+            {
+                "questionID": 1,
+                "type": "directors",
+                "correctAnswer": "Star Wars: Episode V - The Empire Strikes Back",
+                "alternatives": [
+                    {
+                        "title": "The Departed",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Star Wars: Episode V - The Empire Strikes Back",
+                        "whoGuessed": []
+                    }
+                ],
+                "pointsFromRound": [
+                    {
+                        "username": "w",
+                        "userID": 1,
+                        "roundPoints": 0
+                    }
+                ],
+                "questionText": "Which movie has Irvin Kershner directed?"
+            },
+            {
+                "questionID": 2,
+                "type": "poster",
+                "correctAnswer": "Interstellar",
+                "pointsFromRound": [
+                    {
+                        "username": "w",
+                        "userID": 1,
+                        "roundPoints": 0
+                    }
+                ],
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 3,
+                "type": "actors",
+                "correctAnswer": "Unforgiven",
+                "alternatives": [
+                    {
+                        "title": "Bakomfilm Smultronst\u00e4llet",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Touch of Evil",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Inception",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Unforgiven",
+                        "whoGuessed": []
+                    }
+                ],
+                "pointsFromRound": [
+                    {
+                        "username": "w",
+                        "userID": 1,
+                        "roundPoints": 0
+                    }
+                ],
+                "questionText": "Which movie does<br>Clint Eastwood, Gene Hackman, Morgan Freeman<br>star in?"
+            },
+            {
+                "questionID": 4,
+                "type": "plot",
+                "correctAnswer": "The Deer Hunter",
+                "alternatives": [
+                    {
+                        "title": "The Dark Knight Rises",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Finding Nemo",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Deer Hunter",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Terminator 2: Judgment Day",
+                        "whoGuessed": []
+                    }
+                ],
+                "pointsFromRound": [
+                    {
+                        "username": "w",
+                        "userID": 1,
+                        "roundPoints": 0
+                    }
+                ],
+                "questionText": "An in-depth examination of the ways in which the Vietnam War impacts and disrupts the lives of several friends in a small steel mill town in Pennsylvania."
+            },
+            {
+                "questionID": 5,
+                "type": "poster",
+                "correctAnswer": "Munna Bhai M.B.B.S.",
+                "pointsFromRound": [
+                    {
+                        "username": "w",
+                        "userID": 1,
+                        "roundPoints": 0
+                    }
+                ],
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BMzJhMjI0ZmYtZTQ3My00YTliLWE4ZmMtMjJmMzcyNDcwYTI5XkEyXkFqcGdeQXVyODk2ODI3MTU@._V1_SX300.jpg",
+                "guesses": []
+            },
+            {
+                "questionID": 6,
+                "type": "actors",
+                "correctAnswer": "Raging Bull",
+                "alternatives": [
+                    {
+                        "title": "The Gold Rush",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Se7en",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "A Wednesday",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Raging Bull",
+                        "whoGuessed": []
+                    }
+                ],
+                "pointsFromRound": [
+                    {
+                        "username": "w",
+                        "userID": 1,
+                        "roundPoints": 0
+                    }
+                ],
+                "questionText": "Which movie does<br>Robert De Niro, Cathy Moriarty, Joe Pesci<br>star in?"
+            },
+            {
+                "questionID": 7,
+                "type": "plot",
+                "correctAnswer": "The Third Man",
+                "alternatives": [
+                    {
+                        "title": "Se7en",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "WALL\u00b7E",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Third Man",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "American Beauty",
+                        "whoGuessed": []
+                    }
+                ],
+                "pointsFromRound": [
+                    {
+                        "username": "w",
+                        "userID": 1,
+                        "roundPoints": 0
+                    }
+                ],
+                "questionText": "Pulp novelist Holly Martins travels to shadowy, postwar Vienna, only to find himself investigating the mysterious death of an old friend, Harry Lime."
+            },
+            {
+                "questionID": 8,
+                "type": "plot",
+                "correctAnswer": "The Bridge on the River Kwai",
+                "alternatives": [
+                    {
+                        "title": "Witness for the Prosecution",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Se7en",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Bridge on the River Kwai",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Terminator 2: Judgment Day",
+                        "whoGuessed": []
+                    }
+                ],
+                "pointsFromRound": [
+                    {
+                        "username": "w",
+                        "userID": 1,
+                        "roundPoints": 0
+                    }
+                ],
+                "questionText": "British POWs are forced to build a railway bridge across the river Kwai for their Japanese captors in occupied Burma, not knowing that the allied forces are planning a daring commando raid through the jungle to destroy it."
+            },
+            {
+                "questionID": 9,
+                "type": "plot",
+                "correctAnswer": "Paper Moon",
+                "alternatives": [
+                    {
+                        "title": "Million Dollar Baby",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Million Dollar Baby",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Paper Moon",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Bakomfilm Smultronst\u00e4llet",
+                        "whoGuessed": []
+                    }
+                ],
+                "pointsFromRound": [
+                    {
+                        "username": "w",
+                        "userID": 1,
+                        "roundPoints": 0
+                    }
+                ],
+                "questionText": "During the Great Depression, a con man finds himself saddled with a young girl who may or may not be his daughter, and the two forge an unlikely partnership."
+            }
+        ],
+        "isStarted": true,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 93626,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 27.7,
+                "inLobby": false,
+                "latestFetch": 1703279559
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "directors",
+                "correctAnswer": "Modern Times",
+                "alternatives": [
+                    {
+                        "title": "Modern Times",
+                        "whoGuessed": [
+                            {
+                                "name": "w",
+                                "userID": 1,
+                                "profilePicture": "The bear.jpg",
+                                "inLobby": false,
+                                "latestFetch": 1703279481
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Casino",
+                        "whoGuessed": []
+                    }
+                ],
+                "pointsFromRound": [
+                    {
+                        "username": "w",
+                        "userID": 1,
+                        "roundPoints": "27.7"
+                    }
+                ],
+                "questionText": "Which movie has Charles Chaplin directed?"
+            },
+            {
+                "questionID": 1,
+                "type": "plot",
+                "correctAnswer": "Blade Runner",
+                "alternatives": [
+                    {
+                        "title": "The Dark Knight Rises",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Pulp Fiction",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Blade Runner",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "It Happened One Night",
+                        "whoGuessed": []
+                    }
+                ],
+                "pointsFromRound": [
+                    {
+                        "username": "w",
+                        "userID": 1,
+                        "roundPoints": 0
+                    }
+                ],
+                "questionText": "A blade runner must pursue and terminate four replicants who stole a ship in space and have returned to Earth to find their creator."
+            }
+        ],
+        "isStarted": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 40602,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 27.6,
+                "inLobby": false,
+                "latestFetch": 1703279745
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "plot",
+                "correctAnswer": "Million Dollar Baby",
+                "alternatives": [
+                    {
+                        "title": "Beauty and the Beast",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Gone with the Wind",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Dark Knight Rises",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Million Dollar Baby",
+                        "whoGuessed": []
+                    }
+                ],
+                "pointsFromRound": [
+                    {
+                        "username": "w",
+                        "userID": 1,
+                        "roundPoints": 0
+                    }
+                ],
+                "questionText": "Frankie, an ill-tempered old coach, reluctantly agrees to train aspiring boxer Maggie. Impressed with her determination and talent, he helps her become the best and the two soon form a close bond."
+            },
+            {
+                "questionID": 1,
+                "type": "directors",
+                "correctAnswer": "Touch of Evil",
+                "alternatives": [
+                    {
+                        "title": "Touch of Evil",
+                        "whoGuessed": [
+                            {
+                                "name": "w",
+                                "userID": 1,
+                                "profilePicture": "The bear.jpg",
+                                "inLobby": false,
+                                "latestFetch": 1703279713
+                            }
+                        ]
+                    },
+                    {
+                        "title": "There Will Be Blood",
+                        "whoGuessed": []
+                    }
+                ],
+                "pointsFromRound": [
+                    {
+                        "username": "w",
+                        "userID": 1,
+                        "roundPoints": "27.6"
+                    }
+                ],
+                "questionText": "Which movie has Orson Welles directed?"
+            }
+        ],
+        "isStarted": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 52399,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 0,
+                "inLobby": true,
+                "latestFetch": 1703279768
+            }
+        ],
+        "questions": "",
+        "isStarted": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 89657,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 0,
+                "inLobby": true,
+                "latestFetch": 1703279851
+            }
+        ],
+        "questions": "",
+        "isStarted": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 69096,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 0,
+                "inLobby": true,
+                "latestFetch": 1703279950
+            }
+        ],
+        "questions": "",
+        "isStarted": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 72148,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 0,
+                "inLobby": true,
+                "latestFetch": 1703286117
+            }
+        ],
+        "questions": "",
+        "isStarted": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 56141,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 0,
+                "inLobby": true,
+                "latestFetch": 1703289614
+            }
+        ],
+        "questions": "",
+        "isStarted": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 33996,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 0,
+                "inLobby": true,
+                "latestFetch": 1703291372
+            }
+        ],
+        "questions": "",
+        "isStarted": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 29729,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 0,
+                "inLobby": true,
+                "latestFetch": 1703292497
+            }
+        ],
+        "questions": "",
+        "isStarted": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 65703,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 0,
+                "inLobby": true,
+                "latestFetch": 1703293987
+            }
+        ],
+        "questions": "",
+        "isStarted": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    }
+]

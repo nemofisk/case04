@@ -1,4 +1,14 @@
 function singlePlayer(event) {
+    const allLightCurtains = document.querySelectorAll(".curtainsLightStartingpage");
+    const allDarkCurtains = document.querySelectorAll(".curtainsStartingpage");
+    allLightCurtains.forEach(crtn => {
+        crtn.style.height = "0vh"
+    });
+
+    allDarkCurtains.forEach(crtn => {
+        crtn.style.height = "0vh"
+    });
+
     genreArray = [
         "Crime",
         "Drama",
@@ -18,22 +28,14 @@ function singlePlayer(event) {
     document.querySelector("footer").innerHTML = ``
 
     document.querySelector("main").innerHTML = `
-    <header id="menu">
+        <h1>Choose a category!</h1>
+        <div id="catergoryMenu"></div>
+        <div id="mixed">Mixed Categories</div>
+        <div id="Continue">Continue</div>
+    `
 
-        <div class="profile">
-            <div id="profilePic"></div>
-            <img src="images/Frame 263.png" alt="Logo">
-        </div>
-    </header>
-    
+    document.querySelector("main").dataset.totalPoints = 0;
 
-    <h1>Choose a category!</h1>
-    <div id="catergoryMenu"></div>
-    <div id="mixed">Mixed Categories</div>
-    <div id="Continue">Continue</div>
-        
-
-    </div>`
     let genresCategorty = document.querySelector("#catergoryMenu");
 
     for (let i = 0; i < genreArray.length; i++) {
@@ -42,7 +44,7 @@ function singlePlayer(event) {
         div.textContent = genreArray[i];
         genresCategorty.appendChild(div)
         div.addEventListener("click", () => {
-            if(document.getElementById("mixed").classList.contains("mixedMark")){
+            if (document.getElementById("mixed").classList.contains("mixedMark")) {
                 document.getElementById("mixed").classList.remove("selected");
                 document.getElementById("mixed").style.backgroundColor = "";
                 document.querySelectorAll("#catergoryMenu > div").forEach(div => {
@@ -87,44 +89,25 @@ function singlePlayer(event) {
     document.getElementById("Continue").addEventListener("click", () => {
         if (document.getElementById("Continue").style.backgroundColor === "rgb(255, 248, 186)") {
             const selectedGenres = Array.from(document.querySelectorAll(".genreClass.selected")).map((div) => div.textContent);
-            chooseGenre(selectedGenres);
+            generateMovies(selectedGenres);
         }
 
     })
 }
 
+function generateMovies(array, questionNumber = 1, answerTime) {
 
-function chooseGenre(array) {
+    console.log("Generate Movies " + questionNumber);
 
-    let chosenGenre;
-
-    if (window.localStorage.getItem("genre")) {
-        chosenGenre = JSON.parse(window.localStorage.getItem("genre"));
-    } else {
-        chosenGenre = array;
-        window.localStorage.setItem("genre", JSON.stringify(chosenGenre));
-    }
+    let chosenGenres = array;
 
 
-
-    console.log(chosenGenre);
-
-    document.querySelector("main").innerHTML = `
-    <header id="menu">
-
-    <div class="profile">
-        <div id="profilePic"></div>
-        <img src="images/Frame 263.png" alt="Logo">
-    </div>
-    
-    </header>
-    `
     fetch("../DATA/movies.json").then(r => r.json()).then(resource => {
         let movieGenerArray = []
         for (let i = 0; i < resource.length; i++) {
 
             if (resource[i].Genre !== undefined) {
-                chosenGenre.forEach(genre => {
+                chosenGenres.forEach(genre => {
                     if (resource[i].Genre.includes(genre)) {
                         movieGenerArray.push(resource[i])
                     }
@@ -135,186 +118,170 @@ function chooseGenre(array) {
         console.log(movieGenerArray);
         let otherMovies = []
         let correctMovie = movieGenerArray[Math.floor(Math.random() * movieGenerArray.length)];
-        window.localStorage.setItem("movie", correctMovie.Title)
+
         let i = 0;
-        while (i < 4) {
+        while (i < 3) {
             let movie = movieGenerArray[Math.floor(Math.random() * movieGenerArray.length)];
             if (movie !== correctMovie && movie !== undefined) {
                 otherMovies.push(movie)
                 i++
             }
         }
-        startGame(correctMovie, otherMovies)
+
+        SPprepareQuestion(correctMovie, otherMovies, array, questionNumber, answerTime)
     })
 }
 
-function startGame(correctMovie, otherMovies) {
+function SPprepareQuestion(correctMovie, otherMovies, genres, questionNumber, answerTime) {
+    const main = document.querySelector("main");
+
+
+    if (questionNumber != 1) {
+
+        const allLightCurtains = document.querySelectorAll(".curtainsLightStartingpage");
+        const allDarkCurtains = document.querySelectorAll(".curtainsStartingpage");
+        allLightCurtains.forEach(crtn => {
+            crtn.style.height = "93vh"
+        });
+
+        allDarkCurtains.forEach(crtn => {
+            crtn.style.height = "91vh"
+        });
+
+        main.innerHTML = `
+                <div id="contentWrapper" class="currentStandingRoundSP">
+                
+                    <div id="getReadyDivSP">GET READY IN <br><span id="countdownSP">2</span></div>
+    
+                    <div id="pointsThisRoundSP">You got ${answerTime} points from this round</div>
+                    <div id="totalPointsSP">Total points: <span id="ttlPoints">${main.dataset.totalPoints}</span></div>
+                </div>
+            `
+        const intervalID = setInterval(function () {
+            const countdown = main.querySelector("#countdownSP");
+
+            const currentSec = parseInt(countdown.textContent);
+
+            if (currentSec === 0) {
+                clearInterval(intervalID);
+
+                allLightCurtains.forEach(crtn => {
+                    crtn.style.height = "0px"
+                });
+
+                allDarkCurtains.forEach(crtn => {
+                    crtn.style.height = "0px"
+                });
+
+                startQuestion(correctMovie, otherMovies, genres, questionNumber);
+
+            } else {
+                countdown.textContent = currentSec - 1;
+            }
+
+        }, 1000)
+    }
+
+    if (questionNumber == 1) {
+
+        main.innerHTML = `
+            <h1>GET READY</h1>
+            <div id="countdown">3</div>
+        `
+
+        const intervalID = setInterval(function () {
+            if (document.querySelector("main > #countdown")) {
+                const countdown = document.querySelector("main > #countdown")
+
+                const currentSec = parseInt(countdown.textContent);
+
+                if (currentSec === 0) {
+                    clearInterval(intervalID);
+                    startQuestion(correctMovie, otherMovies, genres, questionNumber)
+                } else {
+                    countdown.textContent = currentSec - 1;
+                }
+            } else {
+                clearInterval(intervalID);
+            }
+
+        }, 1000)
+    }
+}
+
+function startQuestion(correctMovie, otherMovies, genres, questionNumber) {
     console.log(correctMovie, otherMovies);
 
-    let quizQuiestions = ["quotes", "trailers", "poster", "actors", "plot"]
+    let quizQuiestions = ["directors"]
 
     let questionCategory = quizQuiestions[Math.floor(Math.random() * quizQuiestions.length)];
 
     console.log(questionCategory);
     switch (questionCategory) {
-        case "quotes":
-            textQuestion(correctMovie, otherMovies, "quotes")
+        case "directors":
+            textQuestion(correctMovie, otherMovies, "directors", genres, questionNumber)
             break;
 
-        case "trailers":
-            trailerQuestion(correctMovie, otherMovies)
+        case "trailer":
+            trailerQuestion(correctMovie, otherMovies, "trailer", genres, questionNumber)
             break;
 
         case "poster":
-            posterQuestion(correctMovie, otherMovies)
+            posterQuestion(correctMovie, otherMovies, "poster", genres, questionNumber)
             break;
 
         case "actors":
-            textQuestion(correctMovie, otherMovies, "actors")
+            textQuestion(correctMovie, otherMovies, "actors", genres, questionNumber)
             break;
 
         case "plot":
-            textQuestion(correctMovie, otherMovies, "plot")
+            textQuestion(correctMovie, otherMovies, "plot", genres, questionNumber)
             break;
     }
 }
 
-
-
-function posterQuestion(correctMovie, otherMovies) {
-    console.log(correctMovie.Poster);
-    document.querySelector("main").innerHTML = `
-    <header id="menu">
-    
-    <div id="PosterContainer">
-        <div id="question">Guess the movie</div>
-        <div id="moviePoster">
-            <img src="${correctMovie.Poster}" alt="">
-        </div>
-
-        <input id="searchMovie"></input>
-        <div id="displaySearchedMovies"></div>
-        <button id="guessingButton">Guess</button>
-        <button id="nextQuestion">Next</button>
-        <button id="clue">Get Clue</button>
-        <button id="resetTimer">Reset Timer</button>
-    </div>
-    `
-
-
-    document.getElementById("clue").addEventListener("click", func => {
-        getClue(correctMovie)
-    })
-
-    function changeBlur(blur) {
-        let moviePoster = document.getElementById("moviePoster");
-        moviePoster.style.filter = `blur(${blur}px)`;
-    }
-    let blurValue = 20;
-
-    const intervalID = setInterval(function () {
-        changeBlur(blurValue);
-        blurValue = blurValue - 1;
-
-        if (blurValue < 0) {
-            clearInterval(intervalID);
-            console.log("L");
-        }
-    }, 1000);
-    document.getElementById("resetTimer").addEventListener("click", func => {
-        blurValue = 20;
-    })
-
-    document.getElementById("searchMovie").addEventListener("input", filterString);
-    let inputGuess = document.getElementById("searchMovie");
-    let guessingButton = document.getElementById("guessingButton");
-    guessingButton.addEventListener("click", e => {
-
-        let moviePoster = document.getElementById("moviePoster");
-        moviePoster.style.filter = `blur(0px)`;
-        clearInterval(intervalID);
-        if (inputGuess.value === correctMovie.Title) {
-
-            let request = new Request("PHP/api.php", {
-                method: "POST",
-                headers: { "Content-type": "application/json" },
-                body: JSON.stringify({ username: window.localStorage.getItem("username"), guess: "correct", action: "profile", subAction: "quizGuess", points: 25 })
-            })
-            callAPI(request);
-        } else {
-            console.log("wrong");
-            guess = false;
-        }
-    })
-    document.getElementById("nextQuestion").addEventListener("click", e => {
-        clearInterval(intervalID);
-        chooseGenre(window.localStorage.getItem("genre"));
-    })
-}
-
-function textQuestion(correctMovie, otherMovies, type) {
-    document.querySelector("main").innerHTML = `
-   <div id="contentWrapper">
-    <div id="questionContainer">
-        <div id="timer">Time left: </div>
-        <div id="question"></div>
-        <div id="plotText"></div>
-    </div>
-    <div id="alternatives"></div>
-    <button id="nextQuestion">Next</button>
-    <button id="clue">Get Clue</button>
-    <button id="resetTimer">Reset Timer</button>
-    </div>
-    `
-    let startTimer = 20;
-
-    const intervalID = setInterval(function () {
-        startTimer = startTimer - 1;
-        document.getElementById("timer").textContent = "Time left: " + startTimer;
-
-        if (startTimer < 0) {
-            clearInterval(intervalID);
-            console.log("L");
-        }
-    }, 1000);
-    document.getElementById("resetTimer").addEventListener("click", func => {
-        startTimer = 20;
-
-    })
-
-    document.getElementById("clue").addEventListener("click", func => {
-        getClue(correctMovie)
-    })
-    document.getElementById("nextQuestion").addEventListener("click", e => {
-        chooseGenre(window.localStorage.getItem("genre"));
-    })
-
+async function textQuestion(correctMovie, otherMovies, type, genres, questionNumber) {
     let questionText;
-    let plotText;
 
     switch (type) {
-        case "quotes":
-            questionText = "What movie is this quote from?";
-            plotText = correctMovie.Title;
+        case "directors":
+            questionText = "Which movie has " + correctMovie.Director + " directed?";
             break;
         case "actors":
-            questionText = "What movie has these actors in it?";
-            plotText = correctMovie.Actors;
+            questionText = "Which movie does " + correctMovie.Actors + " star in?";
             break;
         case "plot":
-            questionText = "What movie does this plot describe?";
-            plotText = correctMovie.Plot;
+            questionText = correctMovie.Plot;
             break;
     }
 
-    let quiestionDiv = document.getElementById("question");
-    
-    quiestionDiv.textContent = questionText;
-    document.getElementById("plotText").textContent = plotText;
+    const main = document.querySelector("main");
 
-    let div = document.createElement("div")
-    div.classList.add("alternative")
-    let divApped = document.querySelector("#alternatives");
+    main.innerHTML = `
+
+        <div id="contentWrapper" class="cwType${type}">
+
+            <div id="timer" data-current-time="3">
+                <div id="timerProgress"></div>
+            </div>
+
+            <div id="questionContainer" class="qctype${type}">
+            
+                <div id="questionText" class="type${type}">${questionText}</div>
+        
+            </div>
+            <div id="alternatives"></div>
+        </div>
+
+    `
+
+    SPstartQuestionTimer(genres, questionNumber);
+
+    // document.getElementById("clue").addEventListener("click", func => {
+    //     getClue(correctMovie)
+    // })
+
+    main.querySelector("#timer").dataset.answerTime = 0;
 
     let moveisArray = []
     moveisArray.push(correctMovie.Title)
@@ -330,19 +297,162 @@ function textQuestion(correctMovie, otherMovies, type) {
     shuffleArray(moveisArray);
     console.log(moveisArray);
 
-    moveisArray.forEach(movie => {
-        let div = document.createElement("div")
-        div.classList.add("questions")
-        div.textContent = movie;
-        divApped.appendChild(div)
-        div.addEventListener("click", e => {
-            checkAnswer(e)
+    moveisArray.forEach(alternative => {
+        const altDiv = main.querySelector("#alternatives");
+
+        const alt = document.createElement("div");
+        alt.classList.add("alternative");
+
+        alt.dataset.title = alternative;
+        console.log(alternative);
+
+        alt.innerHTML = `
+            <div class="altTitle">${alternative}</div>
+        `
+
+        alt.querySelector(".altTitle").dataset.title = alternative;
+        altDiv.append(alt);
+
+
+    })
+
+    const allAlts = document.querySelectorAll(".alternative")
+
+    function altEvent(event) {
+        const allAlternatives = document.querySelectorAll(".alternative")
+
+        console.log(allAlternatives);
+
+        allAlternatives.forEach(altern => {
+            altern.removeEventListener("click", altEvent)
         })
-    });
+
+        const timerDiv = document.querySelector("#timer")
+
+        let targetAlt
+
+        answer = event.target.dataset.title;
+
+        const alternatives = document.querySelectorAll(".alternative");
+        alternatives.forEach(alt => {
+            if (alt.querySelector(".altTitle").textContent == answer) {
+                targetAlt = alt;
+            }
+        })
+
+        targetAlt.classList.add("selected");
+
+        const correct = checkAnswer(event.target.dataset.title, correctMovie);
+
+        const timerProgress = main.querySelector("#timerProgress");
+
+        if (correct) {
+            targetAlt.querySelector(".altTitle").classList.add("correct")
+            const answerTime = parseFloat(timerDiv.dataset.currentTime);
+            timerDiv.dataset.answerTime = answerTime
+            const currTotalPoints = parseFloat(document.querySelector("main").dataset.totalPoints);
+            document.querySelector("main").dataset.totalPoints = currTotalPoints + answerTime;
+        }
+
+        if (!correct) {
+            targetAlt.querySelector(".altTitle").classList.add("wrong")
+        }
+    }
+
+    allAlts.forEach(al => {
+        al.addEventListener("click", altEvent);
+    })
 }
 
-function checkAnswer(event) {
-    let guess;
+function posterQuestion(correctMovie, otherMovies, type, genres, questionNumber) {
+    const main = document.querySelector("main");
+
+    main.innerHTML = `
+    
+        <div id="contentWrapper" class="cwType${type}">
+        
+
+            <div id="timer" data-current-time="30">
+                <div id="timerProgress"></div>
+            </div>
+
+            <div id="questionContainer">
+
+                <div id="poster"></div>
+
+            </div>
+        
+            <div id="answerContainer">
+            
+                <input id="searchMovie" placeholder="Which movie?">
+                <div id="foundMovies"></div>
+            
+            </div>
+
+        </div>
+
+    `
+
+    main.querySelector("#timer").dataset.answerTime = 0;
+
+    console.log(correctMovie);
+
+    const posterDiv = document.querySelector("#poster");
+
+    posterDiv.style.backgroundImage = `url('${correctMovie.Poster}')`;
+
+    setTimeout(() => {
+        posterDiv.classList.add("blur")
+    }, 100)
+
+    SPstartQuestionTimer(genres, questionNumber);
+
+    document.getElementById("searchMovie").addEventListener("input", SPfindMovie);
+
+}
+
+function trailerQuestion(correctMovie, otherMovies, type, genres, questionNumber) {
+    const main = document.querySelector("main");
+
+    main.innerHTML = `
+    
+        <div id="contentWrapper" class="cwType${type}">
+        
+            <div id="timer" data-current-time="30">
+                <div id="timerProgress"></div>
+            </div>
+            <div id="videoContainer">
+            
+                <iframe src=${correctMovie.youtubeLink}?autoplay=1&mute=1&controls=0&disablekb=1&showinfo=0 title="" frameborder="0" controls="0" disablekb="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                <div id="movieCoverUp"></div>
+                <div id="movieCoverDown"></div>
+
+            </div>
+
+            <div id="answerContainer">
+
+                <input id="searchMovie" placeholder="Which movie?">
+                <div id="foundMovies"></div>
+
+            </div>
+
+        </div>
+
+    `
+
+    main.querySelector("#timer").dataset.answerTime = 0;
+
+    SPstartQuestionTimer(genres, questionNumber);
+
+    const searchMovie = document.querySelector("#searchMovie");
+    searchMovie.addEventListener("input", ev => {
+        SPfindMovie(ev, correctMovie)
+    })
+}
+
+function checkAnswer(event, correctMovie) {
+    let correct;
 
     let movie;
     if (event.target === undefined) {
@@ -351,7 +461,7 @@ function checkAnswer(event) {
     else {
         movie = event.target.textContent
     }
-    if (movie === window.localStorage.getItem("movie")) {
+    if (movie === correctMovie.Title) {
         console.log("Correct");
 
         let request = new Request("PHP/api.php", {
@@ -360,67 +470,14 @@ function checkAnswer(event) {
             body: JSON.stringify({ username: window.localStorage.getItem("username"), guess: "correct", action: "profile", subAction: "quizGuess", points: 25 })
         })
         callAPI(request);
+
+        correct = true;
     } else {
         console.log("wrong");
-        guess = false;
+        correct = false;
     }
-}
 
-function trailerQuestion(correctMovie) {
-    document.querySelector("main").innerHTML = `
-    <header id="menu">
-    
-    <div class="profile">
-    <div id="profilePic"></div>
-    <p>TheMovieStar</p>
-    </div>
-    <div id="back">Go to home page!</div>
-    </header>
-    
-    <div id="timer">Time left: </div>
-    <iframe width="900" height="562" src=${correctMovie.youtubeLink}?autoplay=1 title="Yung Lean - Hurt" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    <input id="searchMovie"></input>
-    
-    <div id="displaySearchedMovies"></div>
-    <div id="answer">Answer</div>
-
-    <div id="newQuestion">New question</div>
-    <button id="clue">Get Clue</button>
-    <button id="resetTimer">Reset Timer</button>
-    
-    <br>
-    `
-    let startTimer = 20;
-
-    const intervalID = setInterval(function () {
-        startTimer = startTimer - 1;
-        document.getElementById("timer").textContent = "Time left: " + startTimer;
-
-        if (startTimer < 0) {
-            clearInterval(intervalID);
-            console.log("L");
-        }
-    }, 1000);
-
-    document.getElementById("clue").addEventListener("click", func => {
-        getClue(correctMovie)
-    })
-    document.getElementById("resetTimer").addEventListener("click", func => {
-        startTimer = 20;
-
-    })
-
-    document.getElementById("searchMovie").addEventListener("input", filterString);
-
-    document.getElementById("answer").addEventListener("click", movie => {
-        checkAnswer(document.querySelector("#searchMovie").value)
-    })
-
-    document.getElementById("newQuestion").addEventListener("click", element => {
-        chooseGenre(window.localStorage.getItem("genre"))
-    })
-    document.getElementById("back").addEventListener("click", goToHomePage)
-
+    return correct;
 }
 
 function goToHomePage(event) {
@@ -441,4 +498,169 @@ function getClue(movie) {
     document.querySelector("main").appendChild(div);
 
 }
+
+function SPendQuiz() {
+    const main = document.querySelector("main");
+    const userImage = window.localStorage.getItem("userImage");
+    const totalPointes = parseFloat(main.dataset.totalPoints).toFixed(1)
+    main.innerHTML = `
+        <div id="currentStandEndSP">
+            <div id="endGameSPHead">FINAL RESULTS</div>
+            <div id="endGameSPImage" style="background-image: url('images/${userImage}')"></div>
+
+            <div id="endGameSPPointsDiv">
+                <div id="endGameTotalPointsText">Total points: <br><span id="endGameTtlPoints">${totalPointes}</span></div>
+            </div>
+
+            <div id="endGameSPButtons">
+                <button id="exitGameSP">Exit Game</button>
+                <button id="playAgainSP">Play Again</button>
+
+            </div>
+        </div>
+    `
+
+    const allLightCurtains = document.querySelectorAll(".curtainsLightStartingpage");
+    const allDarkCurtains = document.querySelectorAll(".curtainsStartingpage");
+    allLightCurtains.forEach(crtn => {
+        crtn.style.height = "93vh"
+    });
+
+    allDarkCurtains.forEach(crtn => {
+        crtn.style.height = "91vh"
+    });
+
+    main.querySelector("#playAgainSP").addEventListener("click", ev => {
+        singlePlayer();
+    })
+
+    main.querySelector("#exitGameSP").addEventListener("click", ev => {
+        renderStartingpage();
+    })
+}
+
+async function SPstartQuestionTimer(genres, questionNumber) {
+
+    const timer = document.querySelector("#timer");
+    const timerProgress = document.querySelector("#timerProgress");
+    timerProgress.style.transitionDuration = timer.dataset.currentTime + "s"
+
+    setTimeout(() => {
+        timerProgress.classList.add("active");
+    }, 50)
+
+    timerProgress.addEventListener('transitionend', ev => {
+        const answerTime = timer.dataset.answerTime;
+
+        console.log("Inside eventlistener");
+        console.log(questionNumber);
+
+
+        if (questionNumber == 4) {
+            SPendQuiz(genres);
+        }
+
+        if (questionNumber < 4) {
+            console.log("Questionnumber < 10");
+            generateMovies(genres, questionNumber + 1, answerTime);
+        }
+    })
+
+    if (timer) {
+        const intervalID = setInterval(() => {
+
+            let currentTimerValue = parseFloat(timer.dataset.currentTime);
+
+            if (currentTimerValue != 0.0) {
+
+                timer.dataset.currentTime = (currentTimerValue - 0.1).toFixed(1);
+
+            } else {
+                clearInterval(intervalID);
+            }
+
+        }, 100);
+    }
+}
+
+async function SPfindMovie(event, correctMovie) {
+    let movieResults = document.getElementById("foundMovies");
+
+    movieResults.innerHTML = ``;
+    let input = document.getElementById("searchMovie");
+
+    //input event listner för att hämta strängen. 
+    const string = event.target.value;
+
+    const response = await fetch(`DATA/movies.json`);
+    const data = await response.json();
+    let movies = [];
+
+    for (let i = 0; i < data.length; i++) {
+        movies.push(data[i].Title)
+
+    }
+    let filteredArray = [];
+
+    movies.forEach(movie => {
+        if (movie !== undefined) {
+            //The startsWith method is like the includes() method but it checks the beginning of the string instead. 
+            if (movie.toLowerCase().startsWith(string.toLowerCase())) {
+                filteredArray.push(movie);
+            }
+        }
+    })
+
+    filteredArray.splice(3);
+
+    for (let i = 0; i < filteredArray.length; i++) {
+
+        let movieDiv = document.createElement("div");
+        movieDiv.classList.add("alternative");
+        movieDiv.innerHTML = `
+            <div class="altTitle">${filteredArray[i]}</div>
+        `
+
+        movieDiv.dataset.title = filteredArray[i];
+        movieDiv.querySelector(".altTitle").dataset.title = filteredArray[i];
+
+        movieDiv.addEventListener("click", ev => {
+            const correct = checkAnswer(ev.target.dataset.title, correctMovie);
+
+            const alternatives = document.querySelectorAll(".alternative");
+            alternatives.forEach(alt => {
+                if (alt.querySelector(".altTitle").textContent == ev.target.dataset.title) {
+                    targetAlt = alt;
+                }
+            })
+
+            if (!correct) {
+                targetAlt.classList.add("shake");
+
+                setTimeout(() => {
+                    targetAlt.classList.remove("shake");
+                }, 200)
+            }
+
+            if (correct) {
+                const answerTime = parseFloat(timerDiv.dataset.currentTime).toFixed(1);
+                timerDiv.dataset.answerTime = answerTime
+                const totalesPoints = parseFloat(document.querySelector("main").dataset.totalPoints).toFixed(1)
+                document.querySelector("main").dataset.totalPoints = totalesPoints + answerTime;
+
+                document.querySelector("#searchMovie").setAttribute("disabled", "true");
+                targetAlt.classList.add("selected");
+                targetAlt.querySelector(".altTitle").classList.add("correct")
+                alternatives.forEach(altern => {
+                    altern.style.pointerEvents = "none";
+                })
+            }
+        })
+
+        movieResults.appendChild(movieDiv);
+    }
+
+
+}
+
 

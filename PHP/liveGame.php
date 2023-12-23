@@ -166,7 +166,7 @@ function liveGame($users, $games, $recieved_data){
 
     if($subAction === "startGame"){
         $games[$currentGameIndex]["isStarted"] = true;
-        $games[$currentGameIndex]["questions"] = getRandomMovies(10, $currentGame["genres"]);
+        $games[$currentGameIndex]["questions"] = getRandomMovies(2, $currentGame["genres"]);
         foreach($games[$currentGameIndex]["members"] as &$member){
             $member["points"] = 0;
             $member["inLobby"] = false;

@@ -302,6 +302,158 @@ span.opacP {
     height: 383px;
 }
 
+#currentStandEndSP {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 44px;
+    width: 428px;
+}
+
+#contentWrapper.currentStandingRoundSP {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 59px;
+    height: 337px;
+    width: 330px;
+}
+
+#endGameSPHead {
+    color: #FFF;
+
+    text-align: center;
+    font-family: Jost;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#endGameSPImage {
+    width: 170px;
+    height: 170px;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+}
+
+#endGameSPPointsDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#endGameTotalPointsText {
+    color: var(--Colors-Text-primary, #FFF);
+    text-align: center;
+    font-family: Jost;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+#endGameTtlPoints {
+    color: var(--Colors-Accent-Color-1, #FF6868);
+    text-align: center;
+    font-family: Jost;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#endGameSPButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--Spacing-system-Spacing-20, 20px);
+}
+
+#exitGameSP {
+    display: flex;
+    width: 204px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    border-radius: var(--Radius-Radius-lg, 28px);
+    border: 1px solid var(--Colors-Button-Border-2, #FFF8BA);
+
+    color: #FFF8BA;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#playAgainSP {
+    display: flex;
+    width: 204px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    border-radius: var(--Radius-Radius-lg, 28px);
+    background: var(--Colors-Button-Background, #FFF8BA);
+
+
+}
+
+#getReadyDivSP {
+    color: #FFF;
+    text-align: center;
+    font-family: Jost;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#countdownSP {
+    color: #FF6868;
+    text-align: center;
+    font-family: Jost;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#pointsThisRoundSP {
+    color: #FFF;
+    font-family: Jost;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-align: center;
+}
+
+#totalPointsSP {
+    color: #FFF;
+    font-family: Jost;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+span#ttlPoints {
+    color: #FF6868;
+    text-align: center;
+    font-family: Jost;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
 #personalPoints {
     display: flex;
     flex-direction: column;

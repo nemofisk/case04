@@ -2,6 +2,8 @@
 
 
 async function renderStartingpage() {
+    let userInfo = await getUserinformation(window.localStorage.getItem("username"));
+    window.localStorage.setItem("userImage", userInfo.profile_picture);
     let curtains = displayCurtains("curtainsStartingpage", "curtainsLightStartingpage");
     let username = localStorage.getItem("username");
     document.querySelector("header").innerHTML =
@@ -98,7 +100,8 @@ async function DisplaySidebar(event) {
     </div>
     `
 
-
+    const allLightCurtains = document.querySelectorAll(".curtainsLightStartingpage");
+    const allDarkCurtains = document.querySelectorAll(".curtainsStartingpage");
 
     nav.querySelector("#CloseSidebar").addEventListener("click", e => {
         Sidebar = document.getElementById("Sidebar");
@@ -107,24 +110,55 @@ async function DisplaySidebar(event) {
     })
     document.querySelector("main").appendChild(nav);
     document.getElementById("home").addEventListener("click", e => {
+        allLightCurtains.forEach(crtn => {
+            crtn.style.height = "117px"
+        });
+
+        allDarkCurtains.forEach(crtn => {
+            crtn.style.height = "109px"
+        });
         if (document.querySelector("main").classList.contains("mpMain")) {
             document.querySelector("main").classList.remove("mpMain");
+
         }
         renderStartingpage()
     })
     document.getElementById("profilePage").addEventListener("click", e => {
+        allLightCurtains.forEach(crtn => {
+            crtn.style.height = "117px"
+        });
+
+        allDarkCurtains.forEach(crtn => {
+            crtn.style.height = "109px"
+        });
         if (document.querySelector("main").classList.contains("mpMain")) {
+
             document.querySelector("main").classList.remove("mpMain");
         }
         renderProfilePage()
     })
     document.getElementById("RenderLeaderboard").addEventListener("click", ev => {
+        allLightCurtains.forEach(crtn => {
+            crtn.style.height = "117px"
+        });
+
+        allDarkCurtains.forEach(crtn => {
+            crtn.style.height = "109px"
+        });
         if (document.querySelector("main").classList.contains("mpMain")) {
             document.querySelector("main").classList.remove("mpMain");
         }
         renderLeaderBoard(ev);
     })
     document.getElementById("renderLyckyWheel").addEventListener("click", e => {
+        allLightCurtains.forEach(crtn => {
+            crtn.style.height = "117px"
+        });
+
+        allDarkCurtains.forEach(crtn => {
+            crtn.style.height = "109px"
+        });
+
         if (document.querySelector("main").classList.contains("mpMain")) {
             document.querySelector("main").classList.remove("mpMain");
         }

@@ -3,7 +3,7 @@
         "username": "w",
         "password": "",
         "level": 669,
-        "popcorn": 101774,
+        "popcorn": 103682,
         "friends": [
             {
                 "name": "ww",
@@ -29,6 +29,11 @@
                 "name": "hello1",
                 "profilePicture": null,
                 "popcorn": 0
+            },
+            {
+                "name": "Puttefnask",
+                "profilePicture": "71757bc1e037189933725c804f0881b6.png",
+                "popcorn": 790
             }
         ],
         "friendRequests": [],
@@ -52,7 +57,9 @@
                 "popcorn": 1340
             }
         ],
-        "friendRequests": [],
+        "friendRequests": [
+            "Puttefnask"
+        ],
         "gameInvites": [],
         "xpGoal": 1300,
         "id": 2,
@@ -74,7 +81,8 @@
             }
         ],
         "friendRequests": [
-            "w"
+            "w",
+            "Puttefnask"
         ],
         "gameInvites": [],
         "xpGoal": 1300,
@@ -101,7 +109,9 @@
                 "popcorn": 1340
             }
         ],
-        "friendRequests": [],
+        "friendRequests": [
+            "Puttefnask"
+        ],
         "gameInvites": [],
         "xpGoal": 1300,
         "id": 4,
@@ -188,7 +198,8 @@
         "gameInvites": [],
         "friends": [],
         "friendRequests": [
-            "w"
+            "w",
+            "Puttefnask"
         ],
         "xpGoal": 6500,
         "clues": 0,
@@ -218,12 +229,33 @@
         "gameInvites": [],
         "friends": [],
         "friendRequests": [
-            "w"
+            "w",
+            "Puttefnask"
         ],
         "xpGoal": 1000,
         "clues": 0,
         "resetTimer": 0,
         "profile_picture": "Frame 621.png",
         "id": 12
+    },
+    {
+        "username": "Puttefnask",
+        "password": "puttenutte",
+        "level": 1,
+        "popcorn": 790,
+        "gameInvites": [],
+        "friends": [
+            {
+                "name": "w",
+                "profilePicture": "The bear.jpg",
+                "popcorn": 102029
+            }
+        ],
+        "friendRequests": [],
+        "xpGoal": 1000,
+        "clues": 0,
+        "resetTimer": 0,
+        "profile_picture": "71757bc1e037189933725c804f0881b6.png",
+        "id": 13
     }
 ]
