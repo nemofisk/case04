@@ -105,7 +105,7 @@ function generateMovies(array, questionNumber = 1, answerTime) {
 
     let type = quizQuiestions[Math.floor(Math.random() * quizQuiestions.length)];
 
-    fetch("../DATA/movies.json").then(r => r.json()).then(resource => {
+    fetch("DATA/movies.json").then(r => r.json()).then(resource => {
         let movieGenerArray = []
         for (let i = 0; i < resource.length; i++) {
 

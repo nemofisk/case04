@@ -269,8 +269,8 @@ function prepareQuestion(questionToLoad, skipPointCheck = false) {
                     topThreeDiv.id = `topThree${i + 1}`;
                     topThreeDiv.classList.add("topThreeDiv")
                     topThreeDiv.innerHTML = `
-                        <div class="positionImage" style="background-image: url('../images/position${i + 1}.svg')"></div>
-                        <div class="playerImage" style="background-image: url('../images/${gameMembers[i].profilePicture}')"></div>
+                        <div class="positionImage" style="background-image: url('images/position${i + 1}.svg')"></div>
+                        <div class="playerImage" style="background-image: url('images/${gameMembers[i].profilePicture}')"></div>
                         <div class="currentPoints">${gameMembers[i].points} <span class="opacP">p</span></div>
                     `
 
@@ -750,7 +750,7 @@ async function endOfQuestion(question) {
 
                             playerDiv.classList.add("playerImg");
 
-                            playerDiv.style.backgroundImage = `url('../images/${player.profilePicture}')`;
+                            playerDiv.style.backgroundImage = `url('images/${player.profilePicture}')`;
 
                             whoGuessed.prepend(playerDiv);
 
@@ -939,8 +939,8 @@ async function currentStanding(question) {
             topThreeDiv.id = `topThree${i + 1}`;
             topThreeDiv.classList.add("topThreeDiv")
             topThreeDiv.innerHTML = `
-                <div class="positionImage" style="background-image: url('../images/position${i + 1}.svg')"></div>
-                <div class="playerImage" style="background-image: url('../images/${gameMembers[i].profilePicture}')"></div>
+                <div class="positionImage" style="background-image: url('images/position${i + 1}.svg')"></div>
+                <div class="playerImage" style="background-image: url('images/${gameMembers[i].profilePicture}')"></div>
                 <div class="currentPoints">${gameMembers[i].points} <span class="opacP">p</span></div>
             `
 
@@ -954,7 +954,7 @@ async function currentStanding(question) {
             restListDiv.innerHTML = `
                 <div class="restListDivLeft">
 
-                    <div class="positionImage" style="background-image: url('../images/position${i + 1}.svg')"></div>
+                    <div class="positionImage" style="background-image: url('images/position${i + 1}.svg')"></div>
                     <div>${gameMembers[i].name}</div>
                 
                 </div>
