@@ -52,6 +52,8 @@ function multiplayer($users, $received_data){
                     ]],
                     "questions" => "",
                     "isStarted" => false,
+                    "answeredQuestion" => [],
+                    "endEarly" => false,
                     "doneQuestion" => [],
                     "nextQuestion" => false,
                     "endedQuestion" => []

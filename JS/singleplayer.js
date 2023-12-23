@@ -214,7 +214,7 @@ function SPprepareQuestion(correctMovie, otherMovies, genres, questionNumber, an
 function startQuestion(correctMovie, otherMovies, genres, questionNumber) {
     console.log(correctMovie, otherMovies);
 
-    let quizQuiestions = ["directors", "poster", "actors", "plot", "trailer"]
+    let quizQuiestions = ["directors", "actors", "plot", "trailer", "poster"];
 
     let questionCategory = quizQuiestions[Math.floor(Math.random() * quizQuiestions.length)];
 
@@ -277,7 +277,7 @@ async function textQuestion(correctMovie, otherMovies, type, genres, questionNum
 
     `
 
-    SPstartQuestionTimer(genres, questionNumber);
+    SPstartQuestionTimer(genres, questionNumber, type, correctMovie);
 
     // document.getElementById("clue").addEventListener("click", func => {
     //     getClue(correctMovie)
@@ -346,8 +346,6 @@ async function textQuestion(correctMovie, otherMovies, type, genres, questionNum
 
         const correct = checkAnswer(event.target.dataset.title, correctMovie);
 
-        const timerProgress = main.querySelector("#timerProgress");
-
         if (correct) {
             targetAlt.querySelector(".altTitle").classList.add("correct")
             const answerTime = parseFloat(timerDiv.dataset.currentTime);
@@ -359,6 +357,8 @@ async function textQuestion(correctMovie, otherMovies, type, genres, questionNum
         if (!correct) {
             targetAlt.querySelector(".altTitle").classList.add("wrong")
         }
+
+        endQuestionEarly(genres, questionNumber, type, correctMovie);
     }
 
     allAlts.forEach(al => {
@@ -407,10 +407,12 @@ function posterQuestion(correctMovie, otherMovies, type, genres, questionNumber)
         posterDiv.classList.add("blur")
     }, 100)
 
-    SPstartQuestionTimer(genres, questionNumber);
+    SPstartQuestionTimer(genres, questionNumber, type, correctMovie);
 
-    document.getElementById("searchMovie").addEventListener("input", SPfindMovie);
-
+    const searchMovie = document.querySelector("#searchMovie");
+    searchMovie.addEventListener("input", ev => {
+        SPfindMovie(ev, correctMovie, genres, questionNumber, type)
+    })
 }
 
 function trailerQuestion(correctMovie, otherMovies, type, genres, questionNumber) {
@@ -445,11 +447,11 @@ function trailerQuestion(correctMovie, otherMovies, type, genres, questionNumber
 
     main.querySelector("#timer").dataset.answerTime = 0;
 
-    SPstartQuestionTimer(genres, questionNumber);
+    SPstartQuestionTimer(genres, questionNumber, type, correctMovie);
 
     const searchMovie = document.querySelector("#searchMovie");
     searchMovie.addEventListener("input", ev => {
-        SPfindMovie(ev, correctMovie)
+        SPfindMovie(ev, correctMovie, genres, questionNumber, type)
     })
 }
 
@@ -541,7 +543,7 @@ function SPendQuiz() {
     })
 }
 
-async function SPstartQuestionTimer(genres, questionNumber) {
+async function SPstartQuestionTimer(genres, questionNumber, type, correctMovie) {
 
     const timer = document.querySelector("#timer");
     const timerProgress = document.querySelector("#timerProgress");
@@ -551,21 +553,30 @@ async function SPstartQuestionTimer(genres, questionNumber) {
         timerProgress.classList.add("active");
     }, 50)
 
+
+
     timerProgress.addEventListener('transitionend', ev => {
         const answerTime = timer.dataset.answerTime;
 
         console.log("Inside eventlistener");
         console.log(questionNumber);
 
-
-        if (questionNumber == 10) {
-            SPendQuiz(genres);
+        if (type == "directors" || type == "plot" || type == "actors") {
+            SPendOfQuestion(correctMovie);
         }
 
-        if (questionNumber < 10) {
-            console.log("Questionnumber < 10");
-            generateMovies(genres, questionNumber + 1, answerTime);
-        }
+        setTimeout(() => {
+            if (questionNumber == 10) {
+                SPendQuiz(genres);
+            }
+
+            if (questionNumber < 10) {
+                console.log("Questionnumber < 10");
+                generateMovies(genres, questionNumber + 1, answerTime);
+            }
+        }, 3000)
+
+
     })
 
     if (timer) {
@@ -585,7 +596,7 @@ async function SPstartQuestionTimer(genres, questionNumber) {
     }
 }
 
-async function SPfindMovie(event, correctMovie) {
+async function SPfindMovie(event, correctMovie, genres, questionNumber, type) {
     let movieResults = document.getElementById("foundMovies");
 
     movieResults.innerHTML = ``;
@@ -645,6 +656,7 @@ async function SPfindMovie(event, correctMovie) {
             }
 
             if (correct) {
+                const timerDiv = document.querySelector("#timer");
                 const answerTime = parseFloat(timerDiv.dataset.currentTime).toFixed(1);
                 timerDiv.dataset.answerTime = answerTime
                 const totalesPoints = parseFloat(document.querySelector("main").dataset.totalPoints).toFixed(1)
@@ -656,6 +668,8 @@ async function SPfindMovie(event, correctMovie) {
                 alternatives.forEach(altern => {
                     altern.style.pointerEvents = "none";
                 })
+
+                endQuestionEarly(genres, questionNumber, type, correctMovie);
             }
         })
 
@@ -665,4 +679,52 @@ async function SPfindMovie(event, correctMovie) {
 
 }
 
+function SPendOfQuestion(correctMovie) {
 
+    const alternativeDivs = document.querySelectorAll(".alternative");
+
+    alternativeDivs.forEach(alternative => {
+
+        const title = alternative.querySelector(".altTitle")
+
+        if (title.textContent == correctMovie.Title) {
+            alternative.querySelector(".altTitle").classList.add("correct");
+        } else {
+            alternative.querySelector(".altTitle").classList.add("wrong");
+        }
+    })
+}
+
+function endQuestionEarly(genres, questionNumber, type, correctMovie) {
+    const timer = document.querySelector("#timer");
+
+    const timerClone = timer.cloneNode();
+    timerClone.innerHTML = `
+        <div id="timerProgress" class="active"></div>
+    `
+
+    timerClone.dataset.currentTime = 0;
+
+    timer.remove();
+    document.querySelector("#contentWrapper").prepend(timerClone);
+
+    const answerTime = timer.dataset.answerTime;
+
+    console.log("Inside eventlistener");
+    console.log(questionNumber);
+
+    if (type == "directors" || type == "plot" || type == "actors") {
+        SPendOfQuestion(correctMovie);
+    }
+
+    setTimeout(() => {
+        if (questionNumber == 10) {
+            SPendQuiz(genres);
+        }
+
+        if (questionNumber < 10) {
+            console.log("Questionnumber < 10");
+            generateMovies(genres, questionNumber + 1, answerTime);
+        }
+    }, 3000)
+}

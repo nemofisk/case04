@@ -1,6 +1,6 @@
 [
     {
-        "gameID": 65533,
+        "gameID": 13588,
         "hostID": 1,
         "genres": [
             "Crime",
@@ -21,49 +21,219 @@
                 "name": "w",
                 "userID": 1,
                 "profilePicture": "The bear.jpg",
-                "points": 19.8,
+                "points": 51,
                 "inLobby": false,
-                "latestFetch": 1703297003
+                "latestFetch": 1703357217
+            },
+            {
+                "userID": 2,
+                "name": "ww",
+                "profilePicture": "The bear.jpg",
+                "points": 20,
+                "inLobby": false,
+                "latestFetch": 1703357217
             }
         ],
         "questions": [
             {
                 "questionID": 0,
-                "type": "trailer",
-                "correctAnswer": "The Godfather",
+                "type": "poster",
+                "correctAnswer": "Casino",
                 "pointsFromRound": [
                     {
                         "username": "w",
                         "userID": 1,
-                        "roundPoints": "19.8"
+                        "roundPoints": "25.4"
+                    },
+                    {
+                        "username": "ww",
+                        "userID": 2,
+                        "roundPoints": "20.0"
                     }
                 ],
-                "youtubeLink": "https:\/\/www.youtube.com\/embed\/Ma1-sIoZnMs",
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BMTcxOWYzNDYtYmM4YS00N2NkLTk0NTAtNjg1ODgwZjAxYzI3XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg",
                 "guesses": [
-                    "The Godfather Part II",
-                    "The Godfather",
-                    "The Godfather Part II",
-                    "The Godfather Part II",
-                    "The Godfather Part II",
-                    "The Godfather Part II"
+                    "Casino",
+                    "Casino"
                 ]
             },
             {
                 "questionID": 1,
-                "type": "trailer",
-                "correctAnswer": "Jurassic Park",
+                "type": "actors",
+                "correctAnswer": "The Gold Rush",
+                "alternatives": [
+                    {
+                        "title": "Modern Times",
+                        "whoGuessed": [
+                            {
+                                "userID": 2,
+                                "name": "ww",
+                                "profilePicture": "The bear.jpg",
+                                "inLobby": false,
+                                "latestFetch": 1703357209
+                            }
+                        ]
+                    },
+                    {
+                        "title": "American History X",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "The Gold Rush",
+                        "whoGuessed": [
+                            {
+                                "name": "w",
+                                "userID": 1,
+                                "profilePicture": "The bear.jpg",
+                                "inLobby": false,
+                                "latestFetch": 1703357211
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Beauty and the Beast",
+                        "whoGuessed": []
+                    }
+                ],
                 "pointsFromRound": [
                     {
                         "username": "w",
                         "userID": 1,
+                        "roundPoints": "25.6"
+                    },
+                    {
+                        "username": "ww",
+                        "userID": 2,
                         "roundPoints": 0
                     }
                 ],
-                "youtubeLink": "https:\/\/www.youtube.com\/embed\/Wfv5jdW__N0",
-                "guesses": []
+                "questionText": "Which movie does<br>Charles Chaplin, Mack Swain, Tom Murray<br>star in?"
             }
         ],
-        "isStarted": true,
+        "isStarted": false,
+        "answeredQuestion": [],
+        "endEarly": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 78447,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "The bear.jpg",
+                "points": 33.6,
+                "inLobby": false,
+                "latestFetch": 1703357346
+            },
+            {
+                "userID": 2,
+                "name": "ww",
+                "profilePicture": "The bear.jpg",
+                "points": 0,
+                "inLobby": false,
+                "latestFetch": 1703357347
+            }
+        ],
+        "questions": [
+            {
+                "questionID": 0,
+                "type": "plot",
+                "correctAnswer": "Casino",
+                "alternatives": [
+                    {
+                        "title": "Forrest Gump",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "Casino",
+                        "whoGuessed": [
+                            {
+                                "name": "w",
+                                "userID": 1,
+                                "profilePicture": "The bear.jpg",
+                                "inLobby": false,
+                                "latestFetch": 1703357296
+                            }
+                        ]
+                    },
+                    {
+                        "title": "It Happened One Night",
+                        "whoGuessed": []
+                    },
+                    {
+                        "title": "WALL\u00b7E",
+                        "whoGuessed": [
+                            {
+                                "userID": 2,
+                                "name": "ww",
+                                "profilePicture": "The bear.jpg",
+                                "inLobby": false,
+                                "latestFetch": 1703357297
+                            }
+                        ]
+                    }
+                ],
+                "pointsFromRound": [
+                    {
+                        "username": "w",
+                        "userID": 1,
+                        "roundPoints": "28.1"
+                    },
+                    {
+                        "username": "ww",
+                        "userID": 2,
+                        "roundPoints": 0
+                    }
+                ],
+                "questionText": "In Las Vegas, two best friends - a casino executive and a mafia enforcer - compete for a gambling empire and a fast-living, fast-loving socialite."
+            },
+            {
+                "questionID": 1,
+                "type": "poster",
+                "correctAnswer": "The Bridge on the River Kwai",
+                "pointsFromRound": [
+                    {
+                        "username": "w",
+                        "userID": 1,
+                        "roundPoints": "5.5"
+                    },
+                    {
+                        "username": "ww",
+                        "userID": 2,
+                        "roundPoints": "0.0"
+                    }
+                ],
+                "poster": "https:\/\/m.media-amazon.com\/images\/M\/MV5BOGY5NmNlMmQtYzRlYy00NGQ5LWFkYjYtNzExZmQyMTg0ZDA0XkEyXkFqcGdeQXVyNDIzMzcwNjc@._V1_SX300.jpg",
+                "guesses": [
+                    "Citizen Kane",
+                    "The Bridge on the River Kwai",
+                    "The Bridge on the River Kwai"
+                ]
+            }
+        ],
+        "isStarted": false,
+        "answeredQuestion": [
+            "2"
+        ],
+        "endEarly": false,
         "doneQuestion": [],
         "nextQuestion": false,
         "endedQuestion": []

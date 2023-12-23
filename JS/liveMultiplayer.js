@@ -84,7 +84,7 @@ async function startFetchGameInfo(gameID) {
             window.localStorage.removeItem("gameInfo");
         }
 
-    }, 1000)
+    }, 500)
 
     window.localStorage.setItem("fetchIntervalID", intervalID)
 
@@ -608,7 +608,30 @@ async function startQuestionTimer(question) {
         timerProgress.classList.add("active");
     }, 50)
 
-    timerProgress.addEventListener("transitionend", async function (ev) {
+    const checkQuestionInt = setInterval(() => {
+        const gameObject = JSON.parse(window.localStorage.getItem("gameInfo"));
+
+        if (gameObject.endEarly) {
+            const timer = document.querySelector("#timer");
+
+            const timerClone = timer.cloneNode();
+            timerClone.innerHTML = `
+                <div id="timerProgress" class="active"></div>
+            `
+
+            timerClone.dataset.currentTime = 0;
+
+            timer.remove();
+            document.querySelector("#contentWrapper").prepend(timerClone);
+
+            doneRound();
+            clearInterval(checkQuestionInt);
+        }
+    }, 100)
+
+    timerProgress.addEventListener("transitionend", doneRound)
+
+    async function doneRound(ev) {
         const gameInfo = JSON.parse(window.localStorage.getItem("gameInfo"));
 
         const request = new Request("PHP/api.php", {
@@ -632,10 +655,7 @@ async function startQuestionTimer(question) {
                 endOfQuestion(question);
             }
         }, 100)
-
-
-
-    })
+    }
 
     if (timer) {
         const intervalID = setInterval(async function () {
@@ -690,7 +710,6 @@ async function endOfQuestion(question) {
 
     if (qType == "plot" || qType == "actors" || qType == "directors") {
         const alternativeDivs = document.querySelectorAll(".alternative");
-        const alternativesDiv = document.querySelector("#alternatives")
 
         alternativeDivs.forEach(alternative => {
 

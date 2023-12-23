@@ -31,6 +31,7 @@ function liveGame($users, $games, $recieved_data){
 
         $doneQuestion = 0;
         $endedQuestion = 0;
+        $answeredQuestion = 0;
         
         foreach($games[$currentGameIndex]["members"] as $indexxx => &$member){
             if(in_array($member["userID"], $currentGame["doneQuestion"])){
@@ -38,6 +39,9 @@ function liveGame($users, $games, $recieved_data){
             }
             if(in_array($member["userID"], $currentGame["endedQuestion"])){
                 $endedQuestion += 1;
+            }
+            if(in_array($member["userID"], $currentGame["answeredQuestion"])){
+                $answeredQuestion += 1;
             }
             if($member["userID"] == $userID){
                 $member["latestFetch"] = time();
@@ -58,9 +62,19 @@ function liveGame($users, $games, $recieved_data){
             putInMultiplayerJSON($games);
         }
 
-        if(count($currentGame["doneQuestion"]) == count($currentGame["endedQuestion"])){
+        if($answeredQuestion == count($currentGame["members"]) and !$games[$currentGameIndex]["endEarly"]){
+            $games[$currentGameIndex]["endEarly"] = true;
+            putInMultiplayerJSON($games);
+        }
+
+        $dQCount = count($currentGame["doneQuestion"]);
+        $eQCount = count($currentGame["endedQuestion"]);
+
+        if($dQCount != 0 and $eQCount != 0 and $dQCount == $eQCount){
             $games[$currentGameIndex]["doneQuestion"] = [];
             $games[$currentGameIndex]["endedQuestion"] = [];
+            $games[$currentGameIndex]["answeredQuestion"] = [];
+            $games[$currentGameIndex]["endEarly"] = false;
             putInMultiplayerJSON($games);
         }
 
@@ -87,7 +101,11 @@ function liveGame($users, $games, $recieved_data){
         }
 
         if($qType == "actors" or $qType == "plot" or $qType == "directors"){
+            $games[$currentGameIndex]["answeredQuestion"][] = $userID;
+
+
             foreach($currentGame["questions"] as $indexx => $question){
+
                 if($question["questionID"] == $questionID){
     
                     foreach($question["alternatives"] as $altIndex => $alternative){
@@ -120,6 +138,12 @@ function liveGame($users, $games, $recieved_data){
 
         if($qType == "poster" or $qType == "trailer"){
             
+            if($answer == $questionGlobal["correctAnswer"]){
+
+                $games[$currentGameIndex]["answeredQuestion"][] = $userID;
+
+            }
+
             foreach($currentGame["questions"] as $index => $question){
                 if($question["questionID"] == $questionID){
 

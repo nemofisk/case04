@@ -3,7 +3,7 @@
         "username": "w",
         "password": "",
         "level": 669,
-        "popcorn": 103905,
+        "popcorn": 105545,
         "friends": [
             {
                 "name": "ww",
@@ -49,7 +49,7 @@
         "username": "ww",
         "password": "",
         "level": 667,
-        "popcorn": 1340,
+        "popcorn": 2189,
         "friends": [
             {
                 "name": "w",
@@ -57,9 +57,7 @@
                 "popcorn": 1340
             }
         ],
-        "friendRequests": [
-            "Puttefnask"
-        ],
+        "friendRequests": [],
         "gameInvites": [],
         "xpGoal": 1300,
         "id": 2,
@@ -242,7 +240,7 @@
         "username": "Puttefnask",
         "password": "puttenutte",
         "level": 1,
-        "popcorn": 790,
+        "popcorn": 940,
         "gameInvites": [],
         "friends": [
             {
@@ -255,7 +253,7 @@
         "xpGoal": 1000,
         "clues": 0,
         "resetTimer": 0,
-        "profile_picture": "71757bc1e037189933725c804f0881b6.png",
+        "profile_picture": "f677c1b358f3d6e5650f13732e6b7afa.png",
         "id": 13
     }
 ]
