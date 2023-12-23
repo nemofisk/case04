@@ -151,7 +151,7 @@ function SPprepareQuestion(correctMovie, otherMovies, genres, questionNumber, an
         main.innerHTML = `
                 <div id="contentWrapper" class="currentStandingRoundSP">
                 
-                    <div id="getReadyDivSP">GET READY IN <br><span id="countdownSP">2</span></div>
+                    <div id="getReadyDivSP">GET READY IN <br><span id="countdownSP">10</span></div>
     
                     <div id="pointsThisRoundSP">You got ${answerTime} points from this round</div>
                     <div id="totalPointsSP">Total points: <span id="ttlPoints">${main.dataset.totalPoints}</span></div>
@@ -186,7 +186,7 @@ function SPprepareQuestion(correctMovie, otherMovies, genres, questionNumber, an
 
         main.innerHTML = `
             <h1>GET READY</h1>
-            <div id="countdown">3</div>
+            <div id="countdown">10</div>
         `
 
         const intervalID = setInterval(function () {
@@ -212,7 +212,7 @@ function SPprepareQuestion(correctMovie, otherMovies, genres, questionNumber, an
 function startQuestion(correctMovie, otherMovies, genres, questionNumber) {
     console.log(correctMovie, otherMovies);
 
-    let quizQuiestions = ["directors"]
+    let quizQuiestions = ["directors", "poster", "actors", "plot", "trailer"]
 
     let questionCategory = quizQuiestions[Math.floor(Math.random() * quizQuiestions.length)];
 
@@ -261,7 +261,7 @@ async function textQuestion(correctMovie, otherMovies, type, genres, questionNum
 
         <div id="contentWrapper" class="cwType${type}">
 
-            <div id="timer" data-current-time="3">
+            <div id="timer" data-current-time="10">
                 <div id="timerProgress"></div>
             </div>
 
