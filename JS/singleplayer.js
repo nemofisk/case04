@@ -148,13 +148,15 @@ function SPprepareQuestion(correctMovie, otherMovies, genres, questionNumber, an
             crtn.style.height = "91vh"
         });
 
+        const totelPoints = parseFloat(main.dataset.totalPoints).toFixed(1);
+
         main.innerHTML = `
                 <div id="contentWrapper" class="currentStandingRoundSP">
                 
                     <div id="getReadyDivSP">GET READY IN <br><span id="countdownSP">10</span></div>
     
                     <div id="pointsThisRoundSP">You got ${answerTime} points from this round</div>
-                    <div id="totalPointsSP">Total points: <span id="ttlPoints">${main.dataset.totalPoints}</span></div>
+                    <div id="totalPointsSP">Total points: <span id="ttlPoints">${totelPoints}</span></div>
                 </div>
             `
         const intervalID = setInterval(function () {
@@ -556,11 +558,11 @@ async function SPstartQuestionTimer(genres, questionNumber) {
         console.log(questionNumber);
 
 
-        if (questionNumber == 4) {
+        if (questionNumber == 10) {
             SPendQuiz(genres);
         }
 
-        if (questionNumber < 4) {
+        if (questionNumber < 10) {
             console.log("Questionnumber < 10");
             generateMovies(genres, questionNumber + 1, answerTime);
         }
