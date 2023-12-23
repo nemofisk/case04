@@ -1022,7 +1022,9 @@ async function findMovie(event, question) {
         movieDiv.querySelector(".altTitle").dataset.title = filteredArray[i];
 
         movieDiv.addEventListener("click", ev => {
-            mpCheckAnswer(ev, question);
+            if (document.querySelector("#timer").datasset.currentTime != 0) {
+                mpCheckAnswer(ev, question);
+            }
         })
 
         movieResults.appendChild(movieDiv);

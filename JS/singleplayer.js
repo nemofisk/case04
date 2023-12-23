@@ -101,6 +101,9 @@ function generateMovies(array, questionNumber = 1, answerTime) {
 
     let chosenGenres = array;
 
+    let quizQuiestions = ["directors", "actors", "plot", "trailer", "poster"];
+
+    let type = quizQuiestions[Math.floor(Math.random() * quizQuiestions.length)];
 
     fetch("../DATA/movies.json").then(r => r.json()).then(resource => {
         let movieGenerArray = []
@@ -120,6 +123,11 @@ function generateMovies(array, questionNumber = 1, answerTime) {
         let correctMovie = movieGenerArray[Math.floor(Math.random() * movieGenerArray.length)];
 
         let i = 0;
+
+        if (type == "directors") {
+            i = 2
+        }
+
         while (i < 3) {
             let movie = movieGenerArray[Math.floor(Math.random() * movieGenerArray.length)];
             if (movie !== correctMovie && movie !== undefined) {
@@ -128,11 +136,11 @@ function generateMovies(array, questionNumber = 1, answerTime) {
             }
         }
 
-        SPprepareQuestion(correctMovie, otherMovies, array, questionNumber, answerTime)
+        SPprepareQuestion(correctMovie, otherMovies, array, questionNumber, answerTime, type)
     })
 }
 
-function SPprepareQuestion(correctMovie, otherMovies, genres, questionNumber, answerTime) {
+function SPprepareQuestion(correctMovie, otherMovies, genres, questionNumber, answerTime, type) {
     const main = document.querySelector("main");
 
 
@@ -175,7 +183,7 @@ function SPprepareQuestion(correctMovie, otherMovies, genres, questionNumber, an
                     crtn.style.height = "0px"
                 });
 
-                startQuestion(correctMovie, otherMovies, genres, questionNumber);
+                startQuestion(correctMovie, otherMovies, genres, questionNumber, type);
 
             } else {
                 countdown.textContent = currentSec - 1;
@@ -199,7 +207,7 @@ function SPprepareQuestion(correctMovie, otherMovies, genres, questionNumber, an
 
                 if (currentSec === 0) {
                     clearInterval(intervalID);
-                    startQuestion(correctMovie, otherMovies, genres, questionNumber)
+                    startQuestion(correctMovie, otherMovies, genres, questionNumber, type)
                 } else {
                     countdown.textContent = currentSec - 1;
                 }
@@ -211,15 +219,11 @@ function SPprepareQuestion(correctMovie, otherMovies, genres, questionNumber, an
     }
 }
 
-function startQuestion(correctMovie, otherMovies, genres, questionNumber) {
+function startQuestion(correctMovie, otherMovies, genres, questionNumber, type) {
     console.log(correctMovie, otherMovies);
 
-    let quizQuiestions = ["directors", "actors", "plot", "trailer", "poster"];
-
-    let questionCategory = quizQuiestions[Math.floor(Math.random() * quizQuiestions.length)];
-
-    console.log(questionCategory);
-    switch (questionCategory) {
+    console.log(type);
+    switch (type) {
         case "directors":
             textQuestion(correctMovie, otherMovies, "directors", genres, questionNumber)
             break;
@@ -657,10 +661,10 @@ async function SPfindMovie(event, correctMovie, genres, questionNumber, type) {
 
             if (correct) {
                 const timerDiv = document.querySelector("#timer");
-                const answerTime = parseFloat(timerDiv.dataset.currentTime).toFixed(1);
+                const answerTime = parseFloat(timerDiv.dataset.currentTime);
                 timerDiv.dataset.answerTime = answerTime
-                const totalesPoints = parseFloat(document.querySelector("main").dataset.totalPoints).toFixed(1)
-                document.querySelector("main").dataset.totalPoints = totalesPoints + answerTime;
+                const currTotalPoints = parseFloat(document.querySelector("main").dataset.totalPoints);
+                document.querySelector("main").dataset.totalPoints = currTotalPoints + answerTime;
 
                 document.querySelector("#searchMovie").setAttribute("disabled", "true");
                 targetAlt.classList.add("selected");
