@@ -222,18 +222,23 @@ async function inviteFriends(gameID) {
 
         const addedUsers = document.querySelectorAll(".addedUser");
 
-        addedUsers.forEach(user => {
-            let inviteUser = user.querySelector(".addedUserName").textContent;
-            let hostUsername = window.localStorage.getItem("username");
+        let addedUsersArray = []
+        let hostUsername = window.localStorage.getItem("username");
 
-            fetch("PHP/api.php", {
-                method: "POST",
-                headers: { "Content-type": "application/json" },
-                body: JSON.stringify({ username: hostUsername, invitedUser: inviteUser, action: "multiplayer", gameID: gameID, subAction: "inviteToGame" })
-            }).then(r => r.json()).then(resource => {
-                console.log(resource);
-            });
+        addedUsers.forEach(user => {
+
+            let inviteUser = user.querySelector(".addedUserName").textContent;
+
+            addedUsersArray.push(inviteUser);
         })
+
+        fetch("PHP/api.php", {
+            method: "POST",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({ username: hostUsername, invitedUsers: addedUsersArray, action: "multiplayer", gameID: gameID, subAction: "inviteToGame" })
+        }).then(r => r.json()).then(resource => {
+            console.log(resource);
+        });
 
         joinGame(gameID);
     }

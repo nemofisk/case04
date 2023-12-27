@@ -58,7 +58,12 @@
             }
         ],
         "friendRequests": [],
-        "gameInvites": [],
+        "gameInvites": [
+            {
+                "hostName": "w",
+                "gameID": 29727
+            }
+        ],
         "xpGoal": 1300,
         "id": 2,
         "clues": 0,
@@ -82,7 +87,12 @@
             "w",
             "Puttefnask"
         ],
-        "gameInvites": [],
+        "gameInvites": [
+            {
+                "hostName": "w",
+                "gameID": 29727
+            }
+        ],
         "xpGoal": 1300,
         "id": 3,
         "clues": 0,

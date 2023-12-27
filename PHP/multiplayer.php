@@ -17,17 +17,20 @@ function multiplayer($users, $received_data){
     
     if($subAction === "inviteToGame"){
         $action = $received_data["action"];
-        $userToInvite = $received_data["invitedUser"];
+        $usersToInvite = $received_data["invitedUsers"];
         $gameID = $received_data["gameID"];
 
         foreach($users as &$user){
-            if($user["username"] === $userToInvite){ 
-                $invitationsObject =[
-                    "hostName" => $hostUsername,
-                    "gameID" => $gameID
-                ];
-                $user["gameInvites"][] = $invitationsObject;
+            foreach($usersToInvite as $username){
+                if($user["username"] === $username){ 
+                    $invitationsObject =[
+                        "hostName" => $hostUsername,
+                        "gameID" => $gameID
+                    ];
+                    $user["gameInvites"][] = $invitationsObject;
+                }
             }
+
         }
     }
             
