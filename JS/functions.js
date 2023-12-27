@@ -11,10 +11,12 @@ function popUpFunction(action, information) {
 
         div.setAttribute("id", "invitationPopUp")
         div.textContent = message;
-        div.classList.add("#gameInvite");
+        div.classList.add("friendRequestPopUp");
         let acceptBtn = document.createElement("button");
+        acceptBtn.setAttribute("id", "accept")
         acceptBtn.textContent = "Accept!"
         let declineBtn = document.createElement("button");
+        declineBtn.setAttribute("id", "decline")
         declineBtn.textContent = "Decline"
 
         acceptBtn.addEventListener("click", accept => {
@@ -23,11 +25,13 @@ function popUpFunction(action, information) {
         declineBtn.addEventListener("click", declineInvite);
 
         main.appendChild(div);
-        main.appendChild(acceptBtn);
         main.appendChild(declineBtn);
+        main.appendChild(acceptBtn);
 
         clearInterval()
+        document.querySelector(".friendRequestPopUp").remove()
     }
+    
     if (action === "wheel") {
         div.innerHTML = `
         <div id="removePopUp">X</div>

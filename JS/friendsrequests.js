@@ -10,21 +10,24 @@ function displayFriendRequests() {
         console.log(resource);
         for (let i = 0; i < resource.friendRequests.length; i++) {
             let div = document.createElement("div");
-            div.textContent = resource.friendRequests[i];
+            div.setAttribute("id", "popUpBox")
+            div.classList.add("friendRequestPopUp")
+            div.innerHTML = `
+            <h1>Friend Request</h1>
+
+            <p><span>${resource.friendRequests[i]}</span> want to be your friend. Do you accept?</p>
+
+            <div id="buttonFlex">
+                <button id="decline">Decline!</button>
+                <button id="accept">Accept!</button>
+            </div>
+            `;
             div.setAttribute("id", resource.friendRequests[i]);
             requestBox.appendChild(div);
-            let button = document.createElement("button");
-            button.textContent = "Accept!"
-            button.setAttribute("id", "accept")
+            
 
-            let button2 = document.createElement("button");
-            button2.textContent = "Decilne!"
-            button2.setAttribute("id", "decline")
-            div.appendChild(button);
-            div.appendChild(button2);
-
-            button.addEventListener("click", respondFriendRequest)
-            button2.addEventListener("click", respondFriendRequest)
+            document.getElementById("accept").addEventListener("click", respondFriendRequest)
+            document.getElementById("decline").addEventListener("click", respondFriendRequest)
         }
     })
 
@@ -34,7 +37,7 @@ function respondFriendRequest(event) {
     console.log(event);
     let action;
     let user = event.target.parentElement.id;
-    console.log(user);
+    
     console.log(window.localStorage.getItem("username"));
     if (event.target.id === "accept") {
         action = "accept"
@@ -44,6 +47,7 @@ function respondFriendRequest(event) {
 
     }
 
+    document.querySelector(".friendRequestPopUp").remove()
     fetch("PHP/api.php", {
         method: "POST",
         headers: { "Content-type": "application/json" },

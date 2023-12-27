@@ -6,11 +6,6 @@
         "popcorn": 105920,
         "friends": [
             {
-                "name": "ww",
-                "profilePicture": "The bear.jpg",
-                "popcorn": 1340
-            },
-            {
                 "name": "www",
                 "profilePicture": "The bear.jpg",
                 "popcorn": 1340
@@ -50,14 +45,10 @@
         "password": "",
         "level": 667,
         "popcorn": 2189,
-        "friends": [
-            {
-                "name": "w",
-                "profilePicture": "The bear.jpg",
-                "popcorn": 1340
-            }
+        "friends": [],
+        "friendRequests": [
+            "w"
         ],
-        "friendRequests": [],
         "gameInvites": [],
         "xpGoal": 1300,
         "id": 2,

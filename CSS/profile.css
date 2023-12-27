@@ -282,3 +282,59 @@
   color: white;
 
 }
+.friendRequestPopUp{
+    width: 394px;
+    height: 293px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: var(--Colors-Menu-Background, #2B2A4C);
+    display: flex;
+    flex-direction: column;
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
+    text-align: center;
+    color: white;
+}
+.friendRequestPopUp span{
+    color: #FF6868;;
+}
+#decline{
+    display: flex;
+width: 150px;
+height: 50px;
+padding: 0px 47px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-radius: var(--Radius-Radius-lg, 28px);
+border: 1px solid var(--Colors-Button-Text-2, #FFF8BA);
+background-color: #2B2A4C;
+text-align: center;
+font-family: Jost;
+font-size: 20px;
+color: var(--Colors-Button-Text-2, #FFF8BA);
+}
+#accept{
+    display: flex;
+width: 150px;
+height: 50px;
+
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-radius: var(--Radius-Radius-lg, 28px);
+border: 1px solid var(--Colors-Button-Border-2, #FFF8BA);
+background: var(--Colors-Button-Background, #FFF8BA);
+color: var(--Colors-Button-Text, #323059);
+text-align: center;
+font-family: Jost;
+font-size: 20px;
+}
+#buttonFlex{
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
