@@ -11,8 +11,8 @@ function signUppage(event) {
     <div>
         <div class="box">
         <input placeholder="Username" id="registerUsername" class="loginRegisterInput"></input>
-        <input placeholder="Password" id="registerPassword" class="loginRegisterInput"></input>
-        <input placeholder="Confirm Password" id="ConfirmPassword" class="loginRegisterInput"></input>
+        <input type="password" placeholder="Password" id="registerPassword" class="loginRegisterInput"></input>
+        <input type="password" placeholder="Confirm Password" id="ConfirmPassword" class="loginRegisterInput"></input>
         <p id="registerFeedback"></p>
         <button class="loginRegister" id="register">Register</button>
         </div>

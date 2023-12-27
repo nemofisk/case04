@@ -51,6 +51,7 @@ function popUpFunction(action, information) {
             console.log(element);
             element.target.parentElement.remove();
         })
+       
     }
 
     if (action === "changeUserOrPass") {
@@ -65,15 +66,13 @@ function popUpFunction(action, information) {
             <div id="searchField">
                 <img id="searchImage" src="../images/searchlala.png">
                 <input id="searchUsers"placeholder="Add new friends"></input> 
-                <div id="removeBox">X</div>   
+                  
             </div>
             <div id="userDisplay"></div>
         </div>
         `
         main.appendChild(div)
-        document.querySelector("#removeBox").addEventListener("click", e => {
-            e.target.parentElement.parentElement.remove()
-        })
+        
         fetch("PHP/api.php", {
             method: "POST",
             headers: { "Content-type": "application/json" },
@@ -114,15 +113,23 @@ function popUpFunction(action, information) {
                 });
 
             })
+            document.querySelector("main").addEventListener("click", e => {
+                console.log(e.target);
+                if(!e.target.id === "userDisplay" || e.target.id === "searchField"){
+
+                    document.querySelector("#addFriendsContainer").remove()
+                }
+            })
 
         });
+        document.getElementById("sendRequest").addEventListener("click", () => {
+            popUpFunction("addFriends", "lala")
+            
+        })
 
     }
 
-    document.getElementById("removePopUp").addEventListener("click", element => {
-        console.log(element);
-        element.target.parentElement.remove();
-    })
+    
 }
 
 

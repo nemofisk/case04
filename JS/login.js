@@ -11,7 +11,7 @@ function signInpage(event) {
         <div>
             <div class="box">
             <input placeholder="Username" id="loginUsername" class="loginRegisterInput"></input>
-            <input placeholder="Password" id="loginPassword" class="loginRegisterInput"></input>
+            <input type="password" placeholder="Password" id="loginPassword" class="loginRegisterInput"></input>
             <p id="loginFeedback"></p>
             <button class="loginRegister "id="login">Login</button>
             <p id="loginShortCut">Don't have an account?<span> Register</span></p>
