@@ -38,16 +38,7 @@ async function renderProfilePage() {
     
 
 
-    <div id="showlevel">Level
-        <div id="levelBar">
-            <div id="progressBar"></div>
-            <div id="displayLevels">
-                <div id="currentLevel"></div>
-                <div id="nextLevel"></div>
-            </div>
-        </div>
-
-    </div>
+   
     <div id="showfriends"></div>
     <button class="AddFriends" id="sendRequest">+ Add Friends!</button>
     
@@ -81,11 +72,7 @@ async function renderProfilePage() {
     console.log(userInfo);
     document.querySelector("#profileImage").src = `images/${userInfo.profile_picture}`
     document.getElementById("totalPoints").textContent = userInfo.popcorn + " p"
-    let lvlProgress = levelprogress(userInfo.popcorn, userInfo.xpGoal)
-    console.log(lvlProgress);
-    document.getElementById("progressBar").style.width = `${lvlProgress}%`
-    document.getElementById("currentLevel").textContent = userInfo.level;
-    document.getElementById("nextLevel").textContent = userInfo.level + 1;
+    
 
     document.getElementById("sendRequest").addEventListener("click", () => {
         popUpFunction("addFriends", "lala")

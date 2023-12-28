@@ -11,6 +11,27 @@ TODO:
 */
 
 async function joinGame(gameID) {
+    const allLightCurtains = document.querySelectorAll(".curtainsLightStartingpage");
+    const allDarkCurtains = document.querySelectorAll(".curtainsStartingpage");
+    const allFooterLightCurtains = document.querySelectorAll(".footercurtainsLightStartingpage");
+    const allFooterDarkCurtains = document.querySelectorAll(".footercurtainsStartingpage");
+
+    allFooterLightCurtains.forEach(crtn => {
+        crtn.style.height = "0vh"
+    });
+
+    allFooterDarkCurtains.forEach(crtn => {
+        crtn.style.height = "0vh"
+    });
+
+    allLightCurtains.forEach(crtn => {
+        crtn.style.height = "0vh"
+    });
+
+    allDarkCurtains.forEach(crtn => {
+        crtn.style.height = "0vh"
+    });
+
     document.querySelector("main").classList.add("mpMain");
 
     console.log(`joinGame GameID: ${gameID}`);
@@ -818,26 +839,31 @@ async function currentStanding(question) {
         `
 
         const intervalID = setInterval(function () {
-            const countdown = main.querySelector("#countdown");
+            if (main.querySelector("#countdown")) {
+                const countdown = main.querySelector("#countdown");
 
-            const currentSec = parseInt(countdown.textContent);
+                const currentSec = parseInt(countdown.textContent);
 
-            if (currentSec === 0) {
-                clearInterval(intervalID);
+                if (currentSec === 0) {
+                    clearInterval(intervalID);
 
-                allLightCurtains.forEach(crtn => {
-                    crtn.style.height = "0px"
-                });
+                    allLightCurtains.forEach(crtn => {
+                        crtn.style.height = "0px"
+                    });
 
-                allDarkCurtains.forEach(crtn => {
-                    crtn.style.height = "0px"
-                });
+                    allDarkCurtains.forEach(crtn => {
+                        crtn.style.height = "0px"
+                    });
 
-                checkNextQuestion(question, true);
+                    checkNextQuestion(question, true);
 
+                } else {
+                    countdown.textContent = currentSec - 1;
+                }
             } else {
-                countdown.textContent = currentSec - 1;
+                clearInterval(intervalID)
             }
+
 
         }, 1000)
     }
@@ -1022,7 +1048,7 @@ async function findMovie(event, question) {
         movieDiv.querySelector(".altTitle").dataset.title = filteredArray[i];
 
         movieDiv.addEventListener("click", ev => {
-            if (document.querySelector("#timer").datasset.currentTime != 0) {
+            if (document.querySelector("#timer").dataset.currentTime != 0) {
                 mpCheckAnswer(ev, question);
             }
         })
