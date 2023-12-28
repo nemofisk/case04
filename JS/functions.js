@@ -31,7 +31,7 @@ function popUpFunction(action, information) {
         clearInterval()
         document.querySelector(".friendRequestPopUp").remove()
     }
-    
+
     if (action === "wheel") {
         div.innerHTML = `
         <div id="removePopUp">X</div>
@@ -51,7 +51,7 @@ function popUpFunction(action, information) {
             console.log(element);
             element.target.parentElement.remove();
         })
-       
+
     }
 
     if (action === "changeUserOrPass") {
@@ -72,7 +72,7 @@ function popUpFunction(action, information) {
         </div>
         `
         main.appendChild(div)
-        
+
         fetch("PHP/api.php", {
             method: "POST",
             headers: { "Content-type": "application/json" },
@@ -115,7 +115,7 @@ function popUpFunction(action, information) {
             })
             document.querySelector("main").addEventListener("click", e => {
                 console.log(e.target);
-                if(!e.target.id === "userDisplay" || e.target.id === "searchField"){
+                if (!e.target.id === "userDisplay" || e.target.id === "searchField") {
 
                     document.querySelector("#addFriendsContainer").remove()
                 }
@@ -124,12 +124,12 @@ function popUpFunction(action, information) {
         });
         document.getElementById("sendRequest").addEventListener("click", () => {
             popUpFunction("addFriends", "lala")
-            
+
         })
 
     }
 
-    
+
 }
 
 
@@ -209,10 +209,7 @@ function displayCurtains(ClassName1, ClassName2) {
     <div class="${ClassName1}"></div>
     <div class="${ClassName2}"></div>
     <div class="${ClassName1}"></div>
-    <div class="${ClassName2}"></div>
-    <div class="${ClassName1}"></div>
-    <div class="${ClassName2}"></div>
-    <div class="${ClassName1}"></div>
+    
     `
     return curtains;
 }
