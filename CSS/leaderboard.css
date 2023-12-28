@@ -1,0 +1,86 @@
+#leaderBoardContainer {
+    display: flex;
+    justify-content: center;
+    gap: 98px;
+    margin-top: 45px;
+}
+
+#friendsLeaderboard {
+    width: 360px;
+    display: flex;
+
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    color: white;
+    font-size: 14px;
+}
+
+#WorldLeaderboard {
+    width: 360px;
+    display: flex;
+
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    color: white;
+    font-size: 14px;
+}
+
+.LeaderBoard {
+    height: 70px;
+    background-color: #2B2A4C;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.MyProfile {
+    height: 80px;
+    background-color: #323059;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.CameraImgLeaderboard {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+    margin-left: 15px;
+}
+
+.ranking {
+    font-size: 18px;
+}
+
+.leaderboardScore {
+    margin-right: 20px;
+}
+
+.LeaderboardPicScore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.leaderBoardUsername {
+    font-size: 14px;
+}
+
+.headerLeaderBoards {
+    font-size: 20px;
+}
+
+#LeaderBoardHeader {
+    margin-top: 680px;
+    color: white;
+    font-size: 40px;
+    margin-bottom: 0;
+}

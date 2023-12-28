@@ -21,6 +21,7 @@ function leaderboard($users, $received_data){
         if ($user) {
             // Get the user's friends
             $friends = $user['friends'];
+           
 
             // Filter users based on friends
             $friendsLeaderboard = [];
@@ -28,18 +29,24 @@ function leaderboard($users, $received_data){
 
             foreach($users as $user2){
                 foreach($friends as $friend){
-                    if($user2["username"] === $friend){
+                    if($user2["username"] === $friend["name"]){
                         
-                        $friendsLeaderboard[] = ["username" => $user2["username"], "popcorn" => $user2["popcorn"], "level" => $user2["level"]];
+                        $friendsLeaderboard[] = [
+                            "username" => $friend["name"],
+                            "popcorn" => $user2["popcorn"],
+                            "level" => $user2["level"],
+                            "profilePicture" => $friend["profilePicture"]
+                        ];
                     }
                 }
             }
 
             // Sort the friends leaderboard
+            $UserLoggedIn = ["username" => $user["username"], "popcorn" => $user["popcorn"], "level" => $user["level"], "profilePicture" => $user["profile_picture"]];
+            $friendsLeaderboard[] = $UserLoggedIn;
             usort($friendsLeaderboard, 'sortLeaderboard');
 
-            $UserLoggedIn = ["username" => $user["username"], "popcorn" => $user["popcorn"], "level" => $user["level"]];
-            array_unshift($friendsLeaderboard, $UserLoggedIn);
+            //array_unshift($friendsLeaderboard, $UserLoggedIn);
             
             sendJSON($friendsLeaderboard);
         } else {

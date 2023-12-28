@@ -8,12 +8,12 @@ function renderLeaderBoard() {
             <img src="images/Frame 263.png" alt="Logo">
         </div>
 
-        <h1>Leaderboards</h1>
+        <h2 id="LeaderBoardHeader">Leaderboard</h2>
     
-        
-        <div id="WorldLeaderboard"></div>
-        <div id="friendsLeaderboard">Friends</div>
-       
+        <div id="leaderBoardContainer">
+            <div id="WorldLeaderboard"></div>
+            <div id="friendsLeaderboard"></div>
+       </div>
     `
     let userID = localStorage.getItem(`userID`);
     initializeLeaderboard()
@@ -35,10 +35,29 @@ async function fetchFriendsLeaderboard(userId) {
 function displayFriendsLeaderboard(leaderboardData) {
     const leaderboardFriends = document.getElementById("friendsLeaderboard");
     console.log(leaderboardData);
+    let username = localStorage.getItem("username");
 
-    for (let i = 0; i < leaderboardData.length && i < 11; i++) {
+    let counter = 0;
+
+    leaderboardData.forEach(user => {
+        counter++;
+        if (user.username === username) {
+            let div = document.createElement("div")
+            div.classList.add("MyProfile");
+            div.innerHTML = `<div class="LeaderboardPicScore"> <p class="ranking">${counter}</p> <img class="CameraImgLeaderboard" src="images/${user.profilePicture}" alt="Profile Picture"> <p class="leaderBoardUsername"> ${user.username}</p> </div>  <p class="leaderboardScore">${user.popcorn}p</p>`;
+
+
+            let h1 = document.createElement("h1");
+            h1.classList.add("headerLeaderBoards");
+            h1.innerHTML = `Friends`;
+            leaderboardFriends.prepend(h1, div);
+        }
+    })
+
+    for (let i = 0; i < leaderboardData.length && i < 25; i++) {
         const userElement = document.createElement("div");
-        userElement.textContent = `${i}${leaderboardData[i].username}: ${leaderboardData[i].popcorn}`;
+        userElement.classList.add("LeaderBoard")
+        userElement.innerHTML = `<div class="LeaderboardPicScore"> <p class="ranking">${i + 1}</p> <img class="CameraImgLeaderboard" src="images/${leaderboardData[i].profilePicture}" alt="Profile Picture"> <p class="leaderBoardUsername">${leaderboardData[i].username}</p></div> <p class="leaderboardScore">${leaderboardData[i].popcorn}p</p>`;
         leaderboardFriends.appendChild(userElement);
     }
 }
@@ -53,21 +72,30 @@ async function fetchLeaderboard() {
     }
 }
 function displayLeaderboard(leaderboardData) {
+    console.log(leaderboardData);
     let username = localStorage.getItem("username");
 
     const leaderboard1 = document.getElementById("WorldLeaderboard");
 
+    let counter = 0;
+
     leaderboardData.forEach(user => {
+        counter++;
         if (user.username === username) {
             let div = document.createElement("div")
-            div.textContent = `${user.username} ${user.popcorn}`;
-            leaderboard1.prepend("World", div);
+            div.classList.add("MyProfile");
+            div.innerHTML = `<div class="LeaderboardPicScore"> <p class="ranking">${counter}</p> <img class="CameraImgLeaderboard" src="images/${user.profile_picture}" alt="Profile Picture"> <p class="leaderBoardUsername"> ${user.username}</p> </div>  <p class="leaderboardScore">${user.popcorn}p</p>`;
+            let h1 = document.createElement("h1");
+            h1.classList.add("headerLeaderBoards");
+            h1.innerHTML = `World`;
+            leaderboard1.prepend(h1, div);
         }
     })
 
-    for (let i = 1; i < leaderboardData.length && i < 11; i++) {
+    for (let i = 0; i < leaderboardData.length && i < 25; i++) {
         const userElement = document.createElement("div");
-        userElement.textContent = `${i}${leaderboardData[i].username}: ${leaderboardData[i].popcorn}`;
+        userElement.classList.add("LeaderBoard")
+        userElement.innerHTML = `<div class="LeaderboardPicScore"> <p class="ranking">${i + 1}</p> <img class="CameraImgLeaderboard" src="images/${leaderboardData[i].profile_picture}" alt="Profile Picture"> <p class="leaderBoardUsername">${leaderboardData[i].username}</p> </div> <p class="leaderboardScore">${leaderboardData[i].popcorn}p</p>`;
         leaderboard1.appendChild(userElement);
     }
 
