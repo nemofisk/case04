@@ -256,7 +256,10 @@ function displayCurtains(ClassName1, ClassName2) {
     <div class="${ClassName1}"></div>
     <div class="${ClassName2}"></div>
     <div class="${ClassName1}"></div>
-    
+    <div class="${ClassName2}"></div>
+    <div class="${ClassName1}"></div>
+    <div class="${ClassName2}"></div>
+    <div class="${ClassName1}"></div>
     `
     return curtains;
 }
