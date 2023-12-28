@@ -19,16 +19,6 @@
                 "name": "hello",
                 "profilePicture": "Sons (kopia).jpg",
                 "popcorn": 0
-            },
-            {
-                "name": "hello1",
-                "profilePicture": null,
-                "popcorn": 0
-            },
-            {
-                "name": "Puttefnask",
-                "profilePicture": "71757bc1e037189933725c804f0881b6.png",
-                "popcorn": 790
             }
         ],
         "friendRequests": [],
@@ -37,7 +27,7 @@
         "id": 1,
         "clues": 32,
         "resetTimer": 27,
-        "profile_picture": "The bear.jpg",
+        "profile_picture": "portishead.jpeg",
         "lastSpun": "21"
     },
     {
@@ -49,12 +39,7 @@
         "friendRequests": [
             "w"
         ],
-        "gameInvites": [
-            {
-                "hostName": "w",
-                "gameID": 29727
-            }
-        ],
+        "gameInvites": [],
         "xpGoal": 1300,
         "id": 2,
         "clues": 0,
@@ -76,7 +61,8 @@
         ],
         "friendRequests": [
             "w",
-            "Puttefnask"
+            "Puttefnask",
+            "ww"
         ],
         "gameInvites": [
             {
@@ -101,15 +87,12 @@
                 "name": "w",
                 "profilePicture": "The bear.jpg",
                 "popcorn": 1340
-            },
-            {
-                "name": "w",
-                "profilePicture": "The bear.jpg",
-                "popcorn": 1340
             }
         ],
         "friendRequests": [
-            "Puttefnask"
+            "Puttefnask",
+            "w",
+            "ww"
         ],
         "gameInvites": [],
         "xpGoal": 1300,
@@ -122,14 +105,11 @@
         "level": 1,
         "popcorn": 0,
         "gameInvites": [],
-        "friends": [
-            {
-                "name": "w",
-                "profilePicture": "The bear.jpg",
-                "popcorn": 1340
-            }
+        "friends": [],
+        "friendRequests": [
+            "ww",
+            "w"
         ],
-        "friendRequests": [],
         "xpGoal": 100,
         "clues": 0,
         "resetTimer": 0,
@@ -245,18 +225,29 @@
         "level": 1,
         "popcorn": 940,
         "gameInvites": [],
-        "friends": [
-            {
-                "name": "w",
-                "profilePicture": "The bear.jpg",
-                "popcorn": 102029
-            }
-        ],
+        "friends": [],
         "friendRequests": [],
         "xpGoal": 1000,
         "clues": 0,
         "resetTimer": 0,
         "profile_picture": "f677c1b358f3d6e5650f13732e6b7afa.png",
         "id": 13
+    },
+    {
+        "username": "gesgdsgr",
+        "password": "grwgrwgwrfs",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [
+            "w",
+            "ww"
+        ],
+        "xpGoal": 1000,
+        "clues": 0,
+        "resetTimer": 0,
+        "profile_picture": "Frame 621.png",
+        "id": 14
     }
 ]

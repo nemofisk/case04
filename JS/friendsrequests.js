@@ -10,6 +10,9 @@ function displayFriendRequests() {
         console.log(resource);
         for (let i = 0; i < resource.friendRequests.length; i++) {
             let div = document.createElement("div");
+            let overlayDiv = document.createElement("div");
+            overlayDiv.classList.add("Overlay");
+            document.querySelector("main").appendChild(overlayDiv);
             div.setAttribute("id", "popUpBox")
             div.classList.add("friendRequestPopUp")
             div.innerHTML = `
@@ -48,6 +51,7 @@ function respondFriendRequest(event) {
     }
 
     document.querySelector(".friendRequestPopUp").remove()
+    document.querySelector(".Overlay").remove()
     fetch("PHP/api.php", {
         method: "POST",
         headers: { "Content-type": "application/json" },

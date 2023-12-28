@@ -255,6 +255,7 @@
     display: flex;
     justify-content: space-between;
     margin: 28px 19px 28px 19px;
+    align-items: center;
 }
 
 .sendRequestButton {

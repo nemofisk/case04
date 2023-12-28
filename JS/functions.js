@@ -6,30 +6,37 @@ function popUpFunction(action, information) {
     let message;
     let div = document.createElement("div");
     if (action === "gameInvites") {
-        message = information.message[0].hostName + " invited you to a game!"
+        
 
-
+        console.log("hje");
         div.setAttribute("id", "invitationPopUp")
-        div.textContent = message;
-        div.classList.add("friendRequestPopUp");
-        let acceptBtn = document.createElement("button");
-        acceptBtn.setAttribute("id", "accept")
-        acceptBtn.textContent = "Accept!"
-        let declineBtn = document.createElement("button");
-        declineBtn.setAttribute("id", "decline")
-        declineBtn.textContent = "Decline"
+        div.innerHTML = `
+        <h1>Invite</h1>
 
-        acceptBtn.addEventListener("click", accept => {
+        <p><span>${information.message[0].hostName}</span> has invited you to a game. Do you want to join?</p>
+
+        <div id="buttonFlex">
+            <button id="decline">Decline!</button>
+            <button id="accept">Accept!</button>
+        </div>
+        `;
+        let overlayDiv = document.createElement("div");
+            overlayDiv.classList.add("Overlay");
+        div.classList.add("friendRequestPopUp");
+        document.querySelector("main").appendChild(overlayDiv)
+        document.querySelector("main").appendChild(div)
+
+        document.querySelector("#accept").addEventListener("click", accept => {
+            document.querySelector(".friendRequestPopUp").remove()
+            document.querySelector(".Overlay").remove()
             acceptInvite(information.message[0].gameID)
         });
-        declineBtn.addEventListener("click", declineInvite);
+        document.querySelector("#decline").addEventListener("click", declineInvite);
 
-        main.appendChild(div);
-        main.appendChild(declineBtn);
-        main.appendChild(acceptBtn);
+      
 
         clearInterval()
-        document.querySelector(".friendRequestPopUp").remove()
+        //document.querySelector(".friendRequestPopUp").remove()
     }
     
     if (action === "wheel") {
@@ -71,7 +78,11 @@ function popUpFunction(action, information) {
             <div id="userDisplay"></div>
         </div>
         `
+        let overlayDiv = document.createElement("div");
+            overlayDiv.classList.add("Overlay");
+            main.appendChild(overlayDiv)
         main.appendChild(div)
+        
         
         fetch("PHP/api.php", {
             method: "POST",
@@ -79,6 +90,12 @@ function popUpFunction(action, information) {
             body: JSON.stringify({ username: window.localStorage.getItem("username"), action: "friendRequest", subAction: "getAllUsers" })
         }).then(r => r.json()).then(resource => {
             let usersArray = resource.message;
+            usersArray.forEach(user => {
+                if(user.username === window.localStorage.getItem("username")){
+                    //console.log(user.friends);
+                }
+            });
+            
 
             document.querySelector("#searchUsers").addEventListener("keydown", event => {
                 let searchField = document.querySelector("#searchUsers").value;
@@ -88,36 +105,63 @@ function popUpFunction(action, information) {
                 userDisplayDiv.innerHTML = "";
 
                 matchingUsers.forEach(matchingUser => {
+                        if (!matchingUser.friends.some(friend => friend.name.toLowerCase() === window.localStorage.getItem("username").toLowerCase())){
+                            
+                            if(matchingUser.username !== window.localStorage.getItem("username")){
 
-                    let userDiv = document.createElement("div");
-                    userDiv.innerHTML = `
-                <div class="friendDivLeft">
-                    <div class="friendDivImages" style="background-image: url('images/${matchingUser.profile_picture}')"></div>
-                    <div class="friendDivName">${matchingUser.username}</div>
-                </div>
-                <div>
-                    <div class="sendRequestButton">Add +</div>
-                </div>
-
-                
-                `
-                    userDisplayDiv.appendChild(userDiv);
-
-                    userDiv.querySelector(".sendRequestButton").addEventListener("click", event => {
-                        event.target.style.backgroundColor = "rgba(103, 101, 159, 0.35)"
-
-
-                        searchUsers(matchingUser.username)
-                    });
-
+                                let userDiv = document.createElement("div");
+                                userDiv.setAttribute("id", "userDiv")
+                                userDiv.innerHTML = `
+                                        <div class="friendDivLeft">
+                                            <div class="friendDivImages" style="background-image: url('images/${matchingUser.profile_picture}')"></div>
+                                            <div class="friendDivName">${matchingUser.username}</div>
+                                        </div>
+                                        <div>
+                                            <div class="sendRequestButton">Add +</div>
+                                        </div>
+                                        `
+                                userDisplayDiv.appendChild(userDiv);
+                                if (matchingUser.friendRequests.includes(window.localStorage.getItem("username"))) {
+                                
+                                    document.querySelector(".sendRequestButton").style.backgroundColor = "rgba(103, 101, 159, 0.35)"
+                                    event.target.style.pointerEvents = "none";
+                                }
+                            
+            
+                                userDiv.querySelector(".sendRequestButton").addEventListener("click", event => {
+                                    event.target.style.backgroundColor = "rgba(103, 101, 159, 0.35)"
+                                    event.target.style.pointerEvents = "none";
+            
+            
+                                    searchUsers(matchingUser.username)
+                                });
+                            }else{
+                                console.log("already a friends");
+                            }
+                            }
                 });
 
             })
             document.querySelector("main").addEventListener("click", e => {
                 console.log(e.target);
-                if(!e.target.id === "userDisplay" || e.target.id === "searchField"){
+                if(e.target.id !== "userDisplay"){
+                    if(e.target.id !== "searchField"){
+                        if(e.target.id !== "searchUsers"){
+                            if(e.target.id !== "userDiv"){
 
-                    document.querySelector("#addFriendsContainer").remove()
+                                if(e.target.classList[0] !== "sendRequestButton"){
+                                    if(document.querySelector("#addFriendsContainer")){
+                                        
+                                        document.querySelector("#addFriendsContainer").remove()
+                                        document.querySelector(".Overlay").remove()
+                                    }
+    
+                                }
+                            }
+                            
+                        }
+                    }
+
                 }
             })
 
@@ -151,6 +195,8 @@ async function acceptInvite(gameID) {
     joinGame(gameID);
 }
 function declineInvite(event) {
+    document.querySelector(".friendRequestPopUp").remove()
+    document.querySelector(".Overlay").remove()
     console.log("declined");
 }
 
