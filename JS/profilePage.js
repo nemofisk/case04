@@ -20,7 +20,7 @@ async function renderProfilePage() {
     <div id="seperatorProfile"></div>
     <div class="flexIt">
         <div id="WeeklyPoints">Weekly Points</div>
-        <div>12374 p</div>
+        <div id="totalPointsWeekly">12374 p</div>
     </div>
     </div>
 

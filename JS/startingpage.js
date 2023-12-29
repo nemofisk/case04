@@ -49,15 +49,17 @@ async function renderStartingpage() {
 async function DisplaySidebar(event) {
     let main = document.querySelector("main");
     let div = document.createElement("div");
-    div.setAttribute("id", "Overlay");
-    main.appendChild(div);
+    let overlayDiv = document.createElement("div");
+    overlayDiv.classList.add("Overlay");
+    main.appendChild(overlayDiv);
+    
 
     let username = localStorage.getItem("username");
     let nav = document.createElement("nav");
     nav.setAttribute(`id`, "Sidebar")
     nav.innerHTML =
         `
-    <div id="CloseSidebar">X</div>
+    
 
     <div id="Profile">
 
@@ -103,10 +105,16 @@ async function DisplaySidebar(event) {
     const allLightCurtains = document.querySelectorAll(".curtainsLightStartingpage");
     const allDarkCurtains = document.querySelectorAll(".curtainsStartingpage");
 
-    nav.querySelector("#CloseSidebar").addEventListener("click", e => {
-        Sidebar = document.getElementById("Sidebar");
-        Sidebar.remove();
-        document.querySelector("#Overlay").remove();
+    document.querySelector("main").addEventListener("click", e => {
+        if(document.querySelector("nav")){
+            document.querySelector("nav").addEventListener("click", e => {
+                e.stopPropagation();
+    
+            })
+            Sidebar = document.getElementById("Sidebar");
+            Sidebar.remove();
+            document.querySelector(".Overlay").remove();
+        }
     })
     document.querySelector("main").appendChild(nav);
     document.getElementById("home").addEventListener("click", e => {
