@@ -8,15 +8,15 @@ function signUppage(event) {
     document.querySelector("main").innerHTML = `
     
     <h1 id="registerHeader" class="LoginHeader">Create an account</h1>
-    <div>
-        <div class="box">
+    <div class="con">
+        <div id="registerBox"class="box">
         <input placeholder="Username" id="registerUsername" class="loginRegisterInput"></input>
         <input type="password" placeholder="Password" id="registerPassword" class="loginRegisterInput"></input>
         <input type="password" placeholder="Confirm Password" id="ConfirmPassword" class="loginRegisterInput"></input>
+        </div>
         <p id="registerFeedback"></p>
         <button class="loginRegister" id="register">Register</button>
-        </div>
-        <button id="loginShortCut">Already have an account? <span>Login</span></button>
+        <p id="loginShortCut">Already have an account? <span>Login</span></p>
     </div>
 
     `

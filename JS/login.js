@@ -8,18 +8,18 @@ function signInpage(event) {
     document.querySelector("main").innerHTML = `
    
         <h1 class="LoginHeader">Login</h1>
-        <div>
+        <div class="con">
             <div class="box">
             <input placeholder="Username" id="loginUsername" class="loginRegisterInput"></input>
             <input type="password" placeholder="Password" id="loginPassword" class="loginRegisterInput"></input>
+            </div>
             <p id="loginFeedback"></p>
             <button class="loginRegister "id="login">Login</button>
-            <p id="loginShortCut">Don't have an account?<span> Register</span></p>
-            </div>
+            <p id="registerShortCut">Don't have an account?<span> Register</span></p>
         </div>
     
     `
-    document.getElementById("loginShortCut").addEventListener("click", f => {
+    document.getElementById("registerShortCut").addEventListener("click", f => {
         signUppage()
     })
 

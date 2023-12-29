@@ -25,14 +25,16 @@ main {
     align-items: center;
     flex-direction: column;
     gap: 40px;
-    margin-top: 64px;
+    margin-top: 100px;
 }
-#lucky{
+
+#lucky {
     margin-bottom: 0;
     top: 110px;
     position: absolute;
-    
+
 }
+
 #moviePoster {
     filter: blur(20px);
 }
@@ -64,11 +66,13 @@ body {
     height: 100vh;
     margin: 0;
 }
-#noMoreSpin{
+
+#noMoreSpin {
     margin: 0;
     position: absolute;
     top: 560px;
 }
+
 .wheel {
     width: 500px;
     height: 500px;
@@ -101,11 +105,11 @@ button {
     margin-top: 20px;
     padding: 10px;
     cursor: pointer;
-    
+
 }
 
 
-#spinWheel{
+#spinWheel {
     display: flex;
     width: 181px;
     height: 50px;
@@ -119,13 +123,13 @@ button {
     background-color: #171717;
     margin: 0;
     position: absolute;
-  top: 600px;
+    top: 600px;
 }
 
 #pin {
     width: 35px;
     position: absolute;
     top: 170px;
-  left: 707.5px;
+    left: 707.5px;
     z-index: 1;
 }

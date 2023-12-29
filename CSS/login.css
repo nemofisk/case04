@@ -1,6 +1,6 @@
 header>img {
     width: 256px;
-    margin-top: 36px;
+    margin-top: 74px;
 }
 
 .loginRegisterInput {
@@ -16,14 +16,33 @@ header>img {
     height: 50px;
     background-color: #FFF8BA;
     border-radius: 30px;
-    margin-top: 50px;
+    margin-top: 95px;
     cursor: pointer;
+    border: 0;
+
+    color: var(--Colors-Button-Text, #323059);
+    text-align: center;
+    font-family: Jost;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
 .LoginHeader {
-    color: white;
-    margin-top: 173px;
-    font-size: 35px;
+
+    margin-top: 281px;
+
+    margin-bottom: 0px;
+
+    color: var(--Colors-Text-primary, #FFF);
+    text-align: center;
+    font-family: Jost;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 400px;
 }
 
 
@@ -35,11 +54,45 @@ span {
     border: 0;
     background-color: transparent;
     cursor: pointer;
-    margin-top: 45px;
+    margin-top: 80px;
+    margin-bottom: 0px;
+
+    color: var(--Colors-Text-primary, #FFF);
+    text-align: center;
+    font-family: Jost;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+#registerShortCut {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    margin-top: 95px;
+    margin-bottom: 0px;
+
+    color: var(--Colors-Text-primary, #FFF);
+    text-align: center;
+    font-family: Jost;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
 }
 
 #registerHeader {
-    margin-top: 241px;
+    margin-top: 288px;
+
+    color: var(--Colors-Text-primary, #FFF);
+    text-align: center;
+    font-family: Jost;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 400px;
 }
 
 .wheelClass {
@@ -87,16 +140,28 @@ span {
 #registerFeedback {
     color: red;
     position: absolute;
-    bottom: 204px;
+    bottom: 205px;
 }
 
 #loginFeedback {
     color: red;
     position: absolute;
-    bottom: 274px;
+    bottom: 218px;
+    left: 554px;
 }
 
 #h1RegisterFeedback {
     margin-bottom: 30px;
+    margin-top: 50px;
+}
+
+.con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#registerBox {
     margin-top: 50px;
 }
