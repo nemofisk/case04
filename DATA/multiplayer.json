@@ -353,5 +353,75 @@
         "doneQuestion": [],
         "nextQuestion": false,
         "endedQuestion": []
+    },
+    {
+        "gameID": 67259,
+        "hostID": 5,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "Testkonto4",
+                "userID": 5,
+                "profilePicture": "Frame 621.png",
+                "points": 0,
+                "inLobby": true,
+                "latestFetch": 1703859243
+            }
+        ],
+        "questions": "",
+        "isStarted": false,
+        "answeredQuestion": [],
+        "endEarly": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 92632,
+        "hostID": 2,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "Testkonto1",
+                "userID": 2,
+                "profilePicture": "Frame 621.png",
+                "points": 0,
+                "inLobby": true,
+                "latestFetch": 1703860266
+            }
+        ],
+        "questions": "",
+        "isStarted": false,
+        "answeredQuestion": [],
+        "endEarly": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
     }
 ]

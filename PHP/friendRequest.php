@@ -30,7 +30,9 @@ function friendRequest($received_data, $users){
     
 
     if($subAction === "accept"){
-        $userID = $received_data["userID"];
+        if(isset($received_data["userID"])){
+            $userID = $received_data["userID"];
+        }
         $userToRespondTo = $received_data["requestedUser"];
         $userToRespondToData = null;
     

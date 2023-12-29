@@ -9,38 +9,53 @@ function displayFriendRequests() {
     }).then(r => r.json()).then(resource => {
         console.log(resource);
         for (let i = 0; i < resource.friendRequests.length; i++) {
-            let div = document.createElement("div");
-            let overlayDiv = document.createElement("div");
-            overlayDiv.classList.add("Overlay");
-            document.querySelector("main").appendChild(overlayDiv);
-            div.setAttribute("id", "popUpBox")
-            div.classList.add("friendRequestPopUp")
-            div.innerHTML = `
-            <h1>Friend Request</h1>
 
-            <p><span>${resource.friendRequests[i]}</span> want to be your friend. Do you accept?</p>
+            const allFriendRqstPopups = document.querySelectorAll(".friendRequestPopUp");
 
-            <div id="buttonFlex">
-                <button id="decline">Decline!</button>
-                <button id="accept">Accept!</button>
-            </div>
-            `;
-            div.setAttribute("id", resource.friendRequests[i]);
-            requestBox.appendChild(div);
-            
+            let createPopup = true;
 
-            document.getElementById("accept").addEventListener("click", respondFriendRequest)
-            document.getElementById("decline").addEventListener("click", respondFriendRequest)
+            allFriendRqstPopups.forEach(rqstPopup => {
+                if (rqstPopup.id == resource.friendRequests[i]) {
+                    createPopup = false;
+                }
+            });
+
+            if (createPopup) {
+                let div = document.createElement("div");
+                let overlayDiv = document.createElement("div");
+                overlayDiv.classList.add("Overlay");
+                document.querySelector("main").appendChild(overlayDiv);
+                div.setAttribute("id", "popUpBox")
+                div.classList.add("friendRequestPopUp")
+                div.innerHTML = `
+                <h1>Friend Request</h1>
+    
+                <p><span>${resource.friendRequests[i]}</span> want to be your friend. Do you accept?</p>
+    
+                <div id="buttonFlex">
+                    <button id="decline">Decline!</button>
+                    <button id="accept">Accept!</button>
+                </div>
+                `;
+                div.setAttribute("id", resource.friendRequests[i]);
+                requestBox.appendChild(div);
+
+                document.getElementById("accept").addEventListener("click", ev => {
+                    respondFriendRequest(ev, resource.friendRequests[i]);
+                })
+                document.getElementById("decline").addEventListener("click", ev => {
+                    respondFriendRequest(ev, resource.friendRequests[i]);
+                })
+            }
         }
     })
 
 }
 
-function respondFriendRequest(event) {
+function respondFriendRequest(event, user) {
     console.log(event);
     let action;
-    let user = event.target.parentElement.id;
-    
+
     console.log(window.localStorage.getItem("username"));
     if (event.target.id === "accept") {
         action = "accept"

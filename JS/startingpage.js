@@ -42,8 +42,16 @@ async function renderStartingpage() {
         }
     }
 
+    const friendRequestInterval = setInterval(function () {
+        if (!document.querySelector(".mpMain")) {
+            displayFriendRequests();
+        }
 
-    displayFriendRequests()
+        if (document.querySelector(".mpMain")) {
+            clearInterval(friendRequestInterval);
+        }
+    }, 5000)
+
 }
 
 async function DisplaySidebar(event) {

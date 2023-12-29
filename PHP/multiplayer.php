@@ -78,6 +78,7 @@ function multiplayer($users, $received_data){
                 sendJSON($message, 200);
             }
         }
+        
     }
     
     if($subAction === "acceptInvite"){
