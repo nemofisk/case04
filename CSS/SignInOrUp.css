@@ -10,6 +10,9 @@
     background-color: #FFF8BA;
     color: #171717;
     cursor: pointer;
+    border: none;
+    font-family: Jost;
+    font-size: 20px;
 }
 
 #container>img {
@@ -21,6 +24,8 @@
     color: #FFF8BA;
     border: 1px solid #FFF8BA;
     cursor: pointer;
+    font-family: Jost;
+    font-size: 20px;
 }
 
 #SignInOrUpContainer {
