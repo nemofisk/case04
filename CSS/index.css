@@ -30,7 +30,7 @@ main {
 
 #lucky {
     margin-bottom: 0;
-    top: 110px;
+    top: 125px;
     position: absolute;
 
 }
@@ -88,7 +88,7 @@ body {
             brown 315deg 360deg);
     background-image: url("../images/wheelplswosk.png");
     background-size: cover;
-    top: 135px;
+    top: 175px;
 }
 
 .slice {
@@ -123,13 +123,13 @@ button {
     background-color: #171717;
     margin: 0;
     position: absolute;
-    top: 600px;
+    top: 643px;
 }
 
 #pin {
     width: 35px;
     position: absolute;
-    top: 170px;
-    left: 707.5px;
+    top: 215px;
+  left: 572.5px;
     z-index: 1;
 }
