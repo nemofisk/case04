@@ -263,7 +263,7 @@ function handleTransitionEnd(desiredSlice) {
       break;
     case 3:
       nothing()
-      message = "Nothing :("
+      message = "Nothing"
       break;
     case 4:
       addPoints(20)

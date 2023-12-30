@@ -51,7 +51,7 @@ function registerFunction(event) {
             popup.innerHTML = `<p id="exitPopup">X</p> <h1 id="h1RegisterFeedback">Registered</h1> ${l.message}`;
             main.appendChild(popup);
             document.querySelector("#exitPopup").addEventListener("click", e => {
-                document.querySelector("Overlay").remove();
+                document.querySelector(".Overlay").remove();
                 signInpage();
             })
         } else {

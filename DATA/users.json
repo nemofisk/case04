@@ -3,7 +3,7 @@
         "username": "w",
         "password": "",
         "level": 669,
-        "popcorn": 105945,
+        "popcorn": 105955,
         "friends": [
             {
                 "name": "www",
@@ -38,6 +38,6 @@
         "clues": 32,
         "resetTimer": 27,
         "profile_picture": "portishead.jpeg",
-        "lastSpun": "21"
+        "lastSpun": "30"
     }
 ]

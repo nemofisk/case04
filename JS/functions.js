@@ -42,23 +42,28 @@ function popUpFunction(action, information) {
     if (action === "wheel") {
         div.innerHTML = `
         <div id="removePopUp">X</div>
-        You got ${information}
+        <p class="whatYouGot">You got ${information}</p>
         <br>
-        <p>You get a new chance tomorrow</p>
+        <p class="newChance">You get a new chance tomorrow</p>
     `
         let Overlaydiv = document.createElement("div");
-        Overlaydiv.setAttribute("id", "Overlay");
+        Overlaydiv.setAttribute("class", "Overlay");
         main.appendChild(Overlaydiv);
 
         console.log(div.textContent);
         div.classList.add("wheelClass")
         main.appendChild(div);
         document.getElementById("removePopUp").addEventListener("click", element => {
-            document.querySelector("#Overlay").remove();
+            document.querySelector(".Overlay").remove();
             console.log(element);
             element.target.parentElement.remove();
         })
-
+        if(information !== "Nothing"){
+            let img = document.createElement("img");
+            img.classList.add("crownImage")
+            img.src= "images/crownWheel.png"
+            document.querySelector(".wheelClass").appendChild(img)
+        }
     }
 
     if (action === "changeUserOrPass") {
