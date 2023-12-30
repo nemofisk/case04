@@ -47,7 +47,7 @@ header>img {
 
 
 span {
-    color: red;
+    color: #FF6868;
 }
 
 #loginShortCut {
@@ -138,13 +138,13 @@ span {
 
 
 #registerFeedback {
-    color: red;
+    color: #FF6868;
     position: absolute;
     bottom: 205px;
 }
 
 #loginFeedback {
-    color: red;
+    color: #FF6868;
     position: absolute;
     bottom: 218px;
     left: 554px;

@@ -161,10 +161,19 @@
 
 
 #rightSideContainer {
-    width: 297px;
+    width: 294px;
     height: 520px;
+    display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
-
+.pElementShit{
+    font-family: Jost;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
 .flexIt {
     display: flex;
     justify-content: center;
@@ -205,6 +214,11 @@ line-height: normal;
 
 .userPoints {
     color: white;
+    font-family: Jost;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .AddFriends {
@@ -219,6 +233,14 @@ line-height: normal;
     font-size: 20px;
     position: relative;
     top: -30px;
+    border: none;
+}
+.friendName{
+    font-family: Jost;  
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 #profilePicWrapper {

@@ -49,8 +49,8 @@ async function renderProfilePage() {
     <div id="rightSide">
         <div id="rightSideContainer">
             <div id="friendsAndPoints">
-                <p>Friends</p>
-                <p>Total Points</p>
+                <p class="pElementShit">Friends</p>
+                <p class="pElementShit">Total Points</p>
             </div>
             <div id="myProfile">
             <div class="WrapperForPicAndName">
@@ -92,19 +92,27 @@ async function displayFriendList(userInfo) {
     }
 
     let container = document.getElementById("rightSideContainer");
-
+    let counter = 0;
+    
+    console.log(friends.length);
     friends.forEach(friend => {
+        
         let div = document.createElement("div");
         div.classList.add("myProfile")
         div.innerHTML =
             `
             <div class="WrapperForPicAndName">
                 <img class="myProfileImage" src="images/${friend.profilePicture}" alt="Profile Picture">
-                <p>${friend.name}</p>
+                <p class="friendName">${friend.name}</p>
             </div>
             <div class="userPoints">${friend.popcorn} p</div>
         `
         container.appendChild(div);
+        console.log(counter);
+        counter++
+        if(counter === friends.length){
+            div.style.border = "none"
+        }
     });
 }
 
