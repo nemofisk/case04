@@ -101,7 +101,7 @@ function generateMovies(array, questionNumber = 1, answerTime) {
 
     let chosenGenres = array;
 
-    let quizQuiestions = ["directors", "actors", "plot", "trailer", "poster"];
+    let quizQuiestions = ["trailer", "poster"];
 
     let type = quizQuiestions[Math.floor(Math.random() * quizQuiestions.length)];
 
@@ -223,6 +223,9 @@ function startQuestion(correctMovie, otherMovies, genres, questionNumber, type) 
     console.log(correctMovie, otherMovies);
 
     console.log(type);
+
+    correctMovie.qType = type;
+
     switch (type) {
         case "directors":
             textQuestion(correctMovie, otherMovies, "directors", genres, questionNumber)
@@ -249,6 +252,17 @@ function startQuestion(correctMovie, otherMovies, genres, questionNumber, type) 
 async function textQuestion(correctMovie, otherMovies, type, genres, questionNumber) {
     let questionText;
 
+    const username = window.localStorage.getItem("username");
+
+    const rqst = new Request(`PHP/api.php?subAction=getInfo&username=${username}&action=profile`);
+    const rspns = await callAPI(rqst)
+    const rsrc = await rspns.json();
+
+    console.log(rsrc);
+
+    const clueCount = rsrc.message.clues;
+    const fiftyCount = rsrc.message.fiftyfifty;
+
     switch (type) {
         case "directors":
             questionText = "Which movie has " + correctMovie.Director + " directed?";
@@ -265,11 +279,32 @@ async function textQuestion(correctMovie, otherMovies, type, genres, questionNum
 
     main.innerHTML = `
 
-        <div id="contentWrapper" class="cwType${type}">
+        <div id="contentWrapper" class="SPcwType${type}">
 
-            <div id="timer" data-current-time="10">
-                <div id="timerProgress"></div>
+
+            <div id="SPTopDiv">
+                <div id="cluesDiv">
+
+                    <div id="clue">
+                        <span id="clueCount" class="clCount">${clueCount}</span>
+                    </div>
+
+                    <div id="fiftyfifty">
+                        <span id="fiftyCount" class="clCount">${fiftyCount}</span>
+                    </div>
+
+                </div>
+
+                <div id="timer" data-current-time="10">
+
+                    <div id="timerProgress"></div>
+                    
+                </div>
+            
             </div>
+
+            <div id="clueFeedback"></div>
+           
 
             <div id="questionContainer" class="qctype${type}">
             
@@ -283,9 +318,10 @@ async function textQuestion(correctMovie, otherMovies, type, genres, questionNum
 
     SPstartQuestionTimer(genres, questionNumber, type, correctMovie);
 
-    // document.getElementById("clue").addEventListener("click", func => {
-    //     getClue(correctMovie)
-    // })
+    document.getElementById("clue").addEventListener("click", gClue);
+    document.getElementById("fiftyfifty").addEventListener("click", gFif);
+
+    window.localStorage.setItem("correctMovie", JSON.stringify(correctMovie));
 
     main.querySelector("#timer").dataset.answerTime = 0;
 
@@ -370,18 +406,44 @@ async function textQuestion(correctMovie, otherMovies, type, genres, questionNum
     })
 }
 
-function posterQuestion(correctMovie, otherMovies, type, genres, questionNumber) {
+async function posterQuestion(correctMovie, otherMovies, type, genres, questionNumber) {
     const main = document.querySelector("main");
+    const username = window.localStorage.getItem("username");
 
+    const rqst = new Request(`PHP/api.php?subAction=getInfo&username=${username}&action=profile`);
+    const rspns = await callAPI(rqst)
+    const rsrc = await rspns.json();
+
+    console.log(rsrc);
+
+    const clueCount = rsrc.message.clues;
+    const fiftyCount = rsrc.message.fiftyfifty;
     main.innerHTML = `
     
         <div id="contentWrapper" class="cwType${type}">
-        
 
-            <div id="timer" data-current-time="30">
-                <div id="timerProgress"></div>
+                <div id="SPTopDiv">
+                    <div id="cluesDiv">
+
+                        <div id="clue">
+                            <span id="clueCount" class="clCount">${clueCount}</span>
+                        </div>
+
+                        <div id="fiftyfifty">
+                            <span id="fiftyCount" class="clCount">${fiftyCount}</span>
+                        </div>
+
+                    </div>
+
+                    <div id="timer" data-current-time="30">
+
+                        <div id="timerProgress"></div>
+                        
+                    </div>
+            
             </div>
 
+            <div id="clueFeedback"></div>
             <div id="questionContainer">
 
                 <div id="poster"></div>
@@ -398,6 +460,13 @@ function posterQuestion(correctMovie, otherMovies, type, genres, questionNumber)
         </div>
 
     `
+
+    window.localStorage.setItem("correctMovie", JSON.stringify(correctMovie));
+
+
+
+    document.getElementById("clue").addEventListener("click", gClue);
+    document.getElementById("fiftyfifty").style.backgroundImage = "url('images/fiftGrey.svg')"
 
     main.querySelector("#timer").dataset.answerTime = 0;
 
@@ -419,16 +488,44 @@ function posterQuestion(correctMovie, otherMovies, type, genres, questionNumber)
     })
 }
 
-function trailerQuestion(correctMovie, otherMovies, type, genres, questionNumber) {
+async function trailerQuestion(correctMovie, otherMovies, type, genres, questionNumber) {
     const main = document.querySelector("main");
+    const username = window.localStorage.getItem("username");
 
+    const rqst = new Request(`PHP/api.php?subAction=getInfo&username=${username}&action=profile`);
+    const rspns = await callAPI(rqst)
+    const rsrc = await rspns.json();
+
+    console.log(rsrc);
+
+    const clueCount = rsrc.message.clues;
+    const fiftyCount = rsrc.message.fiftyfifty;
     main.innerHTML = `
     
         <div id="contentWrapper" class="cwType${type}">
         
-            <div id="timer" data-current-time="30">
-                <div id="timerProgress"></div>
+            <div id="SPTopDiv">
+                <div id="cluesDiv">
+
+                    <div id="clue">
+                        <span id="clueCount" class="clCount">${clueCount}</span>
+                    </div>
+
+                    <div id="fiftyfifty">
+                        <span id="fiftyCount" class="clCount">${fiftyCount}</span>
+                    </div>
+
+                </div>
+
+                <div id="timer" data-current-time="30">
+
+                    <div id="timerProgress"></div>
+                    
+                </div>
+            
             </div>
+
+            <div id="clueFeedback"></div>
             <div id="videoContainer">
             
                 <iframe src=${correctMovie.youtubeLink}?autoplay=1&mute=1&controls=0&disablekb=1&showinfo=0 title="" frameborder="0" controls="0" disablekb="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -449,7 +546,13 @@ function trailerQuestion(correctMovie, otherMovies, type, genres, questionNumber
 
     `
 
-    main.querySelector("#timer").dataset.answerTime = 0;
+    window.localStorage.setItem("correctMovie", JSON.stringify(correctMovie));
+
+
+    document.getElementById("clue").addEventListener("click", gClue);
+    document.getElementById("fiftyfifty").style.backgroundImage = "url('images/fiftGrey.svg')";
+
+    document.querySelector("#timer").dataset.answerTime = 0;
 
     SPstartQuestionTimer(genres, questionNumber, type, correctMovie);
 
@@ -494,6 +597,7 @@ function goToHomePage(event) {
 
 function getClue(movie) {
 
+
     let request = new Request("PHP/api.php", {
         method: "POST",
         headers: { "Content-type": "application/json" },
@@ -501,10 +605,70 @@ function getClue(movie) {
     })
     callAPI(request);
 
-    let div = document.createElement("div")
-    div.textContent = `This movie was directed by ${movie.Director} and is starring ${movie.Actors} `
-    document.querySelector("main").appendChild(div);
+    if (movie.qType == "directors" || movie.qType == "actors" || movie.qType == "plot") {
+        const clueFeedback = document.querySelector("#clueFeedback");
 
+        clueFeedback.textContent = `This movie was directed by ${movie.Director} and is starring ${movie.Actors} `
+
+        clueFeedback.classList.add("active");
+    }
+
+    if (movie.qType == "poster" || movie.qType == "trailer") {
+        const inputClue = movie.Title.substring(0, 3);
+        console.log(inputClue);
+        document.querySelector("#searchMovie").value == inputClue;
+
+    }
+
+    document.querySelector("#clue").removeEventListener("click", gClue)
+    document.getElementById("clue").style.backgroundImage = "url('images/ClueGrey.svg')"
+
+}
+function fiftyfifty(movie) {
+
+
+    let request = new Request("PHP/api.php", {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({ username: window.localStorage.getItem("username"), action: "profile", subAction: "useFifty" })
+    })
+    callAPI(request);
+
+    const allAlternatives = document.querySelectorAll(".alternative");
+
+    let wrongAnswers = [];
+
+    allAlternatives.forEach(alt => {
+
+        if (alt.querySelector(".altTitle").textContent != movie.Title) {
+            wrongAnswers.push(alt.querySelector(".altTitle").textContent);
+        }
+    })
+
+    if (wrongAnswers.length == 1) {
+        allAlternatives.forEach(alt => {
+            if (alt.querySelector(".altTitle").textContent == wrongAnswers[0]) {
+                alt.style.opacity = "0.35"
+            }
+        })
+    }
+
+    if (wrongAnswers.length == 3) {
+        const shuffledArray = shuffleArray(wrongAnswers);
+
+        for (let i = 0; i < 2; i++) {
+            allAlternatives.forEach(alt => {
+
+                if (alt.querySelector(".altTitle").textContent == shuffledArray[i]) {
+                    alt.style.opacity = "0.35"
+                }
+            })
+        }
+    }
+
+    document.getElementById("fiftyfifty").style.backgroundImage = "url('images/fiftGrey.svg')"
+
+    document.querySelector("#fiftyfifty").removeEventListener("click", gFif);
 }
 
 function SPendQuiz() {
@@ -685,6 +849,9 @@ async function SPfindMovie(event, correctMovie, genres, questionNumber, type) {
 
 function SPendOfQuestion(correctMovie) {
 
+    document.querySelector("#clue").removeEventListener("click", gClue)
+    document.querySelector("#fiftyfifty").removeEventListener("click", gFif);
+
     const alternativeDivs = document.querySelectorAll(".alternative");
 
     alternativeDivs.forEach(alternative => {
@@ -701,16 +868,15 @@ function SPendOfQuestion(correctMovie) {
 
 function endQuestionEarly(genres, questionNumber, type, correctMovie) {
     const timer = document.querySelector("#timer");
+    const timerinner = timer.innerHTML;
 
     const timerClone = timer.cloneNode();
-    timerClone.innerHTML = `
-        <div id="timerProgress" class="active"></div>
-    `
+    timerClone.innerHTML = timerinner;
 
     timerClone.dataset.currentTime = 0;
 
     timer.remove();
-    document.querySelector("#contentWrapper").prepend(timerClone);
+    document.querySelector("#SPTopDiv").append(timerClone);
 
     const answerTime = timer.dataset.answerTime;
 
@@ -731,4 +897,39 @@ function endQuestionEarly(genres, questionNumber, type, correctMovie) {
             generateMovies(genres, questionNumber + 1, answerTime);
         }
     }, 3000)
+}
+
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+
+        // Generate random number 
+        var j = Math.floor(Math.random() * (i + 1));
+
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+
+    return array;
+}
+
+function gClue() {
+    const correctMovie = JSON.parse(window.localStorage.getItem("correctMovie"));
+
+    const clueSpan = document.querySelector("#clue > span");
+
+    clueSpan.textContent = parseInt(clueSpan.textContent) - 1;
+
+    getClue(correctMovie)
+
+}
+
+function gFif() {
+    const correctMovie = JSON.parse(window.localStorage.getItem("correctMovie"));
+
+    const clueSpan = document.querySelector("#fiftyfifty > span");
+
+    clueSpan.textContent = parseInt(clueSpan.textContent) - 1;
+
+    fiftyfifty(correctMovie)
 }

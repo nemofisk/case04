@@ -4,6 +4,7 @@
         "password": "",
         "level": 669,
         "popcorn": 105955,
+        "popcorn": 106220,
         "friends": [
             {
                 "name": "www",
@@ -35,8 +36,8 @@
         "gameInvites": [],
         "xpGoal": 221764,
         "id": 1,
-        "clues": 32,
-        "resetTimer": 27,
+        "clues": 17,
+        "fiftyfifty": 11,
         "profile_picture": "portishead.jpeg",
         "lastSpun": "30"
     }
