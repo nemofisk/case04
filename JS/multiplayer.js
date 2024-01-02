@@ -29,6 +29,11 @@ function chooseCatagoryMultiplayer(event) {
 
 
     document.querySelector("main").innerHTML = `
+    <div class="profile">
+        <div id="profilePic"></div>
+        <img src="images/Frame 263.png" alt="Logo">
+    </div>
+    
     <h1>Choose a category!</h1>
     <div id="catergoryMenu"></div>
     <button id="Mixed">Mixed Catagories</button>
@@ -156,6 +161,11 @@ async function inviteFriends(gameID) {
     const username = window.localStorage.getItem("username")
 
     document.querySelector("main").innerHTML = `
+    <div class="profile">
+        <div id="profilePic"></div>
+        <img src="images/Frame 263.png" alt="Logo">
+    </div>
+
     <div id="inviteFriendsWrapper">
         <div id="inviteFriendsHeader">Bjud in dina vänner</div>
 
@@ -272,6 +282,7 @@ async function findUsers(event, ar) {
         friendDiv.classList.add("mpFriend");
 
         friendDiv.innerHTML = `
+        
             <div class="friendDivLeft">
                 <div class="friendDivImage" style="background-image: url('images/${filteredArray[i].profilePicture}')"></div>
                 <div class="friendDivName">${filteredArray[i].name}</div>

@@ -106,7 +106,7 @@ function generateMovies(array, questionNumber = 1, answerTime) {
 
     let chosenGenres = array;
 
-    let quizQuiestions = ["trailer", "poster"];
+    let quizQuiestions = ["directors", "actors", "plot"];
 
     let type = quizQuiestions[Math.floor(Math.random() * quizQuiestions.length)];
 
@@ -179,26 +179,31 @@ function SPprepareQuestion(correctMovie, otherMovies, genres, questionNumber, an
                 </div>
             `
         const intervalID = setInterval(function () {
-            const countdown = main.querySelector("#countdownSP");
+            if (main.querySelector("#countdownSP")) {
+                const countdown = main.querySelector("#countdownSP");
 
-            const currentSec = parseInt(countdown.textContent);
+                const currentSec = parseInt(countdown.textContent);
 
-            if (currentSec === 0) {
-                clearInterval(intervalID);
+                if (currentSec === 0) {
+                    clearInterval(intervalID);
 
-                allLightCurtains.forEach(crtn => {
-                    crtn.style.height = "0px"
-                });
+                    allLightCurtains.forEach(crtn => {
+                        crtn.style.height = "0px"
+                    });
 
-                allDarkCurtains.forEach(crtn => {
-                    crtn.style.height = "0px"
-                });
+                    allDarkCurtains.forEach(crtn => {
+                        crtn.style.height = "0px"
+                    });
 
-                startQuestion(correctMovie, otherMovies, genres, questionNumber, type);
+                    startQuestion(correctMovie, otherMovies, genres, questionNumber, type);
 
+                } else {
+                    countdown.textContent = currentSec - 1;
+                }
             } else {
-                countdown.textContent = currentSec - 1;
+                clearInterval(intervalID);
             }
+
 
         }, 1000)
     }
@@ -314,7 +319,7 @@ async function textQuestion(correctMovie, otherMovies, type, genres, questionNum
 
                 </div>
 
-                <div id="timer" data-current-time="10">
+                <div id="timer" data-current-time="200">
 
                     <div id="timerProgress"></div>
                     
