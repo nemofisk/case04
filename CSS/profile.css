@@ -392,7 +392,7 @@ font-size: 20px;
     }
     #ProfilePageContainer{
         flex-direction: column;
-        margin-top: 350px;
+        margin-top: 431px;
     }
     #middle{
         border: none;
@@ -501,6 +501,16 @@ font-size: 20px;
     }
     h2#LeaderBoardHeader{
         top: 122px;
+    }
+    #message{
+        margin-top: 81px;
+        margin-bottom: 81px;
+    }
+    #Multiplayer{
+        width: 360px;
+    }
+    #Singelplayer{
+        width: 360px;
     }
     
   }
