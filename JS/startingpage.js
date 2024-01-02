@@ -60,10 +60,13 @@ async function DisplaySidebar(event) {
     let overlayDiv = document.createElement("div");
     overlayDiv.classList.add("Overlay");
     main.appendChild(overlayDiv);
-    
+
 
     let username = localStorage.getItem("username");
     let nav = document.createElement("nav");
+    nav.addEventListener("click", e => {
+        e.stopPropagation();
+    })
     nav.setAttribute(`id`, "Sidebar")
     nav.innerHTML =
         `
@@ -114,10 +117,10 @@ async function DisplaySidebar(event) {
     const allDarkCurtains = document.querySelectorAll(".curtainsStartingpage");
 
     document.querySelector("main").addEventListener("click", e => {
-        if(document.querySelector("nav")){
+        if (document.querySelector("nav")) {
             document.querySelector("nav").addEventListener("click", e => {
                 e.stopPropagation();
-    
+
             })
             Sidebar = document.getElementById("Sidebar");
             Sidebar.remove();
