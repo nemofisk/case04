@@ -614,7 +614,7 @@ async function mpCheckAnswer(ev, question) {
         targetAlt.classList.add("selected");
 
         if (resource.correct == false) {
-            targetAlt.querySelector(".altTitle").classList.add("wrong");
+            createWrong(alt);
         }
     }
 
@@ -641,7 +641,7 @@ async function mpCheckAnswer(ev, question) {
 
     if (resource.correct == true) {
         targetAlt.classList.add("selected");
-        targetAlt.querySelector(".altTitle").classList.add("correct")
+        createRight(alt);
     }
 }
 
@@ -763,9 +763,9 @@ async function endOfQuestion(question) {
             const title = alternative.querySelector(".altTitle")
 
             if (title.textContent == correctAnswer) {
-                alternative.querySelector(".altTitle").classList.add("correct");
+                createRight(alternative);
             } else {
-                alternative.querySelector(".altTitle").classList.add("wrong");
+                createWrong(alternative);
             }
 
             const whoGuessed = document.createElement("div");
@@ -1093,4 +1093,20 @@ async function findMovie(event, question) {
     }
 
 
+}
+
+function createWrong(alternative) {
+    const wrongDiv = document.createElement("div");
+
+    wrongDiv.classList.add("wrongDiv");
+
+    alternative.prepend(wrongDiv);
+}
+
+function createRight(alternative) {
+    const rightDiv = document.createElement("div");
+
+    rightDiv.classList.add("rightDiv");
+
+    alternative.prepend(rightDiv);
 }

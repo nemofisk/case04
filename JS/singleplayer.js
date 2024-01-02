@@ -57,7 +57,7 @@ function singlePlayer(event) {
                 })
             }
             div.classList.toggle("selected");
-            div.style.backgroundColor = "rgb(129, 132, 248)"
+           
             document.querySelector("#Continue").style.backgroundColor = "#FFF8BA"
             document.querySelector("#Continue").style.color = "#323059"
         });
@@ -319,7 +319,7 @@ async function textQuestion(correctMovie, otherMovies, type, genres, questionNum
 
                 </div>
 
-                <div id="timer" data-current-time="10">
+                <div id="timer" data-current-time="100">
 
                     <div id="timerProgress"></div>
                     
@@ -411,7 +411,7 @@ async function textQuestion(correctMovie, otherMovies, type, genres, questionNum
         const correct = checkAnswer(event.target.dataset.title, correctMovie);
 
         if (correct) {
-            targetAlt.querySelector(".altTitle").classList.add("correct")
+            createRight(targetAlt)
             const answerTime = parseFloat(timerDiv.dataset.currentTime);
             timerDiv.dataset.answerTime = answerTime
             const currTotalPoints = parseFloat(document.querySelector("main").dataset.totalPoints);
@@ -419,7 +419,7 @@ async function textQuestion(correctMovie, otherMovies, type, genres, questionNum
         }
 
         if (!correct) {
-            targetAlt.querySelector(".altTitle").classList.add("wrong")
+            createWrong(targetAlt)
         }
 
         endQuestionEarly(genres, questionNumber, type, correctMovie);
@@ -463,7 +463,7 @@ async function posterQuestion(correctMovie, otherMovies, type, genres, questionN
 
                     </div>
 
-                    <div id="timer" data-current-time="30">
+                    <div id="timer" data-current-time="100">
 
                         <div id="timerProgress"></div>
                         
@@ -549,7 +549,7 @@ async function trailerQuestion(correctMovie, otherMovies, type, genres, question
 
                 </div>
 
-                <div id="timer" data-current-time="30">
+                <div id="timer" data-current-time="100">
 
                     <div id="timerProgress"></div>
                     
@@ -868,7 +868,7 @@ async function SPfindMovie(event, correctMovie, genres, questionNumber, type) {
 
                 document.querySelector("#searchMovie").setAttribute("disabled", "true");
                 targetAlt.classList.add("selected");
-                targetAlt.querySelector(".altTitle").classList.add("correct")
+                createRight(targetAlt)
                 alternatives.forEach(altern => {
                     altern.style.pointerEvents = "none";
                 })
@@ -895,9 +895,9 @@ function SPendOfQuestion(correctMovie) {
         const title = alternative.querySelector(".altTitle")
 
         if (title.textContent == correctMovie.Title) {
-            alternative.querySelector(".altTitle").classList.add("correct");
+            createRight(alternative);
         } else {
-            alternative.querySelector(".altTitle").classList.add("wrong");
+            createWrong(alternative);
         }
     })
 }
