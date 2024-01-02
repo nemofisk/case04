@@ -35,6 +35,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: #FFF;
+font-family: Jost;
+font-size: 14px;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+}
+.LeaderBoard span{
+    color: rgba(255, 255, 255, 0.40);
+}
+.span{
+    color: rgba(255, 255, 255, 0.40);
 }
 
 .MyProfile {
@@ -81,8 +93,12 @@
 
 #LeaderBoardHeader {
 
-    color: white;
-    font-size: 40px;
+    font-family: Jost;
+font-size: 30px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+color: white;
 
     position: absolute;
     top: 99px;

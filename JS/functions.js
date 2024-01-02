@@ -73,6 +73,7 @@ function popUpFunction(action, information) {
         `
     }
     if (action === "addFriends") {
+        
         div.innerHTML = `
         <div id="addFriendsContainer">
             <div id="searchField">
@@ -238,6 +239,18 @@ function nothing() {
 }
 
 function displayCurtains(ClassName1, ClassName2) {
+    if(window.innerWidth < 400){
+        let mobileCurtains = `
+        <div class="${ClassName1}"></div>
+        <div class="${ClassName2}"></div>
+        <div class="${ClassName1}"></div>
+        <div class="${ClassName2}"></div>
+        <div class="${ClassName1}"></div>
+        <div class="${ClassName2}"></div>
+        <div class="${ClassName1}"></div>
+        `
+        return mobileCurtains
+    }
     let curtains =
         `
    
