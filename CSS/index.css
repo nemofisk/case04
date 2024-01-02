@@ -133,3 +133,12 @@ button {
   left: 572.5px;
     z-index: 1;
 }
+
+@media (max-width: 390px) {
+    #leftSide{
+        height:auto;
+    }
+    #ProfilePageContainer{
+        flex-direction: column;
+    }
+  }

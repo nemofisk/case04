@@ -113,3 +113,17 @@
 #settingsHeader {
     margin-bottom: 66px;
 }
+@media (max-width: 390px) {
+    #settingsContainer{
+        flex-direction: column;
+        width: 292px;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+    #seperator{
+        width: 288px;
+        border: 1px solid #333247;
+        margin: 20px;
+    }
+}
