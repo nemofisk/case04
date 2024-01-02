@@ -117,6 +117,11 @@ async function renderLobby(fetchIntervalID) {
     const main = document.querySelector("main");
 
     main.innerHTML = `
+    <div class="profile">
+        <div id="profilePic"></div>
+        <img src="images/Frame 263.png" alt="Logo">
+    </div>
+
         <div id="contentWrapper" class="lobbyWrapper">
         
             <div id="lobbyInfo">Waiting for the host to start the game</div>
@@ -259,6 +264,11 @@ function prepareQuestion(questionToLoad, skipPointCheck = false) {
             });
 
             main.innerHTML = `
+            <div class="profile">
+        <div id="profilePic"></div>
+        <img src="images/Frame 263.png" alt="Logo">
+    </div>
+
                 <div id="contentWrapper" class="currentStandingRound">
                 
                     <div id="getReadyDiv">GET READY IN <span id="countdown">10</span></div>
@@ -328,6 +338,10 @@ function prepareQuestion(questionToLoad, skipPointCheck = false) {
         if (questionToLoad == 0) {
 
             main.innerHTML = `
+            <div class="profile">
+        <div id="profilePic"></div>
+        <img src="images/Frame 263.png" alt="Logo">
+    </div>
                 <h1>GET READY</h1>
                 <div id="countdown">10</div>
             `
@@ -392,6 +406,10 @@ function mpTextQuestion(question) {
     const main = document.querySelector("main");
 
     main.innerHTML = `
+    <div class="profile">
+        <div id="profilePic"></div>
+        <img src="images/Frame 263.png" alt="Logo">
+    </div>
 
         <div id="contentWrapper" class="cwType${question.type}">
 
@@ -457,6 +475,10 @@ function mpTrailerQuestion(question) {
     const main = document.querySelector("main");
 
     main.innerHTML = `
+    <div class="profile">
+        <div id="profilePic"></div>
+        <img src="images/Frame 263.png" alt="Logo">
+    </div>
     
         <div id="contentWrapper" class="cwType${question.type}">
         
@@ -497,6 +519,10 @@ function mpPosterQuestion(question) {
     const main = document.querySelector("main");
 
     main.innerHTML = `
+    <div class="profile">
+        <div id="profilePic"></div>
+        <img src="images/Frame 263.png" alt="Logo">
+    </div>
     
         <div id="contentWrapper" class="cwType${question.type}">
         
@@ -588,7 +614,7 @@ async function mpCheckAnswer(ev, question) {
         targetAlt.classList.add("selected");
 
         if (resource.correct == false) {
-            targetAlt.querySelector(".altTitle").classList.add("wrong");
+            createWrong(alt);
         }
     }
 
@@ -615,7 +641,7 @@ async function mpCheckAnswer(ev, question) {
 
     if (resource.correct == true) {
         targetAlt.classList.add("selected");
-        targetAlt.querySelector(".altTitle").classList.add("correct")
+        createRight(alt);
     }
 }
 
@@ -737,9 +763,9 @@ async function endOfQuestion(question) {
             const title = alternative.querySelector(".altTitle")
 
             if (title.textContent == correctAnswer) {
-                alternative.querySelector(".altTitle").classList.add("correct");
+                createRight(alternative);
             } else {
-                alternative.querySelector(".altTitle").classList.add("wrong");
+                createWrong(alternative);
             }
 
             const whoGuessed = document.createElement("div");
@@ -827,6 +853,11 @@ async function currentStanding(question) {
         });
 
         main.innerHTML = `
+        <div class="profile">
+        <div id="profilePic"></div>
+        <img src="images/Frame 263.png" alt="Logo">
+    </div>
+
             <div id="contentWrapper" class="currentStandingHalf">
             
                 <div id="getReadyDiv">GET READY IN <span id="countdown">10</span></div>
@@ -901,6 +932,11 @@ async function currentStanding(question) {
         await callAPI(request, true, false);
 
         main.innerHTML = `
+        <div class="profile">
+        <div id="profilePic"></div>
+        <img src="images/Frame 263.png" alt="Logo">
+    </div>
+    
             <div id="contentWrapper" class="currentStandingResults">
             
                 <h1 id="endScreenHead">RESULTS</h1>
@@ -1057,4 +1093,20 @@ async function findMovie(event, question) {
     }
 
 
+}
+
+function createWrong(alternative) {
+    const wrongDiv = document.createElement("div");
+
+    wrongDiv.classList.add("wrongDiv");
+
+    alternative.prepend(wrongDiv);
+}
+
+function createRight(alternative) {
+    const rightDiv = document.createElement("div");
+
+    rightDiv.classList.add("rightDiv");
+
+    alternative.prepend(rightDiv);
 }

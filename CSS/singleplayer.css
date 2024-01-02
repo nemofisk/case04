@@ -191,7 +191,7 @@ h1 {
 
 @media (max-width: 390px) {
     #cluesDiv {
-        margin-top: 150px;
+        margin-top: 50px;
     }
 
     div#timer {
@@ -226,4 +226,22 @@ h1 {
         width: 360px;
         height: 50px;
     }
+
+
+    div#questionText.typedirectors,
+    div#questionText.typeactors {
+        width: 286px;
+        font-size: 26px;
+    }
+
+    div#questionText.typeplot {
+        width: 273px;
+        font-size: 22px;
+    }
+
+    div.alternative {
+        width: 360px;
+        height: 50px;
+    }
+
 }

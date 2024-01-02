@@ -63,6 +63,7 @@ main>img {
     top: 34px;
 
     cursor: pointer;
+    z-index: 4;
 }
 
 #hamburgerMenu>div {

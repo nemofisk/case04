@@ -27,22 +27,26 @@
     background-color: #8184F8;
 }
 
-.altTitle.correct::before {
-    content: url("../images/check_circle.svg");
+.rightDiv {
+    background-image: url("../images/check_circle.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
     height: 22px;
     width: 22px;
-    left: -31px;
-    bottom: 7px;
-    position: absolute;
+
+    align-self: center;
+    justify-self: center;
 }
 
-.altTitle.wrong::before {
-    content: url("../images/cancel.svg");
+.wrongDiv {
+    background-image: url("../images/cancel.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
     height: 22px;
     width: 22px;
-    left: -31px;
-    bottom: 7px;
-    position: absolute;
+
+    align-self: center;
+    justify-self: center;
 }
 
 .altTitle {
@@ -55,8 +59,34 @@
     font-size: 22px;
     font-style: normal;
     font-weight: 400;
+    width: 281px;
     line-height: normal;
-    overflow-wrap: none;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.altTitle::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    /* Adjust the width of the fading effect as needed */
+    height: 100%;
+    background: linear-gradient(to right, #17171700, #171717);
+    pointer-events: none;
+}
+
+.alternative.selected>.altTitle::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    /* Adjust the width of the fading effect as needed */
+    height: 100%;
+    background: linear-gradient(to right, #8184F800, #8184F8);
+    pointer-events: none;
 }
 
 .alternative {
@@ -68,7 +98,7 @@
 
     color: white;
 
-    width: 420px;
+    min-width: 420px;
     height: 55px;
 }
 
@@ -748,7 +778,13 @@ iframe {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    height: 200px;
+    height: 150px;
+}
+
+#foundMovies>.alternative {
+    flex-basis: 0px;
+    flex-grow: 1;
+    min-width: 0px;
 }
 
 #searchMovie {

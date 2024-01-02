@@ -106,7 +106,7 @@ function generateMovies(array, questionNumber = 1, answerTime) {
 
     let chosenGenres = array;
 
-    let quizQuiestions = ["trailer", "poster"];
+    let quizQuiestions = ["directors", "actors", "plot", "trailer", "poster"];
 
     let type = quizQuiestions[Math.floor(Math.random() * quizQuiestions.length)];
 
@@ -179,26 +179,31 @@ function SPprepareQuestion(correctMovie, otherMovies, genres, questionNumber, an
                 </div>
             `
         const intervalID = setInterval(function () {
-            const countdown = main.querySelector("#countdownSP");
+            if (main.querySelector("#countdownSP")) {
+                const countdown = main.querySelector("#countdownSP");
 
-            const currentSec = parseInt(countdown.textContent);
+                const currentSec = parseInt(countdown.textContent);
 
-            if (currentSec === 0) {
-                clearInterval(intervalID);
+                if (currentSec === 0) {
+                    clearInterval(intervalID);
 
-                allLightCurtains.forEach(crtn => {
-                    crtn.style.height = "0px"
-                });
+                    allLightCurtains.forEach(crtn => {
+                        crtn.style.height = "0px"
+                    });
 
-                allDarkCurtains.forEach(crtn => {
-                    crtn.style.height = "0px"
-                });
+                    allDarkCurtains.forEach(crtn => {
+                        crtn.style.height = "0px"
+                    });
 
-                startQuestion(correctMovie, otherMovies, genres, questionNumber, type);
+                    startQuestion(correctMovie, otherMovies, genres, questionNumber, type);
 
+                } else {
+                    countdown.textContent = currentSec - 1;
+                }
             } else {
-                countdown.textContent = currentSec - 1;
+                clearInterval(intervalID);
             }
+
 
         }, 1000)
     }
@@ -314,7 +319,7 @@ async function textQuestion(correctMovie, otherMovies, type, genres, questionNum
 
                 </div>
 
-                <div id="timer" data-current-time="10">
+                <div id="timer" data-current-time="100">
 
                     <div id="timerProgress"></div>
                     
@@ -406,7 +411,7 @@ async function textQuestion(correctMovie, otherMovies, type, genres, questionNum
         const correct = checkAnswer(event.target.dataset.title, correctMovie);
 
         if (correct) {
-            targetAlt.querySelector(".altTitle").classList.add("correct")
+            createRight(targetAlt)
             const answerTime = parseFloat(timerDiv.dataset.currentTime);
             timerDiv.dataset.answerTime = answerTime
             const currTotalPoints = parseFloat(document.querySelector("main").dataset.totalPoints);
@@ -414,7 +419,7 @@ async function textQuestion(correctMovie, otherMovies, type, genres, questionNum
         }
 
         if (!correct) {
-            targetAlt.querySelector(".altTitle").classList.add("wrong")
+            createWrong(targetAlt)
         }
 
         endQuestionEarly(genres, questionNumber, type, correctMovie);
@@ -458,7 +463,7 @@ async function posterQuestion(correctMovie, otherMovies, type, genres, questionN
 
                     </div>
 
-                    <div id="timer" data-current-time="30">
+                    <div id="timer" data-current-time="100">
 
                         <div id="timerProgress"></div>
                         
@@ -544,7 +549,7 @@ async function trailerQuestion(correctMovie, otherMovies, type, genres, question
 
                 </div>
 
-                <div id="timer" data-current-time="30">
+                <div id="timer" data-current-time="100">
 
                     <div id="timerProgress"></div>
                     
@@ -863,7 +868,7 @@ async function SPfindMovie(event, correctMovie, genres, questionNumber, type) {
 
                 document.querySelector("#searchMovie").setAttribute("disabled", "true");
                 targetAlt.classList.add("selected");
-                targetAlt.querySelector(".altTitle").classList.add("correct")
+                createRight(targetAlt)
                 alternatives.forEach(altern => {
                     altern.style.pointerEvents = "none";
                 })
@@ -890,9 +895,9 @@ function SPendOfQuestion(correctMovie) {
         const title = alternative.querySelector(".altTitle")
 
         if (title.textContent == correctMovie.Title) {
-            alternative.querySelector(".altTitle").classList.add("correct");
+            createRight(alternative);
         } else {
-            alternative.querySelector(".altTitle").classList.add("wrong");
+            createWrong(alternative);
         }
     })
 }
