@@ -30,12 +30,18 @@ function signInpage(event) {
     `
     document.getElementById("login").addEventListener("click", loginFunction);
 
+
+
+
+
 }
 
 function loginFunction(event) {
     let username = document.getElementById("loginUsername").value;
     let password = document.getElementById("loginPassword").value;
     console.log(username);
+
+
 
     fetch("PHP/api.php", {
         method: "POST",

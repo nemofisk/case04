@@ -28,6 +28,11 @@ function singlePlayer(event) {
     document.querySelector("footer").innerHTML = ``
 
     document.querySelector("main").innerHTML = `
+    <div class="profile">
+        <div id="profilePic"></div>
+        <img src="images/Frame 263.png" alt="Logo">
+    </div>
+
         <h1>Choose a category!</h1>
         <div id="catergoryMenu"></div>
         <div id="mixed">Mixed Categories</div>
@@ -159,7 +164,13 @@ function SPprepareQuestion(correctMovie, otherMovies, genres, questionNumber, an
         const totelPoints = parseFloat(main.dataset.totalPoints).toFixed(1);
 
         main.innerHTML = `
+        <div class="profile">
+        <div id="profilePic"></div>
+        <img src="images/Frame 263.png" alt="Logo">
+    </div>
+        
                 <div id="contentWrapper" class="currentStandingRoundSP">
+                
                 
                     <div id="getReadyDivSP">GET READY IN <br><span id="countdownSP">10</span></div>
     
@@ -195,6 +206,10 @@ function SPprepareQuestion(correctMovie, otherMovies, genres, questionNumber, an
     if (questionNumber == 1) {
 
         main.innerHTML = `
+        <div class="profile">
+        <div id="profilePic"></div>
+        <img src="images/Frame 263.png" alt="Logo">
+    </div>
             <h1>GET READY</h1>
             <div id="countdown">10</div>
         `
@@ -278,6 +293,10 @@ async function textQuestion(correctMovie, otherMovies, type, genres, questionNum
     const main = document.querySelector("main");
 
     main.innerHTML = `
+    <div class="profile">
+    <div id="profilePic"></div>
+    <img src="images/Frame 263.png" alt="Logo">
+</div>
 
         <div id="contentWrapper" class="SPcwType${type}">
 
@@ -419,6 +438,10 @@ async function posterQuestion(correctMovie, otherMovies, type, genres, questionN
     const clueCount = rsrc.message.clues;
     const fiftyCount = rsrc.message.fiftyfifty;
     main.innerHTML = `
+    <div class="profile">
+    <div id="profilePic"></div>
+    <img src="images/Frame 263.png" alt="Logo">
+</div>
     
         <div id="contentWrapper" class="cwType${type}">
 
@@ -501,6 +524,10 @@ async function trailerQuestion(correctMovie, otherMovies, type, genres, question
     const clueCount = rsrc.message.clues;
     const fiftyCount = rsrc.message.fiftyfifty;
     main.innerHTML = `
+    <div class="profile">
+    <div id="profilePic"></div>
+    <img src="images/Frame 263.png" alt="Logo">
+</div>
     
         <div id="contentWrapper" class="cwType${type}">
         
@@ -676,6 +703,10 @@ function SPendQuiz() {
     const userImage = window.localStorage.getItem("userImage");
     const totalPointes = parseFloat(main.dataset.totalPoints).toFixed(1)
     main.innerHTML = `
+    <div class="profile">
+    <div id="profilePic"></div>
+    <img src="images/Frame 263.png" alt="Logo">
+</div>
         <div id="currentStandEndSP">
             <div id="endGameSPHead">FINAL RESULTS</div>
             <div id="endGameSPImage" style="background-image: url('images/${userImage}')"></div>

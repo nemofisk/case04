@@ -25,9 +25,9 @@ main>img {
     color: white;
     text-align: center;
     font-family: Jost;
-font-size: 20px;
-margin-top: 103px;
-margin-bottom: 103px;
+    font-size: 20px;
+    margin-top: 103px;
+    margin-bottom: 103px;
 }
 
 #message>span {
@@ -82,10 +82,10 @@ margin-bottom: 103px;
 #Profile>h2 {
     color: #FFF8BA;
     font-family: Jost;
-font-size: 24px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 #home>p {
@@ -200,7 +200,7 @@ line-height: normal;
 
 
 .Overlay {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     bottom: 0;

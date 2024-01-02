@@ -1,1 +1,344 @@
-null
+[
+    {
+        "username": "w",
+        "password": "",
+        "level": 669,
+        "popcorn": 105995,
+        "friends": [
+            {
+                "name": "www",
+                "profilePicture": "The bear.jpg",
+                "popcorn": 1340
+            },
+            {
+                "name": "wwww",
+                "profilePicture": "Peaky Blinders (kopia).webp",
+                "popcorn": 1300
+            },
+            {
+                "name": "hello",
+                "profilePicture": "Sons (kopia).jpg",
+                "popcorn": 0
+            },
+            {
+                "name": "hello1",
+                "profilePicture": "The bear.jpg",
+                "popcorn": 0
+            },
+            {
+                "name": "Puttefnask",
+                "profilePicture": "71757bc1e037189933725c804f0881b6.png",
+                "popcorn": 790
+            }
+        ],
+        "friendRequests": [],
+        "gameInvites": [],
+        "xpGoal": 221764,
+        "id": 1,
+        "clues": 32,
+        "resetTimer": 27,
+        "profile_picture": "portishead.jpeg",
+        "lastSpun": "21"
+    },
+    {
+        "username": "ww",
+        "password": "",
+        "level": 667,
+        "popcorn": 2189,
+        "friends": [],
+        "friendRequests": [
+            "w"
+        ],
+        "gameInvites": [],
+        "xpGoal": 1300,
+        "id": 2,
+        "clues": 0,
+        "resetTimer": 0,
+        "profile_picture": "The bear.jpg",
+        "lastSpun": "21"
+    },
+    {
+        "username": "www",
+        "password": "",
+        "level": 667,
+        "popcorn": 1340,
+        "friends": [
+            {
+                "name": "w",
+                "profilePicture": "The bear.jpg",
+                "popcorn": 1340
+            }
+        ],
+        "friendRequests": [
+            "w",
+            "Puttefnask",
+            "ww"
+        ],
+        "gameInvites": [
+            {
+                "hostName": "w",
+                "gameID": 29727
+            }
+        ],
+        "xpGoal": 1300,
+        "id": 3,
+        "clues": 0,
+        "resetTimer": 0,
+        "profile_picture": "The bear.jpg",
+        "lastSpun": "21"
+    },
+    {
+        "username": "wwww",
+        "password": "",
+        "level": 667,
+        "popcorn": 1340,
+        "friends": [
+            {
+                "name": "w",
+                "profilePicture": "The bear.jpg",
+                "popcorn": 1340
+            }
+        ],
+        "friendRequests": [
+            "Puttefnask",
+            "w",
+            "ww"
+        ],
+        "gameInvites": [],
+        "xpGoal": 1300,
+        "id": 4,
+        "profile_picture": "Sons (kopia).jpg"
+    },
+    {
+        "username": "hello1",
+        "password": "hello1",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [
+            "ww",
+            "w"
+        ],
+        "xpGoal": 100,
+        "clues": 0,
+        "resetTimer": 0,
+        "profile_picture": "The bear.jpg",
+        "lastSpun": "14",
+        "id": 5
+    },
+    {
+        "username": "fefefef",
+        "password": "fefefef",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [
+            "w"
+        ],
+        "xpGoal": 100,
+        "clues": 0,
+        "resetTimer": 0,
+        "id": 6
+    },
+    {
+        "username": "fegegeg",
+        "password": "gertg",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 100,
+        "clues": 0,
+        "resetTimer": 0,
+        "id": 7
+    },
+    {
+        "username": "gggg",
+        "password": "gggg",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 100,
+        "clues": 0,
+        "resetTimer": 0,
+        "id": 8
+    },
+    {
+        "username": "ogrtgr",
+        "password": "grgrgr",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 100,
+        "clues": 0,
+        "resetTimer": 0,
+        "id": 9
+    },
+    {
+        "username": "fefefefe",
+        "password": "fefefefe",
+        "level": 6,
+        "popcorn": 6444,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [
+            "w",
+            "Puttefnask"
+        ],
+        "xpGoal": 6500,
+        "clues": 0,
+        "resetTimer": 0,
+        "id": 10,
+        "profile_picture": "The bear.jpg"
+    },
+    {
+        "username": "hehehe",
+        "password": "hehehe",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 1000,
+        "clues": 0,
+        "resetTimer": 0,
+        "id": 11,
+        "profile_picture": "Peaky Blinders (kopia).webp"
+    },
+    {
+        "username": "grgrgr",
+        "password": "grgrgrg",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [
+            "w",
+            "Puttefnask"
+        ],
+        "xpGoal": 1000,
+        "clues": 0,
+        "resetTimer": 0,
+        "profile_picture": "Frame 621.png",
+        "id": 12
+    },
+    {
+        "username": "Puttefnask",
+        "password": "puttenutte",
+        "level": 1,
+        "popcorn": 940,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 1000,
+        "clues": 0,
+        "resetTimer": 0,
+        "profile_picture": "f677c1b358f3d6e5650f13732e6b7afa.png",
+        "id": 13
+    },
+    {
+        "username": "SUKA",
+        "password": "123",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 1000,
+        "clues": 0,
+        "resetTimer": 0,
+        "profile_picture": "Frame 621.png",
+        "id": 14
+    },
+    {
+        "username": "wdcvw",
+        "password": "ewvwvwe",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 1000,
+        "clues": 0,
+        "resetTimer": 0,
+        "profile_picture": "Frame 621.png",
+        "id": 15
+    },
+    {
+        "username": "cdscdscs",
+        "password": "csdcscsdcs",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 1000,
+        "clues": 0,
+        "resetTimer": 0,
+        "profile_picture": "Frame 621.png",
+        "id": 16
+    },
+    {
+        "username": "cdscsd",
+        "password": "csdcsdc",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 1000,
+        "clues": 0,
+        "resetTimer": 0,
+        "profile_picture": "Frame 621.png",
+        "id": 17
+    },
+    {
+        "username": "fvqerveqrv",
+        "password": "evqerveqv",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 1000,
+        "clues": 0,
+        "resetTimer": 0,
+        "profile_picture": "Frame 621.png",
+        "id": 18
+    },
+    {
+        "username": "sdcasdcadscs",
+        "password": "sdacsacasd",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 1000,
+        "clues": 0,
+        "resetTimer": 0,
+        "profile_picture": "Frame 621.png",
+        "id": 19
+    },
+    {
+        "username": "ddvcqvfa",
+        "password": "dscSDV",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 1000,
+        "clues": 0,
+        "resetTimer": 0,
+        "profile_picture": "Frame 621.png",
+        "id": 20
+    }
+]
