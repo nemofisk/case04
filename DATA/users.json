@@ -1,1 +1,133 @@
-null
+[
+    {
+        "username": "w",
+        "password": "",
+        "level": 669,
+        "popcorn": 105960,
+        "friends": [
+            {
+                "name": "www",
+                "profilePicture": "The bear.jpg",
+                "popcorn": 1340
+            },
+            {
+                "name": "wwww",
+                "profilePicture": "Peaky Blinders (kopia).webp",
+                "popcorn": 1300
+            },
+            {
+                "name": "hello",
+                "profilePicture": "Sons (kopia).jpg",
+                "popcorn": 0
+            },
+            {
+                "name": "hello1",
+                "profilePicture": "The bear.jpg",
+                "popcorn": 0
+            },
+            {
+                "name": "Puttefnask",
+                "profilePicture": "71757bc1e037189933725c804f0881b6.png",
+                "popcorn": 790
+            },
+            {
+                "name": "f",
+                "profilePicture": "Frame 621.png",
+                "popcorn": 0
+            }
+        ],
+        "friendRequests": [],
+        "gameInvites": [],
+        "xpGoal": 221764,
+        "id": 1,
+        "clues": 17,
+        "fiftyfifty": 11,
+        "profile_picture": "portishead.jpeg",
+        "lastSpun": "02",
+        "resetTimer": 2
+    },
+    {
+        "username": "f",
+        "password": "",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [
+            {
+                "name": "w",
+                "profilePicture": "portishead.jpeg",
+                "popcorn": 105960
+            }
+        ],
+        "friendRequests": [],
+        "xpGoal": 1000,
+        "clues": 0,
+        "resetTimer": 0,
+        "profile_picture": "Frame 621.png",
+        "lastSpun": 1,
+        "id": 2
+    },
+    {
+        "username": "fd",
+        "password": "",
+        "level": 1,
+        "popcorn": 10,
+        "gameInvites": [],
+        "friends": [
+            {
+                "name": "w",
+                "profilePicture": "portishead.jpeg",
+                "popcorn": 105960
+            }
+        ],
+        "friendRequests": [],
+        "xpGoal": 1000,
+        "clues": 0,
+        "resetTimer": 0,
+        "profile_picture": "Frame 621.png",
+        "lastSpun": 1,
+        "id": 2
+    },
+    {
+        "username": "fr33",
+        "password": "",
+        "level": 1,
+        "popcorn": 2000,
+        "gameInvites": [],
+        "friends": [
+            {
+                "name": "w",
+                "profilePicture": "portishead.jpeg",
+                "popcorn": 105960
+            }
+        ],
+        "friendRequests": [],
+        "xpGoal": 1000,
+        "clues": 0,
+        "resetTimer": 0,
+        "profile_picture": "Frame 621.png",
+        "lastSpun": 1,
+        "id": 2
+    },
+    {
+        "username": "f",
+        "password": "",
+        "level": 1,
+        "popcorn": 990,
+        "gameInvites": [],
+        "friends": [
+            {
+                "name": "w",
+                "profilePicture": "portishead.jpeg",
+                "popcorn": 105960
+            }
+        ],
+        "friendRequests": [],
+        "xpGoal": 1000,
+        "clues": 0,
+        "resetTimer": 0,
+        "profile_picture": "Frame 621.png",
+        "lastSpun": 1,
+        "id": 2
+    }
+]

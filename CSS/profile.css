@@ -512,5 +512,44 @@ font-size: 20px;
     #Singelplayer{
         width: 360px;
     }
-    
+    #inviteFriendsWrapper input{
+        width: 332px;
+        height: 45px;
+        flex-shrink: 0;
+    }
+    #findFriends{
+        width: 332px;
+    }
+    .mpFriend{
+        width: 100%;
+    }
+    .searching{
+        width: 332px; 
+    }
+    #searchResults.searching{
+        width: 332px;  
+    }
+    #lobbyInfo{
+        color: #FFF;
+        text-align: center;
+        font-family: Jost;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    #lobbyButton{
+        border: none;
+        color: var(--Colors-Button-Text, #323059);
+        text-align: center;
+        font-family: Jost;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+
+    }
+    #findFriends::before{
+        top: 12px;
+    }
   }

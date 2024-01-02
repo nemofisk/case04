@@ -563,5 +563,414 @@
         "doneQuestion": [],
         "nextQuestion": false,
         "endedQuestion": []
+    },
+    {
+        "gameID": 37727,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "portishead.jpeg",
+                "points": 0,
+                "inLobby": true,
+                "latestFetch": 1704209748
+            }
+        ],
+        "questions": "",
+        "isStarted": false,
+        "answeredQuestion": [],
+        "endEarly": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 28562,
+        "hostID": 1,
+        "genres": [
+            "Comedy"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "portishead.jpeg",
+                "points": 0,
+                "inLobby": true,
+                "latestFetch": 1704209874
+            }
+        ],
+        "questions": "",
+        "isStarted": false,
+        "answeredQuestion": [],
+        "endEarly": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 10250,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "portishead.jpeg",
+                "points": 0,
+                "inLobby": true,
+                "latestFetch": 1704209926
+            }
+        ],
+        "questions": "",
+        "isStarted": false,
+        "answeredQuestion": [],
+        "endEarly": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 87540,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "portishead.jpeg",
+                "points": 0,
+                "inLobby": true,
+                "latestFetch": 1704209957
+            }
+        ],
+        "questions": "",
+        "isStarted": false,
+        "answeredQuestion": [],
+        "endEarly": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 14148,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "portishead.jpeg",
+                "points": 0,
+                "inLobby": true,
+                "latestFetch": 1704209985
+            }
+        ],
+        "questions": "",
+        "isStarted": false,
+        "answeredQuestion": [],
+        "endEarly": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 72566,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "portishead.jpeg",
+                "points": 0,
+                "inLobby": true,
+                "latestFetch": 1704210016
+            }
+        ],
+        "questions": "",
+        "isStarted": false,
+        "answeredQuestion": [],
+        "endEarly": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 58259,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "portishead.jpeg",
+                "points": 0,
+                "inLobby": true,
+                "latestFetch": 1704210175
+            }
+        ],
+        "questions": "",
+        "isStarted": false,
+        "answeredQuestion": [],
+        "endEarly": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 40544,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "portishead.jpeg",
+                "points": 0,
+                "inLobby": true,
+                "latestFetch": 1704210268
+            }
+        ],
+        "questions": "",
+        "isStarted": false,
+        "answeredQuestion": [],
+        "endEarly": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 48055,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "portishead.jpeg",
+                "points": 0,
+                "inLobby": true,
+                "latestFetch": 1704210282
+            }
+        ],
+        "questions": "",
+        "isStarted": false,
+        "answeredQuestion": [],
+        "endEarly": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 27814,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "portishead.jpeg",
+                "points": 0,
+                "inLobby": true,
+                "latestFetch": 1704210332
+            }
+        ],
+        "questions": "",
+        "isStarted": false,
+        "answeredQuestion": [],
+        "endEarly": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 27397,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "portishead.jpeg",
+                "points": 0,
+                "inLobby": true,
+                "latestFetch": 1704210337
+            }
+        ],
+        "questions": "",
+        "isStarted": false,
+        "answeredQuestion": [],
+        "endEarly": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 78148,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "portishead.jpeg",
+                "points": 0,
+                "inLobby": true,
+                "latestFetch": 1704210390
+            }
+        ],
+        "questions": "",
+        "isStarted": false,
+        "answeredQuestion": [],
+        "endEarly": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
     }
 ]

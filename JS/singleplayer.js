@@ -57,7 +57,7 @@ function singlePlayer(event) {
                 })
             }
             div.classList.toggle("selected");
-            div.style.backgroundColor = "rgb(129, 132, 248)"
+           
             document.querySelector("#Continue").style.backgroundColor = "#FFF8BA"
             document.querySelector("#Continue").style.color = "#323059"
         });
