@@ -1,6 +1,7 @@
 "use strict";
 
 function renderFirstPage() {
+    
     let curtains = displayCurtains("curtains", "curtainsLight");
     document.querySelector("header").innerHTML =
         `
@@ -19,4 +20,7 @@ function renderFirstPage() {
 
     document.getElementById("SignIn").addEventListener("click", signInpage);
     document.getElementById("SignUp").addEventListener("click", signUppage);
+    if(window.localStorage.getItem("username")){
+        renderStartingpage()       
+    }
 }

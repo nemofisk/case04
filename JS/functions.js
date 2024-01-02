@@ -74,21 +74,6 @@ function popUpFunction(action, information) {
     }
     if (action === "addFriends") {
         
-        div.innerHTML = `
-        <div id="addFriendsContainer">
-            <div id="searchField">
-                <img id="searchImage" src="../images/searchlala.png">
-                <input id="searchUsers"placeholder="Add new friends"></input> 
-                  
-            </div>
-            <div id="userDisplay"></div>
-        </div>
-        `
-        let overlayDiv = document.createElement("div");
-            overlayDiv.classList.add("Overlay");
-            main.appendChild(overlayDiv)
-        main.appendChild(div)
-        
         
 
         fetch("PHP/api.php", {
@@ -102,8 +87,23 @@ function popUpFunction(action, information) {
                     //console.log(user.friends);
                 }
             });
+            div.innerHTML = `
+        <div id="addFriendsContainer">
+            <div id="searchField">
+                <img id="searchImage" src="../images/searchlala.png">
+                <input id="searchUsers" placeholder="Add new friends"></input> 
+                  
+            </div>
+            <div id="userDisplay"></div>
+        </div>
+        `
+        let overlayDiv = document.createElement("div");
+            overlayDiv.classList.add("Overlay");
+            main.appendChild(overlayDiv)
+            main.appendChild(div)
+        
+        
             
-
             document.querySelector("#searchUsers").addEventListener("keydown", event => {
                 let searchField = document.querySelector("#searchUsers").value;
                 let matchingUsers = usersArray.filter(user => user.username.includes(searchField));

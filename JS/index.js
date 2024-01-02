@@ -1,4 +1,4 @@
 "use strict";
 
-window.localStorage.clear();
+//window.localStorage.clear();
 renderFirstPage();

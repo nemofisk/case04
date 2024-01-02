@@ -959,6 +959,14 @@ iframe {
     margin: 0px;
     border-radius: var(--Radius-Radius-lg, 28px);
     background: var(--Colors-Button-Background, #FFF8BA);
+    border: none;
+    
+    text-align: center;
+    font-family: Jost;
+    font-size: 20px;
+    font-style: normal;
+    
+    line-height: normal;;
 }
 
 .shake {

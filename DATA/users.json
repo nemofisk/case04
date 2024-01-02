@@ -4,38 +4,7 @@
         "password": "",
         "level": 669,
         "popcorn": 106010,
-        "friends": [
-            {
-                "name": "www",
-                "profilePicture": "The bear.jpg",
-                "popcorn": 1340
-            },
-            {
-                "name": "wwww",
-                "profilePicture": "Peaky Blinders (kopia).webp",
-                "popcorn": 1300
-            },
-            {
-                "name": "hello",
-                "profilePicture": "Sons (kopia).jpg",
-                "popcorn": 0
-            },
-            {
-                "name": "hello1",
-                "profilePicture": "The bear.jpg",
-                "popcorn": 0
-            },
-            {
-                "name": "Puttefnask",
-                "profilePicture": "71757bc1e037189933725c804f0881b6.png",
-                "popcorn": 790
-            },
-            {
-                "name": "f",
-                "profilePicture": "Frame 621.png",
-                "popcorn": 0
-            }
-        ],
+        "friends": [],
         "friendRequests": [],
         "gameInvites": [],
         "xpGoal": 221764,
@@ -52,13 +21,7 @@
         "level": 1,
         "popcorn": 0,
         "gameInvites": [],
-        "friends": [
-            {
-                "name": "w",
-                "profilePicture": "portishead.jpeg",
-                "popcorn": 105960
-            }
-        ],
+        "friends": [],
         "friendRequests": [],
         "xpGoal": 1000,
         "clues": 0,

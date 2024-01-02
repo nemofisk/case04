@@ -171,6 +171,8 @@ main>img {
     flex-direction: column;
     gap: 20px;
     margin-top: 270px;
+    font-style: normal;
+    font-weight: 300;
 }
 
 #renderSettings {
