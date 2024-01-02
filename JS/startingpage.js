@@ -23,7 +23,7 @@ async function renderStartingpage() {
     <p id="message">Welcome <span>${username}</span>, how would you like to play?</p>
     
     <button id="Multiplayer" class="Buttons">Multiplayer</button>
-    <button id="Singelplayer" class="Buttons">Singelplayer</button>
+    <button id="Singelplayer" class="Buttons">Singleplayer</button>
     `
     let curtainsFooter = displayCurtains("footercurtainsStartingpage", "footercurtainsLightStartingpage");
     document.querySelector("footer").innerHTML =
