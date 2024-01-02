@@ -164,39 +164,41 @@
     width: 294px;
     height: 520px;
     display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+    flex-direction: column;
 }
-.pElementShit{
+
+.pElementShit {
     font-family: Jost;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
 }
+
 .flexIt {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     font-family: Jost;
-font-size: 18px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-}
-.flexIt #totalPoints{
-    font-size: 20px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
-#totalPointsWeekly{
+.flexIt #totalPoints {
     font-size: 20px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+#totalPointsWeekly {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
 #seperatorProfile {
@@ -235,8 +237,9 @@ line-height: normal;
     top: -30px;
     border: none;
 }
-.friendName{
-    font-family: Jost;  
+
+.friendName {
+    font-family: Jost;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
@@ -319,14 +322,16 @@ line-height: normal;
     top: 12px;
     left: 20px;
 }
-#removeBox{
+
+#removeBox {
     position: absolute;
-  top: 17px;
-  right: 20px;
-  color: white;
+    top: 17px;
+    right: 20px;
+    color: white;
 
 }
-.friendRequestPopUp{
+
+.friendRequestPopUp {
     width: 394px;
     height: 293px;
     flex-shrink: 0;
@@ -334,50 +339,55 @@ line-height: normal;
     background: var(--Colors-Menu-Background, #2B2A4C);
     display: flex;
     flex-direction: column;
-    position: absolute; 
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
     margin-right: auto;
     text-align: center;
     color: white;
 }
-.friendRequestPopUp span{
-    color: #FF6868;;
-}
-#decline{
-    display: flex;
-width: 150px;
-height: 50px;
-padding: 0px 47px;
-justify-content: center;
-align-items: center;
-gap: 10px;
-border-radius: var(--Radius-Radius-lg, 28px);
-border: 1px solid var(--Colors-Button-Text-2, #FFF8BA);
-background-color: #2B2A4C;
-text-align: center;
-font-family: Jost;
-font-size: 20px;
-color: var(--Colors-Button-Text-2, #FFF8BA);
-}
-#accept{
-    display: flex;
-width: 150px;
-height: 50px;
 
-justify-content: center;
-align-items: center;
-gap: 10px;
-border-radius: var(--Radius-Radius-lg, 28px);
-border: 1px solid var(--Colors-Button-Border-2, #FFF8BA);
-background: var(--Colors-Button-Background, #FFF8BA);
-color: var(--Colors-Button-Text, #323059);
-text-align: center;
-font-family: Jost;
-font-size: 20px;
+.friendRequestPopUp span {
+    color: #FF6868;
+    ;
 }
-#buttonFlex{
+
+#decline {
+    display: flex;
+    width: 150px;
+    height: 50px;
+    padding: 0px 47px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: var(--Radius-Radius-lg, 28px);
+    border: 1px solid var(--Colors-Button-Text-2, #FFF8BA);
+    background-color: #2B2A4C;
+    text-align: center;
+    font-family: Jost;
+    font-size: 20px;
+    color: var(--Colors-Button-Text-2, #FFF8BA);
+}
+
+#accept {
+    display: flex;
+    width: 150px;
+    height: 50px;
+
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: var(--Radius-Radius-lg, 28px);
+    border: 1px solid var(--Colors-Button-Border-2, #FFF8BA);
+    background: var(--Colors-Button-Background, #FFF8BA);
+    color: var(--Colors-Button-Text, #323059);
+    text-align: center;
+    font-family: Jost;
+    font-size: 20px;
+}
+
+#buttonFlex {
     display: flex;
     justify-content: center;
     gap: 12px;
@@ -387,56 +397,69 @@ font-size: 20px;
 
 
 @media (max-width: 390px) {
-    #leftSide{
-        height:auto;
+    #leftSide {
+        height: auto;
     }
-    #ProfilePageContainer{
+
+    #ProfilePageContainer {
         flex-direction: column;
         margin-top: 431px;
     }
-    #middle{
+
+    #middle {
         border: none;
         height: 0;
     }
-    .AddFriends{
+
+    .AddFriends {
         top: 0;
         margin-top: 52px;
     }
-    #rightSide{
+
+    #rightSide {
         overflow: scroll;
         display: contents;
         width: 0px;
         height: 0;
     }
-    .customFileUpload{
+
+    .customFileUpload {
         bottom: 85px;
     }
-    #rightSideContainer{
+
+    #rightSideContainer {
         margin-top: -20px;
     }
-    #allCurtains{
+
+    #allCurtains {
         width: 500px;
     }
+
     #userDisplay {
         width: 327px;
         height: 279px;
     }
-    #searchField{
+
+    #searchField {
         width: 327px;
     }
-    #addFriendsContainer{
+
+    #addFriendsContainer {
         left: 30px;
         top: 303px;
     }
-    .wheelClass{
+
+    .wheelClass {
         width: 327px;
         height: 279px;
     }
-    .friendRequestPopUp{
+
+    .friendRequestPopUp {
         width: 327px;
         height: 279px;
     }
-    .friendRequestPopUp p{
+
+    .friendRequestPopUp p {
         width: 279px;
         color: var(--Colors-Text-primary, #FFF);
         text-align: center;
@@ -449,29 +472,34 @@ font-size: 20px;
         margin-right: auto;
 
     }
-    #decline{
+
+    #decline {
         padding: 0;
     }
-    #buttonFlex{
+
+    #buttonFlex {
         display: flex;
-    width: 271px;
-    height: 45px;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 15px;
-    margin-left: auto;
-    margin-right: auto;
+        width: 271px;
+        height: 45px;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 15px;
+        margin-left: auto;
+        margin-right: auto;
     }
-    div#leaderBoardContainer{
+
+    div#leaderBoardContainer {
         gap: 0px;
         flex-direction: column;
         top: 230px;
     }
-    #mobileLeaderboard{
+
+    #mobileLeaderboard {
         display: flex;
         flex-direction: row;
     }
-    #showWorldLeaderboard{
+
+    #showWorldLeaderboard {
         display: flex;
         width: 181px;
         height: 49px;
@@ -484,7 +512,8 @@ font-size: 20px;
         color: white;
         font-size: 20px;
     }
-    #showFriendsLeaderboard{
+
+    #showFriendsLeaderboard {
         display: flex;
         width: 175px;
         height: 49px;
@@ -496,40 +525,51 @@ font-size: 20px;
         color: white;
         font-size: 20px;
     }
-    div.MyProfile{
+
+    div.MyProfile {
         border-radius: 0px;
     }
-    h2#LeaderBoardHeader{
+
+    h2#LeaderBoardHeader {
         top: 122px;
     }
-    #message{
+
+    #message {
         margin-top: 81px;
         margin-bottom: 81px;
     }
-    #Multiplayer{
+
+    #Multiplayer {
         width: 360px;
     }
-    #Singelplayer{
+
+    #Singelplayer {
         width: 360px;
     }
-    #inviteFriendsWrapper input{
+
+    #inviteFriendsWrapper input {
         width: 332px;
         height: 45px;
         flex-shrink: 0;
     }
-    #findFriends{
+
+    #findFriends {
         width: 332px;
     }
-    .mpFriend{
+
+    .mpFriend {
         width: 100%;
     }
-    .searching{
-        width: 332px; 
+
+    .searching {
+        width: 332px;
     }
-    #searchResults.searching{
-        width: 332px;  
+
+    #searchResults.searching {
+        width: 332px;
     }
-    #lobbyInfo{
+
+    #lobbyInfo {
         color: #FFF;
         text-align: center;
         font-family: Jost;
@@ -538,7 +578,8 @@ font-size: 20px;
         font-weight: 400;
         line-height: normal;
     }
-    #lobbyButton{
+
+    #lobbyButton {
         border: none;
         color: var(--Colors-Button-Text, #323059);
         text-align: center;
@@ -549,7 +590,8 @@ font-size: 20px;
         line-height: normal;
 
     }
-    #findFriends::before{
+
+    #findFriends::before {
         top: 12px;
     }
-  }
+}
