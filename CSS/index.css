@@ -44,7 +44,7 @@ iframe {
 }
 
 #Sidebar {
-    position: absolute;
+    position: fixed;
     left: 0;
     width: 242px;
     height: 100vh;
@@ -55,6 +55,7 @@ iframe {
     flex-direction: column;
     background-color: #323059;
     gap: 230px;
+    z-index: 2;
 
 }
 
@@ -130,7 +131,21 @@ button {
     width: 35px;
     position: absolute;
     top: 215px;
-  left: 572.5px;
+    left: 572.5px;
     z-index: 1;
 }
 
+@media (max-width: 390px) {
+    #leftSide {
+        height: auto;
+    }
+
+    #ProfilePageContainer {
+        flex-direction: column;
+    }
+}
+
+input::placeholder {
+    opacity: 1;
+    color: white;
+}
