@@ -92,19 +92,96 @@ h1 {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
 }
-.mixedMark{
-    
+
+#clue {
+    background-image: url(../images/ClueTicket.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+
+    width: 106px;
+    height: 46px;
 }
-.whatYouGot{
+
+#fiftyfifty {
+    background-image: url(../images/FiftTicket.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+
+    width: 106px;
+    height: 46px;
+}
+
+#cluesDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#SPTopDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#contentWrapper.SPcwTypedirectors {
+    height: 650px;
+    width: 640px;
+}
+
+#contentWrapper.SPcwTypedirectors,
+#contentWrapper.SPcwTypeactors,
+#contentWrapper.SPcwTypeplot {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    align-items: center;
+    position: relative;
+}
+
+.clCount {
+    width: 20px;
+    height: 20px;
+    background-color: #2B2A4C;
+    border: 1px solid #8184F8;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    right: -5px;
+    top: -6px;
+
+    border-radius: 50%;
+
+    color: white;
+
     font-family: Jost;
-font-size: 30px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
-.newChance{
+
+#clueFeedback {
+    position: absolute;
+    color: #FF6868;
+    top: 118px;
+    display: none;
+
+    text-align: center;
+    font-family: Jost;
     font-size: 20px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#clueFeedback.active {
+    display: block;
 }

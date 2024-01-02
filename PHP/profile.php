@@ -79,6 +79,19 @@ function profile($users, $received_data){
             }
         }
     }
+    if($subAction === "useFifty"){
+        foreach($users as $index => $user){
+            if($user["username"] === $username){
+                if($users[$index]["fiftyfifty"] === 0){
+                    sendJSON(["message" => "no more clues:("], 404);
+                }
+                $users[$index]["fiftyfifty"] -= 1;
+                putInUsersJSON($users);
+                sendJSON(["message" => $user], 200);
+                    
+            }
+        }
+    }
     if($subAction === "addClue"){
         foreach($users as $index => $user){
             if($user["username"] === $username){
