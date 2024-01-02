@@ -1,6 +1,7 @@
 
 function renderLeaderBoard() {
     document.querySelector("footer").innerHTML = ``;
+    
     document.querySelector("main").innerHTML =
         `
         <div class="profile">
@@ -15,9 +16,35 @@ function renderLeaderBoard() {
             <div id="friendsLeaderboard"></div>
        </div>
     `
+    if(window.innerWidth < 400){
+        document.querySelector("main").innerHTML =
+        `
+        <div class="profile">
+            <div id="profilePic"></div>
+            <img src="images/Frame 263.png" alt="Logo">
+        </div>
+
+        <h2 id="LeaderBoardHeader">Leaderboard</h2>
+    
+        <div id="leaderBoardContainer">
+        <div id="mobileLeaderboard">
+            <div id="showWorldLeaderboard">World</div>
+            <div id="showFriendsLeaderboard">Friends</div>
+        </div>
+            <div id="WorldLeaderboard"></div>
+            <div id="friendsLeaderboard"></div>
+       </div>
+    ` 
+    }
     let userID = localStorage.getItem(`userID`);
+
     initializeLeaderboard()
-    initializeFriendsLeaderboard(userID);
+    document.querySelector("#showFriendsLeaderboard").addEventListener("click", e => {
+        document.getElementById("WorldLeaderboard").innerHTML = ``;
+        document.getElementById("friendsLeaderboard").innerHTML = ``;
+        initializeFriendsLeaderboard(userID);
+
+    })
 }
 
 
@@ -44,22 +71,35 @@ function displayFriendsLeaderboard(leaderboardData) {
         if (user.username === username) {
             let div = document.createElement("div")
             div.classList.add("MyProfile");
-            div.innerHTML = `<div class="LeaderboardPicScore"> <p class="ranking">${counter}</p> <img class="CameraImgLeaderboard" src="images/${user.profilePicture}" alt="Profile Picture"> <p class="leaderBoardUsername"> ${user.username}</p> </div>  <p class="leaderboardScore">${user.popcorn}p</p>`;
+            div.innerHTML = `<div class="LeaderboardPicScore"> <p class="ranking">${counter}</p> <img class="CameraImgLeaderboard" src="images/${user.profilePicture}" alt="Profile Picture"> <p class="leaderBoardUsername"> ${user.username}</p> </div>  <p class="leaderboardScore">${user.popcorn} <span class="span">p</span></p>`;
 
-
+            if(window.innerWidth > 400){
             let h1 = document.createElement("h1");
             h1.classList.add("headerLeaderBoards");
             h1.innerHTML = `Friends`;
             leaderboardFriends.prepend(h1, div);
+            }else{
+                document.getElementById("showFriendsLeaderboard").style.backgroundColor = "#323059";
+                document.getElementById("showWorldLeaderboard").style.backgroundColor = "#171717"
+                leaderboardFriends.prepend(div);
+            }
         }
     })
 
     for (let i = 0; i < leaderboardData.length && i < 25; i++) {
         const userElement = document.createElement("div");
         userElement.classList.add("LeaderBoard")
-        userElement.innerHTML = `<div class="LeaderboardPicScore"> <p class="ranking">${i + 1}</p> <img class="CameraImgLeaderboard" src="images/${leaderboardData[i].profilePicture}" alt="Profile Picture"> <p class="leaderBoardUsername">${leaderboardData[i].username}</p></div> <p class="leaderboardScore">${leaderboardData[i].popcorn}p</p>`;
+        userElement.innerHTML = `<div class="LeaderboardPicScore"> <p class="ranking">${i + 1}</p> <img class="CameraImgLeaderboard" src="images/${leaderboardData[i].profilePicture}" alt="Profile Picture"> <p class="leaderBoardUsername">${leaderboardData[i].username}</p></div> <p class="leaderboardScore">${leaderboardData[i].popcorn} <span>p</span></p>`;
         leaderboardFriends.appendChild(userElement);
     }
+    document.getElementById("showWorldLeaderboard").addEventListener("click", e => {
+        document.getElementById("showFriendsLeaderboard").style.backgroundColor = "#171717";
+        document.getElementById("showWorldLeaderboard").style.backgroundColor = "#323059"
+        document.getElementById("WorldLeaderboard").innerHTML = ``;
+        document.getElementById("friendsLeaderboard").innerHTML = ``;
+        initializeLeaderboard()
+
+    })
 }
 
 async function fetchLeaderboard() {
@@ -72,6 +112,7 @@ async function fetchLeaderboard() {
     }
 }
 function displayLeaderboard(leaderboardData) {
+    document.getElementById("WorldLeaderboard").innerHTML = ``;
     console.log(leaderboardData);
     let username = localStorage.getItem("username");
 
@@ -84,19 +125,25 @@ function displayLeaderboard(leaderboardData) {
         if (user.username === username) {
             let div = document.createElement("div")
             div.classList.add("MyProfile");
-            div.innerHTML = `<div class="LeaderboardPicScore"> <p class="ranking">${counter}</p> <img class="CameraImgLeaderboard" src="images/${user.profile_picture}" alt="Profile Picture"> <p class="leaderBoardUsername"> ${user.username}</p> </div>  <p class="leaderboardScore">${user.popcorn}p</p>`;
-            let h1 = document.createElement("h1");
-            h1.classList.add("headerLeaderBoards");
-            h1.innerHTML = `World`;
-            leaderboard1.prepend(h1, div);
+            div.innerHTML = `<div class="LeaderboardPicScore"> <p class="ranking">${counter}</p> <img class="CameraImgLeaderboard" src="images/${user.profile_picture}" alt="Profile Picture"> <p class="leaderBoardUsername"> ${user.username}</p> </div>  <p class="leaderboardScore">${user.popcorn} <span class="span">p</span></p>`;
+            if(window.innerWidth > 400){
+
+                let h1 = document.createElement("h1");
+                h1.classList.add("headerLeaderBoards");
+                h1.innerHTML = `World`;
+                leaderboard1.prepend(h1, div);
+            }
+            leaderboard1.prepend(div);
         }
+        
     })
 
     for (let i = 0; i < leaderboardData.length && i < 25; i++) {
         const userElement = document.createElement("div");
         userElement.classList.add("LeaderBoard")
-        userElement.innerHTML = `<div class="LeaderboardPicScore"> <p class="ranking">${i + 1}</p> <img class="CameraImgLeaderboard" src="images/${leaderboardData[i].profile_picture}" alt="Profile Picture"> <p class="leaderBoardUsername">${leaderboardData[i].username}</p> </div> <p class="leaderboardScore">${leaderboardData[i].popcorn}p</p>`;
+        userElement.innerHTML = `<div class="LeaderboardPicScore"> <p class="ranking">${i + 1}</p> <img class="CameraImgLeaderboard" src="images/${leaderboardData[i].profile_picture}" alt="Profile Picture"> <p class="leaderBoardUsername">${leaderboardData[i].username}</p> </div> <p class="leaderboardScore">${leaderboardData[i].popcorn} <span>p</span></p>`;
         leaderboard1.appendChild(userElement);
+        
     }
 
 

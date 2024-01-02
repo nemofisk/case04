@@ -290,6 +290,8 @@ line-height: normal;
     font-size: 20px;
     font-style: normal;
     color: white;
+    border-radius: 20px;
+
 }
 
 #userDisplay>div {
@@ -381,6 +383,9 @@ font-size: 20px;
     gap: 12px;
 }
 
+
+
+
 @media (max-width: 390px) {
     #leftSide{
         height:auto;
@@ -412,4 +417,90 @@ font-size: 20px;
     #allCurtains{
         width: 500px;
     }
+    #userDisplay {
+        width: 327px;
+        height: 279px;
+    }
+    #searchField{
+        width: 327px;
+    }
+    #addFriendsContainer{
+        left: 30px;
+        top: 303px;
+    }
+    .wheelClass{
+        width: 327px;
+        height: 279px;
+    }
+    .friendRequestPopUp{
+        width: 327px;
+        height: 279px;
+    }
+    .friendRequestPopUp p{
+        width: 279px;
+        color: var(--Colors-Text-primary, #FFF);
+        text-align: center;
+        font-family: Jost;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+    #decline{
+        padding: 0;
+    }
+    #buttonFlex{
+        display: flex;
+    width: 271px;
+    height: 45px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    div#leaderBoardContainer{
+        gap: 0px;
+        flex-direction: column;
+        top: 230px;
+    }
+    #mobileLeaderboard{
+        display: flex;
+        flex-direction: row;
+    }
+    #showWorldLeaderboard{
+        display: flex;
+        width: 181px;
+        height: 49px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: var(--Spacing-system-Spacing-44, 44px) 0px 0px 0px;
+        border: 1px solid var(--Colors-Divider, #323059);
+        background: var(--Colors-Divider, #323059);
+        color: white;
+        font-size: 20px;
+    }
+    #showFriendsLeaderboard{
+        display: flex;
+        width: 175px;
+        height: 49px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 0px var(--Spacing-system-Spacing-44, 44px) 0px 0px;
+        border: 1px solid var(--Colors-Divider, #323059);
+        color: white;
+        font-size: 20px;
+    }
+    div.MyProfile{
+        border-radius: 0px;
+    }
+    h2#LeaderBoardHeader{
+        top: 122px;
+    }
+    
   }
