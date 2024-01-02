@@ -614,7 +614,7 @@ async function mpCheckAnswer(ev, question) {
         targetAlt.classList.add("selected");
 
         if (resource.correct == false) {
-            createWrong(alt);
+            createWrong(targetAlt);
         }
     }
 
@@ -641,7 +641,7 @@ async function mpCheckAnswer(ev, question) {
 
     if (resource.correct == true) {
         targetAlt.classList.add("selected");
-        createRight(alt);
+        createRight(targetAlt);
     }
 }
 
@@ -1096,17 +1096,22 @@ async function findMovie(event, question) {
 }
 
 function createWrong(alternative) {
-    const wrongDiv = document.createElement("div");
+    if (!alternative.querySelector(".wrongDiv")) {
+        const wrongDiv = document.createElement("div");
 
-    wrongDiv.classList.add("wrongDiv");
+        wrongDiv.classList.add("wrongDiv");
 
-    alternative.prepend(wrongDiv);
+        alternative.prepend(wrongDiv);
+    }
 }
 
 function createRight(alternative) {
-    const rightDiv = document.createElement("div");
+    if (!alternative.querySelector(".rightDiv")) {
+        const rightDiv = document.createElement("div");
 
-    rightDiv.classList.add("rightDiv");
+        rightDiv.classList.add("rightDiv");
 
-    alternative.prepend(rightDiv);
+        alternative.prepend(rightDiv);
+    }
+
 }
