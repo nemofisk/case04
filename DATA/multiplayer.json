@@ -33,5 +33,40 @@
         "doneQuestion": [],
         "nextQuestion": false,
         "endedQuestion": []
+    },
+    {
+        "gameID": 51530,
+        "hostID": 2,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "calle",
+                "userID": 2,
+                "profilePicture": "Frame 621.png",
+                "points": 0,
+                "inLobby": true,
+                "latestFetch": 1704309127
+            }
+        ],
+        "questions": "",
+        "isStarted": false,
+        "answeredQuestion": [],
+        "endEarly": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
     }
 ]
