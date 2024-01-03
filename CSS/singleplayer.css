@@ -281,15 +281,17 @@ body {
     }
 
 
-    div#questionText.typedirectors,
+    div#questionText.typeplot,
     div#questionText.typeactors {
-        width: 286px;
+        width: 360px;
         font-size: 26px;
+        text-align: left;
     }
 
-    div#questionText.typeplot {
-        width: 273px;
+    div#questionText.typedirectors {
+        width: 286px;
         font-size: 22px;
+        text-align: left;
     }
 
     div.alternative {
@@ -404,5 +406,25 @@ body {
 
     div#lobbyInfo {
         width: 322px;
+    }
+
+    div#contentWrapper.cwTypedirectors,
+    div#contentWrapper.cwTypeactors,
+    div#contentWrapper.cwTypeplot {
+        width: 360px;
+    }
+
+    div#contentWrapper.SPcwTypedirectors,
+    div#contentWrapper.SPcwTypeactors,
+    div#contentWrapper.SPcwTypeplot {
+        width: 360px;
+    }
+
+    div.qctypedirectors {
+        width: 360px;
+    }
+
+    div.restListDiv {
+        width: 345px;
     }
 }

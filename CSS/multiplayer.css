@@ -113,10 +113,11 @@ h1 {
 .whoGuessed {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
     align-self: center;
     justify-self: center;
     gap: 4px;
+    z-index: 1;
 }
 
 .whoGuessed>span {
@@ -782,12 +783,9 @@ iframe {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    height: 150px;
 }
 
 #foundMovies>.alternative {
-    flex-basis: 0px;
-    flex-grow: 1;
     min-width: 0px;
 }
 
