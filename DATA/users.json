@@ -1,1 +1,24 @@
-null
+[
+    {
+        "username": "w",
+        "password": "",
+        "level": 669,
+        "popcorn": 106673,
+        "friends": [
+            {
+                "name": "ww",
+                "profilePicture": "guts.jpg",
+                "popcorn": 106302
+            }
+        ],
+        "friendRequests": [],
+        "gameInvites": [],
+        "xpGoal": 221764,
+        "id": 1,
+        "clues": 5,
+        "fiftyfifty": 4,
+        "profile_picture": "portishead.jpeg",
+        "lastSpun": "03",
+        "resetTimer": 2
+    }
+]

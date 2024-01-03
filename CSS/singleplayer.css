@@ -112,11 +112,11 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-  font-family: Jost;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+    font-family: Jost;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
 .profile>img {
@@ -235,7 +235,7 @@ body {
 #clueFeedback {
     position: absolute;
     color: #FF6868;
-    top: 118px;
+    top: 105px;
     display: none;
 
     text-align: center;
