@@ -112,11 +112,11 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-  font-family: Jost;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+    font-family: Jost;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
 .profile>img {
@@ -124,7 +124,6 @@ body {
     position: absolute;
     right: 20px;
 
-    cursor: pointer;
     top: 34px;
 }
 

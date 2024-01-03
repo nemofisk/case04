@@ -138,9 +138,12 @@ span {
 
 #exitPopup {
     position: absolute;
-    left: 169px;
-    top: -47px;
+    left: 163px;
+    top: -41px;
     margin: 0px;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
 }
 
 

@@ -1,0 +1,37 @@
+[
+    {
+        "gameID": 71634,
+        "hostID": 1,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "w",
+                "userID": 1,
+                "profilePicture": "portishead.jpeg",
+                "points": 0,
+                "inLobby": true,
+                "latestFetch": 1704304651
+            }
+        ],
+        "questions": "",
+        "isStarted": false,
+        "answeredQuestion": [],
+        "endEarly": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    }
+]

@@ -63,7 +63,7 @@ function registerFunction(event) {
 
             let popup = document.createElement("div");
             popup.classList.add("registerLoginPopup");
-            popup.innerHTML = `<div id="exitPopCon"><div id="exitPopup">X</div></div> <h1 id="h1RegisterFeedback">Registered</h1> 
+            popup.innerHTML = `<div id="exitPopCon"><img src="images/close.png" id="exitPopup"></img></div> <h1 id="h1RegisterFeedback">Registered</h1> 
             <div id="regText">You have now created an account.<br>You will be redirected to the login page</div>
             `;
             main.appendChild(popup);
