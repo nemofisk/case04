@@ -124,7 +124,6 @@ body {
     position: absolute;
     right: 20px;
 
-    cursor: pointer;
     top: 34px;
 }
 
@@ -294,12 +293,18 @@ body {
         width: 360px;
         font-size: 26px;
         text-align: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     div#questionText.typedirectors {
         width: 286px;
         font-size: 22px;
         text-align: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     div.alternative {
@@ -391,6 +396,16 @@ body {
         width: 250px;
     }
 
+    div.member {
+        width: 70px;
+        height: 80px;
+    }
+
+    div.member div.lobbyProfilePic {
+        height: 50px;
+        width: 50px;
+    }
+
     div#inviteFriendsWrapper {
         width: 332px;
     }
@@ -434,5 +449,13 @@ body {
 
     div.restListDiv {
         width: 345px;
+    }
+
+    div#restList {
+        width: 345px;
+    }
+
+    div#resultButtons {
+        flex-direction: column-reverse;
     }
 }

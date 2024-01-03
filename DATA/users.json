@@ -3,14 +3,20 @@
         "username": "w",
         "password": "",
         "level": 669,
-        "popcorn": 106723,
-        "friends": [],
+        "popcorn": 106337,
+        "friends": [
+            {
+                "name": "ww",
+                "profilePicture": "guts.jpg",
+                "popcorn": 106302
+            }
+        ],
         "friendRequests": [],
         "gameInvites": [],
         "xpGoal": 221764,
         "id": 1,
-        "clues": 4,
-        "fiftyfifty": 2,
+        "clues": 7,
+        "fiftyfifty": 5,
         "profile_picture": "portishead.jpeg",
         "lastSpun": "03",
         "resetTimer": 2
@@ -19,7 +25,7 @@
         "username": "calle",
         "password": "calle",
         "level": 1,
-        "popcorn": 0,
+        "popcorn": 25,
         "gameInvites": [],
         "friends": [],
         "friendRequests": [],
