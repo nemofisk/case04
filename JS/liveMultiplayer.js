@@ -1026,19 +1026,24 @@ async function currentStanding(question) {
 
     for (let i = 0; i < gameMembers.length; i++) {
         if (i <= 2) {
+
+            const pointias = parseFloat(gameMembers[i].points).toFixed(1);
+
             const topThreeDiv = document.createElement("div");
             topThreeDiv.id = `topThree${i + 1}`;
             topThreeDiv.classList.add("topThreeDiv")
             topThreeDiv.innerHTML = `
                 <div class="positionImage" style="background-image: url('images/position${i + 1}.svg')"></div>
                 <div class="playerImage" style="background-image: url('images/${gameMembers[i].profilePicture}')"></div>
-                <div class="currentPoints">${gameMembers[i].points} <span class="opacP">p</span></div>
+                <div class="currentPoints">${pointias} <span class="opacP">p</span></div>
             `
 
             document.querySelector("#topThree").appendChild(topThreeDiv);
         }
 
         if (i >= 3 && gameMembers.length > 3) {
+            const pointias = parseFloat(gameMembers[i].points).toFixed(1);
+
             const restListDiv = document.createElement("div");
             restListDiv.classList.add("restListDiv");
 
@@ -1050,7 +1055,7 @@ async function currentStanding(question) {
                 
                 </div>
 
-                <div class="currentPoints">${gameMembers[i].points}</div>
+                <div class="currentPoints">${pointias}</div>
             `
 
             document.querySelector("#restList").appendChild(restListDiv);

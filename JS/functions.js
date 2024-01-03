@@ -16,8 +16,8 @@ function popUpFunction(action, information) {
         <p><span>${information.message[0].hostName}</span> has invited you to a game. Do you want to join?</p>
 
         <div id="buttonFlex">
-            <button id="decline">Decline!</button>
-            <button id="accept">Accept!</button>
+            <button id="decline">Decline</button>
+            <button id="accept">Accept</button>
         </div>
         `;
         let overlayDiv = document.createElement("div");
@@ -40,10 +40,10 @@ function popUpFunction(action, information) {
     }
 
     if (action === "wheel") {
-        if(information === "Nothing"){
+        if (information === "Nothing") {
             let message = "You get a new chance tomorrow to spin the lucky wheel"
-        
-        div.innerHTML = `
+
+            div.innerHTML = `
         <img src="../images/close.png" id="removePopUp">
         <div class="whatYouGot">
             <h1>No Win</h1>
@@ -52,7 +52,7 @@ function popUpFunction(action, information) {
         <br>
         
     `
-        }else{
+        } else {
             div.innerHTML = `
         <img src="../images/close.png" id="removePopUp">
         <div class="whatYouGot">
@@ -75,7 +75,7 @@ function popUpFunction(action, information) {
             console.log(element);
             element.target.parentElement.remove();
         })
-        
+
     }
 
     if (action === "changeUserOrPass") {
