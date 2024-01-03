@@ -470,7 +470,7 @@ async function posterQuestion(correctMovie, otherMovies, type, genres, questionN
 
                     </div>
 
-                    <div id="timer" data-current-time="100">
+                    <div id="timer" data-current-time="10">
 
                         <div id="timerProgress"></div>
                         
@@ -556,7 +556,7 @@ async function trailerQuestion(correctMovie, otherMovies, type, genres, question
 
                 </div>
 
-                <div id="timer" data-current-time="100">
+                <div id="timer" data-current-time="10">
 
                     <div id="timerProgress"></div>
                     
