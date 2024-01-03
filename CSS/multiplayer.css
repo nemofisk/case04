@@ -783,7 +783,6 @@ iframe {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    height: 150px;
 }
 
 #foundMovies>.alternative {

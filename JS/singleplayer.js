@@ -113,7 +113,7 @@ function generateMovies(array, questionNumber = 1, answerTime) {
 
     let chosenGenres = array;
 
-    let quizQuiestions = ["directors", "actors", "plot", "trailer", "poster"];
+    let quizQuiestions = ["directors", "actors", "plot"];
 
     let type = quizQuiestions[Math.floor(Math.random() * quizQuiestions.length)];
 
@@ -470,7 +470,7 @@ async function posterQuestion(correctMovie, otherMovies, type, genres, questionN
 
                     </div>
 
-                    <div id="timer" data-current-time="10">
+                    <div id="timer" data-current-time="200">
 
                         <div id="timerProgress"></div>
                         
@@ -556,7 +556,7 @@ async function trailerQuestion(correctMovie, otherMovies, type, genres, question
 
                 </div>
 
-                <div id="timer" data-current-time="10">
+                <div id="timer" data-current-time="200">
 
                     <div id="timerProgress"></div>
                     
