@@ -46,6 +46,8 @@ function renderLeaderBoard() {
         initializeFriendsLeaderboard(userID);
 
     })
+}else{
+    initializeFriendsLeaderboard(userID);
 }
 initializeLeaderboard()
 }
