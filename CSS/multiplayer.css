@@ -728,6 +728,8 @@ span#ttlPoints {
     justify-content: center;
     align-items: center;
     gap: 10px;
+    border-radius: var(--Radius-Radius-lg, 28px);
+    border: 1px solid var(--Colors-Button-Border-2, #FFF8BA);
 }
 
 .lobbyProfilePic.leader {

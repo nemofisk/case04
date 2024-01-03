@@ -84,3 +84,23 @@ footer {
     transition-property: height;
     transition-duration: 1s;
 }
+
+.curtainsProfile {
+    height: 157px;
+    width: 100%;
+    background-color: #2B2A4C;
+    border-radius: 0 0 30px 30px;
+
+    transition-property: height;
+    transition-duration: 1s;
+}
+
+.curtainsLightProfile {
+    height: 167px;
+    width: 100%;
+    background-color: #323059;
+    border-radius: 0 0 30px 30px;
+
+    transition-property: height;
+    transition-duration: 1s;
+}

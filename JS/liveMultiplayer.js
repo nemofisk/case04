@@ -18,18 +18,22 @@ async function joinGame(gameID) {
 
     allFooterLightCurtains.forEach(crtn => {
         crtn.style.height = "0vh"
+        crtn.style.zIndex = "2";
     });
 
     allFooterDarkCurtains.forEach(crtn => {
         crtn.style.height = "0vh"
+        crtn.style.zIndex = "2";
     });
 
     allLightCurtains.forEach(crtn => {
         crtn.style.height = "0vh"
+        crtn.style.zIndex = "2";
     });
 
     allDarkCurtains.forEach(crtn => {
         crtn.style.height = "0vh"
+        crtn.style.zIndex = "2";
     });
 
     document.querySelector("main").classList.add("mpMain");

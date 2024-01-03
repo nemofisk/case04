@@ -1,8 +1,22 @@
 function renderLuckyWheel() {
+  document.querySelector("header").innerHTML =
+    `
+        <div id="hamburgerMenu">
+        <div></div>
+        <div></div>
+        <div></div>
+        </div>
+
+        ${displayCurtains("curtainsProfile", "curtainsLightProfile")}
+    `
+  document.getElementById("hamburgerMenu").addEventListener("click", DisplaySidebar);
   document.querySelector("main").innerHTML =
     `
+    <div class="profile">
+        <div id="profilePic"></div>
+        <img src="images/Frame 263.png" alt="Logo">
+    </div>
     
-    <body>
     <h1 id="lucky">Lucky Wheel!</h1>
     <img id="pin" src="../images/pin.png">
     
@@ -24,8 +38,8 @@ function renderLuckyWheel() {
        
     </div>
     
-    </body>
-    </html>
+    
+   
     
     `
   fetch("PHP/api.php", {
