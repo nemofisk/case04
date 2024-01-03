@@ -860,7 +860,7 @@ async function currentStanding(question) {
 
             <div id="contentWrapper" class="currentStandingHalf">
             
-                <div id="getReadyDiv">GET READY IN <span id="countdown">10</span></div>
+                <div id="getReadyDiv">GET READY IN <span id="countdown">200</span></div>
         
                 <div id="topThree"></div>
         
