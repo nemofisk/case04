@@ -6,7 +6,7 @@
 body {
 
     font-family: jost;
-    
+
 
 }
 
@@ -241,6 +241,19 @@ h1 {
     div.alternative {
         width: 360px;
         height: 50px;
+    }
+
+    #endGameSPButtons {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--Spacing-system-Spacing-20, 12px);
+    }
+
+    #exitGameSP,
+    #playAgainSP {
+        margin-top: 0px;
     }
 
 }
