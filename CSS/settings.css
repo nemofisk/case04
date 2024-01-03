@@ -36,6 +36,7 @@
     width: 292px;
     justify-content: space-between;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
 .settingsDivs>.middlediv {
@@ -86,6 +87,7 @@
     width: 292px;
     justify-content: space-between;
     cursor: pointer;
+    margin-bottom: 2px;
 }
 
 .settingsDivs3>div>p {

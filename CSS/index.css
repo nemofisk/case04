@@ -30,7 +30,7 @@ main {
 
 #lucky {
     margin-bottom: 0;
-    top: 125px;
+    top: 151px;
     position: absolute;
     font-size: 40px;
 font-style: normal;
@@ -75,7 +75,7 @@ body {
 #noMoreSpin {
     margin: 0;
     position: absolute;
-    top: 603px;
+    top: 671px;
 }
 
 .wheel {
@@ -91,9 +91,9 @@ body {
             orange 225deg 270deg,
             pink 270deg 315deg,
             brown 315deg 360deg);
-    background-image: url("../images/wheelplswosk.png");
+    background-image: url("../images/Lucky\ wheelidkevenknow.png");
     background-size: cover;
-    top: 175px;
+    top: 211px;
 }
 
 .slice {
@@ -110,6 +110,11 @@ button {
     margin-top: 12px;
     padding: 10px;
     cursor: pointer;
+    font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+font-family: jost;
 
 }
 
@@ -128,14 +133,14 @@ button {
     background-color: #171717;
     margin: 0;
     position: absolute;
-    top: 643px;
+    top: 736px;
 }
 
 #pin {
     width: 35px;
     position: absolute;
-    top: 215px;
-    left: 572.5px;
+    top: 253px;
+  left: 571.5px;
     z-index: 1;
 }
 
@@ -160,4 +165,11 @@ input::placeholder {
 
 .whatYouGot {
     font-size: 20px;
+}
+.whatYouGot h1{
+    font-family: Jost;
+font-size: 30px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
 }

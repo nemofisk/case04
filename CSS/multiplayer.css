@@ -440,6 +440,17 @@ span.opacP {
 
 }
 
+#getReadyHead {
+    color: #FFF;
+    text-align: center;
+    font-family: Jost;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 5px;
+}
+
 #getReadyDivSP {
     color: #FFF;
     text-align: center;
@@ -617,6 +628,12 @@ span#ttlPoints {
     box-sizing: border-box;
 }
 
+.restListPlayername {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .playerImage {
     background-size: cover;
     background-position: center;
@@ -628,6 +645,12 @@ span#ttlPoints {
 .restListDivLeft {
     display: flex;
     gap: 13px;
+    color: var(--Colors-Text-primary, #FFF);
+    font-family: Jost;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
 }
 
 .restListDivLeft>.positionImage {
@@ -694,8 +717,18 @@ span#ttlPoints {
     font-weight: 400;
     line-height: normal;
 
-    width: 534px;
+    width: 560px;
     height: 58px;
+}
+
+.lobbyProfileName {
+    color: #FFF;
+    text-align: center;
+    font-family: Jost;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .member>.lobbyProfilePic {
@@ -850,7 +883,22 @@ iframe {
     box-sizing: border-box;
     font-family: jost;
 
+    font-family: Jost;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
     background-color: #2C2C40;
+}
+
+#userSearch::placeholder {
+    color: var(--Colors-White-Disable, rgba(255, 255, 255, 0.40));
+    font-family: Jost;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 #findFriends::before {
@@ -901,6 +949,26 @@ iframe {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.friendDivName {
+    color: #FFF;
+    text-align: center;
+    font-family: Jost;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.addedUserName {
+    color: #FFF;
+    text-align: center;
+    font-family: Jost;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .friendDivLeft {
@@ -962,6 +1030,8 @@ iframe {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
 }
+
+
 
 .mpButton {
     display: flex;

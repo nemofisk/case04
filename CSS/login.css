@@ -102,18 +102,25 @@ span {
     align-items: center;
 
     position: absolute;
-    width: 502px;
+    width: 400px;
     height: 293px;
     background-color: #2B2A4C;
     color: white;
     border-radius: 20px;
     text-align: center;
+    z-index: 1;
+    top: 320px;
+
 }
 
 #removePopUp {
     position: absolute;
-    top: 10px;
+    top: 16px;
     right: 15px;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+
 }
 
 .registerLoginPopup {

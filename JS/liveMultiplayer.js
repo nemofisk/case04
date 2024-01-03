@@ -18,22 +18,18 @@ async function joinGame(gameID) {
 
     allFooterLightCurtains.forEach(crtn => {
         crtn.style.height = "0vh"
-        crtn.style.zIndex = "2";
     });
 
     allFooterDarkCurtains.forEach(crtn => {
         crtn.style.height = "0vh"
-        crtn.style.zIndex = "2";
     });
 
     allLightCurtains.forEach(crtn => {
         crtn.style.height = "0vh"
-        crtn.style.zIndex = "2";
     });
 
     allDarkCurtains.forEach(crtn => {
         crtn.style.height = "0vh"
-        crtn.style.zIndex = "2";
     });
 
     document.querySelector("main").classList.add("mpMain");
@@ -271,10 +267,12 @@ function prepareQuestion(questionToLoad, skipPointCheck = false) {
 
             allLightCurtains.forEach(crtn => {
                 crtn.style.height = "93vh"
+                crtn.style.zIndex = "1";
             });
 
             allDarkCurtains.forEach(crtn => {
                 crtn.style.height = "91vh"
+                crtn.style.zIndex = "1";
             });
 
             main.innerHTML = `
@@ -285,7 +283,7 @@ function prepareQuestion(questionToLoad, skipPointCheck = false) {
 
                 <div id="contentWrapper" class="currentStandingRound">
                 
-                    <div id="getReadyDiv">GET READY IN <span id="countdown">10</span></div>
+                    <div id="getReadyDiv">GET READY IN <span id="SPcountdown">10</span></div>
             
                     <div id="topThree"></div>
     
@@ -324,26 +322,34 @@ function prepareQuestion(questionToLoad, skipPointCheck = false) {
             }
 
             const intervalID = setInterval(function () {
-                const countdown = main.querySelector("#countdown");
+                if (main.querySelector("#SPcountdown")) {
+                    const countdown = main.querySelector("#SPcountdown");
 
-                const currentSec = parseInt(countdown.textContent);
+                    const currentSec = parseInt(countdown.textContent);
 
-                if (currentSec === 0) {
-                    clearInterval(intervalID);
+                    if (currentSec === 0) {
+                        clearInterval(intervalID);
 
-                    allLightCurtains.forEach(crtn => {
-                        crtn.style.height = "0px"
-                    });
+                        allLightCurtains.forEach(crtn => {
+                            crtn.style.height = "0px"
+                            crtn.style.zIndex = "2";
+                        });
 
-                    allDarkCurtains.forEach(crtn => {
-                        crtn.style.height = "0px"
-                    });
+                        allDarkCurtains.forEach(crtn => {
+                            crtn.style.height = "0px"
+                            crtn.style.zIndex = "2";
+                        });
 
-                    nextQuestion(questionToLoad);
+                        nextQuestion(questionToLoad);
 
+                    } else {
+                        countdown.textContent = currentSec - 1;
+                    }
                 } else {
-                    countdown.textContent = currentSec - 1;
+                    clearInterval(intervalID);
                 }
+
+
 
             }, 1000)
 
@@ -860,10 +866,12 @@ async function currentStanding(question) {
 
         allLightCurtains.forEach(crtn => {
             crtn.style.height = "93vh"
+            crtn.style.zIndex = "1";
         });
 
         allDarkCurtains.forEach(crtn => {
             crtn.style.height = "91vh"
+            crtn.style.zIndex = "1";
         });
 
         main.innerHTML = `
@@ -874,7 +882,7 @@ async function currentStanding(question) {
 
             <div id="contentWrapper" class="currentStandingHalf">
             
-                <div id="getReadyDiv">GET READY IN <span id="countdown">10</span></div>
+                <div id="getReadyDiv">GET READY IN <span id="SPcountdown">10</span></div>
         
                 <div id="topThree"></div>
         
@@ -884,8 +892,8 @@ async function currentStanding(question) {
         `
 
         const intervalID = setInterval(function () {
-            if (main.querySelector("#countdown")) {
-                const countdown = main.querySelector("#countdown");
+            if (main.querySelector("#SPcountdown")) {
+                const countdown = main.querySelector("#SPcountdown");
 
                 const currentSec = parseInt(countdown.textContent);
 
@@ -894,10 +902,12 @@ async function currentStanding(question) {
 
                     allLightCurtains.forEach(crtn => {
                         crtn.style.height = "0px"
+                        crtn.style.zIndex = "2";
                     });
 
                     allDarkCurtains.forEach(crtn => {
                         crtn.style.height = "0px"
+                        crtn.style.zIndex = "2";
                     });
 
                     checkNextQuestion(question, true);
@@ -918,11 +928,13 @@ async function currentStanding(question) {
         allLightCurtains.forEach(crtn => {
             crtn.style.height = "100vh"
             crtn.style.borderRadius = "0";
+            crtn.style.zIndex = "1";
         });
 
         allDarkCurtains.forEach(crtn => {
             crtn.style.height = "100vh"
             crtn.style.borderRadius = "0";
+            crtn.style.zIndex = "1";
         });
 
         const fetchIntervalID = parseInt(JSON.parse(window.localStorage.getItem("fetchIntervalID")));
@@ -977,11 +989,13 @@ async function currentStanding(question) {
             allLightCurtains.forEach(crtn => {
                 crtn.style.height = "0vh"
                 crtn.style.borderRadius = "0 0 30px 30px";
+                crtn.style.zIndex = "2";
             });
 
             allDarkCurtains.forEach(crtn => {
                 crtn.style.height = "0vh"
                 crtn.style.borderRadius = "0 0 30px 30px";
+                crtn.style.zIndex = "2";
             });
 
             const request = new Request("PHP/api.php", {
@@ -1031,7 +1045,7 @@ async function currentStanding(question) {
                 <div class="restListDivLeft">
 
                     <div class="positionImage" style="background-image: url('images/position${i + 1}.svg')"></div>
-                    <div>${gameMembers[i].name}</div>
+                    <div class="restListPlayername">${gameMembers[i].name}</div>
                 
                 </div>
 

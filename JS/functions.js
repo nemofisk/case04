@@ -40,12 +40,29 @@ function popUpFunction(action, information) {
     }
 
     if (action === "wheel") {
+        if(information === "Nothing"){
+            let message = "You get a new chance tomorrow to spin the lucky wheel"
+        
         div.innerHTML = `
-        <div id="removePopUp">X</div>
-        <p class="whatYouGot">You got ${information}</p>
+        <img src="../images/close.png" id="removePopUp">
+        <div class="whatYouGot">
+            <h1>No Win</h1>
+            <p>${message}</p>
+        </div>
         <br>
-        <p class="newChance">You get a new chance tomorrow</p>
+        
     `
+        }else{
+            div.innerHTML = `
+        <img src="../images/close.png" id="removePopUp">
+        <div class="whatYouGot">
+            <h1>Congratulations!</h1>
+            <p>You got ${information}</p>
+            <img src="images/crownWheel.png">
+        </div>
+        
+    `
+        }
         let Overlaydiv = document.createElement("div");
         Overlaydiv.setAttribute("class", "Overlay");
         main.appendChild(Overlaydiv);
@@ -58,12 +75,7 @@ function popUpFunction(action, information) {
             console.log(element);
             element.target.parentElement.remove();
         })
-        if (information !== "Nothing") {
-            let img = document.createElement("img");
-            img.classList.add("crownImage")
-            img.src = "images/crownWheel.png"
-            document.querySelector(".wheelClass").appendChild(img)
-        }
+        
     }
 
     if (action === "changeUserOrPass") {
