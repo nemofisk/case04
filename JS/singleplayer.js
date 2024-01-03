@@ -9,6 +9,17 @@ function singlePlayer(event) {
         crtn.style.height = "0vh"
     });
 
+    const allFooterLightCurtains = document.querySelectorAll(".footercurtainsLightStartingpage");
+    const allFooterDarkCurtains = document.querySelectorAll(".footercurtainsStartingpage");
+
+    allFooterLightCurtains.forEach(crtn => {
+        crtn.style.height = "0vh"
+    });
+
+    allFooterDarkCurtains.forEach(crtn => {
+        crtn.style.height = "0vh"
+    });
+
     genreArray = [
         "Crime",
         "Drama",
@@ -23,9 +34,6 @@ function singlePlayer(event) {
         "Comedy",
         "Horror",
     ];
-
-
-    document.querySelector("footer").innerHTML = ``
 
     document.querySelector("main").innerHTML = `
     <div class="profile">
@@ -113,7 +121,7 @@ function generateMovies(array, questionNumber = 1, answerTime) {
 
     let chosenGenres = array;
 
-    let quizQuiestions = ["trailer", "poster"];
+    let quizQuiestions = ["trailer", "poster", "directors", "plot", "actors"];
 
     let type = quizQuiestions[Math.floor(Math.random() * quizQuiestions.length)];
 

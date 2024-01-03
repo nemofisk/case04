@@ -88,7 +88,7 @@ function displayFriendsLeaderboard(leaderboardData) {
         if (user.username === username) {
             let div = document.createElement("div")
             div.classList.add("MyProfile");
-            div.innerHTML = `<div class="LeaderboardPicScore"> <p class="ranking">${counter}</p> <img class="CameraImgLeaderboard" src="images/${user.profilePicture}" alt="Profile Picture"> <p class="leaderBoardUsername"> ${user.username}</p> </div>  <p class="leaderboardScore">${user.popcorn} <span class="span">p</span></p>`;
+            div.innerHTML = `<div class="LeaderboardPicScore"> <p class="rank">${counter}</p> <img class="CameraImgLeaderboard" src="images/${user.profilePicture}" alt="Profile Picture"> <p id="USERF"> ${user.username}</p> </div>  <p class="leaderboardS">${user.popcorn} <span class="span">p</span></p>`;
 
             if (window.innerWidth > 400) {
                 let h1 = document.createElement("h1");
@@ -146,7 +146,7 @@ function displayLeaderboard(leaderboardData) {
         if (user.username === username) {
             let div = document.createElement("div")
             div.classList.add("MyProfile");
-            div.innerHTML = `<div class="LeaderboardPicScore"> <p class="ranking">${counter}</p> <img class="CameraImgLeaderboard" src="images/${user.profile_picture}" alt="Profile Picture"> <p class="leaderBoardUsername"> ${user.username}</p> </div>  <p class="leaderboardScore">${user.popcorn} <span class="span">p</span></p>`;
+            div.innerHTML = `<div class="LeaderboardPicScore"> <p class="rank">${counter}</p> <img class="CameraImgLeaderboard" src="images/${user.profile_picture}" alt="Profile Picture"> <p id="USERW"> ${user.username}</p> </div>  <p class="leaderboardS">${user.popcorn} <span class="span">p</span></p>`;
             if (window.innerWidth > 400) {
 
                 let h1 = document.createElement("h1");

@@ -26,7 +26,7 @@ function register($users, $received_data){
     $newDate = date("d");
     $newDate = $newDate -1;
     if (0 <= count($users)) {
-        $new_user = ["username" => $username, "password" => $password, "level" => 1, "popcorn" => 0, "gameInvites" => [] ,"friends" => [], "friendRequests" => [], "xpGoal" => 1000, "clues" => 0, "resetTimer" => 0, "profile_picture" => "Frame 621.png", "lastSpun" => $newDate];
+        $new_user = ["username" => $username, "password" => $password, "level" => 1, "popcorn" => 0, "gameInvites" => [] ,"friends" => [], "friendRequests" => [], "xpGoal" => 1000, "clues" => 0, "fiftyfifty" => 0, "profile_picture" => "Frame 621.png", "lastSpun" => $newDate];
         foreach ($users as $single_user) {
             if ($id < $single_user["id"]) {
                 $id = $single_user["id"];

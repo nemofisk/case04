@@ -3,6 +3,18 @@ function chooseCatagoryMultiplayer(event) {
     const allLightCurtains = document.querySelectorAll(".curtainsLightStartingpage");
     const allDarkCurtains = document.querySelectorAll(".curtainsStartingpage");
 
+
+    const allFooterLightCurtains = document.querySelectorAll(".footercurtainsLightStartingpage");
+    const allFooterDarkCurtains = document.querySelectorAll(".footercurtainsStartingpage");
+
+    allFooterLightCurtains.forEach(crtn => {
+        crtn.style.height = "0vh"
+    });
+
+    allFooterDarkCurtains.forEach(crtn => {
+        crtn.style.height = "0vh"
+    });
+
     allLightCurtains.forEach(crtn => {
         crtn.style.height = "0px"
     });
@@ -47,7 +59,7 @@ function chooseCatagoryMultiplayer(event) {
         
 
     </div>`
-    document.querySelector("footer").innerHTML = ``;
+
     let genresCategorty = document.querySelector("#catergoryMenu");
     let ContinueButton = document.querySelector("#Continue");
     ContinueButton.disabled = true;
@@ -173,16 +185,16 @@ async function inviteFriends(gameID) {
     </div>
 
     <div id="inviteFriendsWrapper">
-        <div id="inviteFriendsHeader">Bjud in dina vänner</div>
+        <div id="inviteFriendsHeader">Invite Your Friends</div>
 
         <div id="findFriends">
-            <input id="userSearch" placeholder="Sök">
+            <input id="userSearch" placeholder="Search">
             <div id="searchResults"></div>
             <div id="addedUsers"></div>
         </div>
 
  
-        <button id="inviteUsers" class="mpButton">Nästa</button>
+        <button id="inviteUsers" class="mpButton">Continue</button>
     </div>
     `
 
@@ -223,7 +235,7 @@ async function inviteFriends(gameID) {
 
     body.addEventListener("click", ev => {
         ev.stopPropagation();
-        input.setAttribute("placeholder", "Sök");
+        input.setAttribute("placeholder", "Search");
         let root = document.querySelector(":root");
         root.style.setProperty('--beforeOpacity', '0.4')
         searchResultsDiv.classList.remove("searching");
