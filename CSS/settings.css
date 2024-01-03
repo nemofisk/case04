@@ -4,7 +4,9 @@
     width: 717px;
     height: 283px;
     justify-content: space-between;
-
+    position: relative;
+    top: 34px;
+  
 }
 
 #leftSideBox {

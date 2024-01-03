@@ -40,6 +40,8 @@ main>img {
     border: none;
     font-family: Jost;
     font-size: 20px;
+    width: 360px;
+height: 60px;
 }
 
 #Singelplayer {
@@ -48,6 +50,8 @@ main>img {
     border: none;
     font-family: Jost;
     font-size: 20px;
+    width: 360px;
+height: 60px;
 }
 
 #hamburgerMenu {
@@ -59,7 +63,7 @@ main>img {
     width: 30px;
 
     position: absolute;
-    left: 25px;
+    left: 27px;
     top: 34px;
 
     cursor: pointer;
@@ -151,8 +155,8 @@ main>img {
 }
 
 #ProfilePicContainer {
-    height: 114px;
-    width: 114px;
+    height: 125px;
+    width: 125px;
     border-radius: 50%;
 }
 
@@ -166,6 +170,12 @@ main>img {
 }
 
 #SidebarMenuContainer {
+    text-align: center;
+font-family: Jost;
+font-size: 20px;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -181,6 +191,15 @@ main>img {
     margin-right: 45px;
     cursor: pointer;
     margin-bottom: -88px;
+    text-align: center;
+    font-family: Jost;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    position: relative;
+
+  bottom: 13px;
 }
 
 #renderSettings>p {
