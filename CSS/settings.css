@@ -17,7 +17,7 @@
 
 #seperator {
     width: 1px;
-    height: 283px;
+    height: 295px;
     background: var(--colors-search-background, rgba(103, 101, 159, 0.35));
 }
 
@@ -111,14 +111,12 @@
 }
 
 #settingsHeader {
-    margin-bottom: 66px;
-    color: #FFF;
-    text-align: center;
-    font-family: Jost;
+    margin-bottom: 60px;
     font-size: 40px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: normal;
+    margin-top: -5px;
 }
 
 @media (max-width: 390px) {

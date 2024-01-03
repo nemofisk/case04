@@ -3,7 +3,7 @@
     justify-content: center;
     gap: 98px;
     position: absolute;
-    top: 184px;
+    top: 263px;
 }
 
 #friendsLeaderboard {
@@ -36,16 +36,18 @@
     justify-content: space-between;
     align-items: center;
     color: #FFF;
-font-family: Jost;
-font-size: 14px;
-font-style: normal;
-font-weight: 300;
-line-height: normal;
+    font-family: Jost;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
 }
-.LeaderBoard span{
+
+.LeaderBoard span {
     color: rgba(255, 255, 255, 0.40);
 }
-.span{
+
+.span {
     color: rgba(255, 255, 255, 0.40);
 }
 
@@ -94,12 +96,12 @@ line-height: normal;
 #LeaderBoardHeader {
 
     font-family: Jost;
-font-size: 30px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-color: white;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: white;
 
     position: absolute;
-    top: 99px;
+    top: 167px;
 }
