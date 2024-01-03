@@ -26,7 +26,7 @@ function renderSettings() {
             <div class="settingsDivs2">
             <div class="middlediv">
                 <img src="../images/help.png">
-                <p>Help</p>
+                <p id="moreMargin">Help</p>
             </div>
                 <img class="chevron" src="images/chevron_right.png"></img>
             </div>
@@ -40,7 +40,7 @@ function renderSettings() {
             <div class="settingsDivs2">
             <div class="middlediv">
                 <img src="../images/language.png">
-                <p>Language</p>
+                <p id="moreMargins">Language</p>
                 </div>
                 <img class="chevron" src="images/chevron_right.png"></img>
             </div>

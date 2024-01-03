@@ -594,4 +594,16 @@
     #findFriends::before {
         top: 12px;
     }
+    .settingsDivs2 > .middlediv{
+        margin-left: 3px;
+    }
+    #moreMargin{
+        margin-left: 4px;
+    }
+    #moreMargins{
+        margin-left: 4px;
+    }
+    #logout{
+        margin-left: 2px;
+    }
 }
