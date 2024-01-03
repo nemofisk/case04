@@ -265,7 +265,7 @@ function handleTransitionEnd(desiredSlice) {
   switch (desiredSlice) {
     case 0:
       resetTimer()
-      message = "A Timer Reset!"
+      message = "A 50/50"
       break;
     case 1:
       giveClue()
@@ -273,7 +273,7 @@ function handleTransitionEnd(desiredSlice) {
       break;
     case 2:
       addPoints(5)
-      message = "5 points!"
+      message = "5 points"
       break;
     case 3:
       nothing()
@@ -281,7 +281,7 @@ function handleTransitionEnd(desiredSlice) {
       break;
     case 4:
       addPoints(20)
-      message = "20 points!"
+      message = "20 points"
       break;
     case 5:
       giveClue()
@@ -289,11 +289,11 @@ function handleTransitionEnd(desiredSlice) {
       break;
     case 6:
       resetTimer()
-      message = "Timer Reset"
+      message = "A 50/50"
       break;
     case 7:
       addPoints(10)
-      message = "20 points!"
+      message = "20 points"
       break;
   }
   popUpFunction("wheel", message)
