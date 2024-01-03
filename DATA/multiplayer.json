@@ -68,5 +68,110 @@
         "doneQuestion": [],
         "nextQuestion": false,
         "endedQuestion": []
+    },
+    {
+        "gameID": 41270,
+        "hostID": 2,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "calle",
+                "userID": 2,
+                "profilePicture": "Frame 621.png",
+                "points": 0,
+                "inLobby": true,
+                "latestFetch": 1704309290
+            }
+        ],
+        "questions": "",
+        "isStarted": false,
+        "answeredQuestion": [],
+        "endEarly": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 80634,
+        "hostID": 2,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "calle",
+                "userID": 2,
+                "profilePicture": "Frame 621.png",
+                "points": 0,
+                "inLobby": true,
+                "latestFetch": 1704309332
+            }
+        ],
+        "questions": "",
+        "isStarted": false,
+        "answeredQuestion": [],
+        "endEarly": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
+    },
+    {
+        "gameID": 74571,
+        "hostID": 2,
+        "genres": [
+            "Crime",
+            "Drama",
+            "History",
+            "Action",
+            "Romance",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "Thriller",
+            "Animation",
+            "Comedy",
+            "Horror"
+        ],
+        "members": [
+            {
+                "name": "calle",
+                "userID": 2,
+                "profilePicture": "Frame 621.png",
+                "points": 0,
+                "inLobby": true,
+                "latestFetch": 1704310857
+            }
+        ],
+        "questions": "",
+        "isStarted": false,
+        "answeredQuestion": [],
+        "endEarly": false,
+        "doneQuestion": [],
+        "nextQuestion": false,
+        "endedQuestion": []
     }
 ]
