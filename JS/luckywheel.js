@@ -17,7 +17,7 @@ function renderLuckyWheel() {
         <img src="images/Frame 263.png" alt="Logo">
     </div>
     
-    <h1 id="lucky">Lucky Wheel!</h1>
+    <h1 id="lucky">Lucky Wheel</h1>
     <img id="pin" src="../images/pin.png">
     
     <div class="wheel" id="wheel">
@@ -31,7 +31,7 @@ function renderLuckyWheel() {
     <div class="slice" data-index="6">6</div>
     <div class="slice" data-index="7">7</div>
   </div>
-  <button id="spinWheel">Spin</button>
+  <button id="spinWheel">SPIN</button>
 
     <div class="wheel-container">
         

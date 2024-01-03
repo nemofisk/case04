@@ -1,1 +1,33 @@
-null
+[
+    {
+        "username": "w",
+        "password": "",
+        "level": 669,
+        "popcorn": 106723,
+        "friends": [],
+        "friendRequests": [],
+        "gameInvites": [],
+        "xpGoal": 221764,
+        "id": 1,
+        "clues": 4,
+        "fiftyfifty": 2,
+        "profile_picture": "portishead.jpeg",
+        "lastSpun": "03",
+        "resetTimer": 2
+    },
+    {
+        "username": "calle",
+        "password": "calle",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 1000,
+        "clues": 0,
+        "fiftyfifty": 0,
+        "profile_picture": "Frame 621.png",
+        "lastSpun": 2,
+        "id": 2
+    }
+]
