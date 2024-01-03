@@ -106,7 +106,7 @@ function createQuestion($movie, $type, $arrIndex, $alternatives){
     }
 
     if($type == "actors"){
-        $question["questionText"] = "Which movie does<br>" . $movie["Actors"] . "<br>star in?";
+        $question["questionText"] = "Which movie does " . $movie["Actors"] . " star in?";
     }
 
     if($type == "trailer"){
