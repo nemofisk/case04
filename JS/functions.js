@@ -40,10 +40,10 @@ function popUpFunction(action, information) {
     }
 
     if (action === "wheel") {
-        if(information === "Nothing"){
+        if (information === "Nothing") {
             let message = "You get a new chance tomorrow to spin the lucky wheel"
-        
-        div.innerHTML = `
+
+            div.innerHTML = `
         <img src="../images/close.png" id="removePopUp">
         <div class="whatYouGot">
             <h1>No Win</h1>
@@ -52,7 +52,7 @@ function popUpFunction(action, information) {
         <br>
         
     `
-        }else{
+        } else {
             div.innerHTML = `
         <img src="../images/close.png" id="removePopUp">
         <div class="whatYouGot">
@@ -75,7 +75,7 @@ function popUpFunction(action, information) {
             console.log(element);
             element.target.parentElement.remove();
         })
-        
+
     }
 
     if (action === "changeUserOrPass") {
@@ -102,7 +102,7 @@ function popUpFunction(action, information) {
             div.innerHTML = `
         <div id="addFriendsContainer">
             <div id="searchField">
-                <img id="searchImage" src="../images/searchlala.png">
+                <img id="searchImage" src="images/search.png">
                 <input id="searchUsers" placeholder="Add new friends"></input> 
                   
             </div>
