@@ -229,7 +229,7 @@ main>img {
 #profileImage {
     border-radius: 50%;
 }
-
+/*
 #levelBar {
     border: 2px solid #FF6868;
     border-radius: 20px;
@@ -266,7 +266,7 @@ main>img {
     justify-content: center;
     align-items: center;
 }
-
+*/
 .friendDivImages {
     height: 55px;
     width: 55px;

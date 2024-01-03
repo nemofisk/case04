@@ -113,7 +113,7 @@ function generateMovies(array, questionNumber = 1, answerTime) {
 
     let chosenGenres = array;
 
-    let quizQuiestions = ["directors", "actors", "plot"];
+    let quizQuiestions = ["trailer", "poster"];
 
     let type = quizQuiestions[Math.floor(Math.random() * quizQuiestions.length)];
 
@@ -162,10 +162,12 @@ function SPprepareQuestion(correctMovie, otherMovies, genres, questionNumber, an
         const allDarkCurtains = document.querySelectorAll(".curtainsStartingpage");
         allLightCurtains.forEach(crtn => {
             crtn.style.height = "93vh"
+            crtn.style.zIndex = "1"
         });
 
         allDarkCurtains.forEach(crtn => {
             crtn.style.height = "91vh"
+            crtn.style.zIndex = "1"
         });
 
         const totelPoints = parseFloat(main.dataset.totalPoints).toFixed(1);
@@ -196,10 +198,12 @@ function SPprepareQuestion(correctMovie, otherMovies, genres, questionNumber, an
 
                     allLightCurtains.forEach(crtn => {
                         crtn.style.height = "0px"
+                        crtn.style.zIndex = "2"
                     });
 
                     allDarkCurtains.forEach(crtn => {
                         crtn.style.height = "0px"
+                        crtn.style.zIndex = "2"
                     });
 
                     startQuestion(correctMovie, otherMovies, genres, questionNumber, type);
@@ -222,7 +226,7 @@ function SPprepareQuestion(correctMovie, otherMovies, genres, questionNumber, an
         <div id="profilePic"></div>
         <img src="images/Frame 263.png" alt="Logo">
     </div>
-            <h1>GET READY</h1>
+            <h1 id="getReadyHead">GET READY IN</h1>
             <div id="countdown">10</div>
         `
 
@@ -834,6 +838,10 @@ async function SPfindMovie(event, correctMovie, genres, questionNumber, type) {
             }
         }
     })
+
+    if (string.length == 0) {
+        filteredArray = [];
+    }
 
     filteredArray.splice(3);
 

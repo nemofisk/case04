@@ -19,6 +19,12 @@ function signInpage(event) {
         </div>
     
     `
+    document.getElementById("loginUsername").addEventListener("keydown", e => {
+        document.getElementById("loginPassword").style.opacity = "0.5"
+    })
+    document.getElementById("loginPassword").addEventListener("keydown", e => {
+        document.getElementById("loginPassword").style.opacity = "1"
+    })
     document.getElementById("registerShortCut").addEventListener("click", f => {
         signUppage()
     })

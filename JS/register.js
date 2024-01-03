@@ -25,6 +25,19 @@ function signUppage(event) {
         `
    ${curtains}
     `
+    document.getElementById("registerUsername").addEventListener("keydown", e => {
+        document.getElementById("registerPassword").style.opacity = "0.5"
+    })
+    document.getElementById("registerUsername").addEventListener("keydown", e => {
+        document.getElementById("ConfirmPassword").style.opacity = "0.5"
+    })
+    document.getElementById("registerPassword").addEventListener("keydown", e => {
+        document.getElementById("registerPassword").style.opacity = "1"
+    })
+    document.getElementById("ConfirmPassword").addEventListener("keydown", e => {
+        document.getElementById("ConfirmPassword").style.opacity = "1"
+    })
+
     document.getElementById("register").addEventListener("click", registerFunction);
     document.getElementById("loginShortCut").addEventListener("click", signInpage);
 }
@@ -32,6 +45,8 @@ function signUppage(event) {
 function registerFunction(event) {
     let username = document.getElementById("registerUsername").value;
     let password = document.getElementById("registerPassword").value;
+    
+    
 
     fetch("PHP/api.php", {
         method: "POST",

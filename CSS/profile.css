@@ -38,6 +38,7 @@
     height: 198px;
 }
 
+/*
 #levelBar {
     border: 2px solid #FF6868;
     border-radius: 20px;
@@ -61,7 +62,7 @@
 #showlevel {
     color: white;
 }
-
+*/
 #ProfilePageContainer {
     display: flex;
     justify-content: center;
@@ -112,7 +113,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid rgba(103, 101, 159, 0.35);
     height: 74px;
 }
 
@@ -120,7 +121,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid rgba(103, 101, 159, 0.35);
     height: 74px;
 }
 
@@ -204,13 +205,13 @@
 #seperatorProfile {
     height: 52px;
     width: 1px;
-    background-color: gray;
+    background-color: rgba(103, 101, 159, 0.35);
 }
 
 #middle {
     height: 529px;
     width: 1px;
-    background-color: gray;
+    background: var(--Colors-Blue-Disable, rgba(103, 101, 159, 0.35));
     margin-top: 112px;
 }
 
