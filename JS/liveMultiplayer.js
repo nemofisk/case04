@@ -105,7 +105,7 @@ async function startFetchGameInfo(gameID) {
             window.localStorage.removeItem("gameInfo");
         }
 
-    }, 500)
+    }, 1000)
 
     window.localStorage.setItem("fetchIntervalID", intervalID)
 
@@ -434,7 +434,7 @@ function mpTextQuestion(question) {
 
         <div id="contentWrapper" class="cwType${question.type}">
 
-            <div id="timer" data-current-time="30">
+            <div id="timer" data-current-time="20">
                 <div id="timerProgress"></div>
             </div>
 
@@ -503,7 +503,7 @@ function mpTrailerQuestion(question) {
     
         <div id="contentWrapper" class="cwType${question.type}">
         
-            <div id="timer" data-current-time="30">
+            <div id="timer" data-current-time="20">
                 <div id="timerProgress"></div>
             </div>
             <div id="videoContainer">
@@ -548,7 +548,7 @@ function mpPosterQuestion(question) {
         <div id="contentWrapper" class="cwType${question.type}">
         
 
-            <div id="timer" data-current-time="30">
+            <div id="timer" data-current-time="20">
                 <div id="timerProgress"></div>
             </div>
 

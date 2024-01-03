@@ -99,8 +99,12 @@ function popUpFunction(action, information) {
                     //console.log(user.friends);
                 }
             });
-            div.innerHTML = `
-        <div id="addFriendsContainer">
+
+            let overlayDiv = document.createElement("div");
+            overlayDiv.classList.add("Overlay");
+            overlayDiv.classList.add("searchFriends")
+            overlayDiv.innerHTML = `
+            <div id="addFriendsContainer">
             <div id="searchField">
                 <img id="searchImage" src="images/search.png">
                 <input id="searchUsers" placeholder="Add new friends"></input> 
@@ -108,11 +112,9 @@ function popUpFunction(action, information) {
             </div>
             <div id="userDisplay"></div>
         </div>
-        `
-            let overlayDiv = document.createElement("div");
-            overlayDiv.classList.add("Overlay");
+            `
+
             main.appendChild(overlayDiv)
-            main.appendChild(div)
 
 
 
@@ -171,7 +173,6 @@ function popUpFunction(action, information) {
                                 if (e.target.classList[0] !== "sendRequestButton") {
                                     if (document.querySelector("#addFriendsContainer")) {
 
-                                        document.querySelector("#addFriendsContainer").remove()
                                         document.querySelector(".Overlay").remove()
                                     }
 
@@ -185,10 +186,6 @@ function popUpFunction(action, information) {
             })
 
         });
-        document.getElementById("sendRequest").addEventListener("click", () => {
-            popUpFunction("addFriends", "lala")
-
-        })
 
     }
 

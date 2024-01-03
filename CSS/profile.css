@@ -271,11 +271,23 @@
     line-height: normal;
 }
 
+.Overlay.searchFriends {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #0d0d0d8f;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
 #addFriendsContainer {
     position: absolute;
-    left: 338px;
-    top: 137px;
-    margin: auto;
+    align-self: center;
+    justify-self: center;
 }
 
 #userDisplay {
