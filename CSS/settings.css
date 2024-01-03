@@ -112,16 +112,25 @@
 
 #settingsHeader {
     margin-bottom: 66px;
+    color: #FFF;
+    text-align: center;
+    font-family: Jost;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
+
 @media (max-width: 390px) {
-    #settingsContainer{
+    #settingsContainer {
         flex-direction: column;
         width: 292px;
         justify-content: center;
         align-content: center;
         align-items: center;
     }
-    #seperator{
+
+    #seperator {
         width: 288px;
         border: 1px solid #333247;
         margin: 20px;

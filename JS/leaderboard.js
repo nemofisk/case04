@@ -1,7 +1,18 @@
 
 function renderLeaderBoard() {
+    document.querySelector("header").innerHTML =
+        `
+        <div id="hamburgerMenu">
+        <div></div>
+        <div></div>
+        <div></div>
+        </div>
+
+        ${displayCurtains("curtainsProfile", "curtainsLightProfile")}
+    `
+    document.getElementById("hamburgerMenu").addEventListener("click", DisplaySidebar);
     document.querySelector("footer").innerHTML = ``;
-    
+
     document.querySelector("main").innerHTML =
         `
         <div class="profile">
@@ -17,9 +28,9 @@ function renderLeaderBoard() {
        </div>
     `
     let userID = localStorage.getItem(`userID`);
-    if(window.innerWidth < 400){
+    if (window.innerWidth < 400) {
         document.querySelector("main").innerHTML =
-        `
+            `
         <div class="profile">
             <div id="profilePic"></div>
             <img src="images/Frame 263.png" alt="Logo">
@@ -35,21 +46,21 @@ function renderLeaderBoard() {
             <div id="WorldLeaderboard"></div>
             <div id="friendsLeaderboard"></div>
        </div>
-    ` 
-    
-    
+    `
 
-    
-    document.querySelector("#showFriendsLeaderboard").addEventListener("click", e => {
-        document.getElementById("WorldLeaderboard").innerHTML = ``;
-        document.getElementById("friendsLeaderboard").innerHTML = ``;
+
+
+
+        document.querySelector("#showFriendsLeaderboard").addEventListener("click", e => {
+            document.getElementById("WorldLeaderboard").innerHTML = ``;
+            document.getElementById("friendsLeaderboard").innerHTML = ``;
+            initializeFriendsLeaderboard(userID);
+
+        })
+    } else {
         initializeFriendsLeaderboard(userID);
-
-    })
-}else{
-    initializeFriendsLeaderboard(userID);
-}
-initializeLeaderboard()
+    }
+    initializeLeaderboard()
 }
 
 
@@ -65,7 +76,7 @@ async function fetchFriendsLeaderboard(userId) {
 }
 
 function displayFriendsLeaderboard(leaderboardData) {
-    
+
     const leaderboardFriends = document.getElementById("friendsLeaderboard");
     console.log(leaderboardData);
     let username = localStorage.getItem("username");
@@ -79,12 +90,12 @@ function displayFriendsLeaderboard(leaderboardData) {
             div.classList.add("MyProfile");
             div.innerHTML = `<div class="LeaderboardPicScore"> <p class="ranking">${counter}</p> <img class="CameraImgLeaderboard" src="images/${user.profilePicture}" alt="Profile Picture"> <p class="leaderBoardUsername"> ${user.username}</p> </div>  <p class="leaderboardScore">${user.popcorn} <span class="span">p</span></p>`;
 
-            if(window.innerWidth > 400){
-            let h1 = document.createElement("h1");
-            h1.classList.add("headerLeaderBoards");
-            h1.innerHTML = `Friends`;
-            leaderboardFriends.prepend(h1, div);
-            }else{
+            if (window.innerWidth > 400) {
+                let h1 = document.createElement("h1");
+                h1.classList.add("headerLeaderBoards");
+                h1.innerHTML = `Friends`;
+                leaderboardFriends.prepend(h1, div);
+            } else {
                 document.getElementById("showFriendsLeaderboard").style.backgroundColor = "#323059";
                 document.getElementById("showWorldLeaderboard").style.backgroundColor = "#171717"
                 leaderboardFriends.prepend(div);
@@ -99,7 +110,7 @@ function displayFriendsLeaderboard(leaderboardData) {
         leaderboardFriends.appendChild(userElement);
         console.log("ej");
     }
-    if(window.innerWidth < 400){
+    if (window.innerWidth < 400) {
 
         document.getElementById("showWorldLeaderboard").addEventListener("click", e => {
             document.getElementById("showFriendsLeaderboard").style.backgroundColor = "#171717";
@@ -107,7 +118,7 @@ function displayFriendsLeaderboard(leaderboardData) {
             document.getElementById("WorldLeaderboard").innerHTML = ``;
             document.getElementById("friendsLeaderboard").innerHTML = ``;
             initializeLeaderboard()
-    
+
         })
     }
 }
@@ -136,18 +147,18 @@ function displayLeaderboard(leaderboardData) {
             let div = document.createElement("div")
             div.classList.add("MyProfile");
             div.innerHTML = `<div class="LeaderboardPicScore"> <p class="ranking">${counter}</p> <img class="CameraImgLeaderboard" src="images/${user.profile_picture}" alt="Profile Picture"> <p class="leaderBoardUsername"> ${user.username}</p> </div>  <p class="leaderboardScore">${user.popcorn} <span class="span">p</span></p>`;
-            if(window.innerWidth > 400){
+            if (window.innerWidth > 400) {
 
                 let h1 = document.createElement("h1");
                 h1.classList.add("headerLeaderBoards");
                 h1.innerHTML = `World`;
                 leaderboard1.prepend(h1, div);
-            }else{
+            } else {
 
                 leaderboard1.prepend(div);
             }
         }
-        
+
     })
 
     for (let i = 0; i < leaderboardData.length && i < 25; i++) {
@@ -155,7 +166,7 @@ function displayLeaderboard(leaderboardData) {
         userElement.classList.add("LeaderBoard")
         userElement.innerHTML = `<div class="LeaderboardPicScore"> <p class="ranking">${i + 1}</p> <img class="CameraImgLeaderboard" src="images/${leaderboardData[i].profile_picture}" alt="Profile Picture"> <p class="leaderBoardUsername">${leaderboardData[i].username}</p> </div> <p class="leaderboardScore">${leaderboardData[i].popcorn} <span>p</span></p>`;
         leaderboard1.appendChild(userElement);
-        
+
     }
 
 

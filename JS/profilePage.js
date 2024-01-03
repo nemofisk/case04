@@ -1,6 +1,18 @@
 async function renderProfilePage() {
+
     let username = localStorage.getItem("username");
     let userInfo = await getUserinformation(window.localStorage.getItem("username"));
+    document.querySelector("header").innerHTML =
+        `
+        <div id="hamburgerMenu">
+        <div></div>
+        <div></div>
+        <div></div>
+        </div>
+
+        ${displayCurtains("curtainsProfile", "curtainsLightProfile")}
+    `
+    document.getElementById("hamburgerMenu").addEventListener("click", DisplaySidebar);
     document.querySelector("main").innerHTML =
 
         `
@@ -72,11 +84,11 @@ async function renderProfilePage() {
     console.log(userInfo);
     document.querySelector("#profileImage").src = `images/${userInfo.profile_picture}`
     document.getElementById("totalPoints").textContent = userInfo.popcorn + " p"
-    
+
 
     document.getElementById("sendRequest").addEventListener("click", () => {
         popUpFunction("addFriends", "lala")
-        
+
     })
 
 
@@ -93,10 +105,10 @@ async function displayFriendList(userInfo) {
 
     let container = document.getElementById("rightSideContainer");
     let counter = 0;
-    
+
     console.log(friends.length);
     friends.forEach(friend => {
-        
+
         let div = document.createElement("div");
         div.classList.add("myProfile")
         div.innerHTML =
@@ -110,7 +122,7 @@ async function displayFriendList(userInfo) {
         container.appendChild(div);
         console.log(counter);
         counter++
-        if(counter === friends.length){
+        if (counter === friends.length) {
             div.style.border = "none"
         }
     });

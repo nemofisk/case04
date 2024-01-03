@@ -961,6 +961,10 @@ function shuffleArray(array) {
 }
 
 function gClue() {
+    let clCount = document.querySelector("#clueCount");
+    clCount.style.border = "1px solid #2B2A4C";
+    clCount.style.color = "rgba(255, 255, 255, 0.40)";
+
     const correctMovie = JSON.parse(window.localStorage.getItem("correctMovie"));
 
     const clueSpan = document.querySelector("#clue > span");
@@ -972,6 +976,10 @@ function gClue() {
 }
 
 function gFif() {
+    let clCount = document.querySelector("#fiftyCount");
+    clCount.style.border = "1px solid #2B2A4C";
+    clCount.style.color = "rgba(255, 255, 255, 0.40)";
+
     const correctMovie = JSON.parse(window.localStorage.getItem("correctMovie"));
 
     const clueSpan = document.querySelector("#fiftyfifty > span");

@@ -187,7 +187,7 @@ async function renderLobby(fetchIntervalID) {
         const button = main.querySelector("#lobbyButton")
         const lobbyInfo = main.querySelector("#lobbyInfo");
         lobbyInfo.textContent = "Wait for your friends to join"
-        button.textContent = "Start game!";
+        button.textContent = "Start Game";
         button.addEventListener("click", async function (ev) {
             const request = new Request("PHP/api.php", {
                 method: "POST",
