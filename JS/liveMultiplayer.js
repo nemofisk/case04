@@ -170,6 +170,16 @@ async function renderLobby(fetchIntervalID) {
                 })
             }
 
+            if (userID == gameInfo.hostID) {
+                if (gameMembers.length < 3) {
+                    document.querySelector("#lobbyButton").setAttribute("disabled", "");
+                }
+
+                if (gameMembers.length > 2) {
+                    document.querySelector("#lobbyButton").removeAttribute("disabled");
+                }
+            }
+
             if (gameObject.isStarted === true) {
                 clearInterval(intervalID);
                 prepareQuestion(0);
@@ -183,7 +193,7 @@ async function renderLobby(fetchIntervalID) {
         const button = main.querySelector("#lobbyButton")
         const lobbyInfo = main.querySelector("#lobbyInfo");
         lobbyInfo.textContent = "Wait for your friends to join"
-        button.textContent = "Start game!";
+        button.textContent = "Start Game";
         button.addEventListener("click", async function (ev) {
             const request = new Request("PHP/api.php", {
                 method: "POST",
@@ -202,7 +212,7 @@ async function renderLobby(fetchIntervalID) {
         const button = main.querySelector("#lobbyButton")
         const lobbyInfo = main.querySelector("#lobbyInfo");
         lobbyInfo.textContent = "Wait for the leader to start the game"
-        button.textContent = "Leave game";
+        button.textContent = "Leave Game";
 
         button.addEventListener("click", async function (ev) {
             const request = new Request("PHP/api.php", {
@@ -342,7 +352,7 @@ function prepareQuestion(questionToLoad, skipPointCheck = false) {
         <div id="profilePic"></div>
         <img src="images/Frame 263.png" alt="Logo">
     </div>
-                <h1>GET READY</h1>
+                <h1 id="getReadyHead">GET READY IN</h1>
                 <div id="countdown">10</div>
             `
 
@@ -860,7 +870,7 @@ async function currentStanding(question) {
 
             <div id="contentWrapper" class="currentStandingHalf">
             
-                <div id="getReadyDiv">GET READY IN <span id="countdown">200</span></div>
+                <div id="getReadyDiv">GET READY IN <span id="countdown">10</span></div>
         
                 <div id="topThree"></div>
         
@@ -1069,6 +1079,10 @@ async function findMovie(event, question) {
             }
         }
     })
+
+    if (string.length == 0) {
+        filteredArray = [];
+    }
 
     filteredArray.splice(3);
 

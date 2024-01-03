@@ -113,7 +113,7 @@ function generateMovies(array, questionNumber = 1, answerTime) {
 
     let chosenGenres = array;
 
-    let quizQuiestions = ["directors", "actors", "plot"];
+    let quizQuiestions = ["trailer", "poster"];
 
     let type = quizQuiestions[Math.floor(Math.random() * quizQuiestions.length)];
 
@@ -222,7 +222,7 @@ function SPprepareQuestion(correctMovie, otherMovies, genres, questionNumber, an
         <div id="profilePic"></div>
         <img src="images/Frame 263.png" alt="Logo">
     </div>
-            <h1>GET READY</h1>
+            <h1 id="getReadyHead">GET READY IN</h1>
             <div id="countdown">10</div>
         `
 
@@ -834,6 +834,10 @@ async function SPfindMovie(event, correctMovie, genres, questionNumber, type) {
             }
         }
     })
+
+    if (string.length == 0) {
+        filteredArray = [];
+    }
 
     filteredArray.splice(3);
 

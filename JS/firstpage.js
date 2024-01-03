@@ -1,7 +1,7 @@
 "use strict";
 
 function renderFirstPage() {
-    
+
     let curtains = displayCurtains("curtains", "curtainsLight");
     document.querySelector("header").innerHTML =
         `
@@ -20,7 +20,15 @@ function renderFirstPage() {
 
     document.getElementById("SignIn").addEventListener("click", signInpage);
     document.getElementById("SignUp").addEventListener("click", signUppage);
-    if(window.localStorage.getItem("username")){
-        renderStartingpage()       
+    if (window.localStorage.getItem("username")) {
+        const username = window.localStorage.getItem("username");
+        const popcorn = window.localStorage.getItem("Popcorn");
+        const userID = window.localStorage.getItem("userID");
+        window.localStorage.clear();
+        window.localStorage.setItem(`userID`, userID);
+        window.localStorage.setItem(`Popcorn`, popcorn);
+        window.localStorage.setItem("username", username)
+        renderStartingpage()
+
     }
 }
