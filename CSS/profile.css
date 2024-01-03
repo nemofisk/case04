@@ -112,7 +112,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid rgba(103, 101, 159, 0.35);
     height: 74px;
 }
 
@@ -120,7 +120,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid rgba(103, 101, 159, 0.35);
     height: 74px;
 }
 
@@ -204,13 +204,13 @@
 #seperatorProfile {
     height: 52px;
     width: 1px;
-    background-color: gray;
+    background-color: rgba(103, 101, 159, 0.35);
 }
 
 #middle {
     height: 529px;
     width: 1px;
-    background-color: gray;
+    background: var(--Colors-Blue-Disable, rgba(103, 101, 159, 0.35));
     margin-top: 50px;
 }
 
@@ -594,16 +594,20 @@
     #findFriends::before {
         top: 12px;
     }
-    .settingsDivs2 > .middlediv{
+
+    .settingsDivs2>.middlediv {
         margin-left: 3px;
     }
-    #moreMargin{
+
+    #moreMargin {
         margin-left: 4px;
     }
-    #moreMargins{
+
+    #moreMargins {
         margin-left: 4px;
     }
-    #logout{
+
+    #logout {
         margin-left: 2px;
     }
 }
