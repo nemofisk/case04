@@ -1,5 +1,16 @@
 
 function renderSettings() {
+    document.querySelector("header").innerHTML =
+        `
+        <div id="hamburgerMenu">
+        <div></div>
+        <div></div>
+        <div></div>
+        </div>
+
+        ${displayCurtains("curtainsProfile", "curtainsLightProfile")}
+    `
+    document.getElementById("hamburgerMenu").addEventListener("click", DisplaySidebar);
     document.querySelector("main").innerHTML = `
     <div class="profile">
         <div id="profilePic"></div>
