@@ -18,7 +18,7 @@ function renderLuckyWheel() {
     </div>
     
     <h1 id="lucky">Lucky Wheel</h1>
-    <img id="pin" src="/images/pin.png">
+    <img id="pin" src="images/pin.png">
     
     <div class="wheel" id="wheel">
     <!-- Create 8 slices -->

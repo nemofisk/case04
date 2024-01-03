@@ -102,7 +102,7 @@ function popUpFunction(action, information) {
             div.innerHTML = `
         <div id="addFriendsContainer">
             <div id="searchField">
-                <img id="searchImage" src="../images/searchlala.png">
+                <img id="searchImage" src="images/search.png">
                 <input id="searchUsers" placeholder="Add new friends"></input> 
                   
             </div>
