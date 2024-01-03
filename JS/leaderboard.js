@@ -39,7 +39,7 @@ function renderLeaderBoard() {
     
     
 
-    initializeLeaderboard()
+    
     document.querySelector("#showFriendsLeaderboard").addEventListener("click", e => {
         document.getElementById("WorldLeaderboard").innerHTML = ``;
         document.getElementById("friendsLeaderboard").innerHTML = ``;
@@ -47,8 +47,7 @@ function renderLeaderBoard() {
 
     })
 }
-    initializeLeaderboard()
-    initializeFriendsLeaderboard(userID);
+initializeLeaderboard()
 }
 
 
@@ -64,6 +63,7 @@ async function fetchFriendsLeaderboard(userId) {
 }
 
 function displayFriendsLeaderboard(leaderboardData) {
+    
     const leaderboardFriends = document.getElementById("friendsLeaderboard");
     console.log(leaderboardData);
     let username = localStorage.getItem("username");
@@ -95,6 +95,7 @@ function displayFriendsLeaderboard(leaderboardData) {
         userElement.classList.add("LeaderBoard")
         userElement.innerHTML = `<div class="LeaderboardPicScore"> <p class="ranking">${i + 1}</p> <img class="CameraImgLeaderboard" src="images/${leaderboardData[i].profilePicture}" alt="Profile Picture"> <p class="leaderBoardUsername">${leaderboardData[i].username}</p></div> <p class="leaderboardScore">${leaderboardData[i].popcorn} <span>p</span></p>`;
         leaderboardFriends.appendChild(userElement);
+        console.log("ej");
     }
     if(window.innerWidth < 400){
 

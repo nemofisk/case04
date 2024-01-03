@@ -3,94 +3,44 @@
         "username": "w",
         "password": "",
         "level": 669,
-        "popcorn": 106010,
-        "friends": [],
+        "popcorn": 106302,
+        "friends": [
+            {
+                "name": "ww",
+                "profilePicture": "guts.jpg",
+                "popcorn": 106302
+            }
+        ],
         "friendRequests": [],
         "gameInvites": [],
         "xpGoal": 221764,
         "id": 1,
-        "clues": 17,
+        "clues": 16,
         "fiftyfifty": 11,
         "profile_picture": "portishead.jpeg",
         "lastSpun": "02",
         "resetTimer": 2
     },
     {
-        "username": "f",
+        "username": "ww",
         "password": "",
-        "level": 1,
-        "popcorn": 0,
-        "gameInvites": [],
-        "friends": [],
-        "friendRequests": [],
-        "xpGoal": 1000,
-        "clues": 0,
-        "resetTimer": 0,
-        "profile_picture": "Frame 621.png",
-        "lastSpun": 1,
-        "id": 2
-    },
-    {
-        "username": "fd",
-        "password": "",
-        "level": 1,
-        "popcorn": 10,
-        "gameInvites": [],
+        "level": 669,
+        "popcorn": 106302,
         "friends": [
             {
                 "name": "w",
                 "profilePicture": "portishead.jpeg",
-                "popcorn": 105960
+                "popcorn": 106302
             }
         ],
         "friendRequests": [],
-        "xpGoal": 1000,
-        "clues": 0,
-        "resetTimer": 0,
-        "profile_picture": "Frame 621.png",
-        "lastSpun": 1,
-        "id": 2
-    },
-    {
-        "username": "fr33",
-        "password": "",
-        "level": 1,
-        "popcorn": 2000,
         "gameInvites": [],
-        "friends": [
-            {
-                "name": "w",
-                "profilePicture": "portishead.jpeg",
-                "popcorn": 105960
-            }
-        ],
-        "friendRequests": [],
-        "xpGoal": 1000,
-        "clues": 0,
-        "resetTimer": 0,
-        "profile_picture": "Frame 621.png",
-        "lastSpun": 1,
-        "id": 2
-    },
-    {
-        "username": "f",
-        "password": "",
-        "level": 1,
-        "popcorn": 990,
-        "gameInvites": [],
-        "friends": [
-            {
-                "name": "w",
-                "profilePicture": "portishead.jpeg",
-                "popcorn": 105960
-            }
-        ],
-        "friendRequests": [],
-        "xpGoal": 1000,
-        "clues": 0,
-        "resetTimer": 0,
-        "profile_picture": "Frame 621.png",
-        "lastSpun": 1,
-        "id": 2
+        "xpGoal": 221764,
+        "id": 1,
+        "clues": 16,
+        "fiftyfifty": 11,
+        "profile_picture": "guts.jpg",
+        "lastSpun": "02",
+        "resetTimer": 2
     }
 ]
