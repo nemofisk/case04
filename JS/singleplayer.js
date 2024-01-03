@@ -33,10 +33,17 @@ function singlePlayer(event) {
         <img src="images/Frame 263.png" alt="Logo">
     </div>
 
+    <div id="categoryWrapper">
         <h1>Choose a category!</h1>
-        <div id="catergoryMenu"></div>
-        <div id="mixed">Mixed Categories</div>
+
+        <div id="categoryContainer">
+            <div id="catergoryMenu"></div>
+            <div id="mixed">Mixed Categories</div>
+        </div>
+        
         <div id="Continue">Continue</div>
+    </div>
+
     `
 
     document.querySelector("main").dataset.totalPoints = 0;
@@ -57,7 +64,7 @@ function singlePlayer(event) {
                 })
             }
             div.classList.toggle("selected");
-           
+
             document.querySelector("#Continue").style.backgroundColor = "#FFF8BA"
             document.querySelector("#Continue").style.color = "#323059"
         });

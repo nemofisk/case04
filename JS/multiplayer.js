@@ -34,35 +34,41 @@ function chooseCatagoryMultiplayer(event) {
         <img src="images/Frame 263.png" alt="Logo">
     </div>
     
-    <h1>Choose a category!</h1>
-    <div id="catergoryMenu"></div>
-    <button id="Mixed">Mixed Catagories</button>
-    <button id="Continue">Continue</button>
+    <div id="categoryWrapper">
+        <h1>Choose a category!</h1>
+
+        <div id="categoryContainer">
+            <div id="catergoryMenu"></div>
+            <div id="mixed">Mixed Categories</div>
+        </div>
+        
+        <div id="Continue">Continue</div>
+    </div>
         
 
     </div>`
     document.querySelector("footer").innerHTML = ``;
     let genresCategorty = document.querySelector("#catergoryMenu");
-    let ContinueButton = document.getElementById("Continue");
+    let ContinueButton = document.querySelector("#Continue");
     ContinueButton.disabled = true;
 
 
     for (let i = 0; i < genreArray.length; i++) {
         let div = document.createElement("div");
-        div.classList.add("SelectedCatagorys");
+        div.classList.add("genreClass");
         div.textContent = genreArray[i];
         genresCategorty.appendChild(div)
         div.addEventListener("click", chooseGenre)
     }
 
-    document.getElementById("Mixed").addEventListener("click", mixedCatagories);
+    document.querySelector("#mixed").addEventListener("click", mixedCatagories);
 
     let SelectedGarnres;
     function mixedCatagories(event) {
-        let ContinueButton = document.getElementById("Continue");
-        let MixedCatagoryButton = document.getElementById("Mixed");
+        let ContinueButton = document.querySelector("#Continue");
+        let MixedCatagoryButton = document.querySelector("#mixed");
         MixedCatagoryButton.classList.toggle("MixedChosen");
-        let disabledCatagorys = document.querySelectorAll(".SelectedCatagorys");
+        let disabledCatagorys = document.querySelectorAll(".genreClass");
 
         if (MixedCatagoryButton.classList.contains("MixedChosen")) {
             ContinueButton.style.backgroundColor = "#FFF8BA";

@@ -10,19 +10,51 @@ body {
 
 }
 
+#categoryContainer {
+    display: flex;
+    width: 394px;
+    align-items: center;
+    align-content: center;
+    gap: var(--Spacing-system-Spacing-20, 20px);
+    flex-wrap: wrap;
+}
+
+#categoryWrapper {
+    display: flex;
+    width: 393px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--Spacing-system-Spacing-52, 52px);
+}
+
 .genreClass {
     border: 1px solid #8184F8;
-    margin: 10px;
-    border-radius: 30px;
-    padding: 10px;
+    border-radius: 20px;
     text-align: center;
     color: white;
+    width: 118px;
+    height: 48px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--Colors-Text-primary, #FFF);
+    text-align: center;
+    font-family: Jost;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
 #catergoryMenu {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
+    gap: 20px;
     color: white;
 
 }
@@ -32,26 +64,47 @@ body {
 }
 
 #mixed {
-    border: 1px solid #8184F8;
-    margin: 10px;
-    border-radius: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    width: 394px;
+    height: 48px;
+    flex-shrink: 0;
+
+    border-radius: var(--Radius-Radius-md, 20px);
+    border: 1px solid var(--Colors-Button-Border, #8184F8);
+    color: var(--Colors-Text-primary, #FFF);
     text-align: center;
-    color: white;
-    width: 100%;
+    font-family: Jost;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     cursor: pointer;
 }
 
-h1 {
+#categoryWrapper>h1 {
     color: white;
+    margin: 0;
+
+    color: var(--Colors-Text-primary, #FFF);
+    font-family: Jost;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+
+    width: 390px;
 }
 
 #Continue {
     border: 1px solid #747474;
     color: #747474;
     padding: 10px;
-    border-radius: 30px;
+    border-radius: 20px;
     width: 50%;
     text-align: center;
     cursor: pointer;
@@ -256,4 +309,99 @@ h1 {
         margin-top: 0px;
     }
 
+    div.genreClass {
+        width: 113px;
+    }
+
+    div#categoryContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: var(--Spacing-system-Spacing-12, 12px);
+        width: 366px;
+    }
+
+    div#mixed {
+        width: 363px;
+        height: 45px;
+    }
+
+    div#categoryWrapper {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: var(--Spacing-system-Spacing-84, 84px);
+        width: 366px;
+    }
+
+    div#catergoryMenu {
+        gap: 15px var(--Spacing-system-Spacing-12, 12px);
+        color: white;
+    }
+
+    div#addedUsers {
+        display: grid;
+        margin-top: 44px;
+        gap: var(--Spacing-system-Spacing-20, 20px) 46px;
+        height: 240px;
+        width: 332px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    div.addedUserImage,
+    div.friendDivImage {
+        height: 50px;
+        width: 50px;
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        border-radius: 50%;
+    }
+
+    div.removeAddedUser {
+        top: -20px;
+        right: 0px;
+    }
+
+    div#categoryWrapper>h1 {
+
+        color: var(--Colors-Text-primary, #FFF);
+        font-family: Jost;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+
+        width: 250px;
+    }
+
+    div#inviteFriendsWrapper {
+        width: 332px;
+    }
+
+    div#inviteFriendsHeader {
+        color: #FFF;
+        font-family: Jost;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    div#contentWrapper.lobbyWrapper {
+        width: 323px;
+    }
+
+    div#lobbyMemberList {
+        width: 322px;
+    }
+
+    div#lobbyInfo {
+        width: 322px;
+    }
 }
