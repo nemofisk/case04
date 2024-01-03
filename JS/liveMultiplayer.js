@@ -18,18 +18,22 @@ async function joinGame(gameID) {
 
     allFooterLightCurtains.forEach(crtn => {
         crtn.style.height = "0vh"
+        crtn.style.zIndex = "2";
     });
 
     allFooterDarkCurtains.forEach(crtn => {
         crtn.style.height = "0vh"
+        crtn.style.zIndex = "2";
     });
 
     allLightCurtains.forEach(crtn => {
         crtn.style.height = "0vh"
+        crtn.style.zIndex = "2";
     });
 
     allDarkCurtains.forEach(crtn => {
         crtn.style.height = "0vh"
+        crtn.style.zIndex = "2";
     });
 
     document.querySelector("main").classList.add("mpMain");
@@ -860,7 +864,7 @@ async function currentStanding(question) {
 
             <div id="contentWrapper" class="currentStandingHalf">
             
-                <div id="getReadyDiv">GET READY IN <span id="countdown">200</span></div>
+                <div id="getReadyDiv">GET READY IN <span id="countdown">10</span></div>
         
                 <div id="topThree"></div>
         

@@ -217,5 +217,5 @@ async function progress() {
 
     let circularProgress = document.getElementById("progress");
 
-    circularProgress.style.background = `conic-gradient(#FFF8BA ${lvlProgress * 3.6}deg, #323059 0deg)`;
+    //circularProgress.style.background = `conic-gradient(#FFF8BA ${lvlProgress * 3.6}deg, #323059 0deg)`;
 }

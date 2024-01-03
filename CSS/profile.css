@@ -37,7 +37,7 @@
     object-fit: cover;
     height: 198px;
 }
-
+/*
 #levelBar {
     border: 2px solid #FF6868;
     border-radius: 20px;
@@ -61,7 +61,7 @@
 #showlevel {
     color: white;
 }
-
+*/
 #ProfilePageContainer {
     display: flex;
     justify-content: center;

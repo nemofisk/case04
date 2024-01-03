@@ -162,10 +162,12 @@ function SPprepareQuestion(correctMovie, otherMovies, genres, questionNumber, an
         const allDarkCurtains = document.querySelectorAll(".curtainsStartingpage");
         allLightCurtains.forEach(crtn => {
             crtn.style.height = "93vh"
+            crtn.style.zIndex = "1"
         });
 
         allDarkCurtains.forEach(crtn => {
             crtn.style.height = "91vh"
+            crtn.style.zIndex = "1"
         });
 
         const totelPoints = parseFloat(main.dataset.totalPoints).toFixed(1);
@@ -196,10 +198,12 @@ function SPprepareQuestion(correctMovie, otherMovies, genres, questionNumber, an
 
                     allLightCurtains.forEach(crtn => {
                         crtn.style.height = "0px"
+                        crtn.style.zIndex = "2"
                     });
 
                     allDarkCurtains.forEach(crtn => {
                         crtn.style.height = "0px"
+                        crtn.style.zIndex = "2"
                     });
 
                     startQuestion(correctMovie, otherMovies, genres, questionNumber, type);
