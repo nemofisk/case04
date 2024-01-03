@@ -20,20 +20,5 @@
         "profile_picture": "portishead.jpeg",
         "lastSpun": "03",
         "resetTimer": 2
-    },
-    {
-        "username": "calle",
-        "password": "calle",
-        "level": 1,
-        "popcorn": 25,
-        "gameInvites": [],
-        "friends": [],
-        "friendRequests": [],
-        "xpGoal": 1000,
-        "clues": 0,
-        "fiftyfifty": 0,
-        "profile_picture": "Frame 621.png",
-        "lastSpun": 2,
-        "id": 2
     }
 ]

@@ -615,6 +615,13 @@ span#ttlPoints {
     line-height: normal;
 }
 
+.lobbyWrapper button.leaveButtonLobby {
+    border-radius: var(--Radius-Radius-lg, 28px);
+    border: 1px solid var(--Colors-Button-Border-2, #FFF8BA);
+    background-color: rgba(0, 0, 0, 0);
+    color: #FFF8BA;
+}
+
 .restListDiv {
     display: flex;
     width: 419px;
@@ -717,7 +724,7 @@ span#ttlPoints {
     font-weight: 400;
     line-height: normal;
 
-    width: 560px;
+    width: 610px;
     height: 58px;
 }
 
@@ -1045,6 +1052,7 @@ iframe {
     border-radius: var(--Radius-Radius-lg, 28px);
     background: var(--Colors-Button-Background, #FFF8BA);
     border: none;
+    color: var(--Colors-Button-Text, #323059);
 
     text-align: center;
     font-family: Jost;

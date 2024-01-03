@@ -211,6 +211,7 @@ async function renderLobby(fetchIntervalID) {
     } else {
         const button = main.querySelector("#lobbyButton")
         const lobbyInfo = main.querySelector("#lobbyInfo");
+        button.classList.add("leaveButtonLobby");
         lobbyInfo.textContent = "Wait for the leader to start the game"
         button.textContent = "Leave Game";
 

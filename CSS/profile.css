@@ -265,10 +265,10 @@
 #profilePageUsername {
     margin: 0;
     font-family: Jost;
-font-size: 30px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 #addFriendsContainer {
@@ -590,18 +590,6 @@ line-height: normal;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-    }
-
-    #lobbyButton {
-        border: none;
-        color: var(--Colors-Button-Text, #323059);
-        text-align: center;
-        font-family: Jost;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-
     }
 
     #findFriends::before {
