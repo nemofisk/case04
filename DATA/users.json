@@ -3,7 +3,7 @@
         "username": "w",
         "password": "",
         "level": 669,
-        "popcorn": 106302,
+        "popcorn": 106312,
         "friends": [
             {
                 "name": "ww",
@@ -18,7 +18,7 @@
         "clues": 15,
         "fiftyfifty": 11,
         "profile_picture": "portishead.jpeg",
-        "lastSpun": "02",
+        "lastSpun": "03",
         "resetTimer": 2
     },
     {
@@ -42,5 +42,35 @@
         "profile_picture": "guts.jpg",
         "lastSpun": "02",
         "resetTimer": 2
+    },
+    {
+        "username": "Bich",
+        "password": "Bich",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 1000,
+        "clues": 0,
+        "resetTimer": 1,
+        "profile_picture": "Frame 621.png",
+        "lastSpun": "03",
+        "id": 2
+    },
+    {
+        "username": "ssss",
+        "password": "ssss",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 1000,
+        "clues": 0,
+        "resetTimer": 0,
+        "profile_picture": "Frame 621.png",
+        "lastSpun": 2,
+        "id": 3
     }
 ]

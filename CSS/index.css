@@ -149,3 +149,11 @@ input::placeholder {
     opacity: 1;
     color: white;
 }
+
+.crownImage {
+    margin-top: 15px;
+}
+
+.whatYouGot {
+    font-size: 20px;
+}

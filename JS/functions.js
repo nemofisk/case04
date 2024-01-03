@@ -6,7 +6,7 @@ function popUpFunction(action, information) {
     let message;
     let div = document.createElement("div");
     if (action === "gameInvites") {
-        
+
 
         console.log("hje");
         div.setAttribute("id", "invitationPopUp")
@@ -21,7 +21,7 @@ function popUpFunction(action, information) {
         </div>
         `;
         let overlayDiv = document.createElement("div");
-            overlayDiv.classList.add("Overlay");
+        overlayDiv.classList.add("Overlay");
         div.classList.add("friendRequestPopUp");
         document.querySelector("main").appendChild(overlayDiv)
         document.querySelector("main").appendChild(div)
@@ -33,7 +33,7 @@ function popUpFunction(action, information) {
         });
         document.querySelector("#decline").addEventListener("click", declineInvite);
 
-      
+
 
         clearInterval()
         //document.querySelector(".friendRequestPopUp").remove()
@@ -58,10 +58,10 @@ function popUpFunction(action, information) {
             console.log(element);
             element.target.parentElement.remove();
         })
-        if(information !== "Nothing"){
+        if (information !== "Nothing") {
             let img = document.createElement("img");
             img.classList.add("crownImage")
-            img.src= "images/crownWheel.png"
+            img.src = "images/crownWheel.png"
             document.querySelector(".wheelClass").appendChild(img)
         }
     }
@@ -73,8 +73,8 @@ function popUpFunction(action, information) {
         `
     }
     if (action === "addFriends") {
-        
-        
+
+
 
         fetch("PHP/api.php", {
             method: "POST",
@@ -83,7 +83,7 @@ function popUpFunction(action, information) {
         }).then(r => r.json()).then(resource => {
             let usersArray = resource.message;
             usersArray.forEach(user => {
-                if(user.username === window.localStorage.getItem("username")){
+                if (user.username === window.localStorage.getItem("username")) {
                     //console.log(user.friends);
                 }
             });
@@ -97,13 +97,13 @@ function popUpFunction(action, information) {
             <div id="userDisplay"></div>
         </div>
         `
-        let overlayDiv = document.createElement("div");
+            let overlayDiv = document.createElement("div");
             overlayDiv.classList.add("Overlay");
             main.appendChild(overlayDiv)
             main.appendChild(div)
-        
-        
-            
+
+
+
             document.querySelector("#searchUsers").addEventListener("keydown", event => {
                 let searchField = document.querySelector("#searchUsers").value;
                 let matchingUsers = usersArray.filter(user => user.username.includes(searchField));
@@ -112,13 +112,13 @@ function popUpFunction(action, information) {
                 userDisplayDiv.innerHTML = "";
 
                 matchingUsers.forEach(matchingUser => {
-                        if (!matchingUser.friends.some(friend => friend.name.toLowerCase() === window.localStorage.getItem("username").toLowerCase())){
-                            
-                            if(matchingUser.username !== window.localStorage.getItem("username")){
+                    if (!matchingUser.friends.some(friend => friend.name.toLowerCase() === window.localStorage.getItem("username").toLowerCase())) {
 
-                                let userDiv = document.createElement("div");
-                                userDiv.setAttribute("id", "userDiv")
-                                userDiv.innerHTML = `
+                        if (matchingUser.username !== window.localStorage.getItem("username")) {
+
+                            let userDiv = document.createElement("div");
+                            userDiv.setAttribute("id", "userDiv")
+                            userDiv.innerHTML = `
                                         <div class="friendDivLeft">
                                             <div class="friendDivImages" style="background-image: url('images/${matchingUser.profile_picture}')"></div>
                                             <div class="friendDivName">${matchingUser.username}</div>
@@ -127,45 +127,45 @@ function popUpFunction(action, information) {
                                             <div class="sendRequestButton">Add +</div>
                                         </div>
                                         `
-                                userDisplayDiv.appendChild(userDiv);
-                                if (matchingUser.friendRequests.includes(window.localStorage.getItem("username"))) {
-                                
-                                    document.querySelector(".sendRequestButton").style.backgroundColor = "rgba(103, 101, 159, 0.35)"
-                                    event.target.style.pointerEvents = "none";
-                                }
-                            
-            
-                                userDiv.querySelector(".sendRequestButton").addEventListener("click", event => {
-                                    event.target.style.backgroundColor = "rgba(103, 101, 159, 0.35)"
-                                    event.target.style.pointerEvents = "none";
-            
-            
-                                    searchUsers(matchingUser.username)
-                                });
-                            }else{
-                                console.log("already a friends");
+                            userDisplayDiv.appendChild(userDiv);
+                            if (matchingUser.friendRequests.includes(window.localStorage.getItem("username"))) {
+
+                                document.querySelector(".sendRequestButton").style.backgroundColor = "rgba(103, 101, 159, 0.35)"
+                                event.target.style.pointerEvents = "none";
                             }
-                            }
+
+
+                            userDiv.querySelector(".sendRequestButton").addEventListener("click", event => {
+                                event.target.style.backgroundColor = "rgba(103, 101, 159, 0.35)"
+                                event.target.style.pointerEvents = "none";
+
+
+                                searchUsers(matchingUser.username)
+                            });
+                        } else {
+                            console.log("already a friends");
+                        }
+                    }
                 });
 
             })
             document.querySelector("main").addEventListener("click", e => {
                 console.log(e.target);
-                if(e.target.id !== "userDisplay"){
-                    if(e.target.id !== "searchField"){
-                        if(e.target.id !== "searchUsers"){
-                            if(e.target.id !== "userDiv"){
+                if (e.target.id !== "userDisplay") {
+                    if (e.target.id !== "searchField") {
+                        if (e.target.id !== "searchUsers") {
+                            if (e.target.id !== "userDiv") {
 
-                                if(e.target.classList[0] !== "sendRequestButton"){
-                                    if(document.querySelector("#addFriendsContainer")){
-                                        
+                                if (e.target.classList[0] !== "sendRequestButton") {
+                                    if (document.querySelector("#addFriendsContainer")) {
+
                                         document.querySelector("#addFriendsContainer").remove()
                                         document.querySelector(".Overlay").remove()
                                     }
-    
+
                                 }
                             }
-                            
+
                         }
                     }
 
@@ -239,7 +239,7 @@ function nothing() {
 }
 
 function displayCurtains(ClassName1, ClassName2) {
-    if(window.innerWidth < 400){
+    if (window.innerWidth < 400) {
         let mobileCurtains = `
         <div class="${ClassName1}"></div>
         <div class="${ClassName2}"></div>
@@ -275,10 +275,7 @@ function displayCurtains(ClassName1, ClassName2) {
     <div class="${ClassName1}"></div>
     <div class="${ClassName2}"></div>
     <div class="${ClassName1}"></div>
-    <div class="${ClassName2}"></div>
-    <div class="${ClassName1}"></div>
-    <div class="${ClassName2}"></div>
-    <div class="${ClassName1}"></div>
+    
    
     `
     return curtains;
