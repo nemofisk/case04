@@ -45,8 +45,8 @@ function signUppage(event) {
 function registerFunction(event) {
     let username = document.getElementById("registerUsername").value;
     let password = document.getElementById("registerPassword").value;
-    
-    
+
+
 
     fetch("PHP/api.php", {
         method: "POST",
@@ -63,7 +63,9 @@ function registerFunction(event) {
 
             let popup = document.createElement("div");
             popup.classList.add("registerLoginPopup");
-            popup.innerHTML = `<p id="exitPopup">X</p> <h1 id="h1RegisterFeedback">Registered</h1> ${l.message}`;
+            popup.innerHTML = `<div id="exitPopCon"><div id="exitPopup">X</div></div> <h1 id="h1RegisterFeedback">Registered</h1> 
+            <div id="regText">You have now created an account.<br>You will be redirected to the login page</div>
+            `;
             main.appendChild(popup);
             document.querySelector("#exitPopup").addEventListener("click", e => {
                 document.querySelector(".Overlay").remove();

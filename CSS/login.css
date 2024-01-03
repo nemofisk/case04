@@ -130,17 +130,29 @@ span {
     flex-direction: column;
 }
 
-#exitPopup {
+#exitPopCon {
     position: relative;
-    bottom: -16px;
-    left: 172px;
+    height: 0px;
+    width: 0px;
+}
+
+#exitPopup {
+    position: absolute;
+    left: 169px;
+    top: -47px;
+    margin: 0px;
 }
 
 
-#registerFeedback {
-    color: #FF6868;
-    position: absolute;
-    bottom: 205px;
+#h1RegisterFeedback {
+    color: #FFF;
+    text-align: center;
+    font-family: Jost;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0px;
 }
 
 #loginFeedback {
@@ -148,11 +160,6 @@ span {
     position: absolute;
     bottom: 218px;
     left: 554px;
-}
-
-#h1RegisterFeedback {
-    margin-bottom: 30px;
-    margin-top: 50px;
 }
 
 .con {
