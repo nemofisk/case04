@@ -1055,6 +1055,13 @@ iframe {
     ;
 }
 
+#endScreenHead{
+    font-family: Jost;
+font-size: 30px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
 .shake {
     animation: shake 0.200s;
 }
