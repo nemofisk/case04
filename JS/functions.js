@@ -75,6 +75,14 @@ function popUpFunction(action, information) {
             console.log(element);
             element.target.parentElement.remove();
         })
+        let p = document.createElement("p");
+        p.setAttribute("id", "noMoreSpin")
+      p.textContent = "You get a new chance tomorrow to spin the lucky wheel"
+      p.style.color = "#FF6868"
+      document.querySelector("main").appendChild(p)
+        document.querySelector("#spinWheel").disabled = "true";
+        document.querySelector("#spinWheel").style.backgroundColor = "#171717"
+        document.querySelector("#spinWheel").style.color =  "rgba(255, 255, 255, 0.40)"
 
     }
 
