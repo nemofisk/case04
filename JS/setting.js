@@ -22,35 +22,35 @@ function renderSettings() {
         <div id="leftSideBox">
             <div class="settingsDivs">
             <div class="middlediv">
-                <img src="../images/person.png">
+                <img src="images/person.png">
                 <p id="account">Account</p>
             </div>
                 <img class="chevron" src="images/chevron_right.png"></img>
             </div>
             <div class="settingsDivs">
             <div class="middlediv">
-                <img src="../images/notifications (1).png">
+                <img src="images/notifications (1).png">
                 <p>Notifications</p>
             </div>
                 <img class="chevron" src="images/chevron_right.png"></img>
             </div>
             <div class="settingsDivs2">
             <div class="middlediv">
-                <img src="../images/help.png">
+                <img src="images/help.png">
                 <p id="moreMargin">Help</p>
             </div>
                 <img class="chevron" src="images/chevron_right.png"></img>
             </div>
             <div class="settingsDivs">
             <div class="middlediv">
-            <img src="../images/info.png">
+            <img src="images/info.png">
             <p>About</p>
             </div>
             <img class="chevron" src="images/chevron_right.png"></img>
             </div>
             <div class="settingsDivs2">
             <div class="middlediv">
-                <img src="../images/language.png">
+                <img src="images/language.png">
                 <p id="moreMargins">Language</p>
                 </div>
                 <img class="chevron" src="images/chevron_right.png"></img>
@@ -62,14 +62,14 @@ function renderSettings() {
         <div id="rightSideBox">
             <div class="settingsDivs">
             <div class="middlediv">
-                <img src="../images/delete.png">
+                <img src="images/delete.png">
                 <p id="deleteAccount">Delete Account</p>
             </div>
                 <img class="chevron" src="images/chevron_right.png"></img>
             </div>
             <div class="settingsDivs3">
             <div class="middlediv">
-                <img src="../images/logout.png">
+                <img src="images/logout.png">
                 <p id="logout">Logout</p>
             </div>
                 <img class="chevron" src="images/chevron_right.png"></img>
