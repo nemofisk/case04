@@ -41,7 +41,7 @@ main>img {
     font-family: Jost;
     font-size: 20px;
     width: 360px;
-height: 60px;
+    height: 60px;
 }
 
 #Singelplayer {
@@ -51,7 +51,7 @@ height: 60px;
     font-family: Jost;
     font-size: 20px;
     width: 360px;
-height: 60px;
+    height: 60px;
 }
 
 #hamburgerMenu {
@@ -175,11 +175,11 @@ height: 60px;
 
 #SidebarMenuContainer {
     text-align: center;
-font-family: Jost;
-font-size: 20px;
-font-style: normal;
-font-weight: 300;
-line-height: normal;
+    font-family: Jost;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -203,7 +203,7 @@ line-height: normal;
     line-height: normal;
     position: relative;
 
-  bottom: 13px;
+    bottom: 19px;
 }
 
 #renderSettings>p {
@@ -252,6 +252,7 @@ line-height: normal;
 #profileImage {
     border-radius: 50%;
 }
+
 /*
 #levelBar {
     border: 2px solid #FF6868;

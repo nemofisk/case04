@@ -44,7 +44,7 @@ function popUpFunction(action, information) {
             let message = "You get a new chance tomorrow to spin the lucky wheel"
 
             div.innerHTML = `
-        <img src="../images/close.png" id="removePopUp">
+        <img src="images/close.png" id="removePopUp">
         <div class="whatYouGot">
             <h1>No Win</h1>
             <p>${message}</p>
@@ -54,9 +54,9 @@ function popUpFunction(action, information) {
     `
         } else {
             div.innerHTML = `
-        <img src="../images/close.png" id="removePopUp">
+        <img src="images/close.png" id="removePopUp">
         <div class="whatYouGot">
-            <h1>Congratulations!</h1>
+            <h1>Congratulations</h1>
             <p>You got ${information}</p>
             <img src="images/crownWheel.png">
         </div>

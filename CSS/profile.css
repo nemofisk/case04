@@ -144,8 +144,11 @@
 
 #CameraImg {
     object-fit: cover;
+    position: absolute;
     width: 20px;
     height: 20px;
+    top: 6px;
+    left: 8px;
 }
 
 

@@ -47,7 +47,7 @@ function chooseCatagoryMultiplayer(event) {
     </div>
     
     <div id="categoryWrapper">
-        <h1>Choose a category!</h1>
+        <h1>Choose Category</h1>
 
         <div id="categoryContainer">
             <div id="catergoryMenu"></div>

@@ -3,7 +3,7 @@
         "username": "w",
         "password": "",
         "level": 669,
-        "popcorn": 106337,
+        "popcorn": 106942,
         "friends": [
             {
                 "name": "ww",
@@ -20,5 +20,20 @@
         "profile_picture": "portishead.jpeg",
         "lastSpun": "03",
         "resetTimer": 2
+    },
+    {
+        "username": "dasdasd",
+        "password": "ss",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 1000,
+        "clues": 0,
+        "fiftyfifty": 0,
+        "profile_picture": "Frame 621.png",
+        "lastSpun": 3,
+        "id": 2
     }
 ]
