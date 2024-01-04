@@ -144,8 +144,11 @@
 
 #CameraImg {
     object-fit: cover;
+    position: absolute;
     width: 20px;
     height: 20px;
+    top: 6px;
+    left: 8px;
 }
 
 
@@ -271,11 +274,23 @@
     line-height: normal;
 }
 
+.Overlay.searchFriends {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #0d0d0d8f;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
 #addFriendsContainer {
     position: absolute;
-    left: 338px;
-    top: 137px;
-    margin: auto;
+    align-self: center;
+    justify-self: center;
 }
 
 #userDisplay {
@@ -351,8 +366,11 @@
     border-radius: 20px;
     background: var(--Colors-Menu-Background, #2B2A4C);
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     position: absolute;
+    gap: 15px;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -363,8 +381,22 @@
 
 .friendRequestPopUp span {
     color: #FF6868;
-    ;
+    width: 312px;
 }
+
+.friendRequestPopUp>h1 {
+    color: #FFF;
+
+    text-align: center;
+    font-family: Jost;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 0px;
+}
+
+
 
 #decline {
     display: flex;

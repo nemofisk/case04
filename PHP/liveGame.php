@@ -48,6 +48,7 @@ function liveGame($users, $games, $recieved_data){
             }
             if(time() > $member["latestFetch"] + 10){
                 array_splice($games[$currentGameIndex]["members"], $indexxx, 1);
+                
             }
             putInMultiplayerJSON($games);
         }
@@ -55,16 +56,19 @@ function liveGame($users, $games, $recieved_data){
         if($doneQuestion == count($currentGame["members"]) and !$games[$currentGameIndex]["nextQuestion"]){
             $games[$currentGameIndex]["nextQuestion"] = true;
             putInMultiplayerJSON($games);
+                
         }
 
         if($endedQuestion == count($currentGame["members"]) and $games[$currentGameIndex]["nextQuestion"]){
             $games[$currentGameIndex]["nextQuestion"] = false;
             putInMultiplayerJSON($games);
+                
         }
 
         if($answeredQuestion == count($currentGame["members"]) and !$games[$currentGameIndex]["endEarly"]){
             $games[$currentGameIndex]["endEarly"] = true;
             putInMultiplayerJSON($games);
+                
         }
 
         $dQCount = count($currentGame["doneQuestion"]);
@@ -78,6 +82,7 @@ function liveGame($users, $games, $recieved_data){
             putInMultiplayerJSON($games);
         }
 
+        putInMultiplayerJSON($games);
         sendJSON($currentGame, 200);     
     }
 

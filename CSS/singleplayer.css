@@ -59,6 +59,16 @@ body {
 
 }
 
+#pointsThisRound {
+    width: 400px;
+    text-align: center;
+}
+
+#pointsThisRoundSP {
+    width: 400px;
+    text-align: center;
+}
+
 #catergoryMenu div {
     cursor: pointer;
 }

@@ -33,8 +33,8 @@ function displayFriendRequests() {
                 <p><span>${resource.friendRequests[i]}</span> want to be your friend. Do you accept?</p>
     
                 <div id="buttonFlex">
-                    <button id="decline">Decline!</button>
-                    <button id="accept">Accept!</button>
+                    <button id="decline">Decline</button>
+                    <button id="accept">Accept</button>
                 </div>
                 `;
                 div.setAttribute("id", resource.friendRequests[i]);

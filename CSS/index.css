@@ -1,7 +1,7 @@
-
-*{
+* {
     font-family: jost;
 }
+
 body {
     display: flex;
     justify-content: center;
@@ -37,9 +37,9 @@ main {
     top: 151px;
     position: absolute;
     font-size: 40px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 
 }
 
@@ -95,7 +95,7 @@ body {
             orange 225deg 270deg,
             pink 270deg 315deg,
             brown 315deg 360deg);
-    background-image: url("../images/Lucky\ wheelidkevenknow.png");
+    background-image: url("../images/luckywheel123.png");
     background-size: cover;
     top: 211px;
 }
@@ -115,10 +115,10 @@ button {
     padding: 10px;
     cursor: pointer;
     font-size: 20px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-font-family: jost;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-family: jost;
 
 }
 
@@ -144,7 +144,7 @@ font-family: jost;
     width: 35px;
     position: absolute;
     top: 253px;
-  left: 571.5px;
+    left: 571.5px;
     z-index: 1;
 }
 
@@ -170,10 +170,11 @@ input::placeholder {
 .whatYouGot {
     font-size: 20px;
 }
-.whatYouGot h1{
+
+.whatYouGot h1 {
     font-family: Jost;
-font-size: 30px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }

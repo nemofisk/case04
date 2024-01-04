@@ -42,7 +42,7 @@ function singlePlayer(event) {
     </div>
 
     <div id="categoryWrapper">
-        <h1>Choose a category!</h1>
+        <h1>Choose Category</h1>
 
         <div id="categoryContainer">
             <div id="catergoryMenu"></div>
@@ -338,7 +338,7 @@ async function textQuestion(correctMovie, otherMovies, type, genres, questionNum
 
                 </div>
 
-                <div id="timer" data-current-time="100">
+                <div id="timer" data-current-time="20">
 
                     <div id="timerProgress"></div>
                     
@@ -482,7 +482,7 @@ async function posterQuestion(correctMovie, otherMovies, type, genres, questionN
 
                     </div>
 
-                    <div id="timer" data-current-time="200">
+                    <div id="timer" data-current-time="20">
 
                         <div id="timerProgress"></div>
                         
@@ -568,7 +568,7 @@ async function trailerQuestion(correctMovie, otherMovies, type, genres, question
 
                 </div>
 
-                <div id="timer" data-current-time="200">
+                <div id="timer" data-current-time="20">
 
                     <div id="timerProgress"></div>
                     
@@ -751,10 +751,12 @@ function SPendQuiz() {
     const allDarkCurtains = document.querySelectorAll(".curtainsStartingpage");
     allLightCurtains.forEach(crtn => {
         crtn.style.height = "93vh"
+        crtn.style.zIndex = "1"
     });
 
     allDarkCurtains.forEach(crtn => {
         crtn.style.height = "91vh"
+        crtn.style.zIndex = "1"
     });
 
     main.querySelector("#playAgainSP").addEventListener("click", ev => {

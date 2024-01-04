@@ -16,8 +16,8 @@ function popUpFunction(action, information) {
         <p><span>${information.message[0].hostName}</span> has invited you to a game. Do you want to join?</p>
 
         <div id="buttonFlex">
-            <button id="decline">Decline!</button>
-            <button id="accept">Accept!</button>
+            <button id="decline">Decline</button>
+            <button id="accept">Accept</button>
         </div>
         `;
         let overlayDiv = document.createElement("div");
@@ -44,7 +44,7 @@ function popUpFunction(action, information) {
             let message = "You get a new chance tomorrow to spin the lucky wheel"
 
             div.innerHTML = `
-        <img src="../images/close.png" id="removePopUp">
+        <img src="images/close.png" id="removePopUp">
         <div class="whatYouGot">
             <h1>No Win</h1>
             <p>${message}</p>
@@ -54,9 +54,9 @@ function popUpFunction(action, information) {
     `
         } else {
             div.innerHTML = `
-        <img src="../images/close.png" id="removePopUp">
+        <img src="images/close.png" id="removePopUp">
         <div class="whatYouGot">
-            <h1>Congratulations!</h1>
+            <h1>Congratulations</h1>
             <p>You got ${information}</p>
             <img src="images/crownWheel.png">
         </div>
@@ -107,8 +107,12 @@ function popUpFunction(action, information) {
                     //console.log(user.friends);
                 }
             });
-            div.innerHTML = `
-        <div id="addFriendsContainer">
+
+            let overlayDiv = document.createElement("div");
+            overlayDiv.classList.add("Overlay");
+            overlayDiv.classList.add("searchFriends")
+            overlayDiv.innerHTML = `
+            <div id="addFriendsContainer">
             <div id="searchField">
                 <img id="searchImage" src="images/search.png">
                 <input id="searchUsers" placeholder="Add new friends"></input> 
@@ -116,11 +120,9 @@ function popUpFunction(action, information) {
             </div>
             <div id="userDisplay"></div>
         </div>
-        `
-            let overlayDiv = document.createElement("div");
-            overlayDiv.classList.add("Overlay");
+            `
+
             main.appendChild(overlayDiv)
-            main.appendChild(div)
 
 
 
@@ -179,7 +181,6 @@ function popUpFunction(action, information) {
                                 if (e.target.classList[0] !== "sendRequestButton") {
                                     if (document.querySelector("#addFriendsContainer")) {
 
-                                        document.querySelector("#addFriendsContainer").remove()
                                         document.querySelector(".Overlay").remove()
                                     }
 
@@ -193,10 +194,6 @@ function popUpFunction(action, information) {
             })
 
         });
-        document.getElementById("sendRequest").addEventListener("click", () => {
-            popUpFunction("addFriends", "lala")
-
-        })
 
     }
 
