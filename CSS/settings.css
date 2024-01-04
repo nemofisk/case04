@@ -64,6 +64,7 @@
     width: 292px;
     justify-content: space-between;
     cursor: pointer;
+    margin-bottom: 4px;
 }
 
 .settingsDivs2>.middlediv {
@@ -78,6 +79,7 @@
 }
 
 .settingsDivs2>div>img {
+    margin-left: 3px;
     width: 17px;
     height: 17px;
 }
