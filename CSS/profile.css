@@ -129,7 +129,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: black;
+
     object-fit: cover;
 
 }
@@ -441,6 +441,143 @@
 
 
 @media (max-width: 390px) {
+    #container {
+        width: 380px;
+    }
+
+    h1.LoginHeader {
+        width: 300px;
+        color: var(--Colors-Text-primary, #FFF);
+        font-family: Jost;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+
+    h1#registerHeader.LoginHeader {
+        width: 300px;
+        color: var(--Colors-Text-primary, #FFF);
+        font-family: Jost;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+
+    div#wheel {
+        width: 370px;
+        height: 370px;
+        border-radius: 50%;
+        position: absolute;
+        background: conic-gradient(red 0deg 45deg, yellow 45deg 90deg, green 90deg 135deg, blue 135deg 180deg, purple 180deg 225deg, orange 225deg 270deg, pink 270deg 315deg, brown 315deg 360deg);
+        background-image: conic-gradient(red 0deg, red 45deg, yellow 45deg, yellow 90deg, green 90deg, green 135deg, blue 135deg, blue 180deg, purple 180deg, purple 225deg, orange 225deg, orange 270deg, pink 270deg, pink 315deg, brown 315deg, brown 360deg);
+        background-size: auto;
+        background-image: url("../images/luckywheel123.png");
+        background-size: cover;
+        top: 259px;
+    }
+
+    button#spinWheel {
+        display: flex;
+        width: 181px;
+        height: 50px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: var(--radius-radius-lg, 28px);
+        border: 1px solid var(--colors-white-disable, rgba(255, 255, 255, 0.40));
+        color: rgba(255, 255, 255, 0.40);
+        background-color: #171717;
+        margin: 0;
+        position: absolute;
+        top: 687px;
+    }
+
+    img#pin {
+        width: 35px;
+        position: absolute;
+        top: 270px;
+        left: 168.5px;
+        z-index: 1;
+    }
+
+    h1#lucky {
+        color: #FFF;
+        text-align: center;
+        font-family: Jost;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    p#noMoreSpin {
+        color: var(--Colors-Accent-Color-1, #FF6868);
+        text-align: center;
+        font-family: Jost;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        position: absolute;
+        top: 620px;
+    }
+
+    div#pointsThisRoundSP {
+        width: 380px;
+        color: var(--Colors-Text-primary, #FFF);
+        font-family: Jost;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    }
+
+    div#totalPointsSP {
+        color: var(--Colors-Text-primary, #FFF);
+        font-family: Jost;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    }
+
+    span#ttlPoints {
+        color: var(--Colors-Accent-Color-1, #FF6868);
+        text-align: center;
+        font-family: Jost;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    div#getReadyDivSP {
+        color: #FFF;
+        text-align: center;
+        font-family: Jost;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    div#getReadyDivSP>span#countdownSP {
+        color: var(--Colors-Accent-Color-1, #FF6868);
+        text-align: center;
+        font-family: Jost;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    div#currentStandEndSP {
+        width: 370px;
+    }
+
     #leftSide {
         height: auto;
     }
