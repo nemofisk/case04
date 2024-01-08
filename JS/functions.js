@@ -41,7 +41,7 @@ function popUpFunction(action, information) {
 
     if (action === "wheel") {
         if (information === "Nothing") {
-            let message = "You get a new chance tomorrow to spin the lucky wheel"
+            let message = "Come back tomorrow to spin the wheel"
 
             div.innerHTML = `
         <img src="images/close.png" id="removePopUp">
@@ -77,12 +77,12 @@ function popUpFunction(action, information) {
         })
         let p = document.createElement("p");
         p.setAttribute("id", "noMoreSpin")
-      p.textContent = "You get a new chance tomorrow to spin the lucky wheel"
-      p.style.color = "#FF6868"
-      document.querySelector("main").appendChild(p)
+        p.textContent = "Come back tomorrow to spin the wheel"
+        p.style.color = "#FF6868"
+        document.querySelector("main").appendChild(p)
         document.querySelector("#spinWheel").disabled = "true";
         document.querySelector("#spinWheel").style.backgroundColor = "#171717"
-        document.querySelector("#spinWheel").style.color =  "rgba(255, 255, 255, 0.40)"
+        document.querySelector("#spinWheel").style.color = "rgba(255, 255, 255, 0.40)"
 
     }
 
