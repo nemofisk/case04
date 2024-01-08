@@ -139,4 +139,7 @@
         border: 1px solid #333247;
         margin: 20px;
     }
+    .settingsDivs2 > div > img{
+        margin-left: 0px;
+    }
 }

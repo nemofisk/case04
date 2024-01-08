@@ -139,7 +139,6 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: black;
 }
 
 #CameraImg {
@@ -643,4 +642,8 @@
     #logout {
         margin-left: 2px;
     }
+    .pElementShit{
+        font-size: 20px;
+    }
+    
 }
