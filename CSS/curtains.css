@@ -140,4 +140,36 @@ footer {
         cursor: pointer;
     }
 
+    h1#settingsHeader {
+        color: #FFF;
+        text-align: center;
+        font-family: Jost;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        position: relative;
+        top: -40px;
+    }
+
+    div.middlediv>p {
+        color: #FFF;
+        text-align: center;
+        font-family: Jost;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    div#leftSideBox {
+        gap: 20px;
+    }
+
+    div#rightSideBox {
+        gap: 20px;
+    }
+
+
+
 }
