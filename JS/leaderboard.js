@@ -88,7 +88,7 @@ function displayFriendsLeaderboard(leaderboardData) {
         if (user.username === username) {
             let div = document.createElement("div")
             div.classList.add("MyProfile");
-            div.innerHTML = `<div class="LeaderboardPicScore"> <p class="rank">${counter}</p> <img class="CameraImgLeaderboard" src="images/${user.profilePicture}" alt="Profile Picture"> <p id="USERF"> ${user.username}</p> </div>  <p class="leaderboardS">${user.popcorn} <span class="span">p</span></p>`;
+            div.innerHTML = `<div class="LeaderboardPicScore"> <p class="rank">${counter}.</p> <img class="CameraImgLeaderboard" src="images/${user.profilePicture}" alt="Profile Picture"> <p id="USERF"> ${user.username}</p> </div>  <p class="leaderboardS">${user.popcorn} <span class="span">p</span></p>`;
 
             if (window.innerWidth > 400) {
                 let h1 = document.createElement("h1");
@@ -106,7 +106,7 @@ function displayFriendsLeaderboard(leaderboardData) {
     for (let i = 0; i < leaderboardData.length && i < 25; i++) {
         const userElement = document.createElement("div");
         userElement.classList.add("LeaderBoard")
-        userElement.innerHTML = `<div class="LeaderboardPicScore"> <p class="ranking">${i + 1}</p> <img class="CameraImgLeaderboard" src="images/${leaderboardData[i].profilePicture}" alt="Profile Picture"> <p class="leaderBoardUsername">${leaderboardData[i].username}</p></div> <p class="leaderboardScore">${leaderboardData[i].popcorn} <span>p</span></p>`;
+        userElement.innerHTML = `<div class="LeaderboardPicScore"> <p class="ranking">${i + 1}.</p> <img class="CameraImgLeaderboard" src="images/${leaderboardData[i].profilePicture}" alt="Profile Picture"> <p class="leaderBoardUsername">${leaderboardData[i].username}</p></div> <p class="leaderboardScore">${leaderboardData[i].popcorn} <span>p</span></p>`;
         leaderboardFriends.appendChild(userElement);
         console.log("ej");
     }
@@ -146,7 +146,7 @@ function displayLeaderboard(leaderboardData) {
         if (user.username === username) {
             let div = document.createElement("div")
             div.classList.add("MyProfile");
-            div.innerHTML = `<div class="LeaderboardPicScore"> <p class="rank">${counter}</p> <img class="CameraImgLeaderboard" src="images/${user.profile_picture}" alt="Profile Picture"> <p id="USERW"> ${user.username}</p> </div>  <p class="leaderboardS">${user.popcorn} <span class="span">p</span></p>`;
+            div.innerHTML = `<div class="LeaderboardPicScore"> <p class="rank">${counter}.</p> <img class="CameraImgLeaderboard" src="images/${user.profile_picture}" alt="Profile Picture"> <p id="USERW"> ${user.username}</p> </div>  <p class="leaderboardS">${user.popcorn} <span class="span">p</span></p>`;
             if (window.innerWidth > 400) {
 
                 let h1 = document.createElement("h1");
@@ -164,7 +164,7 @@ function displayLeaderboard(leaderboardData) {
     for (let i = 0; i < leaderboardData.length && i < 25; i++) {
         const userElement = document.createElement("div");
         userElement.classList.add("LeaderBoard")
-        userElement.innerHTML = `<div class="LeaderboardPicScore"> <p class="ranking">${i + 1}</p> <img class="CameraImgLeaderboard" src="images/${leaderboardData[i].profile_picture}" alt="Profile Picture"> <p class="leaderBoardUsername">${leaderboardData[i].username}</p> </div> <p class="leaderboardScore">${leaderboardData[i].popcorn} <span>p</span></p>`;
+        userElement.innerHTML = `<div class="LeaderboardPicScore"> <p class="ranking">${i + 1}.</p> <img class="CameraImgLeaderboard" src="images/${leaderboardData[i].profile_picture}" alt="Profile Picture"> <p class="leaderBoardUsername">${leaderboardData[i].username}</p> </div> <p class="leaderboardScore">${leaderboardData[i].popcorn} <span>p</span></p>`;
         leaderboard1.appendChild(userElement);
 
     }

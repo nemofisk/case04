@@ -1,1 +1,54 @@
-null
+[
+    {
+        "username": "w",
+        "password": "",
+        "level": 669,
+        "popcorn": 106337,
+        "friends": [
+            {
+                "name": "ww",
+                "profilePicture": "guts.jpg",
+                "popcorn": 106302
+            }
+        ],
+        "friendRequests": [],
+        "gameInvites": [],
+        "xpGoal": 221764,
+        "id": 1,
+        "clues": 7,
+        "fiftyfifty": 5,
+        "profile_picture": "trashcan.png",
+        "lastSpun": "03",
+        "resetTimer": 2
+    },
+    {
+        "username": "efewmf",
+        "password": "fewfw",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 1000,
+        "clues": 0,
+        "fiftyfifty": 0,
+        "profile_picture": "Frame 621.png",
+        "lastSpun": 7,
+        "id": 2
+    },
+    {
+        "username": "SSSS",
+        "password": "SSS",
+        "level": 1,
+        "popcorn": 0,
+        "gameInvites": [],
+        "friends": [],
+        "friendRequests": [],
+        "xpGoal": 1000,
+        "clues": 0,
+        "fiftyfifty": 0,
+        "profile_picture": "Frame 621.png",
+        "lastSpun": 7,
+        "id": 3
+    }
+]

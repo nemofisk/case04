@@ -110,3 +110,34 @@ footer {
     transition-property: height;
     transition-duration: 1s;
 }
+
+
+@media (max-width: 390px) {
+    .curtainsLightProfile {
+        height: 103px;
+
+    }
+
+    .curtainsProfile {
+        height: 96px;
+    }
+
+    h2#LeaderBoardHeader {
+        color: #FFF;
+        text-align: center;
+        font-family: Jost;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    #showWorldLeaderboard {
+        cursor: pointer;
+    }
+
+    #showFriendsLeaderboard {
+        cursor: pointer;
+    }
+
+}
