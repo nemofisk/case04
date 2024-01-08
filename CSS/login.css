@@ -156,13 +156,15 @@ span {
     font-weight: 400;
     line-height: normal;
     margin: 0px;
+
 }
 
 #registerFeedback {
     color: #FF6868;
     position: absolute;
-    bottom: 198px;
+    bottom: 193px;
     left: 479px;
+    width: 240px;
 }
 
 #loginFeedback {

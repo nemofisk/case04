@@ -675,7 +675,7 @@ span#ttlPoints {
 
     filter: blur(20px);
     /* Initial blur value */
-    transition: filter 30s;
+    transition: filter 20s;
     transition-timing-function: linear;
     /* Transition over 10 seconds with ease-in-out timing function */
 

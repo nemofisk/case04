@@ -440,9 +440,18 @@
 
 
 
-@media (max-width: 390px) {
+@media (max-width: 391px) {
     #container {
         width: 380px;
+    }
+
+    .registerLoginPopup {
+        width: 327px;
+        height: 279px;
+    }
+
+    img#exitPopup {
+        left: 133px;
     }
 
     h1.LoginHeader {
@@ -463,6 +472,17 @@
         font-style: normal;
         font-weight: 500;
         line-height: normal;
+    }
+
+    p#registerFeedback {
+        left: 78px;
+        width: 240px;
+    }
+
+    p#loginFeedback {
+        left: 78px;
+        width: 240px;
+        text-align: center;
     }
 
     div#wheel {
@@ -578,6 +598,14 @@
         width: 370px;
     }
 
+    div.currentStandingResults {
+        width: 390px;
+    }
+
+    div.currentStandingHalf {
+        width: 390px;
+    }
+
     #leftSide {
         height: auto;
     }
@@ -638,6 +666,7 @@
     .friendRequestPopUp {
         width: 327px;
         height: 279px;
+        gap: 0px;
     }
 
     .friendRequestPopUp p {
@@ -667,6 +696,7 @@
         gap: 15px;
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 24px;
     }
 
     div#leaderBoardContainer {
@@ -779,8 +809,9 @@
     #logout {
         margin-left: 2px;
     }
-    .pElementShit{
+
+    .pElementShit {
         font-size: 20px;
     }
-    
+
 }

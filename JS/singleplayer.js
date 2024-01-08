@@ -121,7 +121,7 @@ function generateMovies(array, questionNumber = 1, answerTime) {
 
     let chosenGenres = array;
 
-    let quizQuiestions = ["trailer", "poster", "directors", "plot", "actors"];
+    let quizQuiestions = ["plot", "trailer", "poster", "actors", "directors"];
 
     let type = quizQuiestions[Math.floor(Math.random() * quizQuiestions.length)];
 
@@ -656,10 +656,18 @@ function getClue(movie) {
     })
     callAPI(request);
 
-    if (movie.qType == "directors" || movie.qType == "actors" || movie.qType == "plot") {
+    if (movie.qType == "actors" || movie.qType == "plot") {
         const clueFeedback = document.querySelector("#clueFeedback");
 
-        clueFeedback.textContent = `This movie was directed by ${movie.Director} and is starring ${movie.Actors} `
+        clueFeedback.textContent = `This movie was directed by ${movie.Director}`
+
+        clueFeedback.classList.add("active");
+    }
+
+    if (movie.qType == "directors") {
+        const clueFeedback = document.querySelector("#clueFeedback");
+
+        clueFeedback.textContent = `The movie features ${movie.Actors}`
 
         clueFeedback.classList.add("active");
     }

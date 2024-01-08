@@ -259,9 +259,20 @@ body {
     display: block;
 }
 
-@media (max-width: 390px) {
+@media (max-width: 391px) {
     #cluesDiv {
         margin-top: 50px;
+    }
+
+    div#clueFeedback {
+        color: var(--Colors-Accent-Color-1, #FF6868);
+        text-align: center;
+        font-family: Jost;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 34px;
     }
 
     div#timer {
@@ -298,10 +309,18 @@ body {
     }
 
 
-    div#questionText.typeplot,
     div#questionText.typeactors {
         width: 360px;
         font-size: 26px;
+        text-align: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    div#questionText.typeplot {
+        width: 360px;
+        font-size: 22px;
         text-align: left;
         display: flex;
         justify-content: center;
